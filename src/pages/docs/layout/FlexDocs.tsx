@@ -6,12 +6,13 @@ import { Styled } from "../../../../lib/components/core/Styled";
 import { Flex } from "../../../../lib/components/layout/Flex";
 import PropsTable from "../PropsTable";
 import { SiDocsdotrs } from "react-icons/si";
+import Badge from "../../../../lib/components/display/Badge";
 
 const FlexDocs = () => {
   return (
     <Container $mb={3}>
-      <h2>
-        <Code>component</Code> Flex
+      <h2 style={{ display: "flex", alignItems: "center", columnGap: "1rem" }}>
+        <Badge>component</Badge> Flex
       </h2>
 
       <Text $mt={1} $mb={2}>

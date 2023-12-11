@@ -2,12 +2,13 @@ import Code from "../../../../lib/components/display/Code";
 import Text from "../../../../lib/components/display/Text";
 import Container from "../../../../lib/components/layout/Container";
 import PropsTable from "../PropsTable";
+import Badge from "../../../../lib/components/display/Badge";
 
 const GroundworkCoreStylePropsDocs = () => {
   return (
     <Container $mb={3}>
-      <h2>
-        <Code>interface</Code> GroundworkCoreStyleProps
+      <h2 style={{ display: "flex", alignItems: "center", columnGap: "1rem" }}>
+        <Badge>interface</Badge> GroundworkCoreStyleProps
       </h2>
       <Text $mt={1} $mb={2}>
         The <Code>GroundworkCoreStyleProps</Code> interface is used to define

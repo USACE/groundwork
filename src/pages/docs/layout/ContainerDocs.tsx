@@ -4,12 +4,13 @@ import Text from "../../../../lib/components/display/Text";
 import { Card } from "../../../../lib/components/display/Card";
 import { Styled } from "../../../../lib/components/core/Styled";
 import PropsTable from "../PropsTable";
+import Badge from "../../../../lib/components/display/Badge";
 
 const ContainerDocs = () => {
   return (
     <Container $mb={3}>
-      <h2>
-        <Code>component</Code> Container
+      <h2 style={{ display: "flex", alignItems: "center", columnGap: "1rem" }}>
+        <Badge>component</Badge> Container
       </h2>
 
       <Text $mt={1} $mb={2}>
