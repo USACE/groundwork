@@ -61,6 +61,7 @@ const NavLink = styled(RawNavLink)`
   justify-content: space-between;
   padding: 0.5rem 0.5rem;
   cursor: pointer;
+  color: ${(p) => p.theme.colors.dark[6]};
 
   &:hover {
     background-color: ${(p) => p.theme.colors.light[1]};
