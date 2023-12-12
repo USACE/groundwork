@@ -21,242 +21,389 @@ const GroundworkCoreStylePropsDocs = () => {
         props={[
           {
             name: "$m",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to all sides.",
           },
           {
             name: "$my",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the y-axis (top and bottom).",
           },
           {
             name: "$mx",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the x-axis (left and right).",
           },
           {
             name: "$mt",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the top.",
           },
           {
             name: "$mb",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the bottom.",
           },
           {
             name: "$ml",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the left.",
           },
           {
             name: "$mr",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a margin to the right.",
           },
 
           {
             name: "$p",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to all sides.",
           },
           {
             name: "$py",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the y-axis (top and bottom).",
           },
           {
             name: "$px",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the x-axis (left and right).",
           },
           {
             name: "$pt",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the top.",
           },
           {
             name: "$pb",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the bottom.",
           },
           {
             name: "$pl",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the left.",
           },
           {
             name: "$pr",
-            type: "StyleProp<GroundworkSpacing>",
-            defaultValue: "",
-            description: "",
+            type: () => {
+              return (
+                <span><a href="/docs/groundwork-size">GroundworkSize</a>{` | number (rem) | string (any valid css size)`}</span>
+              );
+            },
+            defaultValue: "undefined",
+            description: "Apply a padding to the right.",
           },
 
           {
             name: "$bg",
-            type: "StyleProp<GroundworkColor>",
-            defaultValue: "",
-            description: "",
+            type: `"dark" | "gray" | "red"| "pink" | "grape" | "violet" | "indigo" | "blue" | "cyan" | "green" | "lime" | "yellow" | "orange" | "teal" | string (css color)`,
+            defaultValue: "undefined",
+            description: "Apply a background color",
           },
           {
             name: "$c",
-            type: "StyleProp<GroundworkColor>",
-            defaultValue: "",
+            type: `"dark" | "gray" | "red"| "pink" | "grape" | "violet" | "indigo" | "blue" | "cyan" | "green" | "lime" | "yellow" | "orange" | "teal" | string (css color)`,
+            defaultValue: "undefined",
             description: "",
           },
 
           {
             name: "$ff",
-            type: "StyleProp<React.CSSProperties['fontFamily']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/font-family`}>valid CSS font-family)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$fz",
-            type: "StyleProp<React.CSSProperties['fontSize']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/font-size`}>valid CSS font-size)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$fw",
-            type: "StyleProp<React.CSSProperties['fontWeight']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight`}>valid CSS font-weight)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$lts",
-            type: "StyleProp<React.CSSProperties['letterSpacing']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing`}>valid CSS letter-spacing)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$ta",
-            type: "StyleProp<React.CSSProperties['textAlign']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`}>valid CSS text-align)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$lh",
-            type: "StyleProp<React.CSSProperties['lineHeight']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/line-height`}>valid CSS line-height)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$fs",
-            type: "StyleProp<React.CSSProperties['fontStyle']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/font-style`}>valid CSS font-style)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$tt",
-            type: "StyleProp<React.CSSProperties['textTransform']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform`}>valid CSS text-transform)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$td",
-            type: "StyleProp<React.CSSProperties['textDecoration']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration`}>valid CSS text-decoration)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
 
           {
             name: "$w",
-            type: "StyleProp<React.CSSProperties['width']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/width`}>valid CSS width)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$miw",
-            type: "StyleProp<React.CSSProperties['minWidth']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/min-width`}>valid CSS min-width)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$maw",
-            type: "StyleProp<React.CSSProperties['maxWidth']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/max-width`}>valid CSS max-width)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$h",
-            type: "StyleProp<React.CSSProperties['height']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/height`}>valid CSS height)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$mih",
-            type: "StyleProp<React.CSSProperties['minHeight']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/min-height`}>valid CSS min-height)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$mah",
-            type: "StyleProp<React.CSSProperties['maxHeight']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/max-height`}>valid CSS max-height)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
 
           {
             name: "$pos",
-            type: "StyleProp<React.CSSProperties['position']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/position`}>valid CSS position)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$top",
-            type: "StyleProp<React.CSSProperties['top']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/top`}>valid CSS top)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$left",
-            type: "StyleProp<React.CSSProperties['left']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/left`}>valid CSS left)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$bottom",
-            type: "StyleProp<React.CSSProperties['bottom']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/bottom`}>valid CSS bottom)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$right",
-            type: "StyleProp<React.CSSProperties['right']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/right`}>valid CSS right)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$inset",
-            type: "StyleProp<React.CSSProperties['inset']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/inset`}>valid CSS inset)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
-
           {
             name: "$opacity",
-            type: "StyleProp<React.CSSProperties['opacity']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>number (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/opacity`}>valid CSS opacity)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
           {
             name: "$display",
-            type: "StyleProp<React.CSSProperties['display']>",
-            defaultValue: "",
+            type: () => {
+              return (
+                <span>string (<a href={`https://developer.mozilla.org/en-US/docs/Web/CSS/display`}>valid CSS display)</a></span>
+              );
+            },
+            defaultValue: "undefined",
             description: "",
           },
         ]}
