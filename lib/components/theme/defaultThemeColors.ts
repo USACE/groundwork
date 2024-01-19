@@ -1,4 +1,4 @@
-import { GroundworkThemeColors } from "../../../groundwork-types/groundwork-types";
+import { GroundworkThemeColors } from "../../types/groundwork-types";
 // colors from https://mantine.dev/theming/colors/#default-colors
 
 const defaultThemeColors: GroundworkThemeColors = {
