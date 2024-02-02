@@ -10,6 +10,8 @@ export default defineConfig(({ mode }) => {
       publicDir: false,
       build: {
         lib: {
+          name: "Groundwork",
+          fileName: (format) => `groundwork.${format}.js`,
           entry: {
             buttons: "lib/components/buttons/index.ts",
             composite: "lib/components/composite/index.ts",
