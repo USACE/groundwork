@@ -1,5 +1,5 @@
 {
-  "name": "groundwork",
+  "name": "@usace/groundwork",
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/groundwork.umd.cjs",
@@ -16,9 +16,15 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build-lib && npm run build-docs",
+    "build-lib": "vite build -m lib",
+    "build-docs": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pub": "npm run build-lib && npm publish --access=public",
+    "major": "npm version major && npm run pub",
+    "minor": "npm version minor && npm run pub",
+    "patch": "npm version patch && npm run pub"
   },
   "dependencies": {
     "feather-route-matcher": "^4.0.0",
