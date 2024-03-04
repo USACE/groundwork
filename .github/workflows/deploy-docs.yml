@@ -29,7 +29,7 @@ jobs:
       - name: Build project
         env:
           VITE_HOMEPAGE: "https://usace.github.io/groundwork"
-        run: npm run build
+        run: npm run build-docs
 
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
