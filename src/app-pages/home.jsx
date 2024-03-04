@@ -1,11 +1,13 @@
 import { Container, Text, Code, UsaceBox, TextLink, Hero } from "../../lib";
 import CopyButton from "../app-components/copy-button";
 
+const base = import.meta.env.BASE_URL;
+
 function Home() {
   return (
     <>
       <Hero
-        image="/nww-lucky-peak-dam.jpg"
+        image={`${base}nww-lucky-peak-dam.jpg`}
         title="Groundwork"
         subtitle="React Component Library"
       />
