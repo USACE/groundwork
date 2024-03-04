@@ -1,0 +1,190 @@
+import { UsaceBox, Code } from "../../../../lib";
+import { CodeExample } from "../../../app-components/code-example";
+import PropsTable from "../../../app-components/props-table";
+import DocsPage from "../_docs-page";
+
+const pageBreadcrumbs = [
+  {
+    text: "Documentation",
+    href: "/docs",
+  },
+  {
+    text: "Application Shell",
+    href: "/docs/app-shell",
+  },
+  {
+    text: "Site Wrapper",
+    href: "/docs/app-shell/site-wrapper",
+  },
+];
+
+const siteWrapperProps = [
+  {
+    name: "headerLinks",
+    type: "array[Link]",
+    default: "[]",
+    desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href property. If you would like a drop-down of links include a children property which is an array of link objects to the top level link.",
+  },
+  {
+    name: "usaBanner",
+    type: "boolean",
+    default: "true",
+    desc: "If true, the government website banner will be displayed at the top of the page.",
+  },
+  {
+    name: "msgBanner",
+    type: "component",
+    default: "null",
+    desc: "A custom component that will render between the government website banner and the header. This is useful for displaying a message banner that is specific to the site or page.",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: "US Army Corps of Engineers",
+    desc: "The title to display in the header.",
+  },
+  {
+    name: "subtitle",
+    type: "string",
+    default: "''",
+    desc: "A subtitle to display in the header.",
+  },
+  {
+    name: "missionText",
+    type: "string",
+    default: "''",
+    desc: "The mission text to display in the footer.",
+  },
+  {
+    name: "aboutText",
+    type: "string",
+    default: "''",
+    desc: "The about text to display in the footer.",
+  },
+  {
+    name: "facebookUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a Facebook page.",
+  },
+  {
+    name: "twitterUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a Twitter page.",
+  },
+  {
+    name: "youtubeUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a YouTube page.",
+  },
+  {
+    name: "flickrUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a Flickr page.",
+  },
+  {
+    name: "usaceLinks",
+    type: "array[Link]",
+    default: "[]",
+    desc: "An array of objects to be used as links in the footer. These links should point to USACE websites. Each object should have an id, text, and href property.",
+  },
+  {
+    name: "externalLinks",
+    type: "array[Link]",
+    default: "[]",
+    desc: "An array of objects to be used as external links in the footer. Use these links to point to external non-USACE websites. Each object should have an id, text, and href property.",
+  },
+  {
+    name: "armyLogo",
+    type: "boolean",
+    default: "true",
+    desc: "If true, the Army logo will be displayed in the footer.",
+  },
+  {
+    name: "usaceLogo",
+    type: "boolean",
+    default: "true",
+    desc: "If true, the USACE logo will be displayed in the footer.",
+  },
+  {
+    name: "rsgisLogo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the RSGIS logo will be displayed in the footer.",
+  },
+  {
+    name: "cwbiLogo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the CWBI logo will be displayed in the footer.",
+  },
+];
+
+function SiteWrapperDocs() {
+  return (
+    <DocsPage breadcrumbs={pageBreadcrumbs}>
+      <UsaceBox title="Site Wrapper">
+        <div className="pb-6">
+          <p>
+            Use the Site Wrapper to add the header and footer to your page. The
+            best way to do this is add SiteWrapper to the top level of your
+            application and render any changing content as children of the
+            SiteWrapper component.
+          </p>
+          <p className="pt-3">
+            For example, in a Vite project you typically have a src/App.jsx file
+            which is the top level component for the application. You would
+            import the SiteWrapper component there and use it to wrap the rest
+            of your application.
+          </p>
+          <p className="pt-3">
+            Note that in the example below, the useConnect hook is used to get
+            the current content that should be rendered based on the url. This
+            uses a separate state management framework called{" "}
+            <a
+              className="underline"
+              href="https://reduxbundler.com"
+              target="_blank"
+              referrer="noreferrer"
+            >
+              ReduxBundler
+            </a>
+            , which we highly recommend for React state management.
+          </p>{" "}
+        </div>
+        <CodeExample
+          code={`import { SiteWrapper } from "@usace/groundwork";
+import { useConnect } from "redux-bundler-hook";
+
+const links = [{ id: "docs", label: "Documentation", link: "/docs" }];
+
+function App() {
+  const {
+    route: Route,
+  } = useConnect("selectRoute");
+
+  return (
+      <SiteWrapper links={links}>
+        <Route />
+      </SiteWrapper>
+  );
+}
+
+export default App;
+`}
+        />
+
+        <div className="font-bold text-lg pt-6">
+          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+        </div>
+        <PropsTable propsList={siteWrapperProps} />
+      </UsaceBox>
+    </DocsPage>
+  );
+}
+
+export default SiteWrapperDocs;
+export { SiteWrapperDocs };

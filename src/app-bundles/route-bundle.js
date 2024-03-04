@@ -1,15 +1,15 @@
 import { createRouteBundle } from "redux-bundler";
 import Home from "../app-pages/home";
-import Docs from "../app-pages/docs";
-import Navigation from "../app-pages/docs/navigation";
-import Breadcrumbs from "../app-pages/docs/navigation/breadcrumbs";
-import AppShell from "../app-pages/docs/app-shell";
-import Layout from "../app-pages/docs/layout";
-import SiteWrapperDocs from "../app-pages/docs/app-shell/site-wrapper";
-import Types from "../app-pages/docs/types";
-import LinkDocs from "../app-pages/docs/types/link";
-import ContainerDocs from "../app-pages/docs/layout/container";
-import USACEBoxDocs from "../app-pages/docs/layout/usace-box";
+import Docs from "../app-pages/documentation";
+import Navigation from "../app-pages/documentation/navigation";
+import Breadcrumbs from "../app-pages/documentation/navigation/breadcrumbs";
+import AppShell from "../app-pages/documentation/app-shell";
+import Layout from "../app-pages/documentation/layout";
+import SiteWrapperDocs from "../app-pages/documentation/app-shell/site-wrapper";
+import Types from "../app-pages/documentation/types";
+import LinkDocs from "../app-pages/documentation/types/link";
+import ContainerDocs from "../app-pages/documentation/layout/container";
+import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
 
 export default createRouteBundle(
   {

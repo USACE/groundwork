@@ -1,0 +1,119 @@
+import {
+  Breadcrumbs as BC,
+  BreadcrumbItem,
+  UsaceBox,
+  Table,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableHeader,
+  TableCell,
+  Code,
+} from "../../../../lib";
+import CopyButton from "../../../app-components/copy-button";
+import { CodeExample } from "../../../app-components/code-example";
+import PropsTable from "../../../app-components/props-table";
+import DocsPage from "../_docs-page";
+
+const breadcrumbsPropsData = [
+  {
+    name: "className",
+    type: "string",
+    default: "''",
+    desc: "Additional css classes to add to the breadcrumbs.",
+  },
+];
+
+const breadcrumbItemPropsData = [
+  {
+    name: "className",
+    type: "string",
+    default: "''",
+    desc: "Additional css classes to add to the breadcrumb item.",
+  },
+  {
+    name: "href",
+    type: "string",
+    default: "''",
+    desc: "The URL of the breadcrumb item.",
+  },
+  {
+    name: "text",
+    type: "string",
+    default: "''",
+    desc: "The text of the breadcrumb item.",
+  },
+];
+
+const pageBreadcrumbs = [
+  {
+    text: "Documentation",
+    href: "/docs",
+  },
+  {
+    text: "Navigation",
+    href: "/docs/navigation",
+  },
+  {
+    text: "Breadcrumbs",
+    href: "/docs/navigation/breadcrumbs",
+  },
+];
+
+function Breadcrumbs() {
+  return (
+    <DocsPage breadcrumbs={pageBreadcrumbs}>
+      <UsaceBox title="Breadcrumbs">
+        <div className="pb-6">
+          Use breadcrumbs to indicate the current page’s location within a
+          hierarchy. Breadcrumbs are typically placed at the top of a page. They
+          are links and should be used to help users navigate through the site.
+          Breadcrumbs are not a replacement for the browser’s back button. They
+          are a supplemental navigation aid.
+        </div>
+
+        <div className="flex justify-start content-center gap-4">
+          <Code className="p-1 px-2">{`import { Breadcrumbs, BreadcrumbItem } from @usace/groundwork;`}</Code>
+          <CopyButton
+            text={`import { Breadcrumbs, BreadcrumbItem } from @usace/groundwork;`}
+          />
+        </div>
+
+        <div className="font-bold text-lg pt-6 pb-3">Basic Usage</div>
+        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+          <BC>
+            <BreadcrumbItem href="/docs" text="Documentation" />
+            <BreadcrumbItem href="/docs/navigation" text="Navigation" />
+            <BreadcrumbItem
+              href="/docs/navigation/breadcrumbs"
+              text="Breadcrumbs"
+            />
+          </BC>
+        </div>
+        <div>
+          <CodeExample
+            code={`<Breadcrumbs>
+  <BreadcrumbItem href="/docs" text="Documentation" />
+  <BreadcrumbItem href="/docs/navigation" text="Navigation" />
+  <BreadcrumbItem href="/docs/navigation/breadcrumbs" text="Breadcrumbs" />
+</Breadcrumbs>
+`}
+          />
+        </div>
+
+        <div className="font-bold text-lg pt-6">
+          Component API - <Code className="p-2">{`<Breadcrumbs />`}</Code>
+        </div>
+        <PropsTable propsList={breadcrumbsPropsData} />
+
+        <div className="font-bold text-lg pt-6">
+          Component API - <Code className="p-2">{`<BreadcrumbItem />`}</Code>
+        </div>
+        <PropsTable propsList={breadcrumbItemPropsData} />
+      </UsaceBox>
+    </DocsPage>
+  );
+}
+
+export default Breadcrumbs;
+export { Breadcrumbs };
