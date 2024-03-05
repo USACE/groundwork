@@ -1,3 +1,6 @@
+// bundle tailwind
+import "./styles.css";
+
 // layout components
 export { Container } from "./components/layout/container";
 export { UsaceBox } from "./components/layout/usace-box";
