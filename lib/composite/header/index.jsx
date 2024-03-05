@@ -1,6 +1,6 @@
 import { NavbarLinks } from "./navbar-links";
-
-const base = import.meta.env.BASE_URL;
+import usaceLogo from "../../img/usace-logo-color.svg";
+import magnifyingGlass from "../../img/Magnifying_glass_icon.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -33,7 +33,7 @@ function Logo() {
   return (
     <div className="absolute left-[15px] bottom-[-15px] w-[82px] z-10">
       <a href="/">
-        <img className="h-[50px] w-auto" src={`${base}usace-logo-color.svg`} />
+        <img className="h-[50px] w-auto" src={usaceLogo} />
       </a>
       <div className="absolute left-[65px] bottom-[-9px] text-sm text-black">
         ®
@@ -47,7 +47,7 @@ function Search() {
     <input
       style={{
         order: 2,
-        backgroundImage: `url("${base}Magnifying_glass_icon.svg")`,
+        backgroundImage: `url("${magnifyingGlass}")`,
         backgroundSize: "13px",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "10px center",

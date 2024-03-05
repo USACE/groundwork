@@ -1,21 +1,21 @@
 const base = import.meta.env.BASE_URL;
+import armyLogo from "../../img/armystar-logo-rb.svg";
+import usaceLogo from "../../img/usace-logo-color.svg";
+import rsgisLogo from "../../img/rsgis-logo.png";
+import cwbiLogo from "../../img/cwbi-logo.png";
 
 function LogoBanner({ army, usace, rsgis, cwbi }) {
   return (
     <div className="flex flex-row justify-center align-middle gap-6 mb-4">
       {army && (
         <a href="https://www.army.mil" target="_blank" rel="noopener">
-          <img
-            src={`${base}armystar-logo-rb.svg`}
-            alt="U.S. Army"
-            className="max-h-[75px]"
-          />
+          <img src={armyLogo} alt="U.S. Army" className="max-h-[75px]" />
         </a>
       )}
       {usace && (
         <a href="https://www.usace.army.mil" target="_blank" rel="noopener">
           <img
-            src={`${base}usace-logo-color.svg`}
+            src={usaceLogo}
             alt="U.S. Army Corps of Engineers"
             className="max-h-[75px] h-[75px] w-auto"
           />
@@ -28,7 +28,7 @@ function LogoBanner({ army, usace, rsgis, cwbi }) {
           rel="noopener"
         >
           <img
-            src={`${base}rsgis-logo.png`}
+            src={rsgisLogo}
             alt="Remote Sensing - GIS Center of Expertise"
             className="max-h-[75px]"
           />
@@ -41,7 +41,7 @@ function LogoBanner({ army, usace, rsgis, cwbi }) {
           rel="noopener"
         >
           <img
-            src={`${base}cwbi-logo.png`}
+            src={cwbiLogo}
             alt="Civil Works Business Intelligence"
             className="max-h-[75px]"
           />
