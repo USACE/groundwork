@@ -1,8 +1,5 @@
-# React + Vite
+# Groundwork React Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Groundwork provides a basic set of React components designed for use by USACE. We're working on making all of the components as accessible as possible to provide a consistent foundation for public-facing or internal applications.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+See the documentation at https://usace.github.io/groundwork.
