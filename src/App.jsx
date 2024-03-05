@@ -11,7 +11,9 @@ function App() {
     doUpdateHash,
   } = useConnect("selectRoute", "selectHash", "doUpdateHash");
 
+  console.log("trying to render");
   if (hash === "") {
+    console.log("redirecting to home");
     doUpdateHash("/");
     return null;
   }
