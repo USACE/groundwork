@@ -14,7 +14,9 @@ function App() {
   console.log("trying to render");
   if (hash === "") {
     console.log("redirecting to home");
-    doUpdateHash("/");
+    window.setTimeout(() => {
+      doUpdateHash("/");
+    }, 100);
     return null;
   }
 
