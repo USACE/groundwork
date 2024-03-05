@@ -10,6 +10,7 @@ import Types from "../app-pages/documentation/types";
 import LinkDocs from "../app-pages/documentation/types/link";
 import ContainerDocs from "../app-pages/documentation/layout/container";
 import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
+import ButtonsDocs from "../app-pages/documentation/buttons";
 
 export default createRouteBundle(
   {
@@ -22,6 +23,7 @@ export default createRouteBundle(
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
+    "/docs/buttons": ButtonsDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/about": "about",

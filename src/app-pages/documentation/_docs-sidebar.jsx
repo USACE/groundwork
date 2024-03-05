@@ -42,6 +42,11 @@ const sidebarLinks = [
     ],
   },
   {
+    title: "Buttons",
+    href: "/docs/buttons",
+    children: [],
+  },
+  {
     title: "Types",
     href: "/docs/types",
     children: [
