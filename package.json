@@ -3,6 +3,12 @@
   "private": false,
   "version": "1.0.1",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/groundwork.es.js",
+      "require": "./dist/groundwork.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run build-lib && npm run build-docs",
