@@ -8,6 +8,7 @@
     "build": "npm run build-lib && npm run build-docs",
     "build-lib": "vite build -m lib",
     "build-docs": "vite build",
+    "pub": "npm run build-lib && npm publish --access=public",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
