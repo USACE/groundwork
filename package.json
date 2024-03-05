@@ -13,6 +13,10 @@
     ".": {
       "import": "./dist/groundwork.es.js",
       "require": "./dist/groundwork.umd.cjs"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
     }
   },
   "scripts": {
