@@ -51,6 +51,16 @@ const sidebarLinks = [
     children: [],
   },
   {
+    title: "Display",
+    href: "/docs/display",
+    children: [
+      {
+        title: "Headings",
+        href: "/docs/display/headings",
+      },
+    ],
+  },
+  {
     title: "Types",
     href: "/docs/types",
     children: [

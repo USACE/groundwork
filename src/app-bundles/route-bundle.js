@@ -12,6 +12,8 @@ import ContainerDocs from "../app-pages/documentation/layout/container";
 import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
 import ButtonsDocs from "../app-pages/documentation/buttons";
 import SearchDocs from "../app-pages/documentation/app-shell/search";
+import Display from "../app-pages/documentation/display";
+import HeadingsDocs from "../app-pages/documentation/display/headings";
 
 export default createRouteBundle(
   {
@@ -26,6 +28,8 @@ export default createRouteBundle(
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
     "/docs/buttons": ButtonsDocs,
+    "/docs/display": Display,
+    "/docs/display/headings": HeadingsDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/about": "about",
