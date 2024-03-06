@@ -11,6 +11,7 @@ import LinkDocs from "../app-pages/documentation/types/link";
 import ContainerDocs from "../app-pages/documentation/layout/container";
 import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
 import ButtonsDocs from "../app-pages/documentation/buttons";
+import SearchDocs from "../app-pages/documentation/app-shell/search";
 
 export default createRouteBundle(
   {
@@ -18,6 +19,7 @@ export default createRouteBundle(
     "/docs": Docs,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
+    "/docs/app-shell/search": SearchDocs,
     "/docs/layout": Layout,
     "/docs/layout/container": ContainerDocs,
     "/docs/layout/usace-box": USACEBoxDocs,

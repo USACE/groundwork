@@ -15,6 +15,10 @@ const sidebarLinks = [
         title: "Site Wrapper",
         href: "/docs/app-shell/site-wrapper",
       },
+      {
+        title: "Search",
+        href: "/docs/app-shell/search",
+      },
     ],
   },
   {

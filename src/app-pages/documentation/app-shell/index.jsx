@@ -29,6 +29,9 @@ function AppShell() {
           <li>
             <a href="/docs/app-shell/site-wrapper">Site Wrapper</a>
           </li>
+          <li>
+            <a href="/docs/app-shell/search">Search</a>
+          </li>
         </ul>
       </UsaceBox>
     </DocsPage>

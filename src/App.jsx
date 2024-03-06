@@ -1,4 +1,4 @@
-import { SiteWrapper } from "../lib";
+import { SiteWrapper, SearchDotGov } from "../lib";
 import { getNavHelper } from "internal-nav-helper";
 import { useConnect } from "redux-bundler-hook";
 
@@ -28,6 +28,12 @@ function App() {
         subtitle="Groundwork React Components"
         missionText="We strive to provide the best React components for the USACE."
         aboutText="This is the about text for the footer."
+        search={
+          <SearchDotGov
+            affiliate="groundwork"
+            accessKey="JdBfW2_sGkdcLr4BTzCoOQIRy3oRP7kmzJ2DwIs-SCM="
+          />
+        }
       >
         <Route />
       </SiteWrapper>

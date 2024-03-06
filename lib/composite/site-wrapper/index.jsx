@@ -4,6 +4,7 @@ import Footer from "../footer";
 
 function SiteWrapper({
   children,
+  search = undefined,
   headerLinks,
   usaBanner = true,
   msgBanner: MsgBanner = false,
@@ -27,7 +28,12 @@ function SiteWrapper({
       <div>
         {usaBanner && <USABanner />}
         {MsgBanner && <MsgBanner />}
-        <Header links={headerLinks} title={title} subtitle={subtitle} />
+        <Header
+          links={headerLinks}
+          title={title}
+          subtitle={subtitle}
+          search={search}
+        />
         {children}
       </div>
       <Footer

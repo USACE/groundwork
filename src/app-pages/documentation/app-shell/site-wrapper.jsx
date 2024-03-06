@@ -26,6 +26,12 @@ const siteWrapperProps = [
     desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href property. If you would like a drop-down of links include a children property which is an array of link objects to the top level link.",
   },
   {
+    name: "search",
+    type: "component",
+    default: "null",
+    desc: "A custom search component to render in the header.",
+  },
+  {
     name: "usaBanner",
     type: "boolean",
     default: "true",

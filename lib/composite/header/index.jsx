@@ -1,6 +1,5 @@
 import { NavbarLinks } from "./navbar-links";
 import usaceLogo from "../../img/usace-logo-color.svg";
-import magnifyingGlass from "../../img/Magnifying_glass_icon.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -42,22 +41,7 @@ function Logo() {
   );
 }
 
-function Search() {
-  return (
-    <input
-      style={{
-        order: 2,
-        backgroundImage: `url("${magnifyingGlass}")`,
-        backgroundSize: "13px",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "10px center",
-      }}
-      className="bg-white border-gray-200 border-2 rounded h-8 m-2 text-sm text-black w-full max-w-[300px] pl-8"
-    />
-  );
-}
-
-function Header({ links, title, subtitle }) {
+function Header({ links, title, subtitle, search }) {
   const headerClass = classNames(
     "flex",
     "flex-col",
@@ -73,7 +57,7 @@ function Header({ links, title, subtitle }) {
       <Nav>
         <Logo />
         <NavbarLinks links={links} />
-        <Search />
+        {search ? search : null}
       </Nav>
     </header>
   );
