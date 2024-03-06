@@ -50,30 +50,7 @@ function NavbarLinkItem({ link, ...props }) {
 }
 
 // links look like this:
-const linksTemplate = [
-  {
-    id: "layout",
-    label: "Layout",
-    link: "/layout",
-    children: [
-      {
-        id: "layout-1",
-        label: "Layout 1 goes here",
-        link: "/layout-1",
-      },
-      {
-        id: "layout-2",
-        label: "Layout 2",
-        link: "/layout-2",
-      },
-    ],
-  },
-  {
-    id: "another",
-    label: "Another",
-    link: "/another",
-  },
-];
+const linksTemplate = [];
 
 function NavbarLinksList({ links, ...props }) {
   return (
@@ -104,10 +81,3 @@ const NavbarLinks = ({ links = linksTemplate }) => {
 
 export default NavbarLinks;
 export { NavbarLinks };
-
-// display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 100%;
-//   padding-right: 8px;
