@@ -27,10 +27,14 @@ function AppShell() {
         <H4>Components</H4>
         <ul>
           <li>
-            <a href="/docs/app-shell/site-wrapper">Site Wrapper</a>
+            <a href="/docs/app-shell/site-wrapper">
+              Site Wrapper - Add the standard header and footer to your pages
+            </a>
           </li>
           <li>
-            <a href="/docs/app-shell/search">Search</a>
+            <a href="/docs/app-shell/search">
+              Search - Customizable search options
+            </a>
           </li>
         </ul>
       </UsaceBox>
