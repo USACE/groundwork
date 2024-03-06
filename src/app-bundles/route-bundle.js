@@ -14,6 +14,7 @@ import ButtonsDocs from "../app-pages/documentation/buttons";
 import SearchDocs from "../app-pages/documentation/app-shell/search";
 import Display from "../app-pages/documentation/display";
 import HeadingsDocs from "../app-pages/documentation/display/headings";
+import TextDocs from "../app-pages/documentation/display/text";
 
 export default createRouteBundle(
   {
@@ -30,6 +31,7 @@ export default createRouteBundle(
     "/docs/buttons": ButtonsDocs,
     "/docs/display": Display,
     "/docs/display/headings": HeadingsDocs,
+    "/docs/display/text": TextDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/about": "about",

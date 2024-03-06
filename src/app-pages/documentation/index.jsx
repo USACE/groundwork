@@ -1,4 +1,4 @@
-import { UsaceBox, Code, H4 } from "../../../lib";
+import { UsaceBox, Text, Code, H4 } from "../../../lib";
 import CopyButton from "../../app-components/copy-button";
 import DocsPage from "./_docs-page";
 
@@ -15,7 +15,7 @@ function Docs() {
       <UsaceBox title="Getting Started">
         <H4>Project Setup</H4>
         <div className="mt-3 mb-3">
-          <p>
+          <Text>
             Groundwork is a set of React components that are designed to be used
             by USACE Developers building internal and externally facing web
             pages and web apps. The library should be compatible with any React
@@ -30,16 +30,18 @@ function Docs() {
               Vite documentation
             </a>{" "}
             for more details on getting started.{" "}
-          </p>
-          <p className="mt-3">
+          </Text>
+          <Text className="mt-3">
             Set up a new project with Vite using the following command:
+          </Text>
+          <div className="mt-3">
             <div className="flex flex-row justify-start space-between items-center gap-2 mt-3 mb-3">
               <Code className="block p-1 px-2">
                 npm create vite@latest {`<app-name>`} --template react
               </Code>
               <CopyButton text="npm create vite@latest <app-name> --template react" />
             </div>
-          </p>
+          </div>
         </div>
 
         <H4>Installation</H4>
@@ -47,7 +49,7 @@ function Docs() {
           <Code className="block p-1 px-2">npm install @usace/groundwork</Code>
           <CopyButton text="npm install @usace/groundwork" />
         </div>
-        <div>Then go build stuff with the components</div>
+        <Text>Then go build stuff with the components</Text>
       </UsaceBox>
     </DocsPage>
   );

@@ -1,4 +1,4 @@
-import { UsaceBox, Code, H1, H2, H3, H4 } from "../../../../lib";
+import { UsaceBox, Code, H1, H2, H3, H4, Text } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -39,11 +39,11 @@ function HeadingsDocs() {
       <UsaceBox title="Headings">
         {/* Description of the component and what problem it solves */}
         <div className="pb-6">
-          <p>
+          <Text>
             Headings are used to organize content on the page, use these
             components to get a consistent heading formatting throughout the
             sites.
-          </p>
+          </Text>
         </div>
         {/* Example usage - remove if not needed */}
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
