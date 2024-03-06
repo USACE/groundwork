@@ -1,4 +1,4 @@
-import { UsaceBox, Code, Button } from "../../../../lib";
+import { UsaceBox, Code, Button, Text, H3 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -59,15 +59,15 @@ function ButtonsDocs() {
       <UsaceBox title="Buttons">
         {/* Description of the component and what problem it solves */}
         <div className="pb-6">
-          <p>
+          <Text>
             The Button component can be used to render a basic button with
             pre-defined styles. For more advanced configurations it's
             recommended that you implement your own button using the{" "}
             <Code>{"<button>"}</Code> primitive component.
-          </p>
+          </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="mt-4 mb-2 text-sm font-bold">Basic Usage</div>
+        <H3 className="pt-6 pb-3">Basic Usage</H3>
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
           <div className="flex flex-row flex-wrap gap-3">
             <Button>Default</Button>
@@ -97,9 +97,7 @@ export default Component;
 `}
         />
         {/* Example usage - remove if not needed */}
-        <div className="mt-4 mb-2 text-sm font-bold">
-          Built-in Color Options
-        </div>
+        <H3 className="pt-6 pb-3">Built-in Color Options</H3>
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
           <div className="flex flex-row flex-wrap gap-3">
             {[

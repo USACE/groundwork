@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { UsaceBox, Code, Search, SearchDotGov } from "../../../../lib";
+import {
+  UsaceBox,
+  Code,
+  Search,
+  SearchDotGov,
+  Text,
+  H3,
+} from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -79,35 +86,33 @@ function SearchDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Search">
         {/* Description of the component and what problem it solves */}
-        <div>
-          <p>
-            Groundwork provides a set of search components built on top of the
-            simple basic search input. The basic search component allows you to
-            wire up search handling however you like, treat it like a basic
-            input control.
-          </p>
-          <p className="pt-3">
-            Down the line, there may be more search options, but our initial
-            more complex search option allows you to wire up to Search.gov for
-            custom results, assuming they've indexed your site. The
-            configuration of your Search.gov profile is out of scope fo this
-            documentation but take a look at their{" "}
-            <a
-              className="underline"
-              referrer="no-referrer"
-              target="_blank"
-              href="https://search.gov/about/"
-            >
-              documentation
-            </a>{" "}
-            to get started.
-          </p>
-          <p className="pt-3">
-            Search can be added to the SiteWrapper component as a prop, or used
-            as a standalone component.
-          </p>
-        </div>
-        <h3 className="font-bold text-xl pt-6 pb-3">Basic Search</h3>
+        <Text>
+          Groundwork provides a set of search components built on top of the
+          simple basic search input. The basic search component allows you to
+          wire up search handling however you like, treat it like a basic input
+          control.
+        </Text>
+        <Text className="pt-3">
+          Down the line, there may be more search options, but our initial more
+          complex search option allows you to wire up to Search.gov for custom
+          results, assuming they've indexed your site. The configuration of your
+          Search.gov profile is out of scope fo this documentation but take a
+          look at their{" "}
+          <a
+            className="underline"
+            referrer="no-referrer"
+            target="_blank"
+            href="https://search.gov/about/"
+          >
+            documentation
+          </a>{" "}
+          to get started.
+        </Text>
+        <Text className="pt-3">
+          Search can be added to the SiteWrapper component as a prop, or used as
+          a standalone component.
+        </Text>
+        <H3 className="pt-6 pb-3">Basic Search</H3>
         {/* Example usage - remove if not needed */}
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
           <div className="flex flex-col items-center">
@@ -160,7 +165,7 @@ export default Component;
         </div>
         <PropsTable propsList={componentProps_Search} />
 
-        <h3 className="font-bold text-xl pt-6 pb-3">SearchDotGov</h3>
+        <H3 className="pt-6 pb-3">SearchDotGov</H3>
         {/* Example usage - remove if not needed */}
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
           <div className="flex flex-col items-center">

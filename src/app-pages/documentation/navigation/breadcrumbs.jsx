@@ -2,13 +2,9 @@ import {
   Breadcrumbs as BC,
   BreadcrumbItem,
   UsaceBox,
-  Table,
-  TableBody,
-  TableRow,
-  TableHead,
-  TableHeader,
-  TableCell,
+  H3,
   Code,
+  Text,
 } from "../../../../lib";
 import CopyButton from "../../../app-components/copy-button";
 import { CodeExample } from "../../../app-components/code-example";
@@ -64,13 +60,13 @@ function Breadcrumbs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Breadcrumbs">
-        <div className="pb-6">
+        <Text className="pb-6">
           Use breadcrumbs to indicate the current page’s location within a
           hierarchy. Breadcrumbs are typically placed at the top of a page. They
           are links and should be used to help users navigate through the site.
           Breadcrumbs are not a replacement for the browser’s back button. They
           are a supplemental navigation aid.
-        </div>
+        </Text>
 
         <div className="flex justify-start content-center gap-4">
           <Code className="p-1 px-2">{`import { Breadcrumbs, BreadcrumbItem } from @usace/groundwork;`}</Code>
@@ -79,7 +75,7 @@ function Breadcrumbs() {
           />
         </div>
 
-        <div className="font-bold text-lg pt-6 pb-3">Basic Usage</div>
+        <H3 className="pt-6 pb-3">Basic Usage</H3>
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
           <BC>
             <BreadcrumbItem href="/docs" text="Documentation" />

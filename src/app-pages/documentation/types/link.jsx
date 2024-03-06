@@ -1,15 +1,4 @@
-import {
-  Breadcrumbs as BC,
-  BreadcrumbItem,
-  UsaceBox,
-  Table,
-  TableBody,
-  TableRow,
-  TableHead,
-  TableHeader,
-  TableCell,
-  Code,
-} from "../../../../lib";
+import { UsaceBox, Text, Code } from "../../../../lib";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
@@ -53,11 +42,11 @@ function LinkDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Link">
-        <div className="pb-6">
+        <Text className="pb-6">
           The Link type is used to create a link to another page or resource. We
           use it to provide a consistent way of representing links, useful where
           links are configurable or dynamic.
-        </div>
+        </Text>
 
         <div className="font-bold text-lg pt-6">
           Object - <Code className="p-2">{`link`}</Code>

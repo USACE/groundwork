@@ -1,4 +1,4 @@
-import { UsaceBox, Code } from "../../../../lib";
+import { UsaceBox, Code, Text } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -134,19 +134,19 @@ function SiteWrapperDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Site Wrapper">
         <div className="pb-6">
-          <p>
+          <Text>
             Use the Site Wrapper to add the header and footer to your page. The
             best way to do this is add SiteWrapper to the top level of your
             application and render any changing content as children of the
             SiteWrapper component.
-          </p>
-          <p className="pt-3">
+          </Text>
+          <Text className="pt-3">
             For example, in a Vite project you typically have a src/App.jsx file
             which is the top level component for the application. You would
             import the SiteWrapper component there and use it to wrap the rest
             of your application.
-          </p>
-          <p className="pt-3">
+          </Text>
+          <Text className="pt-3">
             Note that in the example below, the useConnect hook is used to get
             the current content that should be rendered based on the url. This
             uses a separate state management framework called{" "}
@@ -159,7 +159,7 @@ function SiteWrapperDocs() {
               ReduxBundler
             </a>
             , which we highly recommend for React state management.
-          </p>{" "}
+          </Text>{" "}
         </div>
         <CodeExample
           code={`import { SiteWrapper } from "@usace/groundwork";
@@ -182,7 +182,6 @@ function App() {
 export default App;
 `}
         />
-
         <div className="font-bold text-lg pt-6">
           Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
         </div>

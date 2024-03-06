@@ -1,4 +1,4 @@
-import { UsaceBox, Code } from "../../../../lib";
+import { UsaceBox, Code, Text } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -25,8 +25,8 @@ function Docs() {
       <UsaceBox title="Site Wrapper">
         {/* Description of the component and what problem it solves */}
         <div className="pb-6">
-          <p>Description of component</p>
-          <p className="pt-3">Description continued</p>
+          <Text>Description of component</Text>
+          <Text className="pt-3">Description continued</Text>
         </div>
         {/* Example usage - remove if not needed */}
         <div className="rounded-md border border-dashed px-6 py-3 mb-3"></div>

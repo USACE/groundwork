@@ -1,4 +1,4 @@
-import { UsaceBox, Code } from "../../../../lib";
+import { UsaceBox, Code, Text } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -33,11 +33,11 @@ function ContainerDocs() {
       <UsaceBox title="Container">
         {/* Description of the component and what problem it solves */}
         <div className="pb-6">
-          <p>
+          <Text>
             Use Container to add a section to your page with padding and a max
             with that keeps content within a readable width on users screens, or
             if you want full width all the time, you can set fluid == true.
-          </p>
+          </Text>
         </div>
         {/* Example usage */}
         <CodeExample

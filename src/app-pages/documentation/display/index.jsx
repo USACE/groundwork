@@ -1,4 +1,4 @@
-import { UsaceBox, H4 } from "../../../../lib";
+import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
 const pageBreadcrumbs = [
@@ -17,10 +17,10 @@ function Display() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Display">
         <div>
-          <p className="pb-6">
+          <Text className="pb-6">
             Display components are used to render content to the page with
             built-in formatting.
-          </p>
+          </Text>
           <H4>Components</H4>
           <ul>
             <li>

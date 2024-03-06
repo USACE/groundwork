@@ -1,4 +1,4 @@
-import { UsaceBox, H4 } from "../../../../lib";
+import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
 const pageBreadcrumbs = [
@@ -16,12 +16,12 @@ function Types() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Types (sort of)">
-        <p className="pb-6">
+        <Text className="pb-6">
           While Groundwork is not a typescript library, we define some types to
           help with development, mainly to help with consistency throughout the
           library. Types defined here describe object types that are commonly
           used throughout the library.
-        </p>
+        </Text>
         <H4>Components</H4>
         <ul>
           <a className="hover:underline" href="/docs/types/link">
