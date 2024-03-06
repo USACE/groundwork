@@ -62,6 +62,10 @@ const sidebarLinks = [
         title: "Text",
         href: "/docs/display/text",
       },
+      {
+        title: "Table",
+        href: "/docs/display/table",
+      },
     ],
   },
   {

@@ -5,10 +5,17 @@ import {
   TableHead,
   TableHeader,
   TableCell,
+  Text,
   Code,
 } from "../../lib";
 
 function PropsTable({ propsList }) {
+  if (!propsList || !propsList.length)
+    return (
+      <Text className="pt-3">
+        This component does not expose any component-specific props.
+      </Text>
+    );
   return (
     <Table striped dense>
       <TableHead>

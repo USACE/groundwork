@@ -8,6 +8,7 @@ export { UsaceBox } from "./components/layout/usace-box";
 // display components
 export * from "./components/display/text";
 export * from "./components/display/headings";
+export * from "./components/table";
 
 // composite components
 export { Header } from "./composite/header";
@@ -20,4 +21,3 @@ export * from "./components/button";
 export * from "./components/search";
 export { Hero } from "./components/hero";
 export { Breadcrumbs, BreadcrumbItem } from "./components/breadcrumbs";
-export * from "./components/table";
