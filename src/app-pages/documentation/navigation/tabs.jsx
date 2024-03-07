@@ -184,7 +184,8 @@ export default Component;
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Tabs } from "@usace/groundwork";
+          code={`import { Badge, Tabs } from "@usace/groundwork";
+import { VscCloudDownload, VscMail, VscSettingsGear } from "react-icons/vsc";
 
 function Component() {
   return (

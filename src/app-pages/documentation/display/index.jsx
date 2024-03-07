@@ -24,9 +24,26 @@ function Display() {
           <H4>Components</H4>
           <ul>
             <li>
+              <a href="/docs/display/badge">
+                Badge - A small piece of information that can be displayed on a
+                page.
+              </a>
+            </li>
+            <li>
               <a href="/docs/display/headings">
                 Headings - Section headings for standard content.
               </a>
+            </li>
+            <li>
+              <a href="/docs/display/hero">
+                Hero - A large, prominent section of a page.
+              </a>
+            </li>
+            <li>
+              <a href="/docs/display/text">Text - Standard text for a page.</a>
+            </li>
+            <li>
+              <a href="/docs/display/table">Table - A table of data.</a>
             </li>
           </ul>
         </div>

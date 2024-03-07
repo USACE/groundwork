@@ -29,6 +29,11 @@ function Navigation() {
                 Breadcrumbs - Keep track of where you are in the site
               </a>
             </li>
+            <li>
+              <a href="/docs/navigation/tabs">
+                Tabs - Display multiple sub-pages on the same page
+              </a>
+            </li>
           </ul>
         </div>
       </UsaceBox>

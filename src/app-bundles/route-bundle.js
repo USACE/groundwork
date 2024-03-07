@@ -20,6 +20,7 @@ import HeroDocs from "../app-pages/documentation/display/hero";
 import WaterManagement from "../app-pages/documentation/water-management";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
+import BadgeDocs from "../app-pages/documentation/display/badge";
 
 export default createRouteBundle(
   {
@@ -36,6 +37,7 @@ export default createRouteBundle(
     "/docs/navigation/tabs": TabsDocs,
     "/docs/buttons": ButtonsDocs,
     "/docs/display": Display,
+    "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
     "/docs/display/text": TextDocs,

@@ -59,6 +59,10 @@ const sidebarLinks = [
     href: "/docs/display",
     children: [
       {
+        title: "Badge",
+        href: "/docs/display/badge",
+      },
+      {
         title: "Headings",
         href: "/docs/display/headings",
       },
