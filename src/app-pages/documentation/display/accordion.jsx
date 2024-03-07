@@ -1,0 +1,141 @@
+import { UsaceBox, Code, Text, Accordion, Badge } from "../../../../lib";
+import { CodeExample } from "../../../app-components/code-example";
+import PropsTable from "../../../app-components/props-table";
+import DocsPage from "../_docs-page";
+
+const pageBreadcrumbs = [
+  {
+    text: "Documentation",
+    href: "/docs",
+  },
+  {
+    text: "Display",
+    href: "/docs/display",
+  },
+  {
+    text: "Accordion",
+    href: "/docs/display/accordion",
+  },
+];
+
+const componentProps = [
+  {
+    name: "heading",
+    type: "string | component",
+    default: "undefined",
+    desc: "The header of the accordion. Can be plain text or a custom component.",
+  },
+];
+
+function AccordionDocs() {
+  return (
+    <DocsPage breadcrumbs={pageBreadcrumbs}>
+      <UsaceBox title="Accordion">
+        {/* Description of the component and what problem it solves */}
+        <div className="pb-6">
+          <Text>
+            Accordions allow you to stack lots of information into a smaller
+            vertical space by putting content into collapsible sections. The
+            header of the accordion can be plain text or a custom component
+            including other components such as a badge or icon.
+          </Text>
+        </div>
+        {/* Example usage - remove if not needed */}
+        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+          <div className="w-[50%]">
+            <Accordion
+              defaultOpen
+              heading={
+                <span className="flex justify-center items-center gap-1">
+                  Start Here
+                  <Badge color="green" className="mr-2">
+                    new
+                  </Badge>
+                </span>
+              }
+            >
+              <div className="py-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </Accordion>
+            <Accordion heading="Then Look Here">
+              <div className="py-3">
+                Sodales ut etiam sit amet nisl purus. Feugiat in ante metus
+                dictum at tempor commodo ullamcorper a. Ultrices neque ornare
+                aenean euismod elementum nisi quis. Quam lacus suspendisse
+                faucibus interdum posuere lorem. Purus semper eget duis at. Eu
+                tincidunt tortor aliquam nulla. Euismod lacinia at quis risus
+                sed. Maecenas volutpat blandit aliquam etiam erat. Mattis
+                ullamcorper velit sed ullamcorper morbi tincidunt. Et malesuada
+                fames ac turpis egestas maecenas pharetra convallis. Malesuada
+                bibendum arcu vitae elementum curabitur vitae nunc sed velit.
+              </div>
+            </Accordion>
+          </div>
+        </div>
+        {/* Example code */}
+        <CodeExample
+          code={`import { Accordion } from "@usace/groundwork";
+
+function Component() {
+  return (
+    <div className="w-[50%]">
+      <Accordion
+        defaultOpen
+        heading={
+          <span className="flex justify-center items-center gap-1">
+            Start Here
+            <Badge color="green" className="mr-2">
+              new
+            </Badge>
+          </span>
+        }
+      >
+        <div className="py-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+          sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </Accordion>
+      <Accordion heading="Then Look Here">
+        <div className="py-3">
+          Sodales ut etiam sit amet nisl purus. Feugiat in ante metus
+          dictum at tempor commodo ullamcorper a. Ultrices neque ornare
+          aenean euismod elementum nisi quis. Quam lacus suspendisse
+          faucibus interdum posuere lorem. Purus semper eget duis at. Eu
+          tincidunt tortor aliquam nulla. Euismod lacinia at quis risus
+          sed. Maecenas volutpat blandit aliquam etiam erat. Mattis
+          ullamcorper velit sed ullamcorper morbi tincidunt. Et malesuada
+          fames ac turpis egestas maecenas pharetra convallis. Malesuada
+          bibendum arcu vitae elementum curabitur vitae nunc sed velit.
+        </div>
+      </Accordion>
+    </div>
+  )
+}
+
+export default Component;
+`}
+        />
+        {/* Component props documentation */}
+        <div className="font-bold text-lg pt-6">
+          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+        </div>
+        <PropsTable propsList={componentProps} />
+      </UsaceBox>
+    </DocsPage>
+  );
+}
+
+export default AccordionDocs;
+export { AccordionDocs };

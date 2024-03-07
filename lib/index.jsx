@@ -26,3 +26,4 @@ export {
 } from "./components/navigation/breadcrumbs";
 export { Tabs } from "./components/navigation/tabs";
 export * from "./components/display/badge";
+export * from "./components/display/accordion";

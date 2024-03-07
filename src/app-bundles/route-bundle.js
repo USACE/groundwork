@@ -21,6 +21,7 @@ import WaterManagement from "../app-pages/documentation/water-management";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
+import AccordionDocs from "../app-pages/documentation/display/accordion";
 
 export default createRouteBundle(
   {
@@ -42,6 +43,7 @@ export default createRouteBundle(
     "/docs/display/hero": HeroDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
+    "/docs/display/accordion": AccordionDocs,
     "/docs/water-management": WaterManagement,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,

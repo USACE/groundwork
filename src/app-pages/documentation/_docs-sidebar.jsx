@@ -78,6 +78,10 @@ const sidebarLinks = [
         title: "Table",
         href: "/docs/display/table",
       },
+      {
+        title: "Accordion",
+        href: "/docs/display/accordion",
+      },
     ],
   },
   {
