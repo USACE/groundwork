@@ -20,4 +20,9 @@ export { SiteWrapper } from "./composite/site-wrapper";
 export * from "./components/button";
 export * from "./components/search";
 export { Hero } from "./components/hero";
-export { Breadcrumbs, BreadcrumbItem } from "./components/breadcrumbs";
+export {
+  Breadcrumbs,
+  BreadcrumbItem,
+} from "./components/navigation/breadcrumbs";
+export { Tabs } from "./components/navigation/tabs";
+export * from "./components/display/badge";

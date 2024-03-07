@@ -43,6 +43,10 @@ const sidebarLinks = [
         title: "Breadcrumbs",
         href: "/docs/navigation/breadcrumbs",
       },
+      {
+        title: "Tabs",
+        href: "/docs/navigation/tabs",
+      },
     ],
   },
   {
@@ -73,12 +77,20 @@ const sidebarLinks = [
     ],
   },
   {
+    title: "Water Management",
+    href: "/docs/water-management",
+  },
+  {
     title: "Types",
     href: "/docs/types",
     children: [
       {
         title: "Link",
         href: "/docs/types/link",
+      },
+      {
+        title: "Tab",
+        href: "/docs/types/tab",
       },
     ],
   },

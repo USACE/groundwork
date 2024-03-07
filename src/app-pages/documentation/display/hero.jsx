@@ -75,7 +75,7 @@ export default Component;
         />
         {/* Component props documentation */}
         <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+          Component API - <Code className="p-2">{`<Hero />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

@@ -17,6 +17,9 @@ import HeadingsDocs from "../app-pages/documentation/display/headings";
 import TextDocs from "../app-pages/documentation/display/text";
 import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
+import WaterManagement from "../app-pages/documentation/water-management";
+import TabsDocs from "../app-pages/documentation/navigation/tabs";
+import TabDocs from "../app-pages/documentation/types/tab";
 
 export default createRouteBundle(
   {
@@ -30,14 +33,17 @@ export default createRouteBundle(
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
+    "/docs/navigation/tabs": TabsDocs,
     "/docs/buttons": ButtonsDocs,
     "/docs/display": Display,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
+    "/docs/water-management": WaterManagement,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
+    "/docs/types/tab": TabDocs,
     "/about": "about",
     "/contact": "contact",
     "/404": () => "notFound",
