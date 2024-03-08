@@ -2,6 +2,8 @@ import { SiteWrapper, SearchDotGov } from "../lib";
 import { getNavHelper } from "internal-nav-helper";
 import { useConnect } from "redux-bundler-hook";
 
+const version = import.meta.env.PKG_VERSION;
+
 const links = [{ id: "docs", label: "Documentation", link: "/docs" }];
 
 function App() {
@@ -11,9 +13,7 @@ function App() {
     doUpdateHash,
   } = useConnect("selectRoute", "selectHash", "doUpdateHash");
 
-  console.log("trying to render");
   if (hash === "") {
-    console.log("redirecting to home");
     window.setTimeout(() => {
       doUpdateHash("/");
     }, 100);
@@ -25,7 +25,7 @@ function App() {
       <SiteWrapper
         headerLinks={links}
         usaBanner={true}
-        subtitle="Groundwork React Components"
+        subtitle={`Groundwork React Components v${version}`}
         missionText="We strive to provide the best React components for the USACE."
         aboutText="This is the about text for the footer."
         search={
