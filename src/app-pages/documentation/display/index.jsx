@@ -45,6 +45,16 @@ function Display() {
             <li>
               <a href="/docs/display/table">Table - A table of data.</a>
             </li>
+            <li>
+              <a href="/docs/display/accordion">
+                Accordion - Stackable / Expandible sections.
+              </a>
+            </li>
+            <li>
+              <a href="/docs/display/card">
+                Card - Put a box around some content.
+              </a>
+            </li>
           </ul>
         </div>
       </UsaceBox>

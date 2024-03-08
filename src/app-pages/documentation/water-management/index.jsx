@@ -27,9 +27,7 @@ function WaterManagement() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/docs/Water Management/headings">
-                Headings - Section headings for standard content.
-              </a>
+              <a href="/docs/water-management">Coming Soon</a>
             </li>
           </ul>
         </div>

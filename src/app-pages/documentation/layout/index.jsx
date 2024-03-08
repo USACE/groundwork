@@ -31,9 +31,6 @@ function Layout() {
             <a className="hover:underline" href="/docs/layout/container">
               <li>Container - a simple wrapper to manage margins.</li>
             </a>
-            <a className="hover:underline" href="/docs/layout/flex">
-              <li>Flex - easy to use flexbox layouts</li>
-            </a>
             <a className="hover:underline" href="/docs/layout/usace-box">
               <li>
                 USACE Box - A container with a header and the red and gray

@@ -23,6 +23,7 @@ import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
 import CardDocs from "../app-pages/documentation/display/card";
+import NotFound from "../app-pages/404";
 
 export default createRouteBundle(
   {
@@ -50,9 +51,7 @@ export default createRouteBundle(
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
-    "/about": "about",
-    "/contact": "contact",
-    "/404": () => "notFound",
+    "*": NotFound,
   },
   {
     routeInfoSelector: "selectHash",
