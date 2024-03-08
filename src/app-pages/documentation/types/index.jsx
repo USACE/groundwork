@@ -27,6 +27,9 @@ function Types() {
           <a className="hover:underline" href="/docs/types/link">
             <li>Link - Group text and a href attribute.</li>
           </a>
+          <a className="hover:underline" href="/docs/types/tab">
+            <li>Tab - Define the behavior of the tabs component.</li>
+          </a>
         </ul>
       </UsaceBox>
     </DocsPage>
