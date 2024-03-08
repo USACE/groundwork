@@ -19,6 +19,7 @@ export { SiteWrapper } from "./composite/site-wrapper";
 
 // standard components
 export * from "./components/button";
+export * from "./components/buttons/standard-buttons";
 export * from "./components/search";
 export { Hero } from "./components/hero";
 export {

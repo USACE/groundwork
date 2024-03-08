@@ -52,7 +52,20 @@ const sidebarLinks = [
   {
     title: "Buttons",
     href: "/docs/buttons",
-    children: [],
+    children: [
+      {
+        title: "Generic Buttons",
+        href: "/docs/buttons/generic-buttons",
+      },
+      {
+        title: "Ok/Cancel",
+        href: "/docs/buttons/ok-cancel",
+      },
+      {
+        title: "Delete/Confirm",
+        href: "/docs/buttons/delete-confirm",
+      },
+    ],
   },
   {
     title: "Display",

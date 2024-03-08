@@ -24,6 +24,9 @@ import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
 import CardDocs from "../app-pages/documentation/display/card";
 import NotFound from "../app-pages/404";
+import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
+import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
+import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
 
 export default createRouteBundle(
   {
@@ -39,6 +42,9 @@ export default createRouteBundle(
     "/docs/navigation/breadcrumbs": Breadcrumbs,
     "/docs/navigation/tabs": TabsDocs,
     "/docs/buttons": ButtonsDocs,
+    "/docs/buttons/generic-buttons": GenericButtonsDocs,
+    "/docs/buttons/ok-cancel": OkCancelDocs,
+    "/docs/buttons/delete-confirm": DeleteConfirmDocs,
     "/docs/display": Display,
     "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
