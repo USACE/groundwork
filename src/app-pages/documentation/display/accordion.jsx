@@ -2,6 +2,7 @@ import { UsaceBox, Code, Text, Accordion, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
+import { LuPartyPopper } from "react-icons/lu";
 
 const pageBreadcrumbs = [
   {
@@ -25,6 +26,18 @@ const componentProps = [
     default: "undefined",
     desc: "The header of the accordion. Can be plain text or a custom component.",
   },
+  {
+    name: "defaultOpen",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the accordion is open by default.",
+  },
+  {
+    name: "unmountOnClose",
+    type: "boolean",
+    default: "false",
+    desc: "Whether to unmount the content when the accordion is closed. False will cause the content to be hidden but still in the DOM.",
+  },
 ];
 
 function AccordionDocs() {
@@ -46,10 +59,11 @@ function AccordionDocs() {
             <Accordion
               defaultOpen
               heading={
-                <span className="flex justify-center items-center gap-1">
+                <span className="flex justify-between w-full items-center gap-1">
                   Start Here
                   <Badge color="green" className="mr-2">
-                    new
+                    <LuPartyPopper className="mr-1" />
+                    new!
                   </Badge>
                 </span>
               }
@@ -81,7 +95,9 @@ function AccordionDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Accordion } from "@usace/groundwork";
+          code={`import { Accordion, Badge } from "@usace/groundwork";
+import { LuPartyPopper } from "react-icons/lu";
+
 
 function Component() {
   return (
@@ -89,10 +105,11 @@ function Component() {
       <Accordion
         defaultOpen
         heading={
-          <span className="flex justify-center items-center gap-1">
+          <span className="flex justify-between w-full items-center gap-1">
             Start Here
             <Badge color="green" className="mr-2">
-              new
+              <LuPartyPopper className="mr-1" />
+              new!
             </Badge>
           </span>
         }
@@ -129,7 +146,7 @@ export default Component;
         />
         {/* Component props documentation */}
         <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+          Component API - <Code className="p-2">{`<Accordion />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

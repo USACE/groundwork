@@ -4,9 +4,9 @@ import clsx from "clsx";
 
 function Accordion({
   heading,
-  children,
   defaultOpen = false,
   unmountOnClose = false,
+  children,
 }) {
   return (
     <Disclosure defaultOpen={defaultOpen}>
