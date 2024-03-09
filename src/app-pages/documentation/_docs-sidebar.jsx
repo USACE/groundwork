@@ -102,6 +102,16 @@ const sidebarLinks = [
     ],
   },
   {
+    title: "Forms",
+    href: "/docs/forms",
+    children: [
+      {
+        title: "Input",
+        href: "/docs/forms/input",
+      },
+    ],
+  },
+  {
     title: "Water Management",
     href: "/docs/water-management",
   },

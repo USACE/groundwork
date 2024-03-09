@@ -27,6 +27,8 @@ import NotFound from "../app-pages/404";
 import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
 import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
+import Forms from "../app-pages/documentation/forms";
+import InputDocs from "../app-pages/documentation/forms/input";
 
 export default createRouteBundle(
   {
@@ -53,6 +55,8 @@ export default createRouteBundle(
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
+    "/docs/forms": Forms,
+    "/docs/forms/input": InputDocs,
     "/docs/water-management": WaterManagement,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
