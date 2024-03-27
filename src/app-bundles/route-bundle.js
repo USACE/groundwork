@@ -27,6 +27,15 @@ import NotFound from "../app-pages/404";
 import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
 import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
+import Forms from "../app-pages/documentation/forms";
+import InputDocs from "../app-pages/documentation/forms/input";
+import TextInputDocs from "../app-pages/documentation/forms/text-input";
+import NumericInputDocs from "../app-pages/documentation/forms/numeric-inputs";
+import ColorInputDocs from "../app-pages/documentation/forms/color-input";
+import DateTimeInputDocs from "../app-pages/documentation/forms/date-time-inputs";
+import FileInputDocs from "../app-pages/documentation/forms/file-input";
+import FieldsetDocs from "../app-pages/documentation/forms/fieldset";
+import TextareaDocs from "../app-pages/documentation/forms/textarea";
 
 export default createRouteBundle(
   {
@@ -53,6 +62,14 @@ export default createRouteBundle(
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
+    "/docs/forms": Forms,
+    "/docs/forms/fieldset": FieldsetDocs,
+    "/docs/forms/text-inputs": TextInputDocs,
+    "/docs/forms/textarea": TextareaDocs,
+    "/docs/forms/numeric-inputs": NumericInputDocs,
+    "/docs/forms/color-input": ColorInputDocs,
+    "/docs/forms/date-time-inputs": DateTimeInputDocs,
+    "/docs/forms/file-input": FileInputDocs,
     "/docs/water-management": WaterManagement,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
