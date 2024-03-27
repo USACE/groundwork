@@ -23,8 +23,26 @@ function Forms() {
           </Text>
           <H4>Components</H4>
           <ul>
-            <a className="hover:underline" href="/docs/forms/input">
+            <a className="hover:underline" href="/docs/forms/fieldset">
+              <li>Fieldset - Organize field components.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/text-inputs">
               <li>Input - Add / Edit a text field in your form.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/textarea">
+              <li>Textarea - For when you need lots of information.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/numeric-inputs">
+              <li>Numeric - Limit entry to numbers.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/color-input">
+              <li>Color - Let a user choose a color.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/date-time-inputs">
+              <li>Date/Time - Different ways to pick temporal data.</li>
+            </a>
+            <a className="hover:underline" href="/docs/forms/input">
+              <li>File Input - When we need to let folks upload something.</li>
             </a>
           </ul>
         </div>

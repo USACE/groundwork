@@ -106,8 +106,32 @@ const sidebarLinks = [
     href: "/docs/forms",
     children: [
       {
-        title: "Input",
-        href: "/docs/forms/input",
+        title: "Fieldset",
+        href: "/docs/forms/fieldset",
+      },
+      {
+        title: "Text Inputs",
+        href: "/docs/forms/text-inputs",
+      },
+      {
+        title: "Text Area",
+        href: "/docs/forms/textarea",
+      },
+      {
+        title: "Numeric Inputs",
+        href: "/docs/forms/numeric-inputs",
+      },
+      {
+        title: "Color Input",
+        href: "/docs/forms/color-input",
+      },
+      {
+        title: "Date/Time Inputs",
+        href: "/docs/forms/date-time-inputs",
+      },
+      {
+        title: "File Input",
+        href: "/docs/forms/file-input",
       },
     ],
   },

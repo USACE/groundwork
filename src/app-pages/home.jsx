@@ -35,8 +35,8 @@ function Home() {
               </div>
 
               <Text>
-                Then, import the components you need, and start building your
-                application
+                Then, import the components you need and our CSS, and start
+                building your application
               </Text>
               <div className="mt-3">
                 <TextLink href="/docs" className="text-lg font-bold">

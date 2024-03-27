@@ -32,3 +32,5 @@ export * from "./components/display/accordion";
 
 // forms
 export { Input } from "./components/form/input";
+export * from "./components/form/fieldset";
+export * from "./components/form/textarea";

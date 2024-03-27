@@ -37,7 +37,7 @@ function Docs() {
           <div className="mt-3">
             <div className="flex flex-row justify-start space-between items-center gap-2 mt-3 mb-3">
               <Code className="block p-1 px-2">
-                npm create vite@latest {`<app-name>`} --template react
+                {`npm create vite@latest <app-name> --template react`}
               </Code>
               <CopyButton text="npm create vite@latest <app-name> --template react" />
             </div>
@@ -49,7 +49,24 @@ function Docs() {
           <Code className="block p-1 px-2">npm install @usace/groundwork</Code>
           <CopyButton text="npm install @usace/groundwork" />
         </div>
-        <Text>Then go build stuff with the components</Text>
+
+        <H4>Import Components and Styles</H4>
+        <div className="flex flex-row justify-start space-between items-center gap-2 mt-3 mb-3">
+          <Code className="block p-1 px-2">
+            {`import { SiteWrapper, ... } from @usace/groundwork`}
+          </Code>
+          <CopyButton text="npm install @usace/groundwork" />
+        </div>
+        <div className="flex flex-row justify-start space-between items-center gap-2 mt-3 mb-3">
+          <Code className="block p-1 px-2">
+            import @usace/groundwork/dist/style.css
+          </Code>
+          <CopyButton text="npm install @usace/groundwork" />
+        </div>
+        <Text>
+          Make sure to import style.css from Groundwork into your top-level
+          component, then go build stuff with the components
+        </Text>
       </UsaceBox>
     </DocsPage>
   );

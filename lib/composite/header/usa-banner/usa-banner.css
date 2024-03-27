@@ -11,7 +11,6 @@
 }
 
 .header_banner_container .header_banner_flag {
-  display: block;
   padding: 6px 0;
   height: 50px;
   font-size: 13px;
@@ -24,27 +23,7 @@
   }
 }
 
-.header_banner_container .header_banner_flag:before {
-  background-image: url(/us_flag_small.png);
-  background-size: 20px 12px;
-  content: "";
-  display: inline-block;
-  height: 12px;
-  margin-right: 10px;
-  width: 20px;
-}
-
-.header_banner_flag_img {
-  background-size: 20px 12px;
-  content: "";
-  display: inline-block;
-  height: 12px;
-  margin-right: 10px;
-  width: 20px;
-}
-
 .header_banner_container .header_banner_inner {
-  display: block;
   line-height: 1.5;
   margin: 0 auto;
   max-width: 1400px;

@@ -1,4 +1,4 @@
-import { UsaceBox, Code, Text, Input } from "../../../../lib";
+import { UsaceBox, Code, Text, Field, Label, Input } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -61,13 +61,18 @@ function InputDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          {inputTypes.map((type) => {
-            return (
-              <div key={type} className="mb-3">
-                <Input type={type} placeholder={type} />
-              </div>
-            );
-          })}
+          <div className="w-[50%]">
+            {inputTypes.map((type) => {
+              return (
+                <div key={type} className="mb-3">
+                  <Field>
+                    <Label>{type}</Label>
+                    <Input type={type} placeholder={type} label="label" />
+                  </Field>
+                </div>
+              );
+            })}
+          </div>
         </div>
         {/* Example code */}
         <CodeExample
