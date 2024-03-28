@@ -165,7 +165,7 @@ function SiteWrapperDocs() {
           code={`import { SiteWrapper } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
 
-const links = [{ id: "docs", label: "Documentation", link: "/docs" }];
+const links = [{ id: "docs", text: "Documentation", href: "/docs" }];
 
 function App() {
   const {
