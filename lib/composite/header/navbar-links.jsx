@@ -22,8 +22,8 @@ function NavbarLinkItem({ link, ...props }) {
       onMouseOver={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <a href={link.link} className={menuButtonClass} {...props}>
-        {link.label}
+      <a href={link.href} className={menuButtonClass} {...props}>
+        {link.text}
       </a>
       {link.children && open && (
         <Menu.Items
@@ -35,10 +35,10 @@ function NavbarLinkItem({ link, ...props }) {
             return (
               <Menu.Item key={child.id} as={Fragment}>
                 <a
-                  href={child.link}
+                  href={child.href}
                   className="block text-sm border-b border-nav-black bg-nav-dark-gray hover:bg-nav-translucent-gray text-nav-light-gray hover:text-white text-nowrap font-semibold px-[16px] py-[8px] bg-none"
                 >
-                  {child.label}
+                  {child.text}
                 </a>
               </Menu.Item>
             );
