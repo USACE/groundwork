@@ -41,7 +41,7 @@ function Logo() {
   );
 }
 
-function Header({ links, title, subtitle, search }) {
+function Header({ links, title, subtitle, navRight }) {
   const headerClass = classNames(
     "flex",
     "flex-col",
@@ -57,7 +57,7 @@ function Header({ links, title, subtitle, search }) {
       <Nav>
         <Logo />
         <NavbarLinks links={links} />
-        {search ? search : null}
+        {navRight ? navRight : null}
       </Nav>
     </header>
   );

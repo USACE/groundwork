@@ -4,7 +4,7 @@ import { useConnect } from "redux-bundler-hook";
 
 const version = import.meta.env.PKG_VERSION;
 
-const links = [{ id: "docs", label: "Documentation", link: "/docs" }];
+const links = [{ id: "docs", text: "Documentation", href: "/docs" }];
 
 function App() {
   const {
@@ -23,12 +23,12 @@ function App() {
   return (
     <div onClick={getNavHelper((url) => doUpdateHash(url))}>
       <SiteWrapper
-        headerLinks={links}
+        links={links}
         usaBanner={true}
         subtitle={`Groundwork React Components v${version}`}
         missionText="We strive to provide the best React components for the USACE."
         aboutText="This is the about text for the footer."
-        search={
+        navRight={
           <SearchDotGov
             affiliate="groundwork"
             accessKey="JdBfW2_sGkdcLr4BTzCoOQIRy3oRP7kmzJ2DwIs-SCM="
