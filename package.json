@@ -37,7 +37,8 @@
     "react-icons": "^5.0.1",
     "redux-bundler": "^28.1.0",
     "redux-bundler-hook": "^1.0.3",
-    "redux-bundler-react": "^1.2.0"
+    "redux-bundler-react": "^1.2.0",
+    "typescript": "^5.4.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",
