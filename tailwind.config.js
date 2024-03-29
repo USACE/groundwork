@@ -24,6 +24,7 @@ export default {
         "footer-black": "#1b1b1b",
         "footer-gray": "#333",
         "footer-light-gray": "#ccc",
+        "usace-black": "#18181b",
       },
     },
   },
