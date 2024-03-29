@@ -120,9 +120,9 @@ const colorsOutline = {
   secondary:
     "bg-transparent text-gray-700 border border-gray-700/90 hover:bg-gray-600/90 hover:text-white active:bg-gray-600/80",
   success:
-    "bg-transparent text-green-600 text-white border border-green-600/90 hover:bg-green-600/90 hover:text-white active:bg-green-600/80",
+    "bg-transparent text-green-600 border border-green-600/90 hover:bg-green-600/90 hover:text-white active:bg-green-600/80",
   warning:
-    "bg-transparent text-orange-600 text-white border border-orange-700/90 hover:bg-orange-600/90 hover:text-white active:bg-orange-600/80",
+    "bg-transparent text-orange-600 border border-orange-700/90 hover:bg-orange-600/90 hover:text-white active:bg-orange-600/80",
   danger:
     "bg-transparent text-red-600 border border-red-700/90 hover:bg-red-600/90 hover:text-white active:bg-red-600/80",
   info: "bg-transparent text-cyan-400 text-cyan-950 border border-cyan-500/90 hover:bg-cyan-400/80 hover:text-white active:bg-cyan-400/70",
