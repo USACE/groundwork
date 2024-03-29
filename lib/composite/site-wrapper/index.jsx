@@ -4,8 +4,8 @@ import Footer from "../footer";
 
 function SiteWrapper({
   children,
-  search = undefined,
-  headerLinks,
+  navRight = undefined,
+  links,
   usaBanner = true,
   msgBanner: MsgBanner = false,
   title = "US Army Corps of Engineers",
@@ -29,10 +29,10 @@ function SiteWrapper({
         {usaBanner && <USABanner />}
         {MsgBanner && <MsgBanner />}
         <Header
-          links={headerLinks}
+          links={links}
           title={title}
           subtitle={subtitle}
-          search={search}
+          navRight={navRight}
         />
         {children}
       </div>
