@@ -10,7 +10,7 @@ function NavbarLinkItem({ link, ...props }) {
   const [open, setOpen] = useState(false);
 
   const menuButtonClass = classNames(
-    "inline-block relative h-12 inline-flex w-auto justify-center items-center px-3 text-sm",
+    "inline-block relative h-12 inline-flex w-auto justify-center items-center px-3 text-sm text-nowrap",
     open ? "bg-nav-dark-gray text-white" : "text-nav-light-gray",
     link.children ? "after:content-['▼'] after:text-[10px] after:ml-2" : ""
   );
@@ -33,7 +33,7 @@ function NavbarLinkItem({ link, ...props }) {
         >
           {link.children.map((child) => {
             return (
-              <Menu.Item key={child.id} as={Fragment}>
+              <Menu.Item key={child.id || child.text} as={Fragment}>
                 <a
                   href={child.href}
                   className="block text-sm border-b border-nav-black bg-nav-dark-gray hover:bg-nav-translucent-gray text-nav-light-gray hover:text-white text-nowrap font-semibold px-[16px] py-[8px] bg-none"
@@ -49,31 +49,23 @@ function NavbarLinkItem({ link, ...props }) {
   );
 }
 
-// links look like this:
-const linksTemplate = [];
-
 function NavbarLinksList({ links, ...props }) {
   return (
     <ul
       role="list"
-      className="flex flex-row justify-start m-0 pl-0 w-full"
+      className="flex flex-row flex-wrap justify-start m-0 pl-0 w-full"
       {...props}
     >
       {links.map((link) => {
-        return <NavbarLinkItem key={link.id} link={link} />;
+        return <NavbarLinkItem key={link.id || link.text} link={link} />;
       })}
     </ul>
   );
 }
 
-const NavbarLinks = ({ links = linksTemplate }) => {
-  // const [openMobileMenu, setOpenMobileMenu] = useState(false);
-  // const mobileMenuClass = classnames({
-  //   "nav-links-list": true,
-  //   "nav-links-list-open": openMobileMenu,
-  // });
+const NavbarLinks = ({ links = [] }) => {
   return (
-    <div className="flex flex-row flex-wrap content-center justify-between w-full pr-3">
+    <div className="hidden md:flex flex-row content-center justify-between w-full pr-3">
       <NavbarLinksList links={links} />
     </div>
   );
