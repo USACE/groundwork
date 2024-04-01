@@ -15,7 +15,7 @@ function BreadcrumbItem({ className, href, text }) {
           aria-hidden="true"
           color="rgb(156 163 175)"
         />
-        <a href={href} className="ml-2  hover:underline">
+        <a href={href} className="ml-2 text-nowrap  hover:underline">
           {text}
         </a>
       </div>
@@ -24,21 +24,22 @@ function BreadcrumbItem({ className, href, text }) {
 }
 
 function Breadcrumbs({ className, children }) {
-  const cls = clsx("flex items-center justify-between py-4", className);
+  const cls = clsx(
+    "flex flex-nowrap items-center space-x-2 py-4 overflow-x-auto hide-scrollbar",
+    className
+  );
   return (
-    <nav className={cls}>
-      <ol className="flex items-center space-x-2">
-        <li>
-          <div>
-            <a href="/" className="text-gray-300 hover:text-gray-500">
-              <MdHome size={22} />
-              <span className="sr-only">Home</span>
-            </a>
-          </div>
-        </li>
-        {children}
-      </ol>
-    </nav>
+    <ol className={cls}>
+      <li>
+        <div>
+          <a href="/" className="text-gray-300 hover:text-gray-500">
+            <MdHome size={22} />
+            <span className="sr-only">Home</span>
+          </a>
+        </div>
+      </li>
+      {children}
+    </ol>
   );
 }
 

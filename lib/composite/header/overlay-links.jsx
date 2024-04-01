@@ -50,13 +50,15 @@ function OverlayLinks({ links = [], onClose }) {
     }
   };
   return (
-    <div className="absolute top-0 left-0 bottom-0 right-0 bg-nav-black bg-opacity-90 z-50">
+    <div className="fixed top-0 left-0 h-full right-0 bg-nav-black bg-opacity-90 z-50">
       <div className="flex justify-end">
         <Button style="plain" color="white" size="lg" onClick={handleClose}>
           <VscClose />
         </Button>
       </div>
-      <OverlayLinksList links={links} close={handleClose} />
+      <div className="relative  h-full overflow-y-auto hide-scrollbar">
+        <OverlayLinksList links={links} close={handleClose} />
+      </div>
     </div>
   );
 }
