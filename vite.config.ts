@@ -1,6 +1,5 @@
-import { defineConfig } from "vite";
+import { UserConfig, UserConfigExport, defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "tailwindcss";
 import pkg from "./package.json";
 
 // // https://vitejs.dev/config/
@@ -8,11 +7,11 @@ import pkg from "./package.json";
 //   plugins: [react()],
 // })
 
-export default defineConfig(({ mode }) => {
+export default ({ mode }: UserConfig): UserConfigExport => {
   if (mode === "lib") {
     console.log("Building library");
-    return {
-      plugins: [react(), tailwindcss()],
+    return defineConfig({
+      plugins: [react()],
       publicDir: false,
       build: {
         lib: {
@@ -30,14 +29,14 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-    };
+    });
   } else {
     console.log("Building preview app", mode);
     const base =
       mode === "production"
         ? "https://usace.github.io/groundwork/"
         : "http://localhost:5173/";
-    return {
+    return defineConfig({
       plugins: [react()],
       base: base,
       build: {
@@ -46,6 +45,6 @@ export default defineConfig(({ mode }) => {
       define: {
         "import.meta.env.PKG_VERSION": JSON.stringify(pkg.version),
       },
-    };
+    });
   }
-});
+};
