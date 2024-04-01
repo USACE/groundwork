@@ -38,3 +38,6 @@ export * from "./components/form/textarea";
 
 // data visualization
 export { Plot } from "./components/plots/plotly";
+
+// water management
+export { useTimeSeries } from "./components/water-management/useTimeSeries";
