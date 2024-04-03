@@ -65,6 +65,10 @@ const sidebarLinks = [
         title: "Delete/Confirm",
         href: "/docs/buttons/delete-confirm",
       },
+      {
+        title: "Login Button",
+        href: "/docs/buttons/login-button",
+      },
     ],
   },
   {

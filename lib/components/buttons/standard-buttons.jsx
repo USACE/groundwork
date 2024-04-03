@@ -1,6 +1,19 @@
 import { Button } from "../button";
 import { useState } from "react";
 
+function LoginButton({ onClick }) {
+  return (
+    <Button
+      color="white"
+      style="plain"
+      className="font-normal"
+      onClick={onClick}
+    >
+      Login
+    </Button>
+  );
+}
+
 function OkCancel({ onOk, onCancel }) {
   return (
     <div className="flex gap-2">
@@ -54,4 +67,4 @@ function DeleteConfirm({ onDelete, alignConfirm = "right" }) {
   );
 }
 
-export { OkCancel, DeleteConfirm };
+export { LoginButton, OkCancel, DeleteConfirm };
