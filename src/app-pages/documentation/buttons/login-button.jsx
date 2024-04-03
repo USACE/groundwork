@@ -21,23 +21,50 @@ const pageBreadcrumbs = [
     href: "/docs/buttons",
   },
   {
-    text: "Delete / Confirm",
-    href: "/docs/buttons/delete-confirm",
+    text: "Login Button",
+    href: "/docs/buttons/login-button",
   },
 ];
 
 const componentProps_LoginButton = [
   {
-    name: "onDelete",
+    name: "onClick",
     type: "function",
     default: "undefined",
-    desc: "The function to be called when the delete is confirmed.",
+    desc: "The function to be called when the user clicks the login button.",
+  },
+];
+
+const componentProps_ProfileDropdown = [
+  {
+    name: "email",
+    type: "string",
+    default: "undefined",
+    desc: "The email address of the logged-in user, if present we'll try to load a gravatar image for them.",
   },
   {
-    name: "alignConfirm",
+    name: "username",
     type: "string",
-    default: "right",
-    desc: "The alignment of the confirm and cancel buttons. Options are 'left' or 'right'. Default is 'right', which will place the Confirm button to the right of Cancel",
+    default: "undefined",
+    desc: "The username of the logged-in user, if present we'll use the first letter as a fallback avatar.",
+  },
+  {
+    name: "showLogout",
+    type: "boolean",
+    default: "false",
+    desc: "If true, show a logout link in the dropdown menu.",
+  },
+  {
+    name: "onLogout",
+    type: "function",
+    default: "undefined",
+    desc: "The function to be called when the logout button is clicked.",
+  },
+  {
+    name: "links",
+    type: "[Link]",
+    default: "[]",
+    desc: "An array of objects with 'id', 'text', and 'link' properties to be displayed in the dropdown.",
   },
 ];
 
@@ -63,7 +90,9 @@ function LoginButtonDocs() {
           <Text className="pt-3">
             It is designed to pair with the <Code>ProfileDropdown</Code>{" "}
             component so the docs for that are included here as well. You don't
-            have to use them together, but it works nicely if you do.
+            have to use them together, but it works nicely if you do. We don't
+            know what kind of authentication you will be using, so the login
+            button allows you to handle the login logic yourself.
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
@@ -158,6 +187,12 @@ export default Component;
           Component API - <Code className="p-2">{`<LoginButton />`}</Code>
         </div>
         <PropsTable propsList={componentProps_LoginButton} />
+
+        {/* Component props documentation */}
+        <div className="font-bold text-lg pt-6">
+          Component API - <Code className="p-2">{`<ProfileDropdown />`}</Code>
+        </div>
+        <PropsTable propsList={componentProps_ProfileDropdown} />
       </UsaceBox>
     </DocsPage>
   );
