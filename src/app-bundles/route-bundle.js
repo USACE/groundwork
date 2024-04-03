@@ -36,6 +36,8 @@ import DateTimeInputDocs from "../app-pages/documentation/forms/date-time-inputs
 import FileInputDocs from "../app-pages/documentation/forms/file-input";
 import FieldsetDocs from "../app-pages/documentation/forms/fieldset";
 import TextareaDocs from "../app-pages/documentation/forms/textarea";
+import Logout from "../app-pages/logout";
+import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
 
 export default createRouteBundle(
   {
@@ -54,6 +56,7 @@ export default createRouteBundle(
     "/docs/buttons/generic-buttons": GenericButtonsDocs,
     "/docs/buttons/ok-cancel": OkCancelDocs,
     "/docs/buttons/delete-confirm": DeleteConfirmDocs,
+    "/docs/buttons/login-button": LoginButtonDocs,
     "/docs/display": Display,
     "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
@@ -74,6 +77,7 @@ export default createRouteBundle(
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
+    "/logout": Logout,
     "*": NotFound,
   },
   {

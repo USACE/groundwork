@@ -10,6 +10,7 @@ export * from "./components/display/text";
 export * from "./components/display/headings";
 export * from "./components/table";
 export * from "./components/display/card";
+export * from "./components/profile-dropdown";
 
 // composite components
 export { Header } from "./composite/header";

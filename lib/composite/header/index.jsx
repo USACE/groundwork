@@ -54,7 +54,7 @@ function Header({ links, title, subtitle, navRight }) {
         <Nav>
           <Logo />
           <NavbarLinks links={links} />
-          <span className="w-full md:max-w-[300px] mr-2">
+          <span className="flex flex-row-reverse justify-end items-center w-full md:max-w-[300px] mr-2">
             {navRight ? navRight : null}
           </span>
           <Button
