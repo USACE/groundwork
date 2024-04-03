@@ -38,15 +38,6 @@ function App() {
               affiliate="groundwork"
               accessKey="JdBfW2_sGkdcLr4BTzCoOQIRy3oRP7kmzJ2DwIs-SCM="
             />
-            <LoginButton />
-            <ProfileDropdown
-              username="willbreitkreutz"
-              email="will.l.breitkreutz@gmail.com"
-              links={[
-                { id: "profile", text: "Profile", href: "/profile" },
-                { id: "logout", text: "Logout", href: "/logout" },
-              ]}
-            />
           </>
         }
       >
