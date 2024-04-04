@@ -1,4 +1,4 @@
-const CDA_URL: string = "https://localhost:7000/lrl-data";
+const CDA_URL: string = "https://cwms-data.usace.army.mil/cwms-data";
 
 /**
  * Create a CDA request URL string by appending provided endpoint and parameters
