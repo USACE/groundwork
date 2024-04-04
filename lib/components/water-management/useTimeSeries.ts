@@ -68,11 +68,17 @@ const getTimeSeries = async (
   return response.json();
 };
 
-const useTimeSeries = (
-  params: GetTimeSeriesParams,
-  cdaUrl?: string,
-  queryOptions?: Omit<UseQueryOptions<TimeSeries>, "queryKey" | "queryFn">
-) => {
+interface useTimeSeriesParams {
+  params: GetTimeSeriesParams;
+  cdaUrl?: string;
+  queryOptions?: Omit<UseQueryOptions<TimeSeries>, "queryKey" | "queryFn">;
+}
+
+const useTimeSeries = ({
+  params,
+  cdaUrl,
+  queryOptions,
+}: useTimeSeriesParams) => {
   const queryKey = ["cda", "timeseries", params.name];
   if (params.begin) queryKey.push(`begin: ${params.begin}`);
   if (params.end) queryKey.push(`end: ${params.end}`);

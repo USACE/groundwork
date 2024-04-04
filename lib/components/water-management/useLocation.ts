@@ -47,12 +47,19 @@ const getLocation = async (
   return response.json();
 };
 
-const useLocation = (
-  location: string,
-  params: GetLocationParams,
-  cdaUrl?: string,
-  queryOptions?: Omit<UseQueryOptions<Location>, "queryKey" | "queryFn">
-) =>
+interface useLocationParams {
+  location: string;
+  params: GetLocationParams;
+  cdaUrl?: string;
+  queryOptions?: Omit<UseQueryOptions<Location>, "queryKey" | "queryFn">;
+}
+
+const useLocation = ({
+  location,
+  params,
+  cdaUrl,
+  queryOptions,
+}: useLocationParams) =>
   useQuery({
     queryKey: ["cda", "location", location],
     queryFn: async () => {

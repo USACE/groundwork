@@ -46,11 +46,13 @@ const getCatalogTS = async (
   return response.json();
 };
 
-const useCatalogTS = (
-  params: GetCdaCatalogParams,
-  cdaUrl?: string,
-  queryOptions?: Omit<UseQueryOptions<CatalogTS>, "queryKey" | "queryFn">
-) =>
+interface useCatalogTSParams {
+  params: GetCdaCatalogParams;
+  cdaUrl?: string;
+  queryOptions?: Omit<UseQueryOptions<CatalogTS>, "queryKey" | "queryFn">;
+}
+
+const useCatalogTS = ({ params, cdaUrl, queryOptions }: useCatalogTSParams) =>
   useQuery({
     queryKey: ["cda", "catalog", params.like],
     queryFn: async () => {
