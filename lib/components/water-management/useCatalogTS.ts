@@ -30,10 +30,11 @@ type GetCdaCatalogParams = {
 };
 
 const getCatalogTS = async (
-  params: GetCdaCatalogParams
+  params: GetCdaCatalogParams,
+  cdaUrl?: string
 ): Promise<CatalogTS> => {
   const paramString = new URLSearchParams(params).toString();
-  const url = buildRequest("/catalog/TIMESERIES", paramString);
+  const url = buildRequest("/catalog/TIMESERIES", paramString, cdaUrl);
   const response = await fetch(url, {
     headers: {
       accept: "application/json;version=2",
@@ -47,12 +48,13 @@ const getCatalogTS = async (
 
 const useCatalogTS = (
   params: GetCdaCatalogParams,
+  cdaUrl?: string,
   queryOptions?: Omit<UseQueryOptions<CatalogTS>, "queryKey" | "queryFn">
 ) =>
   useQuery({
     queryKey: ["cda", "catalog", params.like],
     queryFn: async () => {
-      return getCatalogTS(params);
+      return getCatalogTS(params, cdaUrl);
     },
     ...queryOptions,
   });

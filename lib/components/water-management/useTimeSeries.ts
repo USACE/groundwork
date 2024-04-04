@@ -52,10 +52,11 @@ type GetTimeSeriesParams = {
 };
 
 const getTimeSeries = async (
-  params: GetTimeSeriesParams
+  params: GetTimeSeriesParams,
+  cdaUrl?: string
 ): Promise<TimeSeries> => {
   const paramString = new URLSearchParams(params).toString();
-  const url = buildRequest("/timeseries", paramString);
+  const url = buildRequest("/timeseries", paramString, cdaUrl);
   const response = await fetch(url, {
     headers: {
       accept: "application/json;version=2",
@@ -69,6 +70,7 @@ const getTimeSeries = async (
 
 const useTimeSeries = (
   params: GetTimeSeriesParams,
+  cdaUrl?: string,
   queryOptions?: Omit<UseQueryOptions<TimeSeries>, "queryKey" | "queryFn">
 ) => {
   const queryKey = ["cda", "timeseries", params.name];
@@ -77,7 +79,7 @@ const useTimeSeries = (
   return useQuery({
     queryKey: queryKey,
     queryFn: async () => {
-      return getTimeSeries(params);
+      return getTimeSeries(params, cdaUrl);
     },
     ...queryOptions,
   });

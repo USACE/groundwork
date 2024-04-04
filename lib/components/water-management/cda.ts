@@ -7,7 +7,11 @@ const CDA_URL: string = "https://localhost:7000/lrl-data";
  * @param paramStr Request parameters in the form of "parameter=value&parameter=value".
  * @returns A full CDA request URL string.
  */
-export const buildRequest = (endpoint: string, paramStr: string) => {
-  let cdaRequest = CDA_URL + endpoint + "?" + paramStr;
+export const buildRequest = (
+  endpoint: string,
+  paramStr: string,
+  cdaUrl?: string
+) => {
+  let cdaRequest = cdaUrl ?? CDA_URL + endpoint + "?" + paramStr;
   return cdaRequest;
 };
