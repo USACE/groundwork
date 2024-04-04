@@ -41,3 +41,4 @@ export { Plot } from "./components/plots/plotly";
 
 // water management
 export { useTimeSeries } from "./components/water-management/useTimeSeries";
+export { useCatalogTS } from "./components/water-management/useCatalogTS";
