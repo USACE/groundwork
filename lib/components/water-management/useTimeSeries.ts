@@ -83,14 +83,18 @@ const getTimeSeries = async (
 const useTimeSeries = (
   params: GetTimeSeriesParams,
   queryOptions?: Omit<UseQueryOptions<TimeSeries>, "queryKey" | "queryFn">
-) =>
-  useQuery({
-    queryKey: ["cda", "timeseries", params.name],
+) => {
+  const queryKey = ["cda", "timeseries", params.name];
+  if (params.begin) queryKey.push(`begin: ${params.begin}`);
+  if (params.end) queryKey.push(`end: ${params.end}`);
+  return useQuery({
+    queryKey: queryKey,
     queryFn: async () => {
       return getTimeSeries(params);
     },
     ...queryOptions,
   });
+};
 
 export { useTimeSeries };
 export default useTimeSeries;
