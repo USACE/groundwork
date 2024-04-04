@@ -54,7 +54,7 @@ const USABanner = () => {
             style={{
               paddingTop: "24px",
               paddingBottom: "18px",
-              maxHeight: "154px",
+              maxHeight: "328px",
             }}
           >
             <div className="header_banner_panel_item">
