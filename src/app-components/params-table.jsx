@@ -9,7 +9,7 @@ import {
   Code,
 } from "../../lib";
 
-function ParamsTable({ paramsList }) {
+function ParamsTable({ paramsList, showReq = true }) {
   if (!paramsList || !paramsList.length)
     return (
       <Text className="pt-3">This hook does not accept any parameters.</Text>
@@ -20,7 +20,7 @@ function ParamsTable({ paramsList }) {
         <TableRow>
           <TableHeader>Parameter</TableHeader>
           <TableHeader>Type</TableHeader>
-          <TableHeader>Required?</TableHeader>
+          {showReq && <TableHeader>Required?</TableHeader>}
           <TableHeader>Description</TableHeader>
         </TableRow>
       </TableHead>
@@ -33,9 +33,11 @@ function ParamsTable({ paramsList }) {
             <TableCell>
               <Code>{param.type}</Code>
             </TableCell>
-            <TableCell>
-              <Code>{param.required ? "required" : "optional"}</Code>
-            </TableCell>
+            {showReq && (
+              <TableCell>
+                <Code>{param.required ? "required" : "optional"}</Code>
+              </TableCell>
+            )}
             <TableCell className="text-wrap">{param.desc}</TableCell>
           </TableRow>
         ))}
