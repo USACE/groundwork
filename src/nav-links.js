@@ -172,6 +172,18 @@ export default [
     href: "/docs/water-management",
   },
   {
+    id: "plots",
+    text: "Plots",
+    href: "/docs/plots",
+    children: [
+      {
+        id: "plotly-wrapper",
+        text: "Plotly.js Wrapper",
+        href: "/docs/plots/plotly-wrapper",
+      },
+    ],
+  },
+  {
     id: "types",
     text: "Types",
     href: "/docs/types",

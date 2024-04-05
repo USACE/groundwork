@@ -38,6 +38,8 @@ import FieldsetDocs from "../app-pages/documentation/forms/fieldset";
 import TextareaDocs from "../app-pages/documentation/forms/textarea";
 import Logout from "../app-pages/logout";
 import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
+import Plots from "../app-pages/documentation/plots";
+import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
 
 export default createRouteBundle(
   {
@@ -74,6 +76,8 @@ export default createRouteBundle(
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
     "/docs/water-management": WaterManagement,
+    "/docs/plots": Plots,
+    "/docs/plots/plotly-wrapper": PlotlyWrapperDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
