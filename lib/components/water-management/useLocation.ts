@@ -48,25 +48,25 @@ const getLocation = async (
 };
 
 interface useLocationParams {
-  location: string;
-  cdaParams: GetLocationParams;
+  cdaParams: { location: string } & GetLocationParams;
   cdaUrl?: string;
   queryOptions?: Omit<UseQueryOptions<Location>, "queryKey" | "queryFn">;
 }
 
 const useLocation = ({
-  location,
   cdaParams,
   cdaUrl,
   queryOptions,
-}: useLocationParams) =>
-  useQuery({
+}: useLocationParams) => {
+  const { location, ...restParams } = cdaParams;
+  return useQuery({
     queryKey: ["cda", "location", location],
     queryFn: async () => {
-      return getLocation(location, cdaParams, cdaUrl);
+      return getLocation(location, restParams, cdaUrl);
     },
     ...queryOptions,
   });
+};
 
 export { useLocation };
 export default useLocation;
