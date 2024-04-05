@@ -19,6 +19,7 @@ import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
 import WaterManagement from "../app-pages/documentation/water-management";
 import DataHooks from "../app-pages/documentation/water-management/data-hooks";
+import UseCdaLocation from "../app-pages/documentation/water-management/use-cda-location";
 import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cda-time-series";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
@@ -79,6 +80,7 @@ export default createRouteBundle(
     "/docs/forms/file-input": FileInputDocs,
     "/docs/water-management": WaterManagement,
     "/docs/water-management/data-hooks": DataHooks,
+    "/docs/water-management/use-cda-location": UseCdaLocation,
     "/docs/water-management/use-cda-time-series": UseCdaTimeSeries,
     "/docs/plots": Plots,
     "/docs/plots/plotly-wrapper": PlotlyWrapperDocs,

@@ -177,6 +177,11 @@ export default [
         href: "/docs/water-management/data-hooks",
       },
       {
+        id: "use-cda-location",
+        text: "useCdaLocation",
+        href: "/docs/water-management/use-cda-location",
+      },
+      {
         id: "use-cda-time-series",
         text: "useCdaTimeSeries",
         href: "/docs/water-management/use-cda-time-series",
