@@ -15,7 +15,7 @@ const pageBreadcrumbs = [
 function Plots() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
-      <UsaceBox title="Plots (sort of)">
+      <UsaceBox title="Plots">
         <Text className="pb-6">
           We use Plotly.js to create plots in Groundwork. This is a simple
           wrapper around Plotly.js to make it easier to use in a React app. We
