@@ -5,7 +5,7 @@ import {
   Text,
   Code,
   Card,
-  useTimeSeries,
+  useCdaTimeSeries,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import ParamsTable from "../../../app-components/params-table";
@@ -56,7 +56,7 @@ const hookParams = [
 ];
 
 const OutflowCard = () => {
-  const { data, isPending, isError } = useTimeSeries({
+  const { data, isPending, isError } = useCdaTimeSeries({
     cdaParams: {
       name: "Buckhorn.Flow-Outflow.Ave.1Hour.1Hour.lrldlb-comp",
       office: "LRL",
@@ -101,21 +101,21 @@ const pageBreadcrumbs = [
     href: "/docs/water-management",
   },
   {
-    text: "useTimeSeries",
-    href: "/docs/water-management/use-time-series",
+    text: "useCdaTimeSeries",
+    href: "/docs/water-management/use-cda-time-series",
   },
 ];
 
-function UseTimeSeries() {
+function UseCdaTimeSeries() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
-      <UsaceBox title="useTimeSeries">
+      <UsaceBox title="useCdaTimeSeries">
         {/* Description of the component and what problem it solves */}
         <div className="pb-6">
           <Text>
-            The useTimeSeries hook can be used to retrieve timeseries data using
-            cwms-data-api (CDA). It requires only a timeseries ID and an office
-            ID, but can be further customized using additional parameters
+            The useCdaTimeSeries hook can be used to retrieve timeseries data
+            using cwms-data-api (CDA). It requires only a timeseries ID and an
+            office ID, but can be further customized using additional parameters
             provided through CDA if desired.
           </Text>
         </div>
@@ -126,10 +126,10 @@ function UseTimeSeries() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Card, H3, useTimeSeries } from "@usace/groundwork";
+          code={`import { Card, H3, useCdaTimeSeries } from "@usace/groundwork";
 
 const OutflowCard = () => {
-  const { data, isPending, isError } = useTimeSeries({
+  const { data, isPending, isError } = useCdaTimeSeries({
     cdaParams: {
       name: "Buckhorn.Flow-Outflow.Ave.1Hour.1Hour.lrldlb-comp",
       office: "LRL",
@@ -167,7 +167,7 @@ const OutflowCard = () => {
         />
         <div className="font-bold text-lg pt-6">
           Hook Parameters -{" "}
-          <Code className="p-2">{`useTimeSeries({...})`}</Code>
+          <Code className="p-2">{`useCdaTimeSeries({...})`}</Code>
         </div>
         <ParamsTable paramsList={hookParams} />
       </UsaceBox>
@@ -175,5 +175,5 @@ const OutflowCard = () => {
   );
 }
 
-export { UseTimeSeries };
-export default UseTimeSeries;
+export { UseCdaTimeSeries };
+export default UseCdaTimeSeries;

@@ -177,9 +177,9 @@ export default [
         href: "/docs/water-management/data-hooks",
       },
       {
-        id: "use-time-series",
-        text: "useTimeSeries",
-        href: "/docs/water-management/use-time-series",
+        id: "use-cda-time-series",
+        text: "useCdaTimeSeries",
+        href: "/docs/water-management/use-cda-time-series",
       },
     ],
   },

@@ -40,6 +40,6 @@ export * from "./components/form/textarea";
 export { Plot } from "./components/plots/plotly";
 
 // water management
-export { useTimeSeries } from "./components/water-management/useTimeSeries";
-export { useCatalogTS } from "./components/water-management/useCatalogTS";
-export { useLocation } from "./components/water-management/useLocation";
+export { useCdaTimeSeries } from "./components/water-management/useCdaTimeSeries";
+export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
+export { useCdaLocation } from "./components/water-management/useCdaLocation";

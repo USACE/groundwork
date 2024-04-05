@@ -5,7 +5,7 @@ import {
   Text,
   Code,
   Card,
-  useTimeSeries,
+  useCdaTimeSeries,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import ParamsTable from "../../../app-components/params-table";
