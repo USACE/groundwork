@@ -35,3 +35,6 @@ export * from "./components/display/accordion";
 export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
+
+// data visualization
+export { Plot } from "./components/plots/plotly";
