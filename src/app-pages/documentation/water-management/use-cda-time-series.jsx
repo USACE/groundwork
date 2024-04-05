@@ -8,52 +8,8 @@ import {
   useCdaTimeSeries,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
-import ParamsTable from "../../../app-components/params-table";
+import CdaParamsTable from "../../../app-components/water-management/cda-param-table";
 import DocsPage from "../_docs-page";
-
-const hookParams = [
-  {
-    name: "cdaParams",
-    type: "object",
-    required: true,
-    desc: (
-      <>
-        Parameters provided to CDA for a TimeSeries GET request. See the{" "}
-        <a
-          href="https://cwms-data.usace.army.mil/cwms-data/swagger-ui.html"
-          className="underline"
-        >
-          CDA Swagger Docs
-        </a>
-        .
-      </>
-    ),
-  },
-  {
-    name: "cdaUrl",
-    type: "string",
-    required: false,
-    desc: "An alternative URL for the CDA instance if not using the default (e.g. for testing in a development environment).",
-  },
-  {
-    name: "queryOptions",
-    type: "object",
-    required: false,
-    desc: (
-      <>
-        Additional options to configure the react-query useQuery request. See
-        the{" "}
-        <a
-          href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
-          className="underline"
-        >
-          React-Query Docs
-        </a>
-        .
-      </>
-    ),
-  },
-];
 
 const OutflowCard = () => {
   const { data, isPending, isError } = useCdaTimeSeries({
@@ -169,7 +125,7 @@ const OutflowCard = () => {
           Hook Parameters -{" "}
           <Code className="p-2">{`useCdaTimeSeries({...})`}</Code>
         </div>
-        <ParamsTable paramsList={hookParams} />
+        <CdaParamsTable requestObject="TimeSeries" requestType="GET" />
       </UsaceBox>
     </DocsPage>
   );
