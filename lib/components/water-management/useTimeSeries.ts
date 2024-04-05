@@ -57,10 +57,10 @@ type GetTimeSeriesParams = {
 };
 
 const getTimeSeries = async (
-  params: GetTimeSeriesParams,
+  cdaParams: GetTimeSeriesParams,
   cdaUrl?: string
 ): Promise<TimeSeries> => {
-  const paramString = new URLSearchParams(params).toString();
+  const paramString = new URLSearchParams(cdaParams).toString();
   const url = buildRequest("/timeseries", paramString, cdaUrl);
   const response = await fetch(url, {
     headers: {
@@ -74,33 +74,33 @@ const getTimeSeries = async (
 };
 
 interface useTimeSeriesParams {
-  params: GetTimeSeriesParams;
+  cdaParams: GetTimeSeriesParams;
   cdaUrl?: string;
   queryOptions?: Omit<UseQueryOptions<TimeSeries>, "queryKey" | "queryFn">;
 }
 
 const useTimeSeries = ({
-  params,
+  cdaParams,
   cdaUrl,
   queryOptions,
 }: useTimeSeriesParams) => {
-  const queryKey = ["cda", "timeseries", params.name];
+  const queryKey = ["cda", "timeseries", cdaParams.name];
   // Round begin/end datetimes to nearest five-minute interval to prevent
   // constant refetching.  There's probably a better way to do this?
-  if (params.begin) {
-    const beginDate = new Date(Date.parse(params.begin));
+  if (cdaParams.begin) {
+    const beginDate = new Date(Date.parse(cdaParams.begin));
     const roundedBegin = roundToFiveMinutes(beginDate);
     queryKey.push(`begin: ${roundedBegin.toISOString()}`);
   }
-  if (params.end) {
-    const endDate = new Date(Date.parse(params.end));
+  if (cdaParams.end) {
+    const endDate = new Date(Date.parse(cdaParams.end));
     const roundedBegin = roundToFiveMinutes(endDate);
     queryKey.push(`begin: ${roundedBegin.toISOString()}`);
   }
   return useQuery({
     queryKey: queryKey,
     queryFn: async () => {
-      return getTimeSeries(params, cdaUrl);
+      return getTimeSeries(cdaParams, cdaUrl);
     },
     ...queryOptions,
   });

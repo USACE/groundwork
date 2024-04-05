@@ -31,10 +31,10 @@ type GetLocationParams = {
 
 const getLocation = async (
   location: string,
-  params: GetLocationParams,
+  cdaParams: GetLocationParams,
   cdaUrl?: string
 ): Promise<Location> => {
-  const paramString = new URLSearchParams(params).toString();
+  const paramString = new URLSearchParams(cdaParams).toString();
   const url = buildRequest(`/locations/${location}`, paramString, cdaUrl);
   const response = await fetch(url, {
     headers: {
@@ -49,21 +49,21 @@ const getLocation = async (
 
 interface useLocationParams {
   location: string;
-  params: GetLocationParams;
+  cdaParams: GetLocationParams;
   cdaUrl?: string;
   queryOptions?: Omit<UseQueryOptions<Location>, "queryKey" | "queryFn">;
 }
 
 const useLocation = ({
   location,
-  params,
+  cdaParams,
   cdaUrl,
   queryOptions,
 }: useLocationParams) =>
   useQuery({
     queryKey: ["cda", "location", location],
     queryFn: async () => {
-      return getLocation(location, params, cdaUrl);
+      return getLocation(location, cdaParams, cdaUrl);
     },
     ...queryOptions,
   });
