@@ -18,12 +18,16 @@ function Plots() {
       <UsaceBox title="Plots (sort of)">
         <Text className="pb-6">
           We use Plotly.js to create plots in Groundwork. This is a simple
-          wrapper around Plotly.js to make it easier to use.
+          wrapper around Plotly.js to make it easier to use in a React app. We
+          might add more libraries or customized components using Plotly
+          specialized for certain applications in the future.
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="hover:underline" href="/docs/plots/basic">
-            <li>Basic Plot</li>
+          <a className="hover:underline" href="/docs/plots/plotly-wrapper">
+            <li>
+              Plotly Wrapper - Simple wrapper around the Plotly.js library
+            </li>
           </a>
         </ul>
       </UsaceBox>
