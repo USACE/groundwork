@@ -172,6 +172,11 @@ export default [
     href: "/docs/water-management",
     children: [
       {
+        id: "data-hooks",
+        text: "Data Hooks",
+        href: "/docs/water-management/data-hooks",
+      },
+      {
         id: "use-time-series",
         text: "useTimeSeries",
         href: "/docs/water-management/use-time-series",
