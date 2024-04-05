@@ -18,6 +18,7 @@ import TextDocs from "../app-pages/documentation/display/text";
 import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
 import WaterManagement from "../app-pages/documentation/water-management";
+import UseTimeSeries from "../app-pages/documentation/water-management/use-time-series";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
@@ -76,6 +77,7 @@ export default createRouteBundle(
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
     "/docs/water-management": WaterManagement,
+    "/docs/water-management/use-time-series": UseTimeSeries,
     "/docs/plots": Plots,
     "/docs/plots/plotly-wrapper": PlotlyWrapperDocs,
     "/docs/types": Types,

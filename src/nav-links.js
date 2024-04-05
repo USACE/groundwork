@@ -170,6 +170,13 @@ export default [
     id: "water-management",
     text: "Water Management",
     href: "/docs/water-management",
+    children: [
+      {
+        id: "use-time-series",
+        text: "useTimeSeries",
+        href: "/docs/water-management/use-time-series",
+      },
+    ],
   },
   {
     id: "plots",
