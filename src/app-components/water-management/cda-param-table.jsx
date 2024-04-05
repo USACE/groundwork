@@ -32,13 +32,13 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
       required: false,
       desc: (
         <>
-          Additional options to configure the react-query useQuery request. See
-          the{" "}
+          Additional options to configure the TanStack Query useQuery request.
+          See the{" "}
           <a
             href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
             className="underline"
           >
-            React-Query Docs
+            TanStack Query Docs
           </a>
           .
         </>
