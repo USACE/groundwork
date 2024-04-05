@@ -8,6 +8,7 @@ import {
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import CdaParamsTable from "../../../app-components/water-management/cda-param-table";
+import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 import DocsPage from "../_docs-page";
 
 const CatalogCard = () => {
@@ -60,6 +61,7 @@ function UseCdaCatalogTS() {
             and a query parameter such as "like", "timeseries-category-like", or
             "timeseries-group-like".
           </Text>
+          <QueryClientWarning />
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="pt-6 pb-3">Basic Usage</H3>
