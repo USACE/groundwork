@@ -53,7 +53,7 @@ const pageBreadcrumbs = [
 function TabDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
-      <UsaceBox title="Link">
+      <UsaceBox title="Tab">
         <Text className="pb-6">
           The Tab type is used to define the objects to be used in the tabs
           array of the Tabs component. It defines what is displayed in the tab
