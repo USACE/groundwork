@@ -173,7 +173,7 @@ function App() {
   } = useConnect("selectRoute");
 
   return (
-      <SiteWrapper headerLinks={links}>
+      <SiteWrapper links={links}>
         <Route />
       </SiteWrapper>
   );
