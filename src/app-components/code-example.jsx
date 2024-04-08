@@ -7,7 +7,7 @@ function CodeExample({ code }) {
     <Code className="block relative p-4 px-2 whitespace-pre-wrap">
       {code}
       <div className="absolute top-2 right-2">
-        <CopyButton />
+        <CopyButton text={code} />
       </div>
     </Code>
   );
