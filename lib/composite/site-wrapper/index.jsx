@@ -5,6 +5,7 @@ import Footer from "../footer";
 function SiteWrapper({
   children,
   navRight = undefined,
+  showFooter = true,
   links,
   usaBanner = true,
   msgBanner: MsgBanner = false,
@@ -36,20 +37,22 @@ function SiteWrapper({
         />
         {children}
       </div>
-      <Footer
-        missionText={missionText}
-        aboutText={aboutText}
-        facebookUrl={facebookUrl}
-        twitterUrl={twitterUrl}
-        youtubeUrl={youtubeUrl}
-        flickrUrl={flickrUrl}
-        usaceLinks={usaceLinks}
-        externalLinks={externalLinks}
-        armyLogo={armyLogo}
-        usaceLogo={usaceLogo}
-        rsgisLogo={rsgisLogo}
-        cwbiLogo={cwbiLogo}
-      />
+      {showFooter && (
+        <Footer
+          missionText={missionText}
+          aboutText={aboutText}
+          facebookUrl={facebookUrl}
+          twitterUrl={twitterUrl}
+          youtubeUrl={youtubeUrl}
+          flickrUrl={flickrUrl}
+          usaceLinks={usaceLinks}
+          externalLinks={externalLinks}
+          armyLogo={armyLogo}
+          usaceLogo={usaceLogo}
+          rsgisLogo={rsgisLogo}
+          cwbiLogo={cwbiLogo}
+        />
+      )}
     </div>
   );
 }
