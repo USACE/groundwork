@@ -96,7 +96,7 @@ function SearchDocs() {
           Down the line, there may be more search options, but our initial more
           complex search option allows you to wire up to Search.gov for custom
           results, assuming they've indexed your site. The configuration of your
-          Search.gov profile is out of scope fo this documentation but take a
+          Search.gov profile is out of scope for this documentation but take a
           look at their{" "}
           <a
             className="gw-underline"
