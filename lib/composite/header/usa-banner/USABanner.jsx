@@ -16,8 +16,8 @@ const USABanner = () => {
       className="header_banner_container"
     >
       <span className="header_banner_inner">
-        <div className="header_banner_flag flex items-center justify-start">
-          <img src={flag} className="mr-2" />
+        <div className="header_banner_flag gw-flex gw-items-center gw-justify-start">
+          <img src={flag} className="gw-mr-2" />
           An official website of the United States government
           <div className="header_banner_accordion" tabIndex={0}>
             <u
@@ -58,7 +58,10 @@ const USABanner = () => {
             }}
           >
             <div className="header_banner_panel_item">
-              <img src={iconDotGov} className="h-[50px] w-[50px] mr-4" />
+              <img
+                src={iconDotGov}
+                className="gw-h-[50px] gw-w-[50px] gw-mr-4"
+              />
               <div
                 id="dnn_ctl03_bannerContentLeft"
                 className="header_banner_content"
@@ -71,7 +74,10 @@ const USABanner = () => {
               </div>
             </div>
             <div className="header_banner_panel_item https">
-              <img src={iconHttps} className="h-[50px] w-[50px] mr-4" />
+              <img
+                src={iconHttps}
+                className="gw-h-[50px] gw-w-[50px] gw-mr-4"
+              />
               <div
                 id="dnn_ctl03_bannerContentRight"
                 className="header_banner_content"

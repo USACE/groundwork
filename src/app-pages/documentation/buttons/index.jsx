@@ -17,7 +17,7 @@ function Buttons() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Buttons">
         <div>
-          <Text className="pb-6">
+          <Text className="gw-pb-6">
             Buttons components are used to help users find their way around the
             site. They include breadcrumbs and other components that help users
             understand where they are in the site and how to get around.

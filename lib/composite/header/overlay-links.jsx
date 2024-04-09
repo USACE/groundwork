@@ -7,23 +7,23 @@ function OverlayLink({ link, close }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="flex justify-between items-center text-white text-xl font-semibold px-4 py-2">
+      <div className="gw-flex gw-justify-between gw-items-center gw-text-white gw-text-xl gw-font-semibold gw-px-4 gw-py-2">
         <a href={link.href} onClick={close}>
           {link.text}
         </a>
         <span
-          className="grow"
+          className="gw-grow"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
-          <span className="flex justify-end">
+          <span className="gw-flex gw-justify-end">
             {link.children && (isOpen ? <FaCaretUp /> : <FaCaretDown />)}
           </span>
         </span>
       </div>
       {link.children && isOpen ? (
-        <div className="pl-5">
+        <div className="gw-pl-5">
           <OverlayLinksList links={link.children} close={close} />
         </div>
       ) : null}
@@ -33,7 +33,7 @@ function OverlayLink({ link, close }) {
 
 function OverlayLinksList({ links, close }) {
   return (
-    <ul className="flex flex-col">
+    <ul className="gw-flex gw-flex-col">
       {links.map((link) => {
         return (
           <OverlayLink key={link.id || link.text} link={link} close={close} />
@@ -50,13 +50,13 @@ function OverlayLinks({ links = [], onClose }) {
     }
   };
   return (
-    <div className="fixed top-0 left-0 h-full right-0 bg-nav-black bg-opacity-90 z-50">
-      <div className="flex justify-end">
+    <div className="gw-fixed gw-top-0 gw-left-0 gw-h-full gw-right-0 gw-bg-nav-black gw-bg-opacity-90 gw-z-50">
+      <div className="gw-flex gw-justify-end">
         <Button style="plain" color="white" size="lg" onClick={handleClose}>
           <VscClose />
         </Button>
       </div>
-      <div className="relative  h-full overflow-y-auto hide-scrollbar">
+      <div className="gw-relative  gw-h-full gw-overflow-y-auto gw-hide-scrollbar">
         <OverlayLinksList links={links} close={handleClose} />
       </div>
     </div>

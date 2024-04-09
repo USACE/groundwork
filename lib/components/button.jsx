@@ -4,9 +4,9 @@ import React from "react";
 import { Link } from "./link";
 
 const base = [
-  "cursor-pointer relative isolate inline-flex items-center justify-center gap-x-2 font-semibold",
+  "gw-cursor-pointer gw-relative gw-isolate gw-inline-flex gw-items-center gw-justify-center gw-gap-x-2 gw-font-semibold",
   // Disabled
-  "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+  "data-[disabled]:gw-cursor-not-allowed data-[disabled]:gw-opacity-50",
 ];
 
 // sizes can be one of the following:
@@ -16,11 +16,11 @@ const base = [
 // - lg
 // - xl
 const sizes = {
-  xs: "px-2 py-1 text-xs",
-  sm: "px-3 py-1.5 text-sm",
-  md: "px-4 py-2 text-sm",
-  lg: "px-5 py-3 text-base",
-  xl: "px-6 py-4 text-lg",
+  xs: "gw-px-2 gw-py-1 gw-text-xs",
+  sm: "gw-px-3 gw-py-1.5 gw-text-sm",
+  md: "gw-px-4 gw-py-2 gw-text-sm",
+  lg: "gw-px-5 gw-py-3 gw-text-base",
+  xl: "gw-px-6 gw-py-4 gw-text-lg",
 };
 
 // radius can be one of the following:
@@ -30,11 +30,11 @@ const sizes = {
 // - lg
 // - xl
 const radii = {
-  none: "rounded-none",
-  sm: "rounded-sm",
-  md: "rounded-md",
-  lg: "rounded-lg",
-  xl: "rounded-xl",
+  none: "gw-rounded-none",
+  sm: "gw-rounded-sm",
+  md: "gw-rounded-md",
+  lg: "gw-rounded-lg",
+  xl: "gw-rounded-xl",
 };
 
 // colors can be one of the following:
@@ -67,124 +67,124 @@ const radii = {
 // - rose
 const colorsFilled = {
   light:
-    "bg-white text-usace-black border border-gray/60 hover:bg-gray-100/80 active:bg-gray-200/70",
-  dark: "bg-gray-900 text-white border border-gray-900/90 hover:bg-gray-900/90 active:bg-gray-900/80",
+    "gw-bg-white gw-text-usace-black gw-border gw-border-gray/60 hover:gw-bg-gray-100/80 active:gw-bg-gray-200/70",
+  dark: "gw-bg-gray-900 gw-text-white gw-border gw-border-gray-900/90 hover:gw-bg-gray-900/90 active:gw-bg-gray-900/80",
   primary:
-    "bg-blue-600 text-white border border-blue-700/90 hover:bg-blue-600/90 active:bg-blue-600/80",
+    "gw-bg-blue-600 gw-text-white gw-border gw-border-blue-700/90 hover:gw-bg-blue-600/90 active:gw-bg-blue-600/80",
   secondary:
-    "bg-gray-600 text-white border border-gray-700/90 hover:bg-gray-600/90 active:bg-gray-600/80",
+    "gw-bg-gray-600 gw-text-white gw-border gw-border-gray-700/90 hover:gw-bg-gray-600/90 active:gw-bg-gray-600/80",
   success:
-    "bg-green-600 text-white border border-green-600/90 hover:bg-green-600/90 active:bg-green-600/80",
+    "gw-bg-green-600 gw-text-white gw-border gw-border-green-600/90 hover:gw-bg-green-600/90 active:gw-bg-green-600/80",
   warning:
-    "bg-orange-600 text-white border border-orange-700/90 hover:bg-orange-600/90 active:bg-orange-600/80",
+    "gw-bg-orange-600 gw-text-white gw-border gw-border-orange-700/90 hover:gw-bg-orange-600/90 active:gw-bg-orange-600/80",
   danger:
-    "bg-red-600 text-white border border-red-700/90 hover:bg-red-600/90 active:bg-red-600/80",
-  info: "bg-cyan-400 text-cyan-950 border border-cyan-500/90 hover:bg-cyan-400/80 active:bg-cyan-400/70",
+    "gw-bg-red-600 gw-text-white gw-border gw-border-red-700/90 hover:gw-bg-red-600/90 active:gw-bg-red-600/80",
+  info: "gw-bg-cyan-400 gw-text-cyan-950 gw-border gw-border-cyan-500/90 hover:gw-bg-cyan-400/80 active:gw-bg-cyan-400/70",
   white:
-    "bg-white text-usace-black border border-usace-black/60 hover:bg-gray-100/80 active:bg-gray-200/70",
-  zinc: "bg-zinc-800 text-white border border-zinc-800/90 hover:bg-zinc-800/90 active:bg-zinc-800/80",
+    "gw-bg-white gw-text-usace-black gw-border gw-border-usace-black/60 hover:gw-bg-gray-100/80 active:gw-bg-gray-200/70",
+  zinc: "gw-bg-zinc-800 gw-text-white gw-border gw-border-zinc-800/90 hover:gw-bg-zinc-800/90 active:gw-bg-zinc-800/80",
   indigo:
-    "bg-indigo-600 text-white border border-indigo-700/90 hover:bg-indigo-600/90 active:bg-indigo-600/80",
-  cyan: "bg-cyan-400 text-cyan-950 border border-cyan-500/90 hover:bg-cyan-400/80 active:bg-cyan-400/70",
-  red: "bg-red-600 text-white border border-red-700/90 hover:bg-red-600/90 active:bg-red-600/80",
+    "gw-bg-indigo-600 gw-text-white gw-border gw-border-indigo-700/90 hover:gw-bg-indigo-600/90 active:gw-bg-indigo-600/80",
+  cyan: "gw-bg-cyan-400 gw-text-cyan-950 gw-border gw-border-cyan-500/90 hover:gw-bg-cyan-400/80 active:gw-bg-cyan-400/70",
+  red: "gw-bg-red-600 gw-text-white gw-border gw-border-red-700/90 hover:gw-bg-red-600/90 active:gw-bg-red-600/80",
   orange:
-    "bg-orange-600 text-white border border-orange-700/90 hover:bg-orange-600/90 active:bg-orange-600/80",
+    "gw-bg-orange-600 gw-text-white gw-border gw-border-orange-700/90 hover:gw-bg-orange-600/90 active:gw-bg-orange-600/80",
   amber:
-    "bg-amber-600 text-white border border-amber-700/90 hover:bg-amber-600/90 active:bg-amber-600/80",
+    "gw-bg-amber-600 gw-text-white gw-border gw-border-amber-700/90 hover:gw-bg-amber-600/90 active:gw-bg-amber-600/80",
   yellow:
-    "bg-yellow-600 text-white border border-yellow-700/90 hover:bg-yellow-600/90 active:bg-yellow-600/80",
-  lime: "bg-lime-600 text-white border border-lime-700/90 hover:bg-lime-600/90 active:bg-lime-600/80",
+    "gw-bg-yellow-600 gw-text-white gw-border gw-border-yellow-700/90 hover:gw-bg-yellow-600/90 active:gw-bg-yellow-600/80",
+  lime: "gw-bg-lime-600 gw-text-white gw-border gw-border-lime-700/90 hover:gw-bg-lime-600/90 active:gw-bg-lime-600/80",
   green:
-    "bg-green-600 text-white border border-green-700/90 hover:bg-green-600/90 active:bg-green-600/80",
+    "gw-bg-green-600 gw-text-white gw-border gw-border-green-700/90 hover:gw-bg-green-600/90 active:gw-bg-green-600/80",
   emerald:
-    "bg-emerald-600 text-white border border-emerald-700/90 hover:bg-emerald-600/90 active:bg-emerald-600/80",
-  teal: "bg-teal-600 text-white border border-teal-700/90 hover:bg-teal-600/90 active:bg-teal-600/80",
-  sky: "bg-sky-600 text-white border border-sky-700/90 hover:bg-sky-600/90 active:bg-sky-600/80",
-  blue: "bg-blue-600 text-white border border-blue-700/90 hover:bg-blue-600/90 active:bg-blue-600/80",
+    "gw-bg-emerald-600 gw-text-white gw-border gw-border-emerald-700/90 hover:gw-bg-emerald-600/90 active:gw-bg-emerald-600/80",
+  teal: "gw-bg-teal-600 gw-text-white gw-border gw-border-teal-700/90 hover:gw-bg-teal-600/90 active:gw-bg-teal-600/80",
+  sky: "gw-bg-sky-600 gw-text-white gw-border gw-border-sky-700/90 hover:gw-bg-sky-600/90 active:gw-bg-sky-600/80",
+  blue: "gw-bg-blue-600 gw-text-white gw-border gw-border-blue-700/90 hover:gw-bg-blue-600/90 active:gw-bg-blue-600/80",
   violet:
-    "bg-violet-600 text-white border border-violet-700/90 hover:bg-violet-600/90 active:bg-violet-600/80",
+    "gw-bg-violet-600 gw-text-white gw-border gw-border-violet-700/90 hover:gw-bg-violet-600/90 active:gw-bg-violet-600/80",
   purple:
-    "bg-purple-600 text-white border border-purple-700/90 hover:bg-purple-600/90 active:bg-purple-600/80",
+    "gw-bg-purple-600 gw-text-white gw-border gw-border-purple-700/90 hover:gw-bg-purple-600/90 active:gw-bg-purple-600/80",
   fuchsia:
-    "bg-fuchsia-600 text-white border border-fuchsia-700/90 hover:bg-fuchsia-600/90 active:bg-fuchsia-600/80",
-  pink: "bg-pink-600 text-white border border-pink-700/90 hover:bg-pink-600/90 active:bg-pink-600/80",
-  rose: "bg-rose-600 text-white border border-rose-700/90 hover:bg-rose-600/90 active:bg-rose-600/80",
+    "gw-bg-fuchsia-600 gw-text-white gw-border gw-border-fuchsia-700/90 hover:gw-bg-fuchsia-600/90 active:gw-bg-fuchsia-600/80",
+  pink: "gw-bg-pink-600 gw-text-white gw-border gw-border-pink-700/90 hover:gw-bg-pink-600/90 active:gw-bg-pink-600/80",
+  rose: "gw-bg-rose-600 gw-text-white gw-border gw-border-rose-700/90 hover:gw-bg-rose-600/90 active:gw-bg-rose-600/80",
 };
 
 const colorsOutline = {
   light:
-    "bg-transparent text-usace-black border border-gray/60 hover:bg-gray-100/80 active:bg-gray-200/70",
-  dark: "bg-transparent text-usace-black border border-gray-900/90 hover:bg-gray-900 hover:text-white active:bg-gray-200/70",
+    "gw-bg-transparent gw-text-usace-black gw-border gw-border-gray/60 hover:gw-bg-gray-100/80 active:gw-bg-gray-200/70",
+  dark: "gw-bg-transparent gw-text-usace-black gw-border gw-border-gray-900/90 hover:gw-bg-gray-900 hover:gw-text-white active:gw-bg-gray-200/70",
   primary:
-    "bg-transparent text-blue-600 border border-blue-700/90 border border-blue-700/90 hover:bg-blue-600/90 hover:text-white active:bg-blue-600/80",
+    "gw-bg-transparent gw-text-blue-600 gw-border gw-border-blue-700/90 gw-border gw-border-blue-700/90 hover:gw-bg-blue-600/90 hover:gw-text-white active:gw-bg-blue-600/80",
   secondary:
-    "bg-transparent text-gray-700 border border-gray-700/90 hover:bg-gray-600/90 hover:text-white active:bg-gray-600/80",
+    "gw-bg-transparent gw-text-gray-700 gw-border gw-border-gray-700/90 hover:gw-bg-gray-600/90 hover:gw-text-white active:gw-bg-gray-600/80",
   success:
-    "bg-transparent text-green-600 border border-green-600/90 hover:bg-green-600/90 hover:text-white active:bg-green-600/80",
+    "gw-bg-transparent gw-text-green-600 gw-border gw-border-green-600/90 hover:gw-bg-green-600/90 hover:gw-text-white active:gw-bg-green-600/80",
   warning:
-    "bg-transparent text-orange-600 border border-orange-700/90 hover:bg-orange-600/90 hover:text-white active:bg-orange-600/80",
+    "gw-bg-transparent gw-text-orange-600 gw-border gw-border-orange-700/90 hover:gw-bg-orange-600/90 hover:gw-text-white active:gw-bg-orange-600/80",
   danger:
-    "bg-transparent text-red-600 border border-red-700/90 hover:bg-red-600/90 hover:text-white active:bg-red-600/80",
-  info: "bg-transparent text-cyan-400 text-cyan-950 border border-cyan-500/90 hover:bg-cyan-400/80 hover:text-white active:bg-cyan-400/70",
+    "gw-bg-transparent gw-text-red-600 gw-border gw-border-red-700/90 hover:gw-bg-red-600/90 hover:gw-text-white active:gw-bg-red-600/80",
+  info: "gw-bg-transparent gw-text-cyan-400 gw-text-cyan-950 gw-border gw-border-cyan-500/90 hover:gw-bg-cyan-400/80 hover:gw-text-white active:gw-bg-cyan-400/70",
   white:
-    "bg-transparent text-white border border-white hover:bg-gray-100/80  active:bg-gray-200/70",
-  zinc: "bg-transparent text-zinc-800 border border-zinc-800/90 hover:bg-zinc-800/90 hover:text-white active:bg-zinc-800/80",
+    "gw-bg-transparent gw-text-white gw-border gw-border-white hover:gw-bg-gray-100/80  active:gw-bg-gray-200/70",
+  zinc: "gw-bg-transparent gw-text-zinc-800 gw-border gw-border-zinc-800/90 hover:gw-bg-zinc-800/90 hover:gw-text-white active:gw-bg-zinc-800/80",
   indigo:
-    "bg-transparent text-indigo-600 border border-indigo-700/90 hover:bg-indigo-600/90 hover:text-white active:bg-indigo-600/80",
-  cyan: "bg-transparent text-cyan-400 text-cyan-950 border border-cyan-500/90 hover:bg-cyan-400/80 hover:text-white active:bg-cyan-400/70",
-  red: "bg-transparent text-red-600 border border-red-700/90 hover:bg-red-600/90 hover:text-white active:bg-red-600/80",
+    "gw-bg-transparent gw-text-indigo-600 gw-border gw-border-indigo-700/90 hover:gw-bg-indigo-600/90 hover:gw-text-white active:gw-bg-indigo-600/80",
+  cyan: "gw-bg-transparent gw-text-cyan-400 gw-text-cyan-950 gw-border gw-border-cyan-500/90 hover:gw-bg-cyan-400/80 hover:gw-text-white active:gw-bg-cyan-400/70",
+  red: "gw-bg-transparent gw-text-red-600 gw-border gw-border-red-700/90 hover:gw-bg-red-600/90 hover:gw-text-white active:gw-bg-red-600/80",
   orange:
-    "bg-transparent text-orange-600 border border-orange-700/90 hover:bg-orange-600/90 hover:text-white active:bg-orange-600/80",
+    "gw-bg-transparent gw-text-orange-600 gw-border gw-border-orange-700/90 hover:gw-bg-orange-600/90 hover:gw-text-white active:gw-bg-orange-600/80",
   amber:
-    "bg-transparent text-amber-600 border border-amber-700/90 hover:bg-amber-600/90 hover:text-white active:bg-amber-600/80",
+    "gw-bg-transparent gw-text-amber-600 gw-border gw-border-amber-700/90 hover:gw-bg-amber-600/90 hover:gw-text-white active:gw-bg-amber-600/80",
   yellow:
-    "bg-transparent text-yellow-600 border border-yellow-700/90 hover:bg-yellow-600/90 hover:text-white active:bg-yellow-600/80",
-  lime: "bg-transparent text-lime-600 border border-lime-700/90 hover:bg-lime-600/90 hover:text-white active:bg-lime-600/80",
+    "gw-bg-transparent gw-text-yellow-600 gw-border gw-border-yellow-700/90 hover:gw-bg-yellow-600/90 hover:gw-text-white active:gw-bg-yellow-600/80",
+  lime: "gw-bg-transparent gw-text-lime-600 gw-border gw-border-lime-700/90 hover:gw-bg-lime-600/90 hover:gw-text-white active:gw-bg-lime-600/80",
   green:
-    "bg-transparent text-green-600 border border-green-700/90 hover:bg-green-600/90 hover:text-white active:bg-green-600/80",
+    "gw-bg-transparent gw-text-green-600 gw-border gw-border-green-700/90 hover:gw-bg-green-600/90 hover:gw-text-white active:gw-bg-green-600/80",
   emerald:
-    "bg-transparent text-emerald-600 border border-emerald-700/90 hover:bg-emerald-600/90 hover:text-white active:bg-emerald-600/80",
-  teal: "bg-transparent text-teal-600 border border-teal-700/90 hover:bg-teal-600/90 hover:text-white active:bg-teal-600/80",
-  sky: "bg-transparent text-sky-600 border border-sky-700/90 hover:bg-sky-600/90 hover:text-white active:bg-sky-600/80",
-  blue: "bg-transparent text-blue-600 border border-blue-700/90 hover:bg-blue-600/90 hover:text-white active:bg-blue-600/80",
+    "gw-bg-transparent gw-text-emerald-600 gw-border gw-border-emerald-700/90 hover:gw-bg-emerald-600/90 hover:gw-text-white active:gw-bg-emerald-600/80",
+  teal: "gw-bg-transparent gw-text-teal-600 gw-border gw-border-teal-700/90 hover:gw-bg-teal-600/90 hover:gw-text-white active:gw-bg-teal-600/80",
+  sky: "gw-bg-transparent gw-text-sky-600 gw-border gw-border-sky-700/90 hover:gw-bg-sky-600/90 hover:gw-text-white active:gw-bg-sky-600/80",
+  blue: "gw-bg-transparent gw-text-blue-600 gw-border gw-border-blue-700/90 hover:gw-bg-blue-600/90 hover:gw-text-white active:gw-bg-blue-600/80",
   violet:
-    "bg-transparent text-violet-600 border border-violet-700/90 hover:bg-violet-600/90 hover:text-white active:bg-violet-600/80",
+    "gw-bg-transparent gw-text-violet-600 gw-border gw-border-violet-700/90 hover:gw-bg-violet-600/90 hover:gw-text-white active:gw-bg-violet-600/80",
   purple:
-    "bg-transparent text-purple-600 border border-purple-700/90 hover:bg-purple-600/90 hover:text-white active:bg-purple-600/80",
+    "gw-bg-transparent gw-text-purple-600 gw-border gw-border-purple-700/90 hover:gw-bg-purple-600/90 hover:gw-text-white active:gw-bg-purple-600/80",
   fuchsia:
-    "bg-transparent text-fuchsia-600 border border-fuchsia-700/90 hover:bg-fuchsia-600/90 hover:text-white active:bg-fuchsia-600/80",
-  pink: "bg-transparent text-pink-600 border border-pink-700/90 hover:bg-pink-600/90 hover:text-white active:bg-pink-600/80",
-  rose: "bg-transparent text-rose-600 border border-rose-700/90 hover:bg-rose-600/90 hover:text-white active:bg-rose-600/80",
+    "gw-bg-transparent gw-text-fuchsia-600 gw-border gw-border-fuchsia-700/90 hover:gw-bg-fuchsia-600/90 hover:gw-text-white active:gw-bg-fuchsia-600/80",
+  pink: "gw-bg-transparent gw-text-pink-600 gw-border gw-border-pink-700/90 hover:gw-bg-pink-600/90 hover:gw-text-white active:gw-bg-pink-600/80",
+  rose: "gw-bg-transparent gw-text-rose-600 gw-border gw-border-rose-700/90 hover:gw-bg-rose-600/90 hover:gw-text-white active:gw-bg-rose-600/80",
 };
 
 const colorsPlain = {
-  light: "bg-transparent text-gray-600",
-  dark: "bg-transparent text-usace-black",
-  primary: "bg-transparent text-blue-600",
-  secondary: "bg-transparent text-gray-700",
-  success: "bg-transparent text-green-600",
-  warning: "bg-transparent text-orange-600",
-  danger: "bg-transparent text-red-600",
-  info: "bg-transparent text-cyan-400",
-  white: "bg-transparent text-white",
-  zinc: "bg-transparent text-zinc-800",
-  indigo: "bg-transparent text-indigo-600",
-  cyan: "bg-transparent text-cyan-400",
-  red: "bg-transparent text-red-600",
-  orange: "bg-transparent text-orange-600",
-  amber: "bg-transparent text-amber-600",
-  yellow: "bg-transparent text-yellow-600",
-  lime: "bg-transparent text-lime-600",
-  green: "bg-transparent text-green-600",
-  emerald: "bg-transparent text-emerald-600",
-  teal: "bg-transparent text-teal-600",
-  sky: "bg-transparent text-sky-600",
-  blue: "bg-transparent text-blue-600",
-  violet: "bg-transparent text-violet-600",
-  purple: "bg-transparent text-purple-600",
-  fuchsia: "bg-transparent text-fuchsia-600",
-  pink: "bg-transparent text-pink-600",
-  rose: "bg-transparent text-rose-600",
+  light: "gw-bg-transparent gw-text-gray-600",
+  dark: "gw-bg-transparent gw-text-usace-black",
+  primary: "gw-bg-transparent gw-text-blue-600",
+  secondary: "gw-bg-transparent gw-text-gray-700",
+  success: "gw-bg-transparent gw-text-green-600",
+  warning: "gw-bg-transparent gw-text-orange-600",
+  danger: "gw-bg-transparent gw-text-red-600",
+  info: "gw-bg-transparent gw-text-cyan-400",
+  white: "gw-bg-transparent gw-text-white",
+  zinc: "gw-bg-transparent gw-text-zinc-800",
+  indigo: "gw-bg-transparent gw-text-indigo-600",
+  cyan: "gw-bg-transparent gw-text-cyan-400",
+  red: "gw-bg-transparent gw-text-red-600",
+  orange: "gw-bg-transparent gw-text-orange-600",
+  amber: "gw-bg-transparent gw-text-amber-600",
+  yellow: "gw-bg-transparent gw-text-yellow-600",
+  lime: "gw-bg-transparent gw-text-lime-600",
+  green: "gw-bg-transparent gw-text-green-600",
+  emerald: "gw-bg-transparent gw-text-emerald-600",
+  teal: "gw-bg-transparent gw-text-teal-600",
+  sky: "gw-bg-transparent gw-text-sky-600",
+  blue: "gw-bg-transparent gw-text-blue-600",
+  violet: "gw-bg-transparent gw-text-violet-600",
+  purple: "gw-bg-transparent gw-text-purple-600",
+  fuchsia: "gw-bg-transparent gw-text-fuchsia-600",
+  pink: "gw-bg-transparent gw-text-pink-600",
+  rose: "gw-bg-transparent gw-text-rose-600",
 };
 
 export const Button = React.forwardRef(function Button(
@@ -238,7 +238,7 @@ export function TouchTarget({ children }) {
     <>
       {children}
       <span
-        className="absolute left-1/2 top-1/2 size-[max(100%,2.75rem)] -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden"
+        className="gw-absolute gw-left-1/2 gw-top-1/2 gw-size-[max(gw-100%,gw-2.gw-75rem)gw-] gw--translate-x-1/2 gw--translate-y-1/2 gw-[@gw-media(gw-pointer:gw-fine)]:gw-hidden"
         aria-hidden="true"
       />
     </>

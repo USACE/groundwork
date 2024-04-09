@@ -133,25 +133,25 @@ function SiteWrapperDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Site Wrapper">
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Use the Site Wrapper to add the header and footer to your page. The
             best way to do this is add SiteWrapper to the top level of your
             application and render any changing content as children of the
             SiteWrapper component.
           </Text>
-          <Text className="pt-3">
+          <Text className="gw-pt-3">
             For example, in a Vite project you typically have a src/App.jsx file
             which is the top level component for the application. You would
             import the SiteWrapper component there and use it to wrap the rest
             of your application.
           </Text>
-          <Text className="pt-3">
+          <Text className="gw-pt-3">
             Note that in the example below, the useConnect hook is used to get
             the current content that should be rendered based on the url. This
             uses a separate state management framework called{" "}
             <a
-              className="underline"
+              className="gw-underline"
               href="https://reduxbundler.com"
               target="_blank"
               referrer="noreferrer"
@@ -182,8 +182,8 @@ function App() {
 export default App;
 `}
         />
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
         </div>
         <PropsTable propsList={siteWrapperProps} />
       </UsaceBox>

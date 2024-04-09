@@ -17,7 +17,7 @@ function Display() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Display">
         <div>
-          <Text className="pb-6">
+          <Text className="gw-pb-6">
             Display components are used to render content to the page with
             built-in formatting.
           </Text>

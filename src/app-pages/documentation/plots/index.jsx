@@ -16,7 +16,7 @@ function Plots() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Plots">
-        <Text className="pb-6">
+        <Text className="gw-pb-6">
           We use Plotly.js to create plots in Groundwork. This is a simple
           wrapper around Plotly.js to make it easier to use in a React app. We
           might add more libraries or customized components using Plotly
@@ -24,7 +24,7 @@ function Plots() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="hover:underline" href="/docs/plots/plotly-wrapper">
+          <a className="gw-hover:gw-underline" gw-href="gw-/docs/plots/plotly-wrapper">
             <li>
               Plotly Wrapper - Simple wrapper around the Plotly.js library
             </li>

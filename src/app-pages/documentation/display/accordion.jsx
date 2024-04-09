@@ -45,7 +45,7 @@ function AccordionDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Accordion">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Accordions allow you to stack lots of information into a smaller
             vertical space by putting content into collapsible sections. The
@@ -54,21 +54,21 @@ function AccordionDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="w-[50%]">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-w-[50%gw-]">
             <Accordion
               defaultOpen
               heading={
-                <span className="flex justify-between w-full items-center gap-1">
+                <span className="gw-flex gw-justify-between gw-w-full gw-items-center gw-gap-1">
                   Start Here
-                  <Badge color="green" className="mr-2">
-                    <LuPartyPopper className="mr-1" />
+                  <Badge color="green" className="gw-mr-2">
+                    <LuPartyPopper className="gw-mr-1" />
                     new!
                   </Badge>
                 </span>
               }
             >
-              <div className="py-3">
+              <div className="gw-py-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -79,7 +79,7 @@ function AccordionDocs() {
               </div>
             </Accordion>
             <Accordion heading="Then Look Here">
-              <div className="py-3">
+              <div className="gw-py-3">
                 Sodales ut etiam sit amet nisl purus. Feugiat in ante metus
                 dictum at tempor commodo ullamcorper a. Ultrices neque ornare
                 aenean euismod elementum nisi quis. Quam lacus suspendisse
@@ -101,20 +101,20 @@ import { LuPartyPopper } from "react-icons/lu";
 
 function Component() {
   return (
-    <div className="w-[50%]">
+    <div className="gw-w-[50%gw-]">
       <Accordion
         defaultOpen
         heading={
-          <span className="flex justify-between w-full items-center gap-1">
+          <span className="gw-flex gw-justify-between gw-w-full gw-items-center gw-gap-1">
             Start Here
-            <Badge color="green" className="mr-2">
-              <LuPartyPopper className="mr-1" />
+            <Badge color="green" className="gw-mr-2">
+              <LuPartyPopper className="gw-mr-1" />
               new!
             </Badge>
           </span>
         }
       >
-        <div className="py-3">
+        <div className="gw-py-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -125,7 +125,7 @@ function Component() {
         </div>
       </Accordion>
       <Accordion heading="Then Look Here">
-        <div className="py-3">
+        <div className="gw-py-3">
           Sodales ut etiam sit amet nisl purus. Feugiat in ante metus
           dictum at tempor commodo ullamcorper a. Ultrices neque ornare
           aenean euismod elementum nisi quis. Quam lacus suspendisse
@@ -145,8 +145,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Accordion />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Accordion />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

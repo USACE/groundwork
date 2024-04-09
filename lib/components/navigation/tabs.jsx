@@ -4,31 +4,31 @@ import clsx from "clsx";
 function Tabs({ tabs, fill = false }) {
   return (
     <Tab.Group defaultIndex={0}>
-      <Tab.List className="flex flex-wrap gap-x-1 text-gray-500 font-semibold border-b-2 border-gray-300">
+      <Tab.List className="gw-flex gw-flex-wrap gw-gap-x-1 gw-text-gray-500 gw-font-semibold gw-border-b-2 gw-border-gray-300">
         {tabs.map((tab, idx) => (
           <Tab
             key={idx}
             className={({ selected }) => {
-              const base = "px-4 py-2 shadow hover:bg-gray-100";
-              const fillCls = fill ? "flex-auto" : "";
-              const selectedCls = selected ? "bg-gray-50" : "";
+              const base = "gw-px-4 gw-py-2 gw-shadow hover:gw-bg-gray-100";
+              const fillCls = fill ? "gw-flex-auto" : "";
+              const selectedCls = selected ? "gw-bg-gray-50" : "";
 
               return clsx(base, fillCls, selectedCls);
             }}
           >
             <span
-              className={`flex ${
+              className={`gw-flex ${
                 tab.justify === "space-between"
-                  ? "justify-between"
-                  : "justify-center"
-              } items-center`}
+                  ? "gw-justify-between"
+                  : "gw-justify-center"
+              } gw-items-center`}
             >
               {tab.leftSection && (
-                <span className="mr-2">{tab.leftSection}</span>
+                <span className="gw-mr-2">{tab.leftSection}</span>
               )}
               {tab.name}
               {tab.rightSection && (
-                <span className="ml-2">{tab.rightSection}</span>
+                <span className="gw-ml-2">{tab.rightSection}</span>
               )}
             </span>
           </Tab>
@@ -36,7 +36,7 @@ function Tabs({ tabs, fill = false }) {
       </Tab.List>
       <Tab.Panels>
         {tabs.map((tab) => (
-          <Tab.Panel key={tab.name} className="bg-white p-0">
+          <Tab.Panel key={tab.name} className="gw-bg-white gw-p-0">
             {tab.content}
           </Tab.Panel>
         ))}

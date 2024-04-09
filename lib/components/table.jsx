@@ -22,21 +22,23 @@ export function Table({
 }) {
   return (
     <TableContext.Provider value={{ bleed, dense, grid, striped }}>
-      <div className="flow-root">
+      <div className="gw-flow-root">
         <div
           {...props}
           className={clsx(
-            "-mx-[--gutter] overflow-x-auto whitespace-nowrap",
+            "gw--mx-[--gutter] gw-overflow-x-auto gw-whitespace-nowrap",
             className
           )}
         >
           <div
             className={clsx(
-              "inline-block min-w-full align-middle",
-              !bleed && "sm:px-[--gutter]"
+              "gw-inline-block gw-min-w-full gw-align-middle",
+              !bleed && "sm:gw-px-[--gutter]"
             )}
           >
-            <table className="min-w-full text-left text-sm/6">{children}</table>
+            <table className="gw-min-w-full gw-text-left gw-text-sm/6">
+              {children}
+            </table>
           </div>
         </div>
       </div>
@@ -47,7 +49,7 @@ export function Table({
 export function TableHead({ className, ...props }) {
   return (
     <thead
-      className={clsx("text-zinc-500 dark:text-zinc-400", className)}
+      className={clsx("gw-text-zinc-500 dark:gw-text-zinc-400", className)}
       {...props}
     />
   );
@@ -79,12 +81,12 @@ export function TableRow({
         {...props}
         className={clsx(
           href &&
-            "has-[[data-row-link][data-focus]]:outline has-[[data-row-link][data-focus]]:outline-2 has-[[data-row-link][data-focus]]:-outline-offset-2 has-[[data-row-link][data-focus]]:outline-blue-500 dark:focus-within:bg-white/[2.5%]",
-          striped && "even:bg-zinc-950/[2.5%] dark:even:bg-white/[2.5%]",
-          href && striped && "hover:bg-zinc-950/5 dark:hover:bg-white/5",
+            "has-[[data-row-link][data-focus]]:gw-outline has-[[data-row-link][data-focus]]:gw-outline-2 has-[[data-row-link][data-focus]]:gw--outline-offset-2 has-[[data-row-link][data-focus]]:gw-outline-blue-500 dark:focus-within:gw-bg-white/[2.5%]",
+          striped && "even:gw-bg-zinc-950/[2.5%] dark:even:gw-bg-white/[2.5%]",
+          href && striped && "hover:gw-bg-zinc-950/5 dark:hover:gw-bg-white/5",
           href &&
             !striped &&
-            "hover:bg-zinc-950/[2.5%] dark:hover:bg-white/[2.5%]",
+            "hover:gw-bg-zinc-950/[2.5%] dark:hover:gw-bg-white/[2.5%]",
           className
         )}
       >
@@ -101,10 +103,10 @@ export function TableHeader({ className, ...props }) {
     <th
       {...props}
       className={clsx(
-        "border-b border-b-zinc-950/10 px-4 py-2 font-medium first:pl-[var(--gutter,theme(spacing.2))] last:pr-[var(--gutter,theme(spacing.2))] dark:border-b-white/10",
+        "gw-border-b gw-border-b-zinc-950/10 gw-px-4 gw-py-2 gw-font-medium first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))] dark:gw-border-b-white/10",
         grid &&
-          "border-l border-l-zinc-950/5 first:border-l-0 dark:border-l-white/5",
-        !bleed && "sm:first:pl-2 sm:last:pr-2",
+          "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
+        !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
         className
       )}
     />
@@ -121,12 +123,12 @@ export function TableCell({ className, children, ...props }) {
       ref={href ? setCellRef : undefined}
       {...props}
       className={clsx(
-        "relative px-4 first:pl-[var(--gutter,theme(spacing.2))] last:pr-[var(--gutter,theme(spacing.2))]",
-        !striped && "border-b border-zinc-950/5 dark:border-white/5",
+        "gw-relative gw-px-4 first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))]",
+        !striped && "gw-border-b gw-border-zinc-950/5 dark:gw-border-white/5",
         grid &&
-          "border-l border-l-zinc-950/5 first:border-l-0 dark:border-l-white/5",
-        dense ? "py-2.5" : "py-4",
-        !bleed && "sm:first:pl-2 sm:last:pr-2",
+          "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
+        dense ? "gw-py-2.5" : "gw-py-4",
+        !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
         className
       )}
     >
@@ -137,7 +139,7 @@ export function TableCell({ className, children, ...props }) {
           target={target}
           aria-label={title}
           tabIndex={cellRef?.previousElementSibling === null ? 0 : -1}
-          className="absolute inset-0 focus:outline-none"
+          className="gw-absolute gw-inset-0 gw-focus:gw-outline-none"
         />
       )}
       {children}

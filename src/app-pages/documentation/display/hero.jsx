@@ -42,12 +42,12 @@ function HeroDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Hero">
         {/* Description of the component and what problem it solves */}
-        <Text className="pb-6">
+        <Text className="gw-pb-6">
           Add the Hero element to put a big image at the top of your page,
           typically we would use the Hero component on a landing page.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
@@ -74,8 +74,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Hero />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Hero />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

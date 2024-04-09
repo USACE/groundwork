@@ -13,7 +13,7 @@ function Home() {
       />
 
       <Container>
-        <div className="mt-6">
+        <div className="gw-mt-6">
           <UsaceBox title="Welcome">
             <Text>
               Welcome to the homepage for the Groundwork React Components,
@@ -25,10 +25,10 @@ function Home() {
               available in the GitHub Repo.
             </Text>
           </UsaceBox>
-          <div className="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
+          <div className="gw-grid gw-grid-cols-1 gw-gap-6 gw-mt-6 sm:gw-grid-cols-2">
             <UsaceBox title="Getting Started">
-              <div className="flex flex-row justify-start space-between items-center gap-2 mb-3">
-                <Code className="block w-full p-1 px-2">
+              <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mb-3">
+                <Code className="gw-block gw-w-full gw-p-1 gw-px-2">
                   npm install @usace/groundwork
                 </Code>
                 <CopyButton text="npm install @usace/groundwork" />
@@ -38,8 +38,8 @@ function Home() {
                 Then, import the components you need and our CSS, and start
                 building your application
               </Text>
-              <div className="mt-3">
-                <TextLink href="/docs" className="text-lg font-bold">
+              <div className="gw-mt-3">
+                <TextLink href="/docs" className="gw-text-lg gw-font-bold">
                   Check out the docs
                 </TextLink>
               </div>
@@ -48,7 +48,7 @@ function Home() {
               customTitle={() => {
                 return (
                   <span>
-                    <span className="inline-block">Contributing</span>
+                    <span className="gw-inline-block">Contributing</span>
                   </span>
                 );
               }}
