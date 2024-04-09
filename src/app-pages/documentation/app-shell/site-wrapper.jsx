@@ -44,6 +44,12 @@ const siteWrapperProps = [
     desc: "A custom component that will render between the government website banner and the header. This is useful for displaying a message banner that is specific to the site or page.",
   },
   {
+    name: "showFooter",
+    type: "boolean",
+    default: "true",
+    desc: "If true, the footer will be displayed at the bottom of the page. Set to false to hide the footer in case you need the screen space for something like a map viewer.",
+  },
+  {
     name: "title",
     type: "string",
     default: "US Army Corps of Engineers",
