@@ -17,28 +17,28 @@ import { Container } from "./layout/container";
  */
 function Hero({ title, subtitle, image, alt, children }) {
   return (
-    <div className="relative">
-      <div className="h-56 w-full overflow-clip bg-zinc-950 md:h-1/5 md:max-h-[500px]">
+    <div className="gw-relative">
+      <div className="gw-h-56 gw-w-full gw-overflow-clip gw-bg-zinc-950 md:gw-h-1/5 md:gw-max-h-[500px]">
         <img
           src={image}
           alt={alt}
-          className="object-cover object-center w-full h-full"
+          className="gw-object-cover gw-object-center gw-w-full gw-h-full"
         />
       </div>
-      <div className="absolute inset-0 bg-zinc-950/50" />
+      <div className="gw-absolute gw-inset-0 gw-bg-zinc-950/50" />
       {children && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="gw-absolute gw-inset-0 gw-flex gw-items-center gw-justify-center">
           {children}
         </div>
       )}
       {title && (
-        <Container className="relative">
-          <div className="absolute bottom-0 left-0 max-w-7xl mx-auto px-4">
-            <div className="pb-8">
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <Container className="gw-relative">
+          <div className="gw-absolute gw-bottom-0 gw-left-0 gw-max-w-7xl gw-mx-auto gw-px-4">
+            <div className="gw-pb-8">
+              <h1 className="gw-text-4xl gw-font-extrabold gw-tracking-tight gw-text-white sm:gw-text-5xl lg:gw-text-6xl">
                 {title}
               </h1>
-              <p className="mt-1 text-xl text-zinc-200">{subtitle}</p>
+              <p className="gw-mt-1 gw-text-xl gw-text-zinc-200">{subtitle}</p>
             </div>
           </div>
         </Container>

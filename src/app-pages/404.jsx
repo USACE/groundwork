@@ -2,14 +2,14 @@ import { Button, H2 } from "../../lib";
 
 function NotFound() {
   return (
-    <div className="flex justify-center mt-12">
-      <div className="flex flex-col justify-center items-center">
+    <div className="gw-flex gw-justify-center gw-mt-12">
+      <div className="gw-flex gw-flex-col gw-justify-center gw-items-center">
         <div>
-          <H2 className="font-semibold">
+          <H2 className="gw-font-semibold">
             We cant find a page that matches the URL
           </H2>
         </div>
-        <div className="flex gap-3 mt-8">
+        <div className="gw-flex gw-gap-3 gw-mt-8">
           <Button color="green" href="/">
             Go Home
           </Button>

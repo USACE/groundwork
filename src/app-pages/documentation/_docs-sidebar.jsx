@@ -12,7 +12,7 @@ function DocsSidebar() {
           <div key={link.href}>
             <a href={link.href}>
               <div
-                className={`text-lg font-bold pl-1 py-1 flex justify-between items-center cursor-pointer hover:bg-gray-100 ${
+                className={`gw-text-lg gw-font-bold gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
                   hash === link.href ? "bg-gray-50 rounded" : ""
                 }`}
               >
@@ -30,7 +30,7 @@ function DocsSidebar() {
                   return (
                     <a href={child.href} key={child.href}>
                       <li
-                        className={`pl-3 py-1 flex justify-between items-center cursor-pointer hover:bg-gray-100 ${
+                        className={`gw-pl-3 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
                           hash === child.href ? "bg-gray-50 rounded" : ""
                         }`}
                       >

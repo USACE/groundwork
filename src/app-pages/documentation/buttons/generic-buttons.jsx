@@ -100,7 +100,7 @@ function GenericButtonsDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Generic Buttons">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             The Button component can be used to render a basic button with
             pre-defined styles. For more advanced configurations it's
@@ -109,9 +109,9 @@ function GenericButtonsDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Basic Usage</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="flex flex-row flex-wrap gap-3">
+        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             <Button>Default</Button>
             <Button style="outline">Outlined</Button>
             <Button style="plain">Plain</Button>
@@ -125,7 +125,7 @@ function GenericButtonsDocs() {
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       <Button>Default</Button>
       <Button style="outline">Outlined</Button>
       <Button style="plain">Plain</Button>
@@ -139,9 +139,9 @@ export default Component;
 `}
         />
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Built-in Color Options - Filled</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="flex flex-row flex-wrap gap-3">
+        <H3 className="gw-pt-6 gw-pb-3">Built-in Color Options - Filled</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {colors.map((clr) => {
               return (
                 <Button key={clr} color={clr}>
@@ -159,7 +159,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} color={clr}>
@@ -175,9 +175,9 @@ export default Component;
 `}
         />
 
-        <H3 className="pt-6 pb-3">Built-in Color Options - Outline</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="flex flex-row flex-wrap gap-3">
+        <H3 className="gw-pt-6 gw-pb-3">Built-in Color Options - Outline</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {colors.map((clr) => {
               return (
                 <Button key={clr} style="outline" color={clr}>
@@ -195,7 +195,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} style="outline" color={clr}>
@@ -211,9 +211,9 @@ export default Component;
 `}
         />
 
-        <H3 className="pt-6 pb-3">Built-in Color Options - Plain</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="flex flex-row flex-wrap gap-3">
+        <H3 className="gw-pt-6 gw-pb-3">Built-in Color Options - Plain</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {colors.map((clr) => {
               return (
                 <Button key={clr} style="plain" color={clr}>
@@ -231,7 +231,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} style="plain" color={clr}>
@@ -247,12 +247,12 @@ export default Component;
 `}
         />
 
-        <H3 className="pt-6 pb-3">Built-in Size Options</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Built-in Size Options</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="">
             {["xs", "sm", "md", "lg", "xl"].map((size) => {
               return (
-                <Button key={size} size={size} className="mr-3">
+                <Button key={size} size={size} className="gw-mr-3">
                   {size}
                 </Button>
               );
@@ -265,10 +265,10 @@ export default Component;
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       {["xs", "sm", "md", "lg", "xl"].map((size) => {
         return (
-          <Button key={size} size={size} className="mr-3">
+          <Button key={size} size={size} className="gw-mr-3">
             {size}
           </Button>
         );
@@ -281,12 +281,12 @@ export default Component;
 `}
         />
 
-        <H3 className="pt-6 pb-3">Built-in Radius Options</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Built-in Radius Options</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="">
             {["none", "sm", "md", "lg", "xl"].map((size) => {
               return (
-                <Button key={size} radius={size} className="mr-3">
+                <Button key={size} radius={size} className="gw-mr-3">
                   {size}
                 </Button>
               );
@@ -299,10 +299,10 @@ export default Component;
 
 function Component() {
   return (
-    <div className="flex flex-row flex-wrap gap-3">
+    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
       {["none", "sm", "md", "lg", "xl"].map((size) => {
         return (
-          <Button key={size} radius={size} className="mr-3">
+          <Button key={size} radius={size} className="gw-mr-3">
             {size}
           </Button>
         );
@@ -316,8 +316,8 @@ export default Component;
         />
 
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

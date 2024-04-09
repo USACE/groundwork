@@ -45,13 +45,13 @@ function DeleteConfirmDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="DeleteConfirm">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Standard buttons are designed so that when we present the user with
             specific options for an action, they get the same button every time,
             keeping it consistent.
           </Text>
-          <Text className="pt-3">
+          <Text className="gw-pt-3">
             If you are letting a user delete something, it's good to make sure
             they want to actually do it. The alignConfirm prop can be used to
             manipulate which side the confirm button is on, this is helpful if
@@ -61,8 +61,8 @@ function DeleteConfirmDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="mt-6 pb-3">Delete / Confirm</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-mt-6 gw-pb-3">Delete / Confirm</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <DeleteConfirm
             onDelete={() => {
               window.alert("actually delete the thing");
@@ -87,8 +87,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<DeleteConfirm />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<DeleteConfirm />`}</Code>
         </div>
         <PropsTable propsList={componentProps_DeleteConfirm} />
       </UsaceBox>

@@ -133,13 +133,13 @@ export function Checkbox({ color = 'dark/zinc', className, ...props }) {
     >
       <span className={clsx([base, colors[color]])}>
         <svg
-          className="size-4 stroke-[--checkbox-check] opacity-0 group-data-[checked]:opacity-100 sm:h-3.5 sm:w-3.5"
+          className="gw-size-4 gw-stroke-[--checkbox-check] gw-opacity-0 gw-group-data-[checked]:gw-opacity-100 sm:gw-h-3.gw-5 sm:gw-w-3.gw-5"
           viewBox="0 0 14 14"
           fill="none"
         >
           {/* Checkmark icon */}
           <path
-            className="opacity-100 group-data-[indeterminate]:opacity-0"
+            className="gw-opacity-100 gw-group-data-[indeterminate]:gw-opacity-0"
             d="M3 8L6 11L11 3.5"
             strokeWidth={2}
             strokeLinecap="round"
@@ -147,7 +147,7 @@ export function Checkbox({ color = 'dark/zinc', className, ...props }) {
           />
           {/* Indeterminate icon */}
           <path
-            className="opacity-0 group-data-[indeterminate]:opacity-100"
+            className="gw-opacity-0 gw-group-data-[indeterminate]:gw-opacity-100"
             d="M3 7H11"
             strokeWidth={2}
             strokeLinecap="round"

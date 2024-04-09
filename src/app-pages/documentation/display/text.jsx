@@ -74,14 +74,14 @@ function TextDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Text">
         {/* Description of the component and what problem it solves */}
-        <Text className="pb-6">
+        <Text className="gw-pb-6">
           The Text and associated components are used to provide a consistent
           style to the typography of the sites. The TextLink and Strong
           components are meant to be used within the Text component to provide
           additional formatting.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Text>
             These components provide some simple out-of-the-box formatting, we
             can use them to <Strong>Emphasize a message</Strong> or{" "}
@@ -106,18 +106,18 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Text />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Text />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Text} />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Strong />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Strong />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Strong} />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TextLink />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TextLink />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TextLink} />
       </UsaceBox>

@@ -34,7 +34,7 @@ const Plot = forwardRef(function InternalPlot(
     ref.current.on("plotly_hover", handleHover);
   }, [data, layout, config, revision]);
 
-  return <div ref={ref} className={clsx("w-full", className)}></div>;
+  return <div ref={ref} className={clsx("gw-w-full", className)}></div>;
 });
 
 export default Plot;

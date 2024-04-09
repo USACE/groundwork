@@ -42,14 +42,14 @@ function LinkDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Link">
-        <Text className="pb-6">
+        <Text className="gw-pb-6">
           The Link type is used to create a link to another page or resource. We
           use it to provide a consistent way of representing links, useful where
           links are configurable or dynamic.
         </Text>
 
-        <div className="font-bold text-lg pt-6">
-          Object - <Code className="p-2">{`link`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Object - <Code className="gw-p-2">{`link`}</Code>
         </div>
         <PropsTable propsList={linkProps} />
       </UsaceBox>

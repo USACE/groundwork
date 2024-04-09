@@ -4,7 +4,7 @@ function Essayons() {
   return (
     <img
       src={essayons}
-      className={`absolute bottom-[56px] left-[50%] h-[125px] w-[112px] ml-[-56px]`}
+      className={`gw-absolute gw-bottom-[56px] gw-left-[50%] gw-h-[125px] gw-w-[112px] gw-ml-[-56px]`}
     />
   );
 }

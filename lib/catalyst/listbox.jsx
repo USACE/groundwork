@@ -43,7 +43,7 @@ export function Listbox({ className, placeholder, autoFocus, 'aria-label': ariaL
         <HeadlessListboxSelectedOption
           as="span"
           options={options}
-          placeholder={placeholder && <span className="block truncate text-zinc-500">{placeholder}</span>}
+          placeholder={placeholder && <span className="gw-block gw-truncate gw-text-zinc-500">{placeholder}</span>}
           className={clsx([
             // Basic layout
             'relative block w-full appearance-none rounded-lg py-[calc(theme(spacing[2.5])-1px)] sm:py-[calc(theme(spacing[1.5])-1px)]',
@@ -70,9 +70,9 @@ export function Listbox({ className, placeholder, autoFocus, 'aria-label': ariaL
             'group-data-[disabled]:border-zinc-950/20 group-data-[disabled]:opacity-100 group-data-[disabled]:dark:border-white/15 group-data-[disabled]:dark:bg-white/[2.5%] dark:data-[hover]:group-data-[disabled]:border-white/15',
           ])}
         />
-        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+        <span className="gw-pointer-events-none gw-absolute gw-inset-y-0 gw-right-0 gw-flex gw-items-center gw-pr-2">
           <svg
-            className="size-5 stroke-zinc-500 group-data-[disabled]:stroke-zinc-600 sm:size-4 dark:stroke-zinc-400 forced-colors:stroke-[CanvasText]"
+            className="gw-size-5 gw-stroke-zinc-500 gw-group-data-[disabled]:gw-stroke-zinc-600 sm:gw-size-4 gw-dark:gw-stroke-zinc-400 gw-forced-colors:gw-stroke-[CanvasText]"
             viewBox="0 0 16 16"
             aria-hidden="true"
             fill="none"
@@ -161,7 +161,7 @@ export function ListboxOption({ children, className, ...props }) {
             )}
           >
             <svg
-              className="relative hidden size-5 self-center stroke-current group-data-[selected]/option:inline sm:size-4"
+              className="gw-relative gw-hidden gw-size-5 gw-self-center gw-stroke-current gw-group-data-[selected]/option:gw-inline sm:gw-size-4"
               viewBox="0 0 16 16"
               fill="none"
               aria-hidden="true"
@@ -189,7 +189,7 @@ export function ListboxDescription({ className, children, ...props }) {
       )}
       {...props}
     >
-      <span className="flex-1 truncate">{children}</span>
+      <span className="gw-flex-1 gw-truncate">{children}</span>
     </span>
   )
 }

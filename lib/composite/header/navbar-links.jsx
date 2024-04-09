@@ -10,15 +10,17 @@ function NavbarLinkItem({ link, ...props }) {
   const [open, setOpen] = useState(false);
 
   const menuButtonClass = classNames(
-    "inline-block relative h-12 inline-flex w-auto justify-center items-center px-3 text-sm text-nowrap",
-    open ? "bg-nav-dark-gray text-white" : "text-nav-light-gray",
-    link.children ? "after:content-['▼'] after:text-[10px] after:ml-2" : ""
+    "gw-inline-block gw-relative gw-h-12 gw-inline-flex gw-w-auto gw-justify-center gw-items-center gw-px-3 gw-text-sm gw-text-nowrap",
+    open ? "gw-bg-nav-dark-gray gw-text-white" : "gw-text-nav-light-gray",
+    link.children
+      ? "after:gw-content-['▼'] after:gw-text-[10px] after:gw-ml-2"
+      : ""
   );
 
   return (
     <Menu
       as="li"
-      className="relative"
+      className="gw-relative"
       onMouseOver={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -29,14 +31,14 @@ function NavbarLinkItem({ link, ...props }) {
         <Menu.Items
           static
           as="ul"
-          className="absolute left-0 top-13 width-auto bg-nav-dark-gray"
+          className="gw-absolute gw-left-0 gw-top-13 gw-width-auto gw-bg-nav-dark-gray"
         >
           {link.children.map((child) => {
             return (
               <Menu.Item key={child.id || child.text} as={Fragment}>
                 <a
                   href={child.href}
-                  className="block text-sm border-b border-nav-black bg-nav-dark-gray hover:bg-nav-translucent-gray text-nav-light-gray hover:text-white text-nowrap font-semibold px-[16px] py-[8px] bg-none"
+                  className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-[16px] gw-py-[8px] gw-bg-none"
                 >
                   {child.text}
                 </a>
@@ -53,7 +55,7 @@ function NavbarLinksList({ links, ...props }) {
   return (
     <ul
       role="list"
-      className="flex flex-row flex-wrap justify-start m-0 pl-0 w-full"
+      className="gw-flex gw-flex-row gw-flex-wrap gw-justify-start gw-m-0 gw-pl-0 gw-w-full"
       {...props}
     >
       {links.map((link) => {
@@ -65,7 +67,7 @@ function NavbarLinksList({ links, ...props }) {
 
 const NavbarLinks = ({ links = [] }) => {
   return (
-    <div className="hidden md:flex flex-row content-center justify-between w-full pr-3">
+    <div className="gw-hidden md:gw-flex gw-flex-row gw-content-center gw-justify-between gw-w-full gw-pr-3">
       <NavbarLinksList links={links} />
     </div>
   );

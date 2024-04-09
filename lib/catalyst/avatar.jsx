@@ -21,7 +21,7 @@ export function Avatar({ src = null, square = false, initials, alt = '', classNa
     >
       {initials && (
         <svg
-          className="select-none fill-current text-[48px] font-medium uppercase"
+          className="gw-select-none gw-fill-current gw-text-[48px] gw-font-medium gw-uppercase"
           viewBox="0 0 100 100"
           aria-hidden={alt ? undefined : 'true'}
         >
@@ -33,7 +33,7 @@ export function Avatar({ src = null, square = false, initials, alt = '', classNa
       )}
       {src && <img src={src} alt={alt} />}
       {/* Add an inset border that sits on top of the image */}
-      <span className="ring-1 ring-inset ring-black/5 dark:ring-white/5 forced-colors:outline" aria-hidden="true" />
+      <span className="gw-ring-1 gw-ring-inset gw-ring-black/5 gw-dark:gw-ring-white/5 gw-forced-colors:gw-outline" gw-aria-hidden="gw-true" />
     </span>
   )
 }

@@ -12,7 +12,7 @@ import {
 function PropsTable({ propsList }) {
   if (!propsList || !propsList.length)
     return (
-      <Text className="pt-3">
+      <Text className="gw-pt-3">
         This component does not expose any component-specific props.
       </Text>
     );
@@ -38,7 +38,7 @@ function PropsTable({ propsList }) {
             <TableCell>
               <Code>{prop.default}</Code>
             </TableCell>
-            <TableCell className="text-wrap">{prop.desc}</TableCell>
+            <TableCell className="gw-text-wrap">{prop.desc}</TableCell>
           </TableRow>
         ))}
       </TableBody>
