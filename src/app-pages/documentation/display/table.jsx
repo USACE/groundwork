@@ -131,7 +131,7 @@ function TableDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Table">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Use the Table components to render a table of information for your
             users. There are a few options for customizing the format of the
@@ -139,7 +139,7 @@ function TableDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Table striped dense>
             <TableHead>
               <TableRow>
@@ -202,33 +202,33 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Table />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Table />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Table} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TableHead />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TableHead />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableHead} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TableBody />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TableBody />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableBody} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TableRow />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TableRow />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableRow} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TableHeader />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TableHeader />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableHeader} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<TableCell />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<TableCell />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableCell} />
       </UsaceBox>

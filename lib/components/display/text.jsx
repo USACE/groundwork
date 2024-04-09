@@ -7,8 +7,8 @@ export function Text({ className, ...props }) {
       {...props}
       data-slot="text"
       className={clsx(
-        className,
-        "text-sm/6 text-zinc-500 md:text-base/6 dark:text-zinc-400"
+        "gw-text-sm/6 gw-text-zinc-500 md:gw-text-base/6 dark:gw-text-zinc-400",
+        className
       )}
     />
   );
@@ -19,8 +19,8 @@ export function TextLink({ className, ...props }) {
     <Link
       {...props}
       className={clsx(
-        className,
-        "text-zinc-950 underline decoration-zinc-950/50 data-[hover]:decoration-zinc-950 dark:text-white dark:decoration-white/50 dark:data-[hover]:decoration-white"
+        "gw-text-zinc-950 gw-underline gw-decoration-zinc-950/50 data-[hover]:gw-decoration-zinc-950 dark:gw-text-white dark:gw-decoration-white/50 dark:data-[hover]:decoration-white",
+        className
       )}
     />
   );
@@ -30,7 +30,10 @@ export function Strong({ className, ...props }) {
   return (
     <strong
       {...props}
-      className={clsx(className, "font-medium text-zinc-950 dark:text-white")}
+      className={clsx(
+        "gw-font-medium gw-text-zinc-950 dark:gw-text-white",
+        className
+      )}
     />
   );
 }
@@ -40,8 +43,8 @@ export function Code({ className, ...props }) {
     <code
       {...props}
       className={clsx(
-        className,
-        "rounded border border-zinc-950/10 bg-zinc-950/[2.5%] px-0.5 text-sm font-medium text-zinc-950 sm:text-[0.8125rem] dark:border-white/20 dark:bg-white/5 dark:text-white"
+        "gw-rounded gw-border gw-border-zinc-950/10 gw-bg-zinc-950/[2.5%] gw-px-0.5 gw-text-sm gw-font-medium gw-text-zinc-950 sm:gw-text-[0.8125rem] dark:gw-border-white/20 dark:gw-bg-white/5 dark:gw-text-white",
+        className
       )}
     />
   );

@@ -193,7 +193,7 @@ function PlotlyWrapperDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Plotly.js Wrapper">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Our <Code>{`<Plot/>`}</Code> component is a pretty simple wrapper
             around the popular Plotly.js library. Plotly started as a Python
@@ -205,13 +205,13 @@ function PlotlyWrapperDocs() {
               href="https://plotly.com/javascript/"
               target="_blank"
               rel="noreferrer"
-              className="underline"
+              className="gw-underline"
             >
               Plotly.js documentation
             </a>{" "}
             in order to get a full understanding of the API.
           </Text>
-          <Text className="pt-3">
+          <Text className="gw-pt-3">
             The data, layout and config props map directly to the options
             exposed in the{" "}
             <Code>{`Plotly.newPlot(el, data, layout, config)`}</Code> function.
@@ -223,11 +223,11 @@ function PlotlyWrapperDocs() {
         </div>
 
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Basic Plot</H3>
-        <Text className="pb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Basic Plot</H3>
+        <Text className="gw-pb-3">
           A sample chart right off of the{" "}
           <a
-            className="underline"
+            className="gw-underline"
             target="_blank"
             rel="noreferrer"
             href="https://plotly.com/javascript/line-and-scatter/"
@@ -236,7 +236,7 @@ function PlotlyWrapperDocs() {
           </a>
           .
         </Text>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Plot
             data={[basicTrace1, basicTrace2, basicTrace3]}
             layout={basicLayout}
@@ -291,8 +291,8 @@ export default Component;
         />
 
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Live Updates</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Live Updates</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Plot
             revision={liveRevision}
             data={[liveTrace1, liveTrace2]}
@@ -366,14 +366,14 @@ export default Component;
         />
 
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Custom User Interaction</H3>
-        <Text className="pb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Custom User Interaction</H3>
+        <Text className="gw-pb-3">
           When you want a heatmap but don't have data, let the user create one
           themselves. Each cell counts the number of times it has been hovered
           over and the color will update accordingly. Have fun making some pixel
           art!
         </Text>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Plot
             revision={heatmapRevision}
             data={[heatTrace]}
@@ -432,8 +432,8 @@ export default Component;
         />
 
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Plot />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Plot />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

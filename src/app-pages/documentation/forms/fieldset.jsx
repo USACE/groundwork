@@ -43,7 +43,7 @@ function FieldsetDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Fieldset">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Use the Fieldset, FieldGroup, Label, Field and Legend components to
             organize your forms, these provide styling as well as organize the
@@ -51,8 +51,8 @@ function FieldsetDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="w-[50%]">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-w-[50%gw-]">
             <Fieldset>
               <Legend>Fieldset Title</Legend>
               <Text>You can add some more instructions like this...</Text>
@@ -75,7 +75,7 @@ function FieldsetDocs() {
 
 function Component() {
   return (
-    <div className="w-[50%]">
+    <div className="gw-w-[50%gw-]">
       <Fieldset>
         <Legend>Fieldset Title</Legend>
         <Text>You can add some more instructions like this...</Text>
@@ -98,36 +98,36 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Fieldset />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Fieldset />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Fieldset} />
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<FieldGroup />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<FieldGroup />`}</Code>
         </div>
-        <Text className="mt-3">
+        <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Field />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Field />`}</Code>
         </div>
-        <Text className="mt-3">
+        <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Legend />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Legend />`}</Code>
         </div>
-        <Text className="mt-3">
+        <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Label />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Label />`}</Code>
         </div>
-        <Text className="mt-3">
+        <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
       </UsaceBox>

@@ -39,7 +39,7 @@ function TabsDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Tabs">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Tabs can be used to display multiple sub-pages on the same page.
             Using tabs lets you divide up your content so that it is more easily
@@ -47,8 +47,8 @@ function TabsDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="pb-3">Basic Usage</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pb-3">Basic Usage</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Tabs
             tabs={[
               {
@@ -96,12 +96,12 @@ export default Component;
         />
 
         {/* Example usage - remove if not needed */}
-        <H3 className="mt-6 pb-3">Full Width Tabs</H3>
+        <H3 className="gw-mt-6 gw-pb-3">Full Width Tabs</H3>
         <Text>
           Add the fill prop to make the tabs expand to the full width of their
           container.
         </Text>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Tabs
             fill
             tabs={[
@@ -151,12 +151,12 @@ export default Component;
         />
 
         {/* Example usage - remove if not needed */}
-        <H3 className="mt-6 pb-3">More Advanced Usage</H3>
+        <H3 className="gw-mt-6 gw-pb-3">More Advanced Usage</H3>
         <Text>
           Add Icons or alerts to tabs, and change the justification to meet your
           needs.
         </Text>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Tabs
             fill
             tabs={[
@@ -221,8 +221,8 @@ export default Component;
         />
 
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Tabs />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Tabs />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

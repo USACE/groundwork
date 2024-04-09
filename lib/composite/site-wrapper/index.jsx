@@ -24,7 +24,7 @@ function SiteWrapper({
   cwbiLogo = false,
 }) {
   return (
-    <div className="grid min-h-[100vh] grid-rows-1fr-auto">
+    <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
         {usaBanner && <USABanner />}
         {MsgBanner && <MsgBanner />}

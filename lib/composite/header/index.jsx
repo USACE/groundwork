@@ -9,12 +9,12 @@ function Title({ title = "", subtitle = "" }) {
   return (
     <div
       style={{ order: 2 }}
-      className="w-full pl-[15px] sm:pl-[100px] pr-[15px] py-3 sm:py-0 bg-nav-dark-gray sm:bg-nav-gray"
+      className="gw-w-full gw-pl-[15px] sm:gw-pl-[100px] gw-pr-[15px] gw-py-3 sm:gw-py-0 gw-bg-nav-dark-gray sm:gw-bg-nav-gray"
     >
-      <span className="text-lg sm:text-sm font-semibold sm:font-bold text-white sm:text-usace-black leading-4 sm:leading-normal block sm:inline mr-1">
+      <span className="gw-text-lg sm:gw-text-sm gw-font-semibold sm:gw-font-bold gw-text-white sm:gw-text-usace-black gw-leading-4 sm:gw-leading-normal gw-block sm:gw-inline gw-mr-1">
         {title}
       </span>
-      <span className="text-md sm:text-sm text-white sm:text-usace-black font-thin sm:font-normal block sm:inline">
+      <span className="gw-text-md sm:gw-text-sm gw-text-white sm:gw-text-usace-black gw-font-thin sm:gw-font-normal gw-block sm:gw-inline">
         {subtitle}
       </span>
     </div>
@@ -25,7 +25,7 @@ function Nav({ children }) {
   return (
     <nav
       style={{ order: 1 }}
-      className="flex flex-row relative justify-between content-center bg-nav-black text-white pl-[91px] pr-2 z-80"
+      className="gw-flex gw-flex-row gw-relative gw-justify-between gw-content-center gw-bg-nav-black gw-text-white gw-pl-[91px] gw-pr-2 gw-z-80"
     >
       {children}
     </nav>
@@ -34,11 +34,11 @@ function Nav({ children }) {
 
 function Logo() {
   return (
-    <div className="absolute left-[15px] sm:bottom-[-15px] w-[48px] sm:w-[82px] z-10">
+    <div className="gw-absolute gw-left-[15px] sm:gw-bottom-[-15px] gw-w-[48px] sm:gw-w-[82px] gw-z-10">
       <a href="/">
-        <img className="h-[50px] w-auto" src={usaceLogo} />
+        <img className="gw-h-[50px] gw-w-auto" src={usaceLogo} />
       </a>
-      <div className="absolute left-[50px] sm:left-[65px] bottom-[-3px] sm:bottom-[-9px] text-sm text-gray-400">
+      <div className="gw-absolute gw-left-[50px] sm:gw-left-[65px] gw-bottom-[-3px] sm:gw-bottom-[-9px] gw-text-sm gw-text-gray-400">
         ®
       </div>
     </div>
@@ -49,18 +49,18 @@ function Header({ links, title, subtitle, navRight }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   return (
     <>
-      <header className="flex flex-col w-full sticky top-0 z-20">
+      <header className="gw-flex gw-flex-col gw-w-full gw-sticky gw-top-0 gw-z-20">
         <Title title={title} subtitle={subtitle} />
         <Nav>
           <Logo />
           <NavbarLinks links={links} />
-          <span className="flex flex-row-reverse justify-end items-center w-full md:max-w-[300px] mr-2">
+          <span className="gw-flex gw-flex-row-reverse gw-justify-end gw-items-center gw-w-full md:gw-max-w-[300px] gw-mr-2">
             {navRight ? navRight : null}
           </span>
           <Button
             style="plain"
             color="white"
-            className="md:hidden"
+            className="md:gw-hidden"
             onClick={() => {
               setShowOverlayLinks(true);
             }}

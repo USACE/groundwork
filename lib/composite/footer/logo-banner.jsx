@@ -6,10 +6,10 @@ import cwbiLogo from "../../img/cwbi-logo.png";
 
 function LogoBanner({ army, usace, rsgis, cwbi }) {
   return (
-    <div className="flex flex-row justify-center align-middle gap-6 mb-4">
+    <div className="gw-flex gw-flex-row gw-justify-center gw-align-middle gw-gap-6 gw-mb-4">
       {army && (
         <a href="https://www.army.mil" target="_blank" rel="noopener">
-          <img src={armyLogo} alt="U.S. Army" className="max-h-[75px]" />
+          <img src={armyLogo} alt="U.S. Army" className="gw-max-h-[75px]" />
         </a>
       )}
       {usace && (
@@ -17,7 +17,7 @@ function LogoBanner({ army, usace, rsgis, cwbi }) {
           <img
             src={usaceLogo}
             alt="U.S. Army Corps of Engineers"
-            className="max-h-[75px] h-[75px] w-auto"
+            className="gw-max-h-[75px] gw-h-[75px] gw-w-auto"
           />
         </a>
       )}
@@ -30,7 +30,7 @@ function LogoBanner({ army, usace, rsgis, cwbi }) {
           <img
             src={rsgisLogo}
             alt="Remote Sensing - GIS Center of Expertise"
-            className="max-h-[75px]"
+            className="gw-max-h-[75px]"
           />
         </a>
       )}
@@ -43,7 +43,7 @@ function LogoBanner({ army, usace, rsgis, cwbi }) {
           <img
             src={cwbiLogo}
             alt="Civil Works Business Intelligence"
-            className="max-h-[75px]"
+            className="gw-max-h-[75px]"
           />
         </a>
       )}

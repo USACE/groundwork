@@ -81,7 +81,7 @@ function CardDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Site Wrapper">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Sometimes you want to put a box around your content to make it stand
             out from the rest of the page, use a Card to do that.
@@ -89,7 +89,7 @@ function CardDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <H3>Basic Example</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Card>
             <H2>Card Title</H2>
             <Text>Card content goes here</Text>
@@ -113,18 +113,18 @@ export default Component;
         />
 
         {/* Example usage - remove if not needed */}
-        <H3 className="mt-6">Easy Flex Layout</H3>
+        <H3 className="gw-mt-6">Easy Flex Layout</H3>
         <Text>
           Use the stretch prop to apply vertical stretch to cards in a flex row
           so they are all the same height.
         </Text>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="mt-3 flex justify-start items-start gap-3">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
             <Card1 />
             <Card2 />
             <Card3 />
           </div>
-          <div className="mt-3 flex justify-start items-start gap-3">
+          <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
             <Card1 stretch />
             <Card2 stretch />
             <Card3 stretch />
@@ -136,7 +136,7 @@ export default Component;
 
 function Component() {
   return (
-    <div className="mt-3 flex justify-start items-start gap-3">
+    <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
       <Card {...props}>
         <H2>This Card has lots of text</H2>
         <Text>{...}</Text>
@@ -150,7 +150,7 @@ function Component() {
         <Text>{...}</Text>
       </Card>
     </div>
-    <div className="mt-3 flex justify-start items-start gap-3">
+    <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
       <Card stretch >
         <H2>This Card has lots of text</H2>
         <Text>{...}</Text>
@@ -171,8 +171,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<Card />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<Card />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

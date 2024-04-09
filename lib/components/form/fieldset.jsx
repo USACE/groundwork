@@ -4,16 +4,19 @@ import {
   Fieldset as HeadlessFieldset,
   Label as HeadlessLabel,
   Legend as HeadlessLegend,
-} from '@headlessui/react'
-import clsx from 'clsx'
+} from "@headlessui/react";
+import clsx from "clsx";
 
 export function Fieldset({ className, ...props }) {
   return (
     <HeadlessFieldset
       {...props}
-      className={clsx(className, '[&>*+[data-slot=control]]:mt-6 [&>[data-slot=text]]:mt-1')}
+      className={clsx(
+        className,
+        "[&>*+[data-slot=control]]:gw-mt-6 [&>[data-slot=text]]:gw-mt-1"
+      )}
     />
-  )
+  );
 }
 
 export function Legend({ ...props }) {
@@ -23,14 +26,20 @@ export function Legend({ ...props }) {
       data-slot="legend"
       className={clsx(
         props.className,
-        'text-base/6 font-semibold text-zinc-950 data-[disabled]:opacity-50 sm:text-sm/6 dark:text-white'
+        "gw-text-base/6 gw-font-semibold gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white"
       )}
     />
-  )
+  );
 }
 
 export function FieldGroup({ className, ...props }) {
-  return <div {...props} data-slot="control" className={clsx(className, 'space-y-8')} />
+  return (
+    <div
+      {...props}
+      data-slot="control"
+      className={clsx(className, "gw-space-y-8")}
+    />
+  );
 }
 
 export function Field({ className, ...props }) {
@@ -38,16 +47,16 @@ export function Field({ className, ...props }) {
     <HeadlessField
       className={clsx(
         className,
-        '[&>[data-slot=label]+[data-slot=control]]:mt-3',
-        '[&>[data-slot=label]+[data-slot=description]]:mt-1',
-        '[&>[data-slot=description]+[data-slot=control]]:mt-3',
-        '[&>[data-slot=control]+[data-slot=description]]:mt-3',
-        '[&>[data-slot=control]+[data-slot=error]]:mt-3',
-        '[&>[data-slot=label]]:font-medium'
+        "[&>[data-slot=label]+[data-slot=control]]:gw-mt-3",
+        "[&>[data-slot=label]+[data-slot=description]]:gw-mt-1",
+        "[&>[data-slot=description]+[data-slot=control]]:gw-mt-3",
+        "[&>[data-slot=control]+[data-slot=description]]:gw-mt-3",
+        "[&>[data-slot=control]+[data-slot=error]]:gw-mt-3",
+        "[&>[data-slot=label]]:gw-font-medium"
       )}
       {...props}
     />
-  )
+  );
 }
 
 export function Label({ className, ...props }) {
@@ -57,10 +66,10 @@ export function Label({ className, ...props }) {
       data-slot="label"
       className={clsx(
         className,
-        'select-none text-base/6 text-zinc-950 data-[disabled]:opacity-50 sm:text-sm/6 dark:text-white'
+        "gw-select-none gw-text-base/6 gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white"
       )}
     />
-  )
+  );
 }
 
 export function Description({ className, disabled, ...props }) {
@@ -70,10 +79,10 @@ export function Description({ className, disabled, ...props }) {
       data-slot="description"
       className={clsx(
         className,
-        'text-base/6 text-zinc-500 data-[disabled]:opacity-50 sm:text-sm/6 dark:text-zinc-400'
+        "gw-text-base/6 gw-text-zinc-500 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-zinc-400"
       )}
     />
-  )
+  );
 }
 
 export function ErrorMessage({ className, disabled, ...props }) {
@@ -81,7 +90,10 @@ export function ErrorMessage({ className, disabled, ...props }) {
     <HeadlessDescription
       {...props}
       data-slot="error"
-      className={clsx(className, 'text-base/6 text-red-600 data-[disabled]:opacity-50 sm:text-sm/6 dark:text-red-500')}
+      className={clsx(
+        className,
+        "gw-text-base/6 gw-text-red-600 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-red-500"
+      )}
     />
-  )
+  );
 }

@@ -68,15 +68,15 @@ function TextareaDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Text Area">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Like a basic text input, but for longer text, make it big by upping
             the rows prop.
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="w-1/2">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-w-1/2">
             <Field>
               <Label>Some long description</Label>
               <Textarea rows={5} />
@@ -89,7 +89,7 @@ function TextareaDocs() {
 
 function Component() {
   return (
-    <div className="w-1/2">
+    <div className="gw-w-1/2">
       <Field>
         <Label>Some long description</Label>
         <Textarea rows={5} />
@@ -102,8 +102,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
-          Component API - <Code className="p-2">{`<SiteWrapper />`}</Code>
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

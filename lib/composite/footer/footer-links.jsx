@@ -1,7 +1,7 @@
 function FooterLinks({ links = [], columnCount = 2 }) {
   return (
     <ul
-      className="list-none"
+      className="gw-list-none"
       style={{
         columnCount: columnCount,
         columnGap: "40px",
@@ -13,12 +13,12 @@ function FooterLinks({ links = [], columnCount = 2 }) {
         const target = link.href.startsWith("http") ? "_blank" : "";
         const rel = link.href.startsWith("http") ? "noopener noreferrer" : "";
         return (
-          <li key={link.text + i} className="mb-2">
+          <li key={link.text + i} className="gw-mb-2">
             <a
               href={link.href}
               target={target}
               rel={rel}
-              className="hover:underline"
+              className="gw-hover:gw-underline"
             >
               {link.text}
             </a>

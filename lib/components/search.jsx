@@ -16,7 +16,7 @@ function Search({ value, onChange, placeholder = "Search", ...props }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "10px center",
       }}
-      className="bg-white border-gray-200 border-2 rounded h-8 m-2 text-sm text-black w-full pl-8"
+      className="gw-bg-white gw-border-gray-200 gw-border-2 gw-rounded gw-h-8 gw-m-2 gw-text-sm gw-text-black gw-w-full gw-pl-8"
     />
   );
 }

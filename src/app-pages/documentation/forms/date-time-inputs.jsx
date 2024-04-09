@@ -64,7 +64,7 @@ function DateTimeInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Input">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             Browsers have come a long way when it comes to date/time pickers,
             the Input component can leverage these native pickers by setting the
@@ -74,11 +74,11 @@ function DateTimeInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
-          <div className="w-[50%]">
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-w-[50%gw-]">
             {inputTypes.map((type) => {
               return (
-                <div key={type} className="mb-3">
+                <div key={type} className="gw-mb-3">
                   <Field>
                     <Label>{type}</Label>
                     <Input type={type} placeholder={type} label="label" />
@@ -96,10 +96,10 @@ function Component() {
   const inputTypes = ["date", "datetime-local", "month", "time"];
 
   return (
-    <div className="w-[50%]">
+    <div className="gw-w-[50%gw-]">
       {inputTypes.map((type) => {
         return (
-          <div key={type} className="mb-3">
+          <div key={type} className="gw-mb-3">
             <Field>
               <Label>{type}</Label>
               <Input type={type} placeholder={type} label="label" />
@@ -115,9 +115,9 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="font-bold text-lg pt-6">
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API -{" "}
-          <Code className="p-2">{`<Input type={"date" || "datetime-local" || "month" || "time"} />`}</Code>
+          <Code className="gw-p-2">{`<gw-Input gw-type={"gw-date" || "gw-datetime-local" || "gw-month" || "gw-time"} />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

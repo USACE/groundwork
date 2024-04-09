@@ -28,7 +28,7 @@ function Gravatar({ email }) {
   }, [email]);
   return (
     <img
-      className="h-8 w-8 rounded-full"
+      className="gw-h-8 gw-w-8 gw-rounded-full"
       src={gravatarUrl}
       alt="Gravatar profile image"
     />
@@ -43,16 +43,16 @@ function ProfileDropdown({
   onLogout,
 }) {
   return (
-    <Menu as="div" className="relative ml-4 flex-shrink-0">
+    <Menu as="div" className="gw-relative gw-ml-4 gw-flex-shrink-0">
       <div>
-        <Menu.Button className="relative flex rounded-full bg-white focus:outline-none">
-          <span className="absolute -inset-1.5" />
-          <span className="sr-only">Open user menu</span>
+        <Menu.Button className="gw-relative gw-flex gw-rounded-full gw-bg-white gw-focus:gw-outline-none">
+          <span className="gw-absolute gw--inset-1.gw-5" />
+          <span className="gw-sr-only">Open user menu</span>
           {email ? (
             <Gravatar email={email} />
           ) : (
-            <span className="inline-block h-8 w-8 rounded-full overflow-hidden text-nav-black text-xl font-bold bg-nav-gray">
-              <span className="align-middle">
+            <span className="gw-inline-block gw-h-8 gw-w-8 gw-rounded-full gw-overflow-hidden gw-text-nav-black gw-text-xl gw-font-bold gw-bg-nav-gray">
+              <span className="gw-align-middle">
                 {username ? username[0].toUpperCase() : "U"}
               </span>
             </span>
@@ -60,13 +60,13 @@ function ProfileDropdown({
         </Menu.Button>
       </div>
       {links && links.length > 0 ? (
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-sm bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="gw-absolute gw-right-0 gw-z-10 gw-mt-2 gw-w-48 gw-origin-top-right gw-rounded-sm gw-bg-white gw-py-1 gw-shadow-lg gw-ring-1 gw-ring-black gw-ring-opacity-5 gw-focus:gw-outline-none">
           {links.map((item) => (
             <Menu.Item key={item.text}>
               <a
                 key={item.id}
                 href={item.href}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className="gw-block gw-px-4 gw-py-2 gw-text-sm gw-text-gray-700 gw-hover:gw-bg-gray-100"
               >
                 {item.text}
               </a>
@@ -76,7 +76,7 @@ function ProfileDropdown({
             <Menu.Item>
               <button
                 onClick={onLogout}
-                className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
+                className="gw-block gw-w-full gw-px-4 gw-py-2 gw-text-sm gw-text-left gw-text-gray-700 gw-hover:gw-bg-gray-100"
               >
                 Logout
               </button>

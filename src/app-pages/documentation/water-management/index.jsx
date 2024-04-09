@@ -17,7 +17,7 @@ function WaterManagement() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Water Management">
         <div>
-          <Text className="pb-6">
+          <Text className="gw-pb-6">
             The Water Management community has been working on building out some
             custom components that pair well with the rest of Groundwork. These
             components are designed so that we can consume data from the CWMS
