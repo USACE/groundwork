@@ -7,7 +7,7 @@ import {
   useCdaCatalogTS,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
-import CdaParamsTable from "../../../app-components/water-management/cda-param-table";
+import CdaParamsTable from "../../../app-components/water-management/cda-params-table";
 import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 import DocsPage from "../_docs-page";
 
