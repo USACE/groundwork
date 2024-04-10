@@ -12,7 +12,7 @@ import {
 function ParamsTable({ paramsList, showReq = true }) {
   if (!paramsList || !paramsList.length)
     return (
-      <Text className="pt-3">This hook does not accept any parameters.</Text>
+      <Text className="gw-pt-3">This hook does not accept any parameters.</Text>
     );
   return (
     <Table striped dense>
@@ -38,7 +38,7 @@ function ParamsTable({ paramsList, showReq = true }) {
                 <Code>{param.required ? "required" : "optional"}</Code>
               </TableCell>
             )}
-            <TableCell className="text-wrap">{param.desc}</TableCell>
+            <TableCell className="gw-text-wrap">{param.desc}</TableCell>
           </TableRow>
         ))}
       </TableBody>

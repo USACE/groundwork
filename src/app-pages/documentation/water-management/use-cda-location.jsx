@@ -20,7 +20,7 @@ const LocationCard = () => {
   if (isError) return <span>Location error!</span>;
 
   return (
-    <Card className="w-96">
+    <Card className="gw-w-96">
       <H3>Buckhorn Location Data</H3>
       <ul>
         {Object.entries(data) // Convert the response object to an array
@@ -55,7 +55,7 @@ function UseCdaLocation() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="useCdaLocation">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             The useCdaLocation hook can be used to retrieve location data using
             cwms-data-api (CDA). It requires only a location ID and an office
@@ -65,8 +65,8 @@ function UseCdaLocation() {
           <QueryClientWarning />
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Basic Usage</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <LocationCard />
         </div>
         {/* Example code */}
@@ -82,7 +82,7 @@ const LocationCard = () => {
   if (isError) return <span>Location error!</span>;
 
   return (
-    <Card className="w-fit">
+    <Card className="gw-w-fit">
       <H3>Buckhorn Location Data</H3>
       <ul>
         {Object.entries(data) // Convert the response object to an array
@@ -98,9 +98,9 @@ const LocationCard = () => {
 };
 `}
         />
-        <div className="font-bold text-lg pt-6">
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
           Hook Parameters -{" "}
-          <Code className="p-2">{`useCdaLocation({...})`}</Code>
+          <Code className="gw-p-2">{`useCdaLocation({...})`}</Code>
         </div>
         <CdaParamsTable requestObject="Location" requestType="GET" />
       </UsaceBox>

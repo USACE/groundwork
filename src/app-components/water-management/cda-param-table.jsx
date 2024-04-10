@@ -12,7 +12,7 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
           request. See the{" "}
           <a
             href="https://cwms-data.usace.army.mil/cwms-data/swagger-ui.html"
-            className="underline"
+            className="gw-underline"
           >
             CDA Swagger Docs
           </a>
@@ -36,7 +36,7 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
           See the{" "}
           <a
             href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
-            className="underline"
+            className="gw-underline"
           >
             TanStack Query Docs
           </a>

@@ -23,7 +23,7 @@ const returnParams = [
         endpoint are available in the{" "}
         <a
           href="https://cwms-data.usace.army.mil/cwms-data/swagger-ui.html"
-          className="underline"
+          className="gw-underline"
         >
           CDA Swagger Docs
         </a>
@@ -75,8 +75,8 @@ function DataHooks() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Basic Usage</H3>
-        <Text className="pb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
+        <Text className="gw-pb-3">
           Use of the data hooks requires that your app/site be wrapped in a
           QueryClientProvider. The QueryClientProvider will expose a QueryClient
           that should be instantiated at the top level of your application. The
@@ -110,7 +110,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 `}
         />
-        <H3 className="pt-6 pb-3">Configuration</H3>
+        <H3 className="gw-pt-6 gw-pb-3">Configuration</H3>
         <Text>
           While the default configuration will likely suffice for most use
           cases, TanStack Query is highly configurable for individualized needs.
@@ -118,14 +118,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           instantiated or for individual useQuery requests. See the docs for{" "}
           <a
             href="https://tanstack.com/query/latest/docs/reference/QueryClient"
-            className="underline"
+            className="gw-underline"
           >
             QueryClient
           </a>{" "}
           and for{" "}
           <a
             href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
-            className="underline"
+            className="gw-underline"
           >
             useQuery
           </a>
@@ -134,24 +134,24 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           increasing the "staleTime" on a default or per-query basis to limit
           unnecessary refetches.
         </Text>
-        <H3 className="pt-6 pb-3">Return Object</H3>
+        <H3 className="gw-pt-6 gw-pb-3">Return Object</H3>
         <Text>
           Each custom data hook will return the same object as TanStack Query's
           useQuery function. While useQuery returns a number of parameters, it
           is expected that most use cases will be covered by the following
           return parameters:
         </Text>
-        <div className="font-bold text-lg pt-6">
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
           Return Parameters -{" "}
-          <Code className="p-2">{`const {...} = useQuery()`}</Code>
+          <Code className="gw-p-2">{`const {...} = useQuery()`}</Code>
         </div>
         <ParamsTable paramsList={returnParams} showReq={false} />
-        <Text className="pt-3">
+        <Text className="gw-pt-3">
           A full list of the return parameters for useQuery hooks can be
           referenced in the{" "}
           <a
             href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
-            className="underline"
+            className="gw-underline"
           >
             useQuery documentation
           </a>

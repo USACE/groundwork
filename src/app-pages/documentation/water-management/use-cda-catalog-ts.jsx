@@ -20,7 +20,7 @@ const CatalogCard = () => {
   if (isError) return <span>Catalog error!</span>;
 
   return (
-    <Card className="w-fit">
+    <Card className="gw-w-fit">
       <H3>Buckhorn Inflow Records</H3>
       <ul>
         <li>TimeSeries ID: Latest Timestamp</li>
@@ -54,7 +54,7 @@ function UseCdaCatalogTS() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="useCdaCatalogTS">
         {/* Description of the component and what problem it solves */}
-        <div className="pb-6">
+        <div className="gw-pb-6">
           <Text>
             The useCdaCatalogTS hook can be used to retrieve a Catalog of
             timeseries data using cwms-data-api (CDA). It requires an office ID
@@ -64,8 +64,8 @@ function UseCdaCatalogTS() {
           <QueryClientWarning />
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="pt-6 pb-3">Basic Usage</H3>
-        <div className="rounded-md border border-dashed px-6 py-3 mb-3">
+        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <CatalogCard />
         </div>
         {/* Example code */}
@@ -81,7 +81,7 @@ const CatalogCard = () => {
   if (isError) return <span>Catalog error!</span>;
 
   return (
-    <Card className="w-fit">
+    <Card className="gw-w-fit">
       <H3>Buckhorn Inflow Records</H3>
       <ul>
         <li>TimeSeries ID: Latest Timestamp</li>
@@ -96,9 +96,9 @@ const CatalogCard = () => {
 };
 `}
         />
-        <div className="font-bold text-lg pt-6">
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
           Hook Parameters -{" "}
-          <Code className="p-2">{`useCdaCatalogTS({...})`}</Code>
+          <Code className="gw-p-2">{`useCdaCatalogTS({...})`}</Code>
         </div>
         <CdaParamsTable requestObject="Catalog" requestType="GET" />
       </UsaceBox>
