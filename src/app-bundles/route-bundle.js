@@ -9,6 +9,7 @@ import SiteWrapperDocs from "../app-pages/documentation/app-shell/site-wrapper";
 import Types from "../app-pages/documentation/types";
 import LinkDocs from "../app-pages/documentation/types/link";
 import ContainerDocs from "../app-pages/documentation/layout/container";
+import SkeletonDocs from "../app-pages/documentation/layout/skeleton";
 import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
 import ButtonsDocs from "../app-pages/documentation/buttons";
 import SearchDocs from "../app-pages/documentation/app-shell/search";
@@ -50,6 +51,7 @@ export default createRouteBundle(
     "/docs/app-shell/search": SearchDocs,
     "/docs/layout": Layout,
     "/docs/layout/container": ContainerDocs,
+    "/docs/layout/skeleton": SkeletonDocs,
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
