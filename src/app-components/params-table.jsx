@@ -47,4 +47,4 @@ function ParamsTable({ paramsList, showReq = true }) {
 }
 
 export default ParamsTable;
-export { ParamsTable as PropsTable };
+export { ParamsTable };
