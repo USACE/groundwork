@@ -3,6 +3,7 @@ import "./styles.css";
 
 // layout components
 export { Container } from "./components/layout/container";
+export { Skeleton } from "./components/layout/skeleton";
 export { UsaceBox } from "./components/layout/usace-box";
 
 // display components
