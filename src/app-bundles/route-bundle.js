@@ -9,12 +9,12 @@ import SiteWrapperDocs from "../app-pages/documentation/app-shell/site-wrapper";
 import Types from "../app-pages/documentation/types";
 import LinkDocs from "../app-pages/documentation/types/link";
 import ContainerDocs from "../app-pages/documentation/layout/container";
-import SkeletonDocs from "../app-pages/documentation/layout/skeleton";
 import USACEBoxDocs from "../app-pages/documentation/layout/usace-box";
 import ButtonsDocs from "../app-pages/documentation/buttons";
 import SearchDocs from "../app-pages/documentation/app-shell/search";
 import Display from "../app-pages/documentation/display";
 import HeadingsDocs from "../app-pages/documentation/display/headings";
+import SkeletonDocs from "../app-pages/documentation/display/skeleton";
 import TextDocs from "../app-pages/documentation/display/text";
 import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
@@ -51,7 +51,6 @@ export default createRouteBundle(
     "/docs/app-shell/search": SearchDocs,
     "/docs/layout": Layout,
     "/docs/layout/container": ContainerDocs,
-    "/docs/layout/skeleton": SkeletonDocs,
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
@@ -65,6 +64,7 @@ export default createRouteBundle(
     "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
+    "/docs/display/skeleton": SkeletonDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,

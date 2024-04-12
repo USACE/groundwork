@@ -32,11 +32,6 @@ export default [
         href: "/docs/layout/container",
       },
       {
-        id: "skeleton",
-        text: "Skeleton",
-        href: "/docs/layout/skeleton",
-      },
-      {
         id: "usace-box",
         text: "UsaceBox",
         href: "/docs/layout/usace-box",
@@ -106,6 +101,11 @@ export default [
         id: "hero",
         text: "Hero",
         href: "/docs/display/hero",
+      },
+      {
+        id: "skeleton",
+        text: "Skeleton",
+        href: "/docs/display/skeleton",
       },
       {
         id: "text",

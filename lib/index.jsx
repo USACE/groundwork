@@ -3,7 +3,6 @@ import "./styles.css";
 
 // layout components
 export { Container } from "./components/layout/container";
-export { Skeleton } from "./components/layout/skeleton";
 export { UsaceBox } from "./components/layout/usace-box";
 
 // display components
@@ -12,6 +11,7 @@ export * from "./components/display/headings";
 export * from "./components/table";
 export * from "./components/display/card";
 export * from "./components/profile-dropdown";
+export { Skeleton } from "./components/display/skeleton";
 
 // composite components
 export { Header } from "./composite/header";

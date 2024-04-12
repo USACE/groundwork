@@ -14,7 +14,7 @@ const pageBreadcrumbs = [
   },
   {
     text: "Skeleton",
-    href: "/docs/layout/skeleton",
+    href: "/docs/display/skeleton",
   },
 ];
 
