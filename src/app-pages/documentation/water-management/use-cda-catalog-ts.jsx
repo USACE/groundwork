@@ -7,9 +7,25 @@ import {
   useCdaCatalogTS,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
+import ParamsTable from "../../../app-components/params-table";
 import CdaParamsTable from "../../../app-components/water-management/cda-params-table";
 import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 import DocsPage from "../_docs-page";
+
+const cdaParams = [
+  {
+    name: "like",
+    type: "string",
+    required: true,
+    desc: "Posix regular expression matching against the timeseries id.",
+  },
+  {
+    name: "office",
+    type: "string",
+    required: false,
+    desc: "3-4 letter office name representing the district you want to isolate data to.",
+  },
+];
 
 const CatalogCard = () => {
   const { data, isPending, isError } = useCdaCatalogTS({
@@ -101,6 +117,8 @@ const CatalogCard = () => {
           <Code className="gw-p-2">{`useCdaCatalogTS({...})`}</Code>
         </div>
         <CdaParamsTable requestObject="Catalog" requestType="GET" />
+        <div className="gw-font-bold gw-text-lg gw-pt-6">cdaParams</div>
+        <ParamsTable paramsList={cdaParams} />
       </UsaceBox>
     </DocsPage>
   );
