@@ -117,7 +117,7 @@ export default Component;
         {/* Component props documentation */}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<gw-Input gw-type={"gw-date" || "gw-datetime-local" || "gw-month" || "gw-time"} />`}</Code>
+          <Code className="gw-p-2">{`<Input type={"date" || "datetime-local" || "month" || "time"} />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>
