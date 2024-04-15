@@ -138,8 +138,8 @@ import { Search } from "@usace/groundwork";
 function Component() {
   const [searchString, setSearchString] = useState("");
   return (
-    <div className="gw-flex gw-flex-col gw-items-center">
-      <span className="gw-ml-3">Search String: {searchString}</span>
+    <div className="flex flex-col items-center">
+      <span className="ml-3">Search String: {searchString}</span>
       <Search
         value={searchString}
         onChange={(e) => {
@@ -181,7 +181,7 @@ export default Component;
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-col gw-items-center">
+    <div className="flex flex-col items-center">
       <SearchDotGov
         affiliate={yourAffiliateCode}
         accessKey={yourAccessKey}

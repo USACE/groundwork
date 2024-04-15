@@ -97,7 +97,7 @@ const CatalogCard = () => {
   if (isError) return <span>Catalog error!</span>;
 
   return (
-    <Card className="gw-w-fit">
+    <Card className="w-fit">
       <H3>Buckhorn Inflow Records</H3>
       <ul>
         <li>TimeSeries ID: Latest Timestamp</li>

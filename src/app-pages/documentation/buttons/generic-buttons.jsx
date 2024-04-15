@@ -125,7 +125,7 @@ function GenericButtonsDocs() {
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       <Button>Default</Button>
       <Button style="outline">Outlined</Button>
       <Button style="plain">Plain</Button>
@@ -159,7 +159,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} color={clr}>
@@ -195,7 +195,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} style="outline" color={clr}>
@@ -231,7 +231,7 @@ const colors = [...];
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       {colors.map((clr) => {
         return (
           <Button key={clr} style="plain" color={clr}>
@@ -265,10 +265,10 @@ export default Component;
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       {["xs", "sm", "md", "lg", "xl"].map((size) => {
         return (
-          <Button key={size} size={size} className="gw-mr-3">
+          <Button key={size} size={size} className="mr-3">
             {size}
           </Button>
         );
@@ -299,10 +299,10 @@ export default Component;
 
 function Component() {
   return (
-    <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
+    <div className="flex flex-row flex-wrap gap-3">
       {["none", "sm", "md", "lg", "xl"].map((size) => {
         return (
-          <Button key={size} radius={size} className="gw-mr-3">
+          <Button key={size} radius={size} className="mr-3">
             {size}
           </Button>
         );

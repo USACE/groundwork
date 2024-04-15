@@ -75,7 +75,7 @@ function DateTimeInputDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%gw-]">
+          <div className="gw-w-[50%]">
             {inputTypes.map((type) => {
               return (
                 <div key={type} className="gw-mb-3">
@@ -96,10 +96,10 @@ function Component() {
   const inputTypes = ["date", "datetime-local", "month", "time"];
 
   return (
-    <div className="gw-w-[50%gw-]">
+    <div className="w-[50%]">
       {inputTypes.map((type) => {
         return (
-          <div key={type} className="gw-mb-3">
+          <div key={type} className="mb-3">
             <Field>
               <Label>{type}</Label>
               <Input type={type} placeholder={type} label="label" />
@@ -117,7 +117,7 @@ export default Component;
         {/* Component props documentation */}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<gw-Input gw-type={"gw-date" || "gw-datetime-local" || "gw-month" || "gw-time"} />`}</Code>
+          <Code className="gw-p-2">{`<Input type={"date" || "datetime-local" || "month" || "time"} />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

@@ -52,7 +52,7 @@ function FieldsetDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%gw-]">
+          <div className="gw-w-[50%]">
             <Fieldset>
               <Legend>Fieldset Title</Legend>
               <Text>You can add some more instructions like this...</Text>
@@ -75,7 +75,7 @@ function FieldsetDocs() {
 
 function Component() {
   return (
-    <div className="gw-w-[50%gw-]">
+    <div className="w-[50%]">
       <Fieldset>
         <Legend>Fieldset Title</Legend>
         <Text>You can add some more instructions like this...</Text>

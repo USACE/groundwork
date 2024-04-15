@@ -72,7 +72,7 @@ function FileInputDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%gw-]">
+          <div className="gw-w-[50%]">
             <div className="gw-mb-3">
               <Field>
                 <Label>Choose a file</Label>
@@ -87,8 +87,8 @@ function FileInputDocs() {
 
 function Component() {
   return (
-    <div className="gw-w-[50%gw-]">
-      <div className="gw-mb-3">
+    <div className="w-[50%]">
+      <div className="mb-3">
         <Field>
           <Label>Choose a file</Label>
           <Input type="file" />
