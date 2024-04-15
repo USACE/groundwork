@@ -9,14 +9,14 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
       desc: (
         <>
           Parameters provided to CDA for a {requestObject} {requestType}{" "}
-          request. See the{" "}
+          request. Core parameters are listed below. Check the{" "}
           <a
             href="https://cwms-data.usace.army.mil/cwms-data/swagger-ui.html"
             className="gw-underline"
           >
             CDA Swagger Docs
-          </a>
-          .
+          </a>{" "}
+          for a full listing.
         </>
       ),
     },

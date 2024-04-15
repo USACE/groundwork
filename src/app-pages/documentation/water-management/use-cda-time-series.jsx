@@ -7,9 +7,43 @@ import {
   useCdaTimeSeries,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
+import ParamsTable from "../../../app-components/params-table";
 import CdaParamsTable from "../../../app-components/water-management/cda-params-table";
 import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 import DocsPage from "../_docs-page";
+
+const cdaParams = [
+  {
+    name: "name",
+    type: "string",
+    required: true,
+    desc: "Specifies the name(s) of the time series whose data is to be included in the response. A case insensitive comparison is used to match names.",
+  },
+  {
+    name: "office",
+    type: "string",
+    required: false,
+    desc: "Specifies the owning office of the time series(s) whose data is to be included in the response. If this field is not specified, matching time series information from all offices shall be returned.",
+  },
+  {
+    name: "unit",
+    type: "string",
+    required: false,
+    desc: "Specifies the unit or unit system of the response. Options: 'EN', 'SI', specific units (e.g. 'ft')",
+  },
+  {
+    name: "begin",
+    type: "string",
+    required: false,
+    desc: "Specifies the start of the time window for data to be included in the response. If this field is not specified, any required time window begins 24 hours prior to the specified or default end time. The format for this field is ISO 8601 extended, with optional offset and timezone, i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.",
+  },
+  {
+    name: "end",
+    type: "string",
+    required: false,
+    desc: "Specifies the end of the time window for data to be included in the response. If this field is not specified, any required time window ends at the current time. The format for this field is ISO 8601 extended, with optional timezone, i.e., 'YYYY-MM-dd'T'hh:mm:ss[Z'['VV']']', e.g., '2021-06-10T13:00:00-0700[PST8PDT]'.",
+  },
+];
 
 const OutflowCard = () => {
   const { data, isPending, isError } = useCdaTimeSeries({
@@ -127,6 +161,8 @@ const OutflowCard = () => {
           <Code className="gw-p-2">{`useCdaTimeSeries({...})`}</Code>
         </div>
         <CdaParamsTable requestObject="TimeSeries" requestType="GET" />
+        <div className="gw-font-bold gw-text-lg gw-pt-6">cdaParams</div>
+        <ParamsTable paramsList={cdaParams} />
       </UsaceBox>
     </DocsPage>
   );
