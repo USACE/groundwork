@@ -142,7 +142,7 @@ function Component() {
   const [email, setEmail] = useState("");
   
   return (
-    <div className="gw-flex gw-justify-between gw-items-center gw-bg-usace-black gw-text-white gw-rounded-2 gw-p-2">
+    <div className="flex justify-between items-center bg-usace-black text-white rounded-2 p-2">
       {email ? (
         <ProfileDropdown
           email={email}
@@ -173,7 +173,7 @@ function Component() {
         />
       )}
       {email && (
-        <span className="gw-italic gw-font-light gw-text-sm">{\`Logged in as \${email}\`}</span>
+        <span className="italic font-light text-sm">{\`Logged in as \${email}\`}</span>
       )}
     </div>
   )
@@ -190,7 +190,8 @@ export default Component;
 
         {/* Component props documentation */}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<ProfileDropdown />`}</Code>
+          Component API -{" "}
+          <Code className="gw-p-2">{`<ProfileDropdown />`}</Code>
         </div>
         <PropsTable propsList={componentProps_ProfileDropdown} />
       </UsaceBox>

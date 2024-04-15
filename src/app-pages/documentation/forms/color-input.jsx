@@ -112,8 +112,8 @@ function Component() {
   const [color, setColor] = useState("#000000");
 
   return (
-    <div className="gw-flex gw-gap-6 gw-items-center gw-w-full">
-      <div className="gw-flex-1">
+    <div className="flex gap-6 items-center w-full">
+      <div className="flex-1">
         <Field>
           <Label>Pick a color</Label>
           <Input
@@ -125,9 +125,9 @@ function Component() {
           />
         </Field>
       </div>
-      <div className="gw-flex-1">
+      <div className="flex-1">
         <div
-          className="gw-h-8 gw-w-full gw-text-center gw-text-white"
+          className="h-8 w-full text-center text-white"
           style={{ backgroundColor: color }}
         >
           {color}

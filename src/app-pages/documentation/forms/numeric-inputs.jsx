@@ -151,7 +151,7 @@ function Component() {
 
   return (
     <>
-      <div className="gw-mb-3">
+      <div className="mb-3">
         <Field>
           <Label>Number</Label>
           <Input
@@ -164,7 +164,7 @@ function Component() {
           />
         </Field>
       </div>
-      <div className="gw-mb-3">
+      <div className="mb-3">
         <Field>
           <Label>{\`Range - Value = \${rangeValue}\`}</Label>
           <Input
@@ -178,10 +178,10 @@ function Component() {
           />
         </Field>
       </div>
-      <div className="gw-mb-3">
+      <div className="mb-3">
         <Field>
           <Label>Browser Range</Label>
-          <div className="gw-mt-1">
+          <div className="mt-1">
             <input
               type="range"
               min="0"

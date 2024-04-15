@@ -131,7 +131,7 @@ const OutflowCard = () => {
   if (isError) return <span>Timeseries error!</span>;
 
   return (
-    <Card className="gw-w-96">
+    <Card className="w-96">
       <H3>Buckhorn Outflow Data</H3>
       <ul>
         <li>Time - Value</li>

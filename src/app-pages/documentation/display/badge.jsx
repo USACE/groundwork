@@ -134,22 +134,22 @@ function BadgeDocs() {
 function Component() {
   return (
     <>
-      <div className="gw-flex gw-flex-wrap gw-items-center gw-mb-3">
+      <div className="flex flex-wrap items-center mb-3">
         {colors.map((color) => {
           return (
-            <Badge color={color} key={color} className="gw-ml-2">
+            <Badge color={color} key={color} className="ml-2">
               {color}
             </Badge>
           );
         })}
       </div>
-      <div className="gw-flex gw-flex-wrap gw-items-center">
+      <div className="flex flex-wrap items-center">
         {colors.map((color) => {
           return (
             <BadgeButton
               color={color}
               key={color}
-              className="gw-ml-2"
+              className="ml-2"
               onClick={() => {
                 window.alert(\`Clicked the \${color} badge\`);
               }}

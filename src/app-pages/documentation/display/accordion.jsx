@@ -55,7 +55,7 @@ function AccordionDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%gw-]">
+          <div className="gw-w-[50%]">
             <Accordion
               defaultOpen
               heading={
@@ -101,20 +101,20 @@ import { LuPartyPopper } from "react-icons/lu";
 
 function Component() {
   return (
-    <div className="gw-w-[50%gw-]">
+    <div className="w-[50%]">
       <Accordion
         defaultOpen
         heading={
-          <span className="gw-flex gw-justify-between gw-w-full gw-items-center gw-gap-1">
+          <span className="flex justify-between w-full items-center gap-1">
             Start Here
-            <Badge color="green" className="gw-mr-2">
-              <LuPartyPopper className="gw-mr-1" />
+            <Badge color="green" className="mr-2">
+              <LuPartyPopper className="mr-1" />
               new!
             </Badge>
           </span>
         }
       >
-        <div className="gw-py-3">
+        <div className="py-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -125,7 +125,7 @@ function Component() {
         </div>
       </Accordion>
       <Accordion heading="Then Look Here">
-        <div className="gw-py-3">
+        <div className="py-3">
           Sodales ut etiam sit amet nisl purus. Feugiat in ante metus
           dictum at tempor commodo ullamcorper a. Ultrices neque ornare
           aenean euismod elementum nisi quis. Quam lacus suspendisse

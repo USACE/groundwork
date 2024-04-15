@@ -89,7 +89,7 @@ function TextareaDocs() {
 
 function Component() {
   return (
-    <div className="gw-w-1/2">
+    <div className="w-1/2">
       <Field>
         <Label>Some long description</Label>
         <Textarea rows={5} />

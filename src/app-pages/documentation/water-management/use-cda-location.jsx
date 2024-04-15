@@ -104,7 +104,7 @@ const LocationCard = () => {
   if (isError) return <span>Location error!</span>;
 
   return (
-    <Card className="gw-w-fit">
+    <Card className="w-fit">
       <H3>Buckhorn Location Data</H3>
       <ul>
         {Object.entries(data) // Convert the response object to an array

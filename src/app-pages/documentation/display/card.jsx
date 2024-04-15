@@ -136,7 +136,7 @@ export default Component;
 
 function Component() {
   return (
-    <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
+    <div className="mt-3 flex justify-start items-start gap-3">
       <Card {...props}>
         <H2>This Card has lots of text</H2>
         <Text>{...}</Text>
@@ -150,7 +150,7 @@ function Component() {
         <Text>{...}</Text>
       </Card>
     </div>
-    <div className="gw-mt-3 gw-flex gw-justify-start gw-items-start gw-gap-3">
+    <div className="mt-3 flex justify-start items-start gap-3">
       <Card stretch >
         <H2>This Card has lots of text</H2>
         <Text>{...}</Text>
