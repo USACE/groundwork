@@ -7,9 +7,31 @@ import {
   useCdaLocation,
 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
+import ParamsTable from "../../../app-components/params-table";
 import CdaParamsTable from "../../../app-components/water-management/cda-params-table";
 import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 import DocsPage from "../_docs-page";
+
+const cdaParams = [
+  {
+    name: "location",
+    type: "string",
+    required: true,
+    desc: "Specifies the CWMS Location ID for the requested location.",
+  },
+  {
+    name: "office",
+    type: "string",
+    required: false,
+    desc: "Specifies the owning office of the location level(s) whose data is to be included in the response. If this field is not specified, matching location information from all offices shall be returned.",
+  },
+  {
+    name: "unit",
+    type: "string",
+    required: false,
+    desc: "Specifies the unit or unit system of the response. Options: 'EN', 'SI', specific units (e.g. 'ft')",
+  },
+];
 
 const LocationCard = () => {
   const { data, isPending, isError } = useCdaLocation({
@@ -103,6 +125,8 @@ const LocationCard = () => {
           <Code className="gw-p-2">{`useCdaLocation({...})`}</Code>
         </div>
         <CdaParamsTable requestObject="Location" requestType="GET" />
+        <div className="gw-font-bold gw-text-lg gw-pt-6">cdaParams</div>
+        <ParamsTable paramsList={cdaParams} />
       </UsaceBox>
     </DocsPage>
   );
