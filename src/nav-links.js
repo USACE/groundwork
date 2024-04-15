@@ -170,6 +170,28 @@ export default [
     id: "water-management",
     text: "Water Management",
     href: "/docs/water-management",
+    children: [
+      {
+        id: "data-hooks",
+        text: "Data Hooks",
+        href: "/docs/water-management/data-hooks",
+      },
+      {
+        id: "use-cda-catalog-ts",
+        text: "useCdaCatalogTS",
+        href: "/docs/water-management/use-cda-catalog-ts",
+      },
+      {
+        id: "use-cda-location",
+        text: "useCdaLocation",
+        href: "/docs/water-management/use-cda-location",
+      },
+      {
+        id: "use-cda-time-series",
+        text: "useCdaTimeSeries",
+        href: "/docs/water-management/use-cda-time-series",
+      },
+    ],
   },
   {
     id: "plots",
