@@ -126,6 +126,23 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           increasing the "staleTime" on a default or per-query basis to limit
           unnecessary refetches.
         </Text>
+        <H3 className="gw-pt-6 gw-pb-3">CDA Default URL</H3>
+        <Text className="gw-pb-3">
+          The CDA data hooks support the use of a user-supplied default CDA URL.
+          This can be set by defining GROUNDWORK_CDA_URL on the global window
+          object. If used, it is recommended that the value be set alongside the
+          QueryClient definition. This can be used along with{" "}
+          <a
+            href="https://vitejs.dev/guide/env-and-mode"
+            className="gw-underline"
+          >
+            Vite environment variables
+          </a>{" "}
+          to define different CDA instances in development and production:
+        </Text>
+        {/* <Code>window.GROUNDWORK_CDA_URL = import.meta.env.VITE_CDA_URL;</Code> */}
+        <CodeExample code="window.GROUNDWORK_CDA_URL = import.meta.env.VITE_CDA_URL;" />
+        <Text></Text>
         <H3 className="gw-pt-6 gw-pb-3">Return Object</H3>
         <Text>
           Each custom data hook will return the same object as TanStack Query's
