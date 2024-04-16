@@ -59,7 +59,8 @@ function CdaLatestValueCardDocs() {
         <div className="gw-pb-6">
           <Text>
             The CDA Latest Value Card can be used to display the most recent
-            available data for a specific CWMS time series.
+            available data for a specific CWMS time series. This component
+            assumes that the data has been updated in the past 24 hours.
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
