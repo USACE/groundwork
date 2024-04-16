@@ -9,8 +9,14 @@ const CdaLatestValueCard = ({ label, tsId, office, digits = 0, className }) => {
   });
 
   let latestEntry = undefined;
-
-  if (data) latestEntry = getLatestEntry(data);
+  let noData = false;
+  if (data) {
+    if (data.values.length > 0) {
+      latestEntry = getLatestEntry(data);
+    } else {
+      noData = true;
+    }
+  }
 
   return (
     <Card className={className}>
@@ -18,7 +24,7 @@ const CdaLatestValueCard = ({ label, tsId, office, digits = 0, className }) => {
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
           {label}
         </p>
-        {isError ? (
+        {isError | noData ? (
           <span className="gw-text-lg">
             <MdErrorOutline />
           </span>
@@ -35,6 +41,8 @@ const CdaLatestValueCard = ({ label, tsId, office, digits = 0, className }) => {
       <div className="gw-mt-2 gw-flex gw-justify-between">
         {isError ? (
           <span className="gw-text-red-500">Error retrieving data</span>
+        ) : noData ? (
+          <span>No data found.</span>
         ) : isPending ? (
           <Skeleton className="gw-w-48" />
         ) : (
