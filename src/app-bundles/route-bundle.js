@@ -45,11 +45,13 @@ import Logout from "../app-pages/logout";
 import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
 import Plots from "../app-pages/documentation/plots";
 import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
+import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 
 export default createRouteBundle(
   {
     "/": Home,
     "/docs": Docs,
+    "/docs/quick-start": QuickStartGuide,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
     "/docs/app-shell/search": SearchDocs,

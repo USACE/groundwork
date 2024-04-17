@@ -3,6 +3,13 @@ export default [
     id: "getting-started",
     text: "Getting Started",
     href: "/docs",
+    children: [
+      {
+        id: "quick-start",
+        text: "Quick Start Guide",
+        href: "/docs/quick-start",
+      },
+    ],
   },
   {
     id: "app-shell",
