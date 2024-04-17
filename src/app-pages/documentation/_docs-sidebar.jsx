@@ -13,7 +13,7 @@ function DocsSidebar() {
             <a href={link.href}>
               <div
                 className={`gw-text-lg gw-font-bold gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
-                  hash === link.href ? "bg-gray-50 rounded" : ""
+                  hash === link.href ? "gw-bg-gray-50 gw-rounded" : ""
                 }`}
               >
                 {link.text}
@@ -31,7 +31,7 @@ function DocsSidebar() {
                     <a href={child.href} key={child.href}>
                       <li
                         className={`gw-pl-3 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
-                          hash === child.href ? "bg-gray-50 rounded" : ""
+                          hash === child.href ? "gw-bg-gray-50 gw-rounded" : ""
                         }`}
                       >
                         {child.text}
