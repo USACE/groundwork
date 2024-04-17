@@ -14,6 +14,7 @@ import ButtonsDocs from "../app-pages/documentation/buttons";
 import SearchDocs from "../app-pages/documentation/app-shell/search";
 import Display from "../app-pages/documentation/display";
 import HeadingsDocs from "../app-pages/documentation/display/headings";
+import SkeletonDocs from "../app-pages/documentation/display/skeleton";
 import TextDocs from "../app-pages/documentation/display/text";
 import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
@@ -67,6 +68,7 @@ export default createRouteBundle(
     "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
+    "/docs/display/skeleton": SkeletonDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,

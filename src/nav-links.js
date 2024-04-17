@@ -103,6 +103,11 @@ export default [
         href: "/docs/display/hero",
       },
       {
+        id: "skeleton",
+        text: "Skeleton",
+        href: "/docs/display/skeleton",
+      },
+      {
         id: "text",
         text: "Text",
         href: "/docs/display/text",
