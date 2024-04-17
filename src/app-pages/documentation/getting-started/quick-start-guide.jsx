@@ -2,6 +2,7 @@ import { UsaceBox, Code, Text, H3 } from "../../../../lib";
 import { CodeBlock } from "../../../app-components/code-block";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
+import { TbPlayerTrackNext } from "react-icons/tb";
 
 const pageBreadcrumbs = [
   {
@@ -19,7 +20,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <p className="gw-pt-3 gw-pb-3">{children}</p>;
+  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
 }
 
 function QuickStartGuide() {
@@ -28,7 +29,7 @@ function QuickStartGuide() {
       <UsaceBox title="Quick Start Guide">
         {/* Description of the component and what problem it solves */}
         <div className="gw-pb-6">
-          <Text>
+          <P>
             This guide will lead you through the process of starting up a new
             front-end project using the Groundwork component library and a few
             of our other recommended libraries. This quick start will get you up
@@ -37,7 +38,7 @@ function QuickStartGuide() {
             the quick start, feel free to move on to the guides covering adding
             our preferred CSS library and configuring routing in an SPA (Single
             Page Application).
-          </Text>
+          </P>
 
           <H3 className="gw-mt-6">Project Setup with Vite</H3>
           <P>
@@ -128,7 +129,7 @@ npm run dev`}
             </Code>
           </P>
 
-          <H3>Start using Groundwork</H3>
+          <H3 className="gw-mt-6">Start using Groundwork</H3>
           <P>
             Open the project folder in the IDE of your choice, we typically use{" "}
             <a
@@ -174,7 +175,7 @@ export default App;`}
             page.
           </P>
 
-          <H3>Next, Adding Tailwind</H3>
+          <H3 className="gw-mt-6">Next, Adding Tailwind</H3>
           <P>
             While not strictly necessary, using the Tailwind CSS framework
             provides a number of benefits to an app that's using Groundwork. You
@@ -182,6 +183,13 @@ export default App;`}
             Groundwork components, but if you want to use an existing library,
             you'll have the easiest time using Tailwind, since that's what
             Groundwork uses under the hood.
+          </P>
+          <P>
+            <a href="/docs/adding-tailwind" className="gw-underline">
+              <span className="gw-flex gw-items-center gw-gap-2">
+                <span>Keep Reading</span> <TbPlayerTrackNext />
+              </span>
+            </a>
           </P>
         </div>
       </UsaceBox>

@@ -9,6 +9,11 @@ export default [
         text: "Quick Start Guide",
         href: "/docs/quick-start",
       },
+      {
+        id: "adding-tailwind",
+        text: "Adding Tailwind CSS",
+        href: "/docs/adding-tailwind",
+      },
     ],
   },
   {
