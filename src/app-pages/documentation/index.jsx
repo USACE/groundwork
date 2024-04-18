@@ -25,7 +25,7 @@ function Docs() {
               className="gw-underline"
               href="https://vitejs.dev/guide/"
               target="_blank"
-              referrer="no-referrer"
+              rel="noreferrer"
             >
               Vite documentation
             </a>{" "}
@@ -46,7 +46,9 @@ function Docs() {
 
         <H4>Installation</H4>
         <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
-          <Code className="gw-block gw-p-1 gw-px-2">npm install @usace/groundwork</Code>
+          <Code className="gw-block gw-p-1 gw-px-2">
+            npm install @usace/groundwork
+          </Code>
           <CopyButton text="npm install @usace/groundwork" />
         </div>
         <H4>Import Components and Styles</H4>
@@ -54,7 +56,9 @@ function Docs() {
           <Code className="gw-block gw-p-1 gw-px-2">
             {`import { SiteWrapper, ... } from "@usace/groundwork"`}
           </Code>
-          <CopyButton text={`import { SiteWrapper, ... } from "@usace/groundwork"`} />
+          <CopyButton
+            text={`import { SiteWrapper, ... } from "@usace/groundwork"`}
+          />
         </div>
         <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
           <Code className="gw-block gw-p-1 gw-px-2">

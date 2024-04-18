@@ -100,7 +100,7 @@ function SearchDocs() {
           look at their{" "}
           <a
             className="gw-underline"
-            referrer="no-referrer"
+            rel="noreferrer"
             target="_blank"
             href="https://search.gov/about/"
           >

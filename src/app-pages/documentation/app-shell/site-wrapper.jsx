@@ -160,7 +160,7 @@ function SiteWrapperDocs() {
               className="gw-underline"
               href="https://reduxbundler.com"
               target="_blank"
-              referrer="noreferrer"
+              rel="noreferrer"
             >
               ReduxBundler
             </a>
