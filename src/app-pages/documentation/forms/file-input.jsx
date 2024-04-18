@@ -57,7 +57,7 @@ const componentProps = [
   },
 ];
 
-const inputTypes = ["file"];
+// const inputTypes = ["file"];
 
 function FileInputDocs() {
   return (

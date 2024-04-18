@@ -1,4 +1,4 @@
-import { UsaceBox, Code, H4, Text, TextLink, Strong } from "../../../../lib";
+import { UsaceBox, Code, Text, TextLink, Strong } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";

@@ -25,7 +25,7 @@ function Docs() {
               className="gw-underline"
               href="https://vitejs.dev/guide/"
               target="_blank"
-              referrer="no-referrer"
+              rel="noreferrer"
             >
               Vite documentation
             </a>{" "}

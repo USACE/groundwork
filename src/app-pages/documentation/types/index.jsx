@@ -24,10 +24,10 @@ function Types() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="gw-hover:gw-underline" gw-href="gw-/docs/types/link">
+          <a className="gw-hover:gw-underline" href="/docs/types/link">
             <li>Link - Group text and a href attribute.</li>
           </a>
-          <a className="gw-hover:gw-underline" gw-href="gw-/docs/types/tab">
+          <a className="gw-hover:gw-underline" href="/docs/types/tab">
             <li>Tab - Define the behavior of the tabs component.</li>
           </a>
         </ul>

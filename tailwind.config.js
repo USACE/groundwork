@@ -18,7 +18,6 @@ export default {
         "nav-light-gray": "#d0d0d0",
         "nav-gray": "hsla(0, 0%, 80%, 0.9)",
         "nav-translucent-gray": "hsla(0, 0%, 100%, 0.2)",
-        "nav-dark-gray": "rgba(85, 85, 85, 0.98)",
         "nav-black": "#18181b",
         "nav-dark-gray": "rgba(51,51,51,.95)",
         "usace-box-light-gray": "#ededed",

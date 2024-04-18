@@ -1,4 +1,3 @@
-const base = import.meta.env.BASE_URL;
 import armyLogo from "../../img/armystar-logo-rb.svg";
 import usaceLogo from "../../img/usace-logo-color.svg";
 import rsgisLogo from "../../img/rsgis-logo.png";
