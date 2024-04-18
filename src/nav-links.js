@@ -14,6 +14,11 @@ export default [
         text: "Adding Tailwind CSS",
         href: "/docs/adding-tailwind",
       },
+      {
+        id: "client-side-routing",
+        text: "Client-Side Routing",
+        href: "/docs/client-side-routing",
+      },
     ],
   },
   {

@@ -47,6 +47,7 @@ import Plots from "../app-pages/documentation/plots";
 import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
 import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
+import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 
 export default createRouteBundle(
   {
@@ -54,6 +55,7 @@ export default createRouteBundle(
     "/docs": Docs,
     "/docs/quick-start": QuickStartGuide,
     "/docs/adding-tailwind": AddingTailwind,
+    "/docs/client-side-routing": ClientSideRouting,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
     "/docs/app-shell/search": SearchDocs,
