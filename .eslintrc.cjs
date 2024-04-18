@@ -16,7 +16,7 @@ module.exports = {
     "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
     "react-refresh/only-export-components": [
-      "warn",
+      "off",
       { allowConstantExport: true },
     ],
   },
