@@ -33,7 +33,7 @@ import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-butto
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
 import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
 import Forms from "../app-pages/documentation/forms";
-import InputDocs from "../app-pages/documentation/forms/input";
+// import InputDocs from "../app-pages/documentation/forms/input";
 import TextInputDocs from "../app-pages/documentation/forms/text-input";
 import NumericInputDocs from "../app-pages/documentation/forms/numeric-inputs";
 import ColorInputDocs from "../app-pages/documentation/forms/color-input";

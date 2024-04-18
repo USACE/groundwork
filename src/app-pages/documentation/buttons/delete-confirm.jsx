@@ -1,11 +1,4 @@
-import {
-  UsaceBox,
-  Code,
-  Text,
-  OkCancel,
-  DeleteConfirm,
-  H3,
-} from "../../../../lib";
+import { UsaceBox, Code, Text, DeleteConfirm, H3 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";

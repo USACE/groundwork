@@ -24,7 +24,10 @@ function Plots() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="gw-hover:gw-underline" gw-href="gw-/docs/plots/plotly-wrapper">
+          <a
+            className="gw-hover:gw-underline"
+            href="/docs/plots/plotly-wrapper"
+          >
             <li>
               Plotly Wrapper - Simple wrapper around the Plotly.js library
             </li>

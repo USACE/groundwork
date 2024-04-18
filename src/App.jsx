@@ -1,10 +1,4 @@
-import {
-  SiteWrapper,
-  SearchDotGov,
-  LoginButton,
-  ProfileDropdown,
-  Button,
-} from "../lib";
+import { SiteWrapper, SearchDotGov, Button } from "../lib";
 import { getNavHelper } from "internal-nav-helper";
 import { useConnect } from "redux-bundler-hook";
 import links from "./nav-links";

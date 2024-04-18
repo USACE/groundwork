@@ -28,10 +28,10 @@ function Layout() {
           </Text>
           <H4>Components</H4>
           <ul>
-            <a className="gw-hover:gw-underline" gw-href="gw-/docs/layout/container">
+            <a className="gw-hover:gw-underline" href="/docs/layout/container">
               <li>Container - a simple wrapper to manage margins.</li>
             </a>
-            <a className="gw-hover:gw-underline" gw-href="gw-/docs/layout/usace-box">
+            <a className="gw-hover:gw-underline" href="/docs/layout/usace-box">
               <li>
                 USACE Box - A container with a header and the red and gray
                 flourish on top.

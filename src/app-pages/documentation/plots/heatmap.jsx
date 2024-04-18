@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { UsaceBox, Code, Text, Plot, Button } from "../../../../lib";
+import { UsaceBox, Code, Text, Plot } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
