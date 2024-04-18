@@ -3,7 +3,14 @@ import { MdErrorOutline } from "react-icons/md";
 import { PiClockThin } from "react-icons/pi";
 import { getLatestEntry } from "./cda";
 
-const CdaLatestValueCard = ({ label, tsId, office, digits = 0, className }) => {
+const CdaLatestValueCard = ({
+  label,
+  tsId,
+  office,
+  digits = 0,
+  className,
+  ...props
+}) => {
   const { data, isPending, isError } = useCdaTimeSeries({
     cdaParams: { name: tsId, office },
   });
@@ -19,7 +26,7 @@ const CdaLatestValueCard = ({ label, tsId, office, digits = 0, className }) => {
   }
 
   return (
-    <Card className={className}>
+    <Card className={className} {...props}>
       <div className="gw-flex gw-items-center gw-justify-between">
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
           {label}
