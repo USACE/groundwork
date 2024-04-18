@@ -43,7 +43,7 @@ function AddingTailwind() {
               className="gw-underline"
               href="https://tailwindcss.com/docs/installation"
               target="_blank"
-              referrer="no-referrer"
+              rel="no-referrer"
             >
               Tailwind Documentation
             </a>

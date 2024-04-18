@@ -138,7 +138,7 @@ npm run dev`}
               className="gw-underline"
               href="https://code.visualstudio.com/"
               target="_blank"
-              referrer="no-referrer"
+              rel="no-referrer"
             >
               VSCode
             </a>
