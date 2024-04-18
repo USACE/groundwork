@@ -2,6 +2,7 @@ import { UsaceBox, Code, Text, H3, H4 } from "../../../../lib";
 import { CodeBlock } from "../../../app-components/code-block";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
+import { TbPlayerTrackNext } from "react-icons/tb";
 
 const pageBreadcrumbs = [
   {
@@ -99,13 +100,22 @@ export default {
           <P>Start Using Tailwind in your project</P>
           <Code className="!gw-font-bold">./src/App.jsx</Code>
           <CodeExample
-            code={`export default function App() {
+            code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
+import "@usace/groundwork/dist/style.css";
+
+function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}`}
+    <SiteWrapper>
+      <Container>
+        <UsaceBox className="mt-8" title="My New Site">
+          <div className="text-3xl font-bold underline">Hello World</div>
+        </UsaceBox>
+      </Container>
+    </SiteWrapper>
+  );
+}
+
+export default App;`}
           ></CodeExample>
           <P>
             Once you have Tailwind installed you can start using the utility
@@ -113,6 +123,23 @@ export default {
             you to override built-in styles by supplying a{" "}
             <Code>className</Code> prop, where you can provide Tailwind classes
             or custom CSS classes pointing to your own stylesheets.
+          </P>
+
+          <H3 className="gw-mt-6">Next, handling Client-side Routing</H3>
+          <P>
+            When creating a single-page application (SPA) you'll want to handle
+            client-side routing. Client-side routing means that a user can treat
+            your site like any webpage, deep-linking to sub-pages, hitting
+            refresh or the back button to navigate. There are many libraries
+            that can help with this, but we recommend redux-bundler, keep
+            reading to learn more.
+          </P>
+          <P>
+            <a href="/docs/client-side-routing" className="gw-underline">
+              <span className="gw-flex gw-items-center gw-gap-2">
+                <span>Keep Reading</span> <TbPlayerTrackNext />
+              </span>
+            </a>
           </P>
         </div>
       </UsaceBox>
