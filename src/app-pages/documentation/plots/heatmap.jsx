@@ -1,30 +1,30 @@
-import { useCallback, useState } from 'react';
-import { UsaceBox, Code, Text, Plot } from '../../../../lib';
-import { CodeExample } from '../../../app-components/code-example';
-import PropsTable from '../../../app-components/props-table';
-import DocsPage from '../_docs-page';
+import { useCallback, useState } from "react";
+import { UsaceBox, Code, Text, Plot } from "../../../../lib";
+import { CodeExample } from "../../../app-components/code-example";
+import PropsTable from "../../../app-components/props-table";
+import DocsPage from "../_docs-page";
 
 const pageBreadcrumbs = [
   {
-    text: 'Documentation',
-    href: '/docs',
+    text: "Documentation",
+    href: "/docs",
   },
   {
-    text: 'Plots',
-    href: '/docs/plots',
+    text: "Plots",
+    href: "/docs/plots",
   },
   {
-    text: 'Heatmap',
-    href: '/docs/plots/heatmap',
+    text: "Heatmap",
+    href: "/docs/plots/heatmap",
   },
 ];
 
 const componentProps = [
   {
-    name: '',
-    type: '',
-    default: '',
-    desc: '',
+    name: "",
+    type: "",
+    default: "",
+    desc: "",
   },
 ];
 
@@ -37,8 +37,8 @@ function zeroMatrix(rows, cols) {
 }
 
 const trace = {
-  type: 'heatmap',
-  hoverinfo: 'none',
+  type: "heatmap",
+  hoverinfo: "none",
   z: zeroMatrix(50, 50),
 };
 
