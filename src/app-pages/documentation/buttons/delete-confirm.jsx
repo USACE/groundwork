@@ -1,41 +1,34 @@
-import {
-  UsaceBox,
-  Code,
-  Text,
-  OkCancel,
-  DeleteConfirm,
-  H3,
-} from "../../../../lib";
-import { CodeExample } from "../../../app-components/code-example";
-import PropsTable from "../../../app-components/props-table";
-import DocsPage from "../_docs-page";
+import { UsaceBox, Code, Text, DeleteConfirm, H3 } from '../../../../lib';
+import { CodeExample } from '../../../app-components/code-example';
+import PropsTable from '../../../app-components/props-table';
+import DocsPage from '../_docs-page';
 
 const pageBreadcrumbs = [
   {
-    text: "Documentation",
-    href: "/docs",
+    text: 'Documentation',
+    href: '/docs',
   },
   {
-    text: "Buttons",
-    href: "/docs/buttons",
+    text: 'Buttons',
+    href: '/docs/buttons',
   },
   {
-    text: "Delete / Confirm",
-    href: "/docs/buttons/delete-confirm",
+    text: 'Delete / Confirm',
+    href: '/docs/buttons/delete-confirm',
   },
 ];
 
 const componentProps_DeleteConfirm = [
   {
-    name: "onDelete",
-    type: "function",
-    default: "undefined",
-    desc: "The function to be called when the delete is confirmed.",
+    name: 'onDelete',
+    type: 'function',
+    default: 'undefined',
+    desc: 'The function to be called when the delete is confirmed.',
   },
   {
-    name: "alignConfirm",
-    type: "string",
-    default: "right",
+    name: 'alignConfirm',
+    type: 'string',
+    default: 'right',
     desc: "The alignment of the confirm and cancel buttons. Options are 'left' or 'right'. Default is 'right', which will place the Confirm button to the right of Cancel",
   },
 ];
@@ -65,7 +58,7 @@ function DeleteConfirmDocs() {
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <DeleteConfirm
             onDelete={() => {
-              window.alert("actually delete the thing");
+              window.alert('actually delete the thing');
             }}
           />
         </div>

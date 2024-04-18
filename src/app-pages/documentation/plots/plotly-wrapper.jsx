@@ -1,66 +1,66 @@
-import { useCallback, useState } from "react";
-import { UsaceBox, Code, Text, Plot, H2, H3 } from "../../../../lib";
-import { CodeExample } from "../../../app-components/code-example";
-import PropsTable from "../../../app-components/props-table";
-import DocsPage from "../_docs-page";
+import { useCallback, useState } from 'react';
+import { UsaceBox, Code, Text, Plot, H3 } from '../../../../lib';
+import { CodeExample } from '../../../app-components/code-example';
+import PropsTable from '../../../app-components/props-table';
+import DocsPage from '../_docs-page';
 
 const pageBreadcrumbs = [
   {
-    text: "Documentation",
-    href: "/docs",
+    text: 'Documentation',
+    href: '/docs',
   },
   {
-    text: "Plots",
-    href: "/docs/plots",
+    text: 'Plots',
+    href: '/docs/plots',
   },
   {
-    text: "Plotly.js Wrapper",
-    href: "/docs/plots/plotly-wrapper",
+    text: 'Plotly.js Wrapper',
+    href: '/docs/plots/plotly-wrapper',
   },
 ];
 
 const componentProps = [
   {
-    name: "data",
-    type: "array of objects",
-    default: "[]",
-    desc: "Array of data objects, each object represents a trace on the plot. See the Plotly.js documentation for more information.",
+    name: 'data',
+    type: 'array of objects',
+    default: '[]',
+    desc: 'Array of data objects, each object represents a trace on the plot. See the Plotly.js documentation for more information.',
   },
   {
-    name: "layout",
-    type: "object",
-    default: "{}",
-    desc: "Object representing the layout of the plot. See the Plotly.js documentation for more information.",
+    name: 'layout',
+    type: 'object',
+    default: '{}',
+    desc: 'Object representing the layout of the plot. See the Plotly.js documentation for more information.',
   },
   {
-    name: "config",
-    type: "object",
-    default: "{}",
-    desc: "Object representing the configuration of the plot. See the Plotly.js documentation for more information.",
+    name: 'config',
+    type: 'object',
+    default: '{}',
+    desc: 'Object representing the configuration of the plot. See the Plotly.js documentation for more information.',
   },
   {
-    name: "revision",
-    type: "number",
-    default: "0",
-    desc: "A number that when changed will force the plot to redraw. Useful for live updates.",
+    name: 'revision',
+    type: 'number',
+    default: '0',
+    desc: 'A number that when changed will force the plot to redraw. Useful for live updates.',
   },
   {
-    name: "onHover",
-    type: "function",
-    default: "null",
-    desc: "A function that will be called when the user hovers over the plot. The function will be passed the hover data.",
+    name: 'onHover',
+    type: 'function',
+    default: 'null',
+    desc: 'A function that will be called when the user hovers over the plot. The function will be passed the hover data.',
   },
   {
-    name: "className",
-    type: "string",
+    name: 'className',
+    type: 'string',
     default: "''",
-    desc: "Additional classes to apply to the plot container.",
+    desc: 'Additional classes to apply to the plot container.',
   },
   {
-    name: "ref",
-    type: "React.RefObject",
-    default: "undefined",
-    desc: "A ref object that can be used to call Plotly methods directly.",
+    name: 'ref',
+    type: 'React.RefObject',
+    default: 'undefined',
+    desc: 'A ref object that can be used to call Plotly methods directly.',
   },
 ];
 
@@ -70,26 +70,26 @@ const componentProps = [
 var basicTrace1 = {
   x: [1, 2, 3, 4],
   y: [10, 15, 13, 17],
-  mode: "markers",
-  type: "scatter",
+  mode: 'markers',
+  type: 'scatter',
 };
 
 var basicTrace2 = {
   x: [2, 3, 4, 5],
   y: [16, 5, 11, 9],
-  mode: "lines",
-  type: "scatter",
+  mode: 'lines',
+  type: 'scatter',
 };
 
 var basicTrace3 = {
   x: [1, 2, 3, 4],
   y: [12, 9, 15, 12],
-  mode: "lines+markers",
-  type: "scatter",
+  mode: 'lines+markers',
+  type: 'scatter',
 };
 
 const basicLayout = {
-  title: "A Basic Line and Scatter Plot",
+  title: 'A Basic Line and Scatter Plot',
 };
 
 /**
@@ -98,13 +98,13 @@ const basicLayout = {
 var liveTrace1 = {
   x: [1],
   y: [Math.random() * 10],
-  type: "scatter",
+  type: 'scatter',
 };
 
 var liveTrace2 = {
   x: [1],
   y: [Math.random() * 10],
-  type: "scatter",
+  type: 'scatter',
 };
 
 function addRandomData(cb) {
@@ -122,7 +122,7 @@ function addRandomData(cb) {
 }
 
 const liveTraceLayout = {
-  title: "A Fancy Plot",
+  title: 'A Fancy Plot',
 };
 
 // place to hold our interval outside of the component scope
@@ -140,15 +140,15 @@ function zeroMatrix(rows, cols) {
 }
 
 const heatTrace = {
-  type: "heatmap",
-  hoverinfo: "none",
+  type: 'heatmap',
+  hoverinfo: 'none',
   z: zeroMatrix(50, 50),
 };
 
 let lastHover = [null, null];
 
 const heatTraceLayout = {
-  title: "A Silly Heatmap",
+  title: 'A Silly Heatmap',
 };
 
 /**
@@ -200,7 +200,7 @@ function PlotlyWrapperDocs() {
             plotting library and has expanded into a number of supported
             languages. There are a lot of things you can do with Plotly, way
             more than we could document here, so below are some examples of
-            using our component, but you should review the{" "}
+            using our component, but you should review the{' '}
             <a
               href="https://plotly.com/javascript/"
               target="_blank"
@@ -208,12 +208,12 @@ function PlotlyWrapperDocs() {
               className="gw-underline"
             >
               Plotly.js documentation
-            </a>{" "}
+            </a>{' '}
             in order to get a full understanding of the API.
           </Text>
           <Text className="gw-pt-3">
             The data, layout and config props map directly to the options
-            exposed in the{" "}
+            exposed in the{' '}
             <Code>{`Plotly.newPlot(el, data, layout, config)`}</Code> function.
             There are a couple of additional props that we've added to make it
             easier to update the plot when data changes (revision) and to handle
@@ -225,7 +225,7 @@ function PlotlyWrapperDocs() {
         {/* Example usage - remove if not needed */}
         <H3 className="gw-pt-6 gw-pb-3">Basic Plot</H3>
         <Text className="gw-pb-3">
-          A sample chart right off of the{" "}
+          A sample chart right off of the{' '}
           <a
             className="gw-underline"
             target="_blank"

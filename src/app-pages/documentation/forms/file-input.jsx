@@ -1,63 +1,63 @@
-import { UsaceBox, Code, Text, Field, Label, Input } from "../../../../lib";
-import { CodeExample } from "../../../app-components/code-example";
-import PropsTable from "../../../app-components/props-table";
-import DocsPage from "../_docs-page";
+import { UsaceBox, Code, Text, Field, Label, Input } from '../../../../lib';
+import { CodeExample } from '../../../app-components/code-example';
+import PropsTable from '../../../app-components/props-table';
+import DocsPage from '../_docs-page';
 
 const pageBreadcrumbs = [
   {
-    text: "Documentation",
-    href: "/docs",
+    text: 'Documentation',
+    href: '/docs',
   },
   {
-    text: "Forms",
-    href: "/docs/forms",
+    text: 'Forms',
+    href: '/docs/forms',
   },
   {
-    text: "File Input",
-    href: "/docs/forms/file-input",
+    text: 'File Input',
+    href: '/docs/forms/file-input',
   },
 ];
 
 const componentProps = [
   {
-    name: "disabled",
-    type: "boolean",
-    default: "false",
-    desc: "Disable the input.",
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+    desc: 'Disable the input.',
   },
   {
-    name: "invalid",
-    type: "boolean",
-    default: "false",
-    desc: "Set the input to an invalid state.",
+    name: 'invalid',
+    type: 'boolean',
+    default: 'false',
+    desc: 'Set the input to an invalid state.',
   },
   {
-    name: "name",
-    type: "string",
+    name: 'name',
+    type: 'string',
     default: "''",
-    desc: "The name attribute for the input.",
+    desc: 'The name attribute for the input.',
   },
   {
-    name: "defaultValue",
-    type: "string",
+    name: 'defaultValue',
+    type: 'string',
     default: "''",
-    desc: "The default value for the input.",
+    desc: 'The default value for the input.',
   },
   {
-    name: "value",
-    type: "string",
+    name: 'value',
+    type: 'string',
     default: "''",
-    desc: "The value for the input.",
+    desc: 'The value for the input.',
   },
   {
-    name: "type",
-    type: "string",
+    name: 'type',
+    type: 'string',
     default: "'text'",
-    desc: "The type of input.",
+    desc: 'The type of input.',
   },
 ];
 
-const inputTypes = ["file"];
+// const inputTypes = ["file"];
 
 function FileInputDocs() {
   return (

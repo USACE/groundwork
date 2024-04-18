@@ -1,71 +1,71 @@
-import { UsaceBox, Code, H4, Text, TextLink, Strong } from "../../../../lib";
-import { CodeExample } from "../../../app-components/code-example";
-import PropsTable from "../../../app-components/props-table";
-import DocsPage from "../_docs-page";
+import { UsaceBox, Code, Text, TextLink, Strong } from '../../../../lib';
+import { CodeExample } from '../../../app-components/code-example';
+import PropsTable from '../../../app-components/props-table';
+import DocsPage from '../_docs-page';
 
 const pageBreadcrumbs = [
   {
-    text: "Documentation",
-    href: "/docs",
+    text: 'Documentation',
+    href: '/docs',
   },
   {
-    text: "Display",
-    href: "/docs/display",
+    text: 'Display',
+    href: '/docs/display',
   },
   {
-    text: "Text",
-    href: "/docs/display/Text",
+    text: 'Text',
+    href: '/docs/display/Text',
   },
 ];
 
 const componentProps_Text = [
   {
-    name: "className",
-    type: "string",
+    name: 'className',
+    type: 'string',
     default: "''",
-    desc: "Additional classes to add to the component.",
+    desc: 'Additional classes to add to the component.',
   },
   {
-    name: "...props",
-    type: "misc",
-    default: "undefined",
-    desc: "Additional props to pass to the component.",
+    name: '...props',
+    type: 'misc',
+    default: 'undefined',
+    desc: 'Additional props to pass to the component.',
   },
 ];
 
 const componentProps_Strong = [
   {
-    name: "className",
-    type: "string",
+    name: 'className',
+    type: 'string',
     default: "''",
-    desc: "Additional classes to add to the component.",
+    desc: 'Additional classes to add to the component.',
   },
   {
-    name: "...props",
-    type: "misc",
-    default: "undefined",
-    desc: "Additional props to pass to the component.",
+    name: '...props',
+    type: 'misc',
+    default: 'undefined',
+    desc: 'Additional props to pass to the component.',
   },
 ];
 
 const componentProps_TextLink = [
   {
-    name: "className",
-    type: "string",
+    name: 'className',
+    type: 'string',
     default: "''",
-    desc: "Additional classes to add to the component.",
+    desc: 'Additional classes to add to the component.',
   },
   {
-    name: "href",
-    type: "string",
-    default: "undefined",
-    desc: "The URL to link to.",
+    name: 'href',
+    type: 'string',
+    default: 'undefined',
+    desc: 'The URL to link to.',
   },
   {
-    name: "...props",
-    type: "misc",
-    default: "undefined",
-    desc: "Additional props to pass to the component.",
+    name: '...props',
+    type: 'misc',
+    default: 'undefined',
+    desc: 'Additional props to pass to the component.',
   },
 ];
 
@@ -84,7 +84,7 @@ function TextDocs() {
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Text>
             These components provide some simple out-of-the-box formatting, we
-            can use them to <Strong>Emphasize a message</Strong> or{" "}
+            can use them to <Strong>Emphasize a message</Strong> or{' '}
             <TextLink href="#">Link</TextLink> to other resources.
           </Text>
         </div>
