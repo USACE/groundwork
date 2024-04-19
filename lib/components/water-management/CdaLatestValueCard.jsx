@@ -8,6 +8,7 @@ const CdaLatestValueCard = ({
   label,
   tsId,
   office,
+  unit,
   digits = 0,
   className,
   cdaUrl,
@@ -25,6 +26,7 @@ const CdaLatestValueCard = ({
     cdaParams: {
       name: tsId,
       office,
+      ...(unit && { unit }),
       ...(begin && { begin }),
       ...(end && { end }),
     },

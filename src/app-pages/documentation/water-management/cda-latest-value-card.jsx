@@ -39,6 +39,12 @@ const componentProps = [
     desc: "The office code of the data's owning office.",
   },
   {
+    name: "unit",
+    type: "string",
+    default: "undefined",
+    desc: "Specifies the unit or unit system of the response. Options: 'EN', 'SI', specific units (e.g. 'ft')",
+  },
+  {
     name: "digits",
     type: "number",
     default: 0,
