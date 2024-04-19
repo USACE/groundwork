@@ -13,8 +13,8 @@ const pageBreadcrumbs = [
     href: "/docs/water-management",
   },
   {
-    text: "LatestValueCard",
-    href: "/docs/water-management/latest-value-card",
+    text: "CdaLatestValueCard",
+    href: "/docs/water-management/cda-latest-value-card",
   },
 ];
 
@@ -85,11 +85,11 @@ const componentProps = [
 function CdaLatestValueCardDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
-      <UsaceBox title="CDA Latest Value Card">
+      <UsaceBox title="CdaLatestValueCard">
         {/* Description of the component and what problem it solves */}
         <div className="gw-pb-6">
           <Text>
-            The CDA Latest Value Card can be used to display the most recent
+            The CdaLatestValueCard can be used to display the most recent
             available data for a specific CWMS time series. This component
             assumes that the data has been updated in the past 24 hours.
           </Text>
