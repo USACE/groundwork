@@ -2,6 +2,7 @@ import { UsaceBox, Code, CdaLatestValueCard, Text, H3 } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
+import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
 
 const pageBreadcrumbs = [
   {
@@ -93,6 +94,7 @@ function CdaLatestValueCardDocs() {
             available data for a specific CWMS time series. This component
             assumes that the data has been updated in the past 24 hours.
           </Text>
+          <QueryClientWarning />
         </div>
         {/* Example usage - remove if not needed */}
         <H3>Basic Example</H3>
