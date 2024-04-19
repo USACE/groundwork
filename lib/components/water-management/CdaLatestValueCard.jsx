@@ -35,7 +35,7 @@ const CdaLatestValueCard = ({
     queryOptions: queryOptions,
   });
 
-  const enableCatalog = !tsPending && data.values.length == 0;
+  const enableCatalog = !tsPending && data?.values.length == 0;
 
   const catalog = useCdaCatalogTS({
     cdaParams: { office, like: tsId },
