@@ -91,8 +91,14 @@ function CdaLatestValueCardDocs() {
         <div className="gw-pb-6">
           <Text>
             The CdaLatestValueCard can be used to display the most recent
-            available data for a specific CWMS time series. This component
-            assumes that the data has been updated in the past 24 hours.
+            available data for a specific CWMS time series.
+          </Text>
+          <Text className="gw-mt-3">
+            By default, the component assumes the value was updated within the
+            past 24 hours. If not, the component will make a useCatalogTS
+            request to retrieve the date of the latest value and re-run the time
+            series request for that date. Note that the data-fetching process
+            will take longer than normal in this case.
           </Text>
           <QueryClientWarning />
         </div>
