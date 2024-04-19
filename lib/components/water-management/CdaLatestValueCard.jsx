@@ -10,9 +10,7 @@ const CdaLatestValueCard = ({
   office,
   digits = 0,
   className,
-  cdaParams,
   cdaUrl,
-  queryOptions,
   ...props
 }) => {
   const [latestDate, setLatestDate] = useState();
@@ -25,14 +23,12 @@ const CdaLatestValueCard = ({
     isError: tsIsError,
   } = useCdaTimeSeries({
     cdaParams: {
-      ...cdaParams,
       name: tsId,
       office,
       ...(begin && { begin }),
       ...(end && { end }),
     },
     cdaUrl: cdaUrl,
-    queryOptions: queryOptions,
   });
 
   const enableCatalog = !tsPending && data?.values.length == 0;
