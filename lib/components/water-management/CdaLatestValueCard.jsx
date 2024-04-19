@@ -21,6 +21,7 @@ const CdaLatestValueCard = ({
   const {
     data,
     isPending: tsPending,
+    isFetching: tsFetching,
     isError: tsIsError,
   } = useCdaTimeSeries({
     cdaParams: {
@@ -34,11 +35,13 @@ const CdaLatestValueCard = ({
     queryOptions: queryOptions,
   });
 
+  const enableCatalog = !tsPending && data.values.length == 0;
+
   const catalog = useCdaCatalogTS({
     cdaParams: { office, like: tsId },
     cdaUrl: cdaUrl,
     queryOptions: {
-      enabled: !tsPending && data.values.length == 0,
+      enabled: enableCatalog,
     },
   });
 
@@ -67,12 +70,12 @@ const CdaLatestValueCard = ({
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
           {label}
         </p>
-        {tsIsError | noData ? (
+        {tsFetching | (catalog.isPending && enableCatalog) ? (
+          <Skeleton className="gw-w-20" />
+        ) : tsIsError | noData ? (
           <span className="gw-text-lg">
             <MdErrorOutline />
           </span>
-        ) : tsPending ? (
-          <Skeleton className="gw-w-20" />
         ) : (
           <CardValue
             value={latestEntry[1]}
@@ -82,12 +85,12 @@ const CdaLatestValueCard = ({
         )}
       </div>
       <div className="gw-mt-2 gw-flex gw-justify-between">
-        {tsIsError ? (
+        {tsFetching | (catalog.isPending && enableCatalog) ? (
+          <Skeleton className="gw-w-48" />
+        ) : tsIsError ? (
           <span className="gw-text-red-500">Error retrieving data</span>
         ) : noData ? (
           <span>No data found</span>
-        ) : tsPending ? (
-          <Skeleton className="gw-w-48" />
         ) : (
           <>
             <CardTimestamp datetime={new Date(latestEntry[0])} />
