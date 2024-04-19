@@ -33,7 +33,6 @@ import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-butto
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
 import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
 import Forms from "../app-pages/documentation/forms";
-// import InputDocs from "../app-pages/documentation/forms/input";
 import TextInputDocs from "../app-pages/documentation/forms/text-input";
 import NumericInputDocs from "../app-pages/documentation/forms/numeric-inputs";
 import ColorInputDocs from "../app-pages/documentation/forms/color-input";
@@ -45,11 +44,17 @@ import Logout from "../app-pages/logout";
 import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
 import Plots from "../app-pages/documentation/plots";
 import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
+import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
+import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
+import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 
 export default createRouteBundle(
   {
     "/": Home,
     "/docs": Docs,
+    "/docs/quick-start": QuickStartGuide,
+    "/docs/adding-tailwind": AddingTailwind,
+    "/docs/client-side-routing": ClientSideRouting,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
     "/docs/app-shell/search": SearchDocs,

@@ -9,7 +9,7 @@ function DocsPage({ breadcrumbs = [], children }) {
           {breadcrumbs.map((breadcrumb) => {
             return (
               <BreadcrumbItem
-                key={breadcrumb.href}
+                key={breadcrumb.text}
                 href={breadcrumb.href}
                 text={breadcrumb.text}
               />

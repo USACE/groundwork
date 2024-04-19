@@ -29,7 +29,12 @@ function Docs() {
             >
               Vite documentation
             </a>{" "}
-            for more details on getting started.{" "}
+            for more details on getting started or visit the{" "}
+            <a className="gw-underline" href="/docs/quick-start">
+              quick start guide
+            </a>{" "}
+            for a step by step guide for getting set up using Vite with
+            Groundwork.
           </Text>
           <Text className="gw-mt-3">
             Set up a new project with Vite using the following command:
