@@ -18,6 +18,19 @@ const pageBreadcrumbs = [
   },
 ];
 
+const hookParamsDesc = (
+  <>
+    Additional options for the useCdaTimeSeries hook. See the{" "}
+    <a
+      href="/docs/water-management/use-cda-time-series"
+      className="gw-underline"
+    >
+      useCdaTimeSeries Docs
+    </a>
+    .
+  </>
+);
+
 const componentProps = [
   {
     name: "label",
@@ -48,6 +61,24 @@ const componentProps = [
     type: "string",
     default: "undefined",
     desc: "Additional classes to add to the card.",
+  },
+  {
+    name: "cdaParams",
+    type: "object",
+    default: "undefined",
+    desc: hookParamsDesc,
+  },
+  {
+    name: "cdaUrl",
+    type: "string",
+    default: "undefined",
+    desc: hookParamsDesc,
+  },
+  {
+    name: "queryOptions",
+    type: "object",
+    default: "undefined",
+    desc: hookParamsDesc,
   },
 ];
 

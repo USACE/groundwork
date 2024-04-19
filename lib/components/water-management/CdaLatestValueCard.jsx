@@ -9,10 +9,15 @@ const CdaLatestValueCard = ({
   office,
   digits = 0,
   className,
+  cdaParams,
+  cdaUrl,
+  queryOptions,
   ...props
 }) => {
   const { data, isPending, isError } = useCdaTimeSeries({
-    cdaParams: { name: tsId, office },
+    cdaParams: { cdaParams, name: tsId, office },
+    cdaUrl: cdaUrl,
+    queryOptions: queryOptions,
   });
 
   let latestEntry = undefined;
@@ -49,7 +54,7 @@ const CdaLatestValueCard = ({
         {isError ? (
           <span className="gw-text-red-500">Error retrieving data</span>
         ) : noData ? (
-          <span>No data found.</span>
+          <span>No data found</span>
         ) : isPending ? (
           <Skeleton className="gw-w-48" />
         ) : (
