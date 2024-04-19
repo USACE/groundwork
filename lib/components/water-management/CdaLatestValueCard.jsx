@@ -66,7 +66,7 @@ const CdaLatestValueCard = ({
     <Card className={className} {...props}>
       <div className="gw-flex gw-items-center gw-justify-between">
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
-          {label}
+          {label ?? tsId}
         </p>
         {tsFetching | (catalog.isPending && enableCatalog) ? (
           <Skeleton className="gw-w-20" />

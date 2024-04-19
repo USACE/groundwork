@@ -23,7 +23,7 @@ const componentProps = [
   {
     name: "label",
     type: "string",
-    default: "undefined",
+    default: "tsId",
     desc: "The label/title of the card.",
   },
   {
