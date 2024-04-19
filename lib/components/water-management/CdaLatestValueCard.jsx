@@ -1,7 +1,8 @@
-import { Card, Skeleton, useCdaTimeSeries } from "../../index";
+import { Card, Skeleton, useCdaCatalogTS, useCdaTimeSeries } from "../../index";
 import { MdErrorOutline } from "react-icons/md";
 import { PiClockThin } from "react-icons/pi";
 import { getLatestEntry } from "./cda";
+import { useEffect, useState } from "react";
 
 const CdaLatestValueCard = ({
   label,
@@ -14,11 +15,41 @@ const CdaLatestValueCard = ({
   queryOptions,
   ...props
 }) => {
-  const { data, isPending, isError } = useCdaTimeSeries({
-    cdaParams: { cdaParams, name: tsId, office },
+  const [latestDate, setLatestDate] = useState();
+  const begin = latestDate;
+  const end = latestDate;
+  const {
+    data,
+    isPending: tsPending,
+    isError: tsIsError,
+  } = useCdaTimeSeries({
+    cdaParams: {
+      ...cdaParams,
+      name: tsId,
+      office,
+      ...(begin && { begin }),
+      ...(end && { end }),
+    },
     cdaUrl: cdaUrl,
     queryOptions: queryOptions,
   });
+
+  const catalog = useCdaCatalogTS({
+    cdaParams: { office, like: tsId },
+    cdaUrl: cdaUrl,
+    queryOptions: {
+      enabled: !tsPending && data.values.length == 0,
+    },
+  });
+
+  useEffect(() => {
+    if (!catalog.data) {
+      return;
+    }
+    setLatestDate(
+      new Date(catalog.data.entries[0].extents[0]["latest-time"]).toISOString()
+    );
+  }, [catalog]);
 
   let latestEntry = undefined;
   let noData = false;
@@ -36,11 +67,11 @@ const CdaLatestValueCard = ({
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
           {label}
         </p>
-        {isError | noData ? (
+        {tsIsError | noData ? (
           <span className="gw-text-lg">
             <MdErrorOutline />
           </span>
-        ) : isPending ? (
+        ) : tsPending ? (
           <Skeleton className="gw-w-20" />
         ) : (
           <CardValue
@@ -51,11 +82,11 @@ const CdaLatestValueCard = ({
         )}
       </div>
       <div className="gw-mt-2 gw-flex gw-justify-between">
-        {isError ? (
+        {tsIsError ? (
           <span className="gw-text-red-500">Error retrieving data</span>
         ) : noData ? (
           <span>No data found</span>
-        ) : isPending ? (
+        ) : tsPending ? (
           <Skeleton className="gw-w-48" />
         ) : (
           <>
