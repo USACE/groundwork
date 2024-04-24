@@ -213,6 +213,11 @@ export default [
         text: "useCdaTimeSeries",
         href: "/docs/water-management/use-cda-time-series",
       },
+      {
+        id: "use-cda-time-series-group",
+        text: "useCdaTimeSeriesGroup",
+        href: "/docs/water-management/use-cda-time-series-group",
+      },
     ],
   },
   {
