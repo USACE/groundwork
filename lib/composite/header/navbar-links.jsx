@@ -67,7 +67,7 @@ function NavbarLinksList({ links, ...props }) {
 
 const NavbarLinks = ({ links = [] }) => {
   return (
-    <div className="gw-hidden md:gw-flex gw-flex-row gw-content-center gw-justify-between gw-w-full gw-pr-3">
+    <div className="gw-hidden md:gw-flex gw-flex-row gw-content-center gw-justify-between gw-w-full gw-min-h-12 gw-pr-3">
       <NavbarLinksList links={links} />
     </div>
   );
