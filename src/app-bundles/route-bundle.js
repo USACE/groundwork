@@ -20,6 +20,7 @@ import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
 import WaterManagement from "../app-pages/documentation/water-management";
 import DataHooks from "../app-pages/documentation/water-management/data-hooks";
+import CdaLatestValueCardDocs from "../app-pages/documentation/water-management/cda-latest-value-card";
 import UseCdaCatalogTS from "../app-pages/documentation/water-management/use-cda-catalog-ts";
 import UseCdaLocation from "../app-pages/documentation/water-management/use-cda-location";
 import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cda-time-series";
@@ -88,6 +89,7 @@ export default createRouteBundle(
     "/docs/forms/file-input": FileInputDocs,
     "/docs/water-management": WaterManagement,
     "/docs/water-management/data-hooks": DataHooks,
+    "/docs/water-management/cda-latest-value-card": CdaLatestValueCardDocs,
     "/docs/water-management/use-cda-catalog-ts": UseCdaCatalogTS,
     "/docs/water-management/use-cda-location": UseCdaLocation,
     "/docs/water-management/use-cda-time-series": UseCdaTimeSeries,
