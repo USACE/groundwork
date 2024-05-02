@@ -218,6 +218,11 @@ export default [
         text: "useCdaTimeSeries",
         href: "/docs/water-management/use-cda-time-series",
       },
+      {
+        id: "use-nwps-gauge",
+        text: "useNwpsGauge",
+        href: "/docs/water-management/use-nwps-gauge",
+      },
     ],
   },
   {

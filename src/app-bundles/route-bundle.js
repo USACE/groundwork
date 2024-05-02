@@ -24,6 +24,7 @@ import CdaLatestValueCardDocs from "../app-pages/documentation/water-management/
 import UseCdaCatalogTS from "../app-pages/documentation/water-management/use-cda-catalog-ts";
 import UseCdaLocation from "../app-pages/documentation/water-management/use-cda-location";
 import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cda-time-series";
+import UseNwpsGaugeDocs from "../app-pages/documentation/water-management/use-nwps-gauge";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
@@ -93,6 +94,7 @@ export default createRouteBundle(
     "/docs/water-management/use-cda-catalog-ts": UseCdaCatalogTS,
     "/docs/water-management/use-cda-location": UseCdaLocation,
     "/docs/water-management/use-cda-time-series": UseCdaTimeSeries,
+    "/docs/water-management/use-nwps-gauge": UseNwpsGaugeDocs,
     "/docs/plots": Plots,
     "/docs/plots/plotly-wrapper": PlotlyWrapperDocs,
     "/docs/types": Types,
