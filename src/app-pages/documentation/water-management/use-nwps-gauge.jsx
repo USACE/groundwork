@@ -2,7 +2,10 @@ import { UsaceBox, H3, Text, Code, Card, useNwpsGauge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import ParamsTable from "../../../app-components/params-table";
 import QueryClientWarning from "../../../app-components/water-management/query-client-warning";
-import { queryOptionsParam } from "../../../app-components/water-management/shared-docs";
+import {
+  NwpsApiLink,
+  queryOptionsParam,
+} from "../../../app-components/water-management/shared-docs";
 import DocsPage from "../_docs-page";
 
 const hookParams = [
@@ -61,16 +64,9 @@ function UseNwpsGaugeDocs() {
             the National Weather Service using the National Weather Prediction
             Service (NWPS) API. It requires only the NWS site identifier for the
             requested location and returns data such as the location
-            coordinates, flood categories, and current stage. For more
-            information, see the{" "}
-            <a
-              href="https://api.water.noaa.gov/nwps/v1/docs/"
-              className="gw-underline"
-            >
-              NWPS API Documentation
-            </a>
-            .
+            coordinates, flood categories, and current stage.
           </Text>
+          <NwpsApiLink />
           <QueryClientWarning />
         </div>
         {/* Example usage - remove if not needed */}
