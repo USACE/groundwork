@@ -41,6 +41,7 @@ function SiteWrapper({
       </div>
       {showFooter && (
         <Footer
+          fluidNav={fluidNav}
           missionText={missionText}
           aboutText={aboutText}
           facebookUrl={facebookUrl}
