@@ -1,4 +1,5 @@
 import ParamsTable from "../params-table";
+import { queryOptionsParam } from "./shared-docs";
 
 const CdaParamsTable = ({ requestObject, requestType }) => {
   const hookParams = [
@@ -26,24 +27,7 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
       required: false,
       desc: "An alternative URL for the CDA instance if not using the default (e.g. for testing in a development environment).",
     },
-    {
-      name: "queryOptions",
-      type: "object",
-      required: false,
-      desc: (
-        <>
-          Additional options to configure the TanStack Query useQuery request.
-          See the{" "}
-          <a
-            href="https://tanstack.com/query/latest/docs/framework/react/reference/useQuery"
-            className="gw-underline"
-          >
-            TanStack Query Docs
-          </a>
-          .
-        </>
-      ),
-    },
+    queryOptionsParam,
   ];
 
   return <ParamsTable paramsList={hookParams} />;
