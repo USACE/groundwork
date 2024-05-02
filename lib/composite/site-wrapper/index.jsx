@@ -10,6 +10,7 @@ function SiteWrapper({
   usaBanner = true,
   msgBanner: MsgBanner = false,
   title = "US Army Corps of Engineers",
+  fluidNav = false,
   subtitle = "",
   missionText = "",
   aboutText = "",
@@ -34,6 +35,7 @@ function SiteWrapper({
           title={title}
           subtitle={subtitle}
           navRight={navRight}
+          fluidNav={fluidNav}
         />
         {children}
       </div>
