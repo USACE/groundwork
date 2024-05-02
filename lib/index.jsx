@@ -45,3 +45,4 @@ export { CdaLatestValueCard } from "./components/water-management/CdaLatestValue
 export { useCdaTimeSeries } from "./components/water-management/useCdaTimeSeries";
 export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
 export { useCdaLocation } from "./components/water-management/useCdaLocation";
+export { useNwpsGauge } from "./components/water-management/useNwpsGauge";
