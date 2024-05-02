@@ -22,20 +22,9 @@ function Title({ title = "", subtitle = "" }) {
   );
 }
 
-function Nav({ children }) {
-  return (
-    <nav
-      style={{ order: 1 }}
-      className="gw-flex gw-flex-row gw-relative gw-justify-between gw-content-center gw-bg-nav-black gw-text-white gw-pl-[91px] gw-pr-2 gw-z-80"
-    >
-      {children}
-    </nav>
-  );
-}
-
 function Logo() {
   return (
-    <div className="gw-relative gw-w-[100px] gw-shrink-0 sm:gw-top-3">
+    <div className="gw-relative gw-w-[70px] sm:gw-w-[82px] gw-shrink-0 sm:gw-top-3">
       <a href="/">
         <img className="gw-w-[50px] sm:gw-w-[60px] gw-h-auto" src={usaceLogo} />
       </a>
@@ -60,7 +49,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
             <div className={navContainerClass}>
               <div className="gw-flex gw-justify-between gw-items-center">
                 <Logo />
-                <NavbarLinks links={[links[1]]} />
+                <NavbarLinks links={links} />
                 <span className="gw-flex gw-flex-row-reverse gw-justify-end gw-items-center gw-w-full md:gw-max-w-[300px] gw-mr-2">
                   {navRight ? navRight : null}
                 </span>
@@ -80,7 +69,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
           <div className="gw-min-h-4 gw-py-2 sm:gw-py-0 gw-bg-nav-dark-gray sm:gw-bg-nav-gray">
             <div className={navContainerClass}>
               <div className="gw-flex gw-justify-between gw-items-center">
-                <span className="sm:gw-w-[82px] gw-shrink-0 "></span>
+                <span className="sm:gw-w-[94px] gw-shrink-0 "></span>
                 <Title title={title} subtitle={subtitle} />
               </div>
             </div>
