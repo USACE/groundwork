@@ -199,6 +199,11 @@ export default [
         href: "/docs/water-management/data-hooks",
       },
       {
+        id: "cda-latest-value-card",
+        text: "CdaLatestValueCard",
+        href: "/docs/water-management/cda-latest-value-card",
+      },
+      {
         id: "use-cda-catalog-ts",
         text: "useCdaCatalogTS",
         href: "/docs/water-management/use-cda-catalog-ts",
