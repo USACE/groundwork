@@ -46,3 +46,4 @@ export { useCdaTimeSeries } from "./components/water-management/useCdaTimeSeries
 export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
 export { useCdaLocation } from "./components/water-management/useCdaLocation";
 export { useNwpsGauge } from "./components/water-management/useNwpsGauge";
+export { useNwpsGaugeData } from "./components/water-management/useNwpsGaugeData";
