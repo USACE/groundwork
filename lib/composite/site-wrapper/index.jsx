@@ -28,8 +28,8 @@ function SiteWrapper({
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
-        {usaBanner && <USABanner />}
-        {MsgBanner && <MsgBanner />}
+        {usaBanner && <USABanner fluidNav={fluidNav} />}
+        {MsgBanner && <MsgBanner fluidNav={fluidNav} />}
         <Header
           links={links}
           title={title}
