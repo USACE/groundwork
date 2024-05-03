@@ -20,6 +20,19 @@ function App() {
     return null;
   }
 
+  const sampleLinks = (prefix, linkCount) => {
+    const links = [];
+    for (let i = 1; i <= linkCount; i++) {
+      const link = {
+        id: i,
+        href: "/#",
+        text: `${prefix} Link ${i}`,
+      };
+      links.push(link);
+    }
+    return links;
+  };
+
   return (
     <div onClick={getNavHelper((url) => doUpdateHash(url))}>
       <SiteWrapper
@@ -46,6 +59,12 @@ function App() {
             </Button>
           </>
         }
+        usaceLinks={sampleLinks("USACE", 10)}
+        externalLinks={sampleLinks("External", 5)}
+        facebookUrl="#"
+        twitterUrl="#"
+        youtubeUrl="#"
+        flickrUrl="#"
       >
         <Route />
       </SiteWrapper>

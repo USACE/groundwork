@@ -3,7 +3,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 function SocialLinks({ facebook, twitter, youtube, flickr }) {
   return (
-    <ul className="gw-text-2xl gw-flex gw-flex-row gw-flex-wrap gw-gap-2 gw-list-none gw-mb-3">
+    <ul className="gw-text-2xl gw-flex gw-flex-row gw-flex-wrap gw-gap-2 gw-list-none gw-mb-6">
       {facebook && (
         <li>
           <a

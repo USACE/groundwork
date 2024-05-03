@@ -5,7 +5,7 @@ import cwbiLogo from "../../img/cwbi-logo.png";
 
 function LogoBanner({ army, usace, rsgis, cwbi }) {
   return (
-    <div className="gw-flex gw-flex-row gw-justify-center gw-align-middle gw-gap-6 gw-mb-4">
+    <div className="gw-flex gw-flex-row gw-justify-center gw-align-middle gw-gap-6 gw-mb-4 gw-mt-4">
       {army && (
         <a href="https://www.army.mil" target="_blank" rel="noopener">
           <img src={armyLogo} alt="U.S. Army" className="gw-max-h-[75px]" />
