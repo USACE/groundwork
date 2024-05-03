@@ -26,7 +26,7 @@
 .header_banner_container .header_banner_inner {
   line-height: 1.5;
   margin: 0 auto;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   font-size: 12px;
 }
 
@@ -83,7 +83,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-height: 0;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   overflow: hidden;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -128,7 +128,7 @@
 .header_banner_container .header_banner_content {
   font-size: 14px;
   line-height: 26px;
-  max-width: none;
+  /* max-width: none; */
   width: 100%;
   margin-bottom: 10px;
   letter-spacing: 0.5px;

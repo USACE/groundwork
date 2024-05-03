@@ -49,7 +49,11 @@ import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
 import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
+<<<<<<< HEAD
 import UseNwpsGaugeDataDocs from "../app-pages/documentation/water-management/use-nwps-gauge-data";
+=======
+import UseCdaTimeSeriesGroupDocs from "../app-pages/documentation/water-management/use-cda-time-series-group";
+>>>>>>> main
 
 export default createRouteBundle(
   {
@@ -95,6 +99,8 @@ export default createRouteBundle(
     "/docs/water-management/use-cda-catalog-ts": UseCdaCatalogTS,
     "/docs/water-management/use-cda-location": UseCdaLocation,
     "/docs/water-management/use-cda-time-series": UseCdaTimeSeries,
+    "/docs/water-management/use-cda-time-series-group":
+      UseCdaTimeSeriesGroupDocs,
     "/docs/water-management/use-nwps-gauge": UseNwpsGaugeDocs,
     "/docs/water-management/use-nwps-gauge-data": UseNwpsGaugeDataDocs,
     "/docs/plots": Plots,

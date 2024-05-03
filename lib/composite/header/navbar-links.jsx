@@ -31,7 +31,7 @@ function NavbarLinkItem({ link, ...props }) {
         <Menu.Items
           static
           as="ul"
-          className="gw-absolute gw-left-0 gw-top-13 gw-width-auto gw-bg-nav-dark-gray"
+          className="gw-absolute gw-left-0 gw-top-13 gw-width-auto gw-bg-nav-dark-gray !gw-z-20"
         >
           {link.children.map((child) => {
             return (
