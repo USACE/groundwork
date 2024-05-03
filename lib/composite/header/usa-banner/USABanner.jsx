@@ -13,7 +13,7 @@ const USABanner = ({ fluidNav }) => {
   const [open, setOpen] = useState(false);
   const headerBannerInnerClass = clsx(
     "header_banner_inner",
-    fluidNav ? "gw-max-w-[100vw]" : "gw-px-4 gw-max-w-[1140px]"
+    fluidNav ? "gw-max-w-screen" : "gw-px-4 gw-max-w-screen-2xl"
   );
   return (
     <div

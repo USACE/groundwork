@@ -39,7 +39,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   const navContainerClass = clsx(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
-    fluidNav ? "gw-max-w-[100vw]" : "gw-max-w-[1140px]"
+    fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl"
   );
   return (
     <>
