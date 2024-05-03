@@ -23,6 +23,7 @@ function App() {
   return (
     <div onClick={getNavHelper((url) => doUpdateHash(url))}>
       <SiteWrapper
+        fluidNav={true}
         links={links}
         usaBanner={true}
         subtitle={`Groundwork React Components v${version}`}
