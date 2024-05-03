@@ -19,7 +19,7 @@ const hookParams = [
 ];
 
 const NwpsCard = () => {
-  const { data, isPending, isError } = useNwpsGauge("HLDK2");
+  const { data, isPending, isError } = useNwpsGauge({ sid: "HLDK2" });
 
   if (isPending) return <span>Loading NWPS gauge data...</span>;
   if (isError) return <span>NWPS error!</span>;
@@ -79,7 +79,7 @@ function UseNwpsGaugeDocs() {
           code={`import { Card, H3, useNwpsGauge } from "@usace/groundwork";
 
 const NwpsCard = () => {
-  const { data, isPending, isError } = useNwpsGauge("HLDK2");
+  const { data, isPending, isError } = useNwpsGauge({sid: "HLDK2"});
 
   if (isPending) return <span>Loading NWPS gauge data...</span>;
   if (isError) return <span>NWPS error!</span>;
