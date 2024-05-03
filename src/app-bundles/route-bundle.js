@@ -24,7 +24,9 @@ import CdaLatestValueCardDocs from "../app-pages/documentation/water-management/
 import UseCdaCatalogTS from "../app-pages/documentation/water-management/use-cda-catalog-ts";
 import UseCdaLocation from "../app-pages/documentation/water-management/use-cda-location";
 import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cda-time-series";
+import UseCdaTimeSeriesGroupDocs from "../app-pages/documentation/water-management/use-cda-time-series-group";
 import UseNwpsGaugeDocs from "../app-pages/documentation/water-management/use-nwps-gauge";
+import UseNwpsGaugeDataDocs from "../app-pages/documentation/water-management/use-nwps-gauge-data";
 import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
@@ -49,11 +51,6 @@ import PlotlyWrapperDocs from "../app-pages/documentation/plots/plotly-wrapper";
 import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
-<<<<<<< HEAD
-import UseNwpsGaugeDataDocs from "../app-pages/documentation/water-management/use-nwps-gauge-data";
-=======
-import UseCdaTimeSeriesGroupDocs from "../app-pages/documentation/water-management/use-cda-time-series-group";
->>>>>>> main
 
 export default createRouteBundle(
   {
