@@ -10,6 +10,7 @@ function SiteWrapper({
   usaBanner = true,
   msgBanner: MsgBanner = false,
   title = "US Army Corps of Engineers",
+  fluidNav = false,
   subtitle = "",
   missionText = "",
   aboutText = "",
@@ -27,18 +28,20 @@ function SiteWrapper({
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
-        {usaBanner && <USABanner />}
-        {MsgBanner && <MsgBanner />}
+        {usaBanner && <USABanner fluidNav={fluidNav} />}
+        {MsgBanner && <MsgBanner fluidNav={fluidNav} />}
         <Header
           links={links}
           title={title}
           subtitle={subtitle}
           navRight={navRight}
+          fluidNav={fluidNav}
         />
         {children}
       </div>
       {showFooter && (
         <Footer
+          fluidNav={fluidNav}
           missionText={missionText}
           aboutText={aboutText}
           facebookUrl={facebookUrl}

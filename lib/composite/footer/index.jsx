@@ -80,6 +80,7 @@ const defaultOffsiteLinks = [
 ];
 
 function Footer({
+  fluidNav,
   missionText,
   aboutText,
   facebookUrl,
@@ -97,7 +98,7 @@ function Footer({
     <footer className="gw-relative gw-text-footer-light-gray gw-text-sm gw-bg-footer-black gw-border-t-gray-600 gw-border-t-4 gw-pb-[128px]">
       <Essayons />
       <div className="gw-bg-footer-gray gw-pt-8 gw-pb-16">
-        <Container fluid>
+        <Container fluid={fluidNav}>
           <div className="gw-grid gw-grid-cols-12 gw-gap-2">
             <div className="gw-col-span-12 lg:gw-col-span-6">
               <div className="gw-grid gw-grid-cols-12 gw-gap-2">

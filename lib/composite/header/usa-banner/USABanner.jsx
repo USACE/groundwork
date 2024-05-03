@@ -1,4 +1,5 @@
 import { useState } from "react";
+import clsx from "clsx";
 import "./usa-banner.css";
 import flag from "../../../img/us_flag_small.png";
 import iconDotGov from "../../../img/icon-dot-gov.svg";
@@ -8,14 +9,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const USABanner = () => {
+const USABanner = ({ fluidNav }) => {
   const [open, setOpen] = useState(false);
+  const headerBannerInnerClass = clsx(
+    "header_banner_inner",
+    fluidNav ? "gw-max-w-screen" : "gw-px-4 gw-max-w-screen-2xl"
+  );
   return (
     <div
       id="dnn_ctl03_header_banner_container"
       className="header_banner_container"
     >
-      <span className="header_banner_inner">
+      <div className={headerBannerInnerClass}>
         <div className="header_banner_flag gw-flex gw-items-center gw-justify-start">
           <img src={flag} className="gw-mr-2" />
           An official website of the United States government
@@ -115,7 +120,7 @@ const USABanner = () => {
             </div>
           </div>
         ) : null}
-      </span>
+      </div>
     </div>
   );
 };
