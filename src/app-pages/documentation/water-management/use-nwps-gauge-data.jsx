@@ -97,7 +97,7 @@ function UseNwpsGaugeDataDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Card, H3, useNwpsGauge } from "@usace/groundwork";
+          code={`import { Card, H3, useNwpsGaugeData } from "@usace/groundwork";
 
 const NwpsForecastCard = () => {
   const { data, isPending, isError } = useNwpsGaugeData({
