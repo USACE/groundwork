@@ -99,10 +99,10 @@ function Footer({
       <Essayons />
       <div className="gw-bg-footer-gray gw-pt-8 gw-pb-16">
         <Container fluid={fluidNav}>
-          <div className="gw-grid gw-grid-cols-12 gw-gap-2">
+          <div className="gw-grid gw-grid-cols-12 gw-gap-2 lg:gw-gap-10">
             <div className="gw-col-span-12 lg:gw-col-span-6">
               <div className="gw-grid gw-grid-cols-12 gw-gap-2">
-                <div className="gw-col-span-6 lg:gw-col-span-12">
+                <div className="gw-col-span-12 lg:gw-col-span-12">
                   {missionText && (
                     <>
                       <h2 className="gw-text-lg">Our Mission</h2>
@@ -110,7 +110,7 @@ function Footer({
                     </>
                   )}
                 </div>
-                <div className="gw-col-span-6 lg:gw-col-span-12">
+                <div className="gw-col-span-12 gw-mt-4">
                   {aboutText && (
                     <>
                       <h2 className="gw-text-lg">About this Website</h2>
@@ -120,7 +120,7 @@ function Footer({
                 </div>
               </div>
             </div>
-            <div className="gw-col-span-8 gw-mt-8 lg:gw-mt-2 lg:gw-col-span-4">
+            <div className="gw-col-span-12 gw-mt-8 lg:gw-mt-2 md:gw-col-span-4">
               <SocialLinks
                 facebook={facebookUrl}
                 twitter={twitterUrl}
@@ -129,7 +129,7 @@ function Footer({
               />
               <FooterLinks links={usaceLinks} />
             </div>
-            <div className="gw-col-span-4 gw-mt-[66px] lg:gw-mt-2  lg:gw-col-span-2">
+            <div className="gw-col-span-8 md:gw-mt-20 lg:gw-mt-14  md:gw-col-span-2">
               <FooterLinks links={externalLinks} columnCount={1} />
             </div>
           </div>
