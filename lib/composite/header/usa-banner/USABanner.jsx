@@ -22,7 +22,7 @@ const USABanner = ({ fluidNav }) => {
     >
       <div className={headerBannerInnerClass}>
         <div className="header_banner_flag gw-flex gw-items-center gw-justify-start">
-          <img src={flag} className="gw-mr-2" />
+          <img src={flag} className="gw-mr-2" role="presentation" />
           An official website of the United States government
           <div className="header_banner_accordion" tabIndex={0}>
             <u
