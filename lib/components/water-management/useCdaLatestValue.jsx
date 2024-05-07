@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCdaCatalogTS, useCdaTimeSeries } from "../../index";
+import { getLatestEntry } from "./cda";
 
 const useCdaLatestValue = ({ tsId, office, unit, cdaUrl }) => {
   const [latestDate, setLatestDate] = useState();
@@ -38,7 +39,18 @@ const useCdaLatestValue = ({ tsId, office, unit, cdaUrl }) => {
   const isPending = ts.isPending || (enableCatalog && catalog.isPending);
   const isFetching = ts.isFetching || catalog.isFetching;
 
-  return { ...ts, isPending, isFetching };
+  const latestEntry = ts.data ? getLatestEntry(ts.data) : undefined;
+
+  const data = latestEntry
+    ? {
+        datetime: latestEntry[0],
+        value: latestEntry[1],
+        qualityCode: latestEntry[2],
+        units: ts.data.units,
+      }
+    : undefined;
+
+  return { ...ts, data, isPending, isFetching };
 };
 
 export { useCdaLatestValue };

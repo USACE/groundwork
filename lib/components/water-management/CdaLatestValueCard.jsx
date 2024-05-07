@@ -1,7 +1,6 @@
 import { Card, Skeleton, useCdaLatestValue } from "../../index";
 import { MdErrorOutline } from "react-icons/md";
 import { PiClockThin } from "react-icons/pi";
-import { getLatestEntry } from "./cda";
 
 const CdaLatestValueCard = ({
   label,
@@ -20,15 +19,7 @@ const CdaLatestValueCard = ({
     cdaUrl,
   });
 
-  let latestEntry = undefined;
-  let noData = false;
-  if (data) {
-    if (data.values.length > 0) {
-      latestEntry = getLatestEntry(data);
-    } else {
-      noData = true;
-    }
-  }
+  const noData = !isPending && !data;
 
   return (
     <Card className={className} {...props}>
@@ -43,11 +34,7 @@ const CdaLatestValueCard = ({
             <MdErrorOutline />
           </span>
         ) : (
-          <CardValue
-            value={latestEntry[1]}
-            units={data.units}
-            digits={digits}
-          />
+          <CardValue value={data.value} units={data.units} digits={digits} />
         )}
       </div>
       <div className="gw-mt-2 gw-flex gw-justify-between">
@@ -59,7 +46,7 @@ const CdaLatestValueCard = ({
           <span>No data found</span>
         ) : (
           <>
-            <CardTimestamp datetime={new Date(latestEntry[0])} />
+            <CardTimestamp datetime={new Date(data.datetime)} />
             {/* {change ? <Parameter24hrChange change={change} /> : customBotRight} */}
           </>
         )}
