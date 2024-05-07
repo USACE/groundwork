@@ -1,5 +1,5 @@
 import ParamsTable from "../params-table";
-import { queryOptionsParam } from "./shared-docs";
+import { cdaUrlParam, queryOptionsParam } from "./shared-docs";
 
 const CdaParamsTable = ({ requestObject, requestType }) => {
   const hookParams = [
@@ -21,12 +21,7 @@ const CdaParamsTable = ({ requestObject, requestType }) => {
         </>
       ),
     },
-    {
-      name: "cdaUrl",
-      type: "string",
-      required: false,
-      desc: "An alternative URL for the CDA instance if not using the default (e.g. for testing in a development environment).",
-    },
+    cdaUrlParam,
     queryOptionsParam,
   ];
 

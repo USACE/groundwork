@@ -1,8 +1,6 @@
-import { Card, Skeleton, useCdaCatalogTS, useCdaTimeSeries } from "../../index";
+import { Card, Skeleton, useCdaLatestValue } from "../../index";
 import { MdErrorOutline } from "react-icons/md";
 import { PiClockThin } from "react-icons/pi";
-import { getLatestEntry } from "./cda";
-import { useEffect, useState } from "react";
 
 const CdaLatestValueCard = ({
   label,
@@ -14,53 +12,14 @@ const CdaLatestValueCard = ({
   cdaUrl,
   ...props
 }) => {
-  const [latestDate, setLatestDate] = useState();
-  const begin = latestDate;
-  const end = latestDate;
-  const {
-    data,
-    isPending: tsPending,
-    isFetching: tsFetching,
-    isError: tsIsError,
-  } = useCdaTimeSeries({
-    cdaParams: {
-      name: tsId,
-      office,
-      ...(unit && { unit }),
-      ...(begin && { begin }),
-      ...(end && { end }),
-    },
-    cdaUrl: cdaUrl,
+  const { data, isPending, isError } = useCdaLatestValue({
+    tsId,
+    office,
+    unit,
+    cdaUrl,
   });
 
-  const enableCatalog = !tsPending && data?.values.length == 0;
-
-  const catalog = useCdaCatalogTS({
-    cdaParams: { office, like: tsId },
-    cdaUrl: cdaUrl,
-    queryOptions: {
-      enabled: enableCatalog,
-    },
-  });
-
-  useEffect(() => {
-    if (!catalog.data) {
-      return;
-    }
-    setLatestDate(
-      new Date(catalog.data.entries[0].extents[0]["latest-time"]).toISOString()
-    );
-  }, [catalog]);
-
-  let latestEntry = undefined;
-  let noData = false;
-  if (data) {
-    if (data.values.length > 0) {
-      latestEntry = getLatestEntry(data);
-    } else {
-      noData = true;
-    }
-  }
+  const noData = !isPending && !data;
 
   return (
     <Card className={className} {...props}>
@@ -68,30 +27,26 @@ const CdaLatestValueCard = ({
         <p className="gw-font-lg gw-truncate gw-text-lg gw-font-semibold gw-text-black">
           {label ?? tsId}
         </p>
-        {tsFetching | (catalog.isPending && enableCatalog) ? (
+        {isPending ? (
           <Skeleton className="gw-w-20" />
-        ) : tsIsError | noData ? (
+        ) : isError | noData ? (
           <span className="gw-text-lg">
             <MdErrorOutline />
           </span>
         ) : (
-          <CardValue
-            value={latestEntry[1]}
-            units={data.units}
-            digits={digits}
-          />
+          <CardValue value={data.value} units={data.units} digits={digits} />
         )}
       </div>
       <div className="gw-mt-2 gw-flex gw-justify-between">
-        {tsFetching | (catalog.isPending && enableCatalog) ? (
+        {isPending ? (
           <Skeleton className="gw-w-48" />
-        ) : tsIsError ? (
+        ) : isError ? (
           <span className="gw-text-red-500">Error retrieving data</span>
         ) : noData ? (
           <span>No data found</span>
         ) : (
           <>
-            <CardTimestamp datetime={new Date(latestEntry[0])} />
+            <CardTimestamp datetime={new Date(data.datetime)} />
             {/* {change ? <Parameter24hrChange change={change} /> : customBotRight} */}
           </>
         )}

@@ -43,6 +43,7 @@ export { Plot } from "./components/plots/plotly";
 // water management
 export { CdaLatestValueCard } from "./components/water-management/CdaLatestValueCard";
 export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
+export { useCdaLatestValue } from "./components/water-management/useCdaLatestValue";
 export { useCdaLocation } from "./components/water-management/useCdaLocation";
 export { useCdaTimeSeries } from "./components/water-management/useCdaTimeSeries";
 export { useCdaTimeSeriesGroup } from "./components/water-management/useCdaTimeSeriesGroup";

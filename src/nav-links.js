@@ -204,6 +204,11 @@ export default [
         href: "/docs/water-management/cda-latest-value-card",
       },
       {
+        id: "use-cda-latest-value",
+        text: "useCdaLatestValue",
+        href: "/docs/water-management/use-cda-latest-value",
+      },
+      {
         id: "use-cda-catalog-ts",
         text: "useCdaCatalogTS",
         href: "/docs/water-management/use-cda-catalog-ts",
