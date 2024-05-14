@@ -69,9 +69,9 @@ function Breadcrumbs() {
         </Text>
 
         <div className="gw-flex gw-justify-start gw-content-center gw-gap-4">
-          <Code className="gw-p-1 gw-px-2">{`import { Breadcrumbs, BreadcrumbItem } from @usace/groundwork;`}</Code>
+          <Code className="gw-p-1 gw-px-2">{`import { Breadcrumbs, BreadcrumbItem } from "@usace/groundwork";`}</Code>
           <CopyButton
-            text={`import { Breadcrumbs, BreadcrumbItem } from @usace/groundwork;`}
+            text={`import { Breadcrumbs, BreadcrumbItem } from "@usace/groundwork";`}
           />
         </div>
 
