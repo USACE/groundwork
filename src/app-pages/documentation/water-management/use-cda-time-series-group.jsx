@@ -70,15 +70,15 @@ const TimeSeriesGroupCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useCdaTimeSeriesGroup",
-    href: "/#/docs/water-management/use-cda-time-series-group",
+    href: "/docs/water-management/use-cda-time-series-group",
   },
 ];
 

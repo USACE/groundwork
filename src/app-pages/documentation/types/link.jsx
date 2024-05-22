@@ -26,15 +26,15 @@ const linkProps = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Types",
-    href: "/#/docs/types",
+    href: "/docs/types",
   },
   {
     text: "Link",
-    href: "/#/docs/types/link",
+    href: "/docs/types/link",
   },
 ];
 

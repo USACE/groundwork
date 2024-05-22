@@ -60,15 +60,15 @@ const NwpsForecastCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useNwpsGaugeData",
-    href: "/#/docs/water-management/use-nwps-gauge-data",
+    href: "/docs/water-management/use-nwps-gauge-data",
   },
 ];
 

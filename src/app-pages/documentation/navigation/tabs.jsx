@@ -7,15 +7,15 @@ import { VscCloudDownload, VscMail, VscSettingsGear } from "react-icons/vsc";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: "/docs/navigation",
   },
   {
     text: "Tabs",
-    href: "/#/docs/navigation/tabs",
+    href: "/docs/navigation/tabs",
   },
 ];
 

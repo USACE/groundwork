@@ -53,15 +53,15 @@ const CatalogCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useCdaCatalogTS",
-    href: "/#/docs/water-management/use-cda-catalog-ts",
+    href: "/docs/water-management/use-cda-catalog-ts",
   },
 ];
 

@@ -38,15 +38,15 @@ const returnParams = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "Data Hooks",
-    href: "/#/docs/water-management/data-hooks",
+    href: "/docs/water-management/data-hooks",
   },
 ];
 

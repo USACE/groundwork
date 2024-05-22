@@ -41,15 +41,15 @@ const NwpsCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useNwpsGauge",
-    href: "/#/docs/water-management/use-nwps-gauge",
+    href: "/docs/water-management/use-nwps-gauge",
   },
 ];
 

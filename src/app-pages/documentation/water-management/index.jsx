@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/display",
+    href: "/docs/display",
   },
 ];
 
@@ -27,7 +27,7 @@ function WaterManagement() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/#/docs/water-management">Coming Soon</a>
+              <a href="/docs/water-management">Coming Soon</a>
             </li>
           </ul>
         </div>

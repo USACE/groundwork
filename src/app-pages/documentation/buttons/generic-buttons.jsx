@@ -6,11 +6,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: "/docs/buttons",
   },
 ];
 
@@ -116,7 +116,7 @@ function GenericButtonsDocs() {
             <Button style="outline">Outlined</Button>
             <Button style="plain">Plain</Button>
             <Button disabled>Disabled</Button>
-            <Button href="/#/docs/buttons">As a Link</Button>
+            <Button href="/docs/buttons">As a Link</Button>
           </div>
         </div>
         {/* Example code */}
@@ -130,7 +130,7 @@ function Component() {
       <Button style="outline">Outlined</Button>
       <Button style="plain">Plain</Button>
       <Button disabled>Disabled</Button>
-      <Button href="/#/docs/buttons">As a Link</Button>
+      <Button href="/docs/buttons">As a Link</Button>
     </div>
   )
 }
