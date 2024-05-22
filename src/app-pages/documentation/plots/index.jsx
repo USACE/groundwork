@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Plots",
-    href: "/docs/plots",
+    href: "/#/docs/plots",
   },
 ];
 
@@ -26,7 +26,7 @@ function Plots() {
         <ul>
           <a
             className="gw-hover:gw-underline"
-            href="/docs/plots/plotly-wrapper"
+            href="/#/docs/plots/plotly-wrapper"
           >
             <li>
               Plotly Wrapper - Simple wrapper around the Plotly.js library

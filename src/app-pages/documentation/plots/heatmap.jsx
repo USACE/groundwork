@@ -7,15 +7,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Plots",
-    href: "/docs/plots",
+    href: "/#/docs/plots",
   },
   {
     text: "Heatmap",
-    href: "/docs/plots/heatmap",
+    href: "/#/docs/plots/heatmap",
   },
 ];
 

@@ -92,15 +92,15 @@ const LatestDataCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Water Management",
-    href: "/docs/water-management",
+    href: "/#/docs/water-management",
   },
   {
     text: "useCdaLatestValue",
-    href: "/docs/water-management/use-cda-latest-value",
+    href: "/#/docs/water-management/use-cda-latest-value",
   },
 ];
 
