@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Forms",
-    href: "/docs/forms",
+    href: "/#/docs/forms",
   },
 ];
 
@@ -23,31 +23,37 @@ function Forms() {
           </Text>
           <H4>Components</H4>
           <ul>
-            <a className="gw-hover:gw-underline" href="/docs/forms/fieldset">
+            <a className="gw-hover:gw-underline" href="/#/docs/forms/fieldset">
               <li>Fieldset - Organize field components.</li>
             </a>
-            <a className="gw-hover:gw-underline" href="/docs/forms/text-inputs">
+            <a
+              className="gw-hover:gw-underline"
+              href="/#/docs/forms/text-inputs"
+            >
               <li>Input - Add / Edit a text field in your form.</li>
             </a>
-            <a className="gw-hover:gw-underline" href="/docs/forms/textarea">
+            <a className="gw-hover:gw-underline" href="/#/docs/forms/textarea">
               <li>Textarea - For when you need lots of information.</li>
             </a>
             <a
               className="gw-hover:gw-underline"
-              href="/docs/forms/numeric-inputs"
+              href="/#/docs/forms/numeric-inputs"
             >
               <li>Numeric - Limit entry to numbers.</li>
             </a>
-            <a className="gw-hover:gw-underline" href="/docs/forms/color-input">
+            <a
+              className="gw-hover:gw-underline"
+              href="/#/docs/forms/color-input"
+            >
               <li>Color - Let a user choose a color.</li>
             </a>
             <a
               className="gw-hover:gw-underline"
-              href="/docs/forms/date-time-inputs"
+              href="/#/docs/forms/date-time-inputs"
             >
               <li>Date/Time - Different ways to pick temporal data.</li>
             </a>
-            <a className="gw-hover:gw-underline" href="/docs/forms/input">
+            <a className="gw-hover:gw-underline" href="/#/docs/forms/input">
               <li>File Input - When we need to let folks upload something.</li>
             </a>
           </ul>

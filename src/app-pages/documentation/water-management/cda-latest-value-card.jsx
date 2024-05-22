@@ -7,15 +7,15 @@ import QueryClientWarning from "../../../app-components/water-management/query-c
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Water Management",
-    href: "/docs/water-management",
+    href: "/#/docs/water-management",
   },
   {
     text: "CdaLatestValueCard",
-    href: "/docs/water-management/cda-latest-value-card",
+    href: "/#/docs/water-management/cda-latest-value-card",
   },
 ];
 

@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Types",
-    href: "/docs/types",
+    href: "/#/docs/types",
   },
 ];
 
@@ -24,10 +24,10 @@ function Types() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="gw-hover:gw-underline" href="/docs/types/link">
+          <a className="gw-hover:gw-underline" href="/#/docs/types/link">
             <li>Link - Group text and a href attribute.</li>
           </a>
-          <a className="gw-hover:gw-underline" href="/docs/types/tab">
+          <a className="gw-hover:gw-underline" href="/#/docs/types/tab">
             <li>Tab - Define the behavior of the tabs component.</li>
           </a>
         </ul>

@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Display",
-    href: "/docs/display",
+    href: "/#/docs/display",
   },
 ];
 
@@ -24,34 +24,36 @@ function Display() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/docs/display/badge">
+              <a href="/#/docs/display/badge">
                 Badge - A small piece of information that can be displayed on a
                 page.
               </a>
             </li>
             <li>
-              <a href="/docs/display/headings">
+              <a href="/#/docs/display/headings">
                 Headings - Section headings for standard content.
               </a>
             </li>
             <li>
-              <a href="/docs/display/hero">
+              <a href="/#/docs/display/hero">
                 Hero - A large, prominent section of a page.
               </a>
             </li>
             <li>
-              <a href="/docs/display/text">Text - Standard text for a page.</a>
+              <a href="/#/docs/display/text">
+                Text - Standard text for a page.
+              </a>
             </li>
             <li>
-              <a href="/docs/display/table">Table - A table of data.</a>
+              <a href="/#/docs/display/table">Table - A table of data.</a>
             </li>
             <li>
-              <a href="/docs/display/accordion">
+              <a href="/#/docs/display/accordion">
                 Accordion - Stackable / Expandible sections.
               </a>
             </li>
             <li>
-              <a href="/docs/display/card">
+              <a href="/#/docs/display/card">
                 Card - Put a box around some content.
               </a>
             </li>

@@ -6,15 +6,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Getting Started",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Client-Side Routing",
-    href: "/docs/client-side-routing",
+    href: "/#/docs/client-side-routing",
   },
 ];
 
@@ -123,11 +123,11 @@ function ClientSideRouting() {
             rest of the guide will assume you have followed these steps. These
             steps also assume that you have walked through a project set up
             using the{" "}
-            <a href="/docs/quick-start" className="gw-underline">
+            <a href="/#/docs/quick-start" className="gw-underline">
               quick start guide
             </a>{" "}
             and{" "}
-            <a href="/docs/adding-tailwind" className="gw-underline">
+            <a href="/#/docs/adding-tailwind" className="gw-underline">
               adding Tailwind CSS
             </a>{" "}
             tutorials.

@@ -7,15 +7,15 @@ import { TbPlayerTrackNext } from "react-icons/tb";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Getting Started",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Quick Start Guide",
-    href: "/docs/quick-start",
+    href: "/#/docs/quick-start",
   },
 ];
 
@@ -188,7 +188,7 @@ export default App;`}
             Groundwork uses under the hood.
           </P>
           <P>
-            <a href="/docs/adding-tailwind" className="gw-underline">
+            <a href="/#/docs/adding-tailwind" className="gw-underline">
               <span className="gw-flex gw-items-center gw-gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>

@@ -17,15 +17,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Forms",
-    href: "/docs/forms",
+    href: "/#/docs/forms",
   },
   {
     text: "Fieldset",
-    href: "/docs/forms/fieldset",
+    href: "/#/docs/forms/fieldset",
   },
 ];
 

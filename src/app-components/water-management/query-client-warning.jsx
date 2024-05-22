@@ -8,7 +8,7 @@ const QueryClientWarning = () => {
       <Text>
         Use of the groundwork data hooks requires that your application be
         wrapped in a QueryClientProvider. Refer to the{" "}
-        <a href="/docs/water-management/data-hooks" className="gw-underline">
+        <a href="/#/docs/water-management/data-hooks" className="gw-underline">
           Data Hooks Overview
         </a>
         .

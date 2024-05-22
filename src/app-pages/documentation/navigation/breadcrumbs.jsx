@@ -44,15 +44,15 @@ const breadcrumbItemPropsData = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Navigation",
-    href: "/docs/navigation",
+    href: "/#/docs/navigation",
   },
   {
     text: "Breadcrumbs",
-    href: "/docs/navigation/breadcrumbs",
+    href: "/#/docs/navigation/breadcrumbs",
   },
 ];
 
@@ -78,10 +78,10 @@ function Breadcrumbs() {
         <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <BC>
-            <BreadcrumbItem href="/docs" text="Documentation" />
-            <BreadcrumbItem href="/docs/navigation" text="Navigation" />
+            <BreadcrumbItem href="/#/docs" text="Documentation" />
+            <BreadcrumbItem href="/#/docs/navigation" text="Navigation" />
             <BreadcrumbItem
-              href="/docs/navigation/breadcrumbs"
+              href="/#/docs/navigation/breadcrumbs"
               text="Breadcrumbs"
             />
           </BC>
@@ -89,9 +89,9 @@ function Breadcrumbs() {
         <div>
           <CodeExample
             code={`<Breadcrumbs>
-  <BreadcrumbItem href="/docs" text="Documentation" />
-  <BreadcrumbItem href="/docs/navigation" text="Navigation" />
-  <BreadcrumbItem href="/docs/navigation/breadcrumbs" text="Breadcrumbs" />
+  <BreadcrumbItem href="/#/docs" text="Documentation" />
+  <BreadcrumbItem href="/#/docs/navigation" text="Navigation" />
+  <BreadcrumbItem href="/#/docs/navigation/breadcrumbs" text="Breadcrumbs" />
 </Breadcrumbs>
 `}
           />
