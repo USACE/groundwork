@@ -84,15 +84,15 @@ const OutflowCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useCdaTimeSeries",
-    href: "/#/docs/water-management/use-cda-time-series",
+    href: "/docs/water-management/use-cda-time-series",
   },
 ];
 

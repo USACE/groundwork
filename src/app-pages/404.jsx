@@ -10,10 +10,10 @@ function NotFound() {
           </H2>
         </div>
         <div className="gw-flex gw-gap-3 gw-mt-8">
-          <Button color="green" href="/#/">
+          <Button color="green" href="/">
             Go Home
           </Button>
-          <Button color="teal" href="/#/docs">
+          <Button color="teal" href="/docs">
             Go to Documentation
           </Button>
           <Button color="blue" onClick={() => window.history.back()}>

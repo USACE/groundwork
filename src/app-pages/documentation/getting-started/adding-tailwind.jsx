@@ -7,15 +7,15 @@ import { TbPlayerTrackNext } from "react-icons/tb";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Adding Tailwind CSS",
-    href: "/#/docs/adding-tailwind",
+    href: "/docs/adding-tailwind",
   },
 ];
 
@@ -135,7 +135,7 @@ export default App;`}
             reading to learn more.
           </P>
           <P>
-            <a href="/#/docs/client-side-routing" className="gw-underline">
+            <a href="/docs/client-side-routing" className="gw-underline">
               <span className="gw-flex gw-items-center gw-gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>

@@ -60,15 +60,15 @@ const LocationCard = () => {
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Water Management",
-    href: "/#/docs/water-management",
+    href: "/docs/water-management",
   },
   {
     text: "useCdaLocation",
-    href: "/#/docs/water-management/use-cda-location",
+    href: "/docs/water-management/use-cda-location",
   },
 ];
 

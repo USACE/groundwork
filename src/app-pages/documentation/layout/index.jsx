@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "/docs",
   },
   {
     text: "Layout",
-    href: "/#/docs/layout",
+    href: "/docs/layout",
   },
 ];
 
@@ -28,16 +28,10 @@ function Layout() {
           </Text>
           <H4>Components</H4>
           <ul>
-            <a
-              className="gw-hover:gw-underline"
-              href="/#/docs/layout/container"
-            >
+            <a className="gw-hover:gw-underline" href="/docs/layout/container">
               <li>Container - a simple wrapper to manage margins.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href="/#/docs/layout/usace-box"
-            >
+            <a className="gw-hover:gw-underline" href="/docs/layout/usace-box">
               <li>
                 USACE Box - A container with a header and the red and gray
                 flourish on top.
