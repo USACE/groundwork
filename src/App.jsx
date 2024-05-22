@@ -10,12 +10,12 @@ function App() {
   const {
     route: Route,
     hash,
-    doUpdateHash,
-  } = useConnect("selectRoute", "selectHash", "doUpdateHash");
+    doUpdateUrl,
+  } = useConnect("selectRoute", "selectHash", "doUpdateUrl");
 
   if (hash === "") {
     window.setTimeout(() => {
-      doUpdateHash("/");
+      doUpdateUrl("/#/");
     }, 100);
     return null;
   }
@@ -34,7 +34,11 @@ function App() {
   };
 
   return (
-    <div onClick={getNavHelper((url) => doUpdateHash(url))}>
+    <div
+      onClick={getNavHelper((url) => {
+        doUpdateUrl(url);
+      })}
+    >
       <SiteWrapper
         fluidNav={true}
         links={links}
