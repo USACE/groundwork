@@ -322,7 +322,7 @@ export default createRouteBundle({
           <Code className="!gw-font-bold">./src/app-bundles/index.js</Code>
           <CodeExample
             code={`import { composeBundles, createUrlBundle } from "redux-bundler";
-import routeBundle from "./route-bundle";
+import routeBundle from "./routes-bundle";
 
 export default composeBundles(createUrlBundle(), routeBundle);`}
           ></CodeExample>
