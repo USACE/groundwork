@@ -1,5 +1,5 @@
 import { Tab } from "@headlessui/react";
-import clsx from "clsx";
+import gwMerge from "../../gw-merge";
 
 function Tabs({ tabs, fill = false }) {
   return (
@@ -13,7 +13,7 @@ function Tabs({ tabs, fill = false }) {
               const fillCls = fill ? "gw-flex-auto" : "";
               const selectedCls = selected ? "gw-bg-gray-50" : "";
 
-              return clsx(base, fillCls, selectedCls);
+              return gwMerge(base, fillCls, selectedCls);
             }}
           >
             <span
