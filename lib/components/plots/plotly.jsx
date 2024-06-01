@@ -1,7 +1,7 @@
-import { useEffect, useRef, useCallback, forwardRef } from "react";
-import clsx from "clsx";
+import { useEffect, useRef, useCallback, forwardRef, useMemo } from "react";
 import Plotly from "plotly.js-dist";
 import "./css-override.css";
+import gwMerge from "../../gw-merge";
 
 const hoverHandler = (callback) => (data) => {
   callback && callback(data);
@@ -34,7 +34,11 @@ const Plot = forwardRef(function InternalPlot(
     ref.current.on("plotly_hover", handleHover);
   }, [data, layout, config, revision]);
 
-  return <div ref={ref} className={clsx("gw-w-full", className)}></div>;
+  const plotWrapperClass = useMemo(() => {
+    return gwMerge("gw-w-full", className);
+  });
+
+  return <div ref={ref} className={plotWrapperClass}></div>;
 });
 
 export default Plot;
