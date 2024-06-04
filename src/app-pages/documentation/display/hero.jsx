@@ -38,8 +38,8 @@ const componentProps = [
   {
     name: "duration_ms",
     type: "integer",
-    default: "6000",
-    desc: "Optionally: Given a list of images set the duration between each image",
+    default: "12000",
+    desc: "Optionally: Given a list of images set the duration (in ms) between each image. Defaults to 12s or 12000ms.",
   },
 ];
 

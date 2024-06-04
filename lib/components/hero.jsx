@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
  * @param {string | string[]} image - The image or list of images to display in the hero.
  * @param {string | string[]} alt - The alt text or list of text for the image(s).
  * @param {ReactNode} children - Custom children to display in the hero.
- * @param {integer} duration_ms - given a list of images set the duration between each image. Default: 6000ms
+ * @param {integer} duration_ms - given a list of images set the duration between each image. Default: 12000ms
  * @example
  * <Hero
  *  title="Groundwork"
@@ -26,7 +26,7 @@ import { useState, useEffect } from "react";
  *  duration_ms=12000 // 12 seconds
  * >
  */
-function Hero({ title, subtitle, image, alt, children, duration_ms = 6000 }) {
+function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
   const [currentImage, setCurrentImage] = useState(typeof image === "object" ? image[0] : image);
   const [currentAlt, setCurrentAlt] = useState(typeof alt === "object" ? alt[0] : alt);
   // Make sure the alt count matches the images if both are provided as lists
