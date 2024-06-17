@@ -37,9 +37,6 @@ export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
 
-// data visualization
-export { Plot } from "./components/plots/plotly";
-
 // water management
 export { CdaLatestValueCard } from "./components/water-management/CdaLatestValueCard";
 export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
