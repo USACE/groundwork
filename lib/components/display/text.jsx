@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { Link } from "../link";
+import { Prism } from "react-syntax-highlighter";
 
 export function Text({ className, ...props }) {
   return (
@@ -38,14 +39,20 @@ export function Strong({ className, ...props }) {
   );
 }
 
-export function Code({ className, ...props }) {
-  return (
-    <code
+export function Code({ className, syntaxHighlight = false, language="jsx", ...props }) {
+
+  const codeClassName = clsx(
+    "gw-whitespace-pre gw-rounded gw-border gw-border-zinc-950/10 gw-bg-zinc-950/[2.5%] gw-px-0.5 gw-text-sm gw-font-medium gw-text-zinc-950 sm:gw-text-[0.8125rem] dark:gw-border-white/20 dark:gw-bg-white/5 dark:gw-text-white",
+    className
+  );
+
+  return syntaxHighlight ? (
+    <Prism
+      language={language}
       {...props}
-      className={clsx(
-        "gw-rounded gw-border gw-border-zinc-950/10 gw-bg-zinc-950/[2.5%] gw-px-0.5 gw-text-sm gw-font-medium gw-text-zinc-950 sm:gw-text-[0.8125rem] dark:gw-border-white/20 dark:gw-bg-white/5 dark:gw-text-white",
-        className
-      )}
+      className={codeClassName}
     />
+  ) : (
+    <code {...props} className={codeClassName} />
   );
 }

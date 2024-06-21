@@ -88,6 +88,7 @@ export default {
           </P>
           <Code className="!gw-font-bold">./src/index.css</Code>
           <CodeExample
+            language="css"
             code={`@tailwind base;
 @tailwind components;
 @tailwind utilities;`}
@@ -95,7 +96,7 @@ export default {
 
           <P>Start your build process and development server.</P>
           <Code className="!gw-font-bold">terminal</Code>
-          <CodeExample code={`npm run dev`}></CodeExample>
+          <CodeExample language={"bash"} code={`npm run dev`}></CodeExample>
 
           <P>Start Using Tailwind in your project</P>
           <Code className="!gw-font-bold">./src/App.jsx</Code>

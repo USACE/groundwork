@@ -1,15 +1,23 @@
 import { Code } from "../../lib";
 import CopyButton from "./copy-button";
 
-// render a code block for the example
-function CodeExample({ code }) {
+// Render a code block for the example
+function CodeExample({ code, syntaxHighlight = true, language="jsx" }) {
   return (
-    <Code className="gw-block gw-relative gw-p-4 !gw-px-2 gw-whitespace-pre-wrap">
-      {code}
-      <div className="gw-absolute gw-top-2 gw-right-2">
-        <CopyButton text={code} />
+    <div className="gw-block gw-relative">
+      <div className="gw-block gw-relative gw-p-4 !gw-px-2 gw-whitespace-pre-wrap">
+        <Code
+          syntaxHighlight={syntaxHighlight}
+          language={language}
+          className="gw-block"
+        >
+          {code}
+        </Code>
+        <div className="gw-absolute gw-top-12 gw-right-12">
+          <CopyButton text={code} />
+        </div>
       </div>
-    </Code>
+    </div>
   );
 }
 

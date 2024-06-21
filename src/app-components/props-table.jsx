@@ -33,10 +33,10 @@ function PropsTable({ propsList }) {
               <Code>{prop.name}</Code>
             </TableCell>
             <TableCell>
-              <Code>{prop.type}</Code>
+              <Code syntaxHighlight={true}>{prop.type}</Code>
             </TableCell>
             <TableCell>
-              <Code>{prop.default}</Code>
+              <Code syntaxHighlight={true}>{prop.default}</Code>
             </TableCell>
             <TableCell className="gw-text-wrap">{prop.desc}</TableCell>
           </TableRow>

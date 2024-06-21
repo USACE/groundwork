@@ -97,6 +97,7 @@ function ClientSideRouting() {
           </P>
           <Code className="!gw-font-bold">terminal</Code>
           <CodeExample
+            language={"bash"}
             code={`npm install redux-bundler redux-bundler-hook internal-nav-helper`}
           ></CodeExample>
           <P>
