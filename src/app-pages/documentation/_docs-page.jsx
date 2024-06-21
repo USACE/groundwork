@@ -1,5 +1,6 @@
 import { Breadcrumbs, BreadcrumbItem, Container } from "../../../lib";
-import { DocsSidebar } from "./_docs-sidebar";
+import { Sidebar } from "../../../lib/composite/sidebar";
+import { sidebarLinks } from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   return (
@@ -18,7 +19,7 @@ function DocsPage({ breadcrumbs = [], children }) {
         </Breadcrumbs>
         <div className="gw-grid gw-grid-cols-12 gw-gap-6">
           <div className="gw-hidden md:gw-block md:gw-col-span-2">
-            <DocsSidebar />
+            <Sidebar sidebarLinks={sidebarLinks} />
           </div>
           <div className="gw-col-span-12 md:gw-col-span-10">{children}</div>
         </div>
