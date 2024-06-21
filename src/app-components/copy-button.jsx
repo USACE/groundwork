@@ -4,11 +4,18 @@ import { GoThumbsup } from "react-icons/go";
 import { useState } from "react";
 import clsx from "clsx";
 
-function CopyButton({ className, text }) {
+function CopyButton({ className, text, ignoreComments=false }) {
   const [copying, setCopying] = useState(false);
   const handleCopy = () => {
+    text = text.replace(/\\`/gi, "`").replace(/\\$/gi, "$");
     navigator.clipboard.writeText(
-      text.replace(/\\`/gi, "`").replace(/\\$/gi, "$")
+      ignoreComments
+        ? text
+            .split("\n") // Split string by lines
+            .map((line) => line.replace(/\/\/.*/g, "")) // Remove Commented Line
+            .filter((line) => line.trim() !== "") // Remove Empty Lines
+            .join("\n") // Join lines back into string
+        : text
     );
   };
   const btnClass = clsx("", className);
