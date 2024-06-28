@@ -1,6 +1,5 @@
-import { Breadcrumbs, BreadcrumbItem, Container } from "../../../lib";
-import { Sidebar } from "../../../lib/composite/sidebar";
-import { sidebarLinks } from "../../nav-links";
+import { Container } from "../../../lib";
+import  sidebarLinks  from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   return (
