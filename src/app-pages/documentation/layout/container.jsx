@@ -24,7 +24,7 @@ const componentProps = [
     type: "boolean",
     default: "false",
     desc: "If true, the container will be full width. If false, the container will have a max width of 1140px.",
-  },
+  }
 ];
 
 function ContainerDocs() {
@@ -54,10 +54,11 @@ function MyComponent() {
 export default MyComponent;
 `}
         />
+      </UsaceBox>
+
+      <UsaceBox title={<div>Component API</div>}>
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
-        </div>
+        <Code className="gw-p-2">{`<SiteWrapper fluid />`}</Code>
         <PropsTable propsList={componentProps} />
       </UsaceBox>
     </DocsPage>

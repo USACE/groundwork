@@ -1,8 +1,11 @@
 import { createRouteBundle } from "redux-bundler";
 import Home from "../app-pages/home";
 import Docs from "../app-pages/documentation";
+// Navigation
 import Navigation from "../app-pages/documentation/navigation";
 import Breadcrumbs from "../app-pages/documentation/navigation/breadcrumbs";
+import TabsDocs from "../app-pages/documentation/navigation/tabs";
+import Sidebar from "../app-pages/documentation/navigation/sidebar";
 import AppShell from "../app-pages/documentation/app-shell";
 import Layout from "../app-pages/documentation/layout";
 import SiteWrapperDocs from "../app-pages/documentation/app-shell/site-wrapper";
@@ -27,7 +30,6 @@ import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cd
 import UseCdaTimeSeriesGroupDocs from "../app-pages/documentation/water-management/use-cda-time-series-group";
 import UseNwpsGaugeDocs from "../app-pages/documentation/water-management/use-nwps-gauge";
 import UseNwpsGaugeDataDocs from "../app-pages/documentation/water-management/use-nwps-gauge-data";
-import TabsDocs from "../app-pages/documentation/navigation/tabs";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
@@ -67,6 +69,7 @@ export default createRouteBundle(
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
     "/docs/navigation/tabs": TabsDocs,
+    "/docs/navigation/sidebar": Sidebar,
     "/docs/buttons": ButtonsDocs,
     "/docs/buttons/generic-buttons": GenericButtonsDocs,
     "/docs/buttons/ok-cancel": OkCancelDocs,

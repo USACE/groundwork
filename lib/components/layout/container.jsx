@@ -6,7 +6,12 @@ function Container({ className, children, fluid }) {
     fluid ? "gw-max-w-screen" : "gw-max-w-screen-2xl",
     className
   );
-  return <div className={containerClass}>{children}</div>;
+
+  return (
+    <div className={containerClass}>
+      {children}
+    </div>
+  );
 }
 
 export default Container;
