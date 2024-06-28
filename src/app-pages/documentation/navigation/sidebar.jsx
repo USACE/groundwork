@@ -61,7 +61,7 @@ import sidebarLinks from "./sidebarLinks";
         </div>
         <div className="gw-col-span-12 md:gw-col-span-10">
             <UsaceBox title="Sidebar Example">
-                Hello World
+                Your Main Page Content Here!
             </UsaceBox>
         </div>
     </div>
