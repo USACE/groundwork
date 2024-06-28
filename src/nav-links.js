@@ -70,6 +70,11 @@ export default [
         text: "Tabs",
         href: "/docs/navigation/tabs",
       },
+      {
+        id: "sidebar",
+        text: "Sidebar",
+        href: "/docs/navigation/sidebar",
+      },
     ],
   },
   {
