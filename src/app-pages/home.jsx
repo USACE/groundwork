@@ -7,7 +7,14 @@ function Home() {
   return (
     <>
       <Hero
-        image={`${base}nww-lucky-peak-dam.jpg`}
+        image={[
+          `${base}nww-lucky-peak-dam.jpg`,
+          `${base}taylorsville-SPPRu4Rw.jpg`,
+        ]}
+        alt={[
+            "Lucky Peak Dam",
+            "Taylorsville Dam",
+        ]}
         title="Groundwork"
         subtitle="React Component Library"
       />
