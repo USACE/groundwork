@@ -1,8 +1,8 @@
 import { Button as HeadlessButton } from "@headlessui/react";
-import clsx from "clsx";
-import React from "react";
+import React, { useMemo } from "react";
 import { TouchTarget } from "../button";
 import { Link } from "../link";
+import gwMerge from "../../gw-merge";
 
 const colors = {
   red: "gw-bg-red-500/15 gw-text-red-700 group-data-[hover]:gw-bg-red-500/25 dark:gw-bg-red-500/10 dark:gw-text-red-400 dark:group-data-[hover]:gw-bg-red-500/20",
@@ -35,35 +35,35 @@ const colors = {
 };
 
 export function Badge({ color = "zinc", className, ...props }) {
-  return (
-    <span
-      {...props}
-      className={clsx(
-        className,
-        "gw-inline-flex gw-items-center gw-gap-x-1.5 gw-rounded-md gw-px-1.5 gw-py-0.5 gw-text-sm/5 gw-font-medium sm:gw-text-xs/5 forced-colors:gw-outline",
-        colors[color]
-      )}
-    />
-  );
+  const badgeClass = useMemo(() => {
+    return gwMerge(
+      "gw-inline-flex gw-items-center gw-gap-x-1.5 gw-rounded-md gw-px-1.5 gw-py-0.5 gw-text-sm/5 gw-font-medium sm:gw-text-xs/5 forced-colors:gw-outline",
+      colors[color],
+      className
+    );
+  }, [className]);
+  return <span {...props} className={badgeClass} />;
 }
 
 export const BadgeButton = React.forwardRef(function BadgeButton(
   { color = "zinc", className, children, ...props },
   ref
 ) {
-  let classes = clsx(
-    className,
-    "gw-group gw-relative gw-inline-flex gw-rounded-md focus:gw-outline-none data-[focus]:gw-outline data-[focus]:gw-outline-2 data-[focus]:gw-outline-offset-2 data-[focus]:gw-outline-blue-500"
-  );
+  const badgeButtonClass = useMemo(() => {
+    return gwMerge(
+      "gw-group gw-relative gw-inline-flex gw-rounded-md focus:gw-outline-none data-[focus]:gw-outline data-[focus]:gw-outline-2 data-[focus]:gw-outline-offset-2 data-[focus]:gw-outline-blue-500",
+      className
+    );
+  }, [className]);
 
   return "href" in props ? (
-    <Link {...props} className={classes} ref={ref}>
+    <Link {...props} className={badgeButtonClass} ref={ref}>
       <TouchTarget>
         <Badge color={color}>{children}</Badge>
       </TouchTarget>
     </Link>
   ) : (
-    <HeadlessButton {...props} className={classes} ref={ref}>
+    <HeadlessButton {...props} className={badgeButtonClass} ref={ref}>
       <TouchTarget>
         <Badge color={color}>{children}</Badge>
       </TouchTarget>

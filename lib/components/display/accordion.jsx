@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { VscChevronRight, VscChevronDown } from "react-icons/vsc";
-import clsx from "clsx";
+import gwMerge from "../../gw-merge";
 
 function Accordion({
   heading,
@@ -14,7 +14,7 @@ function Accordion({
         return (
           <>
             <Disclosure.Button
-              className={clsx(
+              className={gwMerge(
                 "gw-flex gw-justify-between gw-items-center gw-w-full gw-shadow gw-px-3 gw-py-2 gw-text-sm gw-font-semibold gw-text-gray-500 gw-bg-gray-50 hover:gw-bg-gray-100",
                 open ? "gw-rounded-t" : "gw-rounded"
               )}
