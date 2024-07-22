@@ -1,6 +1,9 @@
 // bundle tailwind
 import "./styles.css";
 
+// utilities
+export { gwMerge } from "./gw-merge";
+
 // layout components
 export { Container } from "./components/layout/container";
 export { UsaceBox } from "./components/layout/usace-box";

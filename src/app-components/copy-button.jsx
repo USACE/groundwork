@@ -1,8 +1,7 @@
-import { Button } from "../../lib";
+import { Button, gwMerge } from "../../lib";
 import { BsCopy } from "react-icons/bs";
 import { GoThumbsup } from "react-icons/go";
 import { useState } from "react";
-import clsx from "clsx";
 
 function CopyButton({ className, text }) {
   const [copying, setCopying] = useState(false);
@@ -11,7 +10,7 @@ function CopyButton({ className, text }) {
       text.replace(/\\`/gi, "`").replace(/\\$/gi, "$")
     );
   };
-  const btnClass = clsx("", className);
+  const btnClass = gwMerge("", className);
   return (
     <Button
       className={btnClass}
