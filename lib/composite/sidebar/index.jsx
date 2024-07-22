@@ -1,15 +1,11 @@
-import { useConnect } from "redux-bundler-hook";
 import { UsaceBox } from "../../../lib";
 import { VscChevronRight } from "react-icons/vsc";
 
-function Sidebar({sidebarLinks}) {
-  const { hash } = useConnect("selectHash");
-  const pathname = window.location.pathname;
-
+function Sidebar({ title = "Contents", selectedPath, sidebarLinks }) {
   return (
-    <UsaceBox title="Contents">
+    <UsaceBox title={title}>
       {sidebarLinks.map((link) => {
-        const isSelected = hash === link.href || pathname === link.href;
+        const isSelected = selectedPath === link.href;
         return (
           <div key={link.href}>
             <a href={link.href}>
@@ -29,8 +25,7 @@ function Sidebar({sidebarLinks}) {
             <ul>
               {link.children &&
                 link.children.map((child) => {
-                  const isChildSelected =
-                    hash === child.href || pathname === child.href;
+                  const isChildSelected = selectedPath === child.href;
                   return (
                     <a href={child.href} key={child.href}>
                       <li
