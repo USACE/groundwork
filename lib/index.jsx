@@ -40,13 +40,3 @@ export * from "./components/display/accordion";
 export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
-
-// water management
-export { CdaLatestValueCard } from "./components/water-management/CdaLatestValueCard";
-export { useCdaCatalogTS } from "./components/water-management/useCdaCatalogTS";
-export { useCdaLatestValue } from "./components/water-management/useCdaLatestValue";
-export { useCdaLocation } from "./components/water-management/useCdaLocation";
-export { useCdaTimeSeries } from "./components/water-management/useCdaTimeSeries";
-export { useCdaTimeSeriesGroup } from "./components/water-management/useCdaTimeSeriesGroup";
-export { useNwpsGauge } from "./components/water-management/useNwpsGauge";
-export { useNwpsGaugeData } from "./components/water-management/useNwpsGaugeData";
