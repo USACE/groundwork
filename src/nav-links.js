@@ -194,58 +194,6 @@ export default [
     ],
   },
   {
-    id: "water-management",
-    text: "Water Management",
-    href: "/docs/water-management",
-    children: [
-      {
-        id: "data-hooks",
-        text: "Data Hooks",
-        href: "/docs/water-management/data-hooks",
-      },
-      {
-        id: "cda-latest-value-card",
-        text: "CdaLatestValueCard",
-        href: "/docs/water-management/cda-latest-value-card",
-      },
-      {
-        id: "use-cda-latest-value",
-        text: "useCdaLatestValue",
-        href: "/docs/water-management/use-cda-latest-value",
-      },
-      {
-        id: "use-cda-catalog-ts",
-        text: "useCdaCatalogTS",
-        href: "/docs/water-management/use-cda-catalog-ts",
-      },
-      {
-        id: "use-cda-location",
-        text: "useCdaLocation",
-        href: "/docs/water-management/use-cda-location",
-      },
-      {
-        id: "use-cda-time-series",
-        text: "useCdaTimeSeries",
-        href: "/docs/water-management/use-cda-time-series",
-      },
-      {
-        id: "use-cda-time-series-group",
-        text: "useCdaTimeSeriesGroup",
-        href: "/docs/water-management/use-cda-time-series-group",
-      },
-      {
-        id: "use-nwps-gauge",
-        text: "useNwpsGauge",
-        href: "/docs/water-management/use-nwps-gauge",
-      },
-      {
-        id: "use-nwps-gauge-data",
-        text: "useNwpsGaugeData",
-        href: "/docs/water-management/use-nwps-gauge-data",
-      },
-    ],
-  },
-  {
     id: "types",
     text: "Types",
     href: "/docs/types",
