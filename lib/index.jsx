@@ -19,6 +19,7 @@ export { Skeleton } from "./components/display/skeleton";
 // composite components
 export { Header } from "./composite/header";
 export { Footer } from "./composite/footer";
+export { Sidebar } from "./composite/sidebar";
 export { USABanner } from "./composite/header/usa-banner/USABanner";
 export { SiteWrapper } from "./composite/site-wrapper";
 
