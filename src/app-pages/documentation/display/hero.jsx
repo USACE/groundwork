@@ -1,4 +1,5 @@
-import { UsaceBox, Code, Text, Hero } from "../../../../lib";
+import { UsaceBox, Code, Text, Hero, Badge, H2 } from "../../../../lib";
+import { Link } from "../../../../lib/components/link";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -73,6 +74,27 @@ function HeroDocs() {
             alt="Placeholder Image"
           />
         </div>
+        <Badge
+          color="yellow"
+          className={
+            "gw-m-5 gw-w-full gw-flex gw-flex-col"
+          }
+        >
+          ⚠ NOTE: When using images on your site please consider compressing
+          them!
+          <div
+            className="gw-cursor-pointer gw-underline gw-decoration-solid gw-decoration-gray-500"
+            onClick={() => {
+                // Navigate to the img compression tag on the page
+                // # TODO: Hash router seems to break hash referencing? 
+              document
+                .getElementById("img-compression")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Click to read more: Image Compression
+          </div>{" "}
+        </Badge>
         {/* Example code */}
         <div>
           <CodeExample
@@ -142,6 +164,22 @@ export default Component;
           <PropsTable propsList={componentProps} />
         </UsaceBox>
       </UsaceBox>
+
+      <div id="img-compression">
+        <UsaceBox title="Image Compression">
+          When placing images on your site it is advisable for a good user
+          experience to compress the image. There are modern compression
+          techniques that can help reduce the loss of image quality. We
+          recommend{" "}
+          <a
+            className="gw-underline gw-decoration-solid gw-decoration-gray-500"
+            href="https://tinypng.com"
+          >
+            TinyPNG.com
+          </a>{" "}
+          as a free online tool to get started!
+        </UsaceBox>
+      </div>
     </DocsPage>
   );
 }
