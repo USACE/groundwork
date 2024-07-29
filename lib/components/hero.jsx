@@ -27,18 +27,15 @@ import { useState, useEffect } from "react";
  * >
  */
 function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
-  const [currentImage, setCurrentImage] = useState(typeof image === "object" ? image[0] : image);
-  const [currentAlt, setCurrentAlt] = useState(typeof alt === "object" ? alt[0] : alt);
-  // Make sure the alt count matches the images if both are provided as lists
-  if (typeof image === "object" && typeof alt === "object") {
-    if (image.length !== alt.length)
-      throw new Error(
-        "Error rendering hero image. Your image and alt text arrays must be the same length."
-      );
-  }
+  const isImgArray = Array.isArray(image)
+  const isAltArray = Array.isArray(alt)
+  const [currentImage, setCurrentImage] = useState(isImgArray ? image[0] : image);
+  const [currentAlt, setCurrentAlt] = useState(isAltArray ? alt[0] : alt);
 
-  if (typeof image === "object") {
-    /**
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+   /**
      * @name getRandomInt
      * @description returns a random integer given a max value
      * @param {integer} max - The max value to return a random integer
@@ -46,10 +43,8 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
      * let x = getRandomInt(5)
      * > console.log(x) // 3
      */
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-    useEffect(() => {
+   useEffect(() => {
+    if (!isImgArray) return
       const interval = setInterval(() => {
         const RAND_INT = getRandomInt(image.length);
         setCurrentImage(image[RAND_INT]);
@@ -59,7 +54,16 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
 
       return () => clearInterval(interval);
     }, []);
+
+  // Make sure the alt count matches the images if both are provided as lists
+  if (isImgArray && isAltArray) {
+    if (image.length !== alt.length)
+      throw new Error(
+        "Error rendering hero image. Your image and alt text arrays must be the same length."
+      );
   }
+
+   
   return (
     <div className="gw-relative">
       <div className="gw-h-56 gw-w-full gw-overflow-clip gw-bg-zinc-950 md:gw-h-1/5 md:gw-max-h-[500px]">
