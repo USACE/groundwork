@@ -26,15 +26,15 @@ import { useState, useEffect } from "react";
  *  duration_ms=12000 // 12 seconds
  * >
  */
-function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
+function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgHeight, imgWidth }) {
   const isImgArray = Array.isArray(image)
   const isAltArray = Array.isArray(alt)
   const [currentImage, setCurrentImage] = useState(isImgArray ? image[0] : image);
   const [currentAlt, setCurrentAlt] = useState(isAltArray ? alt[0] : alt);
-
-  function getRandomInt(max) {
+   // TODO: Move this to a utilities function
+   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+   }
    /**
      * @name getRandomInt
      * @description returns a random integer given a max value
@@ -53,7 +53,7 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
       }, duration_ms);
 
       return () => clearInterval(interval);
-    }, []);
+    }, [image, alt, duration_ms, isImgArray]);
 
   // Make sure the alt count matches the images if both are provided as lists
   if (isImgArray && isAltArray) {
@@ -70,7 +70,8 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000 }) {
         <img
           src={currentImage}
           alt={currentAlt}
-          className="gw-object-cover gw-object-center gw-w-full gw-h-full"
+          className={`gw-object-cover gw-object-center gw-w-full gw-h-full`}
+          style={{height: imgHeight, width: imgWidth}}
         />
       </div>
       <div className="gw-absolute gw-inset-0 gw-bg-zinc-950/50" />
