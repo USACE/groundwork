@@ -70,6 +70,7 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgH
         <img
           src={currentImage}
           alt={currentAlt}
+          aria-label={alt} 
           className={`gw-object-cover gw-object-center gw-w-full gw-h-full`}
           style={{height: imgHeight, width: imgWidth}}
         />

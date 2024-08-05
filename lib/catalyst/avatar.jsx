@@ -31,7 +31,7 @@ export function Avatar({ src = null, square = false, initials, alt = '', classNa
           </text>
         </svg>
       )}
-      {src && <img src={src} alt={alt} />}
+      {src && <img aria-label={alt} src={src} alt={alt} />}
       {/* Add an inset border that sits on top of the image */}
       <span className="gw-ring-1 gw-ring-inset gw-ring-black/5 gw-dark:gw-ring-white/5 gw-forced-colors:gw-outline" gw-aria-hidden="gw-true" />
     </span>

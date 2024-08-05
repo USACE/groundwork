@@ -36,7 +36,7 @@ export function Table({
               !bleed && "sm:gw-px-[--gutter]"
             )}
           >
-            <table className="gw-min-w-full gw-text-left gw-text-sm/6">
+            <table role="presentation" className="gw-min-w-full gw-text-left gw-text-sm/6">
               {children}
             </table>
           </div>
@@ -117,7 +117,9 @@ export function TableCell({ className, children, ...props }) {
   let { bleed, dense, grid, striped } = useContext(TableContext);
   let { href, target, title } = useContext(TableRowContext);
   let [cellRef, setCellRef] = useState(null);
-
+  // TODO: How to handle a table having th for 508. 
+  // INFO: If no thead should the first column have a th
+  // INFO: If a thead is present should the TableCell determine if it is in thead and use the <th> tag?
   return (
     <td
       ref={href ? setCellRef : undefined}

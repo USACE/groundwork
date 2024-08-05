@@ -12,9 +12,9 @@ function Title({ title = "", subtitle = "" }) {
       style={{ order: 2 }}
       className="gw-w-full gw-text-white sm:gw-text-usace-black"
     >
-      <span className="gw-text-lg sm:gw-text-sm gw-font-semibold sm:gw-font-bold gw-leading-4 sm:gw-leading-normal gw-block sm:gw-inline gw-mr-1">
+      <strong className="gw-font-normal sm:gw-font-bold gw-text-lg sm:gw-text-sm gw-leading-4 sm:gw-leading-normal gw-block sm:gw-inline gw-mr-1">
         {title}
-      </span>
+      </strong>
       <span className="gw-text-md sm:gw-text-sm gw-mt-2 sm:gw-mt-0 gw-font-thin sm:gw-font-normal gw-block sm:gw-inline">
         {subtitle}
       </span>
