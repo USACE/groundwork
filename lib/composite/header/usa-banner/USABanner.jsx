@@ -22,7 +22,7 @@ const USABanner = ({ fluidNav }) => {
     >
       <div className={headerBannerInnerClass}>
         <div className="header_banner_flag gw-flex gw-items-center gw-justify-start">
-          <img src={flag} className="gw-mr-2" role="presentation" aria-label="U.S. Government Flag" />
+          <img src={flag} className="gw-mr-2" role="presentation" aria-label="U.S. Government Flag" alt="U.S. Government Flag" />
           An official website of the United States government
           <div className="header_banner_accordion" tabIndex={0}>
             <u
@@ -65,6 +65,7 @@ const USABanner = ({ fluidNav }) => {
             <div className="header_banner_panel_item">
               <img
                 src={iconDotGov}
+                alt="Generic government building icon"
                 aria-label="Generic government building icon"
                 className="gw-h-[50px] gw-w-[50px] gw-mr-4"
               />
@@ -82,6 +83,7 @@ const USABanner = ({ fluidNav }) => {
             <div className="header_banner_panel_item https">
               <img
                 src={iconHttps}
+                alt="HTTPS secure lock icon"
                 aria-label="HTTPS secure lock icon"
                 className="gw-h-[50px] gw-w-[50px] gw-mr-4"
               />
