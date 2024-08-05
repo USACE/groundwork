@@ -3,12 +3,6 @@ body {
   transition: padding-top 200ms ease-out;
 }
 
-.header_banner_container,
-.header_banner_container .header_banner_content .banner-contentLeft-text,
-.header_banner_container .header_banner_content .banner-contentRight-text {
-  color: #fff;
-}
-
 .header_banner_container {
   padding: 0 20px;
   position: relative;
@@ -74,9 +68,4 @@ body {
   height: 50px;
   margin-right: 10px;
   width: 50px;
-}
-
-.header_banner_container {
-  background-color: #15263b;
-  color: #fff;
 }

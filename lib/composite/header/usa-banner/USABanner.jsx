@@ -17,7 +17,7 @@ const USABanner = ({ fluidNav }) => {
   );
   return (
     <div
-      className="header_banner_container"
+      className="header_banner_container gw-bg-gov-banner-black gw-text-white"
     >
       <div className={headerBannerInnerClass}>
         <div className="header_banner_flag gw-fill-gov-banner-gray gw-py-1.5 gw-h-12 sm:gw-h-8 gw-px-0 gw-text-sm gw-box-border gw-flex gw-items-center gw-justify-start">
@@ -68,7 +68,7 @@ const USABanner = ({ fluidNav }) => {
                 id="dnn_ctl03_bannerContentLeft"
                 className="header_banner_content gw-text-sm gw-leading-7 gw-w-full gw-mb-2.5 -gw-tracking-tighter"
               >
-                <p className="banner-contentLeft-text mb-0 gw-text-lg">
+                <p className="banner-contentLeft-text mb-0 gw-text-lg gw-text-white">
                   <strong> Official websites use .mil </strong>
                 </p>
                 A <strong>.mil</strong> website belongs to an official U.S.
@@ -86,7 +86,7 @@ const USABanner = ({ fluidNav }) => {
                 id="dnn_ctl03_bannerContentRight"
                 className="header_banner_content gw-text-sm gw-leading-7 gw-w-full gw-mb-2.5 -gw-tracking-tighter"
               >
-                <p className="banner-contentRight-text mb-0 gw-text-lg">
+                <p className="banner-contentRight-text mb-0 gw-text-lg gw-text-white">
                   <strong>Secure .mil websites use HTTPS</strong>
                 </p>
                 <div>

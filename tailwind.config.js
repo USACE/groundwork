@@ -27,6 +27,7 @@ export default {
         "footer-light-gray": "#ccc",
         "usace-black": "#18181b",
         "gov-banner-gray": "#aebfd4",
+        "gov-banner-black": "#15263b"
       },
     },
   },
