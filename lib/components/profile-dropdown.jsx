@@ -52,11 +52,11 @@ function ProfileDropdown({
           {email ? (
             <Gravatar email={email} />
           ) : (
-            <span className="gw-inline-block gw-h-8 gw-w-8 gw-rounded-full gw-overflow-hidden gw-text-nav-black gw-text-xl gw-font-bold gw-bg-nav-gray">
+            <strong className="gw-inline-block gw-h-8 gw-w-8 gw-rounded-full gw-overflow-hidden gw-text-nav-black gw-text-xl gw-bg-nav-gray">
               <span className="gw-align-middle">
                 {username ? username[0].toUpperCase() : "U"}
               </span>
-            </span>
+            </strong>
           )}
         </Menu.Button>
       </div>
