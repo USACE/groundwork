@@ -30,6 +30,7 @@ function Gravatar({ email }) {
     <img
       className="gw-h-8 gw-w-8 gw-rounded-full"
       src={gravatarUrl}
+      aria-label="Gravatar profile image"
       alt="Gravatar profile image"
     />
   );
