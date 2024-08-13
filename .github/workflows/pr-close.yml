@@ -23,13 +23,13 @@ jobs:
           git config --global user.email "${{ secrets.ADMIN_EMAIL }}"
           git config --global user.name "${{ secrets.ADMIN_NAME }}"
       - name: Apply version bump (major)
-        if: contains(github.event.pull_request.labels.*.name, 'major')
+        if: contains(github.event.pull_request.labels.*.name, 'major-bump')
         run: npm version major
       - name: Apply version bump (minor)
-        if: contains(github.event.pull_request.labels.*.name, 'minor')
+        if: contains(github.event.pull_request.labels.*.name, 'minor-bump')
         run: npm version minor
       - name: Apply version bump (patch)
-        if: contains(github.event.pull_request.labels.*.name, 'patch')
+        if: contains(github.event.pull_request.labels.*.name, 'patch-bump')
         run: npm version patch
       - name: Git push version bump
         run: git push origin main --follow-tags --force
