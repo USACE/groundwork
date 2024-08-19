@@ -21,15 +21,6 @@ import SkeletonDocs from "../app-pages/documentation/display/skeleton";
 import TextDocs from "../app-pages/documentation/display/text";
 import TableDocs from "../app-pages/documentation/display/table";
 import HeroDocs from "../app-pages/documentation/display/hero";
-import WaterManagement from "../app-pages/documentation/water-management";
-import DataHooks from "../app-pages/documentation/water-management/data-hooks";
-import CdaLatestValueCardDocs from "../app-pages/documentation/water-management/cda-latest-value-card";
-import UseCdaCatalogTS from "../app-pages/documentation/water-management/use-cda-catalog-ts";
-import UseCdaLocation from "../app-pages/documentation/water-management/use-cda-location";
-import UseCdaTimeSeries from "../app-pages/documentation/water-management/use-cda-time-series";
-import UseCdaTimeSeriesGroupDocs from "../app-pages/documentation/water-management/use-cda-time-series-group";
-import UseNwpsGaugeDocs from "../app-pages/documentation/water-management/use-nwps-gauge";
-import UseNwpsGaugeDataDocs from "../app-pages/documentation/water-management/use-nwps-gauge-data";
 import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
@@ -51,7 +42,6 @@ import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
 import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
-import UseCdaLatestValueDocs from "../app-pages/documentation/water-management/use-cda-latest-value";
 
 export default createRouteBundle(
   {
@@ -92,17 +82,6 @@ export default createRouteBundle(
     "/docs/forms/color-input": ColorInputDocs,
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
-    "/docs/water-management": WaterManagement,
-    "/docs/water-management/data-hooks": DataHooks,
-    "/docs/water-management/cda-latest-value-card": CdaLatestValueCardDocs,
-    "/docs/water-management/use-cda-catalog-ts": UseCdaCatalogTS,
-    "/docs/water-management/use-cda-latest-value": UseCdaLatestValueDocs,
-    "/docs/water-management/use-cda-location": UseCdaLocation,
-    "/docs/water-management/use-cda-time-series": UseCdaTimeSeries,
-    "/docs/water-management/use-cda-time-series-group":
-      UseCdaTimeSeriesGroupDocs,
-    "/docs/water-management/use-nwps-gauge": UseNwpsGaugeDocs,
-    "/docs/water-management/use-nwps-gauge-data": UseNwpsGaugeDataDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
