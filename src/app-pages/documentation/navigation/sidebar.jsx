@@ -43,9 +43,21 @@ const componentProps = [
     default: "null",
     desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href.",
   },
+  {
+    name: "enablePopout",
+    type: "boolean",
+    default: "false",  
+  },
+  {
+    name: "popoutDirection",
+    type: "string",
+    default: "right",
+    desc: "The direction to open the popout menu. Options are 'right', 'left', 'top', and 'bottom'.",
+  }
 ];
 
 function SidebarDocs() {
+  const currentPath = document.location.pathname;
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Sidebar">
@@ -64,7 +76,11 @@ function SidebarDocs() {
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="gw-grid gw-grid-cols-12 gw-gap-6">
             <div className="gw-hidden md:gw-block md:gw-col-span-2">
-              <Sidebar sidebarLinks={exampleLinks} />
+              <Sidebar title="Contents" 
+                  selectedPath={currentPath}
+                  sidebarLinks={exampleLinks}
+                  enablePopout={true}
+                  popoutDirection="right" />
             </div>
             <div className="gw-col-span-12 md:gw-col-span-10">
               Your Main Page Content Here!
@@ -85,7 +101,13 @@ function Component() {
     <Container fluid>
         <div className="grid grid-cols-12 gap-6">
             <div className="hidden md:block md:col-span-2">
-                <Sidebar title="Contents" selectedPath={currentPath} sidebarLinks={sidebarLinks} />
+                <Sidebar 
+                  title="Contents" 
+                  selectedPath={currentPath}
+                  sidebarLinks={sidebarLinks}
+                  enablePopout={true}
+                  popoutDirection="right"
+                />
             </div>
             <div className="col-span-12 md:col-span-10">
                 Your Main Page Content Here!
