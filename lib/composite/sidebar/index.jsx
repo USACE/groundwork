@@ -6,7 +6,7 @@ const BlackDot = ({title = "Current Page"}) => (
   <span title={title} className="gw-inline-block gw-w-2 gw-h-2 gw-rounded-full gw-bg-black gw-mr-1 gw-ms-auto" />
 )
 
-function Sidebar({ title = "Contents", selectedPath, sidebarLinks, enablePopout = true, popoutDirection = "right" }) {
+function Sidebar({ title = "Contents", selectedPath, sidebarLinks, enablePopout, popoutDirection}) {
   if (popoutDirection && !enablePopout) {
     throw new Error("popoutDirection can only be used when enablePopout is true");
   }
@@ -60,11 +60,7 @@ function Sidebar({ title = "Contents", selectedPath, sidebarLinks, enablePopout 
                     }`}
                   >
                     {link.text}
-                    <VscChevronRight
-                      size={18}
-                      aria-hidden="true"
-                      color="rgb(156 163 175)"
-                    />
+                 
                   </div>
                 </a>
               )
@@ -97,7 +93,7 @@ function Sidebar({ title = "Contents", selectedPath, sidebarLinks, enablePopout 
                           >
                             {child.text}
                             <VscChevronRight
-                              size={18}
+                              size={12}
                               aria-hidden="true"
                               color="rgb(156 163 175)"
                             />

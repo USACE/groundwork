@@ -1,11 +1,6 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaChevronUp,
-  FaChevronDown,
-} from "react-icons/fa";
+import { VscChevronRight, VscChevronLeft, VscChevronUp, VscChevronDown } from "react-icons/vsc";
 
 const AVAIL_DIRECTIONS = ["right", "left", "top", "bottom"];
 
@@ -54,18 +49,18 @@ function PopoutMenu({ title, children, direction = "right", className }) {
 
   /// Map the icons to their appropriate directions
   const ChevronIcon = {
-    right: FaChevronRight,
-    left: FaChevronLeft,
-    top: FaChevronUp,
-    bottom: FaChevronDown,
+    right: VscChevronRight,
+    left: VscChevronLeft,
+    top: VscChevronUp,
+    bottom: VscChevronDown,
   }[direction];
 
   // Flip the direction for closure
   const ChevronIconOpposite = {
-    right: FaChevronLeft,
-    left: FaChevronRight,
-    top: FaChevronDown,
-    bottom: FaChevronUp,
+    right: VscChevronLeft,
+    left: VscChevronRight,
+    top: VscChevronDown,
+    bottom: VscChevronUp,
   }[direction];
 
   return (
@@ -82,9 +77,9 @@ function PopoutMenu({ title, children, direction = "right", className }) {
       >
         <span>{title}</span>
         {isOpen ? (
-          <ChevronIconOpposite aria-hidden="true" className="gw-h-5 gw-w-5" />
+          <ChevronIconOpposite aria-hidden="true" className="gw-h-5 gw-w-5" size={16} />
         ) : (
-          <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" />
+          <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" size={12} />
         )}
       </PopoverButton>
 

@@ -102,6 +102,11 @@ export default [
         text: "Login Button",
         href: "/docs/buttons/login-button",
       },
+      {
+        id: "popout-menu",
+        text: "Popout Menu",
+        href: "/docs/buttons/popout-menu",
+      }
     ],
   },
   {
