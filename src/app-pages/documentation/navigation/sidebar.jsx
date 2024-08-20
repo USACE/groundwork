@@ -45,10 +45,10 @@ const componentProps = [
   },
 ];
 
-function Breadcrumbs() {
+function SidebarDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
-      <UsaceBox title="Breadcrumbs">
+      <UsaceBox title="Sidebar">
         <Text className="gw-pb-6">
           Use Sidebar to provide additional navigation within a given page. This
           will create a navigable side menu that users can use in addition to
@@ -107,5 +107,5 @@ export default Component;`}
   );
 }
 
-export default Breadcrumbs;
-export { Breadcrumbs };
+export default SidebarDocs;
+export { SidebarDocs };
