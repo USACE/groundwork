@@ -1,10 +1,13 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { useEffect, useState } from "react";
-import { VscChevronRight, VscChevronLeft, VscChevronUp, VscChevronDown } from "react-icons/vsc";
+import {
+  VscChevronRight,
+  VscChevronLeft,
+  VscChevronUp,
+  VscChevronDown,
+} from "react-icons/vsc";
 
 const AVAIL_DIRECTIONS = ["right", "left", "top", "bottom"];
-
-
 
 function PopoutMenu({ title, children, direction = "right", className }) {
   direction = direction.toLowerCase();
@@ -15,7 +18,7 @@ function PopoutMenu({ title, children, direction = "right", className }) {
   function handleClickOutside() {
     // Handle when a user clicks outside the popout menu
     setIsOpen(false);
-  } 
+  }
 
   useEffect(() => {
     if (isOpen) {
@@ -77,7 +80,11 @@ function PopoutMenu({ title, children, direction = "right", className }) {
       >
         <span>{title}</span>
         {isOpen ? (
-          <ChevronIconOpposite aria-hidden="true" className="gw-h-5 gw-w-5" size={16} />
+          <ChevronIconOpposite
+            aria-hidden="true"
+            className="gw-h-5 gw-w-5"
+            size={16}
+          />
         ) : (
           <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" size={12} />
         )}
