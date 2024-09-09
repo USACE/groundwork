@@ -156,7 +156,12 @@ function Sidebar({
       return link;
     });
     return (
-      <UsaceBox propRef={sidebarRef} title={title} className={"gw-text-sm"}>
+      <UsaceBox
+        propRef={sidebarRef}
+        title={title}
+        className={"gw-text-sm"}
+        id="sidebar"
+      >
         <div className="gw-w-full gw-m-auto gw-flex gw-justify-between gw-items-center gw-gap-2">
           <Dropdown
             className={"gw-w-5/6 gw-m-auto"}
@@ -176,7 +181,7 @@ function Sidebar({
   }
 
   return (
-    <UsaceBox propRef={sidebarRef} title={title}>
+    <UsaceBox propRef={sidebarRef} title={title} id="sidebar">
       {sidebarLinks.map((link) => {
         return enablePopout
           ? renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection)

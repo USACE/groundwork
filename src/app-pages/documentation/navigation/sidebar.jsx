@@ -44,16 +44,22 @@ const componentProps = [
     desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href.",
   },
   {
+    name: "id",
+    type: "string",
+    default: "null",
+    desc: "Sets the id attribute of the sidebar container. Useful for targeting with JavaScript and/or CSS.",
+  },
+  {
     name: "enablePopout",
     type: "boolean",
-    default: "false",  
+    default: "false",
   },
   {
     name: "popoutDirection",
     type: "string",
     default: "right",
     desc: "The direction to open the popout menu. Options are 'right', 'left', 'top', and 'bottom'.",
-  }
+  },
 ];
 
 function SidebarDocs() {
@@ -76,11 +82,13 @@ function SidebarDocs() {
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="gw-grid gw-grid-cols-12 gw-gap-6">
             <div className="gw-hidden md:gw-block md:gw-col-span-2">
-              <Sidebar title="Contents" 
-                  selectedPath={currentPath}
-                  sidebarLinks={exampleLinks}
-                  enablePopout={true}
-                  popoutDirection="right" />
+              <Sidebar
+                title="Contents"
+                selectedPath={currentPath}
+                sidebarLinks={exampleLinks}
+                enablePopout={true}
+                popoutDirection="right"
+              />
             </div>
             <div className="gw-col-span-12 md:gw-col-span-10">
               Your Main Page Content Here!
@@ -123,9 +131,10 @@ export default Component;`}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="gw-grid gw-grid-cols-12 gw-gap-6">
             <div className="gw-hidden md:gw-block md:gw-col-span-2">
-              <Sidebar title="Contents" 
-                  selectedPath={currentPath}
-                  sidebarLinks={exampleLinks}
+              <Sidebar
+                title="Contents"
+                selectedPath={currentPath}
+                sidebarLinks={exampleLinks}
               />
             </div>
             <div className="gw-col-span-12 md:gw-col-span-10">
