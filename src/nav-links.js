@@ -106,7 +106,7 @@ export default [
         id: "popout-menu",
         text: "Popout Menu",
         href: "/docs/buttons/popout-menu",
-      }
+      },
     ],
   },
   {
