@@ -134,19 +134,6 @@ function Sidebar({
     );
   }
 
-  useEffect(() => {
-    if (sidebarRef.current) {
-      const parentElement = sidebarRef.current.parentElement;
-      if (
-        parentElement &&
-        parentElement?.parentElement.classList.contains("gw-grid")
-      ) {
-        parentElement?.parentElement.classList.remove("gw-grid");
-        parentElement.classList.remove("gw-hidden");
-      } else parentElement?.parentElement.classList.add("gw-grid");
-    }
-  }, [isMobile]);
-
   if (isMobile) {
     // Combine all the child links into a single array. Prepend each level's parent text to the child text.
     const combinedLinks = flattenLinks(sidebarLinks).map((link) => {

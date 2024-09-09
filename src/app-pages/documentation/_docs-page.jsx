@@ -15,8 +15,8 @@ function DocsPage({ breadcrumbs = [], children }) {
           />
         ))}
       </Breadcrumbs>
-      <div className="gw-grid gw-grid-cols-12 gw-gap-6">
-        <div className="gw-hidden md:gw-block md:gw-col-span-2">
+      <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+        <div className="md:gw-col-span-2">
           <Sidebar
             title="Contents"
             selectedPath={hash}
