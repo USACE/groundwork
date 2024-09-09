@@ -136,12 +136,7 @@ function Sidebar({
 
   if (isMobile) {
     // Combine all the child links into a single array. Prepend each level's parent text to the child text.
-    const combinedLinks = flattenLinks(sidebarLinks).map((link) => {
-      if (link.children && link.children.length > 0) {
-        link.text = link.text + " > " + link.children[0].text;
-      }
-      return link;
-    });
+    const combinedLinks = flattenLinks(sidebarLinks);
     return (
       <UsaceBox
         propRef={sidebarRef}
@@ -157,8 +152,8 @@ function Sidebar({
               doUpdateHash(e.target.value);
             }}
             options={combinedLinks.map((link) => (
-              <option key={link.href} value={link.href}>
-                {link?.path ? link.path + " - " + link.text : link.text}
+              <option key={link.href} value={link.href} className="gw-pl-2">
+                {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
           />

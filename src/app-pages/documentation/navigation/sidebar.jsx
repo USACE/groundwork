@@ -80,8 +80,8 @@ function SidebarDocs() {
 
         <H3 className="gw-pt-6 gw-pb-3">Sidebar (With Popout Menu)</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="gw-hidden md:gw-block md:gw-col-span-2">
+          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+            <div className="md:gw-block md:gw-col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
@@ -107,8 +107,8 @@ const currentPath = document.location.pathname;
 
 function Component() {
     <Container>
-        <div className="grid grid-cols-12 gap-6">
-            <div className="hidden md:block md:col-span-2">
+        <div className="md:grid grid-cols-12 gap-6">
+            <div className="md:block md:col-span-2">
                 <Sidebar 
                   title="Contents" 
                   selectedPath={currentPath}
@@ -129,8 +129,8 @@ export default Component;`}
 
         <H3 className="gw-pt-6 gw-pb-3">Sidebar (NO Popout Menu)</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="gw-hidden md:gw-block md:gw-col-span-2">
+          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+            <div className="md:gw-block md:gw-col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
@@ -154,8 +154,8 @@ const currentPath = document.location.pathname;
 
 function Component() {
     <Container>
-        <div className="grid grid-cols-12 gap-6">
-            <div className="hidden md:block md:col-span-2">
+        <div className="md:grid grid-cols-12 gap-6">
+            <div className="md:block md:col-span-2">
                 <Sidebar 
                   title="Contents" 
                   selectedPath={currentPath}
