@@ -6,6 +6,9 @@ import { useEffect, useRef } from "react";
 import { useConnect } from "redux-bundler-hook";
 import { flattenLinks } from "../../utils/paths";
 
+const NEST_WARNING_LIMIT = 3;
+const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${NEST_WARNING_LIMIT} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
+
 const BlackDot = ({ title = "Current Page" }) => (
   <span
     title={title}
@@ -22,11 +25,17 @@ function renderPopoutMenu(
   level = 0
 ) {
   const isSelected = selectedPath === link.href;
-  link.level = level; // Track the level of each link
-
+  link.level = level;
+  if (level > NEST_WARNING_LIMIT - 1) {
+    console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
+    return null;
+  }
   if (link.children && link.children.length > 0) {
     return (
-      <div className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100">
+      <div
+        key={link.id}
+        className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100"
+      >
         <PopoutMenu title={link.text} direction={popoutDirection}>
           {
             <a
@@ -72,7 +81,10 @@ function renderPopoutMenu(
 function renderRegularLinks(link, selectedPath, level = 0) {
   const isSelected = selectedPath === link.href;
   const indentation = { paddingLeft: `${level * 20}px` };
-
+  if (level > NEST_WARNING_LIMIT - 1) {
+    console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
+    return null;
+  }
   return (
     <div key={link.id}>
       <a href={link.href}>
