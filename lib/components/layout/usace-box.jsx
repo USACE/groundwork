@@ -15,7 +15,7 @@ function UsaceBox({ children, className, title, customTitle }) {
   return (
     <div className={usaceBoxClass}>
       <h2
-        className="gw-font-bold gw-mb-6 gw-text-[1.3rem] gw-h-[1.4rem]"
+        className="gw-font-bold gw-mb-5 gw-text-[1.3rem]"
       >
         {title}
         {CustomTitle && <CustomTitle />}
