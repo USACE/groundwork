@@ -4,6 +4,7 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useEffect, useRef } from "react";
 import { useConnect } from "redux-bundler-hook";
+import { flattenLinks } from "../../utils/paths";
 
 const BlackDot = ({ title = "Current Page" }) => (
   <span
@@ -43,6 +44,13 @@ function Sidebar({
   }, [isMobile]);
 
   if (isMobile) {
+    // Combine all the child links into a single array. Prepend each level's parent text to the child text.
+    const combinedLinks = flattenLinks(sidebarLinks).map((link) => {
+      if (link.children && link.children.length > 0) {
+        link.text = link.text + " > " + link.children[0].text;
+      }
+      return link;
+    });
     return (
       <>
         <UsaceBox propRef={sidebarRef} title={title} className={"gw-text-sm"}>
@@ -53,10 +61,9 @@ function Sidebar({
               onChange={(e) => {
                 doUpdateHash(e.target.value);
               }}
-              options={sidebarLinks.map((link) => (
+              options={combinedLinks.map((link) => (
                 <option key={link.href} value={link.href}>
-                  {console.log(link.href)}
-                  {link.text}
+                  {link?.path ? link.path + " - " + link.text : link.text}
                 </option>
               ))}
             />
