@@ -72,7 +72,7 @@ function SidebarDocs() {
           <CopyButton text={`import { Sidebar } from "@usace/groundwork";`} />
         </div>
 
-        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
+        <H3 className="gw-pt-6 gw-pb-3">Sidebar (With Popout Menu)</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <div className="gw-grid gw-grid-cols-12 gw-gap-6">
             <div className="gw-hidden md:gw-block md:gw-col-span-2">
@@ -98,7 +98,7 @@ import sidebarLinks from "./sidebarLinks";
 const currentPath = document.location.pathname;
 
 function Component() {
-    <Container fluid>
+    <Container>
         <div className="grid grid-cols-12 gap-6">
             <div className="hidden md:block md:col-span-2">
                 <Sidebar 
@@ -107,6 +107,50 @@ function Component() {
                   sidebarLinks={sidebarLinks}
                   enablePopout={true}
                   popoutDirection="right"
+                />
+            </div>
+            <div className="col-span-12 md:col-span-10">
+                Your Main Page Content Here!
+            </div>
+        </div>
+    </Container>
+}
+export default Component;`}
+          />
+        </div>
+
+        <H3 className="gw-pt-6 gw-pb-3">Sidebar (NO Popout Menu)</H3>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-grid gw-grid-cols-12 gw-gap-6">
+            <div className="gw-hidden md:gw-block md:gw-col-span-2">
+              <Sidebar title="Contents" 
+                  selectedPath={currentPath}
+                  sidebarLinks={exampleLinks}
+              />
+            </div>
+            <div className="gw-col-span-12 md:gw-col-span-10">
+              Your Main Page Content Here!
+            </div>
+          </div>
+        </div>
+        <Badge color="yellow" className="gw-my-2">
+          NOTE: If you want your home page to have a sidebar, use the{" "}
+          {"<Container>"}. <b>Otherwise</b> leave it out.
+        </Badge>
+        <div>
+          <CodeExample
+            code={`import { UsaceBox, Sidebar } from "@usace/groundwork";
+import sidebarLinks from "./sidebarLinks";
+const currentPath = document.location.pathname;
+
+function Component() {
+    <Container>
+        <div className="grid grid-cols-12 gap-6">
+            <div className="hidden md:block md:col-span-2">
+                <Sidebar 
+                  title="Contents" 
+                  selectedPath={currentPath}
+                  sidebarLinks={sidebarLinks}
                 />
             </div>
             <div className="col-span-12 md:col-span-10">
