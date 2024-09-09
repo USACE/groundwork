@@ -89,7 +89,7 @@ function SidebarDocs() {
         </div>
         <Badge color="yellow" className="gw-my-2">
           NOTE: If you want your home page to have a sidebar, use the{" "}
-          {"<Container fluid>"}. <b>Otherwise</b> leave it out.
+          {"<Container>"}. <b>Otherwise</b> leave it out.
         </Badge>
         <div>
           <CodeExample
