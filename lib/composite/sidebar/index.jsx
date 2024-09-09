@@ -34,7 +34,7 @@ function renderPopoutMenu(
     return (
       <div
         key={link.id}
-        className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100"
+        className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
       >
         <PopoutMenu title={link.text} direction={popoutDirection}>
           {
@@ -66,7 +66,9 @@ function renderPopoutMenu(
     <a href={link.href} key={link.id}>
       <div
         className={`gw-pl-1 ${
-          link?.children || link?.level === 0 ? "gw-text-lg gw-font-bold" : ""
+          link?.children || link?.level === 0
+            ? "gw-text-lg gw-font-bold"
+            : "gw-border-b-[1px]"
         } gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
           isSelected ? "gw-bg-gray-50 gw-rounded" : ""
         }`}
