@@ -6,8 +6,8 @@ import { useEffect, useRef } from "react";
 import { useConnect } from "redux-bundler-hook";
 import { flattenLinks } from "../../utils/paths";
 
-const NEST_WARNING_LIMIT = 3;
-const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${NEST_WARNING_LIMIT} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
+const MAX_NESTING_LEVEL = 3;
+const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
 const BlackDot = ({ title = "Current Page" }) => (
   <span
@@ -26,11 +26,15 @@ function renderPopoutMenu(
 ) {
   const isSelected = selectedPath === link.href;
   link.level = level;
-  if (level > NEST_WARNING_LIMIT - 1) {
+  if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
-  if (link.children && link.children.length > 0) {
+  if (
+    link.children &&
+    link.children.length > 0 &&
+    level < MAX_NESTING_LEVEL - 1
+  ) {
     return (
       <div
         key={link.id}
@@ -66,7 +70,8 @@ function renderPopoutMenu(
     <a href={link.href} key={link.id}>
       <div
         className={`gw-pl-1 ${
-          link?.children || link?.level === 0
+          (link?.children || link?.level === 0) &&
+          link?.level < MAX_NESTING_LEVEL - 1
             ? "gw-text-lg gw-font-bold"
             : "gw-border-b-[1px]"
         } gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
@@ -83,7 +88,7 @@ function renderPopoutMenu(
 function renderRegularLinks(link, selectedPath, level = 0) {
   const isSelected = selectedPath === link.href;
   const indentation = { paddingLeft: `${level * 20}px` };
-  if (level > NEST_WARNING_LIMIT - 1) {
+  if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
