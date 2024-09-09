@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import gwMerge from "../../gw-merge";
 
-function UsaceBox({ children, className, title, customTitle }) {
+function UsaceBox({ children, className, title, customTitle, propRef: ref }) {
   const CustomTitle = customTitle;
   const boxClass = "gw-mb-10 gw-relative";
   const beforeClass =
@@ -13,7 +13,7 @@ function UsaceBox({ children, className, title, customTitle }) {
     return gwMerge(boxClass, beforeClass, afterClass, className);
   }, [className]);
   return (
-    <div className={usaceBoxClass}>
+    <div ref={ref} className={usaceBoxClass}>
       <h2
         className="gw-font-bold gw-mb-5 gw-text-[1.3rem]"
       >
