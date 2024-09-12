@@ -1,10 +1,12 @@
 import { createContext, useContext } from "react";
 
-const LinkContext = createContext(null);
+const LinkContext = createContext({ component: "a", hrefMap: "href" });
 
-export const LinkProvider = ({ component, children }) => {
+export const LinkProvider = ({ component, hrefMap, children }) => {
   return (
-    <LinkContext.Provider value={component}>{children}</LinkContext.Provider>
+    <LinkContext.Provider value={{ component, hrefMap }}>
+      {children}
+    </LinkContext.Provider>
   );
 };
 

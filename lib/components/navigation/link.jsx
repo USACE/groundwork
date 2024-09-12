@@ -1,9 +1,16 @@
 import { useLinkComponent } from "./link-provider";
 
-const Link = ({ children, ...props }) => {
-  const ProvidedLink = useLinkComponent() || "a";
+const Link = ({ href, children, ...props }) => {
+  const { component: Component, hrefMap } = useLinkComponent();
 
-  return <ProvidedLink {...props}>{children}</ProvidedLink>;
+  const ProvidedLink = Component || "a";
+  const hrefProp = hrefMap || "href";
+
+  return (
+    <ProvidedLink {...{ [hrefProp]: href }} {...props}>
+      {children}
+    </ProvidedLink>
+  );
 };
 
 export default Link;
