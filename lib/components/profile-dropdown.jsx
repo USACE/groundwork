@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu } from "@headlessui/react";
+import Link from "./navigation/link";
 
 function sha256(plain) {
   const encoder = new TextEncoder();
@@ -62,13 +63,13 @@ function ProfileDropdown({
         <Menu.Items className="gw-absolute gw-right-0 gw-z-10 gw-mt-2 gw-w-48 gw-origin-top-right gw-rounded-sm gw-bg-white gw-py-1 gw-shadow-lg gw-ring-1 gw-ring-black gw-ring-opacity-5 gw-focus:gw-outline-none">
           {links.map((item) => (
             <Menu.Item key={item.text}>
-              <a
+              <Link
                 key={item.id}
                 href={item.href}
                 className="gw-block gw-px-4 gw-py-2 gw-text-sm gw-text-gray-700 gw-hover:gw-bg-gray-100"
               >
                 {item.text}
-              </a>
+              </Link>
             </Menu.Item>
           ))}
           {showLogout ? (
