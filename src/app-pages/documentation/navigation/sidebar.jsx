@@ -37,7 +37,17 @@ const componentProps = [
       {
         id: string,
         text: string,
-        href: string
+        href: string,
+        children: [
+            id: string,
+            text: string,
+            href: string,
+            children: [ 
+                id: string,
+                text: string,
+                href: string
+            ]
+        ]
       }
     ]`,
     default: "null",

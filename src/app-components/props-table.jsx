@@ -33,7 +33,7 @@ function PropsTable({ propsList }) {
               <Code>{prop.name}</Code>
             </TableCell>
             <TableCell>
-              <Code>{prop.type}</Code>
+              <Code className="gw-text-wrap">{prop.type}</Code>
             </TableCell>
             <TableCell>
               <Code>{prop.default}</Code>
