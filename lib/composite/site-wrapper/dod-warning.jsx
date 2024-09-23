@@ -10,7 +10,7 @@ import { Button } from "../../components/button";
 
 function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
   let hasAccepted = false;
-  hasAccepted = window.localStorage.getItem("quiet-the-noise") || false;
+  hasAccepted = window.localStorage.getItem("gw-dod-warn-accept") || false;
   // if we get a value, check to see how long ago it was
   // default timeout is 30 days, but consumers can pass in
   // a different value as a prop
@@ -19,7 +19,7 @@ function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
       const now = new Date();
       const wasAcceptedOn = new Date(hasAccepted);
       if (now - wasAcceptedOn > warningTimeout) {
-        window.localStorage.removeItem("quiet-the-noise");
+        window.localStorage.removeItem("gw-dod-warn-accept");
         hasAccepted = false;
       } else {
         hasAccepted = true;
@@ -33,7 +33,7 @@ function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
 }
 
 function acknowledge() {
-  window.localStorage.setItem("quiet-the-noise", new Date().getTime());
+  window.localStorage.setItem("gw-dod-warn-accept", new Date().getTime());
 }
 
 function DoDWarning({ warningTimeout }) {
