@@ -2,8 +2,7 @@ import { UsaceBox, PopoutMenu } from "../../../lib";
 import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
-import { useEffect, useRef } from "react";
-import { useConnect } from "redux-bundler-hook";
+import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
 
 const MAX_NESTING_LEVEL = 3;
@@ -139,7 +138,7 @@ function Sidebar({
     const combinedLinks = flattenLinks(sidebarLinks);
     return (
       <UsaceBox
-        propRef={sidebarRef}
+        ref={sidebarRef}
         title={title}
         className={"gw-text-sm"}
         id="sidebar"
@@ -161,7 +160,7 @@ function Sidebar({
   }
 
   return (
-    <UsaceBox propRef={sidebarRef} title={title} id="sidebar">
+    <UsaceBox ref={sidebarRef} title={title} id="sidebar">
       {sidebarLinks.map((link) => {
         return enablePopout
           ? renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection)
