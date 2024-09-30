@@ -124,9 +124,9 @@ function Sidebar({
   sidebarLinks,
   enablePopout,
   popoutDirection,
+  onChange,
 }) {
   const isMobile = useIsMobile();
-  const { doUpdateHash } = useConnect("doUpdateHash");
   const sidebarRef = useRef(null);
   if (popoutDirection && !enablePopout) {
     throw new Error(
@@ -148,9 +148,7 @@ function Sidebar({
           <Dropdown
             className={"gw-w-5/6 gw-m-auto"}
             value={selectedPath}
-            onChange={(e) => {
-              doUpdateHash(e.target.value);
-            }}
+            onChange={onChange}
             options={combinedLinks.map((link) => (
               <option key={link.href} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}

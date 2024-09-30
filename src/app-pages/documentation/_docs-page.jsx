@@ -4,6 +4,8 @@ import sidebarLinks from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
+  const { doUpdateHash } = useConnect("doUpdateHash");
+
   return (
     <Container fluid>
       <Breadcrumbs>
@@ -21,6 +23,9 @@ function DocsPage({ breadcrumbs = [], children }) {
             title="Contents"
             selectedPath={hash}
             sidebarLinks={sidebarLinks}
+            onChange={(e) => {
+              doUpdateHash(e.target.value);
+            }}
           />
         </div>
         <div className="gw-col-span-12 md:gw-col-span-10">{children}</div>
