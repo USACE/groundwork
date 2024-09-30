@@ -9,13 +9,6 @@ import { flattenLinks } from "../../utils/paths";
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
-const BlackDot = ({ title = "Current Page" }) => (
-  <span
-    title={title}
-    className="gw-inline-block gw-w-2 gw-h-2 gw-rounded-full gw-bg-black gw-mr-1 gw-ms-auto"
-  />
-);
-
 // Recursive function to render nested PopoutMenus
 function renderPopoutMenu(
   link,
@@ -49,7 +42,7 @@ function renderPopoutMenu(
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
             >
-              {link.text} {isSelected && <BlackDot />}
+              {link.text}
             </a>
           }
           {link.children.map((child) =>
@@ -104,7 +97,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
           style={indentation}
         >
           {link.text}
-          {isSelected && <BlackDot />}
+          {isSelected}
           {link.children && (
             <VscChevronRight
               size={18}
