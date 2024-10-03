@@ -31,20 +31,51 @@ function NavbarLinkItem({ link, ...props }) {
         <Menu.Items
           static
           as="ul"
-          className="gw-absolute gw-left-0 gw-top-13 gw-width-auto gw-bg-nav-dark-gray !gw-z-20"
+          className="gw-absolute gw-left-0 gw-top-13 gw-bg-nav-dark-gray !gw-z-20 gw-w-max gw-p-0" // Removed padding and added gw-p-0
         >
-          {link.children.map((child) => {
-            return (
-              <Menu.Item key={child.id || child.text} as={Fragment}>
+          {link.children.map((child) => (
+            <Menu.Item key={child.id || child.text} as={Fragment}>
+              {child.children ? (
+                <div className="gw-relative gw-group">
+                  <a
+                    href={child.href}
+                    className="after:gw-content-['►'] after:gw-ml-2 after:gw-text-[10px] gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
+                  >
+                    {child.text}
+                  </a>
+                  <Menu.Items
+                    static
+                    as="ul"
+                    className="gw-absolute gw-left-full gw-top-0 gw-bg-nav-dark-gray !gw-z-30 gw-w-max gw-p-0 gw-shadow-lg gw-hidden group-hover:gw-block" // Removed padding and added gw-p-0
+                  >
+                    {child.children.map((grandChild) => {
+                      if (!grandChild.children)
+                        console.warn(
+                          "Header items can only be 2 levels deep. Please reorganize your header links. This helps to avoid CSS issues."
+                        );
+                      return (
+                        <Menu.Item key={grandChild.id || grandChild.text}>
+                          <a
+                            href={grandChild.href}
+                            className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
+                          >
+                            {grandChild.text}
+                          </a>
+                        </Menu.Item>
+                      );
+                    })}
+                  </Menu.Items>
+                </div>
+              ) : (
                 <a
                   href={child.href}
-                  className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-[16px] gw-py-[8px] gw-bg-none"
+                  className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                 >
                   {child.text}
                 </a>
-              </Menu.Item>
-            );
-          })}
+              )}
+            </Menu.Item>
+          ))}
         </Menu.Items>
       )}
     </Menu>
