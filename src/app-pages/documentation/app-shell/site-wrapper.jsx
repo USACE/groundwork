@@ -133,6 +133,18 @@ const siteWrapperProps = [
     default: "false",
     desc: "If true, the CWBI logo will be displayed in the footer.",
   },
+  {
+    name: "showWarning",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the standard DoD warning banner will pop up when the site loads.",
+  },
+  {
+    name: "warningTimeout",
+    type: "boolean",
+    default: "1000 * 60 * 60 * 24 * 30 (30 days)",
+    desc: "Time in milliseconds, When a user clears the DoD warning we will hide it for 30 days by default, adjust that time here.",
+  },
 ];
 
 function SiteWrapperDocs() {
