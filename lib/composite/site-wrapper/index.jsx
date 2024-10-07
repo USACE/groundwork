@@ -1,6 +1,7 @@
 import USABanner from "../header/usa-banner/USABanner";
 import Header from "../header";
 import Footer from "../footer";
+import DoDWarning from "./dod-warning";
 
 function SiteWrapper({
   children,
@@ -24,6 +25,8 @@ function SiteWrapper({
   usaceLogo = true,
   rsgisLogo = false,
   cwbiLogo = false,
+  showWarning = false,
+  warningTimeout = undefined,
 }) {
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
@@ -56,6 +59,7 @@ function SiteWrapper({
           cwbiLogo={cwbiLogo}
         />
       )}
+      {showWarning && <DoDWarning warningTimeout={warningTimeout} />}
     </div>
   );
 }
