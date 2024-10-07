@@ -43,6 +43,7 @@ import LoginButtonDocs from "../app-pages/documentation/buttons/login-button";
 import QuickStartGuide from "../app-pages/documentation/getting-started/quick-start-guide";
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
+import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
 
 export default createRouteBundle(
   {
@@ -51,6 +52,7 @@ export default createRouteBundle(
     "/docs/quick-start": QuickStartGuide,
     "/docs/adding-tailwind": AddingTailwind,
     "/docs/client-side-routing": ClientSideRouting,
+    "/docs/package-maintenance": PackageMaintenance,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
     "/docs/app-shell/search": SearchDocs,

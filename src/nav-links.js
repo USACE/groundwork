@@ -19,6 +19,11 @@ export default [
         text: "Client-Side Routing",
         href: "/docs/client-side-routing",
       },
+      {
+        id: "package-maintenance",
+        text: "Package Maintenance",
+        href: "/docs/package-maintenance",
+      },
     ],
   },
   {
