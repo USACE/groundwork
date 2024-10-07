@@ -1,7 +1,7 @@
 {
   "name": "@usace/groundwork",
   "private": false,
-  "version": "3.0.1",
+  "version": "3.2.0",
   "license": "MIT",
   "type": "module",
   "main": "./dist/groundwork.umd.cjs",
@@ -26,16 +26,17 @@
     "build-docs": "vite build",
     "pub": "npm run build-lib && npm publish --access=public",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
+    "@tailwindcss/forms": "^0.5.9",
     "internal-nav-helper": "^3.1.0",
     "react-icons": "^5.0.1",
     "redux-bundler": "^28.1.0",
     "redux-bundler-hook": "^1.0.3",
-    "redux-bundler-react": "^1.2.0",
-    "tailwind-merge": "^2.3.0"
+    "redux-bundler-react": "^1.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -51,7 +52,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.33",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.13"
+    "vite": "^5.0.13",
+    "vitest": "^2.1.1"
   }
 }

@@ -29,6 +29,7 @@ import NotFound from "../app-pages/404";
 import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
 import DeleteConfirmDocs from "../app-pages/documentation/buttons/delete-confirm";
+import PopoutMenuDocs from "../app-pages/documentation/buttons/popout-menu";
 import Forms from "../app-pages/documentation/forms";
 import TextInputDocs from "../app-pages/documentation/forms/text-input";
 import NumericInputDocs from "../app-pages/documentation/forms/numeric-inputs";
@@ -65,6 +66,7 @@ export default createRouteBundle(
     "/docs/buttons/ok-cancel": OkCancelDocs,
     "/docs/buttons/delete-confirm": DeleteConfirmDocs,
     "/docs/buttons/login-button": LoginButtonDocs,
+    "/docs/buttons/popout-menu": PopoutMenuDocs,
     "/docs/display": Display,
     "/docs/display/badge": BadgeDocs,
     "/docs/display/headings": HeadingsDocs,
