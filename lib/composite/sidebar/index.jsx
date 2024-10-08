@@ -4,6 +4,7 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
+import { useConnect } from "redux-bundler-hook";
 
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
@@ -123,10 +124,11 @@ function Sidebar({
   sidebarLinks,
   enablePopout,
   popoutDirection,
-  onChange,
 }) {
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
+  const mobileNav = useRef(null);
+
   if (popoutDirection && !enablePopout) {
     throw new Error(
       "popoutDirection can only be used when enablePopout is true"
@@ -147,13 +149,18 @@ function Sidebar({
           <Dropdown
             className={"gw-w-5/6 gw-m-auto"}
             value={selectedPath}
-            onChange={onChange}
+            onChange={(e) => {
+              mobileNav.current.href = e.target.value;
+              mobileNav.current.click();
+            }}
             options={combinedLinks.map((link) => (
               <option key={link.href} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
           />
+          {/* Hidden anchor tag to trigger mobile nav for compatibility */}
+          <a className="hidden" href="#" ref={mobileNav} aria-hidden="true"></a>
         </div>
       </UsaceBox>
     );

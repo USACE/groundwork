@@ -81,7 +81,6 @@ const componentProps = [
 
 function SidebarDocs() {
   const currentPath = document.location.pathname;
-  const { doUpdateHash } = useConnect("doUpdateHash");
 
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
@@ -111,9 +110,6 @@ function SidebarDocs() {
                 sidebarLinks={exampleLinks}
                 enablePopout={true}
                 popoutDirection="right"
-                onChange={(e) => {
-                  doUpdateHash(e.target.value);
-                }}
               />
             </div>
             <div className="gw-col-span-12 md:gw-col-span-10">
@@ -133,7 +129,6 @@ import sidebarLinks from "./sidebarLinks";
 const currentPath = document.location.pathname;
 
 function Component() {
-    const { doUpdateHash } = useConnect("doUpdateHash");
     <Container>
         <div className="md:grid grid-cols-12 gap-6">
             <div className="md:block md:col-span-2">
@@ -143,9 +138,6 @@ function Component() {
                 sidebarLinks={exampleLinks}
                 enablePopout={true}
                 popoutDirection="right"
-                onChange={(e) => {
-                  doUpdateHash(e.target.value);
-                }}
               />
             </div>
             <div className="col-span-12 md:col-span-10">
@@ -182,7 +174,6 @@ export default Component;`}
             code={`import { UsaceBox, Sidebar } from "@usace/groundwork";
 import sidebarLinks from "./sidebarLinks";
 const currentPath = document.location.pathname;
-const { doUpdateHash } = useConnect("doUpdateHash");
 
 function Component() {
     <Container>
@@ -192,9 +183,6 @@ function Component() {
                   title="Contents" 
                   selectedPath={currentPath}
                   sidebarLinks={sidebarLinks}
-                  onChange={(e) => {
-                    doUpdateHash(e.target.value);
-                  }}
                 />
             </div>
             <div className="col-span-12 md:col-span-10">
