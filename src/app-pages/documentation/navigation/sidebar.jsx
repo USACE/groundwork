@@ -4,7 +4,7 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import exampleLinks from "../../../example-links";
-import { useConnect } from "redux-bundler-hook";
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
