@@ -2,19 +2,12 @@ import { UsaceBox, PopoutMenu } from "../../../lib";
 import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
-import { useEffect, useRef } from "react";
-import { useConnect } from "redux-bundler-hook";
+import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
+import { useConnect } from "redux-bundler-hook";
 
-const NEST_WARNING_LIMIT = 3;
-const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${NEST_WARNING_LIMIT} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
-
-const BlackDot = ({ title = "Current Page" }) => (
-  <span
-    title={title}
-    className="gw-inline-block gw-w-2 gw-h-2 gw-rounded-full gw-bg-black gw-mr-1 gw-ms-auto"
-  />
-);
+const MAX_NESTING_LEVEL = 3;
+const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
 // Recursive function to render nested PopoutMenus
 function renderPopoutMenu(
@@ -26,15 +19,19 @@ function renderPopoutMenu(
 ) {
   const isSelected = selectedPath === link.href;
   link.level = level;
-  if (level > NEST_WARNING_LIMIT - 1) {
+  if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
-  if (link.children && link.children.length > 0) {
+  if (
+    link.children &&
+    link.children.length > 0 &&
+    level < MAX_NESTING_LEVEL - 1
+  ) {
     return (
       <div
         key={link.id}
-        className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100"
+        className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
       >
         <PopoutMenu title={link.text} direction={popoutDirection}>
           {
@@ -45,7 +42,7 @@ function renderPopoutMenu(
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
             >
-              {link.text} {isSelected && <BlackDot />}
+              {link.text}
             </a>
           }
           {link.children.map((child) =>
@@ -66,7 +63,10 @@ function renderPopoutMenu(
     <a href={link.href} key={link.id}>
       <div
         className={`gw-pl-1 ${
-          link?.children || link?.level === 0 ? "gw-text-lg gw-font-bold" : ""
+          (link?.children || link?.level === 0) &&
+          link?.level < MAX_NESTING_LEVEL - 1
+            ? "gw-text-lg gw-font-bold"
+            : "gw-border-b-[1px]"
         } gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
           isSelected ? "gw-bg-gray-50 gw-rounded" : ""
         }`}
@@ -81,7 +81,7 @@ function renderPopoutMenu(
 function renderRegularLinks(link, selectedPath, level = 0) {
   const isSelected = selectedPath === link.href;
   const indentation = { paddingLeft: `${level * 20}px` };
-  if (level > NEST_WARNING_LIMIT - 1) {
+  if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
@@ -97,7 +97,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
           style={indentation}
         >
           {link.text}
-          {isSelected && <BlackDot />}
+          {isSelected}
           {link.children && (
             <VscChevronRight
               size={18}
@@ -126,38 +126,21 @@ function Sidebar({
   popoutDirection,
 }) {
   const isMobile = useIsMobile();
-  const { doUpdateHash } = useConnect("doUpdateHash");
   const sidebarRef = useRef(null);
+  const mobileNav = useRef(null);
+
   if (popoutDirection && !enablePopout) {
     throw new Error(
       "popoutDirection can only be used when enablePopout is true"
     );
   }
 
-  useEffect(() => {
-    if (sidebarRef.current) {
-      const parentElement = sidebarRef.current.parentElement;
-      if (
-        parentElement &&
-        parentElement?.parentElement.classList.contains("gw-grid")
-      ) {
-        parentElement?.parentElement.classList.remove("gw-grid");
-        parentElement.classList.remove("gw-hidden");
-      } else parentElement?.parentElement.classList.add("gw-grid");
-    }
-  }, [isMobile]);
-
   if (isMobile) {
     // Combine all the child links into a single array. Prepend each level's parent text to the child text.
-    const combinedLinks = flattenLinks(sidebarLinks).map((link) => {
-      if (link.children && link.children.length > 0) {
-        link.text = link.text + " > " + link.children[0].text;
-      }
-      return link;
-    });
+    const combinedLinks = flattenLinks(sidebarLinks);
     return (
       <UsaceBox
-        propRef={sidebarRef}
+        ref={sidebarRef}
         title={title}
         className={"gw-text-sm"}
         id="sidebar"
@@ -167,21 +150,24 @@ function Sidebar({
             className={"gw-w-5/6 gw-m-auto"}
             value={selectedPath}
             onChange={(e) => {
-              doUpdateHash(e.target.value);
+              mobileNav.current.href = e.target.value;
+              mobileNav.current.click();
             }}
             options={combinedLinks.map((link) => (
-              <option key={link.href} value={link.href}>
-                {link?.path ? link.path + " - " + link.text : link.text}
+              <option key={link.href} value={link.href} className="gw-pl-2">
+                {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
           />
+          {/* Hidden anchor tag to trigger mobile nav for compatibility */}
+          <a className="hidden" href="#" ref={mobileNav} aria-hidden="true"></a>
         </div>
       </UsaceBox>
     );
   }
 
   return (
-    <UsaceBox propRef={sidebarRef} title={title} id="sidebar">
+    <UsaceBox ref={sidebarRef} title={title} id="sidebar">
       {sidebarLinks.map((link) => {
         return enablePopout
           ? renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection)

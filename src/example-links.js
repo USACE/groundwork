@@ -37,16 +37,21 @@ export default [
         id: "l7",
         text: "Child Link 7",
         href: "#childlink7",
+      },
+      {
+        id: "l8",
+        text: "Child Link 8",
+        href: "#childlink8",
         children: [
-          {
-            id: "l8",
-            text: "Child Link 8",
-            href: "#childlink8",
-          },
           {
             id: "l9",
             text: "Child Link 9",
             href: "#childlink9",
+          },
+          {
+            id: "l10",
+            text: "Child Link 11",
+            href: "#childlink12",
           },
         ],
       },

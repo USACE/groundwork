@@ -4,6 +4,7 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import exampleLinks from "../../../example-links";
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
@@ -37,7 +38,17 @@ const componentProps = [
       {
         id: string,
         text: string,
-        href: string
+        href: string,
+        children: [
+            id: string,
+            text: string,
+            href: string,
+            children: [ 
+                id: string,
+                text: string,
+                href: string
+            ]
+        ]
       }
     ]`,
     default: "null",
@@ -60,10 +71,17 @@ const componentProps = [
     default: "right",
     desc: "The direction to open the popout menu. Options are 'right', 'left', 'top', and 'bottom'.",
   },
+  {
+    name: "onChange",
+    type: "Event handler",
+    default: "null",
+    desc: "Function to be called when the selected path changes. The function will be called with the new path as an argument.",
+  },
 ];
 
 function SidebarDocs() {
   const currentPath = document.location.pathname;
+
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Sidebar">
@@ -78,10 +96,14 @@ function SidebarDocs() {
           <CopyButton text={`import { Sidebar } from "@usace/groundwork";`} />
         </div>
 
+        <Badge color="yellow" className="gw-my-3">
+          NOTE: Sidebar is click to use. Specifying children will provide a
+          clickable menu with the first item in that menu being the root link.
+        </Badge>
         <H3 className="gw-pt-6 gw-pb-3">Sidebar (With Popout Menu)</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="gw-hidden md:gw-block md:gw-col-span-2">
+          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+            <div className="md:gw-block md:gw-col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
@@ -102,20 +124,21 @@ function SidebarDocs() {
         <div>
           <CodeExample
             code={`import { UsaceBox, Sidebar } from "@usace/groundwork";
+import { useConnect } from "redux-bundler-hook";
 import sidebarLinks from "./sidebarLinks";
 const currentPath = document.location.pathname;
 
 function Component() {
     <Container>
-        <div className="grid grid-cols-12 gap-6">
-            <div className="hidden md:block md:col-span-2">
-                <Sidebar 
-                  title="Contents" 
-                  selectedPath={currentPath}
-                  sidebarLinks={sidebarLinks}
-                  enablePopout={true}
-                  popoutDirection="right"
-                />
+        <div className="md:grid grid-cols-12 gap-6">
+            <div className="md:block md:col-span-2">
+              <Sidebar
+                title="Contents"
+                selectedPath={currentPath}
+                sidebarLinks={exampleLinks}
+                enablePopout={true}
+                popoutDirection="right"
+              />
             </div>
             <div className="col-span-12 md:col-span-10">
                 Your Main Page Content Here!
@@ -129,8 +152,8 @@ export default Component;`}
 
         <H3 className="gw-pt-6 gw-pb-3">Sidebar (NO Popout Menu)</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="gw-hidden md:gw-block md:gw-col-span-2">
+          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+            <div className="md:gw-block md:gw-col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
@@ -154,8 +177,8 @@ const currentPath = document.location.pathname;
 
 function Component() {
     <Container>
-        <div className="grid grid-cols-12 gap-6">
-            <div className="hidden md:block md:col-span-2">
+        <div className="md:grid grid-cols-12 gap-6">
+            <div className="md:block md:col-span-2">
                 <Sidebar 
                   title="Contents" 
                   selectedPath={currentPath}

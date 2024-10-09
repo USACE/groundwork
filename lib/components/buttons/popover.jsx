@@ -1,5 +1,5 @@
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   VscChevronRight,
   VscChevronLeft,
@@ -13,24 +13,6 @@ function PopoutMenu({ title, children, direction = "right", className }) {
   direction = direction.toLowerCase();
 
   const [isOpen, setIsOpen] = useState(false);
-
-  // TODO: This does not handle clicking other popout buttons
-  function handleClickOutside() {
-    // Handle when a user clicks outside the popout menu
-    setIsOpen(false);
-  }
-
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("click", handleClickOutside);
-    } else {
-      document.removeEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [isOpen]);
 
   if (!AVAIL_DIRECTIONS.includes(direction)) {
     throw new Error(
@@ -58,14 +40,6 @@ function PopoutMenu({ title, children, direction = "right", className }) {
     bottom: VscChevronDown,
   }[direction];
 
-  // Flip the direction for closure
-  const ChevronIconOpposite = {
-    right: VscChevronLeft,
-    left: VscChevronRight,
-    top: VscChevronDown,
-    bottom: VscChevronUp,
-  }[direction];
-
   return (
     <Popover
       name="gw-popout-menu"
@@ -79,20 +53,12 @@ function PopoutMenu({ title, children, direction = "right", className }) {
         }}
       >
         <span>{title}</span>
-        {isOpen ? (
-          <ChevronIconOpposite
-            aria-hidden="true"
-            className="gw-h-5 gw-w-5"
-            size={16}
-          />
-        ) : (
-          <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" size={12} />
-        )}
+        <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" size={12} />
       </PopoverButton>
 
       <PopoverPanel
         transition="true"
-        className={`gw-absolute gw-ms-2 gw-pt-1 ${directionClasses[direction]} gw-z-10 gw-mt-2 gw-w-56 gw-shrink gw-rounded-xl gw-bg-white gw-text-sm gw-leading-6 gw-text-gray-900 gw-shadow-lg gw-ring-1 gw-ring-gray-900/5`}
+        className={`gw-absolute gw-pt-1 ${directionClasses[direction]} gw-z-10 gw-mt-2 gw-w-56 gw-shrink gw-rounded-xl gw-bg-white gw-text-sm gw-leading-6 gw-text-gray-900 gw-shadow-lg gw-ring-1 gw-ring-gray-900/5`}
       >
         {children}
       </PopoverPanel>

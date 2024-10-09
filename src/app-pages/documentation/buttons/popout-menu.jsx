@@ -47,13 +47,6 @@ const componentProps_PopoutMenu = [
   },
 ];
 
-const BlackDot = ({ title = "Current Page" }) => (
-  <span
-    title={title}
-    className="gw-inline-block gw-w-2 gw-h-2 gw-rounded-full gw-bg-black gw-mr-1 gw-ms-auto"
-  />
-);
-
 function PopoutMenuDocs() {
   const selectedPath = document.location.pathname;
 
@@ -101,7 +94,7 @@ function PopoutMenuDocs() {
                           }`}
                         >
                           {/* Place a black dot at the end of the link if it is selected */}
-                          {link.text} {isSelected && <BlackDot />}
+                          {link.text}
                         </a>
                       }
                       {link.children.map((child) => {
@@ -116,7 +109,6 @@ function PopoutMenuDocs() {
                           >
                             <span className="gw-flex gw-items-center gw-gap-1">
                               {child.text}
-                              {isChildSelected && <BlackDot />}
                             </span>
                           </a>
                         );
@@ -169,7 +161,7 @@ function Component() {
                             }\`}
                           >
                             {/* Place a black dot at the end of the link if it is selected */}
-                            {link.text} {isSelected && <BlackDot />}
+                            {link.text} {isSelected}
                           </a>
                         }
                         {link.children.map((child) => {
@@ -186,7 +178,7 @@ function Component() {
                             >
                               <span className="gw-flex gw-items-center gw-gap-1">
                                 {child.text}
-                                {isChildSelected && <BlackDot />}
+                                {isChildSelected}
                               </span>
                             </a>
                           );
