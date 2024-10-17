@@ -32,12 +32,16 @@ function renderPopoutMenu(
         key={link.id}
         className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
       >
-        <PopoutMenu title={link.text} direction={popoutDirection}>
+        <PopoutMenu
+          title={link.text}
+          direction={popoutDirection}
+          className={`${level > 0 ? "gw-max-h-[50vh] " : ""}`} // added max-h-[50vh]
+        >
           {
             <a
               key={link.id}
               href={link.href}
-              className={`gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
+              className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
             >
