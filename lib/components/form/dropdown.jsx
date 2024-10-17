@@ -15,7 +15,7 @@ export default function Dropdown({
     <>
       <label
         htmlFor={label + "-id"}
-        className={`block text-sm font-medium leading-6 text-gray-900 ${labelClassName}`}
+        className={`gw-block gw-text-sm gw-font-medium gw-leading-6 gw-text-gray-900 ${labelClassName}`}
       >
         {label}
       </label>
@@ -26,7 +26,7 @@ export default function Dropdown({
           setSelectedValue(e.target.value);
           props.onChange(e);
         }}
-        className={`mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 ${className}`}
+        className={`gw-mt-2 gw-block gw-w-full gw-rounded-md gw-border-0 gw-py-1.5 gw-pl-3 gw-pr-10 gw-text-gray-900 gw-ring-1 gw-ring-inset gw-ring-gray-300 focus:gw-ring-2 focus:gw-ring-indigo-600 sm:gw-text-sm sm:gw-leading-6 ${className}`}
         value={selectedValue || options[0].props.value}
         {...props}
       >
