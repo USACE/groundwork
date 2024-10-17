@@ -65,6 +65,7 @@ function App() {
         twitterUrl="#"
         youtubeUrl="#"
         flickrUrl="#"
+        showWarning={true}
       >
         <Route />
       </SiteWrapper>

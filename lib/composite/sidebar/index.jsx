@@ -127,10 +127,11 @@ function Sidebar({
   sidebarLinks,
   enablePopout,
   popoutDirection,
-  onChange,
 }) {
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
+  const mobileNav = useRef(null);
+
   if (popoutDirection && !enablePopout) {
     throw new Error(
       "popoutDirection can only be used when enablePopout is true"
@@ -151,13 +152,18 @@ function Sidebar({
           <Dropdown
             className={"gw-w-5/6 gw-m-auto"}
             value={selectedPath}
-            onChange={onChange}
+            onChange={(e) => {
+              mobileNav.current.href = e.target.value;
+              mobileNav.current.click();
+            }}
             options={combinedLinks.map((link) => (
               <option key={link.href} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
           />
+          {/* Hidden anchor tag to trigger mobile nav for compatibility */}
+          <a className="hidden" href="#" ref={mobileNav} aria-hidden="true"></a>
         </div>
       </UsaceBox>
     );

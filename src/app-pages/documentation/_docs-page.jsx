@@ -4,7 +4,6 @@ import sidebarLinks from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
-  const { doUpdateHash } = useConnect("doUpdateHash");
 
   return (
     <Container fluid>
