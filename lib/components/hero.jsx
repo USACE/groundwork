@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
  * @param {string | string[]} alt - The alt text or list of text for the image(s).
  * @param {ReactNode} children - Custom children to display in the hero.
  * @param {integer} duration_ms - given a list of images set the duration between each image. Default: 12000ms
+ * @param {decimal} opacity - Changes opacity of background image. 1 is darkest, 0 is brightest.
  * @example
  * <Hero
  *  title="Groundwork"
@@ -26,34 +27,34 @@ import { useState, useEffect } from "react";
  *  duration_ms=12000 // 12 seconds
  * >
  */
-function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgHeight, imgWidth }) {
+function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgHeight, imgWidth, opacity = .5 }) {
   const isImgArray = Array.isArray(image)
   const isAltArray = Array.isArray(alt)
   const [currentImage, setCurrentImage] = useState(isImgArray ? image[0] : image);
   const [currentAlt, setCurrentAlt] = useState(isAltArray ? alt[0] : alt);
-   // TODO: Move this to a utilities function
-   function getRandomInt(max) {
+  // TODO: Move this to a utilities function
+  function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-   }
-   /**
-     * @name getRandomInt
-     * @description returns a random integer given a max value
-     * @param {integer} max - The max value to return a random integer
-     * @example
-     * let x = getRandomInt(5)
-     * > console.log(x) // 3
-     */
-   useEffect(() => {
+  }
+  /**
+    * @name getRandomInt
+    * @description returns a random integer given a max value
+    * @param {integer} max - The max value to return a random integer
+    * @example
+    * let x = getRandomInt(5)
+    * > console.log(x) // 3
+    */
+  useEffect(() => {
     if (!isImgArray) return
-      const interval = setInterval(() => {
-        const RAND_INT = getRandomInt(image.length);
-        setCurrentImage(image[RAND_INT]);
-        if (alt)
-            setCurrentAlt(alt[RAND_INT]);
-      }, duration_ms);
+    const interval = setInterval(() => {
+      const RAND_INT = getRandomInt(image.length);
+      setCurrentImage(image[RAND_INT]);
+      if (alt)
+        setCurrentAlt(alt[RAND_INT]);
+    }, duration_ms);
 
-      return () => clearInterval(interval);
-    }, [image, alt, duration_ms, isImgArray]);
+    return () => clearInterval(interval);
+  }, [image, alt, duration_ms, isImgArray]);
 
   // Make sure the alt count matches the images if both are provided as lists
   if (isImgArray && isAltArray) {
@@ -63,19 +64,18 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgH
       );
   }
 
-   
   return (
     <div className="gw-relative">
       <div className="gw-h-56 gw-w-full gw-overflow-clip gw-bg-zinc-950 md:gw-h-1/5 md:gw-max-h-[500px]">
         <img
           src={currentImage}
           alt={currentAlt}
-          aria-label={alt} 
+          aria-label={alt}
           className={`gw-object-cover gw-object-center gw-w-full gw-h-full`}
-          style={{height: imgHeight, width: imgWidth}}
+          style={{ height: imgHeight, width: imgWidth }}
         />
       </div>
-      <div className="gw-absolute gw-inset-0 gw-bg-zinc-950/50" />
+      <div style={{ opacity: opacity }} className={`gw-absolute gw-inset-0 gw-bg-zinc-950`} />
       {children && (
         <div className="gw-absolute gw-inset-0 gw-flex gw-items-center gw-justify-center">
           {children}
