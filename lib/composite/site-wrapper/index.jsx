@@ -19,6 +19,7 @@ function SiteWrapper({
   twitterUrl = "",
   youtubeUrl = "",
   flickrUrl = "",
+  instagramUrl = "",
   usaceLinks = [],
   externalLinks = [],
   armyLogo = true,
@@ -51,6 +52,7 @@ function SiteWrapper({
           twitterUrl={twitterUrl}
           youtubeUrl={youtubeUrl}
           flickrUrl={flickrUrl}
+          instagramUrl={instagramUrl}
           usaceLinks={usaceLinks}
           externalLinks={externalLinks}
           armyLogo={armyLogo}

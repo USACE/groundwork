@@ -87,6 +87,7 @@ function Footer({
   twitterUrl,
   youtubeUrl,
   flickrUrl,
+  instagramUrl,
   usaceLinks,
   externalLinks,
   armyLogo,
@@ -126,6 +127,7 @@ function Footer({
                 twitter={twitterUrl}
                 youtube={youtubeUrl}
                 flickr={flickrUrl}
+                instagram={instagramUrl}
               />
               <FooterLinks links={usaceLinks} />
             </div>

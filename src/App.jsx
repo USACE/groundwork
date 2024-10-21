@@ -65,6 +65,7 @@ function App() {
         twitterUrl="#"
         youtubeUrl="#"
         flickrUrl="#"
+        instagramUrl="#"
         showWarning={true}
       >
         <Route />
