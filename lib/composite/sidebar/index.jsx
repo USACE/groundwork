@@ -38,9 +38,8 @@ function renderPopoutMenu(
             <a
               key={link.id}
               href={link.href}
-              className={`gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
-                isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-              }`}
+              className={`gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+                } ${link.href ? "gw-cursor-pointer" : "gw-cursor-default"}`}
             >
               {link.text}
             </a>
@@ -62,14 +61,12 @@ function renderPopoutMenu(
   return (
     <a href={link.href} key={link.id}>
       <div
-        className={`gw-pl-1 ${
-          (link?.children || link?.level === 0) &&
+        className={`gw-pl-1 ${(link?.children || link?.level === 0) &&
           link?.level < MAX_NESTING_LEVEL - 1
-            ? "gw-text-lg gw-font-bold"
-            : "gw-border-b-[1px]"
-        } gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
-          isSelected ? "gw-bg-gray-50 gw-rounded" : ""
-        }`}
+          ? "gw-text-lg gw-font-bold"
+          : "gw-border-b-[1px]"
+          } gw-py-1 gw-flex gw-justify-between gw-items-center ${link.href ? "gw-cursor-pointer hover:gw-bg-gray-100" : "gw-cursor-default"} ${isSelected ? "gw-bg-gray-50 gw-rounded" : ""
+          }`}
       >
         {link.text}
       </div>
@@ -89,16 +86,14 @@ function renderRegularLinks(link, selectedPath, level = 0) {
     <div key={link.id}>
       <a href={link.href}>
         <div
-          className={`gw-text-lg ${
-            level === 0 ? "gw-font-bold" : ""
-          } gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
-            isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-          }`}
+          className={`gw-text-lg ${level === 0 ? "gw-font-bold" : ""
+            } gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center ${link?.href ? "gw-cursor-pointer hover:gw-bg-gray-100" : "gw-cursor-default"} ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+            }`}
           style={indentation}
         >
           {link.text}
           {isSelected}
-          {link.children && (
+          {(link.children && link.href) && (
             <VscChevronRight
               size={18}
               aria-hidden="true"
