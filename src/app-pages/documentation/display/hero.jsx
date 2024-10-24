@@ -76,7 +76,7 @@ function HeroDocs() {
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
-            image="/1500x400.png"
+            image="1500x400.png"
             alt="Placeholder Image"
             opacity={.5}
           />
@@ -134,9 +134,9 @@ export default Component;
               className="h-48"
               imgHeight={"30vh"}
               image={[
-                "/FT_GIBSON_20181115.min.jpg",
-                "/taylorsville-SPPRu4Rw.jpg",
-                "/nww-lucky-peak-dam.jpg",
+                "FT_GIBSON_20181115.min.jpg",
+                "taylorsville-SPPRu4Rw.jpg",
+                "nww-lucky-peak-dam.jpg",
               ]}
               alt={["Ft Gibson Dam", "Taylorsville", "NWW Lucky Peak Dam"]}
               opacity={.5}
