@@ -7,7 +7,7 @@ export default [
       {
         id: "quick-start",
         text: "Quick Start Guide",
-        href: "/test",
+        href: "/docs/quick-start",
       },
       {
         id: "adding-tailwind",
