@@ -93,7 +93,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
         >
           {link.text}
           {isSelected}
-          {(link.children && link.href) && (
+          {(link.children) && (
             <VscChevronRight
               size={18}
               aria-hidden="true"
