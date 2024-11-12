@@ -52,7 +52,7 @@ const componentProps = [
       }
     ]`,
     default: "null",
-    desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href.",
+    desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href. Setting the href to null will create a disabled link",
   },
   {
     name: "id",

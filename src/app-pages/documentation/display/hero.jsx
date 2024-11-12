@@ -54,6 +54,12 @@ const componentProps = [
     default: "null",
     desc: 'Optional: Sets the width style attribute of the <img> to a specific "width" that you can specify here. I.e. "30vw"',
   },
+  {
+    name: "opacity",
+    type: "decimal",
+    default: ".5",
+    desc: 'Optional: Sets the brightness of the image. 1 is darkest, 0 is brightest. I.e. ".3"',
+  }
 ];
 
 function HeroDocs() {
@@ -70,8 +76,9 @@ function HeroDocs() {
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
-            image="https://via.placeholder.com/1500x500"
+            image="1500x400.png"
             alt="Placeholder Image"
+            opacity={.5}
           />
         </div>
         <Badge
@@ -85,8 +92,8 @@ function HeroDocs() {
           <div
             className="gw-cursor-pointer gw-underline gw-decoration-solid gw-decoration-gray-500"
             onClick={() => {
-                // Navigate to the img compression tag on the page
-                // # TODO: Hash router seems to break hash referencing? 
+              // Navigate to the img compression tag on the page
+              // # TODO: Hash router seems to break hash referencing? 
               document
                 .getElementById("img-compression")
                 .scrollIntoView({ behavior: "smooth" });
@@ -107,6 +114,7 @@ function Component() {
       subtitle="Hero Subtitle"
       image="https://via.placeholder.com/1500x500"
       alt="Placeholder Image"
+      opacity={.5}
     />
   )
 }
@@ -126,11 +134,12 @@ export default Component;
               className="h-48"
               imgHeight={"30vh"}
               image={[
-                "/FT_GIBSON_20181115.min.jpg",
-                "/taylorsville-SPPRu4Rw.jpg",
-                "/nww-lucky-peak-dam.jpg",
+                "FT_GIBSON_20181115.min.jpg",
+                "taylorsville-SPPRu4Rw.jpg",
+                "nww-lucky-peak-dam.jpg",
               ]}
               alt={["Ft Gibson Dam", "Taylorsville", "NWW Lucky Peak Dam"]}
+              opacity={.5}
             />
           </div>
           <div>
@@ -144,7 +153,8 @@ function Component() {
         subtitle="Hero Subtitle"
         image={["https://via.placeholder.com/1500x500", "https://via.placeholder.com/1500x500"]}
         alt={["Placeholder Image1", "Placeholder Image2"]}
-        duration={12000}  // This is default to 12s - but showing its usage here!
+        duration_ms={12000}  // This is default to 12s - but showing its usage here!
+        opacity={.5}
         />
   )
 }
