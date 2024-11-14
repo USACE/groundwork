@@ -275,11 +275,11 @@ export default function Location() {
           <H3>Creating the Store</H3>
           <P>
             So, before we create the store itself, we need to create our route
-            bundle. Open the <Code>./src/app-bundles/route-bundle.js</Code> file
+            bundle. Open the <Code>./src/app-bundles/routes-bundle.js</Code> file
             and add the following content:
           </P>
           <Code className="!gw-font-bold">
-            ./src/app-bundles/route-bundle.js
+            ./src/app-bundles/routes-bundle.js
           </Code>
           <CodeExample
             code={`import { createRouteBundle } from "redux-bundler";
@@ -322,9 +322,9 @@ export default createRouteBundle({
           <Code className="!gw-font-bold">./src/app-bundles/index.js</Code>
           <CodeExample
             code={`import { composeBundles, createUrlBundle } from "redux-bundler";
-import routeBundle from "./routes-bundle";
+import routesBundle from "./routes-bundle";
 
-export default composeBundles(createUrlBundle(), routeBundle);`}
+export default composeBundles(createUrlBundle(), routesBundle);`}
           ></CodeExample>
           <P>
             Here we're importing the <Code>composeBundles</Code> function and a
