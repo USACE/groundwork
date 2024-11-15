@@ -159,6 +159,11 @@ export default [
         text: "Card",
         href: "/docs/display/card",
       },
+      {
+        id: "image",
+        text: "Image",
+        href: "/docs/display/image",
+      },
     ],
   },
   {

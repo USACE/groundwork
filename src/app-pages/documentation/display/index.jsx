@@ -55,6 +55,11 @@ function Display() {
                 Card - Put a box around some content.
               </a>
             </li>
+            <li>
+              <a href="/docs/display/image">
+                Image - Generic image component.
+              </a>
+            </li>
           </ul>
         </div>
       </UsaceBox>

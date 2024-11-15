@@ -15,6 +15,7 @@ export * from "./components/table";
 export * from "./components/display/card";
 export * from "./components/profile-dropdown";
 export { Skeleton } from "./components/display/skeleton";
+export * from "./components/display/image"
 
 // composite components
 export { Header } from "./composite/header";
