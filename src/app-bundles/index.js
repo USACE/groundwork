@@ -1,4 +1,4 @@
 import { composeBundles, createUrlBundle } from "redux-bundler";
-import routeBundle from "./route-bundle";
+import routesBundle from "./routes-bundle";
 
 export default composeBundles(createUrlBundle(), routeBundle);
