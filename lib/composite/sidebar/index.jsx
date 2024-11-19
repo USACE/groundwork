@@ -123,7 +123,7 @@ function Sidebar({
       <UsaceBox
         ref={sidebarRef}
         title={title}
-        className={"gw-text-sm"}
+        className={"gw-text-sm gw-my-5"}
         id="sidebar"
       >
         <div className="gw-w-full gw-m-auto gw-flex gw-justify-between gw-items-center gw-gap-2">
