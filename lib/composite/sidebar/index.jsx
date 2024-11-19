@@ -4,16 +4,10 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
-import { useConnect } from "redux-bundler-hook";
-
 import "./sidebar.css";
 
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
-
-function handleClick(e) {
-  console.log("clicked4");
-}
 
 // Recursive function to render nested PopoutMenus
 function renderPopoutMenu(
@@ -35,11 +29,7 @@ function renderPopoutMenu(
       key={link.id}
       className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
     >
-      <PopoutMenu
-        title={link.text}
-        direction={popoutDirection}
-        className={`${level > 0 ? "gw-max-h-[50vh] " : ""}`} // added max-h-[50vh]
-      >
+      <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
         {
           <a
             key={link.id}
@@ -51,15 +41,17 @@ function renderPopoutMenu(
             {link.text}
           </a>
         }
-        {link?.children?.map((child) =>
-          renderPopoutMenu(
-            child,
-            selectedPath,
-            enablePopout,
-            popoutDirection,
-            level + 1
-          )
-        )}
+        <div className={"gw-overflow-y-auto gw-max-h-[50vh]"}>
+          {link?.children?.map((child) =>
+            renderPopoutMenu(
+              child,
+              selectedPath,
+              enablePopout,
+              popoutDirection,
+              level + 1
+            )
+          )}
+        </div>
       </PopoutMenu>
     </div>
   );
