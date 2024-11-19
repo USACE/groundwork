@@ -17,7 +17,7 @@ export default [
           {
             id: "l4",
             text: "Child Link 4",
-            href: "#childlink4",
+            href: "/docs/navigation/sidebar",
           },
           {
             id: "l5",
