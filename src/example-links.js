@@ -1,5 +1,10 @@
 export default [
   {
+    id: "l0",
+    text: "Link 0",
+    href: "/docs/navigation/sidebar",
+  },
+  {
     id: "l1",
     text: "Link 1",
     href: "/docs/navigation/sidebar",

@@ -53,7 +53,7 @@ function PopoutMenu({
           <PopoverButton
             className={`gw-z-[${
               level * 10 + 1
-            }] gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-text-sm gw-leading-6 gw-ps-1 focus:gw-outline-none`}
+            }] gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-leading-6 gw-ps-1 focus:gw-outline-none`}
           >
             <span>{title}</span>
             <ChevronIcon

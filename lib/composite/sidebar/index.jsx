@@ -26,32 +26,42 @@ function renderPopoutMenu(
   return (
     <div
       key={link.id}
-      className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
+      className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
     >
-      <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
-        {
-          <a
-            key={link.id}
-            href={link.href}
-            className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
-              isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-            }`}
-          >
-            {link.text}
-          </a>
-        }
-        <div className={"gw-overflow-y-auto gw-max-h-[50vh]"}>
-          {link?.children?.map((child) =>
-            renderPopoutMenu(
-              child,
-              selectedPath,
-              enablePopout,
-              popoutDirection,
-              level + 1
-            )
-          )}
-        </div>
-      </PopoutMenu>
+      {!link?.children ? (
+        <a
+          key={link.id}
+          href={link.href}
+          className="gw-z-20 gw-flex gw-items-center gw-px-1"
+        >
+          {link.text}
+        </a>
+      ) : (
+        <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
+          {
+            <a
+              key={link.id}
+              href={link.href}
+              className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
+                isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+              }`}
+            >
+              {link.text}
+            </a>
+          }
+          <div className={"gw-overflow-y-auto gw-max-h-[50vh]"}>
+            {link?.children?.map((child) =>
+              renderPopoutMenu(
+                child,
+                selectedPath,
+                enablePopout,
+                popoutDirection,
+                level + 1
+              )
+            )}
+          </div>
+        </PopoutMenu>
+      )}
     </div>
   );
 }
