@@ -4,7 +4,6 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
-import "./sidebar.css";
 
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
