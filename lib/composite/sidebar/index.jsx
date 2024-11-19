@@ -1,4 +1,4 @@
-import { UsaceBox, PopoutMenu } from "../../../lib";
+import { UsaceBox, PopoutMenu } from "../..";
 import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
@@ -6,73 +6,86 @@ import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
 import { useConnect } from "redux-bundler-hook";
 
+import "./sidebar.css"
+
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
+function handleClick(e) {
+  console.log("clicked4");
+}
+
 // Recursive function to render nested PopoutMenus
-function renderPopoutMenu(
-  link,
-  selectedPath,
-  enablePopout,
-  popoutDirection,
-  level = 0
-) {
-  const isSelected = selectedPath === link.href;
-  link.level = level;
-  if (level > MAX_NESTING_LEVEL) {
-    console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
-    return null;
-  }
-  if (
-    link.children &&
-    link.children.length > 0 &&
-    level < MAX_NESTING_LEVEL - 1
-  ) {
+function renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection, level = 0) {
+    const isSelected = selectedPath === link.href;
+  
+    if (level > MAX_NESTING_LEVEL) {
+      console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
+      return null;
+    }
+  
     return (
-      <div
-        key={link.id}
-        className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
-      >
-        <PopoutMenu title={link.text} direction={popoutDirection}>
-          {
-            <a
-              key={link.id}
-              href={link.href}
-              className={`gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-                } ${link.href ? "gw-cursor-pointer" : "gw-cursor-default"}`}
-            >
-              {link.text}
-            </a>
-          }
-          {link.children.map((child) =>
-            renderPopoutMenu(
-              child,
-              selectedPath,
-              enablePopout,
-              popoutDirection,
-              level + 1
-            )
-          )}
-        </PopoutMenu>
+      <div id="leftPane" className="col-md-3 backend-cp-fixed">
+        <div>
+          {/* Mobile Jump Menu */}
+          <div className="ac-jump-menu-wrapper ac-hide ac-show-mobile-only">
+            <div className="ac-jump-menu-success alert alert-success">
+              <i className="fas fa-spinner fa-spin"></i>Redirecting...
+            </div>
+            <select className="ac-jump-menu" id="mobilejumpmenu">
+              <option data-new-window="False" value="">
+                Select...
+              </option>
+              <option data-new-window="False" title={link.text} value={link.href}>
+                {link.text}
+              </option>
+              {link.children?.map((child) => (
+                <option
+                  key={child.id}
+                  data-new-window="False"
+                  title={child.text}
+                  value={child.href}
+                >
+                  {child.text}
+                </option>
+              ))}
+            </select>
+          </div>
+  
+          {/* Desktop Sidebar Menu */}
+          <div className="sidebar-container ac-hide ac-hide-mobile-only">
+            <ul className="sb-main-menu">
+              <li key={link.id}>
+                <a title={link.text} href={link.href}>
+                  {link.text}
+                </a>
+                {link.children && link.children.length > 0 && (
+                  <ul className="sb-sub-menu">
+                    {link.children.map((child) => (
+                      <li key={child.id}>
+                        <a href={child.href}>{child.text}</a>
+                        {child.children && child.children.length > 0 && (
+                          <ul className="sb-sub-menu">
+                            {child.children.map((subChild) => (
+                              <li key={subChild.id}>
+                                <a href={subChild.href}>{subChild.text}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
-
-  return (
-    <a href={link.href} key={link.id}>
-      <div
-        className={`gw-pl-1 ${(link?.children || link?.level === 0) &&
-          link?.level < MAX_NESTING_LEVEL - 1
-          ? "gw-text-lg gw-font-bold"
-          : "gw-border-b-[1px]"
-          } gw-py-1 gw-flex gw-justify-between gw-items-center ${link.href ? "gw-cursor-pointer hover:gw-bg-gray-100" : "gw-cursor-default"} ${isSelected ? "gw-bg-gray-50 gw-rounded" : ""
-          }`}
-      >
-        {link.text}
-      </div>
-    </a>
-  );
-}
+  
+  
 
 // Recursive function to render nested links without popout menus
 function renderRegularLinks(link, selectedPath, level = 0) {

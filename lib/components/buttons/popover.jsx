@@ -44,13 +44,9 @@ function PopoutMenu({ title, children, direction = "right", className }) {
     <Popover
       name="gw-popout-menu"
       className={`gw-relative gw-cursor-not-allowed gw-select-none ${className}`}
-      onClose={() => setIsOpen(false)}
     >
       <PopoverButton
         className="gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-text-sm gw-leading-6 gw-ps-1 focus:gw-outline-none"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
       >
         <span>{title}</span>
         <ChevronIcon aria-hidden="true" className="gw-h-5 gw-w-5" size={12} />
