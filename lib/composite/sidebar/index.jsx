@@ -9,13 +9,20 @@ const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
 // Recursive function to render nested PopoutMenus
-function renderPopoutMenu(
+function renderPopoutMenu({
   link,
   selectedPath,
   enablePopout,
-  popoutDirection,
-  level = 0
-) {
+  popoutDirection = "right",
+  maxScrollHeight = "50vh",
+  level = 0,
+}) {
+  if (typeof maxScrollHeight !== "string") {
+    console.warn(
+      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'"
+    );
+    maxScrollHeight = "50vh";
+  }
   const isSelected = selectedPath === link.href;
 
   if (level > MAX_NESTING_LEVEL) {
@@ -49,15 +56,20 @@ function renderPopoutMenu(
               {link.text}
             </a>
           }
-          <div className={"gw-overflow-y-auto gw-max-h-[50vh]"}>
+          {console.log(`gw-max-h-[${maxScrollHeight}]`)}
+          <div
+            className={`gw-overflow-y-auto`}
+            style={{ maxHeight: maxScrollHeight }}
+          >
             {link?.children?.map((child) =>
-              renderPopoutMenu(
-                child,
+              renderPopoutMenu({
+                link: child,
                 selectedPath,
                 enablePopout,
                 popoutDirection,
-                level + 1
-              )
+                maxScrollHeight,
+                level: level + 1,
+              })
             )}
           </div>
         </PopoutMenu>
@@ -115,7 +127,9 @@ function Sidebar({
   sidebarLinks,
   enablePopout,
   popoutDirection,
+  maxScrollHeight,
 }) {
+  console.log({ maxScrollHeight });
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
   const mobileNav = useRef(null);
@@ -161,7 +175,13 @@ function Sidebar({
     <UsaceBox ref={sidebarRef} title={title} id="sidebar">
       {sidebarLinks.map((link) => {
         return enablePopout
-          ? renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection)
+          ? renderPopoutMenu({
+              link,
+              selectedPath,
+              enablePopout,
+              maxScrollHeight,
+              popoutDirection,
+            })
           : renderRegularLinks(link, selectedPath);
       })}
     </UsaceBox>

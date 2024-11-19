@@ -77,6 +77,12 @@ const componentProps = [
     default: "null",
     desc: "Function to be called when the selected path changes. The function will be called with the new path as an argument.",
   },
+  {
+    name: "maxScrollHeight",
+    type: "string",
+    default: "50vh",
+    desc: "Set the max height the scrollbar should go to. If the list of links exceeds this height a scrollbar will appear. Accepts any valid CSS string.",
+  },
 ];
 
 function SidebarDocs() {
