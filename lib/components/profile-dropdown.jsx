@@ -19,9 +19,7 @@ function Gravatar({ email }) {
   );
   useEffect(() => {
     async function getGravatarUrl() {
-      console.log(email);
       const hash = await sha256(email);
-      console.log(hash);
       setGravatarUrl(`https://www.gravatar.com/avatar/${hash}?d=identicon`);
     }
     getGravatarUrl();

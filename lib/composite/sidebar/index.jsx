@@ -56,7 +56,6 @@ function renderPopoutMenu({
               {link.text}
             </a>
           }
-          {console.log(`gw-max-h-[${maxScrollHeight}]`)}
           <div
             className={`gw-overflow-y-auto`}
             style={{ maxHeight: maxScrollHeight }}
@@ -129,7 +128,6 @@ function Sidebar({
   popoutDirection,
   maxScrollHeight,
 }) {
-  console.log({ maxScrollHeight });
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
   const mobileNav = useRef(null);
