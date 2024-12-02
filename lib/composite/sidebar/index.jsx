@@ -1,76 +1,79 @@
-import { UsaceBox, PopoutMenu } from "../../../lib";
+import { UsaceBox, PopoutMenu } from "../..";
 import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
-import { useConnect } from "redux-bundler-hook";
 
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
 
 // Recursive function to render nested PopoutMenus
-function renderPopoutMenu(
+function renderPopoutMenu({
   link,
   selectedPath,
   enablePopout,
-  popoutDirection,
-  level = 0
-) {
+  popoutDirection = "right",
+  maxScrollHeight = "50vh",
+  level = 0,
+}) {
+  if (typeof maxScrollHeight !== "string") {
+    console.warn(
+      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'"
+    );
+    maxScrollHeight = "50vh";
+  }
   const isSelected = selectedPath === link.href;
-  link.level = level;
+
   if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
-  if (
-    link.children &&
-    link.children.length > 0 &&
-    level < MAX_NESTING_LEVEL - 1
-  ) {
-    return (
-      <div
-        key={link.id}
-        className="gw-py-1 gw-border-b-[1px]  hover:gw-bg-gray-100"
-      >
-        <PopoutMenu title={link.text} direction={popoutDirection}>
+
+  return (
+    <div
+      key={link.id}
+      className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
+    >
+      {!link?.children ? (
+        <a
+          key={link.id}
+          href={link.href}
+          className="gw-z-20 gw-flex gw-items-center gw-px-1"
+        >
+          {link.text}
+        </a>
+      ) : (
+        <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
           {
             <a
               key={link.id}
               href={link.href}
-              className={`gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-                } ${link.href ? "gw-cursor-pointer" : "gw-cursor-default"}`}
+              className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
+                isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+              }`}
             >
               {link.text}
             </a>
           }
-          {link.children.map((child) =>
-            renderPopoutMenu(
-              child,
-              selectedPath,
-              enablePopout,
-              popoutDirection,
-              level + 1
-            )
-          )}
+          <div
+            className={`gw-overflow-y-auto`}
+            style={{ maxHeight: maxScrollHeight }}
+          >
+            {link?.children?.map((child) =>
+              renderPopoutMenu({
+                link: child,
+                selectedPath,
+                enablePopout,
+                popoutDirection,
+                maxScrollHeight,
+                level: level + 1,
+              })
+            )}
+          </div>
         </PopoutMenu>
-      </div>
-    );
-  }
-
-  return (
-    <a href={link.href} key={link.id}>
-      <div
-        className={`gw-pl-1 ${(link?.children || link?.level === 0) &&
-          link?.level < MAX_NESTING_LEVEL - 1
-          ? "gw-text-lg gw-font-bold"
-          : "gw-border-b-[1px]"
-          } gw-py-1 gw-flex gw-justify-between gw-items-center ${link.href ? "gw-cursor-pointer hover:gw-bg-gray-100" : "gw-cursor-default"} ${isSelected ? "gw-bg-gray-50 gw-rounded" : ""
-          }`}
-      >
-        {link.text}
-      </div>
-    </a>
+      )}
+    </div>
   );
 }
 
@@ -86,20 +89,17 @@ function renderRegularLinks(link, selectedPath, level = 0) {
     <div key={link.id}>
       <a href={link.href}>
         <div
-          className={`gw-text-lg ${level === 0 ? "gw-font-bold" : ""
-            } gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center ${link?.href ? "gw-cursor-pointer hover:gw-bg-gray-100" : "gw-cursor-default"} ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""
-            }`}
+          className={`gw-text-lg ${
+            level === 0 ? "gw-font-bold" : ""
+          } gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center ${
+            link?.href
+              ? "gw-cursor-pointer hover:gw-bg-gray-100"
+              : "gw-cursor-default"
+          } ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""}`}
           style={indentation}
         >
           {link.text}
           {isSelected}
-          {(link.children) && (
-            <VscChevronRight
-              size={18}
-              aria-hidden="true"
-              color="rgb(156 163 175)"
-            />
-          )}
         </div>
       </a>
       {link.children && (
@@ -119,6 +119,7 @@ function Sidebar({
   sidebarLinks,
   enablePopout,
   popoutDirection,
+  maxScrollHeight,
 }) {
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
@@ -137,7 +138,7 @@ function Sidebar({
       <UsaceBox
         ref={sidebarRef}
         title={title}
-        className={"gw-text-sm"}
+        className={"gw-text-sm gw-my-5"}
         id="sidebar"
       >
         <div className="gw-w-full gw-m-auto gw-flex gw-justify-between gw-items-center gw-gap-2">
@@ -148,8 +149,8 @@ function Sidebar({
               mobileNav.current.href = e.target.value;
               mobileNav.current.click();
             }}
-            options={combinedLinks.map((link) => (
-              <option key={link.href} value={link.href} className="gw-pl-2">
+            options={combinedLinks.map((link, idx) => (
+              <option key={idx + link?.href + "-mobile-sidebar"} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
@@ -165,7 +166,13 @@ function Sidebar({
     <UsaceBox ref={sidebarRef} title={title} id="sidebar">
       {sidebarLinks.map((link) => {
         return enablePopout
-          ? renderPopoutMenu(link, selectedPath, enablePopout, popoutDirection)
+          ? renderPopoutMenu({
+              link,
+              selectedPath,
+              enablePopout,
+              maxScrollHeight,
+              popoutDirection,
+            })
           : renderRegularLinks(link, selectedPath);
       })}
     </UsaceBox>

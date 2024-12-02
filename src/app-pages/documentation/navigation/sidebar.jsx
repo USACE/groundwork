@@ -3,7 +3,8 @@ import CopyButton from "../../../app-components/copy-button";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
-import exampleLinks from "../../../example-links";
+import examplePopoutLinks from "../../../example-popout-links";
+import exampleRegularLinks from "../../../example-regular-links";
 
 const pageBreadcrumbs = [
   {
@@ -77,6 +78,12 @@ const componentProps = [
     default: "null",
     desc: "Function to be called when the selected path changes. The function will be called with the new path as an argument.",
   },
+  {
+    name: "maxScrollHeight",
+    type: "string",
+    default: "50vh",
+    desc: "Set the max height the scrollbar should go to. If the list of links exceeds this height a scrollbar will appear. Accepts any valid CSS string.",
+  },
 ];
 
 function SidebarDocs() {
@@ -107,7 +114,7 @@ function SidebarDocs() {
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
-                sidebarLinks={exampleLinks}
+                sidebarLinks={examplePopoutLinks}
                 enablePopout={true}
                 popoutDirection="right"
               />
@@ -125,7 +132,7 @@ function SidebarDocs() {
           <CodeExample
             code={`import { UsaceBox, Sidebar } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
-import sidebarLinks from "./sidebarLinks";
+import examplePopoutLinks from "./examplePopoutLinks";
 const currentPath = document.location.pathname;
 
 function Component() {
@@ -135,7 +142,7 @@ function Component() {
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
-                sidebarLinks={exampleLinks}
+                sidebarLinks={examplePopoutLinks}
                 enablePopout={true}
                 popoutDirection="right"
               />
@@ -157,7 +164,7 @@ export default Component;`}
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
-                sidebarLinks={exampleLinks}
+                sidebarLinks={exampleRegularLinks}
               />
             </div>
             <div className="gw-col-span-12 md:gw-col-span-10">
@@ -172,7 +179,7 @@ export default Component;`}
         <div>
           <CodeExample
             code={`import { UsaceBox, Sidebar } from "@usace/groundwork";
-import sidebarLinks from "./sidebarLinks";
+import exampleRegularLinks from "./exampleRegularLinks";
 const currentPath = document.location.pathname;
 
 function Component() {
@@ -182,7 +189,7 @@ function Component() {
                 <Sidebar 
                   title="Contents" 
                   selectedPath={currentPath}
-                  sidebarLinks={sidebarLinks}
+                  sidebarLinks={exampleRegularLinks}
                 />
             </div>
             <div className="col-span-12 md:col-span-10">
