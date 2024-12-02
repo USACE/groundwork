@@ -150,7 +150,7 @@ function Sidebar({
               mobileNav.current.click();
             }}
             options={combinedLinks.map((link, idx) => (
-              <option key={idx} value={link.href} className="gw-pl-2">
+              <option key={idx + link?.href + "-mobile-sidebar"} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
