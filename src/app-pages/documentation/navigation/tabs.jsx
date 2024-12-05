@@ -24,7 +24,7 @@ const componentProps = [
     name: "tabs",
     type: "array[Tab]",
     default: "[]",
-    desc: "An array of tabs to display. These are objects with the following properties: name, content, justify, leftSection, rightSection and are documented in the Tab type.",
+    desc: "An array of tabs to display. These are objects with the following properties: name, content, justify, leftSection, rightSection, onClick and are documented in the Tab type.",
   },
   {
     name: "fill",
@@ -154,7 +154,8 @@ export default Component;
         <H3 className="gw-mt-6 gw-pb-3">More Advanced Usage</H3>
         <Text>
           Add Icons or alerts to tabs, and change the justification to meet your
-          needs.
+          needs, and use the click handler to execute arbitrary code on when a
+          user clicks a tab, but use it carefully.
         </Text>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Tabs
@@ -178,6 +179,9 @@ export default Component;
                 justify: "space-between",
                 content: "Some special settings here",
                 rightSection: <VscSettingsGear />,
+                onClick: (e) => {
+                  window.alert(`You clicked me! Tab:${e.target.innerText}`);
+                },
               },
             ]}
           />
@@ -210,6 +214,9 @@ function Component() {
           justify: "space-between",
           content: "Some special settings here",
           rightSection: <VscSettingsGear />,
+          onClick: (e) => {
+            window.alert(\`You clicked me! Tab:\${e.target.innerText}\`);
+          },
         },
       ]}
     />
