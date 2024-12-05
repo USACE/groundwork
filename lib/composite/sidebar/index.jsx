@@ -129,7 +129,6 @@ function Sidebar({
   popoutDirection,
   maxScrollHeight,
 }) {
-  console.log({ maxScrollHeight });
   const isMobile = useIsMobile();
   const sidebarRef = useRef(null);
   const mobileNav = useRef(null);
