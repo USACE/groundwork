@@ -38,6 +38,7 @@ export * from "./components/display/badge";
 export * from "./components/display/accordion";
 
 // forms
+export * from "./components/form/dropdown";
 export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
