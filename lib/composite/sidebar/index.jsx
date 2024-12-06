@@ -56,7 +56,6 @@ function renderPopoutMenu({
               {link.text}
             </a>
           }
-          {console.log(`gw-max-h-[${maxScrollHeight}]`)}
           <div
             className={`gw-overflow-y-auto`}
             style={{ maxHeight: maxScrollHeight }}
@@ -101,13 +100,6 @@ function renderRegularLinks(link, selectedPath, level = 0) {
         >
           {link.text}
           {isSelected}
-          {link.children && (
-            <VscChevronRight
-              size={18}
-              aria-hidden="true"
-              color="rgb(156 163 175)"
-            />
-          )}
         </div>
       </a>
       {link.children && (
@@ -157,8 +149,8 @@ function Sidebar({
               mobileNav.current.href = e.target.value;
               mobileNav.current.click();
             }}
-            options={combinedLinks.map((link) => (
-              <option key={link.href} value={link.href} className="gw-pl-2">
+            options={combinedLinks.map((link, idx) => (
+              <option key={idx + link?.href + "-mobile-sidebar"} value={link.href} className="gw-pl-2">
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}

@@ -33,6 +33,12 @@ const tabProps = [
     default: "null",
     desc: "The content to be displayed when the tab is selected.",
   },
+  {
+    name: "onClick",
+    type: "function",
+    default: "undefined",
+    desc: "A click handler that will be attached to the tab, it will be fired just prior to the tab content being rendered",
+  },
 ];
 
 const pageBreadcrumbs = [

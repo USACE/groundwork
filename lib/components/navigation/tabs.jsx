@@ -8,6 +8,9 @@ function Tabs({ tabs, fill = false }) {
         {tabs.map((tab, idx) => (
           <Tab
             key={idx}
+            onClick={
+              typeof tab.onClick === "function" ? tab.onClick : undefined
+            }
             className={({ selected }) => {
               const base = "gw-px-4 gw-py-2 gw-shadow hover:gw-bg-gray-100";
               const fillCls = fill ? "gw-flex-auto" : "";
