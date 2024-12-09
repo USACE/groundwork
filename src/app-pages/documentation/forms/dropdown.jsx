@@ -110,9 +110,9 @@ function DropdownDocs() {
         { text: "Option 3", value: "option3" },
     ];
     return (
-     <div className="gw-w-[50%]">
+     <div className="w-[50%]">
         <Dropdown
-            className={"gw-w-5/6 gw-m-auto"}
+            className={"w-5/6 m-auto"}
             value={exampleOptions}
             onChange={(e) => {
                 alert("You selected: " + e.target.value);
@@ -122,7 +122,7 @@ function DropdownDocs() {
                     <option
                         key={option.value}
                         value={option.value}
-                        className="gw-pl-2"
+                        className="pl-2"
                     >
                     {option.text}
                 </option>
