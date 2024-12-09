@@ -167,6 +167,11 @@ export default [
     href: "/docs/forms",
     children: [
       {
+        id: "forms-dropdown",
+        text: "Dropdown",
+        href: "/docs/forms/dropdown",
+      },
+      {
         id: "fieldset",
         text: "Fieldset",
         href: "/docs/forms/fieldset",
