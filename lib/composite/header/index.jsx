@@ -4,7 +4,7 @@ import usaceLogo from "../../img/usace-logo-color.svg";
 import { Button } from "../../components/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
-import clsx from "clsx";
+import gwMerge from "../../gw-merge";
 
 function Title({ title = "", subtitle = "" }) {
   return (
@@ -42,7 +42,7 @@ function Logo() {
 
 function Header({ links, title, subtitle, navRight, fluidNav }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
-  const navContainerClass = clsx(
+  const navContainerClass = gwMerge(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
     fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl"
   );

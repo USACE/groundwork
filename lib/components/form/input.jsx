@@ -1,5 +1,5 @@
 import { Input as HeadlessInput } from "@headlessui/react";
-import { clsx } from "clsx";
+import gwMerge from "../../gw-merge";
 import { forwardRef } from "react";
 
 const dateTypes = ["date", "datetime-local", "month", "time", "week"];
@@ -8,7 +8,7 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
   return (
     <span
       data-slot="control"
-      className={clsx([
+      className={gwMerge([
         className,
 
         // Basic layout
@@ -32,7 +32,7 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
     >
       <HeadlessInput
         ref={ref}
-        className={clsx([
+        className={gwMerge([
           // Date classes
           props.type &&
             dateTypes.includes(props.type) && [

@@ -1,5 +1,5 @@
 import { Button as HeadlessButton } from "@headlessui/react";
-import { clsx } from "clsx";
+import gwMerge from "../gw-merge";
 import React from "react";
 import { Link } from "./link";
 
@@ -201,14 +201,14 @@ export const Button = React.forwardRef(function Button(
   },
   ref
 ) {
-  let classes = clsx(
+  let classes = gwMerge(
     base,
     // styles.base,
     // outline
     //   ? styles.outline
     //   : plain
     //   ? styles.plain
-    //   : clsx(styles.solid, styles.colors[color ?? "dark/zinc"]),
+    //   : gwMerge(styles.solid, styles.colors[color ?? "dark/zinc"]),
     radii[radius],
     sizes[size],
     style === "filled" ? colorsFilled[color] : "",
@@ -224,7 +224,7 @@ export const Button = React.forwardRef(function Button(
   ) : (
     <HeadlessButton
       {...props}
-      className={clsx(classes, "cursor-default")}
+      className={gwMerge(classes, "cursor-default")}
       ref={ref}
     >
       <TouchTarget>{children}</TouchTarget>

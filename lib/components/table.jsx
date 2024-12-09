@@ -1,6 +1,6 @@
 "use client";
 
-import { clsx } from "clsx";
+import gwMerge from "../gw-merge";
 import { createContext, useContext, useState } from "react";
 import { Link } from "./link";
 
@@ -25,13 +25,13 @@ export function Table({
       <div className="gw-flow-root">
         <div
           {...props}
-          className={clsx(
+          className={gwMerge(
             "gw--mx-[--gutter] gw-overflow-x-auto gw-whitespace-nowrap",
             className
           )}
         >
           <div
-            className={clsx(
+            className={gwMerge(
               "gw-inline-block gw-min-w-full gw-align-middle",
               !bleed && "sm:gw-px-[--gutter]"
             )}
@@ -49,7 +49,7 @@ export function Table({
 export function TableHead({ className, ...props }) {
   return (
     <thead
-      className={clsx("gw-text-zinc-500 dark:gw-text-zinc-400", className)}
+      className={gwMerge("gw-text-zinc-500 dark:gw-text-zinc-400", className)}
       {...props}
     />
   );
@@ -79,7 +79,7 @@ export function TableRow({
     <TableRowContext.Provider value={{ href, target, title }}>
       <tr
         {...props}
-        className={clsx(
+        className={gwMerge(
           href &&
             "has-[[data-row-link][data-focus]]:gw-outline has-[[data-row-link][data-focus]]:gw-outline-2 has-[[data-row-link][data-focus]]:gw--outline-offset-2 has-[[data-row-link][data-focus]]:gw-outline-blue-500 dark:focus-within:gw-bg-white/[2.5%]",
           striped && "even:gw-bg-zinc-950/[2.5%] dark:even:gw-bg-white/[2.5%]",
@@ -102,7 +102,7 @@ export function TableHeader({ className, ...props }) {
   return (
     <th
       {...props}
-      className={clsx(
+      className={gwMerge(
         "gw-border-b gw-border-b-zinc-950/10 gw-px-4 gw-py-2 gw-font-medium first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))] dark:gw-border-b-white/10",
         grid &&
           "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
@@ -124,7 +124,7 @@ export function TableCell({ className, children, ...props }) {
     <td
       ref={href ? setCellRef : undefined}
       {...props}
-      className={clsx(
+      className={gwMerge(
         "gw-relative gw-px-4 first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))]",
         !striped && "gw-border-b gw-border-zinc-950/5 dark:gw-border-white/5",
         grid &&
