@@ -1,5 +1,5 @@
 import { Textarea as HeadlessTextarea } from "@headlessui/react";
-import { clsx } from "clsx";
+import gwMerge from "../../gw-merge";
 import { forwardRef } from "react";
 
 export const Textarea = forwardRef(function Textarea(
@@ -9,7 +9,7 @@ export const Textarea = forwardRef(function Textarea(
   return (
     <span
       data-slot="control"
-      className={clsx([
+      className={gwMerge([
         className,
 
         // Basic layout
@@ -30,7 +30,7 @@ export const Textarea = forwardRef(function Textarea(
     >
       <HeadlessTextarea
         ref={ref}
-        className={clsx([
+        className={gwMerge([
           // Basic layout
           "gw-relative gw-block gw-h-full gw-w-full gw-appearance-none gw-rounded-lg gw-px-[calc(theme(spacing[3.5])-1px)] gw-py-[calc(theme(spacing[2.5])-1px)] sm:gw-px-[calc(theme(spacing.3)-1px)] sm:gw-py-[calc(theme(spacing[1.5])-1px)]",
 

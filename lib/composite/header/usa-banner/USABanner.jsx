@@ -1,5 +1,5 @@
 import { useState } from "react";
-import clsx from "clsx";
+import gwMerge from "../../../gw-merge";
 import "./usa-banner.css";
 import flag from "../../../img/us_flag_small.png";
 import iconDotGov from "../../../img/icon-dot-gov.svg";
@@ -11,7 +11,7 @@ function classNames(...classes) {
 
 const USABanner = ({ fluidNav }) => {
   const [open, setOpen] = useState(false);
-  const headerBannerInnerClass = clsx(
+  const headerBannerInnerClass = gwMerge(
     "header_banner_inner sm:gw-my-0 sm:gw-mx-auto sm:gw-font-sm",
     fluidNav ? "gw-max-w-screen" : "gw-px-4 gw-max-w-screen-2xl"
   );
