@@ -159,6 +159,11 @@ export default [
         text: "Card",
         href: "/docs/display/card",
       },
+      {
+        id: "progress-bar",
+        text: "Progress Bar",
+        href: "/docs/display/progress-bar",
+      },
     ],
   },
   {

@@ -25,6 +25,7 @@ import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
 import CardDocs from "../app-pages/documentation/display/card";
+import ProgressDocs from "../app-pages/documentation/display/progress-bar";
 import NotFound from "../app-pages/404";
 import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
@@ -79,6 +80,7 @@ export default createRouteBundle(
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
+    "/docs/display/progress-bar": ProgressDocs,
     "/docs/forms": Forms,
     "/docs/forms/dropdown": DropdownDocs,
     "/docs/forms/fieldset": FieldsetDocs,
