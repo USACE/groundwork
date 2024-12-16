@@ -36,6 +36,8 @@ export {
 export { Tabs } from "./components/navigation/tabs";
 export * from "./components/display/badge";
 export * from "./components/display/accordion";
+export { Link } from "./components/navigation/link";
+export { LinkProvider } from "./components/navigation/link-provider";
 
 // forms
 export * from "./components/form/dropdown";
