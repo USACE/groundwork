@@ -33,7 +33,7 @@ const ProgressBar = ({
           className
         )}
         style={{
-          width: `${progress}%`,
+          width: `${Math.round(progress)}%`,
           transition: `width ${baseDuration}ms ease-in-out`,
         }}
         {...props}
