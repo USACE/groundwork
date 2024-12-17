@@ -34,8 +34,6 @@ const componentProps = [
 ];
 
 function LinkProviderDocs() {
-  const currentPath = document.location.pathname;
-
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Link Provider">
