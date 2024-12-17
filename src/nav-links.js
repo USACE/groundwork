@@ -71,6 +71,11 @@ export default [
         href: "/docs/navigation/breadcrumbs",
       },
       {
+        id: "link-provider",
+        text: "Link Provider",
+        href: "/docs/navigation/link-provider",
+      },
+      {
         id: "tabs",
         text: "Tabs",
         href: "/docs/navigation/tabs",

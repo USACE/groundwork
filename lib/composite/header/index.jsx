@@ -5,6 +5,7 @@ import { Button } from "../../components/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import gwMerge from "../../gw-merge";
+import Link from "../../components/navigation/link";
 
 function Title({ title = "", subtitle = "" }) {
   return (
@@ -25,14 +26,14 @@ function Title({ title = "", subtitle = "" }) {
 function Logo() {
   return (
     <div className="gw-relative gw-w-[70px] sm:gw-w-[82px] gw-shrink-0 sm:gw-top-3">
-      <a href="/">
+      <Link href="/">
         <img
           className="gw-w-[50px] sm:gw-w-[60px] gw-h-auto"
           src={usaceLogo}
           alt="U.S. Army Corps of Engineers"
           aria-label="Visit the homepage of this site"
         />
-      </a>
+      </Link>
       <div className="gw-absolute gw-left-[55px] sm:gw-left-[65px] gw-bottom-[-10px] sm:gw-bottom-[-9px] gw-text-sm gw-text-gray-400">
         ®
       </div>

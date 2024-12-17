@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu } from "@headlessui/react";
 import { Fragment } from "react";
+import Link from "../../components/navigation/link";
 
 const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
@@ -24,9 +25,9 @@ function NavbarLinkItem({ link, ...props }) {
       onMouseOver={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <a href={link.href} className={menuButtonClass} {...props}>
+      <Link href={link.href} className={menuButtonClass} {...props}>
         {link.text}
-      </a>
+      </Link>
       {link.children && open && (
         <Menu.Items
           static
@@ -37,12 +38,12 @@ function NavbarLinkItem({ link, ...props }) {
             <Menu.Item key={child.id || child.text} as={Fragment}>
               {child.children ? (
                 <div className="gw-relative gw-group">
-                  <a
+                  <Link
                     href={child.href}
                     className="after:gw-content-['►'] after:gw-ml-2 after:gw-text-[10px] gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                   >
                     {child.text}
-                  </a>
+                  </Link>
                   <Menu.Items
                     static
                     as="ul"
@@ -55,24 +56,24 @@ function NavbarLinkItem({ link, ...props }) {
                         );
                       return (
                         <Menu.Item key={grandChild.id || grandChild.text}>
-                          <a
+                          <Link
                             href={grandChild.href}
                             className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                           >
                             {grandChild.text}
-                          </a>
+                          </Link>
                         </Menu.Item>
                       );
                     })}
                   </Menu.Items>
                 </div>
               ) : (
-                <a
+                <Link
                   href={child.href}
                   className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                 >
                   {child.text}
-                </a>
+                </Link>
               )}
             </Menu.Item>
           ))}

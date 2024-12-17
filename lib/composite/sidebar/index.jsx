@@ -4,6 +4,7 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
 import { flattenLinks } from "../../utils/paths";
+import Link from "../../components/navigation/link";
 
 const MAX_NESTING_LEVEL = 3;
 const NEST_WARNING_TEXT = `Maximum sidebar nesting level of ${MAX_NESTING_LEVEL} is exceeded for %s. To ensure a clean and readable sidebar, please reduce the nesting level of your links by moving some of them to the top level.`;
@@ -36,17 +37,17 @@ function renderPopoutMenu({
       className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
     >
       {!link?.children ? (
-        <a
+        <Link
           key={link.id}
           href={link.href}
           className="gw-z-20 gw-flex gw-items-center gw-px-1"
         >
           {link.text}
-        </a>
+        </Link>
       ) : (
         <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
           {
-            <a
+            <Link
               key={link.id}
               href={link.href}
               className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
@@ -54,7 +55,7 @@ function renderPopoutMenu({
               }`}
             >
               {link.text}
-            </a>
+            </Link>
           }
           <div
             className={`gw-overflow-y-auto`}
@@ -87,7 +88,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
   }
   return (
     <div key={link.id}>
-      <a href={link.href}>
+      <Link href={link.href}>
         <div
           className={`gw-text-lg ${
             level === 0 ? "gw-font-bold" : ""
@@ -101,7 +102,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
           {link.text}
           {isSelected}
         </div>
-      </a>
+      </Link>
       {link.children && (
         <div>
           {link.children.map((child) =>
@@ -156,7 +157,7 @@ function Sidebar({
             ))}
           />
           {/* Hidden anchor tag to trigger mobile nav for compatibility */}
-          <a className="hidden" href="#" ref={mobileNav} aria-hidden="true"></a>
+          <Link className="hidden" href="#" ref={mobileNav} aria-hidden="true"></Link>
         </div>
       </UsaceBox>
     );

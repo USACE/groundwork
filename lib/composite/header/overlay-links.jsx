@@ -2,15 +2,16 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { useState } from "react";
 import { Button } from "../../components/button";
 import { VscClose } from "react-icons/vsc";
+import Link from "../../components/navigation/link";
 
 function OverlayLink({ link, close }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="gw-flex gw-justify-between gw-items-center gw-text-white gw-text-xl gw-font-semibold gw-px-4 gw-py-2">
-        <a href={link.href} onClick={close}>
+        <Link href={link.href} onClick={close}>
           {link.text}
-        </a>
+        </Link>
         <span
           className="gw-grow"
           onClick={() => {
