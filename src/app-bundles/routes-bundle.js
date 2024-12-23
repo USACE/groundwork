@@ -44,6 +44,17 @@ import QuickStartGuide from "../app-pages/documentation/getting-started/quick-st
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
+import Mapping from "../app-pages/documentation/mapping";
+import MapDocs from "../app-pages/documentation/mapping/map";
+import LayerDocs from "../app-pages/documentation/mapping/layer";
+import GeoJSONLayerDocs from "../app-pages/documentation/mapping/geojson-layer";
+import MapServerDocs from "../app-pages/documentation/mapping/map-server";
+import FeatureServerDocs from "../app-pages/documentation/mapping/feature-server";
+import XYZTileLayerDocs from "../app-pages/documentation/mapping/XYZ-tile-layer";
+import ToolbarDocs from "../app-pages/documentation/mapping/toolbar";
+import ThemeDocs from "../app-pages/documentation/mapping/theme";
+import StyleDocs from "../app-pages/documentation/mapping/styling";
+import MapLayoutDocs from "../app-pages/documentation/mapping/map-layout";
 
 export default createRouteBundle(
   {
@@ -89,6 +100,17 @@ export default createRouteBundle(
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
+    "/docs/mapping": Mapping,
+    "/docs/mapping/map-layout": MapLayoutDocs,
+    "/docs/mapping/map": MapDocs,
+    "/docs/mapping/layer": LayerDocs,
+    "/docs/mapping/geojson-layer": GeoJSONLayerDocs,
+    "/docs/mapping/map-server": MapServerDocs,
+    "/docs/mapping/feature-server": FeatureServerDocs,
+    "/docs/mapping/tile-layer": XYZTileLayerDocs,
+    "/docs/mapping/toolbar": ToolbarDocs,
+    "/docs/mapping/theme": ThemeDocs,
+    "/docs/mapping/styles": StyleDocs,
     "/logout": Logout,
     "*": NotFound,
   },

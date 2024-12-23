@@ -220,4 +220,61 @@ export default [
       },
     ],
   },
+  {
+    id: "Mapping",
+    text: "Mapping",
+    href: "/docs/mapping",
+    children: [
+      {
+        id: "map-layout",
+        text: "Map Layout",
+        href: "/docs/mapping/map-layout",
+      },
+      {
+        id: "map",
+        text: "Map",
+        href: "/docs/mapping/map",
+      },
+      {
+        id: "layer",
+        text: "Layer",
+        href: "/docs/mapping/layer",
+      },
+      {
+        id: "geojson-layer",
+        text: "GeoJSON Layer",
+        href: "/docs/mapping/geojson-layer",
+      },
+      {
+        id: "feature-server",
+        text: "Feature Server",
+        href: "/docs/mapping/feature-server",
+      },
+      {
+        id: "map-server",
+        text: "Map Server",
+        href: "/docs/mapping/map-server",
+      },
+      {
+        id: "tile-layer",
+        text: "XYZ Tile Layer",
+        href: "/docs/mapping/tile-layer",
+      },
+      {
+        id: "toolbar",
+        text: "Toolbar",
+        href: "/docs/mapping/toolbar",
+      },
+      {
+        id: "theme",
+        text: "Theme",
+        href: "/docs/mapping/theme",
+      },
+      {
+        id: "styles",
+        text: "Styles",
+        href: "/docs/mapping/styles",
+      },
+    ]
+  }
 ];
