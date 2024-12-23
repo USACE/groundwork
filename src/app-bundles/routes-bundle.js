@@ -35,6 +35,7 @@ import TextInputDocs from "../app-pages/documentation/forms/text-input";
 import NumericInputDocs from "../app-pages/documentation/forms/numeric-inputs";
 import ColorInputDocs from "../app-pages/documentation/forms/color-input";
 import DateTimeInputDocs from "../app-pages/documentation/forms/date-time-inputs";
+import DropdownDocs from "../app-pages/documentation/forms/dropdown";
 import FileInputDocs from "../app-pages/documentation/forms/file-input";
 import FieldsetDocs from "../app-pages/documentation/forms/fieldset";
 import TextareaDocs from "../app-pages/documentation/forms/textarea";
@@ -90,6 +91,7 @@ export default createRouteBundle(
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
     "/docs/forms": Forms,
+    "/docs/forms/dropdown": DropdownDocs,
     "/docs/forms/fieldset": FieldsetDocs,
     "/docs/forms/text-inputs": TextInputDocs,
     "/docs/forms/textarea": TextareaDocs,
