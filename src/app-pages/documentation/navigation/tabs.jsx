@@ -32,6 +32,12 @@ const componentProps = [
     default: "false",
     desc: "If true, the tabs will expand to fill the width of their container.",
   },
+  {
+    name: "defaultIndex",
+    type: "number",
+    default: "0",
+    desc: "The index of the tab that should be active by default when the Tabs component renders.",
+  },
 ];
 
 function TabsDocs() {
@@ -104,6 +110,7 @@ export default Component;
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <Tabs
             fill
+            defaultIndex={1}
             tabs={[
               {
                 name: "Downloads",
@@ -128,6 +135,7 @@ function Component() {
   return (
     <Tabs
       fill
+      defaultIndex={1}
       tabs={[
         {
           name: "Downloads",
