@@ -9,7 +9,8 @@ function SiteWrapper({
   showFooter = true,
   links,
   usaBanner = true,
-  msgBanner: MsgBanner = false,
+  msgBanner = undefined,
+  msgBannerPosition = "top",
   title = "US Army Corps of Engineers",
   fluidNav = false,
   subtitle = "",
@@ -33,7 +34,7 @@ function SiteWrapper({
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
         {usaBanner && <USABanner fluidNav={fluidNav} />}
-        {MsgBanner && <MsgBanner fluidNav={fluidNav} />}
+        {msgBanner && msgBannerPosition === "top" ? msgBanner : null}
         <Header
           links={links}
           title={title}
@@ -41,6 +42,8 @@ function SiteWrapper({
           navRight={navRight}
           fluidNav={fluidNav}
         />
+
+        {msgBanner && msgBannerPosition === "bottom" ? msgBanner : null}
         {children}
       </div>
       {showFooter && (

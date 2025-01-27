@@ -41,7 +41,13 @@ const siteWrapperProps = [
     name: "msgBanner",
     type: "component",
     default: "null",
-    desc: "A custom component that will render between the government website banner and the header. This is useful for displaying a message banner that is specific to the site or page.",
+    desc: "A custom component that will render between the government website banner and the header or just below the header. This is useful for displaying a message banner that is specific to the site or page.",
+  },
+  {
+    name: "msgBannerPosition",
+    type: "string - 'top' || 'bottom'",
+    default: "'top'",
+    desc: "Specify if the msgBanner should be displayed above or below the header navigation sections. Must either be 'top' or 'bottom' any other value will cause the msgBanner to not be displayed.",
   },
   {
     name: "showFooter",
