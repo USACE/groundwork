@@ -65,6 +65,7 @@ function LinkProviderDocs() {
         </div>
 
         <H3 className="gw-pt-6 gw-pb-3">Link Provider for React Router</H3>
+        <Text className="gw-italic">client-router.jsx</Text>
         <div>
           <CodeExample
             code={`import { LinkProvider } from "@usace/groundwork";
@@ -95,6 +96,19 @@ function ClientRouter() {
 }
 
 export default ClientRouter;`}
+          />
+          <br />
+          <Text className="gw-italic">main.jsx</Text>
+          <CodeExample
+            code={`import React from "react";
+import ReactDOM from "react-dom/client";
+import ClientRouter from "client-router";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ClientRouter />
+  </React.StrictMode>
+);`}
           />
         </div>
 
