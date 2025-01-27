@@ -1,9 +1,9 @@
 import { Tab } from "@headlessui/react";
 import gwMerge from "../../gw-merge";
 
-function Tabs({ tabs, fill = false }) {
+function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
   return (
-    <Tab.Group defaultIndex={0}>
+    <Tab.Group defaultIndex={defaultIndex}>
       <Tab.List className="gw-flex gw-flex-wrap gw-gap-x-1 gw-text-gray-500 gw-font-semibold gw-border-b-2 gw-border-gray-300">
         {tabs.map((tab, idx) => (
           <Tab
