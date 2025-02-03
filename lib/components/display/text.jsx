@@ -1,5 +1,5 @@
 import gwMerge from "../../gw-merge";
-import { Link } from "../link";
+import Link from "../navigation/link";
 
 export function Text({ className, ...props }) {
   return (

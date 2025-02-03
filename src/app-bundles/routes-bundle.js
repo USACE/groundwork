@@ -46,6 +46,7 @@ import QuickStartGuide from "../app-pages/documentation/getting-started/quick-st
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
+import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 
 export default createRouteBundle(
   {
@@ -63,6 +64,7 @@ export default createRouteBundle(
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
+    "/docs/navigation/link-provider": LinkProviderDocs,
     "/docs/navigation/tabs": TabsDocs,
     "/docs/navigation/sidebar": Sidebar,
     "/docs/buttons": ButtonsDocs,
