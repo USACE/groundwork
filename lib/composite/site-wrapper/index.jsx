@@ -30,6 +30,13 @@ function SiteWrapper({
   showWarning = false,
   warningTimeout = undefined,
 }) {
+  // Warn developer that msgBannerPosition should either be top or bottom, but nothing else.
+  if (!["top", "bottom"].includes(messageBannerPosition)) {
+    console.warn(
+      "You must specify top or bottom for messageBannerPosition. Ignoring parameter"
+    );
+  }
+
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
