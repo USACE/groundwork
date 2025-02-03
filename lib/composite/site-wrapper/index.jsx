@@ -31,7 +31,7 @@ function SiteWrapper({
   warningTimeout = undefined,
 }) {
   // Warn developer that msgBannerPosition should either be top or bottom, but nothing else.
-  if (!["top", "bottom"].includes(messageBannerPosition)) {
+  if (!["top", "bottom"].includes(msgBannerPosition)) {
     console.warn(
       "You must specify top or bottom for messageBannerPosition. Ignoring parameter"
     );
