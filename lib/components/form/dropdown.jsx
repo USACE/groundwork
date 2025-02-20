@@ -29,8 +29,8 @@ function Dropdown({
         {label}
       </label>
       <select
-        id={label ? label : undefined}
-        name={label ? label : undefined}
+        id={label}
+        name={label}
         onChange={(e) => {
           setSelectedValue(e.target.value);
           onChange(e);
