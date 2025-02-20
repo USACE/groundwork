@@ -1,10 +1,11 @@
+import clsx from "clsx";
 import { useState } from "react";
 
 function Dropdown({
   label,
   options,
-  labelClassName,
-  className,
+  labelClassName="",
+  className="",
   onChange,
   ...props
 }) {
@@ -19,7 +20,11 @@ function Dropdown({
     <>
       <label
         htmlFor={label + "-id"}
-        className={`gw-block gw-text-sm gw-font-medium gw-leading-6 gw-text-gray-900 ${labelClassName}`}
+        
+        className={clsx(
+             'gw-block gw-text-sm gw-font-medium gw-leading-6 gw-text-gray-900',
+             labelClassName
+          )}
       >
         {label}
       </label>
@@ -30,7 +35,10 @@ function Dropdown({
           setSelectedValue(e.target.value);
           onChange(e);
         }}
-        className={`gw-mt-2 gw-block gw-w-full gw-rounded-md gw-border-0 gw-py-1.5 gw-pl-3 gw-pr-10 gw-text-gray-900 gw-ring-1 gw-ring-inset gw-ring-gray-300 focus:gw-ring-2 focus:gw-ring-indigo-600 sm:gw-text-sm sm:gw-leading-6 ${className}`}
+        className={clsx(
+            'gw-mt-2 gw-block gw-w-full gw-rounded-md gw-border-0 gw-py-1.5 gw-pl-3 gw-pr-10 gw-text-gray-900 gw-ring-1 gw-ring-inset gw-ring-gray-300 focus:gw-ring-2 focus:gw-ring-indigo-600 sm:gw-text-sm sm:gw-leading-6',
+            className
+        )}
         {...props}
         value={selectedValue}
       >
