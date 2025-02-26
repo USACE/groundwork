@@ -14,6 +14,7 @@ export * from "./components/display/headings";
 export * from "./components/table";
 export * from "./components/display/card";
 export * from "./components/profile-dropdown";
+export { Divider } from "./components/display/divider";
 export { Skeleton } from "./components/display/skeleton";
 export { ProgressBar } from "./components/display/progress-bar";
 
