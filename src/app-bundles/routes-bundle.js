@@ -47,6 +47,7 @@ import AddingTailwind from "../app-pages/documentation/getting-started/adding-ta
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
+import DividerDocs from "../app-pages/documentation/display/divider";
 
 export default createRouteBundle(
   {
@@ -75,6 +76,7 @@ export default createRouteBundle(
     "/docs/buttons/popout-menu": PopoutMenuDocs,
     "/docs/display": Display,
     "/docs/display/badge": BadgeDocs,
+    "/docs/display/divider": DividerDocs,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
     "/docs/display/skeleton": SkeletonDocs,
