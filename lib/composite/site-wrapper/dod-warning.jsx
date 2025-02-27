@@ -1,10 +1,3 @@
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  DialogBackdrop,
-} from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { Button } from "../../components/button";
 import Modal from "../../components/display/modal";
