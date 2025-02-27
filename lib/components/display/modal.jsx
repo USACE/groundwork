@@ -28,6 +28,17 @@ function Modal({
   className,
   children,
 }) {
+  // Check if the size exists
+  if (!WIDTH_CLASSES[size]) {
+    console.error(
+      `Invalid size prop: ${size}. Must be one of: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'`
+    );
+    console.warn(
+      `Defaulting to '2xl' for size of <Modal modalTitle="${dialogTitle}" .../>`
+    );
+    size = "2xl";
+  }
+
   return (
     <Dialog
       open={opened}
