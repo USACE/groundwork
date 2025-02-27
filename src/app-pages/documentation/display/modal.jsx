@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UsaceBox, Code, Modal, Button } from "../../../../lib";
+import { UsaceBox, Code, Modal, Button, Skeleton } from "../../../../lib";
 import CodeExample from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -68,19 +68,39 @@ const componentProps = [
 
 function ModalDocs() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [imageSrc, setImageSrc] = useState(
+    `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+  );
+
+  const refreshImage = () => {
+    setIsLoading(true);
+    setImageSrc(
+      `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+    );
+  };
+
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Modal Example">
         <Modal
           opened={isOpen}
           onClose={() => setIsOpen(false)}
-          dialogTitle="Modal Title"
-          dialogDescription="Modal Description"
+          dialogTitle="QPF Forecast"
+          dialogDescription="1-7 Day Quantitative Precipitation Forecast"
           size="2xl"
+          staticWidth={true}
           buttons={
             <div className="gw-flex gw-justify-end gw-gap-4">
-              <Button className="gw-w-full" onClick={() => setIsOpen(false)}>
-                I Agree
+              <Button
+                className="gw-w-full"
+                onClick={() => {
+                  refreshImage();
+                  setIsOpen(true);
+                }}
+              >
+                Refresh Image
               </Button>
               <Button
                 color="secondary"
@@ -92,23 +112,31 @@ function ModalDocs() {
             </div>
           }
         >
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nobis
-          pariatur, nulla aliquam aut ad! Atque, ab tempore, quasi delectus quae
-          neque eos alias doloribus quibusdam, voluptatem dignissimos libero
-          nemo! Odit praesentium doloribus molestias maiores laboriosam sed
-          esse, omnis corporis minima dolorum optio quam atque! Molestiae
-          deserunt ullam natus quae repellendus tempore sapiente quod totam
-          reprehenderit ipsa, unde cupiditate! Sunt. Ducimus officia quaerat
-          minus ea animi laborum earum dolorum nesciunt inventore atque qui,
-          enim veritatis cumque totam harum, sunt praesentium! Doloribus
-          perspiciatis, sequi soluta quia id mollitia dicta nemo porro. Ut quo
-          laborum illum numquam sed nulla repudiandae, consequuntur tempora
-          accusamus sequi cumque perspiciatis in eum soluta? Porro perferendis
-          impedit ipsam quia modi possimus, dolores illo hic, id placeat
-          deleniti! Consectetur cumque iure fugiat ea maxime! Alias vitae
-          dolorem, repudiandae odio sapiente quasi asperiores cupiditate ad
-          facilis tenetur ut ratione laborum libero eius et neque rerum
-          blanditiis itaque a nostrum.
+          <div>
+            {isLoading && (
+              <Skeleton className="gw-w-[80vw] gw-max-w-[800px] gw-h-[50vh]" />
+            )}
+            <img
+              alt="QPF"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "800px",
+                margin: "0 auto",
+                display: isLoading ? "none" : "block",
+              }}
+              src={imageSrc}
+              onLoad={() => {
+                console.log("done");
+                setIsLoading(false);
+              }}
+              onError={() => setIsLoading(false)}
+            />
+            <div className="gw-text-center">
+              Last Updated: {console.log(imageSrc?.split("?_=")[1])}
+              {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
+            </div>
+          </div>
         </Modal>
         <Button
           onClick={() => setIsOpen(true)}
@@ -123,18 +151,37 @@ function ModalDocs() {
 import { Modal, Button } from "@usace/groundwork";
 function Example() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [imageSrc, setImageSrc] = useState(
+    \`https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=\${new Date().getTime()}\`
+  );
+
+  const refreshImage = () => {
+    setIsLoading(true);
+    setImageSrc(
+      \`https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=\${new Date().getTime()}\`
+    );
+  };
   return (
-  <div>
+        <div>
          <Modal
           opened={isOpen}
           onClose={() => setIsOpen(false)}
-          dialogTitle="Modal Title"
-          dialogDescription="Modal Description"
+          dialogTitle="QPF Forecast"
+          dialogDescription="1-7 Day Quantitative Precipitation Forecast"
           size="2xl"
+          staticWidth={true}
           buttons={
             <div className="gw-flex gw-justify-end gw-gap-4">
-              <Button className="gw-w-full" onClick={() => setIsOpen(false)}>
-                I Agree
+              <Button
+                className="gw-w-full"
+                onClick={() => {
+                  refreshImage();
+                  setIsOpen(true);
+                }}
+              >
+                Refresh Image
               </Button>
               <Button
                 color="secondary"
@@ -146,13 +193,31 @@ function Example() {
             </div>
           }
         >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
-        nobis pariatur, nulla aliquam aut ad! Atque, ab tempore, quasi
-        delectus quae neque eos alias doloribus quibusdam, voluptatem
-        dignissimos libero nemo! Odit praesentium doloribus molestias
-        maiores laboriosam sed esse, omnis corporis minima dolorum optio
-        quam atque! Molestiae deserunt ullam natus quae repellendus tempore
-        sapiente quod totam reprehenderit ipsa, unde cupiditate! Sunt.
+          <div>
+            {isLoading && (
+              <Skeleton className="gw-w-[80vw] gw-max-w-[800px] gw-h-[50vh]" />
+            )}
+            <img
+              alt="QPF"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "800px",
+                margin: "0 auto",
+                display: isLoading ? "none" : "block",
+              }}
+              src={imageSrc}
+              onLoad={() => {
+                console.log("done");
+                setIsLoading(false);
+              }}
+              onError={() => setIsLoading(false)}
+            />
+            <div className="gw-text-center">
+              Last Updated: {console.log(imageSrc?.split("?_=")[1])}
+              {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
+            </div>
+          </div>
         </Modal>
         <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
     </div>
