@@ -79,6 +79,7 @@ function ModalDocs() {
     setImageSrc(
       `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
     );
+    setIsOpen(true);
   };
 
   return (
@@ -93,13 +94,7 @@ function ModalDocs() {
           staticWidth={true}
           buttons={
             <div className="gw-flex gw-justify-end gw-gap-4">
-              <Button
-                className="gw-w-full"
-                onClick={() => {
-                  refreshImage();
-                  setIsOpen(true);
-                }}
-              >
+              <Button className="gw-w-full" onClick={refreshImage}>
                 Refresh Image
               </Button>
               <Button
