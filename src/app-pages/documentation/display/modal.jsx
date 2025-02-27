@@ -127,13 +127,12 @@ function ModalDocs() {
               }}
               src={imageSrc}
               onLoad={() => {
-                console.log("done");
                 setIsLoading(false);
               }}
               onError={() => setIsLoading(false)}
             />
             <div className="gw-text-center">
-              Last Updated: {console.log(imageSrc?.split("?_=")[1])}
+              Last Updated:
               {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
             </div>
           </div>
@@ -208,13 +207,12 @@ function Example() {
               }}
               src={imageSrc}
               onLoad={() => {
-                console.log("done");
                 setIsLoading(false);
               }}
               onError={() => setIsLoading(false)}
             />
             <div className="gw-text-center">
-              Last Updated: {console.log(imageSrc?.split("?_=")[1])}
+              Last Updated:
               {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
             </div>
           </div>
