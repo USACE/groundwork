@@ -1,5 +1,4 @@
-import { UsaceBox, Code, Text, H3, H4, Badge } from "../../../../lib";
-import { CodeBlock } from "../../../app-components/code-block";
+import { UsaceBox, Code, Text, H3, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 
