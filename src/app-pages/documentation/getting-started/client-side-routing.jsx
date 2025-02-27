@@ -442,7 +442,6 @@ export default App;`}
 import { getNavHelper } from "internal-nav-helper";
 import { SiteWrapper, Container } from "@usace/groundwork";
 import "@usace/groundwork/dist/style.css";
-import react from '@vitejs/plugin-react';
 
 function App() {
   const { route: Route, doUpdateUrl } = useConnect(
