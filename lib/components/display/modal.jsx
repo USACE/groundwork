@@ -1,10 +1,10 @@
 import {
+  Description,
   Dialog,
-  DialogBackdrop,
   DialogPanel,
   DialogTitle,
+  DialogBackdrop,
 } from "@headlessui/react";
-import { Description } from "../form/fieldset";
 import gwMerge from "../../gw-merge";
 
 const WIDTH_CLASSES = {
@@ -49,12 +49,14 @@ function Modal({
             )}
           >
             {dialogTitle && (
-              <DialogTitle className="gw-font-bold">{dialogTitle}</DialogTitle>
+              <DialogTitle className="gw-font-bold gw-text-center">
+                {dialogTitle}
+              </DialogTitle>
             )}
             {dialogDescription && (
               <Description>{dialogDescription}</Description>
             )}
-            <p>{children}</p>
+            {children}
             {buttons}
           </DialogPanel>
         </div>
