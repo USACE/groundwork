@@ -130,6 +130,11 @@ export default [
         href: "/docs/display/badge",
       },
       {
+        id: "divider",
+        text: "Divider",
+        href: "/docs/display/divider",
+      },
+      {
         id: "headings",
         text: "Headings",
         href: "/docs/display/headings",
