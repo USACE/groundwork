@@ -18,6 +18,7 @@ export { Divider } from "./components/display/divider";
 export { Modal } from "./components/display/modal";
 export { Skeleton } from "./components/display/skeleton";
 export { ProgressBar } from "./components/display/progress-bar";
+export { Toast } from "./components/display/toast";
 
 // composite components
 export { Header } from "./composite/header";
