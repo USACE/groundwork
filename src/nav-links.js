@@ -160,6 +160,11 @@ export default [
         href: "/docs/display/table",
       },
       {
+        id: "toast",
+        text: "Toast",
+        href: "/docs/display/toast",
+      },
+      {
         id: "accordion",
         text: "Accordion",
         href: "/docs/display/accordion",

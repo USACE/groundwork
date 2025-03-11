@@ -48,6 +48,7 @@ import ClientSideRouting from "../app-pages/documentation/getting-started/client
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 import DividerDocs from "../app-pages/documentation/display/divider";
+import ToastDocs from "../app-pages/documentation/display/toast";
 
 export default createRouteBundle(
   {
@@ -82,6 +83,7 @@ export default createRouteBundle(
     "/docs/display/skeleton": SkeletonDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
+    "/docs/display/toast": ToastDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
     "/docs/display/progress-bar": ProgressDocs,

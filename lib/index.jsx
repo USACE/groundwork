@@ -17,6 +17,7 @@ export * from "./components/profile-dropdown";
 export { Divider } from "./components/display/divider";
 export { Skeleton } from "./components/display/skeleton";
 export { ProgressBar } from "./components/display/progress-bar";
+export { Toast } from "./components/display/toast";
 
 // composite components
 export { Header } from "./composite/header";
