@@ -12,6 +12,8 @@ function Accordion({
   children,
   id
 }) {
+  // Generate a random id if one is not provided
+  const randomId = id || `accordion-panel-${btoa(Math.random().toString()).substring(5,15)}`;
   return (
     <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => {
@@ -35,7 +37,7 @@ function Accordion({
             <DisclosurePanel
               className="gw-shadow"
               unmount={unmountOnClose}
-              id={id || undefined}
+              id={randomId}
             >
               {children}
             </DisclosurePanel>
