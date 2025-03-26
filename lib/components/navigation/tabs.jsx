@@ -1,10 +1,10 @@
-import { Tab } from "@headlessui/react";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import gwMerge from "../../gw-merge";
 
-function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
+function Tabs({ tabs, fill = false, defaultIndex = 0}) {
   return (
-    <Tab.Group defaultIndex={defaultIndex}>
-      <Tab.List className="gw-flex gw-flex-wrap gw-gap-x-1 gw-text-gray-500 gw-font-semibold gw-border-b-2 gw-border-gray-300">
+    <TabGroup defaultIndex={defaultIndex}>
+      <TabList className="gw-flex gw-flex-wrap gw-gap-x-1 gw-text-gray-500 gw-font-semibold gw-border-b-2 gw-border-gray-300">
         {tabs.map((tab, idx) => (
           <Tab
             key={idx}
@@ -36,15 +36,15 @@ function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
             </span>
           </Tab>
         ))}
-      </Tab.List>
-      <Tab.Panels>
+      </TabList>
+      <TabPanels>
         {tabs.map((tab) => (
-          <Tab.Panel key={tab.name} className="gw-bg-white gw-p-0">
+          <TabPanel key={tab.name} className="gw-bg-white gw-p-0">
             {tab.content}
-          </Tab.Panel>
+          </TabPanel>
         ))}
-      </Tab.Panels>
-    </Tab.Group>
+      </TabPanels>
+    </TabGroup>
   );
 }
 
