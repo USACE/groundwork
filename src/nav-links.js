@@ -160,6 +160,11 @@ export default [
         href: "/docs/display/table",
       },
       {
+        id: "modal",
+        text: "Modal",
+        href: "/docs/display/modal",
+      },
+      {
         id: "accordion",
         text: "Accordion",
         href: "/docs/display/accordion",
