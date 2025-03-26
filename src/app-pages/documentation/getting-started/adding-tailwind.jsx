@@ -1,4 +1,4 @@
-import { UsaceBox, Code, Text, H3, H4 } from "../../../../lib";
+import { UsaceBox, Code, Text, H3, H4, Divider, Badge } from "../../../../lib";
 import { CodeBlock } from "../../../app-components/code-block";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
@@ -50,7 +50,14 @@ function AddingTailwind() {
             . The following is a quick guide to adding Tailwind to a new
             project, coming straight from the Tailwind documentation.
           </P>
-
+          <Divider text={<Badge color="red">DISCLAIMER</Badge>} />
+          <p>
+          Tailwind does CSS resets on many base level tags for cross browser support see <a href="https://tailwindcss.com/docs/preflight" target="_blank" rel="no-referrer" aria-label="Tailwind preflight documentation" className="gw-underline">Preflight</a> for more information.
+          </p>
+          <P>
+          It is NOT recommended to use multiple CSS frameworks due to CSS overwriting each other / naming conflicts. <b>Do this at your own risk.</b> Groundwork expects you to be using Vanilla CSS or Tailwind for all your styling needs.
+          </P>
+          <Divider />
           <H3 className="gw-mt-6">Install and Configure Tailwind</H3>
           <P>
             Install <Code>tailwindcss</Code> and its peer dependencies, then use
