@@ -55,6 +55,18 @@ const componentProps = [
       default: "'success'",
       desc: "Determines the default icon and color theme used in the toast and progress bar.",
     },
+    {
+        name: "showProgress",
+        type: "boolean",
+        default: "true",
+        desc: "Whether to show the progress bar. If false, the progress bar will not be displayed.",
+    },
+    {
+        name: "baseDuration",
+        type: "number",
+        default: "300",
+        desc: "Base duration in milliseconds for the transition of the progress bar. This can be used to customize the speed of the progress bar animation.",
+    }
   ];
   
 
@@ -86,8 +98,7 @@ function ToastDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <Toast durationMS={20000} show={showToast} onShow={setShowToast} title={toastState?.title} description={toastState?.description} status={toastState?.status} icon={toastState?.icon ? toastState.icon : null} />
-
+        <Toast durationMS={5000} show={showToast} onShow={setShowToast} title={toastState?.title} description={toastState?.description} status={toastState?.status} icon={toastState?.icon ? toastState.icon : null} />
         <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {buttonStates.map((state => (
                 <Button key={state.color} color={state.color} onClick={() => {

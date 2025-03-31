@@ -7,28 +7,64 @@ import gwMerge from "../../gw-merge";
 import ProgressBar from "./progress-bar";
 
 const STATUS_ICONS = {
-  success: {icon: CiCircleCheck, className: "gw-text-green-400"},
-    error: {icon: GoStop, className: "gw-text-red-400"},
-    info: {icon: CiCircleInfo, className: "gw-text-blue-400"},
-    warning: {icon: CiWarning, className: "gw-text-yellow-400"},
+  success: {icon: CiCircleCheck, className: "gw-text-green-400", backgroundColor: "gw-bg-green-400"}, 
+    error: {icon: GoStop, className: "gw-text-red-400", backgroundColor: "gw-bg-red-400"},
+    info: {icon: CiCircleInfo, className: "gw-text-blue-400", backgroundColor: "gw-bg-blue-400"},
+    warning: {icon: CiWarning, className: "gw-text-yellow-400", backgroundColor: "gw-bg-yellow-400"},
     undefined: {icon: CiCircleCheck, className: undefined},
   
 };
-function Toast({ title, description, icon, durationMS=5000, show, onShow, status = "success" }) {
+function Toast({ title, description, icon, baseDuration, durationMS=5000, show, onShow, status = "success", showProgress = true }) {
   if (!status) status = "success"
 
+  
   const [progress, setProgress] = useState(0)
 
+  // Reset progress when the toast is shown
+  // This ensures that the progress bar starts from 0 every time the toast is displayed
+  useEffect(() => {
+    if (show) {
+      setProgress(0);
+    }
+    let toastCount = document.querySelectorAll('[name="toast-notification"]').length
+    if (toastCount > 1) {
+        console.warn(
+            `There are multiple toast notifications on the page. This can lead to unexpected behavior. Please ensure only one toast notification component is mounted at a time. This is to ensure that the progress bar and close behavior works as expected. Current count: ${toastCount}`
+            );
+        }
+  }, [show]);
+
   
-  setTimeout(() => {
-        setProgress(progress + 1 > 100 ? 0 : progress + 1);
-    }, durationMS);
+  useEffect(() => {
+    if (!show || durationMS === 0 || !showProgress) return;
+  
+    const intervalMS = 50;
+    const steps = durationMS / intervalMS;
+  
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        const next = prev + 100 / steps;
+        if (next >= 101) {
+          clearInterval(interval);
+          // Reset progress once completed
+          return 100;
+        }
+        return next;
+      });
+    }, intervalMS);
+  
+    return () => clearInterval(interval);
+  }, [show, durationMS, showProgress]);
 
   useEffect(() => {
     // Handle the close timer based on if durationMS is set
     if (durationMS && onShow) {
         const timer = setTimeout(() => {
-            onShow(false);
+            // slight delay to let the bar hit 100% smoothly
+            if (onShow) setTimeout(() => {
+                onShow(false);
+                setProgress(0)
+              }, 300); 
         }, durationMS);
         return () => clearTimeout(timer);
     }
@@ -43,6 +79,8 @@ function Toast({ title, description, icon, durationMS=5000, show, onShow, status
   return (
       <div
         aria-live="assertive"
+        name="toast-notification"
+        role="alert"
         className="gw-pointer-events-none gw-fixed gw-left-0 gw-top-[10rem] gw-w-full gw-flex gw-items-start gw-px-4 gw-py-6 sm:gw-items-start sm:gw-p-6 gw-z-[9999]"
       >
         <div className="gw-flex gw-w-full gw-flex-col gw-items-center gw-space-y-4 sm:gw-items-end">
@@ -55,9 +93,8 @@ function Toast({ title, description, icon, durationMS=5000, show, onShow, status
                 "gw-data-[enter]:gw-ease-out data-[leave]:gw-ease-in data-[closed]:data-[enter]:sm:gw-translate-x-2 data-[closed]:data-[enter]:sm:gw-translate-y-0"
               )}
             >
-                <ProgressBar bgColor={STATUS_ICONS[status]?.className} durationMS={durationMS} progress={progress} />
               <div className="gw-p-4">
-                <div className="gw-flex gw-items-start">
+                <div className="gw-flex gw-items-start gw-mb-2">
                   <div className="gw-shrink-0">
                     {/* <CheckCircleIcon aria-hidden="true"  /> */}
                     {React.createElement(icon ? icon : STATUS_ICONS[status]?.icon, { className: gwMerge(`gw-size-12`, STATUS_ICONS[status]?.className) })}
@@ -87,6 +124,7 @@ function Toast({ title, description, icon, durationMS=5000, show, onShow, status
                     </button>
                   </div>
                 </div>
+                { showProgress && <ProgressBar hideOnDone={false} bgColor={STATUS_ICONS[status]?.backgroundColor} baseDuration={baseDuration} progress={progress} />}
               </div>
             </div>
           </Transition>
