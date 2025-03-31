@@ -13,13 +13,50 @@ const pageBreadcrumbs = [
 ];
 
 const componentProps = [
-  {
-    name: "heading",
-    type: "string | component",
-    default: "undefined",
-    desc: "The header of the accordion. Can be plain text or a custom component.",
-  },
-];
+    {
+      name: "title",
+      type: "string",
+      default: "''",
+      desc: "Main heading text shown in the toast. Required.",
+    },
+    {
+      name: "description",
+      type: "string",
+      default: "''",
+      desc: "Secondary text providing more details about the toast. Required.",
+    },
+    {
+      name: "icon",
+      type: "React.ElementType",
+      default: "undefined",
+      desc: "Optional custom icon component to display. If not provided, an icon is chosen based on `status`.",
+    },
+    {
+      name: "durationMS",
+      type: "number",
+      default: "5000",
+      desc: "Time in milliseconds before the toast automatically disappears. Also controls the progress bar duration.",
+    },
+    {
+      name: "show",
+      type: "boolean",
+      default: "false",
+      desc: "Whether the toast is visible. Controls transition and rendering.",
+    },
+    {
+      name: "onShow",
+      type: "(visible: boolean) => void",
+      default: "undefined",
+      desc: "Callback triggered when the toast should be hidden. Typically used to update state in the parent.",
+    },
+    {
+      name: "status",
+      type: "'success' | 'error' | 'info' | 'warning' | undefined",
+      default: "'success'",
+      desc: "Determines the default icon and color theme used in the toast and progress bar.",
+    },
+  ];
+  
 
 const buttonStates = [
     { color: "green", text: "Success", description: "This is a success message.", status: "success" },
@@ -49,7 +86,7 @@ function ToastDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <Toast show={showToast} onShow={setShowToast} title={toastState?.title} description={toastState?.description} status={toastState?.status} icon={toastState?.icon ? toastState.icon : null} />
+        <Toast durationMS={20000} show={showToast} onShow={setShowToast} title={toastState?.title} description={toastState?.description} status={toastState?.status} icon={toastState?.icon ? toastState.icon : null} />
 
         <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {buttonStates.map((state => (
@@ -65,50 +102,38 @@ function ToastDocs() {
             ))
             )}
         </div>
-        <Button color="green" onClick={() => {
-            setToastState({
-                title: "Success",
-                description: "This is a success message.",
-                status: "success", 
-            })
-            setShowToast(true)
-        }} className="gw-my-5">Show Toast</Button>
-        <Button color="red" onClick={() => {
-            setToastState({
-                title: "Error",
-                description: "This is an error message.",
-                status: "error"
-            })
-            setShowToast(true)
-        }} className="gw-my-5">Show Toast</Button>
-        <Button color="blue" onClick={() => {
-            setToastState({
-                title: "Info",
-                description: "This is an info message.",
-                status: "info"
-            })
-            setShowToast(true)
-        }} className="gw-my-5">Show Toast</Button>
-        <Button color="yellow" onClick={() => {
-            setToastState({
-                title: "Warning",
-                description: "This is a warning message.",
-                status: "warning"
-            })
-            setShowToast(true)
-        }} className="gw-my-5">Show Toast</Button>
-        <Button color="purple" onClick={() => {
-            setToastState({
-                title: "Cloudy Night",
-                description: "Clouds tonight with a custom icon!",
-                status: "info",
-                icon: IoCloudyNight
-            })
-            setShowToast(true)
-        }} className="gw-my-5"  >🌙 Custom Icon Toast</Button>
         {/* Example code */}
         <CodeExample
-          code={`
+          code={`import { useState } from "react";
+import { UsaceBox, Toast, Button } from "@usace/groundwork";
+
+function ToastExample() {
+    const [showToast, setShowToast] = useState(false)
+    const [toastState, setToastState] = useState({
+        title: "Toast Title",
+        description: "This is a toast message.",
+        status: "success"
+    })
+    
+    function updateToast() {
+        // Update the toast state with new values
+        // You could call this in any hook or function to update the toast dynamically
+        // The button below demonstrates this
+        setToastState({
+            title: "Updated Toast Title",
+            description: "This is an updated toast message.",
+            status: "info" // You can change the status as needed
+        });
+        // Show the toast
+        setShowToast(true);
+    }
+
+    return (
+        <Button color="blue" onClick={updateToast} className="my-5">
+            Show Toast
+        </Button>
+    )
+}
 `}
         />
         {/* Component props documentation */}
