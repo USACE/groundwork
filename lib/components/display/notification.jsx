@@ -11,13 +11,10 @@ const STATUS_ICONS = {
   error: {icon: GoStop, className: "gw-text-red-400", backgroundColor: "gw-bg-red-400"},
   info: {icon: CiCircleInfo, className: "gw-text-blue-400", backgroundColor: "gw-bg-blue-400"},
   warning: {icon: CiWarning, className: "gw-text-yellow-400", backgroundColor: "gw-bg-yellow-400"},
-  undefined: {icon: CiCircleCheck, className: undefined},
+  undefined: {icon: CiCircleCheck, className: "gw-text-gray-400", backgroundColor: "gw-bg-gray-400"},
 };
 
 function Notification({ title, description, icon, baseDuration, durationMS, show, onShow, status = "success", showProgress = true }) {
-  if (!status) status = "success"
-
-  
   const [progress, setProgress] = useState(100)
 
   // Reset progress when the notification is shown
@@ -57,19 +54,14 @@ function Notification({ title, description, icon, baseDuration, durationMS, show
   }, [show, durationMS, showProgress]);
 
   useEffect(() => {
-    // Handle the close timer based on if durationMS is set
-    if (durationMS && onShow) {
-        const timer = setTimeout(() => {
-            // slight delay to let the bar hit 100% smoothly
-            if (onShow) setTimeout(() => {
-                onShow(false);
-                setProgress(100)
-              }, 300); 
-        }, durationMS);
-        return () => clearTimeout(timer);
-    }
-
-
+    if (!durationMS || !onShow || !show) return;
+  
+    const timer = setTimeout(() => {
+      onShow(false);
+      setProgress(100);
+    }, durationMS + 300);
+  
+    return () => clearTimeout(timer);
   }, [durationMS, onShow, show]);
 
   if (!title || !description) {
