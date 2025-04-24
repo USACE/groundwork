@@ -14,7 +14,7 @@ const STATUS_ICONS = {
     undefined: {icon: CiCircleCheck, className: undefined},
   
 };
-function Notification({ title, description, icon, baseDuration, durationMS=5000, show, onShow, status = "success", showProgress = true }) {
+function Notification({ title, description, icon, baseDuration, durationMS, show, onShow, status = "success", showProgress = true }) {
   if (!status) status = "success"
 
   
@@ -36,7 +36,7 @@ function Notification({ title, description, icon, baseDuration, durationMS=5000,
 
   
   useEffect(() => {
-    if (!show || durationMS === 0 || !showProgress) return;
+    if (!show || !durationMS || !showProgress ) return;
   
     const intervalMS = 50;
     const steps = durationMS / intervalMS;
@@ -124,7 +124,7 @@ function Notification({ title, description, icon, baseDuration, durationMS=5000,
                     </button>
                   </div>
                 </div>
-                { showProgress && <ProgressBar hideOnDone={false} bgColor={STATUS_ICONS[status]?.backgroundColor} baseDuration={baseDuration} progress={progress} />}
+                { durationMS && showProgress && <ProgressBar hideOnDone={false} bgColor={STATUS_ICONS[status]?.backgroundColor} baseDuration={baseDuration} progress={progress} />}
               </div>
             </div>
           </Transition>
