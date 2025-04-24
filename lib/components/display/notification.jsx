@@ -8,23 +8,23 @@ import ProgressBar from "./progress-bar";
 
 const STATUS_ICONS = {
   success: {icon: CiCircleCheck, className: "gw-text-green-400", backgroundColor: "gw-bg-green-400"}, 
-    error: {icon: GoStop, className: "gw-text-red-400", backgroundColor: "gw-bg-red-400"},
-    info: {icon: CiCircleInfo, className: "gw-text-blue-400", backgroundColor: "gw-bg-blue-400"},
-    warning: {icon: CiWarning, className: "gw-text-yellow-400", backgroundColor: "gw-bg-yellow-400"},
-    undefined: {icon: CiCircleCheck, className: undefined},
-  
+  error: {icon: GoStop, className: "gw-text-red-400", backgroundColor: "gw-bg-red-400"},
+  info: {icon: CiCircleInfo, className: "gw-text-blue-400", backgroundColor: "gw-bg-blue-400"},
+  warning: {icon: CiWarning, className: "gw-text-yellow-400", backgroundColor: "gw-bg-yellow-400"},
+  undefined: {icon: CiCircleCheck, className: undefined},
 };
+
 function Notification({ title, description, icon, baseDuration, durationMS, show, onShow, status = "success", showProgress = true }) {
   if (!status) status = "success"
 
   
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(100)
 
   // Reset progress when the notification is shown
   // This ensures that the progress bar starts from 0 every time the notification is displayed
   useEffect(() => {
     if (show) {
-      setProgress(0);
+      setProgress(100);
     }
     let notificationCount = document.querySelectorAll('[name="notification"]').length
     if (notificationCount > 1) {
@@ -43,11 +43,11 @@ function Notification({ title, description, icon, baseDuration, durationMS, show
   
     const interval = setInterval(() => {
       setProgress(prev => {
-        const next = prev + 100 / steps;
-        if (next >= 101) {
+        const next = prev - 100 / steps;
+        if (next <= 0) {
           clearInterval(interval);
           // Reset progress once completed
-          return 100;
+          return 0;
         }
         return next;
       });
@@ -63,7 +63,7 @@ function Notification({ title, description, icon, baseDuration, durationMS, show
             // slight delay to let the bar hit 100% smoothly
             if (onShow) setTimeout(() => {
                 onShow(false);
-                setProgress(0)
+                setProgress(100)
               }, 300); 
         }, durationMS);
         return () => clearTimeout(timer);
