@@ -97,13 +97,17 @@ function NotificationDocs() {
             state.
           </Text>
         </div>
+        <Divider text="Alternatives" />
+        <Text>
+          Consider <a className="gw-underline" href="https://fkhadra.github.io/react-toastify/introduction/" target="_blank" rel="noopener noreferrer">react-toastify</a> for more complex notifications or alerts that require multiple messages to be displayed at once.
+        </Text>
         <Divider text="Usage" />
         <Text>
           The notification component is used to display a message to the user. It can be used to show success, error, info, warning, or even custom messages. It will remain open by default or it can be set to close automatically after a specified duration.
           </Text>
         {/* Example usage - remove if not needed */}
-        <Divider text="Example" />
-        <Notification durationMS={5000} show={showNotification} onShow={setShowNotification} title={notificationState?.title} description={notificationState?.description} status={notificationState?.status} icon={notificationState?.icon ? notificationState.icon : null} />
+        <Divider text="Examples" />
+        <Notification show={showNotification} onShow={setShowNotification} title={notificationState?.title} description={notificationState?.description} status={notificationState?.status} icon={notificationState?.icon ? notificationState.icon : null} />
         <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {buttonStates.map((state => (
                 <Button key={state.color} color={state.color} onClick={() => {
