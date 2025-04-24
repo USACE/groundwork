@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UsaceBox, Code, Text, Notification, Button } from "../../../../lib";
+import { UsaceBox, Code, Text, Notification, Button, Divider } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -91,13 +91,18 @@ function NotificationDocs() {
       <UsaceBox title="Notification Messages">
         {/* Description of the component and what problem it solves */}
         <div className="gw-pb-6">
-          <Text>
-            Notification messages are used to display short messages to the user. They are typically used to provide feedback
-            to the user about an action they have taken or to inform them of a change in the application
+          <Text >
+            Notification messages are used to display popup messages to the user. They are typically used to provide feedback
+            about an action they have taken or to inform them of a change in the application
             state.
           </Text>
         </div>
+        <Divider text="Usage" />
+        <Text>
+          The notification component is used to display a message to the user. It can be used to show success, error, info, warning, or even custom messages. It will remain open by default or it can be set to close automatically after a specified duration.
+          </Text>
         {/* Example usage - remove if not needed */}
+        <Divider text="Example" />
         <Notification durationMS={5000} show={showNotification} onShow={setShowNotification} title={notificationState?.title} description={notificationState?.description} status={notificationState?.status} icon={notificationState?.icon ? notificationState.icon : null} />
         <div className="gw-flex gw-flex-row gw-flex-wrap gw-gap-3">
             {buttonStates.map((state => (
@@ -149,7 +154,7 @@ function NotificationExample() {
         />
         {/* Component props documentation */}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Accordion />`}</Code>
+          Component API - <Code className="gw-p-2">{`<Notification />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>
