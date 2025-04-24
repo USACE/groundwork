@@ -49,7 +49,7 @@ import PackageMaintenance from "../app-pages/documentation/getting-started/packa
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
-import ToastDocs from "../app-pages/documentation/display/toast";
+import NotificationDocs from "../app-pages/documentation/display/notification";
 
 export default createRouteBundle(
   {
@@ -84,7 +84,7 @@ export default createRouteBundle(
     "/docs/display/skeleton": SkeletonDocs,
     "/docs/display/text": TextDocs,
     "/docs/display/table": TableDocs,
-    "/docs/display/toast": ToastDocs,
+    "/docs/display/notification": NotificationDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
     "/docs/display/modal": ModalDocs,

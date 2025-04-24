@@ -14,22 +14,22 @@ const STATUS_ICONS = {
     undefined: {icon: CiCircleCheck, className: undefined},
   
 };
-function Toast({ title, description, icon, baseDuration, durationMS=5000, show, onShow, status = "success", showProgress = true }) {
+function Notification({ title, description, icon, baseDuration, durationMS=5000, show, onShow, status = "success", showProgress = true }) {
   if (!status) status = "success"
 
   
   const [progress, setProgress] = useState(0)
 
-  // Reset progress when the toast is shown
-  // This ensures that the progress bar starts from 0 every time the toast is displayed
+  // Reset progress when the notification is shown
+  // This ensures that the progress bar starts from 0 every time the notification is displayed
   useEffect(() => {
     if (show) {
       setProgress(0);
     }
-    let toastCount = document.querySelectorAll('[name="toast-notification"]').length
-    if (toastCount > 1) {
+    let notificationCount = document.querySelectorAll('[name="notification"]').length
+    if (notificationCount > 1) {
         console.warn(
-            `There are multiple toast notifications on the page. This can lead to unexpected behavior. Please ensure only one toast notification component is mounted at a time. This is to ensure that the progress bar and close behavior works as expected. Current count: ${toastCount}`
+            `There are multiple notifications on the page. This can lead to unexpected behavior. Please ensure only one notification component is mounted at a time. This is to ensure that the progress bar and close behavior works as expected. Current count: ${notificationCount}`
             );
         }
   }, [show]);
@@ -73,13 +73,13 @@ function Toast({ title, description, icon, baseDuration, durationMS=5000, show, 
   }, [durationMS, onShow, show]);
 
   if (!title || !description) {
-    console.warn("No title or description provided for toast component!");
+    console.warn("No title or description provided for notification component!");
     return null;
   }
   return (
       <div
         aria-live="assertive"
-        name="toast-notification"
+        name="notification"
         role="alert"
         className="gw-pointer-events-none gw-fixed gw-left-0 gw-top-[10rem] gw-w-full gw-flex gw-items-start gw-px-4 gw-py-6 sm:gw-items-start sm:gw-p-6 gw-z-[9999]"
       >
@@ -133,5 +133,5 @@ function Toast({ title, description, icon, baseDuration, durationMS=5000, show, 
   );
 }
 
-export default Toast;
-export { Toast };
+export default Notification;
+export { Notification };

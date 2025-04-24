@@ -165,9 +165,9 @@ export default [
         href: "/docs/display/modal"
       },
       {
-        id: "toast",
-        text: "Toast",
-        href: "/docs/display/toast",
+        id: "notification",
+        text: "Notification",
+        href: "/docs/display/notification",
       },
       {
         id: "accordion",
