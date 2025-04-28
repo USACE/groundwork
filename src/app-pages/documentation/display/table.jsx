@@ -54,6 +54,36 @@ const componentProps_Table = [
     desc: "Add a striped background to the table.",
   },
   {
+    name: "overflow",
+    type: "boolean",
+    default: "false",
+    desc: "Makes the table vertically scrollable if the content overflows.",
+  },
+  {
+    name: "overflowHeight",
+    type: "string",
+    default: "max-h-[65vh]",
+    desc: (
+      <>
+        Height of the table when overflow is enabled. Any tailwind class can be
+        used. Tailwind Docs:{" "}
+        <a
+          target="_blank"
+          className="gw-underline"
+          href="https://tailwindcss.com/docs/height"
+        >
+          TailwindCSS Height
+        </a>
+      </>
+    ),
+  },
+  {
+    name: "stickyHeader",
+    type: "boolean",
+    default: "false",
+    desc: "Makes the header stick to the top of the table when scrolling.",
+  },
+  {
     name: "className",
     type: "string",
     default: "undefined",
@@ -108,22 +138,22 @@ const componentProps_TableHeader = [];
 
 const componentProps_TableCell = [];
 
-const timestamps = [
-  "03-06-2024T15:07:34Z",
-  "03-06-2024T15:12:34Z",
-  "03-06-2024T15:17:34Z",
-  "03-06-2024T15:22:34Z",
-  "03-06-2024T15:27:34Z",
-  "03-06-2024T15:32:34Z",
-  "03-06-2024T15:37:34Z",
-  "03-06-2024T15:42:34Z",
-  "03-06-2024T15:47:34Z",
-  "03-06-2024T15:52:34Z",
-];
-const dummyData = timestamps.map((timestamp, index) => ({
+// Generate the last 24 hours of 1 hour data array
+const now = new Date();
+const last24Hours = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+const last24HoursTimestamps = [];
+
+Array.from({ length: 24 }).forEach((_, i) => {
+  const timestamp = new Date(
+    last24Hours.getTime() + i * 60 * 60 * 1000
+  ).toISOString();
+  last24HoursTimestamps.push(timestamp);
+});
+
+const dummyData = last24HoursTimestamps.map((timestamp, index) => ({
   id: index,
   timestamp,
-  value: Math.random() * 100,
+  value: (Math.random() * 100).toFixed(2),
 }));
 
 function TableDocs() {
@@ -140,7 +170,7 @@ function TableDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <Table striped dense>
+          <Table striped dense overflow stickyHeader>
             <TableHead>
               <TableRow>
                 <TableHeader>ID</TableHeader>
@@ -171,7 +201,7 @@ function TableDocs() {
 
 function Component() {
   return (
-    <Table striped dense>
+    <Table striped dense overflow stickyHeader>
       <TableHead>
         <TableRow>
           <TableHeader>ID</TableHeader>

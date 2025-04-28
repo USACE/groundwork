@@ -3,12 +3,16 @@
 import gwMerge from "../gw-merge";
 import { createContext, useContext, useState } from "react";
 import Link from "./navigation/link";
+import useScrollFade from "../hooks/useScrollFade";
 
 const TableContext = createContext({
   bleed: false,
   dense: false,
   grid: false,
   striped: false,
+  overflow: false,
+  overflowHeight: "gw-max-h-[65vh]",
+  stickyHeader: false,
 });
 
 export function Table({
@@ -18,22 +22,42 @@ export function Table({
   striped = false,
   className,
   children,
+  overflow = false,
+  overflowHeight = "gw-max-h-[65vh]",
+  stickyHeader = false,
   ...props
 }) {
+  // Create fade at bottom of table to indicate more content (scrollable)
+  const { scrollRef, showFade } = useScrollFade();
+
   return (
-    <TableContext.Provider value={{ bleed, dense, grid, striped }}>
+    <TableContext.Provider
+      value={{
+        bleed,
+        dense,
+        grid,
+        striped,
+        overflow,
+        overflowHeight,
+        stickyHeader,
+      }}
+    >
       <div className="gw-flow-root">
         <div
           {...props}
           className={gwMerge(
             "gw--mx-[--gutter] gw-overflow-x-auto gw-whitespace-nowrap",
+            "gw-relative",
             className
           )}
         >
           <div
+            ref={scrollRef}
             className={gwMerge(
               "gw-inline-block gw-min-w-full gw-align-middle",
-              !bleed && "sm:gw-px-[--gutter]"
+              !bleed && "sm:gw-px-[--gutter]",
+              overflow && "gw-overflow-y-auto",
+              overflow && overflowHeight && overflowHeight
             )}
           >
             <table
@@ -43,6 +67,9 @@ export function Table({
               {children}
             </table>
           </div>
+          {showFade && overflow && (
+            <div className="gw-pointer-events-none gw-absolute gw-bottom-0 gw-left-0 gw-right-0 gw-h-8 gw-bg-gradient-to-t gw-from-white dark:gw-from-zinc-950 gw-to-transparent" />
+          )}
         </div>
       </div>
     </TableContext.Provider>
@@ -50,9 +77,20 @@ export function Table({
 }
 
 export function TableHead({ className, ...props }) {
+  let { overflow, stickyHeader } = useContext(TableContext);
+  if (!overflow && stickyHeader)
+    console.warn(
+        "stickyHeader is set to true but overflow is not set. This will not work as expected. Please set overflow to true."
+    );
+  const overflowClass =
+    "gw-z-10 gw-sticky gw-top-0 gw-bg-white gw-box-shadow dark:gw-bg-zinc-950/50 gw-backdrop-blur-[var(--backdrop-blur)]";
   return (
     <thead
-      className={gwMerge("gw-text-zinc-500 dark:gw-text-zinc-400", className)}
+      className={gwMerge(
+        "gw-text-zinc-500 dark:gw-text-zinc-400",
+        className,
+        overflow && stickyHeader && overflowClass
+      )}
       {...props}
     />
   );
