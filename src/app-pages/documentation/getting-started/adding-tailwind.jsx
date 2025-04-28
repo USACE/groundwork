@@ -52,55 +52,59 @@ function AddingTailwind() {
           </P>
           <Divider text={<Badge color="red">DISCLAIMER</Badge>} />
           <p>
-          Tailwind does CSS resets on many base level tags for cross browser support see <a href="https://tailwindcss.com/docs/preflight" target="_blank" rel="no-referrer" aria-label="Tailwind preflight documentation" className="gw-underline">Preflight</a> for more information.
+            Tailwind does CSS resets on many base level tags for cross browser
+            support see{" "}
+            <a
+              href="https://tailwindcss.com/docs/preflight"
+              target="_blank"
+              rel="no-referrer"
+              aria-label="Tailwind preflight documentation"
+              className="gw-underline"
+            >
+              Preflight
+            </a>{" "}
+            for more information.
           </p>
           <P>
-          It is NOT recommended to use multiple CSS frameworks due to CSS overwriting each other / naming conflicts. <b>Do this at your own risk.</b> Groundwork expects you to be using Vanilla CSS or Tailwind for all your styling needs.
+            It is NOT recommended to use multiple CSS frameworks due to CSS
+            overwriting each other / naming conflicts.{" "}
+            <b>Do this at your own risk.</b> Groundwork expects you to be using
+            Vanilla CSS or Tailwind for all your styling needs.
           </P>
           <Divider />
           <H3 className="gw-mt-6">Install and Configure Tailwind</H3>
           <P>
-            Install <Code>tailwindcss</Code> and its peer dependencies, then use
-            the init utility to generate your <Code>tailwind.config.js</Code>{" "}
-            and <Code>postcss.config.js</Code> files.
+            Install <Code>@tailwindcss</Code> and <Code>@tailwindcss/vite</Code>{" "}
+            via npm.
           </P>
           <Code className="!gw-font-bold">terminal</Code>
           <CodeExample
-            code={`npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p`}
+            code={`npm install tailwindcss @tailwindcss/vite`}
           ></CodeExample>
 
           <P>
-            Add the paths to all of your template files in your{" "}
-            <Code>tailwind.config.js</Code> file.
+            Add the <Code>@tailwindcss/vite</Code> plugin to your Vite
+            configuration.
           </P>
-          <Code className="!gw-font-bold">tailwind.config.js</Code>
+          <Code className="!gw-font-bold">vite.config.js</Code>
           <CodeExample
-            code={`/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}`}
+            code={`import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});`}
           ></CodeExample>
 
           <P>
-            Add the Tailwind directives to your CSS file. This will include the
-            Tailwind base, components, and utilities styles.
+            Add an <Code>@import</Code> to your CSS file that imports Tailwind
+            CSS.
           </P>
           <Code className="!gw-font-bold">./src/index.css</Code>
-          <CodeExample
-            code={`@tailwind base;
-@tailwind components;
-@tailwind utilities;`}
-          ></CodeExample>
+          <CodeExample code={`@import "tailwindcss"`}></CodeExample>
 
-          <P>Start your build process and development server.</P>
+          <P></P>
           <Code className="!gw-font-bold">terminal</Code>
           <CodeExample code={`npm run dev`}></CodeExample>
 
