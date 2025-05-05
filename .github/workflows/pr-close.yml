@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.ADMIN_PAT }}
       - uses: actions/setup-node@v2
         with:
-          node-version: "16.x"
+          node-version: 20
           cache: "npm"
       - name: Git config
         run: |
