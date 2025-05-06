@@ -1,5 +1,4 @@
 import { UsaceBox, PopoutMenu } from "../..";
-import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
