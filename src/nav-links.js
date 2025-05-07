@@ -162,7 +162,12 @@ export default [
       {
         id: "modal",
         text: "Modal",
-        href: "/docs/display/modal",
+        href: "/docs/display/modal"
+      },
+      {
+        id: "notification",
+        text: "Notification",
+        href: "/docs/display/notification",
       },
       {
         id: "accordion",
