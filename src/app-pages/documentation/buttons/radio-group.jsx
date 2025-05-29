@@ -35,8 +35,8 @@ const componentProps_RadioGroup = [
   {
     name: "content",
     type: "Array<{ id: string, text: string, onClick?: function, onChange?: function }>",
-    default: "[{ id: 0, text: 'string' }]",
-    desc: "Array of objects that defines each radio option’s text, id, and optional click/change handlers",
+    default: "null",
+    desc: "Array of objects that defines each radio option's text, id, and optional click/change handlers",
   },
   {
     name: "defaultChecked",
@@ -78,8 +78,8 @@ function RadioGroupDocs() {
 
         <H3 className="gw-mt-6 gw-pb-3">Example</H3>
         <RadioGroup
-          legend="Notification Preference"
-          label="Select how you'd like to receive notifications"
+          legend="System"
+          label="Select A Measurement System"
           defaultChecked="radio-en"
           content={[
             {
@@ -102,6 +102,9 @@ function RadioGroupDocs() {
           code={`import { RadioGroup } from "@usace/groundwork";
 
 function Example() {
+
+  const [units, setUnits] = useState(null);
+  const [value, setValue] = useState(200);
   const content = [
         {
           id: "radio-en",
@@ -114,8 +117,6 @@ function Example() {
           onChange: () => setUnits("SI"),
         },
     ]
-  const [units, setUnits] = useState(null);
-  const [value, setValue] = useState(200);
   useMemo(() => {
     if (units?.toLowerCase() == "en")
       setValue((value / FT_TO_METERS_SCALAR).toFixed(2));
@@ -125,8 +126,8 @@ function Example() {
   return (
     <>
         <RadioGroup
-            legend="Notification Preference"
-            label="Select how you'd like to receive notifications"
+            legend="System"
+            label="Select A Measurement System"
             defaultChecked="radio-en"
             content={[
                 {
