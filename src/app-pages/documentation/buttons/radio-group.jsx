@@ -129,18 +129,7 @@ function Example() {
             legend="System"
             label="Select A Measurement System"
             defaultChecked="radio-en"
-            content={[
-                {
-                id: "radio-en",
-                text: "English",
-                onClick: () => setUnits("en"),
-                },
-                {
-                id: "radio-si",
-                text: "Metric",
-                onChange: () => setUnits("si"),
-                },
-            ]}
+            content={content}
             />
         <div className="my-3">
         <Text>{value} {units == "si" ? "m" : "ft"}</Text>
