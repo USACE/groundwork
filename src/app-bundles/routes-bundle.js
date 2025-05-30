@@ -51,7 +51,7 @@ import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
 import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
 import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
-import RadioGroupDocs from "../app-pages/documentation/buttons/radio-group";
+import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
 
 export default createRouteBundle(
   {
