@@ -38,9 +38,12 @@ function Modal({
   }
 
   const panelRef = useRef(null);
+  // Modal Defaults
+  const [dimensions, setDimensions] = useState({ width: 600, height: 400 });
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [resizing, setResizing] = useState(false);
 
   const handleMouseDown = (e) => {
     const rect = panelRef.current.getBoundingClientRect();
@@ -54,15 +57,22 @@ function Modal({
         x: e.clientX - offset.x,
         y: e.clientY - offset.y,
       });
+    } else if (resizing) {
+      const rect = panelRef.current.getBoundingClientRect();
+      setDimensions({
+        width: Math.max(300, e.clientX - rect.left),
+        height: Math.max(200, e.clientY - rect.top),
+      });
     }
   };
 
   const handleMouseUp = () => {
     setDragging(false);
+    setResizing(false);
   };
 
   useEffect(() => {
-    if (dragging) {
+    if (dragging || resizing) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);
     }
@@ -70,7 +80,7 @@ function Modal({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [dragging, offset]);
+  }, [dragging, resizing, offset]);
 
   return (
     <Dialog
@@ -95,14 +105,22 @@ function Modal({
               "gw-bg-white",
               "gw-relative"
             )}
+            style={
+              dimensions.width && dimensions.height
+                ? {
+                    width: dimensions.width,
+                    height: dimensions.height,
+                    maxWidth: "80vw",
+                    maxHeight: "90vh",
+                  }
+                : undefined
+            }
           >
-            {/* Drag Handle */}
             <div className="gw-cursor-move gw-p-4 gw-bg-gray-100 gw-rounded">
               <DialogTitle className="gw-font-bold gw-text-center gw-select-none">
                 {dialogTitle}
               </DialogTitle>
             </div>
-
             {dialogDescription && (
               <Description className="gw-px-5 gw-my-2">
                 {dialogDescription}
@@ -111,11 +129,26 @@ function Modal({
             <div className="gw-overflow-auto gw-h-full gw-px-5 gw-bg-white dark:gw-bg-slate-700 dark:gw-text-white">
               {children}
             </div>
-            {footer && (
-              <div className="gw-px-12 gw-py-4 gw-rounded-b gw-bg-slate-200">
-                {footer}
-              </div>
-            )}
+            <div className="gw-flex gw-items-center  gw-bg-gray-100 gw-rounded-b">
+              <div className="gw-px-4 gw-py-4">{footer}</div>
+              <div
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setResizing(true);
+                }}
+                className="gw-w-6 gw-h-6 gw-cursor-se-resize gw-ml-auto gw-mt-8"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, transparent 45%, #4b5563 45%, #4b5563 55%, transparent 55%)," +
+                    "linear-gradient(135deg, transparent 65%, #4b5563 65%, #4b5563 75%, transparent 75%)",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "bottom right",
+                  backgroundSize: "100% 100%",
+                }}
+                title="Resize"
+              />
+            </div>
           </DialogPanel>
         </div>
       </div>
