@@ -6,7 +6,18 @@ import {
   DialogBackdrop,
 } from "@headlessui/react";
 import gwMerge from "../../gw-merge";
-import { WIDTH_OPTIONS } from "../../utils/sizes";
+
+const WIDTH_OPTIONS = {
+  xs: "max-w-xs",
+  sm: "max-w-sm",
+  md: "max-w-md",
+  lg: "max-w-lg",
+  xl: "max-w-xl",
+  "2xl": "max-w-2xl",
+  "3xl": "max-w-3xl",
+  "4xl": "max-w-4xl",
+  "5xl": "max-w-5xl",
+};
 
 function Modal({
   opened = false,
@@ -18,15 +29,12 @@ function Modal({
   className,
   children,
 }) {
-  // Check if the size exists
+    // Check if the size exists
+  const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["2xl"];
   if (!WIDTH_OPTIONS[size]) {
-    console.error(
-      `Invalid size prop: ${size}. Must be one of: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'`
-    );
     console.warn(
-      `Defaulting to '2xl' for size of <Modal modalTitle="${dialogTitle}" .../>`
+        `Modal: invalid size "${size}" passed. Falling back to "2xl".`
     );
-    size = "2xl";
   }
 
   return (
@@ -40,7 +48,7 @@ function Modal({
         <div className="gw-flex gw-min-h-full gw-items-center gw-justify-center">
           <DialogPanel
             className={gwMerge(
-              WIDTH_OPTIONS[size],
+              widthClass,
               "gw-space-y-4",
               "gw-border",
               "gw-rounded-lg",
