@@ -117,11 +117,6 @@ export default [
         text: "Popout Menu",
         href: "/docs/buttons/popout-menu",
       },
-      {
-        id: "radio-group",
-        text: "Radio Group",
-        href: "/docs/buttons/radio-group",
-      },
     ],
   },
   {
@@ -230,6 +225,11 @@ export default [
         id: "file-input",
         text: "File Input",
         href: "/docs/forms/file-input",
+      },
+      {
+        id: "radio-group",
+        text: "Radio Group",
+        href: "/docs/forms/radio-group",
       },
     ],
   },
