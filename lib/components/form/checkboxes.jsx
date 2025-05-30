@@ -1,4 +1,5 @@
 import gwMerge from "../../gw-merge";
+import { Fieldset } from "./fieldset";
 
 function Checkboxes({ content, legend, className, ...props }) {
   if (!content || !Array.isArray(content) || content.length === 0) {
@@ -8,7 +9,7 @@ function Checkboxes({ content, legend, className, ...props }) {
     return null;
   }
   return (
-    <fieldset className={className} {...props}>
+    <Fieldset className={className} {...props}>
       {legend && <legend className="gw-sr-only">{legend}</legend>}
       {content.map((item, index) => (
         <div
@@ -78,7 +79,7 @@ function Checkboxes({ content, legend, className, ...props }) {
           </div>
         </div>
       ))}
-    </fieldset>
+    </Fieldset>
   );
 }
 
