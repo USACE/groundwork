@@ -1,4 +1,5 @@
 import gwMerge from "../../gw-merge";
+import { Fieldset } from "./fieldset";
 
 
 function RadioGroup({
@@ -12,7 +13,7 @@ function RadioGroup({
   if (!content) throw new Error("content is required for radio group!");
 
   return (
-    <fieldset className={gwMerge("gw-my-2", className)} {...props}>
+    <Fieldset className={gwMerge("gw-my-2", className)} {...props}>
       {legend && (
         <legend className="gw-text-sm/6 gw-font-semibold gw-text-gray-900">
           {legend}
@@ -43,7 +44,7 @@ function RadioGroup({
           );
         })}
       </div>
-    </fieldset>
+    </Fieldset>
   );
 }
 
