@@ -226,6 +226,11 @@ export default [
         text: "File Input",
         href: "/docs/forms/file-input",
       },
+      {
+        id: "radio-group",
+        text: "Radio Group",
+        href: "/docs/forms/radio-group",
+      },
     ],
   },
   {
