@@ -24,16 +24,15 @@ function Modal({
   onClose,
   dialogTitle,
   dialogDescription,
-  buttons,
+  footer,
   size = "2xl",
   className,
   children,
 }) {
-    // Check if the size exists
   const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["2xl"];
   if (!WIDTH_OPTIONS[size]) {
     console.warn(
-        `Modal: invalid size "${size}" passed. Falling back to "2xl".`
+      `Modal: invalid size "${size}" passed. Falling back to "2xl".`
     );
   }
 
@@ -53,20 +52,29 @@ function Modal({
               "gw-border",
               "gw-rounded-lg",
               "gw-shadow-lg",
-              "gw-bg-white",
-              "gw-p-12"
+              "gw-bg-white"
             )}
           >
             {dialogTitle && (
-              <DialogTitle className="gw-font-bold gw-text-center">
+              <DialogTitle className="gw-font-bold gw-text-center gw-p-4 gw-text-lg gw-bg-slate-200 dark:gw-bg-slate-600 dark:gw-text-white gw-rounded-t">
                 {dialogTitle}
               </DialogTitle>
             )}
             {dialogDescription && (
-              <Description>{dialogDescription}</Description>
+              <Description className="gw-px-4 gw-py-2">
+                {dialogDescription}
+              </Description>
             )}
-            {children}
-            {buttons}
+            <div className="gw-overflow-auto gw-h-full gw-px-5 gw-bg-white dark:gw-bg-slate-700 dark:gw-text-white">
+              {children}
+            </div>
+            {footer && (
+              <div className="gw-px-12 gw-py-4 gw-rounded-b gw-bg-slate-200">
+                {footer}
+              </div>
+            )}
+
+            {/* Resize Handle */}
           </DialogPanel>
         </div>
       </div>

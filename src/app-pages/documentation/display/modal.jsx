@@ -41,10 +41,10 @@ const componentProps = [
     desc: "Description of the modal dialog.",
   },
   {
-    name: "buttons",
+    name: "footer",
     type: "ReactNode",
     default: "null",
-    desc: "Button components to display at the bottom of the modal.",
+    desc: "Footer components to display at the bottom of the modal.",
   },
   {
     name: "children",
@@ -92,7 +92,7 @@ function ModalDocs() {
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
           size="2xl"
           staticWidth={true}
-          buttons={
+          footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
               <Button className="gw-w-full" onClick={refreshImage}>
                 Refresh Image
@@ -166,7 +166,7 @@ function Example() {
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
           size="2xl"
           staticWidth={true}
-          buttons={
+          footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
               <Button
                 className="gw-w-full"
