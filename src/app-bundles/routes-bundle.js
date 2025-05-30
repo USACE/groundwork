@@ -49,6 +49,7 @@ import PackageMaintenance from "../app-pages/documentation/getting-started/packa
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
+import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
 
 export default createRouteBundle(
   {
@@ -96,6 +97,7 @@ export default createRouteBundle(
     "/docs/forms/color-input": ColorInputDocs,
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
+    "/docs/forms/checkboxes": CheckboxesDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,

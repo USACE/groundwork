@@ -187,6 +187,11 @@ export default [
     href: "/docs/forms",
     children: [
       {
+        id: "checkboxes",
+        text: "Checkboxes",
+        href: "/docs/forms/checkboxes",
+      },
+      {
         id: "forms-dropdown",
         text: "Dropdown",
         href: "/docs/forms/dropdown",
