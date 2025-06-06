@@ -39,6 +39,7 @@ function renderPopoutMenu({
         <Link
           key={link.id}
           href={link.href}
+          target={link.target}
           className="gw-z-20 gw-flex gw-items-center gw-px-1"
         >
           {link.text}
@@ -49,6 +50,7 @@ function renderPopoutMenu({
             <Link
               key={link.id}
               href={link.href}
+              target={link.target}
               className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
@@ -87,7 +89,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
   }
   return (
     <div key={link.id}>
-      <Link href={link.href}>
+      <Link href={link.href} target={link.target}>
         <div
           className={`gw-text-lg ${
             level === 0 ? "gw-font-bold" : ""
@@ -150,13 +152,22 @@ function Sidebar({
               mobileNav.current.click();
             }}
             options={combinedLinks.map((link, idx) => (
-              <option key={idx + link?.href + "-mobile-sidebar"} value={link.href} className="gw-pl-2">
+              <option
+                key={idx + link?.href + "-mobile-sidebar"}
+                value={link.href}
+                className="gw-pl-2"
+              >
                 {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
               </option>
             ))}
           />
           {/* Hidden anchor tag to trigger mobile nav for compatibility */}
-          <Link className="hidden" href="#" ref={mobileNav} aria-hidden="true"></Link>
+          <Link
+            className="hidden"
+            href="#"
+            ref={mobileNav}
+            aria-hidden="true"
+          ></Link>
         </div>
       </UsaceBox>
     );
