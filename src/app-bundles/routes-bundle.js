@@ -50,6 +50,7 @@ import LinkProviderDocs from "../app-pages/documentation/navigation/link-provide
 import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
 import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
+import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
 
 export default createRouteBundle(
   {
@@ -98,6 +99,7 @@ export default createRouteBundle(
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
     "/docs/forms/radio-group": RadioGroupDocs,
+    "/docs/forms/checkboxes": CheckboxesDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
