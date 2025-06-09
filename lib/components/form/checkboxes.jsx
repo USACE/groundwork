@@ -33,7 +33,13 @@ function Checkboxes({ content, legend, className, ...props }) {
                     item?.name ||
                     `checkbox-${index}-${legend}-description`
                   }
-                  className="gw-col-start-1 gw-row-start-1 gw-appearance-none gw-rounded gw-border gw-border-gray-300 gw-bg-white checked:gw-border-indigo-600 checked:gw-bg-indigo-600 indeterminate:gw-border-indigo-600 indeterminate:gw-bg-indigo-600 focus-visible:gw-outline focus-visible:gw-outline-2 focus-visible:gw-outline-offset-2 focus-visible:gw-outline-indigo-600 disabled:gw-border-gray-300 disabled:gw-bg-gray-100 disabled:checked:gw-bg-gray-100 forced-colors:gw-appearance-auto"
+                  className={gwMerge(
+                    "gw-col-start-1 gw-row-start-1 gw-appearance-none gw-rounded gw-border gw-border-gray-300 gw-bg-white",
+                    "checked:gw-border-indigo-600 checked:gw-bg-indigo-600 indeterminate:gw-border-indigo-600 indeterminate:gw-bg-indigo-600",
+                    "focus-visible:gw-outline focus-visible:gw-outline-2 focus-visible:gw-outline-offset-2 focus-visible:gw-outline-indigo-600 disabled:gw-border-gray-300",
+                    "disabled:gw-bg-gray-100 disabled:checked:gw-bg-gray-100 forced-colors:gw-appearance-auto",
+                    item?.inputProps?.className
+                  )}
                 />
                 <svg
                   fill="none"
