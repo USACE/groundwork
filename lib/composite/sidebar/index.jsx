@@ -23,7 +23,7 @@ function renderPopoutMenu({
     );
     maxScrollHeight = "50vh";
   }
-  const isSelected = selectedPath === link.href;
+  const isSelected = selectedPath === link?.href;
 
   if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
@@ -32,30 +32,34 @@ function renderPopoutMenu({
 
   return (
     <div
-      key={link.id}
+      key={link?.id}
       className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
     >
       {!link?.children ? (
         <Link
-          key={link.id}
-          href={link.href}
-          target={link.target}
+          key={link?.id}
+          href={link?.href}
+          target={link?.target}
           className="gw-z-20 gw-flex gw-items-center gw-px-1"
         >
-          {link.text}
+          {link?.text}
         </Link>
       ) : (
-        <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
+        <PopoutMenu
+          title={link?.text}
+          level={level}
+          direction={popoutDirection}
+        >
           {
             <Link
-              key={link.id}
-              href={link.href}
-              target={link.target}
+              key={link?.id}
+              href={link?.href}
+              target={link?.target}
               className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
             >
-              {link.text}
+              {link?.text}
             </Link>
           }
           <div
@@ -81,15 +85,15 @@ function renderPopoutMenu({
 
 // Recursive function to render nested links without popout menus
 function renderRegularLinks(link, selectedPath, level = 0) {
-  const isSelected = selectedPath === link.href;
+  const isSelected = selectedPath === link?.href;
   const indentation = { paddingLeft: `${level * 20}px` };
   if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
   return (
-    <div key={link.id}>
-      <Link href={link.href} target={link.target}>
+    <div key={link?.id}>
+      <Link href={link?.href} target={link?.target}>
         <div
           className={`gw-text-lg ${
             level === 0 ? "gw-font-bold" : ""
@@ -100,13 +104,13 @@ function renderRegularLinks(link, selectedPath, level = 0) {
           } ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""}`}
           style={indentation}
         >
-          {link.text}
+          {link?.text}
           {isSelected}
         </div>
       </Link>
-      {link.children && (
+      {link?.children && (
         <div>
-          {link.children.map((child) =>
+          {link?.children.map((child) =>
             renderRegularLinks(child, selectedPath, level + 1)
           )}
         </div>
@@ -154,10 +158,10 @@ function Sidebar({
             options={combinedLinks.map((link, idx) => (
               <option
                 key={idx + link?.href + "-mobile-sidebar"}
-                value={link.href}
+                value={link?.href}
                 className="gw-pl-2"
               >
-                {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
+                {`${"\u00A0".repeat(link?.level * 2)}${link?.text}`}
               </option>
             ))}
           />
