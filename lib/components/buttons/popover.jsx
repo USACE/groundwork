@@ -45,7 +45,7 @@ function PopoutMenu({
   return (
     <Popover
       name="gw-popout-menu"
-      style={{ zIndex: level * 10 + 10 }}
+      style={{ zIndex: level * 10 + 100 }}
       className={gwMerge(
         "gw-relative gw-cursor-not-allowed gw-select-none",
         className
@@ -54,8 +54,9 @@ function PopoutMenu({
       {({ open }) => (
         <>
           <PopoverButton
-            style={{ zIndex: level * 10 + 11 }}
-            className="gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-leading-6 gw-ps-1 focus:gw-outline-none">
+            style={{ zIndex: level * 10 + 110 }}
+            className="gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-leading-6 gw-ps-1 focus:gw-outline-none"
+          >
             <span>{title}</span>
             <ChevronIcon
               aria-hidden="true"
@@ -72,7 +73,7 @@ function PopoutMenu({
               } gw-max-w-[50vw] gw-mt-2 gw-w-56 gw-shrink gw-rounded-xl gw-bg-white gw-text-sm gw-leading-6 gw-text-gray-900 gw-shadow-lg gw-ring-1 gw-ring-gray-900/5 ${
                 directionClasses[direction]
               }`}
-              style={{ zIndex: level * 30 + 12 }}
+              style={{ zIndex: level * 30 + 120 }}
             >
               {({ close }) => (
                 <div
