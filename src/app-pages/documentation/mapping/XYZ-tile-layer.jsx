@@ -64,7 +64,7 @@ function XYZTileLayerDocs() {
       <UsaceBox title="XYZ Tile Layer">
         {/* Description of the component and what problem it solves */}
         <div className="gw-pb-6">
-          <Text>Tile layer class for non-ESRI datasets.</Text>
+          <Text>Tile layer class for XYZ datasets.</Text>
         </div>
         {/* Example usage - remove if not needed */}
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96 ">
@@ -74,7 +74,7 @@ function XYZTileLayerDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { ArcGISTileLayer, Map, MapLayout  } from "@usace/groundwork";
+          code={`import { TileLayer, Map, MapLayout  } from "@usace/groundwork";
 
 function Component() {
    const exampleTile = new TileLayer({
