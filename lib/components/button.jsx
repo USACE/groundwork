@@ -1,7 +1,7 @@
 import { Button as HeadlessButton } from "@headlessui/react";
 import gwMerge from "../gw-merge";
 import React from "react";
-import { Link } from "./link";
+import Link from "./navigation/link";
 
 const base = [
   "gw-cursor-pointer gw-relative gw-isolate gw-inline-flex gw-items-center gw-justify-center gw-gap-x-2 gw-font-semibold",

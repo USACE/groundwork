@@ -9,7 +9,8 @@ function SiteWrapper({
   showFooter = true,
   links,
   usaBanner = true,
-  msgBanner: MsgBanner = false,
+  msgBanner = undefined,
+  msgBannerPosition = "top",
   title = "US Army Corps of Engineers",
   fluidNav = false,
   subtitle = "",
@@ -29,11 +30,18 @@ function SiteWrapper({
   showWarning = false,
   warningTimeout = undefined,
 }) {
+  // Warn developer that msgBannerPosition should either be top or bottom, but nothing else.
+  if (!["top", "bottom"].includes(msgBannerPosition)) {
+    console.warn(
+      "You must specify top or bottom for messageBannerPosition. Ignoring parameter"
+    );
+  }
+
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
         {usaBanner && <USABanner fluidNav={fluidNav} />}
-        {MsgBanner && <MsgBanner fluidNav={fluidNav} />}
+        {msgBanner && msgBannerPosition === "top" ? msgBanner : null}
         <Header
           links={links}
           title={title}
@@ -41,6 +49,8 @@ function SiteWrapper({
           navRight={navRight}
           fluidNav={fluidNav}
         />
+
+        {msgBanner && msgBannerPosition === "bottom" ? msgBanner : null}
         {children}
       </div>
       {showFooter && (

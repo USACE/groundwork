@@ -1,7 +1,7 @@
 import { Button as HeadlessButton } from "@headlessui/react";
 import React, { useMemo } from "react";
 import { TouchTarget } from "../button";
-import { Link } from "../link";
+import Link from "../navigation/link";
 import gwMerge from "../../gw-merge";
 
 const colors = {

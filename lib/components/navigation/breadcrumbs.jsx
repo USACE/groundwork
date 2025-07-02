@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import gwMerge from "../../gw-merge";
 import { MdHome } from "react-icons/md";
 import { VscChevronRight } from "react-icons/vsc";
+import Link from "./link";
 
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
@@ -18,12 +19,12 @@ function BreadcrumbItem({ className, href, text }) {
           aria-hidden="true"
           color="rgb(156 163 175)"
         />
-        <a
+        <Link
           href={href}
           className="gw-ml-2 gw-text-nowrap  gw-hover:gw-underline"
         >
           {text}
-        </a>
+        </Link>
       </div>
     </li>
   );
@@ -40,10 +41,10 @@ function Breadcrumbs({ className, children }) {
     <ol className={breadcrumbsClass}>
       <li>
         <div>
-          <a href="/" className="gw-text-gray-300 gw-hover:gw-text-gray-500">
+          <Link href="/" className="gw-text-gray-300 gw-hover:gw-text-gray-500">
             <MdHome size={22} />
             <span className="gw-sr-only">Home</span>
-          </a>
+          </Link>
         </div>
       </li>
       {children}

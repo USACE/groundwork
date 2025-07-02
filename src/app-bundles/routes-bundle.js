@@ -25,6 +25,7 @@ import TabDocs from "../app-pages/documentation/types/tab";
 import BadgeDocs from "../app-pages/documentation/display/badge";
 import AccordionDocs from "../app-pages/documentation/display/accordion";
 import CardDocs from "../app-pages/documentation/display/card";
+import ProgressDocs from "../app-pages/documentation/display/progress-bar";
 import NotFound from "../app-pages/404";
 import GenericButtonsDocs from "../app-pages/documentation/buttons/generic-buttons";
 import OkCancelDocs from "../app-pages/documentation/buttons/ok-cancel";
@@ -56,6 +57,10 @@ import ToolbarDocs from "../app-pages/documentation/mapping/toolbar";
 import ThemeDocs from "../app-pages/documentation/mapping/theme";
 import StyleDocs from "../app-pages/documentation/mapping/styling";
 import MapLayoutDocs from "../app-pages/documentation/mapping/map-layout";
+import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
+import DividerDocs from "../app-pages/documentation/display/divider";
+import ModalDocs from "../app-pages/documentation/display/modal";
+import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
 
 export default createRouteBundle(
   {
@@ -73,6 +78,7 @@ export default createRouteBundle(
     "/docs/layout/usace-box": USACEBoxDocs,
     "/docs/navigation": Navigation,
     "/docs/navigation/breadcrumbs": Breadcrumbs,
+    "/docs/navigation/link-provider": LinkProviderDocs,
     "/docs/navigation/tabs": TabsDocs,
     "/docs/navigation/sidebar": Sidebar,
     "/docs/buttons": ButtonsDocs,
@@ -83,6 +89,7 @@ export default createRouteBundle(
     "/docs/buttons/popout-menu": PopoutMenuDocs,
     "/docs/display": Display,
     "/docs/display/badge": BadgeDocs,
+    "/docs/display/divider": DividerDocs,
     "/docs/display/headings": HeadingsDocs,
     "/docs/display/hero": HeroDocs,
     "/docs/display/skeleton": SkeletonDocs,
@@ -90,6 +97,8 @@ export default createRouteBundle(
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
+    "/docs/display/modal": ModalDocs,
+    "/docs/display/progress-bar": ProgressDocs,
     "/docs/forms": Forms,
     "/docs/forms/dropdown": DropdownDocs,
     "/docs/forms/fieldset": FieldsetDocs,
@@ -99,6 +108,7 @@ export default createRouteBundle(
     "/docs/forms/color-input": ColorInputDocs,
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
+    "/docs/forms/checkboxes": CheckboxesDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,

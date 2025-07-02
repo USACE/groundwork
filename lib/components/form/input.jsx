@@ -9,8 +9,6 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
     <span
       data-slot="control"
       className={gwMerge([
-        className,
-
         // Basic layout
         "gw-relative gw-block gw-w-full",
 
@@ -28,6 +26,8 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
 
         // Invalid state
         "before:has-[[data-invalid]]:gw-shadow-red-500/10",
+
+        className,
       ])}
     >
       <HeadlessInput

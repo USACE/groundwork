@@ -14,7 +14,10 @@ export * from "./components/display/headings";
 export * from "./components/table";
 export * from "./components/display/card";
 export * from "./components/profile-dropdown";
+export { Divider } from "./components/display/divider";
+export { Modal } from "./components/display/modal";
 export { Skeleton } from "./components/display/skeleton";
+export { ProgressBar } from "./components/display/progress-bar";
 
 // composite components
 export { Header } from "./composite/header";
@@ -36,9 +39,12 @@ export {
 export { Tabs } from "./components/navigation/tabs";
 export * from "./components/display/badge";
 export * from "./components/display/accordion";
+export { Link } from "./components/navigation/link";
+export { LinkProvider } from "./components/navigation/link-provider";
 
 // forms
 export * from "./components/form/dropdown";
 export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
+export * from "./components/form/checkboxes";

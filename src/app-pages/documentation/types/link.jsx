@@ -21,6 +21,12 @@ const linkProps = [
     default: "''",
     desc: "The text of the link.",
   },
+  {
+    name: "target",
+    type: "string",
+    default: "undefined",
+    desc: "Set to '_blank' to open the link in a new tab.",
+  },
 ];
 
 const pageBreadcrumbs = [

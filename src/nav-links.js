@@ -71,6 +71,11 @@ export default [
         href: "/docs/navigation/breadcrumbs",
       },
       {
+        id: "link-provider",
+        text: "Link Provider",
+        href: "/docs/navigation/link-provider",
+      },
+      {
         id: "tabs",
         text: "Tabs",
         href: "/docs/navigation/tabs",
@@ -125,6 +130,11 @@ export default [
         href: "/docs/display/badge",
       },
       {
+        id: "divider",
+        text: "Divider",
+        href: "/docs/display/divider",
+      },
+      {
         id: "headings",
         text: "Headings",
         href: "/docs/display/headings",
@@ -150,6 +160,11 @@ export default [
         href: "/docs/display/table",
       },
       {
+        id: "modal",
+        text: "Modal",
+        href: "/docs/display/modal",
+      },
+      {
         id: "accordion",
         text: "Accordion",
         href: "/docs/display/accordion",
@@ -159,6 +174,11 @@ export default [
         text: "Card",
         href: "/docs/display/card",
       },
+      {
+        id: "progress-bar",
+        text: "Progress Bar",
+        href: "/docs/display/progress-bar",
+      },
     ],
   },
   {
@@ -166,6 +186,11 @@ export default [
     text: "Forms",
     href: "/docs/forms",
     children: [
+      {
+        id: "checkboxes",
+        text: "Checkboxes",
+        href: "/docs/forms/checkboxes",
+      },
       {
         id: "forms-dropdown",
         text: "Dropdown",
