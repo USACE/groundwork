@@ -1,36 +1,46 @@
 import { UsaceBox, Text, Code } from "../../../../lib";
-import { Map, MapLayout, Toolbar, cobalt, BasemapPicker } from "groundwork-geo"
+import {
+  Map,
+  MapLayout,
+  Toolbar,
+  cobalt,
+  BasemapPicker,
+} from "@usace/groundwork-geo";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 
 const pageBreadcrumbs = [
-    {
-        text: "Documentation",
-        href: "/docs",
-    },
-    {
-        text: "Mapping",
-        href: "/docs/mapping",
-    },
-    {
-        text: "Theme",
-        href: "/docs/mapping/theme",
-    },
+  {
+    text: "Documentation",
+    href: "/docs",
+  },
+  {
+    text: "Mapping",
+    href: "/docs/mapping",
+  },
+  {
+    text: "Theme",
+    href: "/docs/mapping/theme",
+  },
 ];
 
 function ThemeDocs() {
-    return (
-        <DocsPage breadcrumbs={pageBreadcrumbs}>
-            <UsaceBox title="Theme">
-                <Text className="gw-pb-6">
-                    Create a custom theme and apply it to the Map Layout component.
-                </Text>
-                <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96 ">
-                    <MapLayout theme={cobalt} topToolbar={<Toolbar tools={[BasemapPicker]} />}>
-                        <Map mapId={"theme"} />
-                    </MapLayout>
-                </div>
-                <CodeExample code={`const cobalt = {
+  return (
+    <DocsPage breadcrumbs={pageBreadcrumbs}>
+      <UsaceBox title="Theme">
+        <Text className="gw-pb-6">
+          Create a custom theme and apply it to the Map Layout component.
+        </Text>
+        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96 ">
+          <MapLayout
+            theme={cobalt}
+            topToolbar={<Toolbar tools={[BasemapPicker]} />}
+          >
+            <Map mapId={"theme"} />
+          </MapLayout>
+        </div>
+        <CodeExample
+          code={`const cobalt = {
     colors: {
         sidebar: {
             foreground: "#aaa",
@@ -68,9 +78,10 @@ function ThemeDocs() {
 };
 
 export default cobalt;
-export { cobalt };`} />
-                <CodeExample
-                    code={`import { Map, MapLayout } from "@usace/groundwork";
+export { cobalt };`}
+        />
+        <CodeExample
+          code={`import { Map, MapLayout } from "@usace/groundwork";
 import cobalt from "./cobalt";
 
 function Component() {
@@ -85,10 +96,10 @@ function Component() {
 
 export default Component;
 `}
-                />
-            </UsaceBox>
-        </DocsPage>
-    );
+        />
+      </UsaceBox>
+    </DocsPage>
+  );
 }
 
 export default ThemeDocs;
