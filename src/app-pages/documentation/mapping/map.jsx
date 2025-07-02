@@ -57,7 +57,7 @@ function MapDocs() {
           </MapLayout>
         </div>
         <CodeExample
-          code={`import { Map, MapLayout } from "@usace/groundwork";
+          code={`import { Map, MapLayout } from "@usace/groundwork-geo";
 
 function Component() {
     const config = {

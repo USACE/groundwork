@@ -80,7 +80,7 @@ function MapServerDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { ArcGISTileLayer, Map, MapLayout  } from "@usace/groundwork";
+          code={`import { ArcGISTileLayer, Map, MapLayout  } from "@usace/groundwork-geo";
 
 function Component() {
     const tileLayer = new ArcGISTileLayer({

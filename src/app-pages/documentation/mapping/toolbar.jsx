@@ -89,7 +89,7 @@ function ToolbarDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Map, MapLayout,  BasemapPicker, Toolbar, ToolbarButton, Panel, LayerTree } from "@usace/groundwork";
+          code={`import { Map, MapLayout,  BasemapPicker, Toolbar, ToolbarButton, Panel, LayerTree } from "@usace/groundwork-geo";
 
 import { FaQuestionCircle } from "react-icons/fa";
 

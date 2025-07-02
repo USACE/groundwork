@@ -74,7 +74,7 @@ function XYZTileLayerDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { TileLayer, Map, MapLayout  } from "@usace/groundwork";
+          code={`import { TileLayer, Map, MapLayout  } from "@usace/groundwork-geo";
 
 function Component() {
    const exampleTile = new TileLayer({

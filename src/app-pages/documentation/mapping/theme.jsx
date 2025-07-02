@@ -81,7 +81,7 @@ export default cobalt;
 export { cobalt };`}
         />
         <CodeExample
-          code={`import { Map, MapLayout } from "@usace/groundwork";
+          code={`import { Map, MapLayout } from "@usace/groundwork-geo";
 import cobalt from "./cobalt";
 
 function Component() {

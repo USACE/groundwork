@@ -78,7 +78,7 @@ function StyleDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { GeoJSON, Map, MapLayout } from "@usace/groundwork";
+          code={`import { GeoJSON, Map, MapLayout } from "@usace/groundwork-geo";
 
 function Component() {
     const vectorLayer = new GeoJSONLayer({

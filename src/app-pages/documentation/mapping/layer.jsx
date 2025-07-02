@@ -49,7 +49,7 @@ function LayerDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { Layer } from "@usace/groundwork";
+          code={`import { Layer } from "@usace/groundwork-geo";
 
 let layer = new Layer({
     id: 'layer',
