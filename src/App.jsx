@@ -67,6 +67,8 @@ function App() {
         flickrUrl="#"
         instagramUrl="#"
         showWarning={true}
+        army250Logo={true}
+        usace250Logo={true}
       >
         <Route />
       </SiteWrapper>
