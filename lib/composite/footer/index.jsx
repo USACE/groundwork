@@ -91,7 +91,9 @@ function Footer({
   usaceLinks,
   externalLinks,
   armyLogo,
+  army250Logo,
   usaceLogo,
+  usace250Logo,
   rsgisLogo,
   cwbiLogo,
 }) {
@@ -138,7 +140,9 @@ function Footer({
         </Container>
         <LogoBanner
           army={armyLogo}
+          army250={army250Logo}
           usace={usaceLogo}
+          usace250={usace250Logo}
           rsgis={rsgisLogo}
           cwbi={cwbiLogo}
         />

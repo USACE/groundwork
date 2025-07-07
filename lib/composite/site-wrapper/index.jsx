@@ -24,7 +24,9 @@ function SiteWrapper({
   usaceLinks = [],
   externalLinks = [],
   armyLogo = true,
+  army250Logo = false,
   usaceLogo = true,
+  usace250Logo = false,
   rsgisLogo = false,
   cwbiLogo = false,
   showWarning = false,
@@ -66,7 +68,9 @@ function SiteWrapper({
           usaceLinks={usaceLinks}
           externalLinks={externalLinks}
           armyLogo={armyLogo}
+          army250Logo={army250Logo}
           usaceLogo={usaceLogo}
+          usace250Logo={usace250Logo}
           rsgisLogo={rsgisLogo}
           cwbiLogo={cwbiLogo}
         />
