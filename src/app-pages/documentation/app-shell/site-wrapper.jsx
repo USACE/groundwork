@@ -110,6 +110,12 @@ const siteWrapperProps = [
     desc: "The URL to an Instagram page.",
   },
   {
+    name: "linkedInUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a LinkedIn page.",
+  },
+  {
     name: "usaceLinks",
     type: "array[Link]",
     default: "[]",
