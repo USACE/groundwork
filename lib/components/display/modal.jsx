@@ -33,7 +33,7 @@ function Modal({
     <Dialog
       open={opened}
       onClose={onClose}
-      className={gwMerge("gw-relative", "gw-z-50", className)}
+      className={gwMerge("gw-relative", "gw-z-[200]", className)}
     >
       <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
       <div className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4">
