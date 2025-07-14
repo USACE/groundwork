@@ -6,59 +6,149 @@ import {
   DialogBackdrop,
 } from "@headlessui/react";
 import gwMerge from "../../gw-merge";
-import { WIDTH_OPTIONS } from "../../utils/sizes";
+import { useRef, useState, useEffect } from "react";
+
+const WIDTH_OPTIONS = {
+  xs: "max-w-xs",
+  sm: "max-w-sm",
+  md: "max-w-md",
+  lg: "max-w-lg",
+  xl: "max-w-xl",
+  "2xl": "max-w-2xl",
+  "3xl": "max-w-3xl",
+  "4xl": "max-w-4xl",
+  "5xl": "max-w-5xl",
+};
 
 function Modal({
   opened = false,
   onClose,
   dialogTitle,
   dialogDescription,
-  buttons,
+  footer,
   size = "2xl",
   className,
   children,
 }) {
-  // Check if the size exists
+  const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["2xl"];
   if (!WIDTH_OPTIONS[size]) {
-    console.error(
-      `Invalid size prop: ${size}. Must be one of: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'`
-    );
     console.warn(
-      `Defaulting to '2xl' for size of <Modal modalTitle="${dialogTitle}" .../>`
+      `Modal: invalid size "${size}" passed. Falling back to "2xl".`
     );
-    size = "2xl";
   }
+
+  const panelRef = useRef(null);
+  // Modal Defaults
+  const [dimensions, setDimensions] = useState({ width: 600, height: 400 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [resizing, setResizing] = useState(false);
+
+  const handleMouseDown = (e) => {
+    const rect = panelRef.current.getBoundingClientRect();
+    setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (dragging) {
+      setPosition({
+        x: e.clientX - offset.x,
+        y: e.clientY - offset.y,
+      });
+    } else if (resizing) {
+      const rect = panelRef.current.getBoundingClientRect();
+      setDimensions({
+        width: Math.max(300, e.clientX - rect.left),
+        height: Math.max(200, e.clientY - rect.top),
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setDragging(false);
+    setResizing(false);
+  };
+
+  useEffect(() => {
+    if (dragging || resizing) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [dragging, resizing, offset]);
 
   return (
     <Dialog
       open={opened}
       onClose={onClose}
+      onMouseDown={handleMouseDown}
       className={gwMerge("gw-relative", "gw-z-50", className)}
     >
       <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
       <div className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4">
-        <div className="gw-flex gw-min-h-full gw-items-center gw-justify-center">
+        <div
+          className="gw-relative"
+          style={{ top: position.y, left: position.x }}
+        >
           <DialogPanel
+            ref={panelRef}
             className={gwMerge(
-              WIDTH_OPTIONS[size],
-              "gw-space-y-4",
+              widthClass,
               "gw-border",
               "gw-rounded-lg",
               "gw-shadow-lg",
               "gw-bg-white",
-              "gw-p-12"
+              "gw-relative"
             )}
+            style={
+              dimensions.width && dimensions.height
+                ? {
+                    width: dimensions.width,
+                    height: dimensions.height,
+                    maxWidth: "80vw",
+                    maxHeight: "90vh",
+                  }
+                : undefined
+            }
           >
-            {dialogTitle && (
-              <DialogTitle className="gw-font-bold gw-text-center">
+            <div className="gw-cursor-move gw-p-4 gw-bg-gray-100 gw-rounded">
+              <DialogTitle className="gw-font-bold gw-text-center gw-select-none">
                 {dialogTitle}
               </DialogTitle>
-            )}
+            </div>
             {dialogDescription && (
-              <Description>{dialogDescription}</Description>
+              <Description className="gw-px-5 gw-my-2">
+                {dialogDescription}
+              </Description>
             )}
-            {children}
-            {buttons}
+            <div className="gw-overflow-auto gw-h-full gw-px-5 gw-bg-white dark:gw-bg-slate-700 dark:gw-text-white">
+              {children}
+            </div>
+            <div className="gw-flex gw-items-center  gw-bg-gray-100 gw-rounded-b">
+              <div className="gw-px-4 gw-py-4">{footer}</div>
+              <div
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setResizing(true);
+                }}
+                className="gw-w-6 gw-h-6 gw-cursor-se-resize gw-ml-auto gw-mt-8"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, transparent 45%, #4b5563 45%, #4b5563 55%, transparent 55%)," +
+                    "linear-gradient(135deg, transparent 65%, #4b5563 65%, #4b5563 75%, transparent 75%)",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "bottom right",
+                  backgroundSize: "100% 100%",
+                }}
+                title="Resize"
+              />
+            </div>
           </DialogPanel>
         </div>
       </div>
