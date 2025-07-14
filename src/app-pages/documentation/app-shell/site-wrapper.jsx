@@ -134,10 +134,22 @@ const siteWrapperProps = [
     desc: "If true, the Army logo will be displayed in the footer.",
   },
   {
+    name: "army250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the Army 250 yr anniversary logo will be displayed in the footer.",
+  },
+  {
     name: "usaceLogo",
     type: "boolean",
     default: "true",
     desc: "If true, the USACE logo will be displayed in the footer.",
+  },
+  {
+    name: "usace250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the USACE 250 yr anniversary logo will be displayed in the footer.",
   },
   {
     name: "rsgisLogo",
