@@ -10,6 +10,7 @@ import {
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
+import Link from "../../../../lib/components/navigation/link";
 
 const pageBreadcrumbs = [
   {
@@ -62,7 +63,19 @@ const componentProps_Dropdown = [
     name: "<select> attributes",
     type: "passthrough",
     default: "undefined",
-    desc: "Any additional props will be passed through to the <select> tag as attributes.",
+    desc: (
+      <>
+        Any additional props will be passed through to the {`<select>`} tag as
+        attributes.
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes"
+          className="gw-text-blue-600 hover:gw-underline gw-block"
+        >
+          Learn more
+        </Link>
+      </>
+    ),
   },
 ];
 
