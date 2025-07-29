@@ -32,7 +32,8 @@ function Dropdown({
         id={label}
         name={label}
         onChange={(e) => {
-          setSelectedValue(e.target.value);
+          // Control the state if a value is not provided
+          !props?.value && setSelectedValue(e.target.value);
           onChange(e);
         }}
         className={gwMerge(
@@ -40,7 +41,7 @@ function Dropdown({
           className
         )}
         {...props}
-        value={selectedValue}
+        value={props?.value || selectedValue}
       >
         {options}
       </select>
