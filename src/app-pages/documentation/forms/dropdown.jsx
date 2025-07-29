@@ -26,7 +26,7 @@ const pageBreadcrumbs = [
   },
 ];
 
-const componentProps_Fieldset = [
+const componentProps_Dropdown = [
   {
     name: "label",
     type: "string",
@@ -63,6 +63,21 @@ const componentProps_Fieldset = [
     type: "passthrough",
     default: "undefined",
     desc: "Any additional props will be passed through to the <select> tag as attributes.",
+  },
+];
+
+const componentProps_Options = [
+  {
+    name: "text",
+    type: "string",
+    default: "undefined",
+    desc: "The text to display in the dropdown option.",
+  },
+  {
+    name: "value",
+    type: "string",
+    default: "undefined",
+    desc: "The value to set when this option is selected.",
   },
 ];
 
@@ -199,7 +214,12 @@ export default Component;`}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API - <Code className="gw-p-2">{`<Dropdown />`}</Code>
         </div>
-        <PropsTable propsList={componentProps_Fieldset} />
+        <PropsTable propsList={componentProps_Dropdown} />
+        <div className="gw-font-bold gw-text-lg gw-pt-6">
+          Options -{" "}
+          <Code className="gw-p-2">{`const OPTIONS = [{text: "Option 1", "value": "option1"}, ...etc]`}</Code>
+        </div>
+        <PropsTable propsList={componentProps_Options} />
       </UsaceBox>
     </DocsPage>
   );
