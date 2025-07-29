@@ -1,4 +1,12 @@
-import { UsaceBox, Code, Text, Dropdown } from "../../../../lib";
+import { useState } from "react";
+import {
+  UsaceBox,
+  Code,
+  Text,
+  Dropdown,
+  Divider,
+  Badge,
+} from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -66,6 +74,7 @@ const exampleOptions = [
 ];
 
 function DropdownDocs() {
+  const [selectedOption, setSelectedOption] = useState("option1");
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Dropdown">
@@ -83,8 +92,10 @@ function DropdownDocs() {
           <div className="gw-w-[50%]">
             <Dropdown
               className={"gw-w-5/6 gw-m-auto"}
+              value={selectedOption}
               onChange={(e) => {
                 alert("You selected: " + e.target.value);
+                setSelectedOption(e.target.value);
               }}
               options={exampleOptions.map((option) => (
                 <option
@@ -135,6 +146,55 @@ function DropdownDocs() {
   export default Component;
   `}
         />
+        <Divider text="Controlling Dropdown State" />
+        <Text>
+          If you want to control the state of the dropdown, you can pass a value
+          prop to the Dropdown component. This will override the internal state
+          management and allow you to control the selected value externally.
+        </Text>
+        <Badge color="blue" className="gw-my-2">
+          If you pass a value prop, you must also handle the onChange.
+        </Badge>
+        <Badge color="yellow" className="gw-my-2 gw-ms-2">
+          The string in the useState is your default value and must be a valid
+          value from your options list.
+        </Badge>
+        <CodeExample
+          code={`import { Dropdown } from "@usace/groundwork";
+function Component() {
+    const [selectedOption, setSelectedOption] = useState("option1"); 
+    const exampleOptions = [
+        { text: "Select Option...", value: null },
+        { text: "Option 1", value: "option1" },
+        { text: "Option 2", value: "option2" },
+        { text: "Option 3", value: "option3" },
+    ];
+    return (
+        <div className="gw-w-[50%]">
+            <Dropdown
+                className={"gw-w-5/6 gw-m-auto"}
+                value={selectedOption}
+                onChange={(e) => {
+                    setSelectedOption(e.target.value);
+                }}
+                options={
+                    exampleOptions.map((option) => (
+                        <option
+                            key={option.value}
+                            value={option.value}
+                            className="gw-pl-2"
+                        >
+                            {option.text}
+                        </option>
+                    ))
+                }
+            />
+        </div>
+    );
+}
+export default Component;`}
+        />
+
         {/* Component props documentation */}
         <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API - <Code className="gw-p-2">{`<Dropdown />`}</Code>
