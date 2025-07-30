@@ -25,7 +25,13 @@ function NavbarLinkItem({ link, ...props }) {
       onMouseOver={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Link href={link.href} className={menuButtonClass} {...props}>
+      <Link
+        href={link?.href}
+        target={link?.target}
+        rel={link?.rel}
+        className={menuButtonClass}
+        {...props}
+      >
         {link.text}
       </Link>
       {link.children && open && (
@@ -39,7 +45,9 @@ function NavbarLinkItem({ link, ...props }) {
               {child.children ? (
                 <div className="gw-relative gw-group">
                   <Link
-                    href={child.href}
+                    href={child?.href}
+                    target={child?.target}
+                    rel={child?.rel}
                     className="after:gw-content-['►'] after:gw-ml-2 after:gw-text-[10px] gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                   >
                     {child.text}
@@ -57,7 +65,9 @@ function NavbarLinkItem({ link, ...props }) {
                       return (
                         <Menu.Item key={grandChild.id || grandChild.text}>
                           <Link
-                            href={grandChild.href}
+                            href={grandChild?.href}
+                            target={grandChild?.target}
+                            rel={grandChild?.rel}
                             className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                           >
                             {grandChild.text}
@@ -69,7 +79,9 @@ function NavbarLinkItem({ link, ...props }) {
                 </div>
               ) : (
                 <Link
-                  href={child.href}
+                  href={child?.href}
+                  target={child?.target}
+                  rel={child?.rel}
                   className="gw-block gw-text-sm gw-border-b gw-border-nav-black gw-bg-nav-dark-gray gw-hover:gw-bg-nav-translucent-gray gw-text-nav-light-gray gw-hover:gw-text-white gw-text-nowrap gw-font-semibold gw-px-3 gw-py-2 gw-bg-none"
                 >
                   {child.text}
