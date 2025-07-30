@@ -7,11 +7,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Modal",
-    href: "/docs/modal",
+    href: "/#/docs/modal",
   },
 ];
 

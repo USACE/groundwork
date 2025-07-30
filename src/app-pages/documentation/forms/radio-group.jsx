@@ -7,15 +7,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Forms",
-    href: "/docs/forms",
+    href: "/#/docs/forms",
   },
   {
     text: "Radio Group",
-    href: "/docs/forms/RadioGroup",
+    href: "/#/docs/forms/RadioGroup",
   },
 ];
 
@@ -95,7 +95,9 @@ function RadioGroupDocs() {
           ]}
         />
         <div className="gw-my-3">
-        <Text>{value} {units == "si" ? "m" : "ft"}</Text>
+          <Text>
+            {value} {units == "si" ? "m" : "ft"}
+          </Text>
         </div>
 
         <CodeExample

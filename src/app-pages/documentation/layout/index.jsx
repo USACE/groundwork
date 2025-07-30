@@ -4,11 +4,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Layout",
-    href: "/docs/layout",
+    href: "/#/docs/layout",
   },
 ];
 

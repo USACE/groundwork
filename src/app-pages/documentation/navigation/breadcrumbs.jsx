@@ -44,15 +44,15 @@ const breadcrumbItemPropsData = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Navigation",
-    href: "/docs/navigation",
+    href: "/#/docs/navigation",
   },
   {
     text: "Breadcrumbs",
-    href: "/docs/navigation/breadcrumbs",
+    href: "/#/docs/navigation/breadcrumbs",
   },
 ];
 

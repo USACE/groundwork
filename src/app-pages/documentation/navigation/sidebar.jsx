@@ -9,15 +9,15 @@ import exampleRegularLinks from "../../../example-regular-links";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Navigation",
-    href: "/docs/navigation",
+    href: "/#/docs/navigation",
   },
   {
     text: "Sidebar",
-    href: "/docs/navigation/sidebar",
+    href: "/#/docs/navigation/sidebar",
   },
 ];
 const componentProps = [
