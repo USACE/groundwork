@@ -4,7 +4,6 @@ import sidebarLinks from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
-  console.log("selected path = ", `/#/${hash}`);
   return (
     <Container fluid>
       <Breadcrumbs>
