@@ -5,15 +5,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Getting Started",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Client-Side Routing",
-    href: "/docs/client-side-routing",
+    href: "/#/docs/client-side-routing",
   },
 ];
 
@@ -274,8 +274,8 @@ export default function Location() {
           <H3>Creating the Store</H3>
           <P>
             So, before we create the store itself, we need to create our route
-            bundle. Open the <Code>./src/app-bundles/routes-bundle.js</Code> file
-            and add the following content:
+            bundle. Open the <Code>./src/app-bundles/routes-bundle.js</Code>{" "}
+            file and add the following content:
           </P>
           <Code className="!gw-font-bold">
             ./src/app-bundles/routes-bundle.js
@@ -478,36 +478,58 @@ export default App;`}
             are ignored and the default behavior takes over.
           </P>
           <H3>Setting a Base Path (Vite)</H3>
-            <Badge color="red" className="gw-block gw-my-2 gw-w-1/2">If your application lives at the root of the webserver, ignore this step!</Badge>
+          <Badge color="red" className="gw-block gw-my-2 gw-w-1/2">
+            If your application lives at the root of the webserver, ignore this
+            step!
+          </Badge>
           <P>
-            If you are deploying your application to a subdirectory on your web server, you will need to set a base path for your application. This is necessary to ensure that the internal-nav-helper can correctly determine the base URL for your application.
+            If you are deploying your application to a subdirectory on your web
+            server, you will need to set a base path for your application. This
+            is necessary to ensure that the internal-nav-helper can correctly
+            determine the base URL for your application.
           </P>
-        <P>
-            To set the base path, you need to update the <Code>vite.config.js</Code> file in your project. Add the following configuration to set the base path for your application:
-        </P>
-        <Code className="!gw-font-bold">vite.config.js</Code>
-        <CodeExample
+          <P>
+            To set the base path, you need to update the{" "}
+            <Code>vite.config.js</Code> file in your project. Add the following
+            configuration to set the base path for your application:
+          </P>
+          <Code className="!gw-font-bold">vite.config.js</Code>
+          <CodeExample
             code={`import { defineConfig } from 'vite';
 
 export default defineConfig({
     base: '/your-base-path/', // Replace 'your-base-path' with the actual base path i.e. '/myapp/' or '/hec/'
     plugins: [react()],
 });`}
-        />
-        <P>
-            Replace <Code>'/your-base-path/'</Code> with the actual base path where your application will be deployed. This ensures that all URLs in your application are correctly prefixed with the base path.
-        </P>
-        <P>
-            After you set the base path some of your paths that are not handled by the internal-nav-helper may not work as expected. You will need to update these paths to include the base path.
-        </P>
-        <P>
-        In addition the <Code>doUpdateUrlWithBase</Code> function can be used to update the URL with the base path dynamically.
-        </P>
-        <P>For situations where you require setting the base path such as in img tags or anchor tags, you can use the: </P>
-         <Badge color="blue" className="gw-my-2"><Code>const base = import.meta.env.BASE_URL</Code> </Badge> 
-        <P>Environment variable to get the base URL of your application. This variable is available in your application code and can be used to construct URLs with the base path.</P>
-        <CodeExample
-        code={`// Place OUTSIDE the component function at the top of the file
+          />
+          <P>
+            Replace <Code>'/your-base-path/'</Code> with the actual base path
+            where your application will be deployed. This ensures that all URLs
+            in your application are correctly prefixed with the base path.
+          </P>
+          <P>
+            After you set the base path some of your paths that are not handled
+            by the internal-nav-helper may not work as expected. You will need
+            to update these paths to include the base path.
+          </P>
+          <P>
+            In addition the <Code>doUpdateUrlWithBase</Code> function can be
+            used to update the URL with the base path dynamically.
+          </P>
+          <P>
+            For situations where you require setting the base path such as in
+            img tags or anchor tags, you can use the:{" "}
+          </P>
+          <Badge color="blue" className="gw-my-2">
+            <Code>const base = import.meta.env.BASE_URL</Code>{" "}
+          </Badge>
+          <P>
+            Environment variable to get the base URL of your application. This
+            variable is available in your application code and can be used to
+            construct URLs with the base path.
+          </P>
+          <CodeExample
+            code={`// Place OUTSIDE the component function at the top of the file
 const base = import.meta.env.BASE_URL;
 
 export default function Example() {
@@ -515,18 +537,29 @@ export default function Example() {
     return (
         <a href="\`\${base}images/myimage.png\`"><img src={\`\${base}images/myimage.png\`} alt="Logo" /></a>
     )
-}`      } />
+}`}
+          />
           <H3>Updating the URL dynamically</H3>
           <P>
-            The <Code>doUpdateUrlWithBase</Code> function is a utility function that allows you to update the URL in the browser without causing a full page refresh. 
-            This is useful when you want to update the URL based on user interaction, such as clicking on a link or submitting a form. This is more efficient than using an anchor tag 
-            with an href attribute, as it allows you to update the URL without causing a full page refresh.
+            The <Code>doUpdateUrlWithBase</Code> function is a utility function
+            that allows you to update the URL in the browser without causing a
+            full page refresh. This is useful when you want to update the URL
+            based on user interaction, such as clicking on a link or submitting
+            a form. This is more efficient than using an anchor tag with an href
+            attribute, as it allows you to update the URL without causing a full
+            page refresh.
           </P>
           <P>
-            Inside your component, you can call the <Code>doUpdateUrlWithBase</Code> function with the new URL you want to navigate to. Be sure to also import the <Code>doUpdateUrlWithBase</Code> function from the <Code>redux-bundler</Code> package.
+            Inside your component, you can call the{" "}
+            <Code>doUpdateUrlWithBase</Code> function with the new URL you want
+            to navigate to. Be sure to also import the{" "}
+            <Code>doUpdateUrlWithBase</Code> function from the{" "}
+            <Code>redux-bundler</Code> package.
           </P>
-          <Code className="!gw-font-bold">./src/app-pages/mypath/tab-example.jsx</Code>
-          <CodeExample 
+          <Code className="!gw-font-bold">
+            ./src/app-pages/mypath/tab-example.jsx
+          </Code>
+          <CodeExample
             code={`import { doUpdateUrlWithBase } from "redux-bundler";
 const base = import.meta.env.BASE_URL;
 
@@ -572,8 +605,8 @@ export default function TabExample() {
         />
     )
 }
-`}>
-          </CodeExample>
+`}
+          ></CodeExample>
         </div>
       </UsaceBox>
     </DocsPage>

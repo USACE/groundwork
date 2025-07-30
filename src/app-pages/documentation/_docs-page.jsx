@@ -4,7 +4,7 @@ import sidebarLinks from "../../nav-links";
 
 function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
-
+  console.log("selected path = ", `/#/${hash}`);
   return (
     <Container fluid>
       <Breadcrumbs>
@@ -20,7 +20,7 @@ function DocsPage({ breadcrumbs = [], children }) {
         <div className="md:gw-col-span-2">
           <Sidebar
             title="Contents"
-            selectedPath={hash}
+            selectedPath={`/#${hash}`}
             sidebarLinks={sidebarLinks}
           />
         </div>

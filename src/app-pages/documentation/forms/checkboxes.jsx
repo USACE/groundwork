@@ -6,9 +6,9 @@ import { Checkboxes } from "../../../../lib/components/form/checkboxes";
 import { useState, useMemo } from "react";
 
 const pageBreadcrumbs = [
-  { text: "Documentation", href: "/docs" },
-  { text: "Forms", href: "/docs/forms" },
-  { text: "Checkboxes", href: "/docs/forms/checkboxes" },
+  { text: "Documentation", href: "/#/docs" },
+  { text: "Forms", href: "/#/docs/forms" },
+  { text: "Checkboxes", href: "/#/docs/forms/checkboxes" },
 ];
 
 const checkboxItemProps = [

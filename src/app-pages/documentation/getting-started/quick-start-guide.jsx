@@ -7,15 +7,15 @@ import { TbPlayerTrackNext } from "react-icons/tb";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Getting Started",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Quick Start Guide",
-    href: "/docs/quick-start",
+    href: "/#/docs/quick-start",
   },
 ];
 

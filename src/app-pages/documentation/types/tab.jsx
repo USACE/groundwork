@@ -44,15 +44,15 @@ const tabProps = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Types",
-    href: "/docs/types",
+    href: "/#/docs/types",
   },
   {
     text: "Tab",
-    href: "/docs/types/tab",
+    href: "/#/docs/types/tab",
   },
 ];
 

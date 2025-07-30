@@ -6,15 +6,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Layout",
-    href: "/docs/layout",
+    href: "/#/docs/layout",
   },
   {
     text: "Container",
-    href: "/docs/layout/container",
+    href: "/#/docs/layout/container",
   },
 ];
 
@@ -24,7 +24,7 @@ const componentProps = [
     type: "boolean",
     default: "false",
     desc: "If true, the container will be full width. If false, the container will have a max width of 1140px.",
-  }
+  },
 ];
 
 function ContainerDocs() {
