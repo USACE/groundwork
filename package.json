@@ -1,60 +1,67 @@
 {
-    "name": "@usace/groundwork",
-    "private": false,
-    "version": "3.14.19",
-    "license": "MIT",
-    "type": "module",
-    "main": "./dist/groundwork.umd.cjs",
-    "module": "./dist/groundwork.es.js",
-    "files": [
-        "dist"
-    ],
-    "exports": {
-        ".": {
-            "import": "./dist/groundwork.es.js",
-            "require": "./dist/groundwork.umd.cjs"
-        },
-        "./dist/*.css": {
-            "import": "./dist/*.css",
-            "require": "./dist/*.css"
-        }
+  "name": "@usace/groundwork",
+  "private": false,
+  "version": "3.14.19",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/groundwork.umd.cjs",
+  "module": "./dist/groundwork.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/groundwork.es.js",
+      "require": "./dist/groundwork.umd.cjs"
     },
-    "scripts": {
-        "dev": "vite",
-        "build": "npm run build-lib && npm run build-docs",
-        "build-lib": "vite build -m lib",
-        "build-docs": "vite build",
-        "pub": "npm run build-lib && npm publish --access=public",
-        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview",
-        "test": "vitest"
-    },
-    "dependencies": {
-        "@headlessui/react": "^2.2.0",
-        "@tailwindcss/forms": "^0.5.9",
-        "internal-nav-helper": "^3.1.0",
-        "react-icons": "^5.0.1",
-        "redux-bundler": "^28.1.0",
-        "redux-bundler-hook": "^1.0.3",
-        "redux-bundler-react": "^1.2.0"
-    },
-    "peerDependencies": {
-        "react": "^18.2.0 || ^19.0.0",
-        "react-dom": "^18.2.0 || ^19.0.0"
-    },
-    "devDependencies": {
-        "@types/react": "^18.3.0",
-        "@types/react-dom": "^18.3.0",
-        "@vitejs/plugin-react": "^4.2.1",
-        "autoprefixer": "^10.4.17",
-        "eslint": "^8.55.0",
-        "eslint-plugin-react": "^7.33.2",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.5",
-        "postcss": "^8.4.33",
-        "tailwind-merge": "^2.5.2",
-        "tailwindcss": "^3.4.1",
-        "vite": "^5.0.13",
-        "vitest": "^2.1.1"
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
     }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build-lib && npm run build-docs",
+    "build-lib": "vite build -m lib",
+    "build-docs": "vite build",
+    "pub": "npm run build-lib && npm publish --access=public",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,css,md}": "prettier --write"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.9",
+    "internal-nav-helper": "^3.1.0",
+    "react-icons": "^5.0.1",
+    "redux-bundler": "^28.1.0",
+    "redux-bundler-hook": "^1.0.3",
+    "redux-bundler-react": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "postcss": "^8.4.33",
+    "prettier": "^3.6.2",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.13",
+    "vitest": "^2.1.1"
+  }
 }
