@@ -27,30 +27,41 @@ import { useState, useEffect } from "react";
  *  duration_ms=12000 // 12 seconds
  * >
  */
-function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgHeight, imgWidth, opacity = .5 }) {
-  const isImgArray = Array.isArray(image)
-  const isAltArray = Array.isArray(alt)
-  const [currentImage, setCurrentImage] = useState(isImgArray ? image[0] : image);
+function Hero({
+  title,
+  subtitle,
+  image,
+  alt,
+  children,
+  duration_ms = 12000,
+  imgHeight,
+  imgWidth,
+  opacity = 0.5,
+}) {
+  const isImgArray = Array.isArray(image);
+  const isAltArray = Array.isArray(alt);
+  const [currentImage, setCurrentImage] = useState(
+    isImgArray ? image[0] : image,
+  );
   const [currentAlt, setCurrentAlt] = useState(isAltArray ? alt[0] : alt);
   // TODO: Move this to a utilities function
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
   /**
-    * @name getRandomInt
-    * @description returns a random integer given a max value
-    * @param {integer} max - The max value to return a random integer
-    * @example
-    * let x = getRandomInt(5)
-    * > console.log(x) // 3
-    */
+   * @name getRandomInt
+   * @description returns a random integer given a max value
+   * @param {integer} max - The max value to return a random integer
+   * @example
+   * let x = getRandomInt(5)
+   * > console.log(x) // 3
+   */
   useEffect(() => {
-    if (!isImgArray) return
+    if (!isImgArray) return;
     const interval = setInterval(() => {
       const RAND_INT = getRandomInt(image.length);
       setCurrentImage(image[RAND_INT]);
-      if (alt)
-        setCurrentAlt(alt[RAND_INT]);
+      if (alt) setCurrentAlt(alt[RAND_INT]);
     }, duration_ms);
 
     return () => clearInterval(interval);
@@ -60,7 +71,7 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgH
   if (isImgArray && isAltArray) {
     if (image.length !== alt.length)
       throw new Error(
-        "Error rendering hero image. Your image and alt text arrays must be the same length."
+        "Error rendering hero image. Your image and alt text arrays must be the same length.",
       );
   }
 
@@ -75,7 +86,10 @@ function Hero({ title, subtitle, image, alt, children, duration_ms = 12000, imgH
           style={{ height: imgHeight, width: imgWidth }}
         />
       </div>
-      <div style={{ opacity: opacity }} className={`gw-absolute gw-inset-0 gw-bg-zinc-950`} />
+      <div
+        style={{ opacity: opacity }}
+        className={`gw-absolute gw-inset-0 gw-bg-zinc-950`}
+      />
       {children && (
         <div className="gw-absolute gw-inset-0 gw-flex gw-items-center gw-justify-center">
           {children}

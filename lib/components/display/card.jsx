@@ -6,7 +6,7 @@ function Card({ className, children, stretch = false, ...props }) {
     return gwMerge(
       "gw-w-full gw-p-3 gw-shadow gw-bg-white gw-rounded-md gw-border",
       stretch ? "gw-self-stretch" : "",
-      className
+      className,
     );
   }, [className]);
   return (

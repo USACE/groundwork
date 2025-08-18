@@ -119,7 +119,7 @@ function LoginButtonDocs() {
                 onClick={() => {
                   // implement real login logic here
                   const unsafe_input = window.prompt(
-                    "Enter your e-mail address"
+                    "Enter your e-mail address",
                   );
                   if (unsafe_input) {
                     if (validateEmail(unsafe_input)) setEmail(unsafe_input);

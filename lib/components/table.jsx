@@ -48,7 +48,7 @@ export function Table({
           className={gwMerge(
             "gw--mx-[--gutter] gw-overflow-x-auto gw-whitespace-nowrap",
             "gw-relative",
-            className
+            className,
           )}
         >
           <div
@@ -57,7 +57,7 @@ export function Table({
               "gw-inline-block gw-min-w-full gw-align-middle",
               !bleed && "sm:gw-px-[--gutter]",
               overflow && "gw-overflow-y-auto",
-              overflow && overflowHeight && overflowHeight
+              overflow && overflowHeight && overflowHeight,
             )}
           >
             <table
@@ -80,7 +80,7 @@ export function TableHead({ className, ...props }) {
   let { overflow, stickyHeader } = useContext(TableContext);
   if (!overflow && stickyHeader)
     console.warn(
-        "stickyHeader is set to true but overflow is not set. This will not work as expected. Please set overflow to true."
+      "stickyHeader is set to true but overflow is not set. This will not work as expected. Please set overflow to true.",
     );
   const overflowClass =
     "gw-z-10 gw-sticky gw-top-0 gw-bg-white gw-box-shadow dark:gw-bg-zinc-950/50 gw-backdrop-blur-[var(--backdrop-blur)]";
@@ -89,7 +89,7 @@ export function TableHead({ className, ...props }) {
       className={gwMerge(
         "gw-text-zinc-500 dark:gw-text-zinc-400",
         className,
-        overflow && stickyHeader && overflowClass
+        overflow && stickyHeader && overflowClass,
       )}
       {...props}
     />
@@ -128,7 +128,7 @@ export function TableRow({
           href &&
             !striped &&
             "hover:gw-bg-zinc-950/[2.5%] dark:hover:gw-bg-white/[2.5%]",
-          className
+          className,
         )}
       >
         {children}
@@ -148,7 +148,7 @@ export function TableHeader({ className, ...props }) {
         grid &&
           "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
         !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
-        className
+        className,
       )}
     />
   );
@@ -172,7 +172,7 @@ export function TableCell({ className, children, ...props }) {
           "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
         dense ? "gw-py-2.5" : "gw-py-4",
         !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
-        className
+        className,
       )}
     >
       {href && (

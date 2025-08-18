@@ -128,7 +128,7 @@ function CheckboxesDocs() {
         labelProps: { className: "gw-text-blue-400 gw-text-xl" },
       },
     ],
-    [checkedItems]
+    [checkedItems],
   );
 
   return (

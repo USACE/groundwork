@@ -15,7 +15,7 @@ function NavbarLinkItem({ link, ...props }) {
     open ? "gw-bg-nav-dark-gray gw-text-white" : "gw-text-nav-light-gray",
     link.children
       ? "after:gw-content-['▼'] after:gw-text-[10px] after:gw-ml-2"
-      : ""
+      : "",
   );
 
   return (
@@ -60,7 +60,7 @@ function NavbarLinkItem({ link, ...props }) {
                     {child.children.map((grandChild) => {
                       if (!grandChild.children)
                         console.warn(
-                          "Header items can only be 2 levels deep. Please reorganize your header links. This helps to avoid CSS issues."
+                          "Header items can only be 2 levels deep. Please reorganize your header links. This helps to avoid CSS issues.",
                         );
                       return (
                         <Menu.Item key={grandChild.id || grandChild.text}>

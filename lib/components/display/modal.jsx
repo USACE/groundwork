@@ -21,10 +21,10 @@ function Modal({
   // Check if the size exists
   if (!WIDTH_OPTIONS[size]) {
     console.error(
-      `Invalid size prop: ${size}. Must be one of: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'`
+      `Invalid size prop: ${size}. Must be one of: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'`,
     );
     console.warn(
-      `Defaulting to '2xl' for size of <Modal modalTitle="${dialogTitle}" .../>`
+      `Defaulting to '2xl' for size of <Modal modalTitle="${dialogTitle}" .../>`,
     );
     size = "2xl";
   }
@@ -46,7 +46,7 @@ function Modal({
               "gw-rounded-lg",
               "gw-shadow-lg",
               "gw-bg-white",
-              "gw-p-12"
+              "gw-p-12",
             )}
           >
             {dialogTitle && (

@@ -5,24 +5,31 @@ import {
   DialogTitle as HeadlessDialogTitle,
   Transition as HeadlessTransition,
   TransitionChild as HeadlessTransitionChild,
-} from '@headlessui/react'
-import clsx from 'clsx'
-import { Fragment } from 'react'
-import { Text } from './text'
+} from "@headlessui/react";
+import clsx from "clsx";
+import { Fragment } from "react";
+import { Text } from "./text";
 
 const sizes = {
-  xs: 'sm:max-w-xs',
-  sm: 'sm:max-w-sm',
-  md: 'sm:max-w-md',
-  lg: 'sm:max-w-lg',
-  xl: 'sm:max-w-xl',
-  '2xl': 'sm:max-w-2xl',
-  '3xl': 'sm:max-w-3xl',
-  '4xl': 'sm:max-w-4xl',
-  '5xl': 'sm:max-w-5xl',
-}
+  xs: "sm:max-w-xs",
+  sm: "sm:max-w-sm",
+  md: "sm:max-w-md",
+  lg: "sm:max-w-lg",
+  xl: "sm:max-w-xl",
+  "2xl": "sm:max-w-2xl",
+  "3xl": "sm:max-w-3xl",
+  "4xl": "sm:max-w-4xl",
+  "5xl": "sm:max-w-5xl",
+};
 
-export function Alert({ open, onClose, size = 'md', className, children, ...props }) {
+export function Alert({
+  open,
+  onClose,
+  size = "md",
+  className,
+  children,
+  ...props
+}) {
   return (
     <HeadlessTransition appear as={Fragment} show={open} {...props}>
       <HeadlessDialog onClose={onClose}>
@@ -53,7 +60,7 @@ export function Alert({ open, onClose, size = 'md', className, children, ...prop
               className={clsx(
                 className,
                 sizes[size],
-                'row-start-2 w-full rounded-2xl bg-white p-8 shadow-lg ring-1 ring-zinc-950/10 sm:rounded-2xl sm:p-6 dark:bg-zinc-900 dark:ring-white/10 forced-colors:outline'
+                "row-start-2 w-full rounded-2xl bg-white p-8 shadow-lg ring-1 ring-zinc-950/10 sm:rounded-2xl sm:p-6 dark:bg-zinc-900 dark:ring-white/10 forced-colors:outline",
               )}
               enter="ease-out duration-100"
               enterFrom="scale-95"
@@ -68,7 +75,7 @@ export function Alert({ open, onClose, size = 'md', className, children, ...prop
         </HeadlessTransitionChild>
       </HeadlessDialog>
     </HeadlessTransition>
-  )
+  );
 }
 
 export function AlertTitle({ className, ...props }) {
@@ -77,10 +84,10 @@ export function AlertTitle({ className, ...props }) {
       {...props}
       className={clsx(
         className,
-        'text-balance text-center text-base/6 font-semibold text-zinc-950 sm:text-wrap sm:text-left sm:text-sm/6 dark:text-white'
+        "text-balance text-center text-base/6 font-semibold text-zinc-950 sm:text-wrap sm:text-left sm:text-sm/6 dark:text-white",
       )}
     />
-  )
+  );
 }
 
 export function AlertDescription({ className, ...props }) {
@@ -88,13 +95,13 @@ export function AlertDescription({ className, ...props }) {
     <HeadlessDescription
       as={Text}
       {...props}
-      className={clsx(className, 'mt-2 text-pretty text-center sm:text-left')}
+      className={clsx(className, "mt-2 text-pretty text-center sm:text-left")}
     />
-  )
+  );
 }
 
 export function AlertBody({ className, ...props }) {
-  return <div {...props} className={clsx(className, 'mt-4')} />
+  return <div {...props} className={clsx(className, "mt-4")} />;
 }
 
 export function AlertActions({ className, ...props }) {
@@ -103,8 +110,8 @@ export function AlertActions({ className, ...props }) {
       {...props}
       className={clsx(
         className,
-        'mt-6 flex flex-col-reverse items-center justify-end gap-3 *:w-full sm:mt-4 sm:flex-row sm:*:w-auto'
+        "mt-6 flex flex-col-reverse items-center justify-end gap-3 *:w-full sm:mt-4 sm:flex-row sm:*:w-auto",
       )}
     />
-  )
+  );
 }

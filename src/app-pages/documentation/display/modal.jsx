@@ -71,13 +71,13 @@ function ModalDocs() {
   const [isLoading, setIsLoading] = useState(true);
 
   const [imageSrc, setImageSrc] = useState(
-    `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+    `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`,
   );
 
   const refreshImage = () => {
     setIsLoading(true);
     setImageSrc(
-      `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+      `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`,
     );
     setIsOpen(true);
   };

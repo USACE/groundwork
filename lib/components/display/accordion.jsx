@@ -18,16 +18,13 @@ function Accordion({
               className={gwMerge(
                 "gw-flex gw-justify-between gw-items-center gw-w-full gw-shadow gw-px-3 gw-py-2 gw-text-sm gw-font-semibold gw-text-gray-500 gw-bg-gray-50 hover:gw-bg-gray-100",
                 open ? "gw-rounded-t" : "gw-rounded",
-                className
+                className,
               )}
             >
               {heading}
               {open ? <VscChevronDown /> : <VscChevronRight />}
             </Disclosure.Button>
-            <Disclosure.Panel
-              className="gw-shadow"
-              unmount={unmountOnClose}
-            >
+            <Disclosure.Panel className="gw-shadow" unmount={unmountOnClose}>
               {children}
             </Disclosure.Panel>
           </>

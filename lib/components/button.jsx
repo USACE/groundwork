@@ -199,7 +199,7 @@ export const Button = React.forwardRef(function Button(
     children,
     ...props
   },
-  ref
+  ref,
 ) {
   let classes = gwMerge(
     base,
@@ -214,7 +214,7 @@ export const Button = React.forwardRef(function Button(
     style === "filled" ? colorsFilled[color] : "",
     style === "outline" ? colorsOutline[color] : "",
     style === "plain" ? colorsPlain[color] : "",
-    className
+    className,
   );
 
   return "href" in props ? (
