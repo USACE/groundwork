@@ -1,7 +1,6 @@
 import gwMerge from "../../gw-merge";
 import { Fieldset } from "./fieldset";
 
-
 function RadioGroup({
   legend,
   content,
@@ -19,7 +18,9 @@ function RadioGroup({
           {legend}
         </legend>
       )}
-      {label && <p className="gw-mt-1 gw-text-sm/6 gw-text-gray-600">{label}</p>}
+      {label && (
+        <p className="gw-mt-1 gw-text-sm/6 gw-text-gray-600">{label}</p>
+      )}
       <div className="gw-mt-6 gw-space-y-6">
         {content.map((buttonItem, idx) => {
           const id = buttonItem?.id || `radio-${label}-${idx}`;
@@ -36,7 +37,10 @@ function RadioGroup({
               />
               <label
                 htmlFor={id}
-                className={gwMerge("gw-ml-3 gw-block gw-text-sm/6 gw-font-medium gw-text-gray-900", buttonItem?.className)}
+                className={gwMerge(
+                  "gw-ml-3 gw-block gw-text-sm/6 gw-font-medium gw-text-gray-900",
+                  buttonItem?.className,
+                )}
               >
                 {buttonItem.text}
               </label>
@@ -49,17 +53,14 @@ function RadioGroup({
 }
 
 RadioGroup.defaultProps = {
-    legend: "string",
-    content: [
-        { id: 0, text: "string" },
-    ],
-    label: "string",
-    onClick: () => {},
-    onChange: () => {},
-    defaultChecked: "string",
-    className: "string",
+  legend: "string",
+  content: [{ id: 0, text: "string" }],
+  label: "string",
+  onClick: () => {},
+  onChange: () => {},
+  defaultChecked: "string",
+  className: "string",
 };
 
-
 export default RadioGroup;
-export { RadioGroup }
+export { RadioGroup };

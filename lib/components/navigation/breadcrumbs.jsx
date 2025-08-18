@@ -8,7 +8,7 @@ function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
       "gw-text-gray-300 hover:gw-text-gray-500 last:gw-text-gray-900",
-      className
+      className,
     );
   }, [className]);
   return (
@@ -34,7 +34,7 @@ function Breadcrumbs({ className, children }) {
   const breadcrumbsClass = useMemo(() => {
     return gwMerge(
       "gw-flex gw-flex-nowrap gw-items-center gw-space-x-2 gw-py-4 gw-overflow-x-auto gw-hide-scrollbar",
-      className
+      className,
     );
   }, [className]);
   return (

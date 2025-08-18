@@ -21,8 +21,8 @@ function PopoutMenu({
   if (!AVAIL_DIRECTIONS.includes(direction)) {
     throw new Error(
       `Invalid direction in component <Popover direction="${direction}". Valid directions are: ${AVAIL_DIRECTIONS.join(
-        ", "
-      )}`
+        ", ",
+      )}`,
     );
   }
 
@@ -48,7 +48,7 @@ function PopoutMenu({
       style={{ zIndex: level * 10 + 100 }}
       className={gwMerge(
         "gw-relative gw-cursor-not-allowed gw-select-none",
-        className
+        className,
       )}
     >
       {({ open }) => (

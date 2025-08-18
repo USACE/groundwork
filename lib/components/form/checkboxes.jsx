@@ -4,7 +4,7 @@ import { Fieldset } from "./fieldset";
 function Checkboxes({ content, legend, className, ...props }) {
   if (!content || !Array.isArray(content) || content.length === 0) {
     console.warn(
-      "Checkboxes component requires a non-empty array of content items."
+      "Checkboxes component requires a non-empty array of content items.",
     );
     return null;
   }
@@ -38,7 +38,7 @@ function Checkboxes({ content, legend, className, ...props }) {
                     "checked:gw-border-indigo-600 checked:gw-bg-indigo-600 indeterminate:gw-border-indigo-600 indeterminate:gw-bg-indigo-600",
                     "focus-visible:gw-outline focus-visible:gw-outline-2 focus-visible:gw-outline-offset-2 focus-visible:gw-outline-indigo-600 disabled:gw-border-gray-300",
                     "disabled:gw-bg-gray-100 disabled:checked:gw-bg-gray-100 forced-colors:gw-appearance-auto",
-                    item?.inputProps?.className
+                    item?.inputProps?.className,
                   )}
                 />
                 <svg

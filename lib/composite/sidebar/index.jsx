@@ -19,7 +19,7 @@ function renderPopoutMenu({
 }) {
   if (typeof maxScrollHeight !== "string") {
     console.warn(
-      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'"
+      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'",
     );
     maxScrollHeight = "50vh";
   }
@@ -76,7 +76,7 @@ function renderPopoutMenu({
                 popoutDirection,
                 maxScrollHeight,
                 level: level + 1,
-              })
+              }),
             )}
           </div>
         </PopoutMenu>
@@ -113,7 +113,7 @@ function renderRegularLinks(link, selectedPath, level = 0) {
       {link?.children && (
         <div>
           {link?.children.map((child) =>
-            renderRegularLinks(child, selectedPath, level + 1)
+            renderRegularLinks(child, selectedPath, level + 1),
           )}
         </div>
       )}
@@ -135,7 +135,7 @@ function Sidebar({
 
   if (popoutDirection && !enablePopout) {
     throw new Error(
-      "popoutDirection can only be used when enablePopout is true"
+      "popoutDirection can only be used when enablePopout is true",
     );
   }
 
