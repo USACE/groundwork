@@ -11,6 +11,8 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const breadcrumbsPropsData = [
   {
     name: "className",
@@ -44,15 +46,15 @@ const breadcrumbItemPropsData = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: `${BASE_URL}#/docs/navigation`,
   },
   {
     text: "Breadcrumbs",
-    href: "/#/docs/navigation/breadcrumbs",
+    href: `${BASE_URL}#/docs/navigation/breadcrumbs`,
   },
 ];
 
@@ -78,20 +80,25 @@ function Breadcrumbs() {
         <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
           <BC>
-            <BreadcrumbItem href="/docs" text="Documentation" />
-            <BreadcrumbItem href="/docs/navigation" text="Navigation" />
+            <BreadcrumbItem href={`${BASE_URL}#/docs`} text="Documentation" />
             <BreadcrumbItem
-              href="/docs/navigation/breadcrumbs"
+              href={`${BASE_URL}#/docs/navigation`}
+              text="Navigation"
+            />
+            <BreadcrumbItem
+              href={`${BASE_URL}#/docs/navigation/breadcrumbs`}
               text="Breadcrumbs"
             />
           </BC>
         </div>
         <div>
           <CodeExample
-            code={`<Breadcrumbs>
-  <BreadcrumbItem href="/docs" text="Documentation" />
-  <BreadcrumbItem href="/docs/navigation" text="Navigation" />
-  <BreadcrumbItem href="/docs/navigation/breadcrumbs" text="Breadcrumbs" />
+            code={`const BASE_URL = import.meta.env.BASE_URL;
+// Inside your component function
+<Breadcrumbs>
+  <BreadcrumbItem href="\${BASE_URL}/docs" text="Documentation" />
+  <BreadcrumbItem href="\${BASE_URL}/docs/navigation" text="Navigation" />
+  <BreadcrumbItem href="\${BASE_URL}/docs/navigation/breadcrumbs" text="Breadcrumbs" />
 </Breadcrumbs>
 `}
           />

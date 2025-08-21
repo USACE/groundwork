@@ -2,18 +2,20 @@ import { UsaceBox, Code, Text, H3, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: `/${BASE_URL}#/docs/getting-started`,
   },
   {
     text: "Client-Side Routing",
-    href: "/#/docs/client-side-routing",
+    href: `${BASE_URL}#/docs/client-side-routing`,
   },
 ];
 
@@ -122,11 +124,14 @@ function ClientSideRouting() {
             rest of the guide will assume you have followed these steps. These
             steps also assume that you have walked through a project set up
             using the{" "}
-            <a href="/docs/quick-start" className="gw-underline">
+            <a href={`${BASE_URL}#/docs/quick-start`} className="gw-underline">
               quick start guide
             </a>{" "}
             and{" "}
-            <a href="/docs/adding-tailwind" className="gw-underline">
+            <a
+              href={`${BASE_URL}#/docs/adding-tailwind`}
+              className="gw-underline"
+            >
               adding Tailwind CSS
             </a>{" "}
             tutorials.
@@ -238,6 +243,8 @@ export default function Home() {
             code={`import { UsaceBox } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default function Location() {
   const { routeParams } = useConnect("selectRouteParams");
   const location = routeParams?.location?.toUpperCase();
@@ -246,7 +253,7 @@ export default function Location() {
     <UsaceBox className="mt-8" title={\`Location: \${location}\`}>
       <div>
         <p>This could be a detail page about {location}</p>
-        <a className="hover:underline" href="/">
+        <a className="hover:underline" href={\`${BASE_URL}/\`}>
           Go back home
         </a>
       </div>
@@ -285,11 +292,16 @@ export default function Location() {
 import Home from "../app-pages/home";
 import Location from "../app-pages/location";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default createRouteBundle({
-  "/": Home,
-  "/location/:location": Location,
-  "*": Home,
-});`}
+  [\`${BASE_URL}\`]: Home,
+  [\`${BASE_URL}/\`]: Home,
+  [\`${BASE_URL}/location/:location\`]: Location,
+  "*": Home, // Replace with your NotFound.jsx component!
+  {
+    routeInfoSelector: "selectPathname",
+  });`}
           >
             {" "}
           </CodeExample>
@@ -513,8 +525,9 @@ export default defineConfig({
             to update these paths to include the base path.
           </P>
           <P>
-            In addition the <Code>doUpdateUrl</Code> function can be
-            used to update the URL. Just take care to also prepend the <Code>BASE_URL</Code> constant to any paths you provide.
+            In addition the <Code>doUpdateUrl</Code> function can be used to
+            update the URL. Just take care to also prepend the{" "}
+            <Code>BASE_URL</Code> constant to any paths you provide.
           </P>
           <P>
             For situations where you require setting the base path such as in
@@ -541,19 +554,18 @@ export default function Example() {
           />
           <H3>Updating the URL dynamically</H3>
           <P>
-            The <Code>doUpdateUrl</Code> function is a utility function
-            that allows you to update the URL in the browser without causing a
-            full page refresh. This is useful when you want to update the URL
-            based on user interaction, such as clicking on a link or submitting
-            a form. This is more efficient than using an anchor tag with an href
+            The <Code>doUpdateUrl</Code> function is a utility function that
+            allows you to update the URL in the browser without causing a full
+            page refresh. This is useful when you want to update the URL based
+            on user interaction, such as clicking on a link or submitting a
+            form. This is more efficient than using an anchor tag with an href
             attribute, as it allows you to update the URL without causing a full
             page refresh.
           </P>
           <P>
-            Inside your component, you can call the{" "}
-            <Code>doUpdateUrl</Code> function with the new URL you want
-            to navigate to. Be sure to also import the{" "}
-            <Code>doUpdateUrl</Code> function from the{" "}
+            Inside your component, you can call the <Code>doUpdateUrl</Code>{" "}
+            function with the new URL you want to navigate to. Be sure to also
+            import the <Code>doUpdateUrl</Code> function from the{" "}
             <Code>redux-bundler</Code> package.
           </P>
           <Code className="!gw-font-bold">

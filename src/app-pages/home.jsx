@@ -43,7 +43,10 @@ function Home() {
                 building your application
               </Text>
               <div className="gw-mt-3">
-                <TextLink href="/docs" className="gw-text-lg gw-font-bold">
+                <TextLink
+                  href={`${BASE_URL}#/docs`}
+                  className="gw-text-lg gw-font-bold"
+                >
                   Check out the docs
                 </TextLink>
               </div>

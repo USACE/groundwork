@@ -4,14 +4,16 @@ import CodeExample from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Modal",
-    href: "/#/docs/modal",
+    href: `${BASE_URL}#/docs/modal`,
   },
 ];
 

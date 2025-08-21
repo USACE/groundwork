@@ -6,15 +6,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "#/docs",
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: "#/docs/buttons",
   },
   {
     text: "OK / Cancel",
-    href: "/#/docs/buttons/ok-cancel",
+    href: "#/docs/buttons/ok-cancel",
   },
 ];
 

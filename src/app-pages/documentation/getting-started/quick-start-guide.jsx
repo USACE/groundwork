@@ -4,18 +4,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 import { TbPlayerTrackNext } from "react-icons/tb";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs/getting-started`,
   },
   {
     text: "Quick Start Guide",
-    href: "/#/docs/quick-start",
+    href: `${BASE_URL}#/docs/quick-start`,
   },
 ];
 
@@ -188,7 +190,10 @@ export default App;`}
             Groundwork uses under the hood.
           </P>
           <P>
-            <a href="/docs/adding-tailwind" className="gw-underline">
+            <a
+              href={`${BASE_URL}#/docs/adding-tailwind`}
+              className="gw-underline"
+            >
               <span className="gw-flex gw-items-center gw-gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>

@@ -2,10 +2,12 @@ import { UsaceBox, Text, Code, H4 } from "../../../lib";
 import CopyButton from "../../app-components/copy-button";
 import DocsPage from "./_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
 ];
 
@@ -30,7 +32,7 @@ function Docs() {
               Vite documentation
             </a>{" "}
             for more details on getting started or visit the{" "}
-            <a className="gw-underline" href="/docs/quick-start">
+            <a className="gw-underline" href={`${BASE_URL}#/docs/quick-start`}>
               quick start guide
             </a>{" "}
             for a step by step guide for getting set up using Vite with

@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Types",
-    href: "/#/docs/types",
+    href: `${BASE_URL}#/docs/types`,
   },
 ];
 
@@ -24,10 +26,16 @@ function Types() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="gw-hover:gw-underline" href="/docs/types/link">
+          <a
+            className="gw-hover:gw-underline"
+            href={`${BASE_URL}#/ocs/types/link`}
+          >
             <li>Link - Group text and a href attribute.</li>
           </a>
-          <a className="gw-hover:gw-underline" href="/docs/types/tab">
+          <a
+            className="gw-hover:gw-underline"
+            href={`${BASE_URL}#/docs/types/tab`}
+          >
             <li>Tab - Define the behavior of the tabs component.</li>
           </a>
         </ul>
