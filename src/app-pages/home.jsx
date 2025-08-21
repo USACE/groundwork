@@ -1,15 +1,15 @@
 import { Container, Text, Code, UsaceBox, TextLink, Hero } from "../../lib";
 import CopyButton from "../app-components/copy-button";
 
-const base = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL;
 
 function Home() {
   return (
     <>
       <Hero
         image={[
-          `${base}nww-lucky-peak-dam.jpg`,
-          `${base}taylorsville-SPPRu4Rw.jpg`,
+          `${BASE_URL}nww-lucky-peak-dam.jpg`,
+          `${BASE_URL}taylorsville-SPPRu4Rw.jpg`,
         ]}
         alt={["Lucky Peak Dam", "Taylorsville Dam"]}
         title="Groundwork"

@@ -498,12 +498,12 @@ export default App;`}
             code={`import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/your-base-path/', // Replace 'your-base-path' with the actual base path i.e. '/myapp/' or '/hec/'
+    base: '/your-base-path', // Replace 'your-base-path' with the actual base path i.e. '/myapp' or '/hec'
     plugins: [react()],
 });`}
           />
           <P>
-            Replace <Code>'/your-base-path/'</Code> with the actual base path
+            Replace <Code>'/your-base-path'</Code> with the actual base path
             where your application will be deployed. This ensures that all URLs
             in your application are correctly prefixed with the base path.
           </P>
@@ -513,15 +513,15 @@ export default defineConfig({
             to update these paths to include the base path.
           </P>
           <P>
-            In addition the <Code>doUpdateUrlWithBase</Code> function can be
-            used to update the URL with the base path dynamically.
+            In addition the <Code>doUpdateUrl</Code> function can be
+            used to update the URL. Just take care to also prepend the <Code>BASE_URL</Code> constant to any paths you provide.
           </P>
           <P>
             For situations where you require setting the base path such as in
             img tags or anchor tags, you can use the:{" "}
           </P>
           <Badge color="blue" className="gw-my-2">
-            <Code>const base = import.meta.env.BASE_URL</Code>{" "}
+            <Code>const BASE_URL = import.meta.env.BASE_URL</Code>{" "}
           </Badge>
           <P>
             Environment variable to get the base URL of your application. This
@@ -530,18 +530,18 @@ export default defineConfig({
           </P>
           <CodeExample
             code={`// Place OUTSIDE the component function at the top of the file
-const base = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default function Example() {
     // This wraps an image with an anchor tag that when clicked will navigate to the image file
     return (
-        <a href="\`\${base}images/myimage.png\`"><img src={\`\${base}images/myimage.png\`} alt="Logo" /></a>
+        <a href="\`\${BASE_URL}/images/myimage.png\`"><img src={\`\${BASE_URL}/images/myimage.png\`} alt="Logo" /></a>
     )
 }`}
           />
           <H3>Updating the URL dynamically</H3>
           <P>
-            The <Code>doUpdateUrlWithBase</Code> function is a utility function
+            The <Code>doUpdateUrl</Code> function is a utility function
             that allows you to update the URL in the browser without causing a
             full page refresh. This is useful when you want to update the URL
             based on user interaction, such as clicking on a link or submitting
@@ -551,17 +551,17 @@ export default function Example() {
           </P>
           <P>
             Inside your component, you can call the{" "}
-            <Code>doUpdateUrlWithBase</Code> function with the new URL you want
+            <Code>doUpdateUrl</Code> function with the new URL you want
             to navigate to. Be sure to also import the{" "}
-            <Code>doUpdateUrlWithBase</Code> function from the{" "}
+            <Code>doUpdateUrl</Code> function from the{" "}
             <Code>redux-bundler</Code> package.
           </P>
           <Code className="!gw-font-bold">
             ./src/app-pages/mypath/tab-example.jsx
           </Code>
           <CodeExample
-            code={`import { doUpdateUrlWithBase } from "redux-bundler";
-const base = import.meta.env.BASE_URL;
+            code={`import { useConnect } from "redux-bundler-hook";
+const BASE_URL = import.meta.env.BASE_URL;
 
 // Inside your ./src/app-bundles/routes-bundle.js
 // Add the following:
@@ -571,7 +571,7 @@ const base = import.meta.env.BASE_URL;
 
 export default function TabExample() {
     const { routeParams } = useConnect("selectRouteParams");
-    const { doUpdateUrlWithBase } = useConnect("doUpdateUrlWithBase");
+    const { doUpdateUrl } = useConnect("doUpdateUrl");
     const { tabName } = routeParams;
 
     let TabsData =[
@@ -588,7 +588,7 @@ export default function TabExample() {
         // You could also manually add these onClick handlers to the above objects in TabsData 
         //  if you wanted each to go to a different path/do something else
         tab.onClick = () => {
-            doUpdateUrlWithBase(\`\${base}mypath/\${tab.name?.toLowerCase()}\`);
+            doUpdateUrl(\`\${BASE_URL}/mypath/\${tab.name?.toLowerCase()}\`);
         }
     }))
 
