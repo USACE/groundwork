@@ -36,8 +36,8 @@ export default defineConfig(({ mode }) => {
     console.log("Building preview app", mode);
     const base =
       mode === "production"
-        ? "https://usace.github.io/groundwork/"
-        : "http://localhost:5173/";
+        ? "https://usace.github.io/groundwork/#"
+        : "http://localhost:5173";
     return {
       plugins: [react()],
       base: base,
