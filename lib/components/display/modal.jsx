@@ -38,7 +38,7 @@ function Modal({
   }
   
   // Check if Role exists
-  if (!roleOptions[role]) {
+  if (!roleOptions.includes(role)) {
     console.error(
       `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`)
       console.warn(
@@ -54,8 +54,8 @@ function Modal({
       onClose={onClose}
       static= {isStatic}
       autoFocus={autoFocus}
-      dialogTransition={dialogTransition}
-      unount={unmount}
+      transition={dialogTransition}
+      unmount={unmount}
       role={role}
       className={gwMerge("gw-relative", "gw-z-[200]", className)}
     >
