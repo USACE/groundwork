@@ -2,15 +2,17 @@ import { useConnect } from "redux-bundler-hook";
 import { Container, Sidebar, Breadcrumbs, BreadcrumbItem } from "../../../lib";
 import sidebarLinks from "../../nav-links";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
   return (
     <Container fluid>
-      <Breadcrumbs>
+      <Breadcrumbs baseUrl={BASE_URL}>
         {breadcrumbs.map((breadcrumb) => (
           <BreadcrumbItem
             key={breadcrumb.text}
-            href={breadcrumb.href}
+            href={BASE_URL + breadcrumb.href}
             text={breadcrumb.text}
           />
         ))}
