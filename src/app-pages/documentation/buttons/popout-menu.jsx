@@ -5,18 +5,20 @@ import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import links from "../../../nav-links";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "#/docs",
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: "#/docs/buttons",
   },
   {
     text: "Popout Menu",
-    href: "/#/docs/buttons/PopoutMenu",
+    href: "#/docs/buttons/PopoutMenu",
   },
 ];
 
@@ -60,7 +62,7 @@ function PopoutMenuDocs() {
             {"<Sidebar />"} component, please see the{" "}
             <a
               className="gw-underline"
-              href="/#/docs/navigation/sidebar"
+              href={`${BASE_URL}#/docs/navigation/sidebar`}
               target="_blank"
               rel="no-referrer"
             >

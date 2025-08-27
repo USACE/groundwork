@@ -4,18 +4,20 @@ import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import { useState } from "react";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Forms",
-    href: "/#/docs/forms",
+    href: `${BASE_URL}#/docs/forms`,
   },
   {
     text: "Numeric Inputs",
-    href: "/#/docs/forms/numeric-input",
+    href: `${BASE_URL}#/docs/forms/numeric-input`,
   },
 ];
 

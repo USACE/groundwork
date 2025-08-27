@@ -14,15 +14,15 @@ import { useState } from "react";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: "#/docs",
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: "#/docs/buttons",
   },
   {
     text: "Login Button",
-    href: "/#/docs/buttons/login-button",
+    href: "#/docs/buttons/login-button",
   },
 ];
 

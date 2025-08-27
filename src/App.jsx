@@ -15,7 +15,7 @@ function App() {
 
   if (hash === "") {
     window.setTimeout(() => {
-      doUpdateUrl("/#/");
+      doUpdateUrl("#/");
     }, 100);
     return null;
   }
@@ -25,7 +25,7 @@ function App() {
     for (let i = 1; i <= linkCount; i++) {
       const link = {
         id: i,
-        href: "/#",
+        href: `#/`,
         text: `${prefix} Link ${i}`,
       };
       links.push(link);
