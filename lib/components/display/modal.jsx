@@ -8,11 +8,19 @@ import {
 import gwMerge from "../../gw-merge";
 import { WIDTH_OPTIONS } from "../../utils/sizes";
 
+const roleOptions = ["dialog", "alertdialog"];
+
 function Modal({
   opened = false,
   onClose,
   dialogTitle,
   dialogDescription,
+  isStatic = false,
+  autoFocus=false,
+  dialogTransition=false,
+  dialogPanelTransition= false,
+  unmount = true,
+  role='dialog',
   buttons,
   size = "2xl",
   className,
@@ -28,11 +36,27 @@ function Modal({
     );
     size = "2xl";
   }
+  
+  // Check if Role exists
+  if (!roleOptions[role]) {
+    console.error(
+      `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`)
+      console.warn(
+      `Defaulting to 'dialog' for role of <Modal modalTitle="${dialogTitle}" .../>`,
+    );
+    role = "dialog";
+    
+  }
 
   return (
     <Dialog
       open={opened}
       onClose={onClose}
+      static= {isStatic}
+      autoFocus={autoFocus}
+      dialogTransition={dialogTransition}
+      unount={unmount}
+      role={role}
       className={gwMerge("gw-relative", "gw-z-[200]", className)}
     >
       <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
@@ -48,6 +72,7 @@ function Modal({
               "gw-bg-white",
               "gw-p-12",
             )}
+            transition={dialogPanelTransition}
           >
             {dialogTitle && (
               <DialogTitle className="gw-font-bold gw-text-center">
