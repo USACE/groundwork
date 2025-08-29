@@ -3,7 +3,7 @@ import gwMerge from "../../gw-merge";
 
 function H1({ className, children, ...props }) {
   const cls = useMemo(() => {
-    return gwMerge("gw-text-3xl gw-font-bold", className);
+    return gwMerge("gw:text-3xl gw:font-bold", className);
   }, [className]);
   return (
     <h1 className={cls} {...props}>
@@ -14,7 +14,7 @@ function H1({ className, children, ...props }) {
 
 function H2({ className, children, ...props }) {
   const cls = useMemo(() => {
-    return gwMerge("gw-text-2xl gw-font-bold", className);
+    return gwMerge("gw:text-2xl gw:font-bold", className);
   }, [className]);
   return (
     <h2 className={cls} {...props}>
@@ -25,7 +25,7 @@ function H2({ className, children, ...props }) {
 
 function H3({ className, children, ...props }) {
   const cls = useMemo(() => {
-    return gwMerge("gw-text-xl gw-font-bold", className);
+    return gwMerge("gw:text-xl gw:font-bold", className);
   }, [className]);
   return (
     <h3 className={cls} {...props}>
@@ -36,7 +36,7 @@ function H3({ className, children, ...props }) {
 
 function H4({ className, children, ...props }) {
   const cls = useMemo(() => {
-    return gwMerge("gw-text-lg gw-font-bold", className);
+    return gwMerge("gw:text-lg gw:font-bold", className);
   }, [className]);
   return (
     <h4 className={cls} {...props}>

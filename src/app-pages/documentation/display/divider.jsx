@@ -44,7 +44,7 @@ function DividerDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Divider">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The <Code>{`<Divider />`}</Code> component is a simple component
             that creates a horizontal line with optional text in the center.
@@ -54,7 +54,7 @@ function DividerDocs() {
         </div>
         <Divider text="For Example" />
         {/* Example usage - remove if not needed */}
-        <div className="gw-py-3">
+        <div className="gw:py-3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -64,7 +64,7 @@ function DividerDocs() {
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
         <Divider text="OR" />
-        <div className="gw-py-3">
+        <div className="gw:py-3">
           Sodales ut etiam sit amet nisl purus. Feugiat in ante metus dictum at
           tempor commodo ullamcorper a. Ultrices neque ornare aenean euismod
           elementum nisi quis. Quam lacus suspendisse faucibus interdum posuere
@@ -75,7 +75,7 @@ function DividerDocs() {
           Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed
           velit.
         </div>
-        <Text className="gw-text-center">Divider without text</Text>
+        <Text className="gw:text-center">Divider without text</Text>
         <Divider />
         {/* Example code */}
         <CodeExample
@@ -106,7 +106,7 @@ function Example() {
         sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
       <Divider text="Colored" dividerColor="blue" className="border-5" />
-      <Text className="gw-text-center">Divider without text</Text>
+      <Text className="gw:text-center">Divider without text</Text>
       <Divider />
     </div>
   )
@@ -116,8 +116,8 @@ export default Example;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Divider ... />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Divider ... />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

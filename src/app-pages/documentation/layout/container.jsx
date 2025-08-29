@@ -32,7 +32,7 @@ function ContainerDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Container">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             Use Container to add a section to your page with padding and a max
             with that keeps content within a readable width on users screens, or
@@ -58,7 +58,7 @@ export default MyComponent;
 
       <UsaceBox title={<div>Component API</div>}>
         {/* Component props documentation */}
-        <Code className="gw-p-2">{`<SiteWrapper fluid />`}</Code>
+        <Code className="gw:p-2">{`<SiteWrapper fluid />`}</Code>
         <PropsTable propsList={componentProps} />
       </UsaceBox>
     </DocsPage>

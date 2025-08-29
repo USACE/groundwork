@@ -28,10 +28,10 @@ function PopoutMenu({
 
   // Map direction to position classes
   const directionClasses = {
-    right: `gw-left-full gw-transform gw--translate-y-1/2 gw-translate-x-2`,
-    left: "gw-right-full gw-transform gw--translate-y-1/2 gw--translate-x-2",
-    top: "gw-bottom-full gw-transform gw--translate-x-1/2 gw--translate-y-2",
-    bottom: "gw-top-full gw-transform gw--translate-x-1/2 gw-translate-y-2",
+    right: `gw:left-full gw:transform gw:-translate-y-1/2 gw:translate-x-2`,
+    left: "gw:right-full gw:transform gw:-translate-y-1/2 gw:-translate-x-2",
+    top: "gw:bottom-full gw:transform gw:-translate-x-1/2 gw:-translate-y-2",
+    bottom: "gw:top-full gw:transform gw:-translate-x-1/2 gw:translate-y-2",
   };
 
   /// Map the icons to their appropriate directions
@@ -44,10 +44,10 @@ function PopoutMenu({
 
   return (
     <Popover
-      name="gw-popout-menu"
+      name="gw:popout-menu"
       style={{ zIndex: level * 10 + 100 }}
       className={gwMerge(
-        "gw-relative gw-cursor-not-allowed gw-select-none",
+        "gw:relative gw:cursor-not-allowed gw:select-none",
         className,
       )}
     >
@@ -55,12 +55,12 @@ function PopoutMenu({
         <>
           <PopoverButton
             style={{ zIndex: level * 10 + 110 }}
-            className="gw-inline-flex gw-w-full gw-items-center gw-justify-between gw-leading-6 gw-ps-1 focus:gw-outline-none"
+            className="gw:inline-flex gw:w-full gw:items-center gw:justify-between gw:leading-6 gw:ps-1 gw:focus:outline-hidden"
           >
             <span>{title}</span>
             <ChevronIcon
               aria-hidden="true"
-              className="gw-h-5 gw-w-5"
+              className="gw:h-5 gw:w-5"
               size={12}
             />
           </PopoverButton>
@@ -69,8 +69,8 @@ function PopoutMenu({
             <PopoverPanel
               transition="true"
               className={`${
-                level ? "gw-fixed" : "gw-absolute"
-              } gw-max-w-[50vw] gw-mt-2 gw-w-56 gw-shrink gw-rounded-xl gw-bg-white gw-text-sm gw-leading-6 gw-text-gray-900 gw-shadow-lg gw-ring-1 gw-ring-gray-900/5 ${
+                level ? "gw:fixed" : "gw:absolute"
+              } gw:max-w-[50vw] gw:mt-2 gw:w-56 gw:shrink gw:rounded-xl gw:bg-white gw:text-sm gw:leading-6 gw:text-gray-900 gw:shadow-lg gw:ring-1 gw:ring-gray-900/5 ${
                 directionClasses[direction]
               }`}
               style={{ zIndex: level * 30 + 120 }}

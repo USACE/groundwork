@@ -20,7 +20,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw:pt-3 gw:pb-3">{children}</Text>;
 }
 
 function QuickStartGuide() {
@@ -28,7 +28,7 @@ function QuickStartGuide() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Quick Start Guide">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <P>
             This guide will lead you through the process of starting up a new
             front-end project using the Groundwork component library and a few
@@ -40,9 +40,9 @@ function QuickStartGuide() {
             Page Application).
           </P>
 
-          <H3 className="gw-mt-6">Project Setup with Vite</H3>
+          <H3 className="gw:mt-6">Project Setup with Vite</H3>
           <P>
-            <a className="gw-underline" href="https://vitejs.dev">
+            <a className="gw:underline" href="https://vitejs.dev">
               Vite
             </a>{" "}
             is the build system we use for our front-end development. It will
@@ -51,7 +51,7 @@ function QuickStartGuide() {
             development server that allows you to preview your site as you build
             it with included hot-reload. It does lots more, but I'll let{" "}
             <a
-              className="gw-underline"
+              className="gw:underline"
               href="https://vitejs.dev/guide/why.html"
             >
               the Vite docs
@@ -61,13 +61,13 @@ function QuickStartGuide() {
           <P>
             Using your terminal, <Code>cd</Code> to the folder where you want
             your front-end project to live, in my case I often put projects in{" "}
-            <Code className="gw-text-nowrap">~/code</Code> for example.
+            <Code className="gw:text-nowrap">~/code</Code> for example.
           </P>
           <P>
-            Run <Code className="gw-text-nowrap">npm create vite@latest</Code>.
+            Run <Code className="gw:text-nowrap">npm create vite@latest</Code>.
             This will walk you through a few options:{" "}
           </P>
-          <ol className="gw-ml-6 gw-list-decimal">
+          <ol className="gw:ml-6 gw:list-decimal">
             <li>
               Name your project, Vite will create a folder with this name in the
               current working directory.
@@ -81,9 +81,9 @@ function QuickStartGuide() {
             of it as we start to build our app.
           </P>
 
-          <H3 className="gw-mt-6">Test the Setup</H3>
+          <H3 className="gw:mt-6">Test the Setup</H3>
           <P>Follow the prompts from the Vite CLI</P>
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeBlock
             code={`cd <project_name>
 npm install
@@ -93,9 +93,9 @@ npm run dev`}
             The install step can take a minute depending on network access. If
             everything went ok, you should see the following message in your
             console after running{" "}
-            <Code className="gw-text-nowrap">npm run dev</Code>:
+            <Code className="gw:text-nowrap">npm run dev</Code>:
           </P>
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeBlock
             code={`VITE v5.2.6  ready in 248 ms
 
@@ -105,7 +105,7 @@ npm run dev`}
           ></CodeBlock>
           <P>
             Open your browser to the URL{" "}
-            <Code className="gw-text-nowrap">http://localhost:5173/</Code> (you
+            <Code className="gw:text-nowrap">http://localhost:5173/</Code> (you
             can ctrl+click the URL in most consoles).{" "}
           </P>
           <P>
@@ -113,12 +113,12 @@ npm run dev`}
             operates a simple counter then you're good to go!{" "}
           </P>
           <P>
-            Hit <Code className="gw-text-nowrap">ctrl+c</Code> to shut down your
+            Hit <Code className="gw:text-nowrap">ctrl+c</Code> to shut down your
             development server, we're going to make some changes and then start
             it back up in a little bit.
           </P>
 
-          <H3 className="gw-mt-6">Add Groundwork</H3>
+          <H3 className="gw:mt-6">Add Groundwork</H3>
           <P>
             Now that we have a basic project setup, we can add the Groundwork
             component library to our project. We'll use npm to install it and
@@ -126,16 +126,16 @@ npm run dev`}
           </P>
           <P>
             In the same terminal run{" "}
-            <Code className="gw-text-nowrap">
+            <Code className="gw:text-nowrap">
               npm install @usace/groundwork
             </Code>
           </P>
 
-          <H3 className="gw-mt-6">Start using Groundwork</H3>
+          <H3 className="gw:mt-6">Start using Groundwork</H3>
           <P>
             Open the project folder in the IDE of your choice, we typically use{" "}
             <a
-              className="gw-underline"
+              className="gw:underline"
               href="https://code.visualstudio.com/"
               target="_blank"
               rel="no-referrer"
@@ -145,15 +145,15 @@ npm run dev`}
             .
           </P>
           <P>
-            Open the <Code className="gw-text-nowrap">./src/index.css</Code>{" "}
+            Open the <Code className="gw:text-nowrap">./src/index.css</Code>{" "}
             file, delete everything here, we don't want these styles colliding
             with what we're doing.
           </P>
           <P>
-            Open the <Code className="gw-text-nowrap">./src/App.jsx</Code> file.
+            Open the <Code className="gw:text-nowrap">./src/App.jsx</Code> file.
             We're going to replace the contents with the code block below:
           </P>
-          <Code className="!gw-font-bold">./src/App.jsx</Code>
+          <Code className="!gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
 import "@usace/groundwork/dist/style.css";
@@ -178,7 +178,7 @@ export default App;`}
             page.
           </P>
 
-          <H3 className="gw-mt-6">Next, Adding Tailwind</H3>
+          <H3 className="gw:mt-6">Next, Adding Tailwind</H3>
           <P>
             While not strictly necessary, using the Tailwind CSS framework
             provides a number of benefits to an app that's using Groundwork. You
@@ -188,8 +188,8 @@ export default App;`}
             Groundwork uses under the hood.
           </P>
           <P>
-            <a href="/docs/adding-tailwind" className="gw-underline">
-              <span className="gw-flex gw-items-center gw-gap-2">
+            <a href="/docs/adding-tailwind" className="gw:underline">
+              <span className="gw:flex gw:items-center gw:gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>
             </a>

@@ -41,7 +41,7 @@ function SiteWrapper({
   }
 
   return (
-    <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
+    <div className="gw:grid gw:min-h-screen gw:grid-rows-1fr-auto">
       <div>
         {usaBanner && <USABanner fluidNav={fluidNav} />}
         {msgBanner && msgBannerPosition === "top" ? msgBanner : null}

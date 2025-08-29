@@ -16,11 +16,11 @@ function Modal({
   dialogTitle,
   dialogDescription,
   isStatic = false,
-  autoFocus=false,
-  dialogTransition=false,
-  dialogPanelTransition= false,
+  autoFocus = false,
+  dialogTransition = false,
+  dialogPanelTransition = false,
   unmount = true,
-  role='dialog',
+  role = "dialog",
   buttons,
   size = "2xl",
   className,
@@ -36,46 +36,46 @@ function Modal({
     );
     size = "2xl";
   }
-  
+
   // Check if Role exists
   if (!roleOptions.includes(role)) {
     console.error(
-      `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`)
-      console.warn(
+      `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`,
+    );
+    console.warn(
       `Defaulting to 'dialog' for role of <Modal modalTitle="${dialogTitle}" .../>`,
     );
     role = "dialog";
-    
   }
 
   return (
     <Dialog
       open={opened}
       onClose={onClose}
-      static= {isStatic}
+      static={isStatic}
       autoFocus={autoFocus}
       transition={dialogTransition}
       unmount={unmount}
       role={role}
-      className={gwMerge("gw-relative", "gw-z-[200]", className)}
+      className={gwMerge("gw:relative", "gw:z-200", className)}
     >
-      <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
-      <div className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4">
-        <div className="gw-flex gw-min-h-full gw-items-center gw-justify-center">
+      <DialogBackdrop className="gw:fixed gw:inset-0 gw:bg-black/30" />
+      <div className="gw:fixed gw:inset-0 gw:w-screen gw:overflow-auto gw:p-4">
+        <div className="gw:flex gw:min-h-full gw:items-center gw:justify-center">
           <DialogPanel
             className={gwMerge(
               WIDTH_OPTIONS[size],
-              "gw-space-y-4",
-              "gw-border",
-              "gw-rounded-lg",
-              "gw-shadow-lg",
-              "gw-bg-white",
-              "gw-p-12",
+              "gw:space-y-4",
+              "gw:border",
+              "gw:rounded-lg",
+              "gw:shadow-lg",
+              "gw:bg-white",
+              "gw:p-12",
             )}
             transition={dialogPanelTransition}
           >
             {dialogTitle && (
-              <DialogTitle className="gw-font-bold gw-text-center">
+              <DialogTitle className="gw:font-bold gw:text-center">
                 {dialogTitle}
               </DialogTitle>
             )}

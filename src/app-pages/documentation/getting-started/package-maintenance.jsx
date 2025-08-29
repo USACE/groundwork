@@ -19,7 +19,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw:pt-3 gw:pb-3">{children}</Text>;
 }
 
 function PackageMaintenance() {
@@ -27,7 +27,7 @@ function PackageMaintenance() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Package Maintenance">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <P>
             Package maintenance is crucial in a React app (or any
             JavaScript-based application) because it ensures the long-term
@@ -37,7 +37,7 @@ function PackageMaintenance() {
             from outdated, vulnerable, or incompatible dependencies.
           </P>
           <P>Here's why package maintenance is important:</P>
-          <ol className="gw-list-disc gw-pl-6 gw-pb-3">
+          <ol className="gw:list-disc gw:pl-6 gw:pb-3">
             <li>
               <strong>Security Vulnerabilities: </strong> As libraries evolve,
               security vulnerabilities are discovered in older versions. Keeping
@@ -70,14 +70,14 @@ function PackageMaintenance() {
             </li>
           </ol>
 
-          <H3 className="gw-my-4">package.json</H3>
+          <H3 className="gw:my-4">package.json</H3>
           <P>
             package.json is a crucial file in any Node.js or React project. It
             contains metadata about the project and manages dependencies,
             scripts, and other settings related to the project’s execution and
             development. See{" "}
             <a
-              className="gw-underline"
+              className="gw:underline"
               href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies"
             >
               npm docs
@@ -85,13 +85,13 @@ function PackageMaintenance() {
             for more information.
           </P>
 
-          <H3 className="gw-my-4">Checking for security vulnerabilities</H3>
+          <H3 className="gw:my-4">Checking for security vulnerabilities</H3>
 
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample code={`npm audit`}></CodeExample>
 
           <CodeExample
-            className="gw-mt-3"
+            className="gw:mt-3"
             code={`# npm audit report
 
 micromatch  <4.0.8
@@ -119,14 +119,14 @@ To address all issues, run:
   npm audit fix`}
           ></CodeExample>
 
-          <H3 className="gw-my-4">Resolving security vulnerabilities</H3>
+          <H3 className="gw:my-4">Resolving security vulnerabilities</H3>
 
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample code={`npm audit fix`}></CodeExample>
 
-          <H3 className="gw-my-4">Finding Outdated Packages</H3>
+          <H3 className="gw:my-4">Finding Outdated Packages</H3>
 
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample code={`npm outdated`}></CodeExample>
 
           <CodeExample
@@ -150,9 +150,9 @@ vite                                5.0.13    5.4.8    5.4.8  node_modules/vite 
 vitest                               2.1.1    2.1.2    2.1.2  node_modules/vitest                       groundwork`}
           ></CodeExample>
 
-          <H3 className="gw-my-4">Updating Outdated Packages</H3>
+          <H3 className="gw:my-4">Updating Outdated Packages</H3>
 
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample code={`npm update`}></CodeExample>
         </div>
       </UsaceBox>

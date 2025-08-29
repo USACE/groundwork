@@ -11,7 +11,7 @@ import gwMerge from "../../gw-merge";
 export function Fieldset({ className, ...props }) {
   const fieldsetClass = useMemo(() => {
     return gwMerge(
-      "[&>*+[data-slot=control]]:gw-mt-6 [&>[data-slot=text]]:gw-mt-1",
+      "gw:[&>*+[data-slot=control]]:mt-6 gw:*:data-[slot=text]:mt-1",
       className,
     );
   }, [className]);
@@ -21,7 +21,7 @@ export function Fieldset({ className, ...props }) {
 export function Legend({ ...props }) {
   const legendClass = useMemo(() => {
     return gwMerge(
-      "gw-text-base/6 gw-font-semibold gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white",
+      "gw:text-base/6 gw:font-semibold gw:text-zinc-950 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-white",
       props.className,
     );
   }, [props.className]);
@@ -32,7 +32,7 @@ export function Legend({ ...props }) {
 
 export function FieldGroup({ className, ...props }) {
   const fieldGroupClass = useMemo(() => {
-    return gwMerge("gw-space-y-8", className);
+    return gwMerge("gw:space-y-8", className);
   }, [className]);
   return <div {...props} data-slot="control" className={fieldGroupClass} />;
 }
@@ -40,12 +40,12 @@ export function FieldGroup({ className, ...props }) {
 export function Field({ className, ...props }) {
   const fieldClass = useMemo(() => {
     return gwMerge(
-      "[&>[data-slot=label]+[data-slot=control]]:gw-mt-3",
-      "[&>[data-slot=label]+[data-slot=description]]:gw-mt-1",
-      "[&>[data-slot=description]+[data-slot=control]]:gw-mt-3",
-      "[&>[data-slot=control]+[data-slot=description]]:gw-mt-3",
-      "[&>[data-slot=control]+[data-slot=error]]:gw-mt-3",
-      "[&>[data-slot=label]]:gw-font-medium",
+      "gw:[&>[data-slot=label]+[data-slot=control]]:mt-3",
+      "gw:[&>[data-slot=label]+[data-slot=description]]:mt-1",
+      "gw:[&>[data-slot=description]+[data-slot=control]]:mt-3",
+      "gw:[&>[data-slot=control]+[data-slot=description]]:mt-3",
+      "gw:[&>[data-slot=control]+[data-slot=error]]:mt-3",
+      "gw:*:data-[slot=label]:font-medium",
       className,
     );
   }, [className]);
@@ -55,7 +55,7 @@ export function Field({ className, ...props }) {
 export function Label({ className, ...props }) {
   const labelClass = useMemo(() => {
     return gwMerge(
-      "gw-select-none gw-text-base/6 gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white",
+      "gw:select-none gw:text-base/6 gw:text-zinc-950 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-white",
       className,
     );
   }, [className]);
@@ -65,7 +65,7 @@ export function Label({ className, ...props }) {
 export function Description({ className, disabled, ...props }) {
   const descriptionClass = useMemo(() => {
     return gwMerge(
-      "gw-text-base/6 gw-text-zinc-500 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-zinc-400",
+      "gw:text-base/6 gw:text-zinc-500 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-zinc-400",
       className,
     );
   }, [className]);
@@ -81,7 +81,7 @@ export function Description({ className, disabled, ...props }) {
 export function ErrorMessage({ className, disabled, ...props }) {
   const errorMessageClass = useMemo(() => {
     return gwMerge(
-      "gw-text-base/6 gw-text-red-600 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-red-500",
+      "gw:text-base/6 gw:text-red-600 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-red-500",
       className,
     );
   }, [className]);

@@ -60,15 +60,15 @@ function TabDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Tab">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           The Tab type is used to define the objects to be used in the tabs
           array of the Tabs component. It defines what is displayed in the tab
           component and the content that will be displayed when the tab is
           selected.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Object - <Code className="gw-p-2">{`tab`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Object - <Code className="gw:p-2">{`tab`}</Code>
         </div>
         <PropsTable propsList={tabProps} />
       </UsaceBox>
