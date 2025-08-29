@@ -5,7 +5,7 @@ function Container({ className, children, fluid }) {
   const containerClass = useMemo(() => {
     return gwMerge(
       "gw:w-full gw:mx-auto gw:px-4 gw:box-border",
-      fluid ? "gw:max-w-screen" : "gw:max-w-(--gw-breakpoint-2xl)",
+      fluid ? "gw:max-w-screen" : "gw:max-w-(--gw:breakpoint-2xl)",
       className,
     );
   }, [className]);

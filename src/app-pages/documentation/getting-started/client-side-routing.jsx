@@ -18,7 +18,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
+  return <Text className="gw:pt-3 gw:pb-3">{children}</Text>;
 }
 
 function ClientSideRouting() {
@@ -26,7 +26,7 @@ function ClientSideRouting() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Client-Side Routing">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <P>
             Often, when building a web application with Groundwork, you will be
             building what we call a <strong>single-page application</strong>{" "}
@@ -43,7 +43,7 @@ function ClientSideRouting() {
             following is a guide on how to use the{" "}
             <a
               href="https://reduxbundler.com"
-              className="gw-underline"
+              className="gw:underline"
               target="_blank"
             >
               Redux Bundler
@@ -57,7 +57,7 @@ function ClientSideRouting() {
             are a few terms that you should be familiar with before we get
             started:
           </P>
-          <ul className="gw-list-disc gw:pl-6 gw:pb-3">
+          <ul className="gw:list-disc gw:pl-6 gw:pb-3">
             <li>
               <strong>Store</strong>: The store is where the state of your
               application lives. It is a single object that holds the entire
@@ -94,7 +94,7 @@ function ClientSideRouting() {
             To get started, we'll need to install the Redux Bundler package and
             a couple additional dependencies:
           </P>
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample
             code={`npm install redux-bundler redux-bundler-hook internal-nav-helper`}
           ></CodeExample>
@@ -122,16 +122,16 @@ function ClientSideRouting() {
             rest of the guide will assume you have followed these steps. These
             steps also assume that you have walked through a project set up
             using the{" "}
-            <a href="/docs/quick-start" className="gw-underline">
+            <a href="/docs/quick-start" className="gw:underline">
               quick start guide
             </a>{" "}
             and{" "}
-            <a href="/docs/adding-tailwind" className="gw-underline">
+            <a href="/docs/adding-tailwind" className="gw:underline">
               adding Tailwind CSS
             </a>{" "}
             tutorials.
           </P>
-          <ol className="gw-list-decimal gw:pl-6">
+          <ol className="gw:list-decimal gw:pl-6">
             <li>
               Delete the <Code>./src/assets</Code> folder
             </li>
@@ -140,7 +140,7 @@ function ClientSideRouting() {
             </li>
             <li>
               Create the following folders:
-              <ul className="gw-list-disc gw:pl-6">
+              <ul className="gw:list-disc gw:pl-6">
                 <li>
                   <Code>./src/app-bundles</Code>
                 </li>
@@ -157,7 +157,7 @@ function ClientSideRouting() {
             </li>
             <li>
               Create the following files:
-              <ul className="gw-list-disc gw:pl-6">
+              <ul className="gw:list-disc gw:pl-6">
                 <li>
                   <Code>./src/app-bundles/index.js</Code>
                 </li>
@@ -190,7 +190,7 @@ function ClientSideRouting() {
             Edit the <Code>./src/app-pages/home/index.jsx</Code> file to match
             the content below:
           </P>
-          <Code className="!gw-font-bold">./src/app-pages/home/index.jsx</Code>
+          <Code className="!gw:font-bold">./src/app-pages/home/index.jsx</Code>
           <CodeExample
             code={`import { UsaceBox } from "@usace/groundwork";
 
@@ -231,7 +231,7 @@ export default function Home() {
           <P>
             Edit the <Code>./src/app-pages/location/index.jsx</Code> file:
           </P>
-          <Code className="!gw-font-bold">
+          <Code className="!gw:font-bold">
             ./src/app-pages/location/index.jsx
           </Code>
           <CodeExample
@@ -277,7 +277,7 @@ export default function Location() {
             bundle. Open the <Code>./src/app-bundles/routes-bundle.js</Code>{" "}
             file and add the following content:
           </P>
-          <Code className="!gw-font-bold">
+          <Code className="!gw:font-bold">
             ./src/app-bundles/routes-bundle.js
           </Code>
           <CodeExample
@@ -318,7 +318,7 @@ export default createRouteBundle({
             Now we can create the store. Edit the{" "}
             <Code>./src/app-bundles/index.js</Code> file:
           </P>
-          <Code className="!gw-font-bold">./src/app-bundles/index.js</Code>
+          <Code className="!gw:font-bold">./src/app-bundles/index.js</Code>
           <CodeExample
             code={`import { composeBundles, createUrlBundle } from "redux-bundler";
 import routesBundle from "./routes-bundle";
@@ -350,7 +350,7 @@ export default composeBundles(createUrlBundle(), routesBundle);`}
           <P>
             Edit the <Code>./src/main.jsx</Code> file:
           </P>
-          <Code className="!gw-font-bold">./src/main.jsx</Code>
+          <Code className="!gw:font-bold">./src/main.jsx</Code>
           <CodeExample
             code={`import React from "react";
 import ReactDOM from "react-dom/client";
@@ -384,7 +384,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             Finally we need to edit <Code>./src/App.jsx</Code> to get the
             appropriate component from the store based on the current URL:
           </P>
-          <Code className="!gw-font-bold">./src/App.jsx</Code>
+          <Code className="!gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { SiteWrapper, Container } from "@usace/groundwork";
@@ -436,7 +436,7 @@ export default App;`}
           <P>
             Edit the <Code>./src/App.jsx</Code> file:
           </P>
-          <Code className="!gw-font-bold">./src/App.jsx</Code>
+          <Code className="!gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { getNavHelper } from "internal-nav-helper";
@@ -478,7 +478,7 @@ export default App;`}
             are ignored and the default behavior takes over.
           </P>
           <H3>Setting a Base Path (Vite)</H3>
-          <Badge color="red" className="gw-block gw:my-2 gw:w-1/2">
+          <Badge color="red" className="gw:block gw:my-2 gw:w-1/2">
             If your application lives at the root of the webserver, ignore this
             step!
           </Badge>
@@ -493,7 +493,7 @@ export default App;`}
             <Code>vite.config.js</Code> file in your project. Add the following
             configuration to set the base path for your application:
           </P>
-          <Code className="!gw-font-bold">vite.config.js</Code>
+          <Code className="!gw:font-bold">vite.config.js</Code>
           <CodeExample
             code={`import { defineConfig } from 'vite';
 
@@ -520,7 +520,7 @@ export default defineConfig({
             For situations where you require setting the base path such as in
             img tags or anchor tags, you can use the:{" "}
           </P>
-          <Badge color="blue" className="gw-my-2">
+          <Badge color="blue" className="gw:my-2">
             <Code>const base = import.meta.env.BASE_URL</Code>{" "}
           </Badge>
           <P>
@@ -556,7 +556,7 @@ export default function Example() {
             <Code>doUpdateUrlWithBase</Code> function from the{" "}
             <Code>redux-bundler</Code> package.
           </P>
-          <Code className="!gw-font-bold">
+          <Code className="!gw:font-bold">
             ./src/app-pages/mypath/tab-example.jsx
           </Code>
           <CodeExample

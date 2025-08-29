@@ -4,7 +4,7 @@ import gwMerge from "../../gw-merge";
 function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
   return (
     <TabGroup defaultIndex={defaultIndex}>
-      <TabList className="gw-flex gw:flex-wrap gw:gap-x-1 gw:text-gray-500 gw:font-semibold gw:border-b-2 gw:border-gray-300">
+      <TabList className="gw:flex gw:flex-wrap gw:gap-x-1 gw:text-gray-500 gw:font-semibold gw:border-b-2 gw:border-gray-300">
         {tabs.map((tab, idx) => (
           <Tab
             key={idx}
@@ -20,18 +20,18 @@ function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
             }}
           >
             <span
-              className={`gw-flex ${
+              className={`gw:flex ${
                 tab.justify === "space-between"
                   ? "gw:justify-between"
                   : "gw:justify-center"
-              } gw-items-center`}
+              } gw:items-center`}
             >
               {tab.leftSection && (
-                <span className="gw-mr-2">{tab.leftSection}</span>
+                <span className="gw:mr-2">{tab.leftSection}</span>
               )}
               {tab.name}
               {tab.rightSection && (
-                <span className="gw-ml-2">{tab.rightSection}</span>
+                <span className="gw:ml-2">{tab.rightSection}</span>
               )}
             </span>
           </Tab>
@@ -39,7 +39,7 @@ function Tabs({ tabs, fill = false, defaultIndex = 0 }) {
       </TabList>
       <TabPanels>
         {tabs.map((tab) => (
-          <TabPanel key={tab.name} className="gw-bg-white gw:p-0">
+          <TabPanel key={tab.name} className="gw:bg-white gw:p-0">
             {tab.content}
           </TabPanel>
         ))}

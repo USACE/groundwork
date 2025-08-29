@@ -20,7 +20,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
+  return <Text className="gw:pt-3 gw:pb-3">{children}</Text>;
 }
 
 function AddingTailwind() {
@@ -28,7 +28,7 @@ function AddingTailwind() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Adding Tailwind CSS">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <P>
             Tailwind is a CSS framework that has become very popular over the
             past few years. Unlike lots of CSS frameworks, Tailwind is based on
@@ -40,7 +40,7 @@ function AddingTailwind() {
           <P>
             For the full framework documentation see the{" "}
             <a
-              className="gw-underline"
+              className="gw:underline"
               href="https://tailwindcss.com/docs/installation"
               target="_blank"
               rel="no-referrer"
@@ -59,7 +59,7 @@ function AddingTailwind() {
               target="_blank"
               rel="no-referrer"
               aria-label="Tailwind preflight documentation"
-              className="gw-underline"
+              className="gw:underline"
             >
               Preflight
             </a>{" "}
@@ -72,12 +72,12 @@ function AddingTailwind() {
             Vanilla CSS or Tailwind for all your styling needs.
           </P>
           <Divider />
-          <H3 className="gw-mt-6">Install and Configure Tailwind</H3>
+          <H3 className="gw:mt-6">Install and Configure Tailwind</H3>
           <P>
             Install <Code>@tailwindcss</Code> and <Code>@tailwindcss/vite</Code>{" "}
             via npm.
           </P>
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample
             code={`npm install tailwindcss @tailwindcss/vite`}
           ></CodeExample>
@@ -86,7 +86,7 @@ function AddingTailwind() {
             Add the <Code>@tailwindcss/vite</Code> plugin to your Vite
             configuration.
           </P>
-          <Code className="!gw-font-bold">vite.config.js</Code>
+          <Code className="!gw:font-bold">vite.config.js</Code>
           <CodeExample
             code={`import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -101,15 +101,15 @@ export default defineConfig({
             Add an <Code>@import</Code> to your CSS file that imports Tailwind
             CSS.
           </P>
-          <Code className="!gw-font-bold">./src/index.css</Code>
+          <Code className="!gw:font-bold">./src/index.css</Code>
           <CodeExample code={`@import "tailwindcss"`}></CodeExample>
 
           <P></P>
-          <Code className="!gw-font-bold">terminal</Code>
+          <Code className="!gw:font-bold">terminal</Code>
           <CodeExample code={`npm run dev`}></CodeExample>
 
           <P>Start Using Tailwind in your project</P>
-          <Code className="!gw-font-bold">./src/App.jsx</Code>
+          <Code className="!gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
 import "@usace/groundwork/dist/style.css";
@@ -136,7 +136,7 @@ export default App;`}
             or custom CSS classes pointing to your own stylesheets.
           </P>
 
-          <H3 className="gw-mt-6">Next, handling Client-side Routing</H3>
+          <H3 className="gw:mt-6">Next, handling Client-side Routing</H3>
           <P>
             When creating a single-page application (SPA) you'll want to handle
             client-side routing. Client-side routing means that a user can treat
@@ -146,8 +146,8 @@ export default App;`}
             reading to learn more.
           </P>
           <P>
-            <a href="/docs/client-side-routing" className="gw-underline">
-              <span className="gw-flex gw:items-center gw:gap-2">
+            <a href="/docs/client-side-routing" className="gw:underline">
+              <span className="gw:flex gw:items-center gw:gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>
             </a>

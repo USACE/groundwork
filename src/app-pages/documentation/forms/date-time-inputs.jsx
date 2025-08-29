@@ -64,7 +64,7 @@ function DateTimeInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Input">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             Browsers have come a long way when it comes to date/time pickers,
             the Input component can leverage these native pickers by setting the
@@ -74,11 +74,11 @@ function DateTimeInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
-          <div className="gw-w-[50%]">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:w-[50%]">
             {inputTypes.map((type) => {
               return (
-                <div key={type} className="gw-mb-3">
+                <div key={type} className="gw:mb-3">
                   <Field>
                     <Label>{type}</Label>
                     <Input type={type} placeholder={type} label="label" />
@@ -115,9 +115,9 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<Input type={"date" || "datetime-local" || "month" || "time"} />`}</Code>
+          <Code className="gw:p-2">{`<Input type={"date" || "datetime-local" || "month" || "time"} />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

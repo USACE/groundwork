@@ -13,7 +13,7 @@ function BreadcrumbItem({ className, href, text }) {
   }, [className]);
   return (
     <li className={breadcrumbItemClass}>
-      <div className="gw-flex gw:items-center">
+      <div className="gw:flex gw:items-center">
         <VscChevronRight
           size={18}
           aria-hidden="true"
@@ -21,7 +21,7 @@ function BreadcrumbItem({ className, href, text }) {
         />
         <Link
           href={href}
-          className="gw-ml-2 gw:text-nowrap  gw-hover:gw-underline"
+          className="gw:ml-2 gw:text-nowrap  gw:hover:gw:underline"
         >
           {text}
         </Link>
@@ -33,7 +33,7 @@ function BreadcrumbItem({ className, href, text }) {
 function Breadcrumbs({ className, children }) {
   const breadcrumbsClass = useMemo(() => {
     return gwMerge(
-      "gw:flex gw:flex-nowrap gw:items-center gw:space-x-2 gw:py-4 gw:overflow-x-auto gw-hide-scrollbar",
+      "gw:flex gw:flex-nowrap gw:items-center gw:space-x-2 gw:py-4 gw:overflow-x-auto gw:hide-scrollbar",
       className,
     );
   }, [className]);
@@ -41,9 +41,9 @@ function Breadcrumbs({ className, children }) {
     <ol className={breadcrumbsClass}>
       <li>
         <div>
-          <Link href="/" className="gw-text-gray-300 gw-hover:gw-text-gray-500">
+          <Link href="/" className="gw:text-gray-300 gw:hover:gw:text-gray-500">
             <MdHome size={22} />
-            <span className="gw-sr-only">Home</span>
+            <span className="gw:sr-only">Home</span>
           </Link>
         </div>
       </li>

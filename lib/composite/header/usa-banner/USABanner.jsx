@@ -12,8 +12,8 @@ function classNames(...classes) {
 const USABanner = ({ fluidNav }) => {
   const [open, setOpen] = useState(false);
   const headerBannerInnerClass = gwMerge(
-    "header_banner_inner gw:sm:my-0 gw:sm:mx-auto sm:gw-font-sm",
-    fluidNav ? "gw:max-w-screen" : "gw:px-4 gw:max-w-(--gw-breakpoint-2xl)",
+    "header_banner_inner gw:sm:my-0 gw:sm:mx-auto gw:sm:font-sm",
+    fluidNav ? "gw:max-w-screen" : "gw:px-4 gw:max-w-(--gw:breakpoint-2xl)",
   );
   return (
     <div className="header_banner_container gw:bg-gov-banner-black gw:text-white">
@@ -21,7 +21,7 @@ const USABanner = ({ fluidNav }) => {
         <div className="header_banner_flag gw:fill-gov-banner-gray gw:py-1.5 gw:h-12 gw:sm:h-8 gw:px-0 gw:text-sm gw:box-border gw:flex gw:items-center gw:justify-start">
           <img
             src={flag}
-            className="gw-mr-2"
+            className="gw:mr-2"
             role="presentation"
             aria-label="U.S. Government Flag"
             alt="U.S. Government Flag"
@@ -48,7 +48,7 @@ const USABanner = ({ fluidNav }) => {
                   height="24"
                   viewBox="0 0 24 24"
                   width="24"
-                  className="gw-inline-block gw:relative gw:transition-all gw:delay-300 gw:ease-out gw:align-middle gw:h-[18px] gw:w-[18px]"
+                  className="gw:inline-block gw:relative gw:transition-all gw:delay-300 gw:ease-out gw:align-middle gw:h-[18px] gw:w-[18px]"
                 >
                   <path d="M0 0h24v24H0z" fill="none"></path>
                   <path
@@ -67,7 +67,7 @@ const USABanner = ({ fluidNav }) => {
                 src={iconDotGov}
                 alt="Generic government building icon"
                 aria-label="Generic government building icon"
-                className="gw-h-[50px] gw:w-[50px] gw:mr-4"
+                className="gw:h-[50px] gw:w-[50px] gw:mr-4"
               />
               <div
                 id="dnn_ctl03_bannerContentLeft"
@@ -85,7 +85,7 @@ const USABanner = ({ fluidNav }) => {
                 src={iconHttps}
                 alt="HTTPS secure lock icon"
                 aria-label="HTTPS secure lock icon"
-                className="gw-h-[50px] gw:w-[50px] gw:mr-4"
+                className="gw:h-[50px] gw:w-[50px] gw:mr-4"
               />
               <div
                 id="dnn_ctl03_bannerContentRight"
@@ -105,7 +105,7 @@ const USABanner = ({ fluidNav }) => {
                         width="52"
                         height="64"
                         viewBox="0 0 52 64"
-                        className="gw-fill-black gw:h-[15px] gw:w-[15px]"
+                        className="gw:fill-black gw:h-[15px] gw:w-[15px]"
                       >
                         <title>lock </title>
                         <path

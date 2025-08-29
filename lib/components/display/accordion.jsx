@@ -24,7 +24,7 @@ function Accordion({
               {heading}
               {open ? <VscChevronDown /> : <VscChevronRight />}
             </Disclosure.Button>
-            <Disclosure.Panel className="gw-shadow" unmount={unmountOnClose}>
+            <Disclosure.Panel className="gw:shadow" unmount={unmountOnClose}>
               {children}
             </Disclosure.Panel>
           </>

@@ -18,7 +18,7 @@ const UsaceBox = forwardRef(function UsaceBox(
 
   return (
     <div ref={ref} className={usaceBoxClass} id={id}>
-      <h2 className="gw-font-bold gw:mb-5 gw:text-[1.3rem]">
+      <h2 className="gw:font-bold gw:mb-5 gw:text-[1.3rem]">
         {title}
         {CustomTitle && <CustomTitle />}
       </h2>

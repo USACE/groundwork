@@ -70,8 +70,8 @@ function TextInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Text Inputs">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
-          <Text className="gw-pb-3">
+        <div className="gw:pb-6">
+          <Text className="gw:pb-3">
             The MVP of data entry, the Input. We support all the
             browser-supported input types, but some of the browser native input
             interfaces are a bit wonky so you might want to look at the custom
@@ -88,11 +88,11 @@ function TextInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
-          <div className="gw-w-[50%]">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:w-[50%]">
             {inputTypes.map((type) => {
               return (
-                <div key={type} className="gw-mb-3">
+                <div key={type} className="gw:mb-3">
                   <Field>
                     <Label>{type}</Label>
                     <Input type={type} placeholder={type} label="label" />
@@ -129,8 +129,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
-          Component API - <Code className="gw-p-2">{`<Input />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Input />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

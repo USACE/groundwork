@@ -66,12 +66,12 @@ function HeroDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Hero">
         {/* Description of the component and what problem it solves */}
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           Add the Hero element to put a big image at the top of your page,
           typically we would use the Hero component on a landing page.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
@@ -87,7 +87,7 @@ function HeroDocs() {
           ⚠ NOTE: When using images on your site please consider compressing
           them!
           <div
-            className="gw-cursor-pointer gw:underline gw:decoration-solid gw:decoration-gray-500"
+            className="gw:cursor-pointer gw:underline gw:decoration-solid gw:decoration-gray-500"
             onClick={() => {
               // Navigate to the img compression tag on the page
               // # TODO: Hash router seems to break hash referencing?
@@ -119,12 +119,12 @@ function Component() {
 export default Component;
 `}
           />
-          <Text className="gw-pb-6">
+          <Text className="gw:pb-6">
             Specify an image and alt text for the Hero component.
           </Text>
         </div>
         <UsaceBox title="Rotating Example">
-          <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
             <Hero
               title="Hero Title"
               subtitle="Hero Subtitle"
@@ -159,14 +159,14 @@ function Component() {
 export default Component;
 `}
             />
-            <Text className="gw-pb-6">
+            <Text className="gw:pb-6">
               The Hero component can also take a list of images and alt text for
               a slideshow effect.
             </Text>
           </div>
           {/* Component props documentation */}
-          <div className="gw-font-bold gw:text-lg gw:pt-6">
-            Component API - <Code className="gw-p-2">{`<Hero />`}</Code>
+          <div className="gw:font-bold gw:text-lg gw:pt-6">
+            Component API - <Code className="gw:p-2">{`<Hero />`}</Code>
           </div>
           <PropsTable propsList={componentProps} />
         </UsaceBox>
@@ -179,7 +179,7 @@ export default Component;
           techniques that can help reduce the loss of image quality. We
           recommend{" "}
           <a
-            className="gw-underline gw:decoration-solid gw:decoration-gray-500"
+            className="gw:underline gw:decoration-solid gw:decoration-gray-500"
             href="https://tinypng.com"
           >
             TinyPNG.com

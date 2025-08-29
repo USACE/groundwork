@@ -66,7 +66,7 @@ function RadioGroupDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Radio Group">
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The <Code>{"<RadioGroup />"}</Code> component renders a vertical
             stack of radio buttons with an optional legend and description
@@ -76,7 +76,7 @@ function RadioGroupDocs() {
           </Text>
         </div>
 
-        <H3 className="gw-mt-6 gw:pb-3">Example</H3>
+        <H3 className="gw:mt-6 gw:pb-3">Example</H3>
         <RadioGroup
           legend="System"
           label="Select A Measurement System"
@@ -94,7 +94,7 @@ function RadioGroupDocs() {
             },
           ]}
         />
-        <div className="gw-my-3">
+        <div className="gw:my-3">
           <Text>
             {value} {units == "si" ? "m" : "ft"}
           </Text>
@@ -141,9 +141,9 @@ function Example() {
 }`}
         />
 
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<RadioGroup legend={legend} label={label} content={content} ...etc />`}</Code>
+          <Code className="gw:p-2">{`<RadioGroup legend={legend} label={label} content={content} ...etc />`}</Code>
         </div>
 
         <PropsTable propsList={componentProps_RadioGroup} />

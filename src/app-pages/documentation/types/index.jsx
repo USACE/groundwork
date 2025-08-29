@@ -16,7 +16,7 @@ function Types() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Types (sort of)">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           While Groundwork is not a typescript library, we define some types to
           help with development, mainly to help with consistency throughout the
           library. Types defined here describe object types that are commonly
@@ -24,10 +24,10 @@ function Types() {
         </Text>
         <H4>Components</H4>
         <ul>
-          <a className="gw-hover:gw-underline" href="/docs/types/link">
+          <a className="gw:hover:underline" href="/docs/types/link">
             <li>Link - Group text and a href attribute.</li>
           </a>
-          <a className="gw-hover:gw-underline" href="/docs/types/tab">
+          <a className="gw:hover:underline" href="/docs/types/tab">
             <li>Tab - Define the behavior of the tabs component.</li>
           </a>
         </ul>

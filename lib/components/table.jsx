@@ -42,7 +42,7 @@ export function Table({
         stickyHeader,
       }}
     >
-      <div className="gw-flow-root">
+      <div className="gw:flow-root">
         <div
           {...props}
           className={gwMerge(
@@ -62,13 +62,13 @@ export function Table({
           >
             <table
               role="presentation"
-              className="gw-min-w-full gw:text-left gw:text-sm/6"
+              className="gw:min-w-full gw:text-left gw:text-sm/6"
             >
               {children}
             </table>
           </div>
           {showFade && overflow && (
-            <div className="gw-pointer-events-none gw:absolute gw:bottom-0 gw:left-0 gw:right-0 gw:h-8 gw:bg-linear-to-t gw:from-white gw:dark:from-zinc-950 gw:to-transparent" />
+            <div className="gw:pointer-events-none gw:absolute gw:bottom-0 gw:left-0 gw:right-0 gw:h-8 gw:bg-linear-to-t gw:from-white gw:dark:from-zinc-950 gw:to-transparent" />
           )}
         </div>
       </div>
@@ -83,7 +83,7 @@ export function TableHead({ className, ...props }) {
       "stickyHeader is set to true but overflow is not set. This will not work as expected. Please set overflow to true.",
     );
   const overflowClass =
-    "gw:z-10 gw:sticky gw:top-0 gw:bg-white gw-box-shadow gw:dark:bg-zinc-950/50 gw:backdrop-blur-(--backdrop-blur)";
+    "gw:z-10 gw:sticky gw:top-0 gw:bg-white gw:box-shadow gw:dark:bg-zinc-950/50 gw:backdrop-blur-(--backdrop-blur)";
   return (
     <thead
       className={gwMerge(
@@ -182,7 +182,7 @@ export function TableCell({ className, children, ...props }) {
           target={target}
           aria-label={title}
           tabIndex={cellRef?.previousElementSibling === null ? 0 : -1}
-          className="gw-absolute gw:inset-0 gw-focus:gw-outline-none"
+          className="gw:absolute gw:inset-0 gw:focus:gw:outline-none"
         />
       )}
       {children}

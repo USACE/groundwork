@@ -10,15 +10,15 @@ function Checkboxes({ content, legend, className, ...props }) {
   }
   return (
     <Fieldset className={className} {...props}>
-      {legend && <legend className="gw-sr-only">{legend}</legend>}
+      {legend && <legend className="gw:sr-only">{legend}</legend>}
       {content.map((item, index) => (
         <div
           key={[index, "checkbox", legend].join("-")}
-          className="gw-space-y-5"
+          className="gw:space-y-5"
         >
-          <div className="gw-flex gw:gap-3">
-            <div className="gw-flex gw:h-6 gw:shrink-0 gw:items-center">
-              <div className="gw-group gw:grid gw:size-4 gw:grid-cols-1">
+          <div className="gw:flex gw:gap-3">
+            <div className="gw:flex gw:h-6 gw:shrink-0 gw:items-center">
+              <div className="gw:group gw:grid gw:size-4 gw:grid-cols-1">
                 <input
                   defaultChecked={item?.defaultChecked || false}
                   disabled={item?.disabled || false}
@@ -44,21 +44,21 @@ function Checkboxes({ content, legend, className, ...props }) {
                 <svg
                   fill="none"
                   viewBox="0 0 14 14"
-                  className="gw-pointer-events-none gw:col-start-1 gw:row-start-1 gw:size-3.5 gw:self-center gw:justify-self-center gw:stroke-white gw:group-has-disabled:stroke-gray-950/25"
+                  className="gw:pointer-events-none gw:col-start-1 gw:row-start-1 gw:size-3.5 gw:self-center gw:justify-self-center gw:stroke-white gw:group-has-disabled:stroke-gray-950/25"
                 >
                   <path
                     d="M3 8L6 11L11 3.5"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="gw-opacity-0 gw-group-has-[:checked]:gw-opacity-100"
+                    className="gw:opacity-0 gw:group-has-[:checked]:gw:opacity-100"
                   />
                   <path
                     d="M3 7H11"
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="gw-opacity-0 gw:group-has-indeterminate:opacity-100"
+                    className="gw:opacity-0 gw:group-has-indeterminate:opacity-100"
                   />
                 </svg>
               </div>
@@ -67,7 +67,7 @@ function Checkboxes({ content, legend, className, ...props }) {
               {item?.label && (
                 <label
                   htmlFor="comments"
-                  className="gw-font-medium gw:text-gray-900"
+                  className="gw:font-medium gw:text-gray-900"
                   {...item?.labelProps}
                 >
                   {item.label}

@@ -76,8 +76,8 @@ function Hero({
   }
 
   return (
-    <div className="gw-relative">
-      <div className="gw-h-56 gw:w-full gw:overflow-clip gw:bg-zinc-950 gw:md:h-1/5 gw:md:max-h-[500px]">
+    <div className="gw:relative">
+      <div className="gw:h-56 gw:w-full gw:overflow-clip gw:bg-zinc-950 gw:md:h-1/5 gw:md:max-h-[500px]">
         <img
           src={currentImage}
           alt={currentAlt}
@@ -91,18 +91,18 @@ function Hero({
         className={`gw:absolute gw:inset-0 gw:bg-zinc-950`}
       />
       {children && (
-        <div className="gw-absolute gw:inset-0 gw:flex gw:items-center gw:justify-center">
+        <div className="gw:absolute gw:inset-0 gw:flex gw:items-center gw:justify-center">
           {children}
         </div>
       )}
       {title && (
-        <Container className="gw-relative">
-          <div className="gw-absolute gw:bottom-0 gw:left-0 gw:max-w-7xl gw:mx-auto gw:px-4">
-            <div className="gw-pb-8">
-              <h1 className="gw-text-4xl gw:font-extrabold gw:tracking-tight gw:text-white gw:sm:text-5xl gw:lg:text-6xl">
+        <Container className="gw:relative">
+          <div className="gw:absolute gw:bottom-0 gw:left-0 gw:max-w-7xl gw:mx-auto gw:px-4">
+            <div className="gw:pb-8">
+              <h1 className="gw:text-4xl gw:font-extrabold gw:tracking-tight gw:text-white gw:sm:text-5xl gw:lg:text-6xl">
                 {title}
               </h1>
-              <p className="gw-mt-1 gw:text-xl gw:text-zinc-200">{subtitle}</p>
+              <p className="gw:mt-1 gw:text-xl gw:text-zinc-200">{subtitle}</p>
             </div>
           </div>
         </Container>

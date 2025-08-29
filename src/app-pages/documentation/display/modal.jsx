@@ -129,13 +129,13 @@ function ModalDocs() {
           size="2xl"
           staticWidth={true}
           buttons={
-            <div className="gw-flex gw:justify-end gw:gap-4">
-              <Button className="gw-w-full" onClick={refreshImage}>
+            <div className="gw:flex gw:justify-end gw:gap-4">
+              <Button className="gw:w-full" onClick={refreshImage}>
                 Refresh Image
               </Button>
               <Button
                 color="secondary"
-                className="gw-w-full"
+                className="gw:w-full"
                 onClick={() => setIsOpen(false)}
               >
                 Close
@@ -145,7 +145,7 @@ function ModalDocs() {
         >
           <div>
             {isLoading && (
-              <Skeleton className="gw-w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
+              <Skeleton className="gw:w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
             )}
             <img
               alt="QPF"
@@ -162,7 +162,7 @@ function ModalDocs() {
               }}
               onError={() => setIsLoading(false)}
             />
-            <div className="gw-text-center">
+            <div className="gw:text-center">
               Last Updated:
               {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
             </div>
@@ -171,7 +171,7 @@ function ModalDocs() {
         <Button
           onClick={() => setIsOpen(true)}
           title="Click to open!"
-          className="gw-mb-5"
+          className="gw:mb-5"
         >
           Open Modal
         </Button>
@@ -203,9 +203,9 @@ function Example() {
           size="2xl"
           staticWidth={true}
           buttons={
-            <div className="gw-flex gw:justify-end gw:gap-4">
+            <div className="gw:flex gw:justify-end gw:gap-4">
               <Button
-                className="gw-w-full"
+                className="gw:w-full"
                 onClick={() => {
                   refreshImage();
                   setIsOpen(true);
@@ -215,7 +215,7 @@ function Example() {
               </Button>
               <Button
                 color="secondary"
-                className="gw-w-full"
+                className="gw:w-full"
                 onClick={() => setIsOpen(false)}
               >
                 Close
@@ -225,7 +225,7 @@ function Example() {
         >
           <div>
             {isLoading && (
-              <Skeleton className="gw-w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
+              <Skeleton className="gw:w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
             )}
             <img
               alt="QPF"
@@ -242,7 +242,7 @@ function Example() {
               }}
               onError={() => setIsLoading(false)}
             />
-            <div className="gw-text-center">
+            <div className="gw:text-center">
               Last Updated:
               {new Date(parseInt(imageSrc?.split("?_=")[1])).toLocaleString()}
             </div>
@@ -258,8 +258,8 @@ export default Example;
           />
         </div>
         {/* Component props documentation */}
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
-          Component API - <Code className="gw-p-2">{`<Modal ... />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Modal ... />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

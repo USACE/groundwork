@@ -37,17 +37,17 @@ function LinkProviderDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Link Provider">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           Use the Link Provider to inject link components from other client-side
           routing libraries into Groundwork.
         </Text>
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           By default, Groundwork assumes the use of standard{" "}
           {<Code>{"<a>"}</Code>} elements to represent all links, including
           internal routes. The default recommendation is to handle internal
           routing using redux-bundler and internal-nav-helper.
         </Text>
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           The Link Provider utility component allows the user to utilize other
           popular client-side routing libraries such as React Router, TanStack
           Router, or Wouter by injecting their provided link components into
@@ -57,15 +57,15 @@ function LinkProviderDocs() {
           external library.
         </Text>
 
-        <div className="gw-flex gw:justify-start gw:content-center gw:gap-4">
-          <Code className="gw-p-1 gw:px-2">{`import { LinkProvider } from "@usace/groundwork";`}</Code>
+        <div className="gw:flex gw:justify-start gw:content-center gw:gap-4">
+          <Code className="gw:p-1 gw:px-2">{`import { LinkProvider } from "@usace/groundwork";`}</Code>
           <CopyButton
             text={`import { LinkProvider } from "@usace/groundwork";`}
           />
         </div>
 
-        <H3 className="gw-pt-6 gw:pb-3">Link Provider for React Router</H3>
-        <Text className="gw-italic">client-router.jsx</Text>
+        <H3 className="gw:pt-6 gw:pb-3">Link Provider for React Router</H3>
+        <Text className="gw:italic">client-router.jsx</Text>
         <div>
           <CodeExample
             code={`import { LinkProvider } from "@usace/groundwork";
@@ -98,7 +98,7 @@ function ClientRouter() {
 export default ClientRouter;`}
           />
           <br />
-          <Text className="gw-italic">main.jsx</Text>
+          <Text className="gw:italic">main.jsx</Text>
           <CodeExample
             code={`import React from "react";
 import ReactDOM from "react-dom/client";
@@ -112,8 +112,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           />
         </div>
 
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
-          Component API - <Code className="gw-p-2">{`<LinkProvider />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<LinkProvider />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

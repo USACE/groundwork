@@ -134,7 +134,7 @@ function CheckboxesDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Checkboxes">
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The <Code>{"<Checkboxes />"}</Code> component renders a group of
             styled checkboxes with accessible markup. Each checkbox can be
@@ -142,13 +142,13 @@ function CheckboxesDocs() {
             array of checkbox metadata.
           </Text>
         </div>
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3 gw:w-[50%]">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3 gw:w-[50%]">
           <Checkboxes
             key={JSON.stringify(checkedItems)}
             legend="Checkbox Example"
             content={exampleContent}
           />
-          <div className="gw-mt-4">
+          <div className="gw:mt-4">
             <Button
               title="Clear all selected options"
               onClick={clearAll}
@@ -156,7 +156,7 @@ function CheckboxesDocs() {
             >
               Clear All
             </Button>
-            <div className="gw-mt-2 gw:text-sm">
+            <div className="gw:mt-2 gw:text-sm">
               <strong>Current State:</strong> {JSON.stringify(checkedItems)}
             </div>
           </div>
@@ -207,12 +207,12 @@ function Component() {
 
 export default Component;`}
         />
-        <Divider className="gw-mt-6 gw:mb-4" text="Checkbox Details" />
-        <Text className="gw-mb-4">
+        <Divider className="gw:mt-6 gw:mb-4" text="Checkbox Details" />
+        <Text className="gw:mb-4">
           The <Code>{"<Checkboxes />"}</Code> component requires an array of
           checkbox items passed to the <Code>content</Code> prop.
         </Text>
-        <Badge color="blue" className="gw-mb-4 gw:ms-1">
+        <Badge color="blue" className="gw:mb-4 gw:ms-1">
           Each item <em>should</em> include at least a <Code>label</Code> and an{" "}
           <Code>id</Code> and an <Code>onChange</Code> handler for
           interactivity.
@@ -233,18 +233,18 @@ export default Component;`}
   ]}
 />`}
         />
-        <Text className="gw-my-4">
+        <Text className="gw:my-4">
           Use <Code>inputProps</Code> and <Code>labelProps</Code> to forward
           additional attributes to the rendered checkbox input and the
           surrounding label container respectively.
         </Text>
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
-          Component API - <Code className="gw-p-2">{`<Checkboxes />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Checkboxes />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Checkboxes} />
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Checkbox Item API -{" "}
-          <Code className="gw-p-2">{`<CheckboxItem />`}</Code>
+          <Code className="gw:p-2">{`<CheckboxItem />`}</Code>
         </div>
         <PropsTable propsList={checkboxItemProps} />
       </UsaceBox>

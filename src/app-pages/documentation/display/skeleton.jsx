@@ -38,25 +38,25 @@ function SkeletonDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Skeleton">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The Skeleton component can be used as a placeholder to indicate that
             data is being loaded through an asynchronous request (e.g. a data
             hook) but is not yet ready for display.
           </Text>
-          <Text className="gw-pt-3">
+          <Text className="gw:pt-3">
             Typically, the Skeleton should roughly approximate the size of the
             anticipated data. This allows asynchronous data to fill in
             gracefully rather than causing drastic layout changes as data
             arrives.
           </Text>
-          <Text className="gw-pt-3">
+          <Text className="gw:pt-3">
             Some basic size types are included, but the component can be further
             customized as needed through the className property.
           </Text>
         </div>
         {/* Example usage */}
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <Skeleton type="card" />
           <br />
           <Skeleton type="value" />
@@ -76,8 +76,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
-          Component API - <Code className="gw-p-2">{`<Skeleton />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Skeleton />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

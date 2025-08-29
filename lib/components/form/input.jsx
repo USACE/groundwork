@@ -13,13 +13,13 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
         "gw:relative gw:block gw:w-full",
 
         // Background color + shadow applied to inset pseudo element, so shadow blends with border in light mode
-        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw-radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
+        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw:radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
 
         // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
         "gw:dark:before:hidden",
 
         // Focus ring
-        "gw:after:pointer-events-none gw:after:absolute gw:after:inset-0 gw:after:rounded-lg gw:after:ring-inset gw:after:ring-transparent sm:after:gw-focus-within:ring-2 sm:after:gw-focus-within:gw-ring-blue-500",
+        "gw:after:pointer-events-none gw:after:absolute gw:after:inset-0 gw:after:rounded-lg gw:after:ring-inset gw:after:ring-transparent sm:after:gw:focus-within:ring-2 sm:after:gw:focus-within:gw:ring-blue-500",
 
         // Disabled state
         "gw:has-data-disabled:opacity-50 gw:has-data-disabled:before:bg-zinc-950/5 gw:has-data-disabled:before:shadow-none",
@@ -69,7 +69,7 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
           "gw:data-invalid:border-red-500 gw:data-invalid:data-hover:border-red-500 gw:dark:data-invalid:border-red-500 gw:dark:data-invalid:data-hover:border-red-500",
 
           // Disabled state
-          "gw:data-disabled:border-zinc-950/20 dark:gw-data-[hover]:data-[disabled]:gw-border-white/15 gw:dark:data-disabled:border-white/15 gw:dark:data-disabled:bg-white/2.5",
+          "gw:data-disabled:border-zinc-950/20 dark:gw:data-[hover]:data-[disabled]:gw:border-white/15 gw:dark:data-disabled:border-white/15 gw:dark:data-disabled:bg-white/2.5",
         ])}
         {...props}
       />

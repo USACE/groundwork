@@ -67,7 +67,7 @@ const radii = {
 // - rose
 const colorsFilled = {
   light:
-    "gw:bg-white gw:text-usace-black gw:border gw-border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
+    "gw:bg-white gw:text-usace-black gw:border gw:border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
   dark: "gw:bg-gray-900 gw:text-white gw:border gw:border-gray-900/90 gw:hover:bg-gray-900/90 gw:active:bg-gray-900/80",
   primary:
     "gw:bg-blue-600 gw:text-white gw:border gw:border-blue-700/90 gw:hover:bg-blue-600/90 gw:active:bg-blue-600/80",
@@ -113,7 +113,7 @@ const colorsFilled = {
 
 const colorsOutline = {
   light:
-    "gw:bg-transparent gw:text-usace-black gw:border gw-border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
+    "gw:bg-transparent gw:text-usace-black gw:border gw:border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
   dark: "gw:bg-transparent gw:text-usace-black gw:border gw:border-gray-900/90 gw:hover:bg-gray-900 gw:hover:text-white gw:active:bg-gray-200/70",
   primary:
     "gw:bg-transparent gw:text-blue-600 gw:border gw:border-blue-700/90 gw:border gw:border-blue-700/90 gw:hover:bg-blue-600/90 gw:hover:text-white gw:active:bg-blue-600/80",
@@ -238,7 +238,7 @@ export function TouchTarget({ children }) {
     <>
       {children}
       <span
-        className="gw-absolute gw:left-1/2 gw:top-1/2 gw:size-[max(gw-100%,gw-2.gw-75rem)gw-] gw:-translate-x-1/2 gw:-translate-y-1/2 gw-[@gw-media(gw-pointer:gw-fine)]:gw-hidden"
+        className="gw:absolute gw:left-1/2 gw:top-1/2 gw:size-[max(gw:100%,gw:2.gw:75rem)gw:] gw:-translate-x-1/2 gw:-translate-y-1/2 gw:[@gw:media(gw:pointer:gw:fine)]:gw:hidden"
         aria-hidden="true"
       />
     </>

@@ -16,7 +16,7 @@ export const Textarea = forwardRef(function Textarea(
         "gw:relative gw:block gw:w-full",
 
         // Background color + shadow applied to inset pseudo element, so shadow blends with border in light mode
-        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw-radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
+        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw:radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
 
         // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
         "gw:dark:before:hidden",

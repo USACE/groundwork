@@ -71,7 +71,7 @@ function ColorInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Color Input">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The Color Input component is a simple input field that allows users
             to select a color. It is a standard HTML input element with the type
@@ -79,9 +79,9 @@ function ColorInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
-          <div className="gw-flex gw:gap-6 gw:items-center gw:w-full">
-            <div className="gw-flex-1">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:flex gw:gap-6 gw:items-center gw:w-full">
+            <div className="gw:flex-1">
               <Field>
                 <Label>Pick a color</Label>
                 <Input
@@ -93,9 +93,9 @@ function ColorInputDocs() {
                 />
               </Field>
             </div>
-            <div className="gw-flex-1">
+            <div className="gw:flex-1">
               <div
-                className="gw-h-8 gw:w-full gw:text-center gw:text-white"
+                className="gw:h-8 gw:w-full gw:text-center gw:text-white"
                 style={{ backgroundColor: color }}
               >
                 {color}
@@ -141,9 +141,9 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw:text-lg gw:pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<Input type="color" />`}</Code>
+          <Code className="gw:p-2">{`<Input type="color" />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>
