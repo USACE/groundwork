@@ -54,12 +54,12 @@ function AccordionDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw-w-[50%]">
             <Accordion
               defaultOpen
               heading={
-                <span className="gw-flex gw-justify-between gw-w-full gw-items-center gw-gap-1">
+                <span className="gw-flex gw:justify-between gw:w-full gw:items-center gw:gap-1">
                   Start Here
                   <Badge color="green" className="gw-mr-2">
                     <LuPartyPopper className="gw-mr-1" />
@@ -145,7 +145,7 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Accordion />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />

@@ -81,7 +81,7 @@ function TextDocs() {
           additional formatting.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <Text>
             These components provide some simple out-of-the-box formatting, we
             can use them to <Strong>Emphasize a message</Strong> or{" "}
@@ -106,17 +106,17 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Text />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Text} />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Strong />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Strong} />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TextLink />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TextLink} />

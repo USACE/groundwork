@@ -29,10 +29,10 @@ function Home() {
               available in the GitHub Repo.
             </Text>
           </UsaceBox>
-          <div className="gw-grid gw-grid-cols-1 gw-gap-6 gw-mt-6 sm:gw-grid-cols-2">
+          <div className="gw-grid gw:grid-cols-1 gw:gap-6 gw:mt-6 gw:sm:grid-cols-2">
             <UsaceBox title="Getting Started">
-              <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mb-3">
-                <Code className="gw-block gw-w-full gw-p-1 gw-px-2">
+              <div className="gw-flex gw:flex-row gw:justify-start gw-space-between gw:items-center gw:gap-2 gw:mb-3">
+                <Code className="gw-block gw:w-full gw:p-1 gw:px-2">
                   npm install @usace/groundwork
                 </Code>
                 <CopyButton text="npm install @usace/groundwork" />
@@ -43,7 +43,7 @@ function Home() {
                 building your application
               </Text>
               <div className="gw-mt-3">
-                <TextLink href="/docs" className="gw-text-lg gw-font-bold">
+                <TextLink href="/docs" className="gw-text-lg gw:font-bold">
                   Check out the docs
                 </TextLink>
               </div>

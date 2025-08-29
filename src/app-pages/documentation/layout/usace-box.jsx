@@ -45,7 +45,7 @@ function UsaceBoxDocs() {
           </Text>
         </div>
         {/* Example usage */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <UsaceBox title="Example">
             <Text>Some sample content here</Text>
           </UsaceBox>
@@ -65,7 +65,7 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />

@@ -116,7 +116,7 @@ export default Example;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Divider ... />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />

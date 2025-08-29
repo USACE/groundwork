@@ -19,7 +19,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
 }
 
 function PackageMaintenance() {
@@ -37,7 +37,7 @@ function PackageMaintenance() {
             from outdated, vulnerable, or incompatible dependencies.
           </P>
           <P>Here's why package maintenance is important:</P>
-          <ol className="gw-list-disc gw-pl-6 gw-pb-3">
+          <ol className="gw-list-disc gw:pl-6 gw:pb-3">
             <li>
               <strong>Security Vulnerabilities: </strong> As libraries evolve,
               security vulnerabilities are discovered in older versions. Keeping

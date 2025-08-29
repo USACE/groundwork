@@ -14,7 +14,7 @@ function Docs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Getting Started">
         <H4>Project Setup</H4>
-        <div className="gw-mt-3 gw-mb-3">
+        <div className="gw-mt-3 gw:mb-3">
           <Text>
             Groundwork is a set of React components that are designed to be used
             by USACE Developers building internal and externally facing web
@@ -40,8 +40,8 @@ function Docs() {
             Set up a new project with Vite using the following command:
           </Text>
           <div className="gw-mt-3">
-            <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
-              <Code className="gw-block gw-p-1 gw-px-2">
+            <div className="gw-flex gw:flex-row gw:justify-start gw-space-between gw:items-center gw:gap-2 gw:mt-3 gw:mb-3">
+              <Code className="gw-block gw:p-1 gw:px-2">
                 {`npm create vite@latest <app-name> --template react`}
               </Code>
               <CopyButton text="npm create vite@latest <app-name> --template react" />
@@ -50,23 +50,23 @@ function Docs() {
         </div>
 
         <H4>Installation</H4>
-        <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
-          <Code className="gw-block gw-p-1 gw-px-2">
+        <div className="gw-flex gw:flex-row gw:justify-start gw-space-between gw:items-center gw:gap-2 gw:mt-3 gw:mb-3">
+          <Code className="gw-block gw:p-1 gw:px-2">
             npm install @usace/groundwork
           </Code>
           <CopyButton text="npm install @usace/groundwork" />
         </div>
         <H4>Import Components and Styles</H4>
-        <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
-          <Code className="gw-block gw-p-1 gw-px-2">
+        <div className="gw-flex gw:flex-row gw:justify-start gw-space-between gw:items-center gw:gap-2 gw:mt-3 gw:mb-3">
+          <Code className="gw-block gw:p-1 gw:px-2">
             {`import { SiteWrapper, ... } from "@usace/groundwork"`}
           </Code>
           <CopyButton
             text={`import { SiteWrapper, ... } from "@usace/groundwork"`}
           />
         </div>
-        <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
-          <Code className="gw-block gw-p-1 gw-px-2">
+        <div className="gw-flex gw:flex-row gw:justify-start gw-space-between gw:items-center gw:gap-2 gw:mt-3 gw:mb-3">
+          <Code className="gw-block gw:p-1 gw:px-2">
             import "@usace/groundwork/dist/style.css"
           </Code>
           <CopyButton text={`import "@usace/groundwork/dist/style.css"`} />

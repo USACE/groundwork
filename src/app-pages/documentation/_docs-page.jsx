@@ -15,7 +15,7 @@ function DocsPage({ breadcrumbs = [], children }) {
           />
         ))}
       </Breadcrumbs>
-      <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
+      <div className="md:gw-grid gw:grid-cols-12 gw:gap-6">
         <div className="md:gw-col-span-2">
           <Sidebar
             title="Contents"
@@ -23,7 +23,7 @@ function DocsPage({ breadcrumbs = [], children }) {
             sidebarLinks={sidebarLinks}
           />
         </div>
-        <div className="gw-col-span-12 md:gw-col-span-10">{children}</div>
+        <div className="gw-col-span-12 gw:md:col-span-10">{children}</div>
       </div>
     </Container>
   );

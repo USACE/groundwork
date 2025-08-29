@@ -51,7 +51,7 @@ function FieldsetDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw-w-[50%]">
             <Fieldset>
               <Legend>Fieldset Title</Legend>
@@ -98,33 +98,33 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Fieldset />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Fieldset} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<FieldGroup />`}</Code>
         </div>
         <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Field />`}</Code>
         </div>
         <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Legend />`}</Code>
         </div>
         <Text className="gw-mt-3">
           This component does not expose any component-specific props.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Label />`}</Code>
         </div>
         <Text className="gw-mt-3">

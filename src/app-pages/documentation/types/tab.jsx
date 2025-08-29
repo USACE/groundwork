@@ -67,7 +67,7 @@ function TabDocs() {
           selected.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Object - <Code className="gw-p-2">{`tab`}</Code>
         </div>
         <PropsTable propsList={tabProps} />

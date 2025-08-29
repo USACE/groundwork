@@ -7,7 +7,7 @@ import cwbiLogo from "../../img/cwbi-logo.png";
 
 function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
   return (
-    <div className="gw-flex gw-flex-row gw-justify-center gw-align-middle gw-gap-6 gw-mb-4 gw-mt-4">
+    <div className="gw-flex gw:flex-row gw:justify-center gw:align-middle gw:gap-6 gw:mb-4 gw:mt-4">
       {army && (
         <a href="https://www.army.mil" target="_blank" rel="noopener">
           <img
@@ -34,7 +34,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             src={usaceLogo}
             aria-label="U.S. Army Corps of Engineers"
             alt="U.S. Army Corps of Engineers"
-            className="gw-max-h-[75px] gw-h-[75px] gw-w-auto"
+            className="gw-max-h-[75px] gw:h-[75px] gw:w-auto"
           />
         </a>
       )}
@@ -44,7 +44,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             src={usace250Logo}
             aria-label="U.S. Army Corps of Engineers"
             alt="U.S. Army Corps of Engineers"
-            className="gw-max-h-[75px] gw-h-[75px] gw-w-auto"
+            className="gw-max-h-[75px] gw:h-[75px] gw:w-auto"
           />
         </a>
       )}

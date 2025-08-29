@@ -112,10 +112,10 @@ function SearchDocs() {
           Search can be added to the SiteWrapper component as a prop, or used as
           a standalone component.
         </Text>
-        <H3 className="gw-pt-6 gw-pb-3">Basic Search</H3>
+        <H3 className="gw-pt-6 gw:pb-3">Basic Search</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-col gw-items-center">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw-flex gw:flex-col gw:items-center">
             <span className="gw-ml-3">Search String: {searchString}</span>
             <Search
               value={searchString}
@@ -160,15 +160,15 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Search />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Search} />
 
-        <H3 className="gw-pt-6 gw-pb-3">SearchDotGov</H3>
+        <H3 className="gw-pt-6 gw:pb-3">SearchDotGov</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-col gw-items-center">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw-flex gw:flex-col gw:items-center">
             <SearchDotGov
               affiliate="groundwork"
               accessKey="JdBfW2_sGkdcLr4BTzCoOQIRy3oRP7kmzJ2DwIs-SCM="
@@ -194,7 +194,7 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<SearchDotGov />`}</Code>
         </div>
         <PropsTable propsList={componentProps_SearchDotGov} />

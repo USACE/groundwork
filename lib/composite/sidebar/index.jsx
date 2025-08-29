@@ -31,17 +31,14 @@ function renderPopoutMenu({
   }
 
   return (
-    <div
-      key={link?.id}
-      className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
-    >
+    <div key={link?.id} className="gw-py-2 gw:border-b  gw:hover:bg-gray-100">
       {!link?.children ? (
         <Link
           key={link?.id}
           href={link?.href}
           target={link?.target}
           rel={link?.rel}
-          className="gw-z-20 gw-flex gw-items-center gw-px-1"
+          className="gw-z-20 gw:flex gw:items-center gw:px-1"
         >
           {link?.text}
         </Link>
@@ -58,14 +55,14 @@ function renderPopoutMenu({
               target={link?.target}
               rel={link?.rel}
               className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
-                isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+                isSelected ? "gw:bg-gray-100 gw:rounded" : ""
               }`}
             >
               {link?.text}
             </Link>
           }
           <div
-            className={`gw-overflow-y-auto`}
+            className={`gw:overflow-y-auto`}
             style={{ maxHeight: maxScrollHeight }}
           >
             {link?.children?.map((child) =>
@@ -98,12 +95,12 @@ function renderRegularLinks(link, selectedPath, level = 0) {
       <Link href={link?.href} target={link?.target} rel={link?.rel}>
         <div
           className={`gw-text-lg ${
-            level === 0 ? "gw-font-bold" : ""
+            level === 0 ? "gw:font-bold" : ""
           } gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center ${
             link?.href
-              ? "gw-cursor-pointer hover:gw-bg-gray-100"
-              : "gw-cursor-default"
-          } ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""}`}
+              ? "gw:cursor-pointer gw:hover:bg-gray-100"
+              : "gw:cursor-default"
+          } ${isSelected ? "gw:bg-gray-100 gw:rounded" : ""}`}
           style={indentation}
         >
           {link?.text}
@@ -146,12 +143,12 @@ function Sidebar({
       <UsaceBox
         ref={sidebarRef}
         title={title}
-        className={"gw-text-sm gw-my-5"}
+        className={"gw:text-sm gw:my-5"}
         id="sidebar"
       >
-        <div className="gw-w-full gw-m-auto gw-flex gw-justify-between gw-items-center gw-gap-2">
+        <div className="gw-w-full gw:m-auto gw:flex gw:justify-between gw:items-center gw:gap-2">
           <Dropdown
-            className={"gw-w-5/6 gw-m-auto"}
+            className={"gw:w-5/6 gw:m-auto"}
             value={selectedPath}
             onChange={(e) => {
               mobileNav.current.href = e.target.value;

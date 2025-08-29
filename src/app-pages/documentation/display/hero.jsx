@@ -71,7 +71,7 @@ function HeroDocs() {
           typically we would use the Hero component on a landing page.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
@@ -82,12 +82,12 @@ function HeroDocs() {
         </div>
         <Badge
           color="yellow"
-          className={"gw-m-5 gw-w-full gw-flex gw-flex-col"}
+          className={"gw:m-5 gw:w-full gw:flex gw:flex-col"}
         >
           ⚠ NOTE: When using images on your site please consider compressing
           them!
           <div
-            className="gw-cursor-pointer gw-underline gw-decoration-solid gw-decoration-gray-500"
+            className="gw-cursor-pointer gw:underline gw:decoration-solid gw:decoration-gray-500"
             onClick={() => {
               // Navigate to the img compression tag on the page
               // # TODO: Hash router seems to break hash referencing?
@@ -124,7 +124,7 @@ export default Component;
           </Text>
         </div>
         <UsaceBox title="Rotating Example">
-          <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+          <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
             <Hero
               title="Hero Title"
               subtitle="Hero Subtitle"
@@ -165,7 +165,7 @@ export default Component;
             </Text>
           </div>
           {/* Component props documentation */}
-          <div className="gw-font-bold gw-text-lg gw-pt-6">
+          <div className="gw-font-bold gw:text-lg gw:pt-6">
             Component API - <Code className="gw-p-2">{`<Hero />`}</Code>
           </div>
           <PropsTable propsList={componentProps} />
@@ -179,7 +179,7 @@ export default Component;
           techniques that can help reduce the loss of image quality. We
           recommend{" "}
           <a
-            className="gw-underline gw-decoration-solid gw-decoration-gray-500"
+            className="gw-underline gw:decoration-solid gw:decoration-gray-500"
             href="https://tinypng.com"
           >
             TinyPNG.com

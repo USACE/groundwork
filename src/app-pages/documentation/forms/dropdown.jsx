@@ -79,10 +79,10 @@ function DropdownDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw-w-[50%]">
             <Dropdown
-              className={"gw-w-5/6 gw-m-auto"}
+              className={"gw:w-5/6 gw:m-auto"}
               onChange={(e) => {
                 alert("You selected: " + e.target.value);
               }}
@@ -136,7 +136,7 @@ function DropdownDocs() {
   `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Dropdown />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Fieldset} />

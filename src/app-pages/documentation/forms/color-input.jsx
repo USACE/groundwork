@@ -79,8 +79,8 @@ function ColorInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-gap-6 gw-items-center gw-w-full">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw-flex gw:gap-6 gw:items-center gw:w-full">
             <div className="gw-flex-1">
               <Field>
                 <Label>Pick a color</Label>
@@ -95,7 +95,7 @@ function ColorInputDocs() {
             </div>
             <div className="gw-flex-1">
               <div
-                className="gw-h-8 gw-w-full gw-text-center gw-text-white"
+                className="gw-h-8 gw:w-full gw:text-center gw:text-white"
                 style={{ backgroundColor: color }}
               >
                 {color}
@@ -141,7 +141,7 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
           <Code className="gw-p-2">{`<Input type="color" />`}</Code>
         </div>

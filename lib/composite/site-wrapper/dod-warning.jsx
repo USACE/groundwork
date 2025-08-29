@@ -58,7 +58,7 @@ function DoDWarning({ warningTimeout }) {
         </Button>
       }
     >
-      <ul className="gw-list-disc gw-p-3">
+      <ul className="gw-list-disc gw:p-3">
         <li>
           The USG routinely intercepts and monitors communications on this
           website for purposes including, but not limited to, penetration

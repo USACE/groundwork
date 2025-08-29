@@ -57,14 +57,14 @@ function LinkProviderDocs() {
           external library.
         </Text>
 
-        <div className="gw-flex gw-justify-start gw-content-center gw-gap-4">
-          <Code className="gw-p-1 gw-px-2">{`import { LinkProvider } from "@usace/groundwork";`}</Code>
+        <div className="gw-flex gw:justify-start gw:content-center gw:gap-4">
+          <Code className="gw-p-1 gw:px-2">{`import { LinkProvider } from "@usace/groundwork";`}</Code>
           <CopyButton
             text={`import { LinkProvider } from "@usace/groundwork";`}
           />
         </div>
 
-        <H3 className="gw-pt-6 gw-pb-3">Link Provider for React Router</H3>
+        <H3 className="gw-pt-6 gw:pb-3">Link Provider for React Router</H3>
         <Text className="gw-italic">client-router.jsx</Text>
         <div>
           <CodeExample
@@ -112,7 +112,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           />
         </div>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<LinkProvider />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />

@@ -60,39 +60,39 @@ const componentProps = [
   },
   {
     name: "isStatic",
-    type:"boolean",
-    default:"false",
-    desc:"Whether the element should ignore the internally managed open/closed state."
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should ignore the internally managed open/closed state.",
   },
   {
-    name:"autoFocus",
-    type:"boolean",
-    default:"false",
-    desc:"Whether or not the dialog should receive focus when first rendered."
+    name: "autoFocus",
+    type: "boolean",
+    default: "false",
+    desc: "Whether or not the dialog should receive focus when first rendered.",
   },
   {
-    name:"dialogTransition",
-    type:"boolean",
-    default:"false",
-    desc:"Whether the element should render transition attributes like data-closed, data-enter and data-leave."
+    name: "dialogTransition",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should render transition attributes like data-closed, data-enter and data-leave.",
   },
   {
-    name:"unmount",
-    type:"boolean",
-    default:"true",
-    desc:"Whether the element should be unmounted or hidden based on the open/closed state."
+    name: "unmount",
+    type: "boolean",
+    default: "true",
+    desc: "Whether the element should be unmounted or hidden based on the open/closed state.",
   },
   {
-    name:"role",
-    type:"string",
-    default:"dialog",
-    desc:"The role to apply to the dialog root element. Options include: 'dialog' , 'alertdialog'"
+    name: "role",
+    type: "string",
+    default: "dialog",
+    desc: "The role to apply to the dialog root element. Options include: 'dialog' , 'alertdialog'",
   },
   {
-    name:"dialogPanelTransition",
-    type:"boolean",
-    default:"false",
-    desc:"Whether the element should render transition attributes like data-closed, data-enter and data-leave."
+    name: "dialogPanelTransition",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should render transition attributes like data-closed, data-enter and data-leave.",
   },
   {
     name: "className",
@@ -129,7 +129,7 @@ function ModalDocs() {
           size="2xl"
           staticWidth={true}
           buttons={
-            <div className="gw-flex gw-justify-end gw-gap-4">
+            <div className="gw-flex gw:justify-end gw:gap-4">
               <Button className="gw-w-full" onClick={refreshImage}>
                 Refresh Image
               </Button>
@@ -145,7 +145,7 @@ function ModalDocs() {
         >
           <div>
             {isLoading && (
-              <Skeleton className="gw-w-[80vw] gw-max-w-[800px] gw-h-[50vh]" />
+              <Skeleton className="gw-w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
             )}
             <img
               alt="QPF"
@@ -203,7 +203,7 @@ function Example() {
           size="2xl"
           staticWidth={true}
           buttons={
-            <div className="gw-flex gw-justify-end gw-gap-4">
+            <div className="gw-flex gw:justify-end gw:gap-4">
               <Button
                 className="gw-w-full"
                 onClick={() => {
@@ -225,7 +225,7 @@ function Example() {
         >
           <div>
             {isLoading && (
-              <Skeleton className="gw-w-[80vw] gw-max-w-[800px] gw-h-[50vh]" />
+              <Skeleton className="gw-w-[80vw] gw:max-w-[800px] gw:h-[50vh]" />
             )}
             <img
               alt="QPF"
@@ -258,7 +258,7 @@ export default Example;
           />
         </div>
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Modal ... />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />

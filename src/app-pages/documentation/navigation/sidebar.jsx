@@ -98,8 +98,8 @@ function SidebarDocs() {
           the header.
         </Text>
 
-        <div className="gw-flex gw-justify-start gw-content-center gw-gap-4">
-          <Code className="gw-p-1 gw-px-2">{`import { Sidebar } from "@usace/groundwork";`}</Code>
+        <div className="gw-flex gw:justify-start gw:content-center gw:gap-4">
+          <Code className="gw-p-1 gw:px-2">{`import { Sidebar } from "@usace/groundwork";`}</Code>
           <CopyButton text={`import { Sidebar } from "@usace/groundwork";`} />
         </div>
 
@@ -107,10 +107,10 @@ function SidebarDocs() {
           NOTE: Sidebar is click to use. Specifying children will provide a
           clickable menu with the first item in that menu being the root link.
         </Badge>
-        <H3 className="gw-pt-6 gw-pb-3">Sidebar (With Popout Menu)</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="md:gw-block md:gw-col-span-2">
+        <H3 className="gw-pt-6 gw:pb-3">Sidebar (With Popout Menu)</H3>
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="md:gw-grid gw:grid-cols-12 gw:gap-6">
+            <div className="md:gw-block gw:md:col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
@@ -119,7 +119,7 @@ function SidebarDocs() {
                 popoutDirection="right"
               />
             </div>
-            <div className="gw-col-span-12 md:gw-col-span-10">
+            <div className="gw-col-span-12 gw:md:col-span-10">
               Your Main Page Content Here!
             </div>
           </div>
@@ -157,17 +157,17 @@ export default Component;`}
           />
         </div>
 
-        <H3 className="gw-pt-6 gw-pb-3">Sidebar (NO Popout Menu)</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="md:gw-grid gw-grid-cols-12 gw-gap-6">
-            <div className="md:gw-block md:gw-col-span-2">
+        <H3 className="gw-pt-6 gw:pb-3">Sidebar (NO Popout Menu)</H3>
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="md:gw-grid gw:grid-cols-12 gw:gap-6">
+            <div className="md:gw-block gw:md:col-span-2">
               <Sidebar
                 title="Contents"
                 selectedPath={currentPath}
                 sidebarLinks={exampleRegularLinks}
               />
             </div>
-            <div className="gw-col-span-12 md:gw-col-span-10">
+            <div className="gw-col-span-12 gw:md:col-span-10">
               Your Main Page Content Here!
             </div>
           </div>
@@ -202,7 +202,7 @@ export default Component;`}
           />
         </div>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
           <Code className="gw-p-2">{`<Sidebar title={title} selectedPath={path} sidebarLinks={sidebarLinks} />`}</Code>
         </div>

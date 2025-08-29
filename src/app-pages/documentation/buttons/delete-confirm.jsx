@@ -54,8 +54,8 @@ function DeleteConfirmDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="gw-mt-6 gw-pb-3">Delete / Confirm</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <H3 className="gw-mt-6 gw:pb-3">Delete / Confirm</H3>
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <DeleteConfirm
             onDelete={() => {
               window.alert("actually delete the thing");
@@ -80,7 +80,7 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<DeleteConfirm />`}</Code>
         </div>
         <PropsTable propsList={componentProps_DeleteConfirm} />

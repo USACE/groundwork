@@ -100,8 +100,8 @@ function BadgeDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-wrap gw-items-center gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw-flex gw:flex-wrap gw:items-center gw:mb-3">
             {colors.map((color) => {
               return (
                 <Badge color={color} key={color} className="gw-ml-2">
@@ -110,7 +110,7 @@ function BadgeDocs() {
               );
             })}
           </div>
-          <div className="gw-flex gw-flex-wrap gw-items-center">
+          <div className="gw-flex gw:flex-wrap gw:items-center">
             {colors.map((color) => {
               return (
                 <BadgeButton
@@ -167,13 +167,13 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Badge />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Badge} />
 
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<BadgeButton />`}</Code>
         </div>
         <PropsTable propsList={componentProps_BadgeButton} />

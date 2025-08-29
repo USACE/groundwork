@@ -18,7 +18,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
 }
 
 function ClientSideRouting() {
@@ -57,7 +57,7 @@ function ClientSideRouting() {
             are a few terms that you should be familiar with before we get
             started:
           </P>
-          <ul className="gw-list-disc gw-pl-6 gw-pb-3">
+          <ul className="gw-list-disc gw:pl-6 gw:pb-3">
             <li>
               <strong>Store</strong>: The store is where the state of your
               application lives. It is a single object that holds the entire
@@ -131,7 +131,7 @@ function ClientSideRouting() {
             </a>{" "}
             tutorials.
           </P>
-          <ol className="gw-list-decimal gw-pl-6">
+          <ol className="gw-list-decimal gw:pl-6">
             <li>
               Delete the <Code>./src/assets</Code> folder
             </li>
@@ -140,7 +140,7 @@ function ClientSideRouting() {
             </li>
             <li>
               Create the following folders:
-              <ul className="gw-list-disc gw-pl-6">
+              <ul className="gw-list-disc gw:pl-6">
                 <li>
                   <Code>./src/app-bundles</Code>
                 </li>
@@ -157,7 +157,7 @@ function ClientSideRouting() {
             </li>
             <li>
               Create the following files:
-              <ul className="gw-list-disc gw-pl-6">
+              <ul className="gw-list-disc gw:pl-6">
                 <li>
                   <Code>./src/app-bundles/index.js</Code>
                 </li>
@@ -478,7 +478,7 @@ export default App;`}
             are ignored and the default behavior takes over.
           </P>
           <H3>Setting a Base Path (Vite)</H3>
-          <Badge color="red" className="gw-block gw-my-2 gw-w-1/2">
+          <Badge color="red" className="gw-block gw:my-2 gw:w-1/2">
             If your application lives at the root of the webserver, ignore this
             step!
           </Badge>

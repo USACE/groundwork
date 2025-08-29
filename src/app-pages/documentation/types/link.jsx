@@ -54,7 +54,7 @@ function LinkDocs() {
           links are configurable or dynamic.
         </Text>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Object - <Code className="gw-p-2">{`link`}</Code>
         </div>
         <PropsTable propsList={linkProps} />

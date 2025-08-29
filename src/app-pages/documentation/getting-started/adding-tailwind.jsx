@@ -20,7 +20,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
 }
 
 function AddingTailwind() {
@@ -147,7 +147,7 @@ export default App;`}
           </P>
           <P>
             <a href="/docs/client-side-routing" className="gw-underline">
-              <span className="gw-flex gw-items-center gw-gap-2">
+              <span className="gw-flex gw:items-center gw:gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>
             </a>

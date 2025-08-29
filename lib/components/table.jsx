@@ -11,7 +11,7 @@ const TableContext = createContext({
   grid: false,
   striped: false,
   overflow: false,
-  overflowHeight: "gw-max-h-[65vh]",
+  overflowHeight: "gw:max-h-[65vh]",
   stickyHeader: false,
 });
 
@@ -23,7 +23,7 @@ export function Table({
   className,
   children,
   overflow = false,
-  overflowHeight = "gw-max-h-[65vh]",
+  overflowHeight = "gw:max-h-[65vh]",
   stickyHeader = false,
   ...props
 }) {
@@ -46,29 +46,29 @@ export function Table({
         <div
           {...props}
           className={gwMerge(
-            "gw--mx-[--gutter] gw-overflow-x-auto gw-whitespace-nowrap",
-            "gw-relative",
+            "gw:-mx-(--gutter) gw:overflow-x-auto gw:whitespace-nowrap",
+            "gw:relative",
             className,
           )}
         >
           <div
             ref={scrollRef}
             className={gwMerge(
-              "gw-inline-block gw-min-w-full gw-align-middle",
-              !bleed && "sm:gw-px-[--gutter]",
-              overflow && "gw-overflow-y-auto",
+              "gw:inline-block gw:min-w-full gw:align-middle",
+              !bleed && "gw:sm:px-(--gutter)",
+              overflow && "gw:overflow-y-auto",
               overflow && overflowHeight && overflowHeight,
             )}
           >
             <table
               role="presentation"
-              className="gw-min-w-full gw-text-left gw-text-sm/6"
+              className="gw-min-w-full gw:text-left gw:text-sm/6"
             >
               {children}
             </table>
           </div>
           {showFade && overflow && (
-            <div className="gw-pointer-events-none gw-absolute gw-bottom-0 gw-left-0 gw-right-0 gw-h-8 gw-bg-gradient-to-t gw-from-white dark:gw-from-zinc-950 gw-to-transparent" />
+            <div className="gw-pointer-events-none gw:absolute gw:bottom-0 gw:left-0 gw:right-0 gw:h-8 gw:bg-linear-to-t gw:from-white gw:dark:from-zinc-950 gw:to-transparent" />
           )}
         </div>
       </div>
@@ -83,11 +83,11 @@ export function TableHead({ className, ...props }) {
       "stickyHeader is set to true but overflow is not set. This will not work as expected. Please set overflow to true.",
     );
   const overflowClass =
-    "gw-z-10 gw-sticky gw-top-0 gw-bg-white gw-box-shadow dark:gw-bg-zinc-950/50 gw-backdrop-blur-[var(--backdrop-blur)]";
+    "gw:z-10 gw:sticky gw:top-0 gw:bg-white gw-box-shadow gw:dark:bg-zinc-950/50 gw:backdrop-blur-(--backdrop-blur)";
   return (
     <thead
       className={gwMerge(
-        "gw-text-zinc-500 dark:gw-text-zinc-400",
+        "gw:text-zinc-500 gw:dark:text-zinc-400",
         className,
         overflow && stickyHeader && overflowClass,
       )}
@@ -122,12 +122,12 @@ export function TableRow({
         {...props}
         className={gwMerge(
           href &&
-            "has-[[data-row-link][data-focus]]:gw-outline has-[[data-row-link][data-focus]]:gw-outline-2 has-[[data-row-link][data-focus]]:gw--outline-offset-2 has-[[data-row-link][data-focus]]:gw-outline-blue-500 dark:focus-within:gw-bg-white/[2.5%]",
-          striped && "even:gw-bg-zinc-950/[2.5%] dark:even:gw-bg-white/[2.5%]",
-          href && striped && "hover:gw-bg-zinc-950/5 dark:hover:gw-bg-white/5",
+            "gw:has-[[data-row-link][data-focus]]:outline gw:has-[[data-row-link][data-focus]]:outline-2 gw:has-[[data-row-link][data-focus]]:-outline-offset-2 gw:has-[[data-row-link][data-focus]]:outline-blue-500 gw:dark:focus-within:bg-white/2.5",
+          striped && "gw:even:bg-zinc-950/2.5 gw:dark:even:bg-white/2.5",
+          href && striped && "gw:hover:bg-zinc-950/5 gw:dark:hover:bg-white/5",
           href &&
             !striped &&
-            "hover:gw-bg-zinc-950/[2.5%] dark:hover:gw-bg-white/[2.5%]",
+            "gw:hover:bg-zinc-950/2.5 gw:dark:hover:bg-white/2.5",
           className,
         )}
       >
@@ -144,10 +144,10 @@ export function TableHeader({ className, ...props }) {
     <th
       {...props}
       className={gwMerge(
-        "gw-border-b gw-border-b-zinc-950/10 gw-px-4 gw-py-2 gw-font-medium first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))] dark:gw-border-b-white/10",
+        "gw:border-b gw:border-b-zinc-950/10 gw:px-4 gw:py-2 gw:font-medium gw:first:pl-(--gutter,--spacing(2)) gw:last:pr-(--gutter,--spacing(2)) gw:dark:border-b-white/10",
         grid &&
-          "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
-        !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
+          "gw:border-l gw:border-l-zinc-950/5 gw:first:border-l-0 gw:dark:border-l-white/5",
+        !bleed && "gw:sm:first:pl-2 gw:sm:last:pr-2",
         className,
       )}
     />
@@ -166,12 +166,12 @@ export function TableCell({ className, children, ...props }) {
       ref={href ? setCellRef : undefined}
       {...props}
       className={gwMerge(
-        "gw-relative gw-px-4 first:gw-pl-[var(--gutter,theme(spacing.2))] last:gw-pr-[var(--gutter,theme(spacing.2))]",
-        !striped && "gw-border-b gw-border-zinc-950/5 dark:gw-border-white/5",
+        "gw:relative gw:px-4 gw:first:pl-(--gutter,--spacing(2)) gw:last:pr-(--gutter,--spacing(2))",
+        !striped && "gw:border-b gw:border-zinc-950/5 gw:dark:border-white/5",
         grid &&
-          "gw-border-l gw-border-l-zinc-950/5 first:gw-border-l-0 dark:gw-border-l-white/5",
-        dense ? "gw-py-2.5" : "gw-py-4",
-        !bleed && "sm:first:gw-pl-2 sm:last:gw-pr-2",
+          "gw:border-l gw:border-l-zinc-950/5 gw:first:border-l-0 gw:dark:border-l-white/5",
+        dense ? "gw:py-2.5" : "gw:py-4",
+        !bleed && "gw:sm:first:pl-2 gw:sm:last:pr-2",
         className,
       )}
     >
@@ -182,7 +182,7 @@ export function TableCell({ className, children, ...props }) {
           target={target}
           aria-label={title}
           tabIndex={cellRef?.previousElementSibling === null ? 0 : -1}
-          className="gw-absolute gw-inset-0 gw-focus:gw-outline-none"
+          className="gw-absolute gw:inset-0 gw-focus:gw-outline-none"
         />
       )}
       {children}

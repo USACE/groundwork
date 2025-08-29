@@ -169,7 +169,7 @@ function TableDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <Table striped dense overflow stickyHeader>
             <TableHead>
               <TableRow>
@@ -232,32 +232,32 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Table />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Table} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TableHead />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableHead} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TableBody />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableBody} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TableRow />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableRow} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TableHeader />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableHeader} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<TableCell />`}</Code>
         </div>
         <PropsTable propsList={componentProps_TableCell} />

@@ -20,7 +20,7 @@ const pageBreadcrumbs = [
 ];
 
 function P({ children }) {
-  return <Text className="gw-pt-3 gw-pb-3">{children}</Text>;
+  return <Text className="gw-pt-3 gw:pb-3">{children}</Text>;
 }
 
 function QuickStartGuide() {
@@ -67,7 +67,7 @@ function QuickStartGuide() {
             Run <Code className="gw-text-nowrap">npm create vite@latest</Code>.
             This will walk you through a few options:{" "}
           </P>
-          <ol className="gw-ml-6 gw-list-decimal">
+          <ol className="gw-ml-6 gw:list-decimal">
             <li>
               Name your project, Vite will create a folder with this name in the
               current working directory.
@@ -189,7 +189,7 @@ export default App;`}
           </P>
           <P>
             <a href="/docs/adding-tailwind" className="gw-underline">
-              <span className="gw-flex gw-items-center gw-gap-2">
+              <span className="gw-flex gw:items-center gw:gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>
             </a>

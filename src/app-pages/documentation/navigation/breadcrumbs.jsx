@@ -68,15 +68,15 @@ function Breadcrumbs() {
           are a supplemental navigation aid.
         </Text>
 
-        <div className="gw-flex gw-justify-start gw-content-center gw-gap-4">
-          <Code className="gw-p-1 gw-px-2">{`import { Breadcrumbs, BreadcrumbItem } from "@usace/groundwork";`}</Code>
+        <div className="gw-flex gw:justify-start gw:content-center gw:gap-4">
+          <Code className="gw-p-1 gw:px-2">{`import { Breadcrumbs, BreadcrumbItem } from "@usace/groundwork";`}</Code>
           <CopyButton
             text={`import { Breadcrumbs, BreadcrumbItem } from "@usace/groundwork";`}
           />
         </div>
 
-        <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <H3 className="gw-pt-6 gw:pb-3">Basic Usage</H3>
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
           <BC>
             <BreadcrumbItem href="/docs" text="Documentation" />
             <BreadcrumbItem href="/docs/navigation" text="Navigation" />
@@ -97,12 +97,12 @@ function Breadcrumbs() {
           />
         </div>
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<Breadcrumbs />`}</Code>
         </div>
         <PropsTable propsList={breadcrumbsPropsData} />
 
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<BreadcrumbItem />`}</Code>
         </div>
         <PropsTable propsList={breadcrumbItemPropsData} />

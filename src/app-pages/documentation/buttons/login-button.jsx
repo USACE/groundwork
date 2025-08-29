@@ -96,9 +96,9 @@ function LoginButtonDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="gw-mt-6 gw-pb-3">Login with Profile Menu</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-justify-between gw-items-center gw-bg-usace-black gw-text-white gw-rounded-2 gw-p-2">
+        <H3 className="gw-mt-6 gw:pb-3">Login with Profile Menu</H3>
+        <div className="gw-rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw-flex gw:justify-between gw:items-center gw:bg-usace-black gw:text-white gw-rounded-2 gw:p-2">
             {email ? (
               <ProfileDropdown
                 email={email}
@@ -129,7 +129,7 @@ function LoginButtonDocs() {
               />
             )}
             {email && (
-              <span className="gw-italic gw-font-light gw-text-sm">{`Logged in as ${email}`}</span>
+              <span className="gw-italic gw:font-light gw:text-sm">{`Logged in as ${email}`}</span>
             )}
           </div>
         </div>
@@ -183,13 +183,13 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API - <Code className="gw-p-2">{`<LoginButton />`}</Code>
         </div>
         <PropsTable propsList={componentProps_LoginButton} />
 
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw-font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
           <Code className="gw-p-2">{`<ProfileDropdown />`}</Code>
         </div>
