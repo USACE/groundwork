@@ -122,7 +122,7 @@ export function TableRow({
         {...props}
         className={gwMerge(
           href &&
-            "gw:has-[[data-row-link][data-focus]]:outline gw:has-[[data-row-link][data-focus]]:outline-2 gw:has-[[data-row-link][data-focus]]:-outline-offset-2 gw:has-[[data-row-link][data-focus]]:outline-blue-500 gw:dark:focus-within:bg-white/2.5",
+            "gw:has-[[data-row-link][data-focus]]:outline gw:has-[[data-row-link][data-focus]]:-outline-offset-2 gw:has-[[data-row-link][data-focus]]:outline-blue-500 gw:dark:focus-within:bg-white/2.5",
           striped && "gw:even:bg-zinc-950/2.5 gw:dark:even:bg-white/2.5",
           href && striped && "gw:hover:bg-zinc-950/5 gw:dark:hover:bg-white/5",
           href &&
