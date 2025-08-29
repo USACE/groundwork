@@ -1,3 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" prefix(gw);
+
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --grid-template-rows-1fr-auto: 1fr auto;
+
+  --font-usace: Roboto, Arial, Helvetica, sans-serif;
+
+  --color-nav-light-gray: #d0d0d0;
+  --color-nav-gray: hsla(0, 0%, 80%, 0.9);
+  --color-nav-translucent-gray: hsla(0, 0%, 100%, 0.2);
+  --color-nav-black: #18181b;
+  --color-nav-dark-gray: rgba(51, 51, 51, 0.95);
+  --color-usace-box-light-gray: #ededed;
+  --color-usace-box-red: #de1e2e;
+  --color-footer-black: #1b1b1b;
+  --color-footer-gray: #333;
+  --color-footer-light-gray: #ccc;
+  --color-usace-black: #18181b;
+  --color-gov-banner-gray: #aebfd4;
+  --color-gov-banner-black: #15263b;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
