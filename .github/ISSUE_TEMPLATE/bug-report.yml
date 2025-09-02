@@ -1,0 +1,41 @@
+name: Groundwork Bug Report
+description: File a bug report related to Groundwork
+labels: ["bug"]
+body:
+  # BUG REPORT FIELDS
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the bug
+      description: What went wrong?
+      placeholder:
+        A clear and concise description of the bug... Include the version
+        of Groundwork if known. i.e. gw v0.0.1 (You can see this in your package.json file)
+        Provide any links to relevant code here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: REDACTED relevant log output
+      description:
+        Please copy and paste any relevant log output. Either runtime (dev console) or build logs. Removing sensitive
+        information. This will be automatically formatted into code, so no need for
+        backticks.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide steps to reproduce the issue.
+      placeholder: |
+        1. npm install
+        2. npm run dev
+        3. Navigate to this page
+        4. See error when clicking XYZ
+    validations:
+      required: false
