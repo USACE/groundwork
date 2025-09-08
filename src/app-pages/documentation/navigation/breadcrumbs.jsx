@@ -41,6 +41,12 @@ const breadcrumbItemPropsData = [
     default: "''",
     desc: "The text of the breadcrumb item.",
   },
+  {
+    name: "baseUrl",
+    type: "string",
+    default: "''",
+    desc: "The base URL for the breadcrumb item.",
+  },
 ];
 
 const pageBreadcrumbs = [
@@ -79,26 +85,26 @@ function Breadcrumbs() {
 
         <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
         <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <BC>
-            <BreadcrumbItem href={`${BASE_URL}#/docs`} text="Documentation" />
+          <BC baseUrl={BASE_URL}>
+            <BreadcrumbItem href={`${BASE_URL}/docs`} text="Documentation" />
             <BreadcrumbItem
-              href={`${BASE_URL}#/docs/navigation`}
+              href={`${BASE_URL}/docs/navigation`}
               text="Navigation"
             />
             <BreadcrumbItem
-              href={`${BASE_URL}#/docs/navigation/breadcrumbs`}
+              href={`${BASE_URL}/docs/navigation/breadcrumbs`}
               text="Breadcrumbs"
             />
           </BC>
         </div>
         <div>
           <CodeExample
-            code={`const BASE_URL = import.meta.env.BASE_URL;
-// Inside your component function
-<Breadcrumbs>
-  <BreadcrumbItem href="\${BASE_URL}/docs" text="Documentation" />
-  <BreadcrumbItem href="\${BASE_URL}/docs/navigation" text="Navigation" />
-  <BreadcrumbItem href="\${BASE_URL}/docs/navigation/breadcrumbs" text="Breadcrumbs" />
+            code={`
+const BASE_URL = import.meta.env.BASE_URL;
+<Breadcrumbs baseUrl={BASE_URL}>
+  <BreadcrumbItem href={\`\${BASE_URL}/docs\`} text="Documentation" />
+  <BreadcrumbItem href={\`\${BASE_URL}/docs/navigation\`} text="Navigation" />
+  <BreadcrumbItem href={\`\${BASE_URL}/docs/navigation/breadcrumbs\`} text="Breadcrumbs" />
 </Breadcrumbs>
 `}
           />

@@ -32,7 +32,7 @@ function BreadcrumbItem({ className, href, text }) {
   );
 }
 
-function Breadcrumbs({ className, children }) {
+function Breadcrumbs({ className, children, baseUrl }) {
   const breadcrumbsClass = useMemo(() => {
     return gwMerge(
       "gw-flex gw-flex-nowrap gw-items-center gw-space-x-2 gw-py-4 gw-overflow-x-auto gw-hide-scrollbar",
@@ -43,7 +43,10 @@ function Breadcrumbs({ className, children }) {
     <ol className={breadcrumbsClass}>
       <li>
         <div>
-          <Link href={BASE_URL + "/"} className="gw-text-gray-300 gw-hover:gw-text-gray-500">
+          <Link
+            href={`${(baseUrl || "").replace(/\/+$/, "")}/`} // Avoid double slashes
+            className="gw-text-gray-300 gw-hover:gw-text-gray-500"
+          >
             <MdHome size={22} />
             <span className="gw-sr-only">Home</span>
           </Link>
