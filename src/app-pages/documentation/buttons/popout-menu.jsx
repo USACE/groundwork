@@ -76,7 +76,7 @@ function PopoutMenuDocs() {
           </Text>
         </div>
         <H3 className="gw:mt-6 gw:pb-3">Popout Menu</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           {/* Show the first two links in the sidebar as examples */}
           {links.slice(0, 2).map((link) => {
             const isSelected = selectedPath === link.href;
@@ -142,7 +142,7 @@ import { VscChevronRight } from "react-icons/vsc";
 
 function Component() {
   return (
-    <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+    <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           {/* Show the first two links in the sidebar as examples */}
           {links.slice(0, 2).map((link) => {
             const isSelected = selectedPath === link.href;

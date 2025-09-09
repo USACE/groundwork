@@ -54,7 +54,7 @@ function TabsDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="gw:pb-3">Basic Usage</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <Tabs
             tabs={[
               {
@@ -107,7 +107,7 @@ export default Component;
           Add the fill prop to make the tabs expand to the full width of their
           container.
         </Text>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <Tabs
             fill
             defaultIndex={1}
@@ -165,7 +165,7 @@ export default Component;
           needs, and use the click handler to execute arbitrary code on when a
           user clicks a tab, but use it carefully.
         </Text>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <Tabs
             fill
             tabs={[

@@ -203,18 +203,23 @@ export const Button = React.forwardRef(function Button(
 ) {
   let classes = gwMerge(
     base,
-    // styles.base,
-    // outline
-    //   ? styles.outline
-    //   : plain
-    //   ? styles.plain
-    //   : gwMerge(styles.solid, styles.colors[color ?? "dark/zinc"]),
     radii[radius],
     sizes[size],
     style === "filled" ? colorsFilled[color] : "",
     style === "outline" ? colorsOutline[color] : "",
     style === "plain" ? colorsPlain[color] : "",
     className,
+  );
+  console.log(
+    `${base},
+${radii[radius]},
+${sizes[size]},
+${style === "filled" ? colorsFilled[color] : ""},
+${style === "outline" ? colorsOutline[color] : ""},
+${style === "plain" ? colorsPlain[color] : ""},
+${className},
+
+${classes},`,
   );
 
   return "href" in props ? (
@@ -224,7 +229,7 @@ export const Button = React.forwardRef(function Button(
   ) : (
     <HeadlessButton
       {...props}
-      className={gwMerge(classes, "cursor-default")}
+      className={gwMerge(classes, "cursor-pointer")}
       ref={ref}
     >
       <TouchTarget>{children}</TouchTarget>
@@ -238,7 +243,7 @@ export function TouchTarget({ children }) {
     <>
       {children}
       <span
-        className="gw:absolute gw:left-1/2 gw:top-1/2 gw:size-[max(gw:100%,gw:2.gw:75rem)gw:] gw:-translate-x-1/2 gw:-translate-y-1/2 gw:[@gw:media(gw:pointer:gw:fine)]:gw:hidden"
+        className="gw:absolute gw:left-1/2 gw:top-1/2 gw:size-[max(100%,2.75rem)] gw:-translate-x-1/2 gw:-translate-y-1/2 gw:pointer-fine:hidden"
         aria-hidden="true"
       />
     </>

@@ -79,7 +79,7 @@ function ColorInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:gap-6 gw:items-center gw:w-full">
             <div className="gw:flex-1">
               <Field>

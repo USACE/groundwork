@@ -71,7 +71,7 @@ function HeroDocs() {
           typically we would use the Hero component on a landing page.
         </Text>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <Hero
             title="Hero Title"
             subtitle="Hero Subtitle"
@@ -124,7 +124,7 @@ export default Component;
           </Text>
         </div>
         <UsaceBox title="Rotating Example">
-          <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
             <Hero
               title="Hero Title"
               subtitle="Hero Subtitle"

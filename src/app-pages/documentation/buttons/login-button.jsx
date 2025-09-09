@@ -97,7 +97,7 @@ function LoginButtonDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="gw:mt-6 gw:pb-3">Login with Profile Menu</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:justify-between gw:items-center gw:bg-usace-black gw:text-white gw:rounded-2 gw:p-2">
             {email ? (
               <ProfileDropdown

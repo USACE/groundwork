@@ -60,7 +60,7 @@ function InputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:w-[50%gw:]">
             {inputTypes.map((type) => {
               return (

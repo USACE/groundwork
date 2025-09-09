@@ -51,7 +51,7 @@ function OkCancelDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="gw:mt-6 gw:pb-3">OK / Cancel</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <OkCancel
             onOk={() => {
               window.alert("ok");

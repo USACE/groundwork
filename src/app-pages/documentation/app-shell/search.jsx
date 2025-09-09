@@ -114,7 +114,7 @@ function SearchDocs() {
         </Text>
         <H3 className="gw:pt-6 gw:pb-3">Basic Search</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-col gw:items-center">
             <span className="gw:ml-3">Search String: {searchString}</span>
             <Search
@@ -167,7 +167,7 @@ export default Component;
 
         <H3 className="gw:pt-6 gw:pb-3">SearchDotGov</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-col gw:items-center">
             <SearchDotGov
               affiliate="groundwork"

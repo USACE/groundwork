@@ -1,7 +1,5 @@
 @import "tailwindcss" prefix(gw);
 
-@plugin '@tailwindcss/forms';
-
 @custom-variant dark (&:is(.dark *));
 
 @theme {

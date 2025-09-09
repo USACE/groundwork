@@ -110,7 +110,7 @@ function GenericButtonsDocs() {
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="gw:pt-6 gw:pb-3">Basic Usage</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-row gw:flex-wrap gw:gap-3">
             <Button>Default</Button>
             <Button style="outline">Outlined</Button>
@@ -140,7 +140,7 @@ export default Component;
         />
         {/* Example usage - remove if not needed */}
         <H3 className="gw:pt-6 gw:pb-3">Built-in Color Options - Filled</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-row gw:flex-wrap gw:gap-3">
             {colors.map((clr) => {
               return (
@@ -176,7 +176,7 @@ export default Component;
         />
 
         <H3 className="gw:pt-6 gw:pb-3">Built-in Color Options - Outline</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-row gw:flex-wrap gw:gap-3">
             {colors.map((clr) => {
               return (
@@ -212,7 +212,7 @@ export default Component;
         />
 
         <H3 className="gw:pt-6 gw:pb-3">Built-in Color Options - Plain</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:flex gw:flex-row gw:flex-wrap gw:gap-3">
             {colors.map((clr) => {
               return (
@@ -248,7 +248,7 @@ export default Component;
         />
 
         <H3 className="gw:pt-6 gw:pb-3">Built-in Size Options</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="">
             {["xs", "sm", "md", "lg", "xl"].map((size) => {
               return (
@@ -282,7 +282,7 @@ export default Component;
         />
 
         <H3 className="gw:pt-6 gw:pb-3">Built-in Radius Options</H3>
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           <div className="">
             {["none", "sm", "md", "lg", "xl"].map((size) => {
               return (
