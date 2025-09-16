@@ -51,6 +51,18 @@ const componentProps_Fieldset = [
     desc: "Function to call when the dropdown value changes.",
   },
   {
+    name: "value",
+    type: "string | number | null",
+    default: "undefined",
+    desc: "The current value of the dropdown.",
+  },
+  {
+    name: "defaultValue",
+    type: "string | number | null",
+    default: "undefined",
+    desc: "The initial value of the dropdown.",
+  },
+  {
     name: "<select> attributes",
     type: "passthrough",
     default: "undefined",
