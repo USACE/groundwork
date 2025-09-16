@@ -1,4 +1,5 @@
 import { UsaceBox, Code, Text, Accordion, Badge } from "../../../../lib";
+import Link from "../../../../lib/components/navigation/link";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -37,6 +38,47 @@ const componentProps = [
     type: "boolean",
     default: "false",
     desc: "Whether to unmount the content when the accordion is closed. False will cause the content to be hidden but still in the DOM.",
+  },
+  {
+    name: "className",
+    type: "string",
+    default: "undefined",
+    desc: "Additional classes to apply to the accordion header.",
+  },
+  {
+    name: "isOpen",
+    type: "boolean",
+    default: "undefined",
+    desc: "Whether the accordion is open. If provided, this will override the defaultOpen prop and the open state will be controlled by the parent component.",
+  },
+  {
+    name: "onToggle",
+    type: "function",
+    default: "undefined",
+    desc: "Callback function to call when the accordion is toggled.",
+  },
+  {
+    name: "children",
+    type: "node",
+    default: "undefined",
+    desc: "The content of the accordion when expanded.",
+  },
+  {
+    name: "props",
+    type: "object",
+    default: "undefined",
+    desc: (
+      <>
+        Additional props to pass to the accordion components. See{" "}
+        <Link
+          href="https://headlessui.com/react/disclosure#disclosure-panel"
+          className="gw-underline"
+        >
+          Headless UI Disclosure
+        </Link>{" "}
+        docs for more info.
+      </>
+    ),
   },
 ];
 
