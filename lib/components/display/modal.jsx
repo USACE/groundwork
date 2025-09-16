@@ -16,11 +16,11 @@ function Modal({
   dialogTitle,
   dialogDescription,
   isStatic = false,
-  autoFocus=false,
-  dialogTransition=false,
-  dialogPanelTransition= false,
+  autoFocus = false,
+  dialogTransition = false,
+  dialogPanelTransition = false,
   unmount = true,
-  role='dialog',
+  role = "dialog",
   buttons,
   size = "2xl",
   className,
@@ -36,23 +36,23 @@ function Modal({
     );
     size = "2xl";
   }
-  
+
   // Check if Role exists
   if (!roleOptions.includes(role)) {
     console.error(
-      `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`)
-      console.warn(
+      `Invalid role option for dialog ${role}. Must be one of: 'dialog','alertdialog'`,
+    );
+    console.warn(
       `Defaulting to 'dialog' for role of <Modal modalTitle="${dialogTitle}" .../>`,
     );
     role = "dialog";
-    
   }
 
   return (
     <Dialog
       open={opened}
       onClose={onClose}
-      static= {isStatic}
+      static={isStatic}
       autoFocus={autoFocus}
       transition={dialogTransition}
       unmount={unmount}
