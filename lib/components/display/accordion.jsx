@@ -1,4 +1,8 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
 import { VscChevronRight, VscChevronDown } from "react-icons/vsc";
 import gwMerge from "../../gw-merge";
 
@@ -10,12 +14,12 @@ function Accordion({
   isOpen,
   onToggle,
   children,
-  id
+  id,
 }) {
   return (
     <Disclosure defaultOpen={defaultOpen}>
       {({ open }) => {
-        const isExpanded = isOpen ?? open; 
+        const isExpanded = isOpen ?? open;
         return (
           <>
             <DisclosureButton
@@ -30,8 +34,8 @@ function Accordion({
             >
               {heading}
               {open ? <VscChevronDown /> : <VscChevronRight />}
-            </Disclosure.Button>
-            <Disclosure.Panel className="gw-shadow" unmount={unmountOnClose}>
+            </DisclosureButton>
+            <DisclosurePanel className="gw-shadow" unmount={unmountOnClose}>
               {children}
             </DisclosurePanel>
           </>
