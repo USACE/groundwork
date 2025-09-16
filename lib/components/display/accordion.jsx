@@ -14,7 +14,7 @@ function Accordion({
   isOpen,
   onToggle,
   children,
-  id,
+  ...props
 }) {
   return (
     <Disclosure defaultOpen={defaultOpen}>
@@ -31,6 +31,7 @@ function Accordion({
                 open ? "gw-rounded-t" : "gw-rounded",
                 className,
               )}
+              {...props}
             >
               {heading}
               {open ? <VscChevronDown /> : <VscChevronRight />}
