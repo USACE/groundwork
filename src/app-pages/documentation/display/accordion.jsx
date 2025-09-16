@@ -1,4 +1,5 @@
 import { UsaceBox, Code, Text, Accordion, Badge } from "../../../../lib";
+import Link from "../../../../lib/components/navigation/link";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
@@ -63,10 +64,21 @@ const componentProps = [
     desc: "The content of the accordion when expanded.",
   },
   {
-    name: "id",
-    type: "string",
+    name: "props",
+    type: "object",
     default: "undefined",
-    desc: "The id of the accordion panel. If not provided, a random id will be generated.",
+    desc: (
+      <>
+        Additional props to pass to the accordion components. See{" "}
+        <Link
+          href="https://headlessui.com/react/disclosure#disclosure-panel"
+          className="gw-underline"
+        >
+          Headless UI Disclosure
+        </Link>{" "}
+        docs for more info.
+      </>
+    ),
   },
 ];
 
