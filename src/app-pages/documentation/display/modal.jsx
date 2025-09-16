@@ -7,11 +7,11 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Modal",
-    href: "/docs/modal",
+    href: "/#/docs/modal",
   },
 ];
 
@@ -59,6 +59,42 @@ const componentProps = [
     desc: "Size of the modal dialog. Options include: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'.",
   },
   {
+    name: "isStatic",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should ignore the internally managed open/closed state.",
+  },
+  {
+    name: "autoFocus",
+    type: "boolean",
+    default: "false",
+    desc: "Whether or not the dialog should receive focus when first rendered.",
+  },
+  {
+    name: "dialogTransition",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should render transition attributes like data-closed, data-enter and data-leave.",
+  },
+  {
+    name: "unmount",
+    type: "boolean",
+    default: "true",
+    desc: "Whether the element should be unmounted or hidden based on the open/closed state.",
+  },
+  {
+    name: "role",
+    type: "string",
+    default: "dialog",
+    desc: "The role to apply to the dialog root element. Options include: 'dialog' , 'alertdialog'",
+  },
+  {
+    name: "dialogPanelTransition",
+    type: "boolean",
+    default: "false",
+    desc: "Whether the element should render transition attributes like data-closed, data-enter and data-leave.",
+  },
+  {
     name: "className",
     type: "string",
     default: "null",
@@ -71,13 +107,13 @@ function ModalDocs() {
   const [isLoading, setIsLoading] = useState(true);
 
   const [imageSrc, setImageSrc] = useState(
-    `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+    `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`,
   );
 
   const refreshImage = () => {
     setIsLoading(true);
     setImageSrc(
-      `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`
+      `https://www.wpc.ncep.noaa.gov/qpf/p168i.gif?_=${new Date().getTime()}`,
     );
     setIsOpen(true);
   };

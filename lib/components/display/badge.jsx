@@ -39,7 +39,7 @@ export function Badge({ color = "zinc", className, ...props }) {
     return gwMerge(
       "gw-inline-flex gw-items-center gw-gap-x-1.5 gw-rounded-md gw-px-1.5 gw-py-0.5 gw-text-sm/5 gw-font-medium sm:gw-text-xs/5 forced-colors:gw-outline",
       colors[color],
-      className
+      className,
     );
   }, [className]);
   return <span {...props} className={badgeClass} />;
@@ -47,12 +47,12 @@ export function Badge({ color = "zinc", className, ...props }) {
 
 export const BadgeButton = React.forwardRef(function BadgeButton(
   { color = "zinc", className, children, ...props },
-  ref
+  ref,
 ) {
   const badgeButtonClass = useMemo(() => {
     return gwMerge(
       "gw-group gw-relative gw-inline-flex gw-rounded-md focus:gw-outline-none data-[focus]:gw-outline data-[focus]:gw-outline-2 data-[focus]:gw-outline-offset-2 data-[focus]:gw-outline-blue-500",
-      className
+      className,
     );
   }, [className]);
 

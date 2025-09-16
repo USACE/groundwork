@@ -16,15 +16,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Display",
-    href: "/docs/display",
+    href: "/#/docs/display",
   },
   {
     text: "Table",
-    href: "/docs/display/table",
+    href: "/#/docs/display/table",
   },
 ];
 
@@ -145,7 +145,7 @@ const last24HoursTimestamps = [];
 
 Array.from({ length: 24 }).forEach((_, i) => {
   const timestamp = new Date(
-    last24Hours.getTime() + i * 60 * 60 * 1000
+    last24Hours.getTime() + i * 60 * 60 * 1000,
   ).toISOString();
   last24HoursTimestamps.push(timestamp);
 });

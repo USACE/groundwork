@@ -52,7 +52,6 @@ import ModalDocs from "../app-pages/documentation/display/modal";
 import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
 import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
 
-
 export default createRouteBundle(
   {
     "/": Home,
@@ -109,5 +108,5 @@ export default createRouteBundle(
   },
   {
     routeInfoSelector: "selectHash",
-  }
+  },
 );
