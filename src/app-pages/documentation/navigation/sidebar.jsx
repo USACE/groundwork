@@ -9,15 +9,15 @@ import exampleRegularLinks from "../../../example-regular-links";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Navigation",
-    href: "/docs/navigation",
+    href: "/#/docs/navigation",
   },
   {
     text: "Sidebar",
-    href: "/docs/navigation/sidebar",
+    href: "/#/docs/navigation/sidebar",
   },
 ];
 const componentProps = [
@@ -53,7 +53,7 @@ const componentProps = [
       }
     ]`,
     default: "null",
-    desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href. Setting the href to null will create a disabled link",
+    desc: "An array of objects to be used as links in the header. Each object should have an id, text, and href. Setting the href to null will create a disabled link. Optionally add a prop of 'target'='_blank' to open the link in a new tab.",
   },
   {
     name: "id",

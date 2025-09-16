@@ -6,15 +6,15 @@ import DocsPage from "../_docs-page";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Application Shell",
-    href: "/docs/app-shell",
+    href: "/#/docs/app-shell",
   },
   {
     text: "Site Wrapper",
-    href: "/docs/app-shell/site-wrapper",
+    href: "/#/docs/app-shell/site-wrapper",
   },
 ];
 
@@ -110,6 +110,12 @@ const siteWrapperProps = [
     desc: "The URL to an Instagram page.",
   },
   {
+    name: "linkedInUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a LinkedIn page.",
+  },
+  {
     name: "usaceLinks",
     type: "array[Link]",
     default: "[]",
@@ -128,10 +134,22 @@ const siteWrapperProps = [
     desc: "If true, the Army logo will be displayed in the footer.",
   },
   {
+    name: "army250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the Army 250 yr anniversary logo will be displayed in the footer.",
+  },
+  {
     name: "usaceLogo",
     type: "boolean",
     default: "true",
     desc: "If true, the USACE logo will be displayed in the footer.",
+  },
+  {
+    name: "usace250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the USACE 250 yr anniversary logo will be displayed in the footer.",
   },
   {
     name: "rsgisLogo",
@@ -195,7 +213,7 @@ function SiteWrapperDocs() {
           code={`import { SiteWrapper } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
 
-const links = [{ id: "docs", text: "Documentation", href: "/docs" }];
+const links = [{ id: "docs", text: "Documentation", href: "/#/docs" }];
 
 function App() {
   const {

@@ -13,17 +13,24 @@ const USABanner = ({ fluidNav }) => {
   const [open, setOpen] = useState(false);
   const headerBannerInnerClass = gwMerge(
     "header_banner_inner sm:gw-my-0 sm:gw-mx-auto sm:gw-font-sm",
-    fluidNav ? "gw-max-w-screen" : "gw-px-4 gw-max-w-screen-2xl"
+    fluidNav ? "gw-max-w-screen" : "gw-px-4 gw-max-w-screen-2xl",
   );
   return (
-    <div
-      className="header_banner_container gw-bg-gov-banner-black gw-text-white"
-    >
+    <div className="header_banner_container gw-bg-gov-banner-black gw-text-white">
       <div className={headerBannerInnerClass}>
         <div className="header_banner_flag gw-fill-gov-banner-gray gw-py-1.5 gw-h-12 sm:gw-h-8 gw-px-0 gw-text-sm gw-box-border gw-flex gw-items-center gw-justify-start">
-          <img src={flag} className="gw-mr-2" role="presentation" aria-label="U.S. Government Flag" alt="U.S. Government Flag" />
+          <img
+            src={flag}
+            className="gw-mr-2"
+            role="presentation"
+            aria-label="U.S. Government Flag"
+            alt="U.S. Government Flag"
+          />
           An official website of the United States government
-          <div className="header_banner_accordion gw-text-gov-banner-gray gw-border-0 gw-cursor-pointer gw-text-sm gw-outline-none gw-text-left gw-transition-all gw-duration-300 gw-ease-out gw-my-0 gw-ms-1 gw-me-2.5 sm:gw-me-0 gw-inline-block focus:outline-5 focus:outline-focus-ring" tabIndex={0}>
+          <div
+            className="header_banner_accordion gw-text-gov-banner-gray gw-border-0 gw-cursor-pointer gw-text-sm gw-outline-none gw-text-left gw-transition-all gw-duration-300 gw-ease-out gw-my-0 gw-ms-1 gw-me-2.5 sm:gw-me-0 gw-inline-block focus:outline-5 focus:outline-focus-ring"
+            tabIndex={0}
+          >
             <u
               onClick={() => {
                 setOpen(!open);
@@ -33,7 +40,7 @@ const USABanner = ({ fluidNav }) => {
               <span
                 className={classNames(
                   "expand-more-container gw-inline-block gw-align-top",
-                  open ? "gw-transform gw-rotate-180" : ""
+                  open ? "gw-transform gw-rotate-180" : "",
                 )}
               >
                 <svg
@@ -54,9 +61,7 @@ const USABanner = ({ fluidNav }) => {
           </div>
         </div>
         {open ? (
-          <div
-            className="header_banner_panel gw-flex gw-flex-col md:gw-flex-row gw-my-0 gw-mx-auto gw-overflow-hidden gw-pt-6 gw-pb-4 gw-max-h-[328px] active"
-          >
+          <div className="header_banner_panel gw-flex gw-flex-col md:gw-flex-row gw-my-0 gw-mx-auto gw-overflow-hidden gw-pt-6 gw-pb-4 gw-max-h-[328px] active">
             <div className="header_banner_panel_item">
               <img
                 src={iconDotGov}

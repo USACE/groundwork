@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ReduxBundlerProvider store={store}>
       <App />
     </ReduxBundlerProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

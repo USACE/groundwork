@@ -7,15 +7,15 @@ import { LuPartyPopper } from "react-icons/lu";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Display",
-    href: "/docs/display",
+    href: "/#/docs/display",
   },
   {
     text: "Accordion",
-    href: "/docs/display/accordion",
+    href: "/#/docs/display/accordion",
   },
 ];
 

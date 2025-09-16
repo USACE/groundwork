@@ -15,6 +15,7 @@ export * from "./components/table";
 export * from "./components/display/card";
 export * from "./components/profile-dropdown";
 export { Divider } from "./components/display/divider";
+export { Modal } from "./components/display/modal";
 export { Skeleton } from "./components/display/skeleton";
 export { ProgressBar } from "./components/display/progress-bar";
 
@@ -46,3 +47,5 @@ export * from "./components/form/dropdown";
 export { Input } from "./components/form/input";
 export * from "./components/form/fieldset";
 export * from "./components/form/textarea";
+export * from "./components/form/radio-group";
+export * from "./components/form/checkboxes";

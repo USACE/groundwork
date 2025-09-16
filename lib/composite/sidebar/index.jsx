@@ -1,5 +1,4 @@
 import { UsaceBox, PopoutMenu } from "../..";
-import { VscChevronRight } from "react-icons/vsc";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import Dropdown from "../../components/form/dropdown";
 import { useRef } from "react";
@@ -20,11 +19,11 @@ function renderPopoutMenu({
 }) {
   if (typeof maxScrollHeight !== "string") {
     console.warn(
-      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'"
+      "maxScrollHeight must be a string. Something like '50vh' or '100px'. Defaulting to '50vh'",
     );
     maxScrollHeight = "50vh";
   }
-  const isSelected = selectedPath === link.href;
+  const isSelected = selectedPath === link?.href;
 
   if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
@@ -33,28 +32,36 @@ function renderPopoutMenu({
 
   return (
     <div
-      key={link.id}
+      key={link?.id}
       className="gw-py-2 gw-border-b-[1px]  hover:gw-bg-gray-100"
     >
       {!link?.children ? (
         <Link
-          key={link.id}
-          href={link.href}
+          key={link?.id}
+          href={link?.href}
+          target={link?.target}
+          rel={link?.rel}
           className="gw-z-20 gw-flex gw-items-center gw-px-1"
         >
-          {link.text}
+          {link?.text}
         </Link>
       ) : (
-        <PopoutMenu title={link.text} level={level} direction={popoutDirection}>
+        <PopoutMenu
+          title={link?.text}
+          level={level}
+          direction={popoutDirection}
+        >
           {
             <Link
-              key={link.id}
-              href={link.href}
+              key={link?.id}
+              href={link?.href}
+              target={link?.target}
+              rel={link?.rel}
               className={`gw-sticky gw-top-0 gw-z-20 gw-flex gw-items-center gw-gap-1 gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 gw-font-bold ${
                 isSelected ? "gw-bg-gray-100 gw-rounded" : ""
               }`}
             >
-              {link.text}
+              {link?.text}
             </Link>
           }
           <div
@@ -69,7 +76,7 @@ function renderPopoutMenu({
                 popoutDirection,
                 maxScrollHeight,
                 level: level + 1,
-              })
+              }),
             )}
           </div>
         </PopoutMenu>
@@ -80,15 +87,15 @@ function renderPopoutMenu({
 
 // Recursive function to render nested links without popout menus
 function renderRegularLinks(link, selectedPath, level = 0) {
-  const isSelected = selectedPath === link.href;
+  const isSelected = selectedPath === link?.href;
   const indentation = { paddingLeft: `${level * 20}px` };
   if (level > MAX_NESTING_LEVEL) {
     console.error(NEST_WARNING_TEXT.replaceAll("%s", link?.text));
     return null;
   }
   return (
-    <div key={link.id}>
-      <Link href={link.href}>
+    <div key={link?.id}>
+      <Link href={link?.href} target={link?.target} rel={link?.rel}>
         <div
           className={`gw-text-lg ${
             level === 0 ? "gw-font-bold" : ""
@@ -99,14 +106,14 @@ function renderRegularLinks(link, selectedPath, level = 0) {
           } ${isSelected ? "gw-bg-gray-100 gw-rounded" : ""}`}
           style={indentation}
         >
-          {link.text}
+          {link?.text}
           {isSelected}
         </div>
       </Link>
-      {link.children && (
+      {link?.children && (
         <div>
-          {link.children.map((child) =>
-            renderRegularLinks(child, selectedPath, level + 1)
+          {link?.children.map((child) =>
+            renderRegularLinks(child, selectedPath, level + 1),
           )}
         </div>
       )}
@@ -128,7 +135,7 @@ function Sidebar({
 
   if (popoutDirection && !enablePopout) {
     throw new Error(
-      "popoutDirection can only be used when enablePopout is true"
+      "popoutDirection can only be used when enablePopout is true",
     );
   }
 
@@ -151,13 +158,22 @@ function Sidebar({
               mobileNav.current.click();
             }}
             options={combinedLinks.map((link, idx) => (
-              <option key={idx + link?.href + "-mobile-sidebar"} value={link.href} className="gw-pl-2">
-                {`${"\u00A0".repeat(link.level * 2)}${link.text}`}
+              <option
+                key={idx + link?.href + "-mobile-sidebar"}
+                value={link?.href}
+                className="gw-pl-2"
+              >
+                {`${"\u00A0".repeat(link?.level * 2)}${link?.text}`}
               </option>
             ))}
           />
           {/* Hidden anchor tag to trigger mobile nav for compatibility */}
-          <Link className="hidden" href="#" ref={mobileNav} aria-hidden="true"></Link>
+          <Link
+            className="hidden"
+            href="#"
+            ref={mobileNav}
+            aria-hidden="true"
+          ></Link>
         </div>
       </UsaceBox>
     );

@@ -48,6 +48,9 @@ import ClientSideRouting from "../app-pages/documentation/getting-started/client
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 import DividerDocs from "../app-pages/documentation/display/divider";
+import ModalDocs from "../app-pages/documentation/display/modal";
+import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
+import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
 
 export default createRouteBundle(
   {
@@ -84,6 +87,7 @@ export default createRouteBundle(
     "/docs/display/table": TableDocs,
     "/docs/display/card": CardDocs,
     "/docs/display/accordion": AccordionDocs,
+    "/docs/display/modal": ModalDocs,
     "/docs/display/progress-bar": ProgressDocs,
     "/docs/forms": Forms,
     "/docs/forms/dropdown": DropdownDocs,
@@ -94,6 +98,8 @@ export default createRouteBundle(
     "/docs/forms/color-input": ColorInputDocs,
     "/docs/forms/date-time-inputs": DateTimeInputDocs,
     "/docs/forms/file-input": FileInputDocs,
+    "/docs/forms/radio-group": RadioGroupDocs,
+    "/docs/forms/checkboxes": CheckboxesDocs,
     "/docs/types": Types,
     "/docs/types/link": LinkDocs,
     "/docs/types/tab": TabDocs,
@@ -102,5 +108,5 @@ export default createRouteBundle(
   },
   {
     routeInfoSelector: "selectHash",
-  }
+  },
 );

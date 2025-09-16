@@ -45,7 +45,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   const navContainerClass = gwMerge(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
-    fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl"
+    fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl",
   );
   return (
     <>

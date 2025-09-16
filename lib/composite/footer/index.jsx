@@ -88,10 +88,13 @@ function Footer({
   youtubeUrl,
   flickrUrl,
   instagramUrl,
+  linkedInUrl,
   usaceLinks,
   externalLinks,
   armyLogo,
+  army250Logo,
   usaceLogo,
+  usace250Logo,
   rsgisLogo,
   cwbiLogo,
 }) {
@@ -128,6 +131,7 @@ function Footer({
                 youtube={youtubeUrl}
                 flickr={flickrUrl}
                 instagram={instagramUrl}
+                linkedIn={linkedInUrl}
               />
               <FooterLinks links={usaceLinks} />
             </div>
@@ -138,7 +142,9 @@ function Footer({
         </Container>
         <LogoBanner
           army={armyLogo}
+          army250={army250Logo}
           usace={usaceLogo}
+          usace250={usace250Logo}
           rsgis={rsgisLogo}
           cwbi={cwbiLogo}
         />

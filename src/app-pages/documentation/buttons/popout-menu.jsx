@@ -8,15 +8,15 @@ import links from "../../../nav-links";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Buttons",
-    href: "/docs/buttons",
+    href: "/#/docs/buttons",
   },
   {
     text: "Popout Menu",
-    href: "/docs/buttons/PopoutMenu",
+    href: "/#/docs/buttons/PopoutMenu",
   },
 ];
 

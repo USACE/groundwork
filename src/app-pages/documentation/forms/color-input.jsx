@@ -7,15 +7,15 @@ import { useState } from "react";
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: "/#/docs",
   },
   {
     text: "Forms",
-    href: "/docs/forms",
+    href: "/#/docs/forms",
   },
   {
     text: "Color Input",
-    href: "/docs/forms/color-input",
+    href: "/#/docs/forms/color-input",
   },
 ];
 
