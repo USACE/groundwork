@@ -92,14 +92,14 @@ function SearchDocs() {
           wire up search handling however you like, treat it like a basic input
           control.
         </Text>
-        <Text className="gw-pt-3">
+        <Text className="gw:pt-3">
           Down the line, there may be more search options, but our initial more
           complex search option allows you to wire up to Search.gov for custom
           results, assuming they've indexed your site. The configuration of your
           Search.gov profile is out of scope for this documentation but take a
           look at their{" "}
           <a
-            className="gw-underline"
+            className="gw:underline"
             rel="noreferrer"
             target="_blank"
             href="https://search.gov/about/"
@@ -108,15 +108,15 @@ function SearchDocs() {
           </a>{" "}
           to get started.
         </Text>
-        <Text className="gw-pt-3">
+        <Text className="gw:pt-3">
           Search can be added to the SiteWrapper component as a prop, or used as
           a standalone component.
         </Text>
-        <H3 className="gw-pt-6 gw-pb-3">Basic Search</H3>
+        <H3 className="gw:pt-6 gw:pb-3">Basic Search</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-col gw-items-center">
-            <span className="gw-ml-3">Search String: {searchString}</span>
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:flex gw:flex-col gw:items-center">
+            <span className="gw:ml-3">Search String: {searchString}</span>
             <Search
               value={searchString}
               onChange={(e) => {
@@ -160,15 +160,15 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Search />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Search />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Search} />
 
-        <H3 className="gw-pt-6 gw-pb-3">SearchDotGov</H3>
+        <H3 className="gw:pt-6 gw:pb-3">SearchDotGov</H3>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-col gw-items-center">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:flex gw:flex-col gw:items-center">
             <SearchDotGov
               affiliate="groundwork"
               accessKey="JdBfW2_sGkdcLr4BTzCoOQIRy3oRP7kmzJ2DwIs-SCM="
@@ -194,8 +194,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<SearchDotGov />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<SearchDotGov />`}</Code>
         </div>
         <PropsTable propsList={componentProps_SearchDotGov} />
       </UsaceBox>

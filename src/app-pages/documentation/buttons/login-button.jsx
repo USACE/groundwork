@@ -80,14 +80,14 @@ function LoginButtonDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="LoginButton">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             The login button is designed to be included in the{" "}
             <Code>navRight</Code> section of the <Code>SiteWrapper</Code>{" "}
             component. It is a simple button that can be used to trigger a login
             action.
           </Text>
-          <Text className="gw-pt-3">
+          <Text className="gw:pt-3">
             It is designed to pair with the <Code>ProfileDropdown</Code>{" "}
             component so the docs for that are included here as well. You don't
             have to use them together, but it works nicely if you do. We don't
@@ -96,9 +96,9 @@ function LoginButtonDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <H3 className="gw-mt-6 gw-pb-3">Login with Profile Menu</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-justify-between gw-items-center gw-bg-usace-black gw-text-white gw-rounded-2 gw-p-2">
+        <H3 className="gw:mt-6 gw:pb-3">Login with Profile Menu</H3>
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:flex gw:justify-between gw:items-center gw:bg-usace-black gw:text-white gw:rounded-2 gw:p-2">
             {email ? (
               <ProfileDropdown
                 email={email}
@@ -129,7 +129,7 @@ function LoginButtonDocs() {
               />
             )}
             {email && (
-              <span className="gw-italic gw-font-light gw-text-sm">{`Logged in as ${email}`}</span>
+              <span className="gw:italic gw:font-light gw:text-sm">{`Logged in as ${email}`}</span>
             )}
           </div>
         </div>
@@ -183,15 +183,15 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<LoginButton />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<LoginButton />`}</Code>
         </div>
         <PropsTable propsList={componentProps_LoginButton} />
 
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<ProfileDropdown />`}</Code>
+          <Code className="gw:p-2">{`<ProfileDropdown />`}</Code>
         </div>
         <PropsTable propsList={componentProps_ProfileDropdown} />
       </UsaceBox>

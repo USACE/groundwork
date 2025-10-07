@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "tailwindcss";
+import tailwindcss from "@tailwindcss/vite";
 import pkg from "./package.json";
 
 // // https://vitejs.dev/config/
@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => {
     console.log("Building library");
     return {
       plugins: [react(), tailwindcss()],
+      css: {
+        minify: false,
+      },
       publicDir: false,
       build: {
         lib: {
@@ -39,8 +42,11 @@ export default defineConfig(({ mode }) => {
         ? "https://usace.github.io/groundwork/"
         : "http://localhost:5173/";
     return {
-      plugins: [react()],
+      plugins: [react(), tailwindcss()],
       base: base,
+      css: {
+        minify: false,
+      },
       build: {
         outDir: "docs",
       },

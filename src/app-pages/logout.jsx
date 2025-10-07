@@ -8,7 +8,7 @@ function Logout() {
     doUpdateUrl("/");
   }, [doUpdateUrl]);
 
-  return <div className="gw-flex gw-justify-center gw-mt-12">Logging out</div>;
+  return <div className="gw:flex gw:justify-center gw:mt-12">Logging out</div>;
 }
 
 export default Logout;

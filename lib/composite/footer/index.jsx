@@ -99,32 +99,32 @@ function Footer({
   cwbiLogo,
 }) {
   return (
-    <footer className="gw-relative gw-text-footer-light-gray gw-text-sm gw-bg-footer-black gw-border-t-gray-600 gw-border-t-4 gw-pb-[128px]">
+    <footer className="gw:relative gw:text-footer-light-gray gw:text-sm gw:bg-footer-black gw:border-t-gray-600 gw:border-t-4 gw:pb-[128px]">
       <Essayons />
-      <div className="gw-bg-footer-gray gw-pt-8 gw-pb-16">
+      <div className="gw:bg-footer-gray gw:pt-8 gw:pb-16">
         <Container fluid={fluidNav}>
-          <div className="gw-grid gw-grid-cols-12 gw-gap-2 lg:gw-gap-10">
-            <div className="gw-col-span-12 lg:gw-col-span-6">
-              <div className="gw-grid gw-grid-cols-12 gw-gap-2">
-                <div className="gw-col-span-12 lg:gw-col-span-12">
+          <div className="gw:grid gw:grid-cols-12 gw:gap-2 gw:lg:gap-10">
+            <div className="gw:col-span-12 gw:lg:col-span-6">
+              <div className="gw:grid gw:grid-cols-12 gw:gap-2">
+                <div className="gw:col-span-12 gw:lg:col-span-12">
                   {missionText && (
                     <>
-                      <h2 className="gw-text-lg">Our Mission</h2>
+                      <h2 className="gw:text-lg">Our Mission</h2>
                       <Text>{missionText}</Text>
                     </>
                   )}
                 </div>
-                <div className="gw-col-span-12 gw-mt-4">
+                <div className="gw:col-span-12 gw:mt-4">
                   {aboutText && (
                     <>
-                      <h2 className="gw-text-lg">About this Website</h2>
+                      <h2 className="gw:text-lg">About this Website</h2>
                       <Text>{aboutText}</Text>
                     </>
                   )}
                 </div>
               </div>
             </div>
-            <div className="gw-col-span-12 gw-mt-8 lg:gw-mt-2 md:gw-col-span-4">
+            <div className="gw:col-span-12 gw:mt-8 gw:lg:mt-2 gw:md:col-span-4">
               <SocialLinks
                 facebook={facebookUrl}
                 twitter={twitterUrl}
@@ -135,7 +135,7 @@ function Footer({
               />
               <FooterLinks links={usaceLinks} />
             </div>
-            <div className="gw-col-span-8 md:gw-mt-20 lg:gw-mt-14  md:gw-col-span-2">
+            <div className="gw:col-span-8 gw:md:mt-20 gw:lg:mt-14  gw:md:col-span-2">
               <FooterLinks links={externalLinks} columnCount={1} />
             </div>
           </div>

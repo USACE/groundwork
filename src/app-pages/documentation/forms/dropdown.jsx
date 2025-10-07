@@ -70,7 +70,7 @@ function DropdownDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Dropdown">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             Use the Dropdown component to organize your menu items. You can pass
             any of the normal props that you could to the normal HTML{" "}
@@ -79,10 +79,10 @@ function DropdownDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%]">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:w-[50%]">
             <Dropdown
-              className={"gw-w-5/6 gw-m-auto"}
+              className={"gw:w-5/6 gw:m-auto"}
               onChange={(e) => {
                 alert("You selected: " + e.target.value);
               }}
@@ -90,7 +90,7 @@ function DropdownDocs() {
                 <option
                   key={option.value}
                   value={option.value}
-                  className="gw-pl-2"
+                  className="gw:pl-2"
                 >
                   {option.text}
                 </option>
@@ -136,8 +136,8 @@ function DropdownDocs() {
   `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Dropdown />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Dropdown />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Fieldset} />
       </UsaceBox>

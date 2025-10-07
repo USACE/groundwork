@@ -13,47 +13,47 @@ export const Textarea = forwardRef(function Textarea(
         className,
 
         // Basic layout
-        "gw-relative gw-block gw-w-full",
+        "gw:relative gw:block gw:w-full",
 
         // Background color + shadow applied to inset pseudo element, so shadow blends with border in light mode
-        "before:gw-absolute before:gw-inset-px before:gw-rounded-[calc(theme(borderRadius.lg)-1px)] before:gw-bg-white before:gw-shadow",
+        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw:radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
 
         // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
-        "dark:before:gw-hidden",
+        "gw:dark:before:hidden",
 
         // Focus ring
-        "after:gw-pointer-events-none after:gw-absolute after:gw-inset-0 after:gw-rounded-lg after:gw-ring-inset after:gw-ring-transparent sm:after:focus-within:gw-ring-2 sm:after:focus-within:gw-ring-blue-500",
+        "gw:after:pointer-events-none gw:after:absolute gw:after:inset-0 gw:after:rounded-lg gw:after:ring-inset gw:after:ring-transparent gw:sm:focus-within:after:ring-2 gw:sm:focus-within:after:ring-blue-500",
 
         // Disabled state
-        "has-[[data-disabled]]:gw-opacity-50 before:has-[[data-disabled]]:gw-bg-zinc-950/5 before:has-[[data-disabled]]:gw-shadow-none",
+        "gw:has-data-disabled:opacity-50 gw:has-data-disabled:before:bg-zinc-950/5 gw:has-data-disabled:before:shadow-none",
       ])}
     >
       <HeadlessTextarea
         ref={ref}
         className={gwMerge([
           // Basic layout
-          "gw-relative gw-block gw-h-full gw-w-full gw-appearance-none gw-rounded-lg gw-px-[calc(theme(spacing[3.5])-1px)] gw-py-[calc(theme(spacing[2.5])-1px)] sm:gw-px-[calc(theme(spacing.3)-1px)] sm:gw-py-[calc(theme(spacing[1.5])-1px)]",
+          "gw:relative gw:block gw:h-full gw:w-full gw:appearance-none gw:rounded-lg gw:px-[calc(--spacing(3.5)-1px)] gw:py-[calc(--spacing(2.5)-1px)] gw:sm:px-[calc(--spacing(3)-1px)] gw:sm:py-[calc(--spacing(1.5)-1px)]",
 
           // Typography
-          "gw-text-base/6 gw-text-zinc-950 placeholder:gw-text-zinc-500 sm:gw-text-sm/6 dark:gw-text-white",
+          "gw:text-base/6 gw:text-zinc-950 gw:placeholder:text-zinc-500 gw:sm:text-sm/6 gw:dark:text-white",
 
           // Border
-          "gw-border gw-border-zinc-950/10 data-[hover]:gw-border-zinc-950/20 dark:gw-border-white/10 dark:data-[hover]:gw-border-white/20",
+          "gw:border gw:border-zinc-950/10 gw:data-hover:border-zinc-950/20 gw:dark:border-white/10 gw:dark:data-hover:border-white/20",
 
           // Background color
-          "gw-bg-transparent dark:gw-bg-white/5",
+          "gw:bg-transparent gw:dark:bg-white/5",
 
           // Hide default focus styles
-          "focus:gw-outline-none",
+          "gw:focus:outline-hidden",
 
           // Invalid state
-          "data-[invalid]:gw-border-red-500 data-[invalid]:data-[hover]:gw-border-red-500 data-[invalid]:dark:gw-border-red-600 data-[invalid]:data-[hover]:dark:gw-border-red-600",
+          "gw:data-invalid:border-red-500 gw:data-invalid:data-hover:border-red-500 gw:dark:data-invalid:border-red-600 gw:dark:data-invalid:data-hover:border-red-600",
 
           // Disabled state
-          "disabled:gw-border-zinc-950/20 disabled:dark:gw-border-white/15 disabled:dark:gw-bg-white/[2.5%] dark:data-[hover]:disabled:gw-border-white/15",
+          "gw:disabled:border-zinc-950/20 gw:dark:disabled:border-white/15 gw:dark:disabled:bg-white/2.5 gw:dark:data-hover:disabled:border-white/15",
 
           // Resizable
-          resizable ? "gw-resize-y" : "gw-resize-none",
+          resizable ? "gw:resize-y" : "gw:resize-none",
         ])}
         {...props}
       />

@@ -92,7 +92,7 @@ function BadgeDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Badge">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             Use a badge to display a number or short message you want to
             highlight for the user. Badges can also be rendered as buttons to
@@ -100,23 +100,23 @@ function BadgeDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-flex gw-flex-wrap gw-items-center gw-mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:flex gw:flex-wrap gw:items-center gw:mb-3">
             {colors.map((color) => {
               return (
-                <Badge color={color} key={color} className="gw-ml-2">
+                <Badge color={color} key={color} className="gw:ml-2">
                   {color}
                 </Badge>
               );
             })}
           </div>
-          <div className="gw-flex gw-flex-wrap gw-items-center">
+          <div className="gw:flex gw:flex-wrap gw:items-center">
             {colors.map((color) => {
               return (
                 <BadgeButton
                   color={color}
                   key={color}
-                  className="gw-ml-2"
+                  className="gw:ml-2"
                   onClick={() => {
                     window.alert(`Clicked the ${color} badge`);
                   }}
@@ -167,14 +167,14 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Badge />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Badge />`}</Code>
         </div>
         <PropsTable propsList={componentProps_Badge} />
 
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<BadgeButton />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<BadgeButton />`}</Code>
         </div>
         <PropsTable propsList={componentProps_BadgeButton} />
       </UsaceBox>

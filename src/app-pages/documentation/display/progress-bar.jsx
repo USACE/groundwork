@@ -41,13 +41,13 @@ const componentProps_ProgressBar = [
   {
     name: "bgColor",
     type: "string",
-    default: "gw-bg-blue-600",
+    default: "gw:bg-blue-600",
     desc: "The background color of the progress bar.",
   },
   {
     name: "textColor",
     type: "string",
-    default: "gw-text-blue-100",
+    default: "gw:text-blue-100",
     desc: "The text color of the progress bar.",
   },
   {
@@ -75,8 +75,8 @@ function ProgressDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Progress Bar">
-        <div className="gw-pb-6">
-          <Text className="gw-mb-3">
+        <div className="gw:pb-6">
+          <Text className="gw:mb-3">
             The Progress Bar component is a simple way to display the progress
             of a task or process.
           </Text>
@@ -87,7 +87,7 @@ function ProgressDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           {progress == 100 ? (
             <div>
               Done! 🎉{" "}
@@ -143,8 +143,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<ProgressBar />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<ProgressBar />`}</Code>
         </div>
         <PropsTable propsList={componentProps_ProgressBar} />
       </UsaceBox>

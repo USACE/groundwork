@@ -4,7 +4,7 @@ import Modal from "../../components/display/modal";
 
 function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
   let hasAccepted = false;
-  hasAccepted = window.localStorage.getItem("gw-dod-warn-accept") || false;
+  hasAccepted = window.localStorage.getItem("gw:dod-warn-accept") || false;
   // if we get a value, check to see how long ago it was
   // default timeout is 30 days, but consumers can pass in
   // a different value as a prop
@@ -13,7 +13,7 @@ function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
       const now = new Date();
       const wasAcceptedOn = new Date(hasAccepted);
       if (now - wasAcceptedOn > warningTimeout) {
-        window.localStorage.removeItem("gw-dod-warn-accept");
+        window.localStorage.removeItem("gw:dod-warn-accept");
         hasAccepted = false;
       } else {
         hasAccepted = true;
@@ -27,7 +27,7 @@ function checkAcceptance(warningTimeout = 1000 * 60 * 60 * 24 * 30) {
 }
 
 function acknowledge() {
-  window.localStorage.setItem("gw-dod-warn-accept", new Date().getTime());
+  window.localStorage.setItem("gw:dod-warn-accept", new Date().getTime());
 }
 
 function DoDWarning({ warningTimeout }) {
@@ -53,12 +53,12 @@ function DoDWarning({ warningTimeout }) {
       }
       size="2xl"
       buttons={
-        <Button className="gw-w-full" onClick={() => setIsOpen(false)}>
+        <Button className="gw:w-full" onClick={() => setIsOpen(false)}>
           I Agree
         </Button>
       }
     >
-      <ul className="gw-list-disc gw-p-3">
+      <ul className="gw:list-disc gw:p-3">
         <li>
           The USG routinely intercepts and monitors communications on this
           website for purposes including, but not limited to, penetration

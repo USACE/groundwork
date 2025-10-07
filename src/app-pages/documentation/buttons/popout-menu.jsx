@@ -54,12 +54,12 @@ function PopoutMenuDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Popout Menu">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
-          <Badge color="blue" className="gw-my-2">
+        <div className="gw:pb-6">
+          <Badge color="blue" className="gw:my-2">
             <b>NOTE:</b> If you are looking to add popout menus to your existing{" "}
             {"<Sidebar />"} component, please see the{" "}
             <a
-              className="gw-underline"
+              className="gw:underline"
               href="/#/docs/navigation/sidebar"
               target="_blank"
               rel="no-referrer"
@@ -75,22 +75,22 @@ function PopoutMenuDocs() {
             displaying when space is limited.
           </Text>
         </div>
-        <H3 className="gw-mt-6 gw-pb-3">Popout Menu</H3>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+        <H3 className="gw:mt-6 gw:pb-3">Popout Menu</H3>
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           {/* Show the first two links in the sidebar as examples */}
           {links.slice(0, 2).map((link) => {
             const isSelected = selectedPath === link.href;
             return (
               <div key={link.href}>
                 {(link.children?.length && (
-                  <div className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100">
+                  <div className="gw:py-1 gw:border-b gw:border-b-gray-500 gw:hover:bg-gray-100">
                     <PopoutMenu title={link.text} direction={"bottom"}>
                       {
                         <a
                           key={link.id}
                           href={link.href}
-                          className={`gw-flex gw-items-center gw-gap-1 gw-font-bold gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 ${
-                            isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+                          className={`gw:flex gw:items-center gw:gap-1 gw:font-bold gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:bg-gray-100 ${
+                            isSelected ? "gw:bg-gray-100 gw:rounded" : ""
                           }`}
                         >
                           {/* Place a black dot at the end of the link if it is selected */}
@@ -103,11 +103,11 @@ function PopoutMenuDocs() {
                           <a
                             key={child.id}
                             href={child.href}
-                            className={`gw-block gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 hover:gw-bg-gray-100 ${
-                              isChildSelected ? "gw-bg-gray-100 gw-rounded" : ""
+                            className={`gw:block gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:hover:bg-gray-100 ${
+                              isChildSelected ? "gw:bg-gray-100 gw:rounded" : ""
                             }`}
                           >
-                            <span className="gw-flex gw-items-center gw-gap-1">
+                            <span className="gw:flex gw:items-center gw:gap-1">
                               {child.text}
                             </span>
                           </a>
@@ -118,8 +118,8 @@ function PopoutMenuDocs() {
                 )) || (
                   <a href={link.href}>
                     <div
-                      className={`gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 ${
-                        isSelected ? "gw-bg-gray-50 gw-rounded" : ""
+                      className={`gw:pl-1 gw:py-1 gw:flex gw:justify-between gw:items-center gw:cursor-pointer gw:hover:bg-gray-100 ${
+                        isSelected ? "gw:bg-gray-50 gw:rounded" : ""
                       }`}
                     >
                       {link.text}
@@ -142,7 +142,7 @@ import { VscChevronRight } from "react-icons/vsc";
 
 function Component() {
   return (
-    <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
+    <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
           {/* Show the first two links in the sidebar as examples */}
           {links.slice(0, 2).map((link) => {
             const isSelected = selectedPath === link.href;
@@ -150,14 +150,14 @@ function Component() {
               <div key={link.href}>
           
                   {link.children?.length && (
-                    <div className="gw-py-1 gw-border-b-[1px] gw-border-b-gray-500 hover:gw-bg-gray-100">
+                    <div className="gw:py-1 gw:border-b gw:border-b-gray-500 gw:hover:bg-gray-100">
                       <PopoutMenu title={link.text} direction={"bottom"}>
                         {
                           <a
                             key={link.id}
                             href={link.href}
-                            className={\`gw-flex gw-items-center gw-gap-1 gw-font-bold gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 gw-bg-gray-100 $\{
-                              isSelected ? "gw-bg-gray-100 gw-rounded" : ""
+                            className={\`gw:flex gw:items-center gw:gap-1 gw:font-bold gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:bg-gray-100 $\{
+                              isSelected ? "gw:bg-gray-100 gw:rounded" : ""
                             }\`}
                           >
                             {/* Place a black dot at the end of the link if it is selected */}
@@ -170,13 +170,13 @@ function Component() {
                             <a
                               key={child.id}
                               href={child.href}
-                              className={\`gw-block gw-p-2 gw-border-b-[1px] gw-border-b-gray-200 hover:gw-bg-gray-100 $\{
+                              className={\`gw:block gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:hover:bg-gray-100 $\{
                                 isChildSelected
-                                  ? "gw-bg-gray-100 gw-rounded"
+                                  ? "gw:bg-gray-100 gw:rounded"
                                   : ""
                               }\`}
                             >
-                              <span className="gw-flex gw-items-center gw-gap-1">
+                              <span className="gw:flex gw:items-center gw:gap-1">
                                 {child.text}
                                 {isChildSelected}
                               </span>
@@ -188,8 +188,8 @@ function Component() {
                   ) || (
                     <a href={link.href}>
                       <div
-                        className={\`gw-text-lg gw-font-bold gw-pl-1 gw-py-1 gw-flex gw-justify-between gw-items-center gw-cursor-pointer hover:gw-bg-gray-100 $\{
-                          isSelected ? "gw-bg-gray-50 gw-rounded" : ""
+                        className={\`gw:text-lg gw:font-bold gw:pl-1 gw:py-1 gw:flex gw:justify-between gw:items-center gw:cursor-pointer gw:hover:bg-gray-100 $\{
+                          isSelected ? "gw:bg-gray-50 gw:rounded" : ""
                         }\`
                       >
                         {link.text}
@@ -211,9 +211,9 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<PopoutMenu title={title} children={children} direction={direction} className={className} />`}</Code>
+          <Code className="gw:p-2">{`<PopoutMenu title={title} children={children} direction={direction} className={className} />`}</Code>
         </div>
         <PropsTable propsList={componentProps_PopoutMenu} />
       </UsaceBox>

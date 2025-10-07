@@ -16,7 +16,7 @@ function AppShell() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Application Shell">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           The application shell consists of components that are shared across
           many pages, this way we can re-use components for the header, footer,
           etc... and don't have to worry about getting them all to match. The

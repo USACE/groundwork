@@ -64,16 +64,16 @@ function FileInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="File Input">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             For now we are including a basic file input using the browser
             default interface, we may add prettier options in the future.
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%]">
-            <div className="gw-mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:w-[50%]">
+            <div className="gw:mb-3">
               <Field>
                 <Label>Choose a file</Label>
                 <Input type="file" />
@@ -102,8 +102,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<SiteWrapper />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

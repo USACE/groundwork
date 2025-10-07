@@ -21,7 +21,7 @@ function Dropdown({
       <label
         htmlFor={label + "-id"}
         className={gwMerge(
-          "gw-block gw-text-sm gw-font-medium gw-leading-6 gw-text-gray-900",
+          "gw:block gw:text-sm gw:font-medium gw:leading-6 gw:text-gray-900",
           labelClassName,
         )}
       >
@@ -35,7 +35,7 @@ function Dropdown({
           onChange(e);
         }}
         className={gwMerge(
-          "gw-mt-2 gw-block gw-w-full gw-rounded-md gw-border-0 gw-py-1.5 gw-pl-3 gw-pr-10 gw-text-gray-900 gw-ring-1 gw-ring-inset gw-ring-gray-300 focus:gw-ring-2 focus:gw-ring-indigo-600 sm:gw-text-sm sm:gw-leading-6",
+          "gw:mt-2 gw:block gw:w-full gw:rounded-md gw:border-0 gw:py-1.5 gw:pl-3 gw:pr-10 gw:text-gray-900 gw:ring-1 gw:ring-inset gw:ring-gray-300 gw:focus:ring-2 gw:focus:ring-indigo-600 gw:sm:text-sm gw:sm:leading-6",
           className,
         )}
         {...props}

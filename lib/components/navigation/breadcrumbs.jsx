@@ -7,22 +7,19 @@ import Link from "./link";
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
-      "gw-text-gray-300 hover:gw-text-gray-500 last:gw-text-gray-900",
+      "gw:text-gray-300 gw:hover:text-gray-500 gw:last:text-gray-900",
       className,
     );
   }, [className]);
   return (
     <li className={breadcrumbItemClass}>
-      <div className="gw-flex gw-items-center">
+      <div className="gw:flex gw:items-center">
         <VscChevronRight
           size={18}
           aria-hidden="true"
           color="rgb(156 163 175)"
         />
-        <Link
-          href={href}
-          className="gw-ml-2 gw-text-nowrap  gw-hover:gw-underline"
-        >
+        <Link href={href} className="gw:ml-2 gw:text-nowrap">
           {text}
         </Link>
       </div>
@@ -33,7 +30,7 @@ function BreadcrumbItem({ className, href, text }) {
 function Breadcrumbs({ className, children, baseUrl }) {
   const breadcrumbsClass = useMemo(() => {
     return gwMerge(
-      "gw-flex gw-flex-nowrap gw-items-center gw-space-x-2 gw-py-4 gw-overflow-x-auto gw-hide-scrollbar",
+      "gw:flex gw:flex-nowrap gw:items-center gw:space-x-2 gw:py-4 gw:overflow-x-auto gw:hide-scrollbar",
       className,
     );
   }, [className]);
@@ -42,11 +39,11 @@ function Breadcrumbs({ className, children, baseUrl }) {
       <li>
         <div>
           <Link
-            href={`${(baseUrl || "").replace(/\/+$/, "")}/`} // Avoid double slashes
-            className="gw-text-gray-300 gw-hover:gw-text-gray-500"
+            href={`${(baseUrl || "").replace(/\/+$/, "")}/`}
+            className="gw:text-gray-300 gw:hover:text-gray-500"
           >
             <MdHome size={22} />
-            <span className="gw-sr-only">Home</span>
+            <span className="gw:sr-only">Home</span>
           </Link>
         </div>
       </li>
