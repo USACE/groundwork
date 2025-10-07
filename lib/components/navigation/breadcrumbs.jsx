@@ -19,10 +19,7 @@ function BreadcrumbItem({ className, href, text }) {
           aria-hidden="true"
           color="rgb(156 163 175)"
         />
-        <Link
-          href={href}
-          className="gw:ml-2 gw:text-nowrap  gw:hover:gw:underline"
-        >
+        <Link href={href} className="gw:ml-2 gw:text-nowrap">
           {text}
         </Link>
       </div>
@@ -41,7 +38,10 @@ function Breadcrumbs({ className, children, baseUrl }) {
     <ol className={breadcrumbsClass}>
       <li>
         <div>
-          <Link href={`${(baseUrl || "").replace(/\/+$/, "")}/`} className="gw:text-gray-300 gw:hover:gw:text-gray-500">
+          <Link
+            href={`${(baseUrl || "").replace(/\/+$/, "")}/`}
+            className="gw:text-gray-300 gw:hover:text-gray-500"
+          >
             <MdHome size={22} />
             <span className="gw:sr-only">Home</span>
           </Link>
