@@ -18,7 +18,7 @@ function FooterLinks({ links = [], columnCount = 2 }) {
               href={link.href}
               target={target}
               rel={rel}
-              className="gw:hover:gw:underline"
+              className="gw:hover:underline"
             >
               {link.text}
             </a>
