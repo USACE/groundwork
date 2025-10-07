@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu } from "@headlessui/react";
+import { Menu, MenuItems, MenuItem } from "@headlessui/react";
 import { Fragment } from "react";
 import Link from "../../components/navigation/link";
 
@@ -35,24 +35,24 @@ function NavbarLinkItem({ link, ...props }) {
         {link.text}
       </Link>
       {link.children && open && (
-        <Menu.Items
+        <MenuItems
           static
           as="ul"
           className="gw:absolute gw:left-0 gw:top-12 gw:bg-nav-dark-gray gw:z-20! gw:w-max gw:p-0" // Removed padding and added gw:p-0
         >
           {link.children.map((child) => (
-            <Menu.Item key={child.id || child.text} as={Fragment}>
+            <MenuItem key={child.id || child.text} as={Fragment}>
               {child.children ? (
                 <div className="gw:relative gw:group">
                   <Link
                     href={child?.href}
                     target={child?.target}
                     rel={child?.rel}
-                    className="after:gw:content-['►'] gw:after:ml-2 gw:after:text-[10px] gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:gw:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:gw:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
+                    className="after:gw:content-['►'] gw:after:ml-2 gw:after:text-[10px] gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
                   >
                     {child.text}
                   </Link>
-                  <Menu.Items
+                  <MenuItems
                     static
                     as="ul"
                     className="gw:absolute gw:left-full gw:top-0 gw:bg-nav-dark-gray gw:z-30! gw:w-max gw:p-0 gw:shadow-lg gw:hidden gw:group-hover:block" // Removed padding and added gw:p-0
@@ -63,33 +63,33 @@ function NavbarLinkItem({ link, ...props }) {
                           "Header items can only be 2 levels deep. Please reorganize your header links. This helps to avoid CSS issues.",
                         );
                       return (
-                        <Menu.Item key={grandChild.id || grandChild.text}>
+                        <MenuItem key={grandChild.id || grandChild.text}>
                           <Link
                             href={grandChild?.href}
                             target={grandChild?.target}
                             rel={grandChild?.rel}
-                            className="gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:gw:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:gw:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
+                            className="gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
                           >
                             {grandChild.text}
                           </Link>
-                        </Menu.Item>
+                        </MenuItem>
                       );
                     })}
-                  </Menu.Items>
+                  </MenuItems>
                 </div>
               ) : (
                 <Link
                   href={child?.href}
                   target={child?.target}
                   rel={child?.rel}
-                  className="gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:gw:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:gw:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
+                  className="gw:block gw:text-sm gw:border-b gw:border-nav-black gw:bg-nav-dark-gray gw:hover:bg-nav-translucent-gray gw:text-nav-light-gray gw:hover:text-white gw:text-nowrap gw:font-semibold gw:px-3 gw:py-2 gw:bg-none"
                 >
                   {child.text}
                 </Link>
               )}
-            </Menu.Item>
+            </MenuItem>
           ))}
-        </Menu.Items>
+        </MenuItems>
       )}
     </Menu>
   );
