@@ -210,17 +210,6 @@ export const Button = React.forwardRef(function Button(
     style === "plain" ? colorsPlain[color] : "",
     className,
   );
-  console.log(
-    `${base},
-${radii[radius]},
-${sizes[size]},
-${style === "filled" ? colorsFilled[color] : ""},
-${style === "outline" ? colorsOutline[color] : ""},
-${style === "plain" ? colorsPlain[color] : ""},
-${className},
-
-${classes},`,
-  );
 
   return "href" in props ? (
     <Link {...props} className={classes} ref={ref}>
