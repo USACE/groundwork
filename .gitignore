@@ -24,3 +24,7 @@ docs
 *.sln
 *.sw?
 *.sql
+
+
+# Lighthouse
+.lighthouseci/*

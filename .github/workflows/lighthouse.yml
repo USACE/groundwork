@@ -1,0 +1,47 @@
+name: Accessibility (Lighthouse Accessibility / Performance Scan)
+
+on:
+    pull_request:
+        branches: [main]
+    # Run at 13:00 on the first day of each month
+    schedule:
+        - cron: "0 13 1 * *"
+
+jobs:
+    lighthouse:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pull-requests: write
+            pages: write
+            id-token: write
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build site
+              run: npm run build
+
+            - name: Run Lighthouse CI (auto-attach artifact)
+              uses: treosh/lighthouse-ci-action@v12
+              with:
+                  configPath: ./.lighthouserc.json
+                  uploadArtifacts: true
+                  artifactName: lighthouse-reports
+                  temporaryPublicStorage: false
+
+            - name: List report dirs
+              if: always()
+              run: |
+                  echo "Root contents:" && ls -la
+                  echo ".lighthouseci contents:" && ls -la .lighthouseci || true
