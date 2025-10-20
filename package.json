@@ -24,6 +24,7 @@
     "build": "npm run build-lib && npm run build-docs",
     "build-lib": "vite build -m lib",
     "build-docs": "vite build",
+    "lhci": "rmdir /s /q .lighthouseci 2>nul & lhci autorun --config=./.lighthouserc.json --verbose & node scripts/lhci-index.js",
     "pub": "npm run build-lib && npm publish --access=public",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky",
@@ -47,6 +48,7 @@
     "react-dom": "^18.2.0 || ^19.0.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
