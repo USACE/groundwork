@@ -28,3 +28,4 @@ docs
 
 # Lighthouse
 .lighthouseci/*
+.lighthouserc.gen.json

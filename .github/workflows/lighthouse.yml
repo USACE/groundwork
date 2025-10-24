@@ -32,6 +32,9 @@ jobs:
             - name: Build site
               run: npm run build
 
+            - name: Create Lighthouse CI config
+              run: node ./scripts/extract-routes.js > ./.lighthouserc.json
+
             - name: Run Lighthouse CI (auto-attach artifact)
               uses: treosh/lighthouse-ci-action@v12
               with:
