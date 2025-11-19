@@ -110,7 +110,9 @@ function Footer({
                   {missionText && (
                     <>
                       <h2 className="gw-text-lg">Our Mission</h2>
-                      <Text>{missionText}</Text>
+                      <Text className="gw-text-gray-300 dark:gw-text-gray-200">
+                        {missionText}
+                      </Text>
                     </>
                   )}
                 </div>
@@ -118,7 +120,9 @@ function Footer({
                   {aboutText && (
                     <>
                       <h2 className="gw-text-lg">About this Website</h2>
-                      <Text>{aboutText}</Text>
+                      <Text className="gw-text-gray-300 dark:gw-text-gray-200">
+                        {aboutText}
+                      </Text>
                     </>
                   )}
                 </div>
