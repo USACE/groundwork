@@ -66,7 +66,7 @@ function extractRoutes(ast) {
 }
 
 // Optional prefix, set LHCI_PREFIX to prepend
-const prefix = process.env.LHCI_PREFIX || "";
+const prefix = process.env.LHCI_PREFIX || "http://localhost:5173/";
 console.log("Prefix!", prefix);
 
 const urls = extractRoutes(ast).map((u) =>
