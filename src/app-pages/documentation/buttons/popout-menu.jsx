@@ -10,15 +10,15 @@ const BASE_URL = import.meta.env.BASE_URL;
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Buttons",
-    href: "#/docs/buttons",
+    href: `${BASE_URL}#/docs/buttons`,
   },
   {
     text: "Popout Menu",
-    href: "#/docs/buttons/PopoutMenu",
+    href: `${BASE_URL}#/docs/buttons/popout-menu`,
   },
 ];
 
