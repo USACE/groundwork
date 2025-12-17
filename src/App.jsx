@@ -17,7 +17,7 @@ function App() {
 
   if (hash === "") {
     window.setTimeout(() => {
-      doUpdateUrl("#/");
+      doUpdateUrl(`${BASE_URL}#/`);
     }, 100);
     return null;
   }
