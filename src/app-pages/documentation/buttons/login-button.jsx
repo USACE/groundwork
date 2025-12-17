@@ -112,7 +112,7 @@ function LoginButtonDocs() {
                   {
                     id: "profile",
                     text: `View Profile`,
-                    link: "#",
+                    link: `${BASE_URL}#/docs`,
                   },
                 ]}
               />
