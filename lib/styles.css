@@ -39,3 +39,44 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 }
+
+.gwloader {
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  background: currentColor;
+  color: #de1e2e;
+  box-sizing: border-box;
+  animation: animgwloader 0.3s 0.3s linear infinite alternate;
+}
+
+.gwloader::after,
+.gwloader::before {
+  content: "";
+  width: 8px;
+  height: 40px;
+  border-radius: 4px;
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  box-sizing: border-box;
+  animation: animgwloader 0.3s 0.45s linear infinite alternate;
+}
+.gwloader::before {
+  left: -20px;
+  animation-delay: 0s;
+}
+
+@keyframes animgwloader {
+  0% {
+    height: 48px;
+  }
+  100% {
+    height: 4px;
+  }
+}
