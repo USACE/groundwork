@@ -7,7 +7,6 @@ function Dropdown({
   className = "",
   onChange,
   value,
-  defaultValue,
   ...props
 }) {
   if (!options || options.length === 0) {
@@ -37,7 +36,6 @@ function Dropdown({
           className,
         )}
         value={value}
-        defaultValue={defaultValue}
         {...props}
       >
         {options}

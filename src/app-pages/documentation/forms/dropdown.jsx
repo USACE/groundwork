@@ -54,13 +54,7 @@ const componentProps_Fieldset = [
     name: "value",
     type: "string | number | null",
     default: "undefined",
-    desc: "The current value of the dropdown.",
-  },
-  {
-    name: "defaultValue",
-    type: "string | number | null",
-    default: "undefined",
-    desc: "The initial value of the dropdown.",
+    desc: "The current selected value when using the dropdown as a controlled component.",
   },
   {
     name: "<select> attributes",
@@ -125,7 +119,6 @@ function DropdownDocs() {
      <div className="w-[50%]">
         <Dropdown
             className={"w-5/6 m-auto"}
-            value={exampleOptions}
             onChange={(e) => {
                 alert("You selected: " + e.target.value);
             }}
