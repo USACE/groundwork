@@ -17,7 +17,7 @@ const pageBreadcrumbs = [
   },
   {
     text: "Radio Group",
-    href: `${BASE_URL}#/docs/forms/RadioGroup`,
+    href: `${BASE_URL}#/docs/forms/radio-group`,
   },
 ];
 

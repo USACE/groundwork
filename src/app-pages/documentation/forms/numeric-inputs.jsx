@@ -17,7 +17,7 @@ const pageBreadcrumbs = [
   },
   {
     text: "Numeric Inputs",
-    href: `${BASE_URL}#/docs/forms/numeric-input`,
+    href: `${BASE_URL}#/docs/forms/numeric-inputs`,
   },
 ];
 

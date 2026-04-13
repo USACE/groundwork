@@ -28,7 +28,7 @@ function Types() {
         <ul>
           <a
             className="gw-hover:gw-underline"
-            href={`${BASE_URL}#/ocs/types/link`}
+            href={`${BASE_URL}#/docs/types/link`}
           >
             <li>Link - Group text and a href attribute.</li>
           </a>

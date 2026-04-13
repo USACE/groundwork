@@ -16,7 +16,7 @@ const pageBreadcrumbs = [
   },
   {
     text: "Text",
-    href: `${BASE_URL}#/docs/display/Text`,
+    href: `${BASE_URL}#/docs/display/text`,
   },
 ];
 
