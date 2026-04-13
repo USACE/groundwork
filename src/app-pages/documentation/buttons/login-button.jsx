@@ -11,18 +11,20 @@ import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import { useState } from "react";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: `${BASE_URL}#/docs/buttons`,
   },
   {
     text: "Login Button",
-    href: "/#/docs/buttons/login-button",
+    href: `${BASE_URL}#/docs/buttons/login-button`,
   },
 ];
 
@@ -110,7 +112,7 @@ function LoginButtonDocs() {
                   {
                     id: "profile",
                     text: `View Profile`,
-                    link: "#",
+                    link: `${BASE_URL}#/docs`,
                   },
                 ]}
               />

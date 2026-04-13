@@ -4,18 +4,20 @@ import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import { LuPartyPopper } from "react-icons/lu";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Display",
-    href: "/#/docs/display",
+    href: `${BASE_URL}#/docs/display`,
   },
   {
     text: "Accordion",
-    href: "/#/docs/display/accordion",
+    href: `${BASE_URL}#/docs/display/accordion`,
   },
 ];
 

@@ -4,18 +4,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: `${BASE_URL}#/docs/navigation`,
   },
   {
     text: "Link Provider",
-    href: "/#/docs/navigation/link-provider",
+    href: `${BASE_URL}#/docs/navigation/link-provider`,
   },
 ];
 const componentProps = [

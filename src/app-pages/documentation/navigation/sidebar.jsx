@@ -6,18 +6,20 @@ import DocsPage from "../_docs-page";
 import examplePopoutLinks from "../../../example-popout-links";
 import exampleRegularLinks from "../../../example-regular-links";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: `${BASE_URL}#/docs/navigation`,
   },
   {
     text: "Sidebar",
-    href: "/#/docs/navigation/sidebar",
+    href: `${BASE_URL}#/docs/navigation/sidebar`,
   },
 ];
 const componentProps = [

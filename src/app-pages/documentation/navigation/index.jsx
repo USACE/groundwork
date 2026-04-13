@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: `${BASE_URL}#/docs/navigation`,
   },
 ];
 
@@ -25,12 +27,12 @@ function Navigation() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/docs/navigation/breadcrumbs">
+              <a href={`${BASE_URL}#/docs/navigation/breadcrumbs`}>
                 Breadcrumbs - Keep track of where you are in the site
               </a>
             </li>
             <li>
-              <a href="/docs/navigation/tabs">
+              <a href={`${BASE_URL}#/docs/navigation/tabs`}>
                 Tabs - Display multiple sub-pages on the same page
               </a>
             </li>
