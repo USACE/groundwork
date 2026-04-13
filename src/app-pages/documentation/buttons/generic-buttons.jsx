@@ -9,11 +9,11 @@ const BASE_URL = import.meta.env.BASE_URL;
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: `${BASE_URL}/docs`,
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Buttons",
-    href: `${BASE_URL}/docs/buttons`,
+    href: `${BASE_URL}#/docs/buttons`,
   },
 ];
 
@@ -110,7 +110,16 @@ function GenericButtonsDocs() {
             recommended that you implement your own button using the{" "}
             <Code>{"<button>"}</Code> primitive component.
           </Text>
-          <Badge color="info" className="gw-my-2">NOTE: if you are linking to your own site to <Link href={`${BASE_URL}/docs/client-side-routing`} className="gw-underline">include the base</Link>. Otherwise include rel="external"</Badge>
+          <Badge color="info" className="gw-my-2">
+            NOTE: if you are linking to your own site to{" "}
+            <Link
+              href={`${BASE_URL}#/docs/client-side-routing`}
+              className="gw-underline"
+            >
+              include the base and hash path
+            </Link>
+            . Otherwise include rel="external"
+          </Badge>
         </div>
         {/* Example usage - remove if not needed */}
         <H3 className="gw-pt-6 gw-pb-3">Basic Usage</H3>
@@ -120,7 +129,7 @@ function GenericButtonsDocs() {
             <Button style="outline">Outlined</Button>
             <Button style="plain">Plain</Button>
             <Button disabled>Disabled</Button>
-            <Button href={`${BASE_URL}/docs/buttons`}>As a Link</Button>
+            <Button href={`${BASE_URL}#/docs/buttons`}>As a Link</Button>
           </div>
         </div>
         {/* Example code */}
@@ -135,7 +144,7 @@ function Component() {
       <Button style="outline">Outlined</Button>
       <Button style="plain">Plain</Button>
       <Button disabled>Disabled</Button>
-      <Button href={\`${BASE_URL}/docs/buttons\`}>As a Link</Button>
+      <Button href={\`${BASE_URL}#/docs/buttons\`}>As a Link</Button>
     </div>
   )
 }
