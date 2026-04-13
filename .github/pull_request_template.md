@@ -5,8 +5,6 @@
 
 ## Checklist
 
-- [ ] I ran `npm run lint`
-- [ ] I ran `npm test` or documented why tests were not needed
 - [ ] I updated docs/examples if the component API or behavior changed
 - [ ] I added screenshots for UI changes when useful
 - [ ] I applied exactly one version label: `patch-bump`, `minor-bump`, or `major-bump`

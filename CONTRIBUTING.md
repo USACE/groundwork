@@ -16,7 +16,6 @@ npm run lint
 ## Coding standards
 
 - Use Prettier formatting. A Husky pre-commit hook runs `lint-staged`, which applies Prettier to staged `js`, `jsx`, `json`, `css`, and `md` files.
-- Run `npm run lint` before opening a pull request. ESLint is configured for the React codebase and should stay clean.
 - Add or update tests when behavior changes. `lib/gw-merge.test.js` shows the existing Vitest setup.
 - Update the documentation app in `src/app-pages/documentation` when a component API, behavior, or usage pattern changes.
 - Edit source files in `src` and `lib`. Do not hand-edit generated output in `dist` or the built docs output in `docs`.
