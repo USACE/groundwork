@@ -13,7 +13,7 @@ const pageBreadcrumbs = [
   },
   {
     text: "Getting Started",
-    href: `${BASE_URL}#/docs/getting-started`,
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Quick Start Guide",
