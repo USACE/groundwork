@@ -46,7 +46,6 @@ import QuickStartGuide from "../app-pages/documentation/getting-started/quick-st
 import AddingTailwind from "../app-pages/documentation/getting-started/adding-tailwind";
 import ClientSideRouting from "../app-pages/documentation/getting-started/client-side-routing";
 import PackageMaintenance from "../app-pages/documentation/getting-started/package-maintenance";
-import ContributionGuide from "../app-pages/documentation/getting-started/contribution-guide";
 import LinkProviderDocs from "../app-pages/documentation/navigation/link-provider";
 import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
@@ -61,7 +60,6 @@ export default createRouteBundle(
     "/docs/adding-tailwind": AddingTailwind,
     "/docs/client-side-routing": ClientSideRouting,
     "/docs/package-maintenance": PackageMaintenance,
-    "/docs/contribution-guide": ContributionGuide,
     "/docs/app-shell": AppShell,
     "/docs/app-shell/site-wrapper": SiteWrapperDocs,
     "/docs/app-shell/search": SearchDocs,

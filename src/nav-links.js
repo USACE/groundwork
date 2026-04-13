@@ -24,11 +24,6 @@ export default [
         text: "Package Maintenance",
         href: "/#/docs/package-maintenance",
       },
-      {
-        id: "contribution-guide",
-        text: "Contribution Guide",
-        href: "/#/docs/contribution-guide",
-      },
     ],
   },
   {
