@@ -75,6 +75,21 @@ function Docs() {
           Make sure to import style.css from Groundwork into your top-level
           component (i.e. App.jsx), then go build stuff with the components
         </Text>
+
+        <H4 className="gw-mt-6">Contributing</H4>
+        <Text className="gw-mt-3">
+          If you are planning to contribute to Groundwork, review the{" "}
+          <a
+            className="gw-underline"
+            href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            contributing guide
+          </a>{" "}
+          for branch naming, pull request expectations, and version bump
+          labeling.
+        </Text>
       </UsaceBox>
     </DocsPage>
   );

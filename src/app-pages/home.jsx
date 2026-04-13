@@ -59,10 +59,22 @@ function Home() {
             >
               <Text>
                 Contributions are welcome! Please see the{" "}
-                <TextLink href="https://github.com/USACE/groundwork">
-                  GitHub Repository
+                <TextLink
+                  href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  contributing guide
                 </TextLink>{" "}
-                for more information.
+                for workflow and review expectations. The{" "}
+                <TextLink
+                  href="https://github.com/USACE/groundwork"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub repository
+                </TextLink>{" "}
+                has the source and issue tracker.
               </Text>
             </UsaceBox>
           </div>
