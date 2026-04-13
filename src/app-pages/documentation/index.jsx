@@ -67,12 +67,12 @@ function Docs() {
         </div>
         <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
           <Code className="gw-block gw-p-1 gw-px-2">
-            import "@usace/groundwork/dist/style.css"
+            import "@usace/groundwork/dist/groundwork.css"
           </Code>
-          <CopyButton text={`import "@usace/groundwork/dist/style.css"`} />
+          <CopyButton text={`import "@usace/groundwork/dist/groundwork.css"`} />
         </div>
         <Text>
-          Make sure to import style.css from Groundwork into your top-level
+          Make sure to import groundwork.css from Groundwork into your top-level
           component (i.e. App.jsx), then go build stuff with the components
         </Text>
       </UsaceBox>

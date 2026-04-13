@@ -156,7 +156,7 @@ npm run dev`}
           <Code className="!gw-font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
+import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   return (
