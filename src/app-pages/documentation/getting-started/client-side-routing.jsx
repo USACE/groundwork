@@ -388,7 +388,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
+import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
 const { route: Route } = useConnect("selectRoute");
@@ -441,7 +441,7 @@ export default App;`}
             code={`import { useConnect } from "redux-bundler-hook";
 import { getNavHelper } from "internal-nav-helper";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
+import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   const { route: Route, doUpdateUrl } = useConnect(

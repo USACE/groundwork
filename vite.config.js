@@ -23,6 +23,12 @@ export default defineConfig(({ mode }) => {
         rollupOptions: {
           external: ["react", "react-dom", "react/jsx-runtime"],
           output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name?.endsWith(".css")) {
+                return "groundwork.css";
+              }
+              return "[name][extname]";
+            },
             globals: {
               react: "React",
               "react-dom": "ReactDOM",
