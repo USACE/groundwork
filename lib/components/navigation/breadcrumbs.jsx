@@ -4,6 +4,8 @@ import { MdHome } from "react-icons/md";
 import { VscChevronRight } from "react-icons/vsc";
 import Link from "./link";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(

@@ -3,18 +3,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Application Shell",
-    href: "/#/docs/app-shell",
+    href: `${BASE_URL}#/docs/app-shell`,
   },
   {
     text: "Site Wrapper",
-    href: "/#/docs/app-shell/site-wrapper",
+    href: `${BASE_URL}#/docs/app-shell/site-wrapper`,
   },
 ];
 
@@ -213,7 +215,7 @@ function SiteWrapperDocs() {
           code={`import { SiteWrapper } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
 
-const links = [{ id: "docs", text: "Documentation", href: "/#/docs" }];
+const links = [{ id: "docs", text: "Documentation", href: "/docs" }];
 
 function App() {
   const {

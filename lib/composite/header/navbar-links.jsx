@@ -38,7 +38,7 @@ function NavbarLinkItem({ link, ...props }) {
         <Menu.Items
           static
           as="ul"
-          className="gw-absolute gw-left-0 gw-top-13 gw-bg-nav-dark-gray !gw-z-20 gw-w-max gw-p-0" // Removed padding and added gw-p-0
+          className="gw-absolute gw-left-0 gw-top-13 gw-bg-nav-dark-gray !gw-z-20 gw-w-max gw-p-0"
         >
           {link.children.map((child) => (
             <Menu.Item key={child.id || child.text} as={Fragment}>
@@ -55,7 +55,7 @@ function NavbarLinkItem({ link, ...props }) {
                   <Menu.Items
                     static
                     as="ul"
-                    className="gw-absolute gw-left-full gw-top-0 gw-bg-nav-dark-gray !gw-z-30 gw-w-max gw-p-0 gw-shadow-lg gw-hidden group-hover:gw-block" // Removed padding and added gw-p-0
+                    className="gw-absolute gw-left-full gw-top-0 gw-bg-nav-dark-gray !gw-z-30 gw-w-max gw-p-0 gw-shadow-lg gw-hidden group-hover:gw-block"
                   >
                     {child.children.map((grandChild) => {
                       if (!grandChild.children)
