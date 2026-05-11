@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Groundwork Water
+    url: https://github.com/USACE-WaterManagement/groundwork-water/issues/new
+    about: Issues Related to Data/Hook Components or other water management data component problems.
+  - name: Groundwork Geo
+    url: https://github.com/USACE/groundwork-geo/issues/new
+    about: Map component issues that do NOT fetch data and otherwise have trouble with rendering or feature requests.

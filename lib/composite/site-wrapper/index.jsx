@@ -21,10 +21,13 @@ function SiteWrapper({
   youtubeUrl = "",
   flickrUrl = "",
   instagramUrl = "",
+  linkedInUrl = "",
   usaceLinks = [],
   externalLinks = [],
   armyLogo = true,
+  army250Logo = false,
   usaceLogo = true,
+  usace250Logo = false,
   rsgisLogo = false,
   cwbiLogo = false,
   showWarning = false,
@@ -33,7 +36,7 @@ function SiteWrapper({
   // Warn developer that msgBannerPosition should either be top or bottom, but nothing else.
   if (!["top", "bottom"].includes(msgBannerPosition)) {
     console.warn(
-      "You must specify top or bottom for messageBannerPosition. Ignoring parameter"
+      "You must specify top or bottom for messageBannerPosition. Ignoring parameter",
     );
   }
 
@@ -63,10 +66,13 @@ function SiteWrapper({
           youtubeUrl={youtubeUrl}
           flickrUrl={flickrUrl}
           instagramUrl={instagramUrl}
+          linkedInUrl={linkedInUrl}
           usaceLinks={usaceLinks}
           externalLinks={externalLinks}
           armyLogo={armyLogo}
+          army250Logo={army250Logo}
           usaceLogo={usaceLogo}
+          usace250Logo={usace250Logo}
           rsgisLogo={rsgisLogo}
           cwbiLogo={cwbiLogo}
         />

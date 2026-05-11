@@ -16,7 +16,7 @@ function sha256(plain) {
 
 function Gravatar({ email }) {
   const [gravatarUrl, setGravatarUrl] = useState(
-    "https://www.gravatar.com/avatar/unknown?d=identicon"
+    "https://www.gravatar.com/avatar/unknown?d=identicon",
   );
   useEffect(() => {
     async function getGravatarUrl() {

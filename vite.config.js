@@ -21,12 +21,18 @@ export default defineConfig(({ mode }) => {
           entry: "lib/index.jsx",
         },
         rollupOptions: {
-          external: ['react', 'react-dom', 'react/jsx-runtime'],
+          external: ["react", "react-dom", "react/jsx-runtime"],
           output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name?.endsWith(".css")) {
+                return "groundwork.css";
+              }
+              return "[name][extname]";
+            },
             globals: {
               react: "React",
               "react-dom": "ReactDOM",
-              'react/jsx-runtime': 'ReactJsxRuntime',
+              "react/jsx-runtime": "ReactJsxRuntime",
             },
           },
         },

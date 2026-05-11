@@ -5,10 +5,12 @@ import DocsPage from "../_docs-page";
 import { Checkboxes } from "../../../../lib/components/form/checkboxes";
 import { useState, useMemo } from "react";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
-  { text: "Documentation", href: "/docs" },
-  { text: "Forms", href: "/docs/forms" },
-  { text: "Checkboxes", href: "/docs/forms/checkboxes" },
+  { text: "Documentation", href: `${BASE_URL}#/docs` },
+  { text: "Forms", href: `${BASE_URL}#/docs/forms` },
+  { text: "Checkboxes", href: `${BASE_URL}#/docs/forms/checkboxes` },
 ];
 
 const checkboxItemProps = [
@@ -128,7 +130,7 @@ function CheckboxesDocs() {
         labelProps: { className: "gw-text-blue-400 gw-text-xl" },
       },
     ],
-    [checkedItems]
+    [checkedItems],
   );
 
   return (

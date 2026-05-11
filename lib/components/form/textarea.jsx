@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 
 export const Textarea = forwardRef(function Textarea(
   { className, resizable = true, ...props },
-  ref
+  ref,
 ) {
   return (
     <span

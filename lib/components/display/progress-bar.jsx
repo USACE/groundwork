@@ -21,7 +21,7 @@ const ProgressBar = ({
     <div
       className={gwMerge(
         `gw-w-full gw-bg-gray-200 gw-rounded-full dark:gw-bg-gray-700`,
-        hideOnDone && progress === 100 ? "gw-hidden" : ""
+        hideOnDone && progress === 100 ? "gw-hidden" : "",
       )}
     >
       <div
@@ -30,7 +30,7 @@ const ProgressBar = ({
           textColor,
           showProgress && "gw-min-h-4",
           `gw-text-xs gw-font-medium gw-text-center gw-p-0.5 gw-leading-none gw-rounded-full`,
-          className
+          className,
         )}
         style={{
           width: `${Math.round(progress)}%`,

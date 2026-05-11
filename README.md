@@ -10,6 +10,8 @@ The library is available on NPM at `@usace/groundwork` - watch the version numbe
 
 We welcome contributions from USACE developers and want to make this a community project.
 
+Contribution standards, PR expectations, and release/versioning guidance are documented in [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Friends of Groundwork
 
 ### USACE WM Components

@@ -7,7 +7,7 @@ function CopyButton({ className, text }) {
   const [copying, setCopying] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(
-      text.replace(/\\`/gi, "`").replace(/\\$/gi, "$")
+      text.replace(/\\`/gi, "`").replace(/\\$/gi, "$"),
     );
   };
   const btnClass = gwMerge("", className);

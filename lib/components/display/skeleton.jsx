@@ -7,7 +7,7 @@ const Skeleton = ({ type, className, ...props }) => {
       className={gwMerge(
         "gw-animate-pulse gw-rounded-md gw-bg-gray-400",
         baseSize,
-        className
+        className,
       )}
       {...props}
     />

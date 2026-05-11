@@ -12,7 +12,7 @@ export function Fieldset({ className, ...props }) {
   const fieldsetClass = useMemo(() => {
     return gwMerge(
       "[&>*+[data-slot=control]]:gw-mt-6 [&>[data-slot=text]]:gw-mt-1",
-      className
+      className,
     );
   }, [className]);
   return <HeadlessFieldset {...props} className={fieldsetClass} />;
@@ -22,7 +22,7 @@ export function Legend({ ...props }) {
   const legendClass = useMemo(() => {
     return gwMerge(
       "gw-text-base/6 gw-font-semibold gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white",
-      props.className
+      props.className,
     );
   }, [props.className]);
   return (
@@ -46,7 +46,7 @@ export function Field({ className, ...props }) {
       "[&>[data-slot=control]+[data-slot=description]]:gw-mt-3",
       "[&>[data-slot=control]+[data-slot=error]]:gw-mt-3",
       "[&>[data-slot=label]]:gw-font-medium",
-      className
+      className,
     );
   }, [className]);
   return <HeadlessField className={fieldClass} {...props} />;
@@ -56,7 +56,7 @@ export function Label({ className, ...props }) {
   const labelClass = useMemo(() => {
     return gwMerge(
       "gw-select-none gw-text-base/6 gw-text-zinc-950 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-white",
-      className
+      className,
     );
   }, [className]);
   return <HeadlessLabel {...props} data-slot="label" className={labelClass} />;
@@ -66,7 +66,7 @@ export function Description({ className, disabled, ...props }) {
   const descriptionClass = useMemo(() => {
     return gwMerge(
       "gw-text-base/6 gw-text-zinc-500 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-zinc-400",
-      className
+      className,
     );
   }, [className]);
   return (
@@ -82,7 +82,7 @@ export function ErrorMessage({ className, disabled, ...props }) {
   const errorMessageClass = useMemo(() => {
     return gwMerge(
       "gw-text-base/6 gw-text-red-600 data-[disabled]:gw-opacity-50 sm:gw-text-sm/6 dark:gw-text-red-500",
-      className
+      className,
     );
   }, [className]);
   return (

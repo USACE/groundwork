@@ -1,0 +1,23 @@
+name: Groundwork Feature Request
+description: Request a feature related to Groundwork
+labels: ["enhancement"]
+body:
+  # FEATURE REQUEST FIELDS
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Proposal
+      description: What do you want to see added or changed?
+      placeholder: |
+        Describe the feature, its motivation, and usage examples.
+        You can include code or other examples in code blocks.
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_links
+    attributes:
+      label: Related Context or Links
+      description: Include any discussions, docs, or libraries relevant to the request.
+    validations:
+      required: false

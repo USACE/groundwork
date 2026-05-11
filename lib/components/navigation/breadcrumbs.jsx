@@ -4,11 +4,13 @@ import { MdHome } from "react-icons/md";
 import { VscChevronRight } from "react-icons/vsc";
 import Link from "./link";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
       "gw-text-gray-300 hover:gw-text-gray-500 last:gw-text-gray-900",
-      className
+      className,
     );
   }, [className]);
   return (
@@ -30,18 +32,21 @@ function BreadcrumbItem({ className, href, text }) {
   );
 }
 
-function Breadcrumbs({ className, children }) {
+function Breadcrumbs({ className, children, baseUrl }) {
   const breadcrumbsClass = useMemo(() => {
     return gwMerge(
       "gw-flex gw-flex-nowrap gw-items-center gw-space-x-2 gw-py-4 gw-overflow-x-auto gw-hide-scrollbar",
-      className
+      className,
     );
   }, [className]);
   return (
     <ol className={breadcrumbsClass}>
       <li>
         <div>
-          <Link href="/" className="gw-text-gray-300 gw-hover:gw-text-gray-500">
+          <Link
+            href={`${(baseUrl || "").replace(/\/+$/, "")}/`} // Avoid double slashes
+            className="gw-text-gray-300 gw-hover:gw-text-gray-500"
+          >
             <MdHome size={22} />
             <span className="gw-sr-only">Home</span>
           </Link>

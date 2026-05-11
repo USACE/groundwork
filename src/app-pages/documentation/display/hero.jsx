@@ -1,12 +1,14 @@
-import { UsaceBox, Code, Text, Hero, Badge, H2 } from "../../../../lib";
+import { UsaceBox, Code, Text, Hero, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: `${BASE_URL}#/docs`,
   },
 ];
 
@@ -58,7 +60,7 @@ const componentProps = [
     type: "decimal",
     default: ".5",
     desc: 'Optional: Sets the brightness of the image. 1 is darkest, 0 is brightest. I.e. ".3"',
-  }
+  },
 ];
 
 function HeroDocs() {
@@ -77,14 +79,12 @@ function HeroDocs() {
             subtitle="Hero Subtitle"
             image="1500x400.png"
             alt="Placeholder Image"
-            opacity={.5}
+            opacity={0.5}
           />
         </div>
         <Badge
           color="yellow"
-          className={
-            "gw-m-5 gw-w-full gw-flex gw-flex-col"
-          }
+          className={"gw-m-5 gw-w-full gw-flex gw-flex-col"}
         >
           ⚠ NOTE: When using images on your site please consider compressing
           them!
@@ -92,7 +92,7 @@ function HeroDocs() {
             className="gw-cursor-pointer gw-underline gw-decoration-solid gw-decoration-gray-500"
             onClick={() => {
               // Navigate to the img compression tag on the page
-              // # TODO: Hash router seems to break hash referencing? 
+              // # TODO: Hash router seems to break hash referencing?
               document
                 .getElementById("img-compression")
                 .scrollIntoView({ behavior: "smooth" });
@@ -138,7 +138,7 @@ export default Component;
                 "nww-lucky-peak-dam.jpg",
               ]}
               alt={["Ft Gibson Dam", "Taylorsville", "NWW Lucky Peak Dam"]}
-              opacity={.5}
+              opacity={0.5}
             />
           </div>
           <div>

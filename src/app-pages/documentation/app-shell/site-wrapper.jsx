@@ -3,18 +3,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Application Shell",
-    href: "/docs/app-shell",
+    href: `${BASE_URL}#/docs/app-shell`,
   },
   {
     text: "Site Wrapper",
-    href: "/docs/app-shell/site-wrapper",
+    href: `${BASE_URL}#/docs/app-shell/site-wrapper`,
   },
 ];
 
@@ -110,6 +112,12 @@ const siteWrapperProps = [
     desc: "The URL to an Instagram page.",
   },
   {
+    name: "linkedInUrl",
+    type: "string",
+    default: "''",
+    desc: "The URL to a LinkedIn page.",
+  },
+  {
     name: "usaceLinks",
     type: "array[Link]",
     default: "[]",
@@ -128,10 +136,22 @@ const siteWrapperProps = [
     desc: "If true, the Army logo will be displayed in the footer.",
   },
   {
+    name: "army250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the Army 250 yr anniversary logo will be displayed in the footer.",
+  },
+  {
     name: "usaceLogo",
     type: "boolean",
     default: "true",
     desc: "If true, the USACE logo will be displayed in the footer.",
+  },
+  {
+    name: "usace250Logo",
+    type: "boolean",
+    default: "false",
+    desc: "If true, the USACE 250 yr anniversary logo will be displayed in the footer.",
   },
   {
     name: "rsgisLogo",

@@ -5,17 +5,19 @@ import links from "./nav-links";
 import { FaGithub } from "react-icons/fa";
 
 const version = import.meta.env.PKG_VERSION;
+const BASE_URL = import.meta.env.BASE_URL;
 
 function App() {
   const {
     route: Route,
     hash,
+    doUpdateUrl,
     doUpdateHash,
-  } = useConnect("selectRoute", "selectHash", "doUpdateHash");
+  } = useConnect("selectRoute", "selectHash", "doUpdateUrl", "doUpdateHash");
 
   if (hash === "") {
     window.setTimeout(() => {
-      doUpdateHash("/");
+      doUpdateUrl(`${BASE_URL}#/`);
     }, 100);
     return null;
   }
@@ -25,7 +27,7 @@ function App() {
     for (let i = 1; i <= linkCount; i++) {
       const link = {
         id: i,
-        href: "/#",
+        href: `#/`,
         text: `${prefix} Link ${i}`,
       };
       links.push(link);
@@ -34,7 +36,13 @@ function App() {
   };
 
   return (
-    <div onClick={getNavHelper((url) => doUpdateHash(url))}>
+    <div
+      onClick={getNavHelper((url) => {
+        // Remove BASE_URL# before it is added again by the navhelper so it can be included in the hrefs for copy url purposes
+        if (url.includes(`${BASE_URL}#`)) url = url.replace(`${BASE_URL}#`, "");
+        doUpdateHash(url);
+      })}
+    >
       <SiteWrapper
         fluidNav={true}
         links={links}
@@ -66,7 +74,10 @@ function App() {
         youtubeUrl="#"
         flickrUrl="#"
         instagramUrl="#"
+        linkedInUrl="#"
         showWarning={true}
+        army250Logo={true}
+        usace250Logo={true}
       >
         <Route />
       </SiteWrapper>

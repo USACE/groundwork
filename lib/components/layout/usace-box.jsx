@@ -3,7 +3,7 @@ import gwMerge from "../../gw-merge";
 
 const UsaceBox = forwardRef(function UsaceBox(
   { children, className, title, customTitle, id },
-  ref
+  ref,
 ) {
   const CustomTitle = customTitle;
   const boxClass = "gw-mb-10 gw-relative";

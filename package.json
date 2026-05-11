@@ -1,7 +1,7 @@
 {
   "name": "@usace/groundwork",
   "private": false,
-  "version": "3.14.14",
+  "version": "4.0.3",
   "license": "MIT",
   "type": "module",
   "main": "./dist/groundwork.umd.cjs",
@@ -13,6 +13,18 @@
     ".": {
       "import": "./dist/groundwork.es.js",
       "require": "./dist/groundwork.umd.cjs"
+    },
+    "./groundwork.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
     },
     "./dist/*.css": {
       "import": "./dist/*.css",
@@ -26,8 +38,12 @@
     "build-docs": "vite build",
     "pub": "npm run build-lib && npm publish --access=public",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky",
     "preview": "vite preview",
     "test": "vitest"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,css,md}": "prettier --write"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -52,10 +68,13 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
     "postcss": "^8.4.33",
+    "prettier": "^3.6.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.13",
-    "vitest": "^2.1.1"
+    "vite": "^7.2.7",
+    "vitest": "^3.2.4"
   }
 }

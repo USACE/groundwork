@@ -7,6 +7,8 @@ import { useState } from "react";
 import gwMerge from "../../gw-merge";
 import Link from "../../components/navigation/link";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 function Title({ title = "", subtitle = "" }) {
   return (
     <div
@@ -26,7 +28,7 @@ function Title({ title = "", subtitle = "" }) {
 function Logo() {
   return (
     <div className="gw-relative gw-w-[70px] sm:gw-w-[82px] gw-shrink-0 sm:gw-top-3">
-      <Link href="/">
+      <Link href={BASE_URL + "/"}>
         <img
           className="gw-w-[50px] sm:gw-w-[60px] gw-h-auto"
           src={usaceLogo}
@@ -45,7 +47,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   const navContainerClass = gwMerge(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
-    fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl"
+    fluidNav ? "gw-max-w-screen" : "gw-max-w-screen-2xl",
   );
   return (
     <>
