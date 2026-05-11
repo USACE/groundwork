@@ -4,6 +4,10 @@
   "version": "4.0.8",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USACE/groundwork.git"
+  },
   "main": "./dist/groundwork.umd.cjs",
   "module": "./dist/groundwork.es.js",
   "files": [
