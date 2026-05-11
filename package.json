@@ -14,6 +14,18 @@
       "import": "./dist/groundwork.es.js",
       "require": "./dist/groundwork.umd.cjs"
     },
+    "./groundwork.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
     "./dist/*.css": {
       "import": "./dist/*.css",
       "require": "./dist/*.css"
