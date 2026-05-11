@@ -7,8 +7,6 @@ import { useState } from "react";
 import gwMerge from "../../gw-merge";
 import Link from "../../components/navigation/link";
 
-const BASE_URL = import.meta.env.BASE_URL;
-
 function Title({ title = "", subtitle = "" }) {
   return (
     <div
@@ -25,10 +23,10 @@ function Title({ title = "", subtitle = "" }) {
   );
 }
 
-function Logo() {
+function Logo({ homeUrl }) {
   return (
     <div className="gw-relative gw-w-[70px] sm:gw-w-[82px] gw-shrink-0 sm:gw-top-3">
-      <Link href={BASE_URL + "/"}>
+      <Link href={homeUrl}>
         <img
           className="gw-w-[50px] sm:gw-w-[60px] gw-h-auto"
           src={usaceLogo}
@@ -43,7 +41,7 @@ function Logo() {
   );
 }
 
-function Header({ links, title, subtitle, navRight, fluidNav }) {
+function Header({ links, title, subtitle, navRight, fluidNav, homeUrl }) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   const navContainerClass = gwMerge(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
@@ -56,7 +54,7 @@ function Header({ links, title, subtitle, navRight, fluidNav }) {
           <div className="gw-min-h-12 gw-bg-nav-black gw-text-white">
             <div className={navContainerClass}>
               <div className="gw-flex gw-justify-between gw-items-center">
-                <Logo />
+                <Logo homeUrl={homeUrl} />
                 <NavbarLinks links={links} />
                 <span className="gw-flex gw-flex-row-reverse gw-justify-end gw-items-center gw-w-full md:gw-max-w-[300px] gw-mr-2">
                   {navRight ? navRight : null}

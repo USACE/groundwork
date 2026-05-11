@@ -39,13 +39,14 @@ function App() {
     <div
       onClick={getNavHelper((url) => {
         // Remove BASE_URL# before it is added again by the navhelper so it can be included in the hrefs for copy url purposes
-        if (url.includes(`${BASE_URL}#`)) url = url.replace(`${BASE_URL}#`, "");
+        url = url.replace(`${BASE_URL}#`, "");
         doUpdateHash(url);
       })}
     >
       <SiteWrapper
         fluidNav={true}
         links={links}
+        homeUrl={`${BASE_URL}#/`}
         usaBanner={true}
         subtitle={`Groundwork React Components v${version}`}
         missionText="We strive to provide the best React components for the USACE."
