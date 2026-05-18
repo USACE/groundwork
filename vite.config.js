@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => {
     const base =
       mode === "production"
         ? "https://usace.github.io/groundwork/"
-        : "http://localhost:5173/";
+        : "http://localhost:5173/groundwork/";
     return {
       plugins: [react()],
       base: base,
