@@ -8,11 +8,11 @@ function DocsPage({ breadcrumbs = [], children }) {
   const { hash } = useConnect("selectHash");
   return (
     <Container fluid>
-      <Breadcrumbs baseUrl={BASE_URL}>
+      <Breadcrumbs baseUrl={`${BASE_URL}#/`}>
         {breadcrumbs.map((breadcrumb) => (
           <BreadcrumbItem
             key={breadcrumb.text}
-            href={BASE_URL + breadcrumb.href}
+            href={breadcrumb.href}
             text={breadcrumb.text}
           />
         ))}

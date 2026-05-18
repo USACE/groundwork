@@ -58,6 +58,12 @@ const siteWrapperProps = [
     desc: "If true, the footer will be displayed at the bottom of the page. Set to false to hide the footer in case you need the screen space for something like a map viewer.",
   },
   {
+    name: "homeUrl",
+    type: "string",
+    default: "#",
+    desc: "Sets the href on the Corps Castle in the header.",
+  },
+  {
     name: "title",
     type: "string",
     default: "US Army Corps of Engineers",

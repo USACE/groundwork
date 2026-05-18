@@ -4,8 +4,6 @@ import { MdHome } from "react-icons/md";
 import { VscChevronRight } from "react-icons/vsc";
 import Link from "./link";
 
-const BASE_URL = import.meta.env.BASE_URL;
-
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
@@ -44,7 +42,7 @@ function Breadcrumbs({ className, children, baseUrl }) {
       <li>
         <div>
           <Link
-            href={`${(baseUrl || "").replace(/\/+$/, "")}/`} // Avoid double slashes
+            href={baseUrl}
             className="gw-text-gray-300 gw-hover:gw-text-gray-500"
           >
             <MdHome size={22} />
