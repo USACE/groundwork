@@ -3,6 +3,7 @@ import { getNavHelper } from "internal-nav-helper";
 import { useConnect } from "redux-bundler-hook";
 import links from "./nav-links";
 import { FaGithub } from "react-icons/fa";
+import { normalizeUrlForHash } from "./app-url";
 
 const version = import.meta.env.PKG_VERSION;
 const BASE_URL = import.meta.env.BASE_URL;
@@ -38,9 +39,7 @@ function App() {
   return (
     <div
       onClick={getNavHelper((url) => {
-        // Remove BASE_URL# before it is added again by the navhelper so it can be included in the hrefs for copy url purposes
-        url = url.replace(`${BASE_URL}#`, "");
-        doUpdateHash(url);
+        doUpdateHash(normalizeUrlForHash(url, BASE_URL));
       })}
     >
       <SiteWrapper
