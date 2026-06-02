@@ -72,13 +72,10 @@ function GeoJSONLayerDocs() {
       "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson",
     type: "geojson",
     visible: true,
-    onClick:
-      (f, _) =>
-      ({ store }) => {
-        const props = f.getProperties();
-
-        console.log(props);
-      },
+    onClick: (f, _) => () => {
+      const props = f.getProperties();
+      window.alert(JSON.stringify(props, null, 2));
+    },
   });
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
@@ -110,8 +107,7 @@ function Component() {
         onClick:
             (f, _) => ({ store }) => {
                 const props = f.getProperties();
-
-                console.log(props)
+                window.alert(JSON.stringify(props, null, 2));
             },
     })
 
