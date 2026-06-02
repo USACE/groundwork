@@ -72,13 +72,10 @@ function FeatureServerDocs() {
     source:
       "https://services7.arcgis.com/n1YM8pTrFmm7L4hs/arcgis/rest/services/usace_river_mile_markers/FeatureServer/0",
     type: "esrijson",
-    onClick:
-      (f, _) =>
-      ({ store }) => {
-        const props = f.getProperties();
-
-        console.log(props);
-      },
+    onClick: (f) => () => {
+      const props = f.getProperties();
+      window.alert(JSON.stringify(props, null, 2));
+    },
   });
   const esriPolygonLayer = new GeoJSONLayer({
     id: "usace-districts",
@@ -118,8 +115,8 @@ function Component() {
          onClick:
             (f, _) => ({ store }) => {
                 const props = f.getProperties();
-
-                console.log(props)
+                // show the user the props
+                window.alert(JSON.stringify(props, null,2));
             }
     })
     const esriPolygonLayer = new GeoJSONLayer({
