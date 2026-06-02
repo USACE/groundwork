@@ -15,18 +15,20 @@ import DocsPage from "../_docs-page";
 
 import { FaQuestionCircle } from "react-icons/fa";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Mapping",
-    href: "/docs/mapping",
+    href: `${BASE_URL}#/docs/mapping`,
   },
   {
     text: "Toolbar",
-    href: "/docs/mapping/toolbar",
+    href: `${BASE_URL}#/docs/mapping/toolbar`,
   },
 ];
 
