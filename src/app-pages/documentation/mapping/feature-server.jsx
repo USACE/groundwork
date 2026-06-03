@@ -106,7 +106,7 @@ function FeatureServerDocs() {
         </div>
         {/* Example code */}
         <CodeExample
-          code={`import { GeoJSON, Map, MapLayout } from "@usace/groundwork-geo";
+          code={`import { GeoJSONLayer, Map, MapLayout } from "@usace/groundwork-geo";
 
 function Component() {
     const esriPointLayer = new GeoJSONLayer({
