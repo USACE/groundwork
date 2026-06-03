@@ -57,6 +57,7 @@ function MapLayoutDocs() {
         </Text>
         <CodeExample
           code={`import { Map, MapLayout } from "@usace/groundwork-geo";
+import { LeftSidebar, TopToolbar } from "../tools"; 
 
 function Component() {
     return (
