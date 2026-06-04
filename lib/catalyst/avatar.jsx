@@ -51,7 +51,7 @@ export function Avatar({
       {/* Add an inset border that sits on top of the image */}
       <span
         className="gw-ring-1 gw-ring-inset gw-ring-black/5 gw-dark:gw-ring-white/5 gw-forced-colors:gw-outline"
-        gw-aria-hidden="gw-true"
+        aria-hidden="true"
       />
     </span>
   );

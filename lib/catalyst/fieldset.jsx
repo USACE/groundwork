@@ -72,7 +72,7 @@ export function Label({ className, ...props }) {
   );
 }
 
-export function Description({ className, disabled, ...props }) {
+export function Description({ className, ...props }) {
   return (
     <HeadlessDescription
       {...props}
@@ -85,7 +85,7 @@ export function Description({ className, disabled, ...props }) {
   );
 }
 
-export function ErrorMessage({ className, disabled, ...props }) {
+export function ErrorMessage({ className, ...props }) {
   return (
     <HeadlessDescription
       {...props}

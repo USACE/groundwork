@@ -71,7 +71,7 @@ const componentProps_ProfileDropdown = [
 ];
 
 function validateEmail(email) {
-  const re = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+  const re = /^[A-Za-z0-9_!#$%&'*+/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
   return re.test(email);
 }
 

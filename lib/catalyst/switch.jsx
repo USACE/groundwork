@@ -140,7 +140,7 @@ const colors = {
   ],
 };
 
-export function Switch({ color = "dark/zinc", className, children, ...props }) {
+export function Switch({ color = "dark/zinc", className, ...props }) {
   return (
     <HeadlessSwitch
       data-slot="control"
