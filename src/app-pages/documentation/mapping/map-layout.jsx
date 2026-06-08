@@ -25,7 +25,7 @@ const componentProps = [
     desc: "A React component that will sit above the map, positioned along the right edge.",
   },
   {
-    name: "leftToolbar",
+    name: "leftSidebar",
     type: "Component",
     default: "null",
     desc: "A React component that will sit above the map, positioned along the left edge.",
