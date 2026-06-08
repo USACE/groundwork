@@ -257,4 +257,61 @@ export default [
       },
     ],
   },
+  {
+    id: "mapping",
+    text: "Mapping",
+    href: `${BASE_URL}#/docs/mapping`,
+    children: [
+      {
+        id: "map-layout",
+        text: "Map Layout",
+        href: `${BASE_URL}#/docs/mapping/map-layout`,
+      },
+      {
+        id: "map",
+        text: "Map",
+        href: `${BASE_URL}#/docs/mapping/map`,
+      },
+      {
+        id: "layer",
+        text: "Layer",
+        href: `${BASE_URL}#/docs/mapping/layer`,
+      },
+      {
+        id: "geojson-layer",
+        text: "GeoJSON Layer",
+        href: `${BASE_URL}#/docs/mapping/geojson-layer`,
+      },
+      {
+        id: "feature-server",
+        text: "Feature Server",
+        href: `${BASE_URL}#/docs/mapping/feature-server`,
+      },
+      {
+        id: "map-server",
+        text: "Map Server",
+        href: `${BASE_URL}#/docs/mapping/map-server`,
+      },
+      {
+        id: "tile-layer",
+        text: "XYZ Tile Layer",
+        href: `${BASE_URL}#/docs/mapping/tile-layer`,
+      },
+      {
+        id: "toolbar",
+        text: "Toolbar",
+        href: `${BASE_URL}#/docs/mapping/toolbar`,
+      },
+      {
+        id: "theme",
+        text: "Theme",
+        href: `${BASE_URL}#/docs/mapping/theme`,
+      },
+      {
+        id: "styles",
+        text: "Styles",
+        href: `${BASE_URL}#/docs/mapping/styles`,
+      },
+    ],
+  },
 ];
