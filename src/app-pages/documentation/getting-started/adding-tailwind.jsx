@@ -1,5 +1,4 @@
-import { UsaceBox, Code, Text, H3, H4, Divider, Badge } from "../../../../lib";
-import { CodeBlock } from "../../../app-components/code-block";
+import { UsaceBox, Code, Text, H3, Divider, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 import { TbPlayerTrackNext } from "react-icons/tb";

@@ -26,10 +26,10 @@ export function PaginationPrevious({ href = null, children = "Previous" }) {
       >
         <svg
           className="gw-stroke-current"
-          gw-data-slot="gw-icon"
-          gw-viewBox="gw-0 gw-0 gw-16 gw-16"
-          gw-fill="gw-none"
-          gw-aria-hidden="gw-true"
+          data-slot="icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
         >
           <path
             d="M2.75 8H13.25M2.75 8L5.25 5.5M2.75 8L5.25 10.5"
@@ -55,10 +55,10 @@ export function PaginationNext({ href = null, children = "Next" }) {
         {children}
         <svg
           className="gw-stroke-current"
-          gw-data-slot="gw-icon"
-          gw-viewBox="gw-0 gw-0 gw-16 gw-16"
-          gw-fill="gw-none"
-          gw-aria-hidden="gw-true"
+          data-slot="icon"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
         >
           <path
             d="M13.25 8L2.75 8M13.25 8L10.75 10.5M13.25 8L10.75 5.5"
