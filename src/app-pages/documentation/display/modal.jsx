@@ -134,7 +134,7 @@ function ModalDocs() {
           onClose={() => setIsOpen(false)}
           dialogTitle="QPF Forecast"
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
-          size="2xl"
+          size="4xl"
           staticWidth={true}
           footer={
             <div className="gw-flex gw-justify-end gw-gap-4">

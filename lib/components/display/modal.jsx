@@ -20,6 +20,29 @@ const WIDTH_OPTIONS = {
   "5xl": "max-w-5xl",
 };
 
+// Set initial window size and track window resize to handle responsive formatting.
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    windowWidth: undefined,
+    windowHeight: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial size
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
+}
+
 const roleOptions = ["dialog", "alertdialog"];
 
 function Modal({
@@ -34,7 +57,7 @@ function Modal({
   dialogPanelTransition = false,
   unmount = true,
   role = "dialog",
-  size = "2xl",
+  size,
   className,
   background,
   children,
@@ -64,6 +87,32 @@ function Modal({
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [resizing, setResizing] = useState(false);
+  const { windowWidth, windowHeight } = useWindowSize();
+
+  //set the plot size dynamically based on the initial screen size
+  useEffect(() => {
+    if (!windowHeight || !windowWidth) {
+      return;
+    }
+    // use functions to format plot width and height
+    //If a phone in portrait, fill most of the screen
+    if (windowWidth < 500) {
+      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.75 });
+      return;
+    }
+    //If a phone in landscape, only fill half the screen
+    if (windowHeight < 500) {
+      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.7 });
+      return;
+    }
+    //if window width is less than window height (portrait mode on tablet or other device), fill most of the screen
+    if (windowWidth < windowHeight) {
+      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.75 });
+      return;
+    }
+    //if landscape mode on large device, limit the width of the plot
+    setDimensions({ width: windowWidth * 0.5, height: windowHeight * 0.75 });
+  }, [windowWidth, windowHeight]);
 
   const handleMouseDown = (e) => {
     const rect = panelRef.current.getBoundingClientRect();
@@ -79,10 +128,20 @@ function Modal({
       });
     } else if (resizing) {
       const rect = panelRef.current.getBoundingClientRect();
-      setDimensions({
-        width: Math.max(300, e.clientX - rect.left),
-        height: Math.max(200, e.clientY - rect.top),
-      });
+      if (
+        e.clientX - rect.left > windowWidth ||
+        e.clientY - rect.top > windowHeight
+      ) {
+        setDimensions({
+          width: Math.min(windowWidth, e.clientX - rect.left),
+          height: Math.min(windowHeight, e.clientY - rect.top),
+        });
+      } else {
+        setDimensions({
+          width: Math.max(300, e.clientX - rect.left),
+          height: Math.max(200, e.clientY - rect.top),
+        });
+      }
     }
   };
 
@@ -113,24 +172,44 @@ function Modal({
       unmount={unmount}
       role={role}
       className={gwMerge("gw-relative", "gw-z-[200]", className)}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: background,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "auto",
+        zIndex: 1000 /* Ensure it's on top of other content */,
+      }}
     >
       <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
       <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: background /* Dark semi-transparent background */,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: 1000 /* Ensure it's on top of other content */,
-        }}
+        style={
+          ({
+            background: "white",
+            padding: "20px",
+            overflow: "hidden",
+            borderRadius: "5px",
+            zIndex: 1001,
+          },
+          dimensions.width && dimensions.height
+            ? {
+                width: dimensions.width,
+                height: dimensions.height,
+                maxWidth: widthClass,
+                maxHeight: "95%",
+                //minWidth: "50%",
+              }
+            : undefined)
+        }
       >
-        {/*className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4"*/}
-        <div className="gw-flex gw-min-h-full gw-items-center gw-justify-center">
+        <div className="">
+          {" "}
+          {/*gw-flex gw-min-h-full gw-items-center gw-justify-center*/}
           <div
             className="gw-relative"
             style={{ top: position.y, left: position.x }}
@@ -139,23 +218,12 @@ function Modal({
             ref={panelRef}
             className={gwMerge(
               widthClass,
-              "gw-space-y-4",
               "gw-border",
               "gw-rounded-lg",
               "gw-shadow-lg",
               "gw-bg-white",
               "gw-relative",
             )}
-            style={
-              dimensions.width && dimensions.height
-                ? {
-                    width: dimensions.width,
-                    height: dimensions.height,
-                    maxWidth: "80vw",
-                    maxHeight: "90vh",
-                  }
-                : undefined
-            }
             transition={dialogPanelTransition}
           >
             {dialogTitle && (
