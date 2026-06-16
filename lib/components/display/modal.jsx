@@ -36,6 +36,7 @@ function Modal({
   role = "dialog",
   size = "2xl",
   className,
+  background,
   children,
 }) {
   const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["2xl"];
@@ -45,7 +46,6 @@ function Modal({
       `Modal: invalid size "${size}" passed. Falling back to "2xl".`,
     );
   }
-
   // Check if Role exists
   if (!roleOptions.includes(role)) {
     console.error(
@@ -115,7 +115,21 @@ function Modal({
       className={gwMerge("gw-relative", "gw-z-[200]", className)}
     >
       <DialogBackdrop className="gw-fixed gw-inset-0 gw-bg-black/30" />
-      <div className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4">
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: background /* Dark semi-transparent background */,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 1000 /* Ensure it's on top of other content */,
+        }}
+      >
+        {/*className="gw-fixed gw-inset-0 gw-w-screen gw-overflow-auto gw-p-4"*/}
         <div className="gw-flex gw-min-h-full gw-items-center gw-justify-center">
           <div
             className="gw-relative"

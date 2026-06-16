@@ -102,6 +102,12 @@ const componentProps = [
     default: "null",
     desc: "Additional class names to apply to the modal dialog.",
   },
+  {
+    name: "background",
+    type: "string",
+    default: "null",
+    desc: "Color of the background behind the overlay. Default is no color overlay.",
+  },
 ];
 
 function ModalDocs() {
@@ -144,6 +150,7 @@ function ModalDocs() {
               </Button>
             </div>
           }
+          background="rgba(0, 0, 0, 0.7)"
         >
           <div>
             {isLoading && (
@@ -224,6 +231,7 @@ function Example() {
               </Button>
             </div>
           }
+          background="rgba(0, 0, 0, 0.7)"
         >
           <div>
             {isLoading && (
