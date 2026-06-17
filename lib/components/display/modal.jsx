@@ -36,7 +36,7 @@ function useWindowSize() {
     }
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Set initial size
+    handleResize(); // set size when window changes
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -83,8 +83,7 @@ function Modal({
   const panelRef = useRef(null);
   // Modal Defaults
   const [dimensions, setDimensions] = useState({ width: 600, height: 400 });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [dragging, setDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 }); //May not be needed
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [resizing, setResizing] = useState(false);
   const { windowWidth, windowHeight } = useWindowSize();
@@ -114,29 +113,28 @@ function Modal({
     setDimensions({ width: windowWidth * 0.5, height: windowHeight * 0.75 });
   }, [windowWidth, windowHeight]);
 
-  const handleMouseDown = (e) => {
-    const rect = panelRef.current.getBoundingClientRect();
+  const handlePointerDown = (e) => {
+    if (!panelRef.current) return;
+    const rect = panelRef?.current?.getBoundingClientRect();
     setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    setDragging(true);
   };
 
-  const handleMouseMove = (e) => {
-    if (dragging) {
-      setPosition({
-        x: e.clientX - offset.x,
-        y: e.clientY - offset.y,
-      });
-    } else if (resizing) {
-      const rect = panelRef.current.getBoundingClientRect();
+  const handleMove = (e) => {
+    if (!panelRef.current) return;
+    if (resizing) {
+      const rect = panelRef?.current?.getBoundingClientRect();
+      //check if the resized modal window exceeds the height or width of the window
       if (
         e.clientX - rect.left > windowWidth ||
         e.clientY - rect.top > windowHeight
       ) {
+        //if yet, set the modal window at the smallest of either the window height/width or user input width/height
         setDimensions({
           width: Math.min(windowWidth, e.clientX - rect.left),
           height: Math.min(windowHeight, e.clientY - rect.top),
         });
       } else {
+        //Set the minimum modal size (300 width, 200 height)
         setDimensions({
           width: Math.max(300, e.clientX - rect.left),
           height: Math.max(200, e.clientY - rect.top),
@@ -145,27 +143,37 @@ function Modal({
     }
   };
 
-  const handleMouseUp = () => {
-    setDragging(false);
+  const handleRelease = () => {
     setResizing(false);
   };
 
   useEffect(() => {
-    if (dragging || resizing) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-    }
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
+    //Converted from mouse based events to pointer events. Pointer events handle mouse/stylus/trackpad/finger inputs.
+    const onPointerMove = (event) => {
+      handleMove(event);
     };
-  }, [dragging, resizing, offset]);
+
+    if (resizing) {
+      // handle resizing inputs
+      window.addEventListener("pointermove", onPointerMove);
+      window.addEventListener("pointerup", handleRelease);
+      window.addEventListener("pointercancel", handleRelease); // Fired if the OS interrupts the gesture
+    }
+
+    return () => {
+      // remove event inputs when done
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", handleRelease);
+      window.removeEventListener("pointercancel", handleRelease);
+    };
+    // Ensure all values read by handleMove are in the dependency array to prevent stale closures
+  }, [resizing, offset, windowWidth, windowHeight]);
 
   return (
     <Dialog
       open={opened}
       onClose={onClose}
-      onMouseDown={handleMouseDown}
+      onPointerDown={handlePointerDown}
       static={isStatic}
       autoFocus={autoFocus}
       transition={dialogTransition}
@@ -244,7 +252,7 @@ function Modal({
             <div className="gw-flex gw-items-center  gw-bg-gray-100 gw-rounded-b">
               <div className="gw-px-4 gw-py-4">{footer}</div>
               <div
-                onMouseDown={(e) => {
+                onPointerDown={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   setResizing(true);
@@ -257,6 +265,7 @@ function Modal({
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "bottom right",
                   backgroundSize: "100% 100%",
+                  touchAction: "none",
                 }}
                 title="Resize"
               />
