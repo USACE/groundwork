@@ -9,15 +9,13 @@ import gwMerge from "../../gw-merge";
 import { useRef, useState, useEffect } from "react";
 
 const WIDTH_OPTIONS = {
-  xs: "max-w-xs",
-  sm: "max-w-sm",
-  md: "max-w-md",
-  lg: "max-w-lg",
-  xl: "max-w-xl",
-  "2xl": "max-w-2xl",
-  "3xl": "max-w-3xl",
-  "4xl": "max-w-4xl",
-  "5xl": "max-w-5xl",
+  xs: 300,
+  sm: 400,
+  md: 600,
+  lg: 800,
+  xl: 1140,
+  "2xl": 1600,
+  "4xl": 2000,
 };
 
 // Set initial window size and track window resize to handle responsive formatting.
@@ -62,12 +60,10 @@ function Modal({
   background,
   children,
 }) {
-  const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["2xl"];
+  const widthClass = WIDTH_OPTIONS[size] ?? WIDTH_OPTIONS["md"];
   // Check if the size exists
   if (!WIDTH_OPTIONS[size]) {
-    console.warn(
-      `Modal: invalid size "${size}" passed. Falling back to "2xl".`,
-    );
+    console.warn(`Modal: invalid size "${size}" passed. Falling back to "md".`);
   }
   // Check if Role exists
   if (!roleOptions.includes(role)) {
@@ -82,7 +78,10 @@ function Modal({
 
   const panelRef = useRef(null);
   // Modal Defaults
-  const [dimensions, setDimensions] = useState({ width: 600, height: 400 });
+  const [dimensions, setDimensions] = useState({
+    width: widthClass,
+    height: null,
+  });
   const [position, setPosition] = useState({ x: 0, y: 0 }); //May not be needed
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [resizing, setResizing] = useState(false);
@@ -93,25 +92,12 @@ function Modal({
     if (!windowHeight || !windowWidth) {
       return;
     }
-    // use functions to format plot width and height
-    //If a phone in portrait, fill most of the screen
-    if (windowWidth < 500) {
-      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.75 });
-      return;
-    }
-    //If a phone in landscape, only fill half the screen
-    if (windowHeight < 500) {
-      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.7 });
-      return;
-    }
-    //if window width is less than window height (portrait mode on tablet or other device), fill most of the screen
-    if (windowWidth < windowHeight) {
-      setDimensions({ width: windowWidth * 0.75, height: windowHeight * 0.75 });
-      return;
-    }
-    //if landscape mode on large device, limit the width of the plot
-    setDimensions({ width: windowWidth * 0.5, height: windowHeight * 0.75 });
-  }, [windowWidth, windowHeight]);
+    //Set the dimensions to the smaller of 90% of the window width, or the user defined input. Set the height to 75% of window height
+    setDimensions({
+      width: Math.min(windowWidth * 0.9, widthClass),
+      height: windowHeight * 0.75,
+    });
+  }, [windowWidth, windowHeight, widthClass]);
 
   const handlePointerDown = (e) => {
     if (!panelRef.current) return;
@@ -208,7 +194,7 @@ function Modal({
             ? {
                 width: dimensions.width,
                 height: dimensions.height,
-                maxWidth: widthClass,
+                maxWidth: windowWidth,
                 maxHeight: "95%",
                 //minWidth: "50%",
               }

@@ -57,8 +57,8 @@ const componentProps = [
   {
     name: "size",
     type: "string",
-    default: "2xl",
-    desc: "Size of the modal dialog. Options include: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'.",
+    default: "md",
+    desc: "Size of the modal dialog. Options include: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl'.",
   },
   {
     name: "isStatic",
@@ -134,7 +134,7 @@ function ModalDocs() {
           onClose={() => setIsOpen(false)}
           dialogTitle="QPF Forecast"
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
-          size="4xl"
+          size="lg"
           staticWidth={true}
           footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
@@ -209,7 +209,7 @@ function Example() {
           onClose={() => setIsOpen(false)}
           dialogTitle="QPF Forecast"
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
-          size="2xl"
+          size="lg"
           staticWidth={true}
           footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
