@@ -48,11 +48,7 @@ const TestButton = ({ ...props }) => {
   );
 };
 const TestPanel = ({ children, ...props }) => {
-  return (
-    <Panel {...props}>
-      <h1>Hello World</h1>
-    </Panel>
-  );
+  return <Panel {...props}>{children ?? <h1>Hello World</h1>}</Panel>;
 };
 
 const TestTool = {

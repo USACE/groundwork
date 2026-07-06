@@ -1,4 +1,4 @@
-import { UsaceBox, Text, Code } from "../../../../lib";
+import { UsaceBox, Text } from "../../../../lib";
 import {
   Map,
   MapLayout,
