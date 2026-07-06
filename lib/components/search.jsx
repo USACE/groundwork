@@ -40,6 +40,7 @@ function SearchDotGov({ accessKey, affiliate, placeholder, ...props }) {
         setSearchString(e.target.value);
       }}
       onKeyUp={handleKeyUp}
+      placeholder={placeholder}
       {...props}
     />
   );

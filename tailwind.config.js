@@ -1,3 +1,5 @@
+import forms from "@tailwindcss/forms";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   prefix: "gw-",
@@ -32,5 +34,5 @@ export default {
     },
   },
   darkMode: "class",
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [forms],
 };
