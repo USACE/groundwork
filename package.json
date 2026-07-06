@@ -1,9 +1,13 @@
 {
   "name": "@usace/groundwork",
   "private": false,
-  "version": "3.15.2",
+  "version": "4.2.2",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USACE/groundwork.git"
+  },
   "main": "./dist/groundwork.umd.cjs",
   "module": "./dist/groundwork.es.js",
   "files": [
@@ -13,6 +17,18 @@
     ".": {
       "import": "./dist/groundwork.es.js",
       "require": "./dist/groundwork.umd.cjs"
+    },
+    "./groundwork.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
     },
     "./dist/*.css": {
       "import": "./dist/*.css",
@@ -39,6 +55,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@tailwindcss/forms": "^0.5.9",
+    "@usace/groundwork-geo": "^2.1.2",
     "internal-nav-helper": "^3.1.0",
     "react-icons": "^5.0.1",
     "redux-bundler": "^28.1.0",
@@ -65,7 +82,8 @@
     "prettier": "^3.6.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.13",
-    "vitest": "^2.1.1"
+    "typescript": "^6.0.3",
+    "vite": "^7.3.3",
+    "vitest": "^4.1.8"
   }
 }

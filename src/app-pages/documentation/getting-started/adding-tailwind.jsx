@@ -1,21 +1,22 @@
-import { UsaceBox, Code, Text, H3, H4, Divider, Badge } from "../../../../lib";
-import { CodeBlock } from "../../../app-components/code-block";
+import { UsaceBox, Code, Text, H3, Divider, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 import { TbPlayerTrackNext } from "react-icons/tb";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Adding Tailwind CSS",
-    href: "/#/docs/adding-tailwind",
+    href: `${BASE_URL}#/docs/adding-tailwind`,
   },
 ];
 
@@ -112,7 +113,7 @@ export default defineConfig({
           <Code className="!gw-font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
+import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   return (
@@ -146,7 +147,10 @@ export default App;`}
             reading to learn more.
           </P>
           <P>
-            <a href="/docs/client-side-routing" className="gw-underline">
+            <a
+              href={`${BASE_URL}#/docs/client-side-routing`}
+              className="gw-underline"
+            >
               <span className="gw-flex gw-items-center gw-gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>

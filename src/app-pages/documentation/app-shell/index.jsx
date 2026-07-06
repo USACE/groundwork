@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Application Shell",
-    href: "/#/docs/app-shell",
+    href: `${BASE_URL}#/docs/app-shell`,
   },
 ];
 
@@ -27,12 +29,12 @@ function AppShell() {
         <H4>Components</H4>
         <ul>
           <li>
-            <a href="/docs/app-shell/site-wrapper">
+            <a href={`${BASE_URL}#/docs/app-shell/site-wrapper`}>
               Site Wrapper - Add the standard header and footer to your pages
             </a>
           </li>
           <li>
-            <a href="/docs/app-shell/search">
+            <a href={`${BASE_URL}#/docs/app-shell/search`}>
               Search - Customizable search options
             </a>
           </li>

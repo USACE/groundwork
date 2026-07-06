@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "tailwindcss";
 import pkg from "./package.json";
 import { execFileSync } from "child_process";
 import path from "path";
@@ -33,8 +34,9 @@ function RoutesToLHCIPlugin() {
 
 export default defineConfig(({ mode }) => {
   if (mode === "lib") {
+    console.log("Building library");
     return {
-      plugins: [react()],
+      plugins: [react(), tailwindcss()],
       publicDir: false,
       build: {
         lib: {
@@ -45,6 +47,12 @@ export default defineConfig(({ mode }) => {
         rollupOptions: {
           external: ["react", "react-dom", "react/jsx-runtime"],
           output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name?.endsWith(".css")) {
+                return "groundwork.css";
+              }
+              return "[name][extname]";
+            },
             globals: {
               react: "React",
               "react-dom": "ReactDOM",
@@ -56,6 +64,7 @@ export default defineConfig(({ mode }) => {
     };
   }
 
+  console.log("Building preview app", mode);
   const base =
     mode === "production"
       ? "https://usace.github.io/groundwork/"

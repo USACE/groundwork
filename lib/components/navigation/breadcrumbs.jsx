@@ -42,7 +42,7 @@ function Breadcrumbs({ className, children, baseUrl }) {
       <li>
         <div>
           <Link
-            href={`${(baseUrl || "").replace(/\/+$/, "")}/`} // Avoid double slashes
+            href={baseUrl}
             className="gw-text-gray-300 gw-hover:gw-text-gray-500"
           >
             <MdHome size={22} />

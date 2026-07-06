@@ -2,10 +2,12 @@ import { UsaceBox, Text, Code, H4 } from "../../../lib";
 import CopyButton from "../../app-components/copy-button";
 import DocsPage from "./_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
 ];
 
@@ -30,7 +32,7 @@ function Docs() {
               Vite documentation
             </a>{" "}
             for more details on getting started or visit the{" "}
-            <a className="gw-underline" href="/docs/quick-start">
+            <a className="gw-underline" href={`${BASE_URL}#/docs/quick-start`}>
               quick start guide
             </a>{" "}
             for a step by step guide for getting set up using Vite with
@@ -67,13 +69,28 @@ function Docs() {
         </div>
         <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
           <Code className="gw-block gw-p-1 gw-px-2">
-            import "@usace/groundwork/dist/style.css"
+            import "@usace/groundwork/dist/groundwork.css"
           </Code>
-          <CopyButton text={`import "@usace/groundwork/dist/style.css"`} />
+          <CopyButton text={`import "@usace/groundwork/dist/groundwork.css"`} />
         </div>
         <Text>
-          Make sure to import style.css from Groundwork into your top-level
+          Make sure to import groundwork.css from Groundwork into your top-level
           component (i.e. App.jsx), then go build stuff with the components
+        </Text>
+
+        <H4 className="gw-mt-6">Contributing</H4>
+        <Text className="gw-mt-3">
+          If you are planning to contribute to Groundwork, review the{" "}
+          <a
+            className="gw-underline"
+            href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            contributing guide
+          </a>{" "}
+          for branch naming, pull request expectations, and version bump
+          labeling.
         </Text>
       </UsaceBox>
     </DocsPage>

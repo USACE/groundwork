@@ -8,7 +8,7 @@ function Card({ className, children, stretch = false, ...props }) {
       stretch ? "gw-self-stretch" : "",
       className,
     );
-  }, [className]);
+  }, [className, stretch]);
   return (
     <div className={cls} {...props}>
       {children}

@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Buttons",
-    href: "/#/docs/buttons",
+    href: `${BASE_URL}#/docs/buttons`,
   },
 ];
 
@@ -25,18 +27,18 @@ function Buttons() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/docs/buttons/generic-buttons">
+              <a href={`${BASE_URL}#/docs/buttons/generic-buttons`}>
                 Generic Buttons - All the flavors that come out of the box.
               </a>
             </li>
             <li>
-              <a href="/docs/buttons/ok-cancel">
+              <a href={`${BASE_URL}#/docs/buttons/ok-cancel`}>
                 Ok/Cancel - When you need a simple acknowledgement or a chance
                 to back out.
               </a>
             </li>
             <li>
-              <a href="/docs/buttons/delete-confirm">
+              <a href={`${BASE_URL}#/docs/buttons/delete-confirm`}>
                 Delete/Confirm - When you need to make sure the user wants to
                 delete something.
               </a>

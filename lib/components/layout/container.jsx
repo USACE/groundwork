@@ -8,7 +8,7 @@ function Container({ className, children, fluid }) {
       fluid ? "gw-max-w-screen" : "gw-max-w-screen-2xl",
       className,
     );
-  }, [className]);
+  }, [className, fluid]);
   return <div className={containerClass}>{children}</div>;
 }
 
