@@ -1,0 +1,39 @@
+name: React Compatibility
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build with React ${{ matrix.react }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        react: ["18", "19"]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install React ${{ matrix.react }}
+        run: npm install --no-save react@${{ matrix.react }} react-dom@${{ matrix.react }} @types/react@${{ matrix.react }} @types/react-dom@${{ matrix.react }}
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build library
+        run: npm run build-lib
+
+      - name: Build docs
+        run: npm run build-docs
