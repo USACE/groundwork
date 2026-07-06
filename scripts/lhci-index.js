@@ -35,7 +35,7 @@ for (const file of fs.readdirSync(dir)) {
 
 // Build rows by reading ONLY the *.report.json files that have a matching *.report.html
 const rows = [];
-for (const [base, rec] of entries) {
+for (const [, rec] of entries) {
   if (!rec.json || !rec.html) continue;
   try {
     const data = JSON.parse(fs.readFileSync(rec.json, "utf-8"));

@@ -11,6 +11,12 @@ module.exports = {
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
+  overrides: [
+    {
+      files: ["scripts/**/*.js", "vite.config.js"],
+      env: { node: true },
+    },
+  ],
   rules: {
     "react/jsx-no-target-blank": "off",
     "react/no-unescaped-entities": "off",
@@ -19,11 +25,14 @@ module.exports = {
       "off",
       { allowConstantExport: true },
     ],
-    "no-unused-vars": ["error", { 
-      "vars": "all", 
-      "args": "after-used", 
-      "ignoreRestSiblings": false,
-      "argsIgnorePattern": "^_"
-    }],
+    "no-unused-vars": [
+      "error",
+      {
+        vars: "all",
+        args: "after-used",
+        ignoreRestSiblings: false,
+        argsIgnorePattern: "^_",
+      },
+    ],
   },
 };
