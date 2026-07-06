@@ -49,7 +49,7 @@ function Header({ links, title, subtitle, navRight, fluidNav, homeUrl }) {
   );
   return (
     <>
-      <header className="gw-flex gw-flex-col gw-w-full gw-sticky gw-top-0 gw-z-20">
+      <header className="gw-flex gw-flex-col gw-w-full gw-sticky gw-top-0 gw-z-[150]">
         <div>
           <div className="gw-min-h-12 gw-bg-nav-black gw-text-white">
             <div className={navContainerClass}>

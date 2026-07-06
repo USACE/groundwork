@@ -51,7 +51,7 @@ function OverlayLinks({ links = [], onClose }) {
     }
   };
   return (
-    <div className="gw-fixed gw-top-0 gw-left-0 gw-h-full gw-right-0 gw-bg-nav-black gw-bg-opacity-90 gw-z-50">
+    <div className="gw-fixed gw-top-0 gw-left-0 gw-h-full gw-right-0 gw-bg-nav-black gw-bg-opacity-90 gw-z-[200]">
       <div className="gw-flex gw-justify-end">
         <Button style="plain" color="white" size="lg" onClick={handleClose}>
           <VscClose />
