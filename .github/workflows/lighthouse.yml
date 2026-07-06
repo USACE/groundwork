@@ -1,8 +1,7 @@
 name: Accessibility (Lighthouse Accessibility / Performance Scan)
 
 on:
-    pull_request:
-        branches: [main]
+    workflow_dispatch:
     # Run at 13:00 on the first day of each month
     schedule:
         - cron: "0 13 1 * *"
