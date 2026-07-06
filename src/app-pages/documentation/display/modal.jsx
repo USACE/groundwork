@@ -43,10 +43,10 @@ const componentProps = [
     desc: "Description of the modal dialog.",
   },
   {
-    name: "buttons",
+    name: "footer",
     type: "ReactNode",
     default: "null",
-    desc: "Button components to display at the bottom of the modal.",
+    desc: "Footer components to display at the bottom of the modal.",
   },
   {
     name: "children",
@@ -57,8 +57,8 @@ const componentProps = [
   {
     name: "size",
     type: "string",
-    default: "2xl",
-    desc: "Size of the modal dialog. Options include: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl', 'full'.",
+    default: "md",
+    desc: "Size of the modal dialog. Options include: 'sx', 'sm', 'md', 'lg', 'xl', '2xl', '4xl'.",
   },
   {
     name: "isStatic",
@@ -102,6 +102,12 @@ const componentProps = [
     default: "null",
     desc: "Additional class names to apply to the modal dialog.",
   },
+  {
+    name: "background",
+    type: "string",
+    default: "null",
+    desc: "Color of the background behind the overlay. Default is no color overlay.",
+  },
 ];
 
 function ModalDocs() {
@@ -128,9 +134,9 @@ function ModalDocs() {
           onClose={() => setIsOpen(false)}
           dialogTitle="QPF Forecast"
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
-          size="2xl"
+          size="lg"
           staticWidth={true}
-          buttons={
+          footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
               <Button className="gw-w-full" onClick={refreshImage}>
                 Refresh Image
@@ -144,6 +150,7 @@ function ModalDocs() {
               </Button>
             </div>
           }
+          background="rgba(0, 0, 0, 0.7)"
         >
           <div>
             {isLoading && (
@@ -202,9 +209,9 @@ function Example() {
           onClose={() => setIsOpen(false)}
           dialogTitle="QPF Forecast"
           dialogDescription="1-7 Day Quantitative Precipitation Forecast"
-          size="2xl"
+          size="lg"
           staticWidth={true}
-          buttons={
+          footer={
             <div className="gw-flex gw-justify-end gw-gap-4">
               <Button
                 className="gw-w-full"
@@ -224,6 +231,7 @@ function Example() {
               </Button>
             </div>
           }
+          background="rgba(0, 0, 0, 0.7)"
         >
           <div>
             {isLoading && (
