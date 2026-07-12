@@ -278,6 +278,11 @@ export default [
         href: `${BASE_URL}#/docs/mapping/layer`,
       },
       {
+        id: "status-marker-layer",
+        text: "Status Marker Layer",
+        href: `${BASE_URL}#/docs/mapping/status-marker-layer`,
+      },
+      {
         id: "geojson-layer",
         text: "GeoJSON Layer",
         href: `${BASE_URL}#/docs/mapping/geojson-layer`,
