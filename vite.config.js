@@ -19,6 +19,15 @@ const libraryAssetFileNames = (assetInfo) => {
   }
   return "assets/[name][extname]";
 };
+const removeCssEntrypointPlugin = (fileName) => ({
+  name: "remove-css-entrypoint",
+  closeBundle() {
+    const filePath = path.resolve("dist", fileName);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
+  },
+});
 
 function RoutesToLHCIPlugin() {
   return {
@@ -82,6 +91,28 @@ export default defineConfig(({ mode }) => {
               },
             },
           ],
+        },
+      },
+    };
+  }
+
+  if (mode === "css") {
+    console.log("Building library CSS");
+    return {
+      plugins: [react(), tailwindcss(), removeCssEntrypointPlugin("style.js")],
+      publicDir: false,
+      build: {
+        emptyOutDir: false,
+        lib: {
+          entry: "lib/style-entry.js",
+          name: "GroundworkStyles",
+          fileName: () => "style.js",
+          formats: ["es"],
+        },
+        rollupOptions: {
+          output: {
+            assetFileNames: libraryAssetFileNames,
+          },
         },
       },
     };
