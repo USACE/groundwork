@@ -7,6 +7,27 @@ import path from "path";
 import fs from "fs";
 
 const LHCI_PREFIX = process.env.LHCI_PREFIX || "http://localhost:5173/";
+const externalPackages = [
+  ...Object.keys(pkg.dependencies ?? {}),
+  ...Object.keys(pkg.peerDependencies ?? {}),
+];
+const isExternalPackage = (id) =>
+  externalPackages.some((name) => id === name || id.startsWith(`${name}/`));
+const libraryAssetFileNames = (assetInfo) => {
+  if (assetInfo.name?.endsWith(".css")) {
+    return "groundwork.css";
+  }
+  return "assets/[name][extname]";
+};
+const removeCssEntrypointPlugin = (fileName) => ({
+  name: "remove-css-entrypoint",
+  closeBundle() {
+    const filePath = path.resolve("dist", fileName);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
+  },
+});
 
 function RoutesToLHCIPlugin() {
   return {
@@ -41,23 +62,56 @@ export default defineConfig(({ mode }) => {
       build: {
         lib: {
           name: "Groundwork",
-          fileName: (format) => `groundwork.${format}.js`,
+          fileName: (format) =>
+            format === "umd" ? "groundwork.umd.cjs" : "index.js",
           entry: "lib/index.jsx",
+          formats: ["es", "umd"],
         },
         rollupOptions: {
-          external: ["react", "react-dom", "react/jsx-runtime"],
+          external: isExternalPackage,
+          output: [
+            {
+              format: "es",
+              dir: "dist",
+              preserveModules: true,
+              preserveModulesRoot: "lib",
+              entryFileNames: "es/[name].js",
+              chunkFileNames: "es/chunks/[name]-[hash].js",
+              assetFileNames: libraryAssetFileNames,
+            },
+            {
+              format: "umd",
+              name: "Groundwork",
+              entryFileNames: "groundwork.umd.cjs",
+              assetFileNames: libraryAssetFileNames,
+              globals: {
+                react: "React",
+                "react-dom": "ReactDOM",
+                "react/jsx-runtime": "ReactJsxRuntime",
+              },
+            },
+          ],
+        },
+      },
+    };
+  }
+
+  if (mode === "css") {
+    console.log("Building library CSS");
+    return {
+      plugins: [react(), tailwindcss(), removeCssEntrypointPlugin("style.js")],
+      publicDir: false,
+      build: {
+        emptyOutDir: false,
+        lib: {
+          entry: "lib/style-entry.js",
+          name: "GroundworkStyles",
+          fileName: () => "style.js",
+          formats: ["es"],
+        },
+        rollupOptions: {
           output: {
-            assetFileNames: (assetInfo) => {
-              if (assetInfo.name?.endsWith(".css")) {
-                return "groundwork.css";
-              }
-              return "[name][extname]";
-            },
-            globals: {
-              react: "React",
-              "react-dom": "ReactDOM",
-              "react/jsx-runtime": "ReactJsxRuntime",
-            },
+            assetFileNames: libraryAssetFileNames,
           },
         },
       },
