@@ -7,6 +7,18 @@ import path from "path";
 import fs from "fs";
 
 const LHCI_PREFIX = process.env.LHCI_PREFIX || "http://localhost:5173/";
+const externalPackages = [
+  ...Object.keys(pkg.dependencies ?? {}),
+  ...Object.keys(pkg.peerDependencies ?? {}),
+];
+const isExternalPackage = (id) =>
+  externalPackages.some((name) => id === name || id.startsWith(`${name}/`));
+const libraryAssetFileNames = (assetInfo) => {
+  if (assetInfo.name?.endsWith(".css")) {
+    return "groundwork.css";
+  }
+  return "assets/[name][extname]";
+};
 
 function RoutesToLHCIPlugin() {
   return {
@@ -41,24 +53,35 @@ export default defineConfig(({ mode }) => {
       build: {
         lib: {
           name: "Groundwork",
-          fileName: (format) => `groundwork.${format}.js`,
+          fileName: (format) =>
+            format === "umd" ? "groundwork.umd.cjs" : "index.js",
           entry: "lib/index.jsx",
+          formats: ["es", "umd"],
         },
         rollupOptions: {
-          external: ["react", "react-dom", "react/jsx-runtime"],
-          output: {
-            assetFileNames: (assetInfo) => {
-              if (assetInfo.name?.endsWith(".css")) {
-                return "groundwork.css";
-              }
-              return "[name][extname]";
+          external: isExternalPackage,
+          output: [
+            {
+              format: "es",
+              dir: "dist",
+              preserveModules: true,
+              preserveModulesRoot: "lib",
+              entryFileNames: "es/[name].js",
+              chunkFileNames: "es/chunks/[name]-[hash].js",
+              assetFileNames: libraryAssetFileNames,
             },
-            globals: {
-              react: "React",
-              "react-dom": "ReactDOM",
-              "react/jsx-runtime": "ReactJsxRuntime",
+            {
+              format: "umd",
+              name: "Groundwork",
+              entryFileNames: "groundwork.umd.cjs",
+              assetFileNames: libraryAssetFileNames,
+              globals: {
+                react: "React",
+                "react-dom": "ReactDOM",
+                "react/jsx-runtime": "ReactJsxRuntime",
+              },
             },
-          },
+          ],
         },
       },
     };
