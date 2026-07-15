@@ -1,6 +1,26 @@
-import essayons from "../../img/essayonscrest.png";
+import { useEffect, useState } from "react";
 
 function Essayons() {
+  const [essayons, setEssayons] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    import("../../img/essayonscrest.png").then((module) => {
+      if (!cancelled) {
+        setEssayons(module.default);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!essayons) {
+    return null;
+  }
+
   return (
     <img
       aria-label="USACE Castle"
