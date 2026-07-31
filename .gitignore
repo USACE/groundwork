@@ -29,3 +29,6 @@ docs
 # Lighthouse
 .lighthouseci/*
 .lighthouserc.gen.json
+
+*storybook.log
+storybook-static
