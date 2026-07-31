@@ -37,7 +37,7 @@ jobs:
       - name: install node for react ui and tests
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - name: Cache Storybook + Vite deps
