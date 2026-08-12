@@ -7,7 +7,7 @@ import Link from "./link";
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
-      "gw-text-gray-300 hover:gw-text-gray-500 last:gw-text-gray-900",
+      "gw-text-gray-500 hover:gw-text-gray-700 last:gw-text-gray-900",
       className,
     );
   }, [className]);
@@ -17,7 +17,7 @@ function BreadcrumbItem({ className, href, text }) {
         <VscChevronRight
           size={18}
           aria-hidden="true"
-          color="rgb(156 163 175)"
+          color="gw-text-gray-500"
         />
         <Link href={href} className="gw-ml-2 gw-text-nowrap hover:gw-underline">
           {text}
@@ -40,7 +40,7 @@ function Breadcrumbs({ className, children, baseUrl }) {
         <div>
           <Link
             href={baseUrl}
-            className="gw-text-gray-300 gw-hover:gw-text-gray-500"
+            className="gw-text-gray-500 hover:gw-text-gray-700"
           >
             <MdHome size={22} />
             <span className="gw-sr-only">Home</span>
