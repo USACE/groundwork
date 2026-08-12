@@ -19,7 +19,10 @@ function BreadcrumbItem({ className, href, text }) {
           aria-hidden="true"
           color="gw-text-gray-500"
         />
-        <Link href={href} className="gw-ml-2 gw-text-nowrap hover:gw-underline">
+        <Link
+          href={href}
+          className="gw-ml-2 gw-text-nowrap  gw-hover:gw-underline"
+        >
           {text}
         </Link>
       </div>
