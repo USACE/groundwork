@@ -35,5 +35,8 @@ jobs:
       - name: Build library
         run: npm run build-lib
 
+      - name: Verify library bundle
+        run: npm run verify-lib
+
       - name: Build docs
         run: npm run build-docs
