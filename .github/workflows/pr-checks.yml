@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
@@ -27,3 +27,46 @@ jobs:
 
       - name: Test
         run: npm test -- --run
+
+  storybook-tests:
+    name: Storybook Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6.0.2
+      - name: install node for react ui and tests
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Cache Storybook + Vite deps
+        # Storybook+vitest's browser-mode dep optimizer (sb-vitest/deps/*) is
+        # flaky on a cold cache: when vite re-bundles deps mid-test the URL
+        # query string changes and any module already loading from the old URL
+        # 404s with "Failed to fetch dynamically imported module". Caching the
+        # warmed dir between runs avoids the cold path entirely. Key is
+        # content-addressed by the lockfile + storybook/vite config so any
+        # change there invalidates and rebuilds the cache.
+        uses: actions/cache@v5.0.4
+        with:
+          path: node_modules/.cache/storybook
+          key: storybook-cache-${{ runner.os }}-${{ hashFiles('package-lock.json', '.storybook/**', 'vite.config.js') }}
+          restore-keys: |
+            storybook-cache-${{ runner.os }}-
+      - name: Install/Setup playwright
+        run : |
+          npm ci --ignore-scripts
+          npx --no-install --ignore-scripts playwright install
+      - name: Storybook tests (with retry on flake)
+        # Wraps just the storybook task in a 2-attempt retry. Each attempt is a
+        # fresh vitest process (fresh dep-optimizer state); the on-disk cache
+        # warmed by attempt #1 carries into attempt #2, so the rerun is fast
+        # and deterministic. The vitest test.retry inside the run doesn't help
+        # because the failure is at file-import level, not test runtime.
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3.0.2
+        with:
+          max_attempts: 2
+          timeout_minutes: 15
+          command: npm run test:browser
+
