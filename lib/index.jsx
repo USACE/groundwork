@@ -1,6 +1,3 @@
-// bundle tailwind
-import "./styles.css";
-
 // utilities
 export { gwMerge } from "./gw-merge";
 
