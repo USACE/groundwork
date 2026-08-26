@@ -34,6 +34,12 @@ const siteWrapperProps = [
     desc: "A custom component that will render to the right of the header links.",
   },
   {
+    name: "collapseHeader",
+    type: "boolean",
+    default: "false",
+    desc: "If true, displays only the compact black navigation bar. The government website banner and the title and subtitle section are hidden.",
+  },
+  {
     name: "usaBanner",
     type: "boolean",
     default: "true",
@@ -237,6 +243,16 @@ function App() {
 
 export default App;
 `}
+        />
+        <Text className="gw-pt-3">
+          Set <Code>collapseHeader</Code> when a page needs more vertical space.
+          The compact state keeps the home link, navigation, custom controls,
+          and mobile menu available.
+        </Text>
+        <CodeExample
+          code={`<SiteWrapper links={links} collapseHeader>
+  <Route />
+</SiteWrapper>`}
         />
         <div className="gw-font-bold gw-text-lg gw-pt-6">
           Component API - <Code className="gw-p-2">{`<SiteWrapper />`}</Code>

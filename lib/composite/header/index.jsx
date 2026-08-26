@@ -41,7 +41,15 @@ function Logo({ homeUrl }) {
   );
 }
 
-function Header({ links, title, subtitle, navRight, fluidNav, homeUrl }) {
+function Header({
+  links,
+  title,
+  subtitle,
+  navRight,
+  fluidNav,
+  homeUrl,
+  collapseHeader = false,
+}) {
   const [showOverlayLinks, setShowOverlayLinks] = useState(false);
   const navContainerClass = gwMerge(
     "gw-w-full gw-mx-auto gw-px-4 gw-box-border",
@@ -72,14 +80,16 @@ function Header({ links, title, subtitle, navRight, fluidNav, homeUrl }) {
               </div>
             </div>
           </div>
-          <div className="gw-min-h-4 gw-py-2 sm:gw-py-0 gw-bg-nav-dark-gray sm:gw-bg-nav-gray">
-            <div className={navContainerClass}>
-              <div className="gw-flex gw-justify-between gw-items-center">
-                <span className="sm:gw-w-[94px] gw-shrink-0 "></span>
-                <Title title={title} subtitle={subtitle} />
+          {!collapseHeader && (
+            <div className="gw-min-h-4 gw-py-2 sm:gw-py-0 gw-bg-nav-dark-gray sm:gw-bg-nav-gray">
+              <div className={navContainerClass}>
+                <div className="gw-flex gw-justify-between gw-items-center">
+                  <span className="sm:gw-w-[94px] gw-shrink-0 "></span>
+                  <Title title={title} subtitle={subtitle} />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </header>
       {showOverlayLinks ? (
