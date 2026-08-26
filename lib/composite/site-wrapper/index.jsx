@@ -6,6 +6,7 @@ import DoDWarning from "./dod-warning";
 function SiteWrapper({
   children,
   navRight = undefined,
+  collapseHeader = false,
   showFooter = true,
   links,
   usaBanner = true,
@@ -44,7 +45,7 @@ function SiteWrapper({
   return (
     <div className="gw-grid gw-min-h-[100vh] gw-grid-rows-1fr-auto">
       <div>
-        {usaBanner && <USABanner fluidNav={fluidNav} />}
+        {usaBanner && !collapseHeader && <USABanner fluidNav={fluidNav} />}
         {msgBanner && msgBannerPosition === "top" ? msgBanner : null}
         <Header
           links={links}
@@ -53,6 +54,7 @@ function SiteWrapper({
           navRight={navRight}
           fluidNav={fluidNav}
           homeUrl={homeUrl}
+          collapseHeader={collapseHeader}
         />
 
         {msgBanner && msgBannerPosition === "bottom" ? msgBanner : null}
