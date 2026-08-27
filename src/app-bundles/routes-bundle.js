@@ -49,6 +49,7 @@ import PackageMaintenance from "../app-pages/documentation/getting-started/packa
 import Mapping from "../app-pages/documentation/mapping";
 import MapDocs from "../app-pages/documentation/mapping/map";
 import LayerDocs from "../app-pages/documentation/mapping/layer";
+import StatusMarkerLayerDocs from "../app-pages/documentation/mapping/status-marker-layer";
 import GeoJSONLayerDocs from "../app-pages/documentation/mapping/geojson-layer";
 import MapServerDocs from "../app-pages/documentation/mapping/map-server";
 import FeatureServerDocs from "../app-pages/documentation/mapping/feature-server";
@@ -118,6 +119,7 @@ export default createRouteBundle(
     "/docs/mapping/map-layout": MapLayoutDocs,
     "/docs/mapping/map": MapDocs,
     "/docs/mapping/layer": LayerDocs,
+    "/docs/mapping/status-marker-layer": StatusMarkerLayerDocs,
     "/docs/mapping/geojson-layer": GeoJSONLayerDocs,
     "/docs/mapping/map-server": MapServerDocs,
     "/docs/mapping/feature-server": FeatureServerDocs,
