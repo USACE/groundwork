@@ -152,13 +152,32 @@ npm run dev`}
             with what we're doing.
           </P>
           <P>
+            Open <Code className="gw-text-nowrap">./src/main.jsx</Code> and
+            import the Groundwork stylesheet after your application stylesheet.
+            Keeping both imports in the entry point makes their order explicit
+            and ensures Groundwork component styles are applied last.
+          </P>
+          <Code className="!gw-font-bold">./src/main.jsx</Code>
+          <CodeExample
+            code={`import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import "@usace/groundwork/groundwork.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);`}
+          />
+          <P>
             Open the <Code className="gw-text-nowrap">./src/App.jsx</Code> file.
             We're going to replace the contents with the code block below:
           </P>
           <Code className="!gw-font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
-import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   return (
