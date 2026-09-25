@@ -39,6 +39,7 @@
     "dev": "vite",
     "build": "npm run build-lib && npm run build-docs",
     "build-lib": "vite build -m lib",
+    "verify-lib": "node scripts/verify-library-bundle.js",
     "build-docs": "vite build",
     "lhci:prep": "node scripts/extract-routes.js",
     "lhci:run": "rmdir /s /q .lighthouseci 2>nul & npx @lhci/cli autorun --config=.lighthouserc.gen.json --verbose & node scripts/lhci-index.js",
@@ -67,6 +68,7 @@
     "react-dom": "^18.2.0 || ^19.0.0"
   },
   "devDependencies": {
+    "@babel/parser": "^7.29.8",
     "@lhci/cli": "^0.15.1",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
