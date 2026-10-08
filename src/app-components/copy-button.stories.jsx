@@ -29,12 +29,12 @@ export const CopyData = {
     const copyButton = canvas.getByRole("button", { name: "copy-button" });
     await userEvent.click(copyButton);
     // verify green class was added
-    expect(copyButton.classList).toContain("gw-bg-green-600");
+    await expect(copyButton.classList).toContain("gw-bg-green-600");
 
     const copiedText = mockClipboard.readText();
-    expect(copiedText).toBe(args.text);
+    await expect(copiedText).toBe(args.text);
     // verify green class is removed.
-    waitFor(() =>
+    await waitFor(() =>
       expect(copyButton.classList).not.toContain("gw-bg-green-600"),
     );
   },
