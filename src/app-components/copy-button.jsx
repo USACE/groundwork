@@ -13,6 +13,7 @@ function CopyButton({ className, text }) {
   const btnClass = gwMerge("", className);
   return (
     <Button
+      aria-label="copy-button"
       className={btnClass}
       outline={!copying}
       color={copying ? "green" : undefined}

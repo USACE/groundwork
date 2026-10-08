@@ -7,6 +7,7 @@ export default {
     "./index.html",
     "./lib/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
+    ".storybook/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
