@@ -2,18 +2,20 @@ import { UsaceBox, Code, Text, H3, Badge } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Client-Side Routing",
-    href: "/#/docs/client-side-routing",
+    href: `${BASE_URL}#/docs/client-side-routing`,
   },
 ];
 
@@ -238,6 +240,8 @@ export default function Home() {
             code={`import { UsaceBox } from "@usace/groundwork";
 import { useConnect } from "redux-bundler-hook";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default function Location() {
   const { routeParams } = useConnect("selectRouteParams");
   const location = routeParams?.location?.toUpperCase();
@@ -246,7 +250,7 @@ export default function Location() {
     <UsaceBox className="mt-8" title={\`Location: \${location}\`}>
       <div>
         <p>This could be a detail page about {location}</p>
-        <a className="hover:underline" href="/">
+        <a className="hover:underline" href={\`${BASE_URL}/\`}>
           Go back home
         </a>
       </div>
@@ -285,11 +289,16 @@ export default function Location() {
 import Home from "../app-pages/home";
 import Location from "../app-pages/location";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default createRouteBundle({
-  "/": Home,
-  "/location/:location": Location,
-  "*": Home,
-});`}
+  [\`${BASE_URL}\`]: Home,
+  [\`${BASE_URL}/\`]: Home,
+  [\`${BASE_URL}/location/:location\`]: Location,
+  "*": Home, // Replace with your NotFound.jsx component!
+  {
+    routeInfoSelector: "selectPathname",
+  });`}
           >
             {" "}
           </CodeExample>
@@ -358,6 +367,7 @@ import getStore from "./app-bundles";
 import { ReduxBundlerProvider } from "redux-bundler-hook";
 import App from "./App.jsx";
 import "./index.css";
+import "@usace/groundwork/groundwork.css";
 
 const store = getStore();
 
@@ -388,7 +398,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
 
 function App() {
 const { route: Route } = useConnect("selectRoute");
@@ -441,7 +450,6 @@ export default App;`}
             code={`import { useConnect } from "redux-bundler-hook";
 import { getNavHelper } from "internal-nav-helper";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
 
 function App() {
   const { route: Route, doUpdateUrl } = useConnect(
@@ -498,12 +506,12 @@ export default App;`}
             code={`import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/your-base-path/', // Replace 'your-base-path' with the actual base path i.e. '/myapp/' or '/hec/'
+    base: '/your-base-path', // Replace 'your-base-path' with the actual base path i.e. '/myapp' or '/hec'
     plugins: [react()],
 });`}
           />
           <P>
-            Replace <Code>'/your-base-path/'</Code> with the actual base path
+            Replace <Code>'/your-base-path'</Code> with the actual base path
             where your application will be deployed. This ensures that all URLs
             in your application are correctly prefixed with the base path.
           </P>
@@ -513,8 +521,9 @@ export default defineConfig({
             to update these paths to include the base path.
           </P>
           <P>
-            In addition the <Code>doUpdateUrlWithBase</Code> function can be
-            used to update the URL with the base path dynamically.
+            In addition the <Code>doUpdateUrl</Code> function can be used to
+            update the URL. Just take care to also prepend the{" "}
+            <Code>BASE_URL</Code> constant to any paths you provide.
           </P>
           <P>
             For situations where you require setting the base path such as in
@@ -530,38 +539,37 @@ export default defineConfig({
           </P>
           <CodeExample
             code={`// Place OUTSIDE the component function at the top of the file
-const base = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL;
 
 export default function Example() {
     // This wraps an image with an anchor tag that when clicked will navigate to the image file
     return (
-        <a href="\`\${base}images/myimage.png\`"><img src={\`\${base}images/myimage.png\`} alt="Logo" /></a>
+        <a href="\`\${BASE_URL}/images/myimage.png\`"><img src={\`\${BASE_URL}/images/myimage.png\`} alt="Logo" /></a>
     )
 }`}
           />
           <H3>Updating the URL dynamically</H3>
           <P>
-            The <Code>doUpdateUrlWithBase</Code> function is a utility function
-            that allows you to update the URL in the browser without causing a
-            full page refresh. This is useful when you want to update the URL
-            based on user interaction, such as clicking on a link or submitting
-            a form. This is more efficient than using an anchor tag with an href
+            The <Code>doUpdateUrl</Code> function is a utility function that
+            allows you to update the URL in the browser without causing a full
+            page refresh. This is useful when you want to update the URL based
+            on user interaction, such as clicking on a link or submitting a
+            form. This is more efficient than using an anchor tag with an href
             attribute, as it allows you to update the URL without causing a full
             page refresh.
           </P>
           <P>
-            Inside your component, you can call the{" "}
-            <Code>doUpdateUrlWithBase</Code> function with the new URL you want
-            to navigate to. Be sure to also import the{" "}
-            <Code>doUpdateUrlWithBase</Code> function from the{" "}
+            Inside your component, you can call the <Code>doUpdateUrl</Code>{" "}
+            function with the new URL you want to navigate to. Be sure to also
+            import the <Code>doUpdateUrl</Code> function from the{" "}
             <Code>redux-bundler</Code> package.
           </P>
           <Code className="gw:font-bold">
             ./src/app-pages/mypath/tab-example.jsx
           </Code>
           <CodeExample
-            code={`import { doUpdateUrlWithBase } from "redux-bundler";
-const base = import.meta.env.BASE_URL;
+            code={`import { useConnect } from "redux-bundler-hook";
+const BASE_URL = import.meta.env.BASE_URL;
 
 // Inside your ./src/app-bundles/routes-bundle.js
 // Add the following:
@@ -571,7 +579,7 @@ const base = import.meta.env.BASE_URL;
 
 export default function TabExample() {
     const { routeParams } = useConnect("selectRouteParams");
-    const { doUpdateUrlWithBase } = useConnect("doUpdateUrlWithBase");
+    const { doUpdateUrl } = useConnect("doUpdateUrl");
     const { tabName } = routeParams;
 
     let TabsData =[
@@ -588,7 +596,7 @@ export default function TabExample() {
         // You could also manually add these onClick handlers to the above objects in TabsData 
         //  if you wanted each to go to a different path/do something else
         tab.onClick = () => {
-            doUpdateUrlWithBase(\`\${base}mypath/\${tab.name?.toLowerCase()}\`);
+            doUpdateUrl(\`\${BASE_URL}/mypath/\${tab.name?.toLowerCase()}\`);
         }
     }))
 

@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Forms",
-    href: "/#/docs/forms",
+    href: `${BASE_URL}#/docs/forms`,
   },
 ];
 

@@ -2,10 +2,12 @@ import { UsaceBox, Text, Code, H4 } from "../../../lib";
 import CopyButton from "../../app-components/copy-button";
 import DocsPage from "./_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
 ];
 
@@ -69,11 +71,28 @@ function Docs() {
           <Code className="gw:block gw:p-1 gw:px-2">
             import "@usace/groundwork/dist/style.css"
           </Code>
-          <CopyButton text={`import "@usace/groundwork/dist/style.css"`} />
+          <CopyButton text={`import "@usace/groundwork/groundwork.css"`} />
         </div>
         <Text>
-          Make sure to import style.css from Groundwork into your top-level
-          component (i.e. App.jsx), then go build stuff with the components
+          Import Groundwork CSS in your application entry point (for example,
+          main.jsx), after your application stylesheet. This keeps stylesheet
+          order predictable and prevents app-wide styles from overriding
+          Groundwork components.
+        </Text>
+
+        <H4 className="gw-mt-6">Contributing</H4>
+        <Text className="gw-mt-3">
+          If you are planning to contribute to Groundwork, review the{" "}
+          <a
+            className="gw-underline"
+            href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            contributing guide
+          </a>{" "}
+          for branch naming, pull request expectations, and version bump
+          labeling.
         </Text>
       </UsaceBox>
     </DocsPage>

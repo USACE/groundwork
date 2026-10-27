@@ -62,7 +62,7 @@ export function Label({ className, ...props }) {
   return <HeadlessLabel {...props} data-slot="label" className={labelClass} />;
 }
 
-export function Description({ className, disabled, ...props }) {
+export function Description({ className, ...props }) {
   const descriptionClass = useMemo(() => {
     return gwMerge(
       "gw:text-base/6 gw:text-zinc-500 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-zinc-400",
@@ -78,7 +78,7 @@ export function Description({ className, disabled, ...props }) {
   );
 }
 
-export function ErrorMessage({ className, disabled, ...props }) {
+export function ErrorMessage({ className, ...props }) {
   const errorMessageClass = useMemo(() => {
     return gwMerge(
       "gw:text-base/6 gw:text-red-600 gw:data-disabled:opacity-50 gw:sm:text-sm/6 gw:dark:text-red-500",

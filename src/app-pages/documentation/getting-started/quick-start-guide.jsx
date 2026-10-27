@@ -4,18 +4,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import DocsPage from "../_docs-page";
 import { TbPlayerTrackNext } from "react-icons/tb";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Getting Started",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Quick Start Guide",
-    href: "/#/docs/quick-start",
+    href: `${BASE_URL}#/docs/quick-start`,
   },
 ];
 
@@ -156,7 +158,6 @@ npm run dev`}
           <Code className="gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
-import "@usace/groundwork/dist/style.css";
 
 function App() {
   return (

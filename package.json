@@ -1,9 +1,13 @@
 {
   "name": "@usace/groundwork",
   "private": false,
-  "version": "3.15.2",
+  "version": "4.3.2",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USACE/groundwork.git"
+  },
   "main": "./dist/groundwork.umd.cjs",
   "module": "./dist/groundwork.es.js",
   "files": [
@@ -14,6 +18,18 @@
       "import": "./dist/groundwork.es.js",
       "require": "./dist/groundwork.umd.cjs"
     },
+    "./groundwork.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
+    "./dist/style.css": {
+      "import": "./dist/groundwork.css",
+      "require": "./dist/groundwork.css"
+    },
     "./dist/*.css": {
       "import": "./dist/*.css",
       "require": "./dist/*.css"
@@ -23,7 +39,11 @@
     "dev": "vite",
     "build": "npm run build-lib && npm run build-docs",
     "build-lib": "vite build -m lib",
+    "verify-lib": "node scripts/verify-library-bundle.js",
     "build-docs": "vite build",
+    "lhci:prep": "node scripts/extract-routes.js",
+    "lhci:run": "rmdir /s /q .lighthouseci 2>nul & npx @lhci/cli autorun --config=.lighthouserc.gen.json --verbose & node scripts/lhci-index.js",
+    "lhci": "npm run build && npm run lhci:prep && npm run lhci:run",
     "pub": "npm run build-lib && npm publish --access=public",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky",
@@ -35,6 +55,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.9",
+    "@usace/groundwork-geo": "^2.1.2",
     "internal-nav-helper": "^3.1.0",
     "react-icons": "^5.0.1",
     "redux-bundler": "^28.1.0",
@@ -47,19 +69,24 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "@babel/parser": "^7.29.8",
+    "@lhci/cli": "^0.15.1",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.4",
-    "prettier": "^3.6.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^4.1.12",
-    "vite": "^6.4.3",
-    "vitest": "^5.0.5"
+    "postcss": "^8.5.29",
+    "prettier": "^3.6.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3",
+    "vitest": "^4.1.11"
   }
 }

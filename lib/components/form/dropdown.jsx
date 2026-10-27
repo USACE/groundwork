@@ -1,4 +1,3 @@
-import { useState } from "react";
 import gwMerge from "../../gw-merge";
 
 function Dropdown({
@@ -7,15 +6,16 @@ function Dropdown({
   labelClassName = "",
   className = "",
   onChange,
+  value,
   ...props
 }) {
-  const [selectedValue, setSelectedValue] = useState(options[0]?.value);
   if (!options || options.length === 0) {
     console.error(
       `Dropdown ${label} must have at least one option with value and text.`,
     );
     return null;
   }
+
   return (
     <>
       <label
@@ -30,16 +30,13 @@ function Dropdown({
       <select
         id={label}
         name={label}
-        onChange={(e) => {
-          setSelectedValue(e.target.value);
-          onChange(e);
-        }}
+        onChange={onChange}
         className={gwMerge(
           "gw:mt-2 gw:pr-5 gw:w-full gw:rounded-md gw:border-0 gw:py-1.5 gw:pl-3 gw:border-r-8 gw:border-transparent gw:text-gray-600 gw:ring-1  gw:ring-gray-300 gw:focus:ring-2 gw:focus:ring-indigo-600 gw:sm:text-sm gw:sm:leading-6",
           className,
         )}
+        value={value}
         {...props}
-        value={selectedValue}
       >
         {options}
       </select>

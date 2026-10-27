@@ -41,7 +41,7 @@ export function Badge({ color = "zinc", className, ...props }) {
       colors[color],
       className,
     );
-  }, [className]);
+  }, [className, color]);
   return <span {...props} className={badgeClass} />;
 }
 

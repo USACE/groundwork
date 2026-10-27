@@ -1,15 +1,15 @@
 import { Container, Text, Code, UsaceBox, TextLink, Hero } from "../../lib";
 import CopyButton from "../app-components/copy-button";
 
-const base = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL;
 
 function Home() {
   return (
     <>
       <Hero
         image={[
-          `${base}nww-lucky-peak-dam.jpg`,
-          `${base}taylorsville-SPPRu4Rw.jpg`,
+          `${BASE_URL}nww-lucky-peak-dam.jpg`,
+          `${BASE_URL}taylorsville-SPPRu4Rw.jpg`,
         ]}
         alt={["Lucky Peak Dam", "Taylorsville Dam"]}
         title="Groundwork"
@@ -59,10 +59,22 @@ function Home() {
             >
               <Text>
                 Contributions are welcome! Please see the{" "}
-                <TextLink href="https://github.com/USACE/groundwork">
-                  GitHub Repository
+                <TextLink
+                  href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  contributing guide
                 </TextLink>{" "}
-                for more information.
+                for workflow and review expectations. The{" "}
+                <TextLink
+                  href="https://github.com/USACE/groundwork"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub repository
+                </TextLink>{" "}
+                has the source and issue tracker.
               </Text>
             </UsaceBox>
           </div>

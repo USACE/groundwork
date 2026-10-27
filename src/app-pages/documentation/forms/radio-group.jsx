@@ -1,21 +1,23 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { UsaceBox, Code, Text, H3, RadioGroup } from "../../../../lib";
 import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Forms",
-    href: "/#/docs/forms",
+    href: `${BASE_URL}#/docs/forms`,
   },
   {
     text: "Radio Group",
-    href: "/#/docs/forms/RadioGroup",
+    href: `${BASE_URL}#/docs/forms/radio-group`,
   },
 ];
 
@@ -57,11 +59,15 @@ const FT_TO_METERS_SCALAR = 0.3048;
 function RadioGroupDocs() {
   const [units, setUnits] = useState(null);
   const [value, setValue] = useState(200);
-  useMemo(() => {
+  useEffect(() => {
     if (units?.toLowerCase() == "en")
-      setValue((value / FT_TO_METERS_SCALAR).toFixed(2));
+      setValue((currentValue) =>
+        (currentValue / FT_TO_METERS_SCALAR).toFixed(2),
+      );
     else if (units?.toLowerCase() == "si")
-      setValue((value * FT_TO_METERS_SCALAR).toFixed(2));
+      setValue((currentValue) =>
+        (currentValue * FT_TO_METERS_SCALAR).toFixed(2),
+      );
   }, [units]);
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>

@@ -2,6 +2,8 @@ import { UsaceBox, Text, Code } from "../../../../lib";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const tabProps = [
   {
     name: "name",
@@ -44,15 +46,15 @@ const tabProps = [
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Types",
-    href: "/#/docs/types",
+    href: `${BASE_URL}#/docs/types`,
   },
   {
     text: "Tab",
-    href: "/#/docs/types/tab",
+    href: `${BASE_URL}#/docs/types/tab`,
   },
 ];
 

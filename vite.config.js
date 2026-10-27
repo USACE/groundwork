@@ -1,21 +1,51 @@
-import { defineConfig } from "vite";
+import { defineConfig, esmExternalRequirePlugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import pkg from "./package.json";
+import { execFileSync } from "child_process";
+import path from "path";
+import fs from "fs";
 
-// // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
-// })
+const LHCI_PREFIX = process.env.LHCI_PREFIX || "http://localhost:5173/";
+
+function RoutesToLHCIPlugin() {
+  return {
+    name: "routes-to-lhci",
+    apply: "build",
+    closeBundle() {
+      // After build, regenerate .lighthouserc.gen.json from routes
+      const node = process.execPath;
+      const script = path.resolve("scripts/extract-routes.js");
+      if (!fs.existsSync(script)) {
+        console.warn("[routes-to-lhci] scripts/extract-routes.js not found");
+        return;
+      }
+      try {
+        execFileSync(node, [script], {
+          stdio: "inherit",
+          env: { LHCI_PREFIX },
+        });
+      } catch (e) {
+        console.error("[routes-to-lhci] failed to generate LHCI config", e);
+      }
+    },
+  };
+}
 
 export default defineConfig(({ mode }) => {
   if (mode === "lib") {
     console.log("Building library");
     return {
-      plugins: [react(), tailwindcss()],
-      css: {
-        minify: false,
-      },
+      plugins: [
+        react(),
+        tailwindcss(),
+        esmExternalRequirePlugin({
+          external: ["react", "react-dom", "react/jsx-runtime"],
+        }),
+      ],
+      // css: {
+      //   minify: false,
+      // },
       publicDir: false,
       build: {
         lib: {
@@ -23,9 +53,14 @@ export default defineConfig(({ mode }) => {
           fileName: (format) => `groundwork.${format}.js`,
           entry: "lib/index.jsx",
         },
-        rollupOptions: {
-          external: ["react", "react-dom", "react/jsx-runtime"],
+        rolldownOptions: {
           output: {
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name?.endsWith(".css")) {
+                return "groundwork.css";
+              }
+              return "[name][extname]";
+            },
             globals: {
               react: "React",
               "react-dom": "ReactDOM",
@@ -35,24 +70,18 @@ export default defineConfig(({ mode }) => {
         },
       },
     };
-  } else {
-    console.log("Building preview app", mode);
-    const base =
-      mode === "production"
-        ? "https://usace.github.io/groundwork/"
-        : "http://localhost:5173/";
-    return {
-      plugins: [react(), tailwindcss()],
-      base: base,
-      css: {
-        minify: false,
-      },
-      build: {
-        outDir: "docs",
-      },
-      define: {
-        "import.meta.env.PKG_VERSION": JSON.stringify(pkg.version),
-      },
-    };
   }
+
+  console.log("Building preview app", mode);
+  const base =
+    mode === "production"
+      ? "https://usace.github.io/groundwork/"
+      : "http://localhost:5173/";
+
+  return {
+    plugins: [react(), RoutesToLHCIPlugin()],
+    base,
+    build: { outDir: "docs" },
+    define: { "import.meta.env.PKG_VERSION": JSON.stringify(pkg.version) },
+  };
 });

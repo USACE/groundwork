@@ -3,18 +3,20 @@ import { CodeExample } from "../../../app-components/code-example";
 import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Forms",
-    href: "/#/docs/forms",
+    href: `${BASE_URL}#/docs/forms`,
   },
   {
     text: "Dropdown",
-    href: "/#/docs/forms/dropdown",
+    href: `${BASE_URL}#/docs/forms/dropdown`,
   },
 ];
 
@@ -49,6 +51,12 @@ const componentProps_Fieldset = [
     type: "function",
     default: "undefined",
     desc: "Function to call when the dropdown value changes.",
+  },
+  {
+    name: "value",
+    type: "string | number | null",
+    default: "undefined",
+    desc: "The current selected value when using the dropdown as a controlled component.",
   },
   {
     name: "<select> attributes",
@@ -113,7 +121,6 @@ function DropdownDocs() {
      <div className="w-[50%]">
         <Dropdown
             className={"w-5/6 m-auto"}
-            value={exampleOptions}
             onChange={(e) => {
                 alert("You selected: " + e.target.value);
             }}

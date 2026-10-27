@@ -4,18 +4,20 @@ import PropsTable from "../../../app-components/props-table";
 import DocsPage from "../_docs-page";
 import { VscCloudDownload, VscMail, VscSettingsGear } from "react-icons/vsc";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Navigation",
-    href: "/#/docs/navigation",
+    href: `${BASE_URL}#/docs/navigation`,
   },
   {
     text: "Tabs",
-    href: "/#/docs/navigation/tabs",
+    href: `${BASE_URL}#/docs/navigation/tabs`,
   },
 ];
 

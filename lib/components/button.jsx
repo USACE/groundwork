@@ -203,13 +203,14 @@ export const Button = React.forwardRef(function Button(
   },
   ref,
 ) {
+  const buttonStyle = outline ? "outline" : plain ? "plain" : style;
   let classes = gwMerge(
     base,
     radii[radius],
     sizes[size],
-    style === "filled" ? colorsFilled[color] : "",
-    style === "outline" ? colorsOutline[color] : "",
-    style === "plain" ? colorsPlain[color] : "",
+    buttonStyle === "filled" ? colorsFilled[color] : "",
+    buttonStyle === "outline" ? colorsOutline[color] : "",
+    buttonStyle === "plain" ? colorsPlain[color] : "",
     className,
   );
   return "href" in props ? (

@@ -12,6 +12,7 @@ function SiteWrapper({
   msgBanner = undefined,
   msgBannerPosition = "top",
   title = "US Army Corps of Engineers",
+  homeUrl = "#",
   fluidNav = false,
   subtitle = "",
   missionText = "",
@@ -51,6 +52,7 @@ function SiteWrapper({
           subtitle={subtitle}
           navRight={navRight}
           fluidNav={fluidNav}
+          homeUrl={homeUrl}
         />
 
         {msgBanner && msgBannerPosition === "bottom" ? msgBanner : null}

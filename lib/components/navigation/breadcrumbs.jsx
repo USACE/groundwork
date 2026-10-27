@@ -17,7 +17,7 @@ function BreadcrumbItem({ className, href, text }) {
         <VscChevronRight
           size={18}
           aria-hidden="true"
-          color="rgb(156 163 175)"
+          color="gw-text-gray-500"
         />
         <Link href={href} className="gw:ml-2 gw:text-nowrap">
           {text}
@@ -39,8 +39,8 @@ function Breadcrumbs({ className, children, baseUrl }) {
       <li>
         <div>
           <Link
-            href={`${(baseUrl || "").replace(/\/+$/, "")}/`}
-            className="gw:text-gray-500 gw:hover:text-gray-700"
+            href={baseUrl}
+            className="gw:text-gray-500 gw:hover:gw-text-gray-700"
           >
             <MdHome size={22} />
             <span className="gw:sr-only">Home</span>

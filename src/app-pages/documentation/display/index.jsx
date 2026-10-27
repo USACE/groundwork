@@ -1,14 +1,16 @@
 import { UsaceBox, H4, Text } from "../../../../lib";
 import DocsPage from "../_docs-page";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const pageBreadcrumbs = [
   {
     text: "Documentation",
-    href: "/#/docs",
+    href: `${BASE_URL}#/docs`,
   },
   {
     text: "Display",
-    href: "/#/docs/display",
+    href: `${BASE_URL}#/docs/display`,
   },
 ];
 
@@ -24,34 +26,38 @@ function Display() {
           <H4>Components</H4>
           <ul>
             <li>
-              <a href="/docs/display/badge">
+              <a href={`${BASE_URL}#/docs/display/badge`}>
                 Badge - A small piece of information that can be displayed on a
                 page.
               </a>
             </li>
             <li>
-              <a href="/docs/display/headings">
+              <a href={`${BASE_URL}#/docs/display/headings`}>
                 Headings - Section headings for standard content.
               </a>
             </li>
             <li>
-              <a href="/docs/display/hero">
+              <a href={`${BASE_URL}#/docs/display/hero`}>
                 Hero - A large, prominent section of a page.
               </a>
             </li>
             <li>
-              <a href="/docs/display/text">Text - Standard text for a page.</a>
+              <a href={`${BASE_URL}#/docs/display/text`}>
+                Text - Standard text for a page.
+              </a>
             </li>
             <li>
-              <a href="/docs/display/table">Table - A table of data.</a>
+              <a href={`${BASE_URL}#/docs/display/table`}>
+                Table - A table of data.
+              </a>
             </li>
             <li>
-              <a href="/docs/display/accordion">
+              <a href={`${BASE_URL}#/docs/display/accordion`}>
                 Accordion - Stackable / Expandible sections.
               </a>
             </li>
             <li>
-              <a href="/docs/display/card">
+              <a href={`${BASE_URL}#/docs/display/card`}>
                 Card - Put a box around some content.
               </a>
             </li>
