@@ -59,7 +59,7 @@
     "prettier": "^3.6.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^4.1.12",
-    "vite": "^5.0.13",
-    "vitest": "^2.1.1"
+    "vite": "^6.4.3",
+    "vitest": "^5.0.5"
   }
 }

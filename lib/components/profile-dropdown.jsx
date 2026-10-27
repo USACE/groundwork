@@ -46,7 +46,7 @@ function ProfileDropdown({
   return (
     <Menu as="div" className="gw:relative gw:ml-4 gw:shrink-0">
       <div>
-        <MenuButton className="gw:relative gw:flex gw:rounded-full gw:bg-white gw:focus:gw:outline-none">
+        <MenuButton className="gw:relative gw:flex gw:rounded-full gw:bg-white gw:focus:gw:outline-none gw:hover:cursor-pointer">
           <span className="gw:absolute gw:-inset-1.gw:5" />
           <span className="gw:sr-only">Open user menu</span>
           {email ? (
@@ -67,7 +67,7 @@ function ProfileDropdown({
               <Link
                 key={item.id}
                 href={item.href}
-                className="gw:block gw:px-4 gw:py-2 gw:text-sm gw:text-gray-700 gw:hover:bg-gray-100"
+                className="gw:block gw:px-4 gw:py-2 gw:text-sm gw:text-gray-700 gw:hover:bg-gray-100 gw:hover:cursor-pointer"
               >
                 {item.text}
               </Link>
@@ -77,7 +77,7 @@ function ProfileDropdown({
             <MenuItem>
               <button
                 onClick={onLogout}
-                className="gw:block gw:w-full gw:px-4 gw:py-2 gw:text-sm gw:text-left gw:text-gray-700 gw:hover:bg-gray-100"
+                className="gw:block gw:w-full gw:px-4 gw:py-2 gw:text-sm gw:text-left gw:text-gray-700 gw:hover:bg-gray-100 gw:hover:cursor-pointer"
               >
                 Logout
               </button>

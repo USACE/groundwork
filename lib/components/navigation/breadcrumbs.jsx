@@ -7,7 +7,7 @@ import Link from "./link";
 function BreadcrumbItem({ className, href, text }) {
   const breadcrumbItemClass = useMemo(() => {
     return gwMerge(
-      "gw:text-gray-300 gw:hover:text-gray-500 gw:last:text-gray-900",
+      "gw:text-gray-500 gw:hover:text-gray-700 gw:last:text-gray-900",
       className,
     );
   }, [className]);
@@ -40,7 +40,7 @@ function Breadcrumbs({ className, children, baseUrl }) {
         <div>
           <Link
             href={`${(baseUrl || "").replace(/\/+$/, "")}/`}
-            className="gw:text-gray-300 gw:hover:text-gray-500"
+            className="gw:text-gray-500 gw:hover:text-gray-700"
           >
             <MdHome size={22} />
             <span className="gw:sr-only">Home</span>

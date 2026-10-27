@@ -55,7 +55,7 @@ function PopoutMenu({
         <>
           <PopoverButton
             style={{ zIndex: level * 10 + 110 }}
-            className="gw:inline-flex gw:w-full gw:items-center gw:justify-between gw:leading-6 gw:ps-1 gw:focus:outline-hidden"
+            className="gw:inline-flex gw:w-full gw:items-center gw:justify-between gw:leading-6 gw:ps-1 gw:focus:outline-hidden gw:hover:cursor-pointer"
           >
             <span>{title}</span>
             <ChevronIcon

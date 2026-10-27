@@ -51,7 +51,8 @@ function Checkboxes({ content, legend, className, ...props }) {
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="gw:opacity-0 gw:group-has-[:checked]:gw:opacity-100"
+                    className="gw:group-has-[:checked]:gw:opacity-100"
+                    // gw:opacity-0
                   />
                   <path
                     d="M3 7H11"
@@ -59,6 +60,7 @@ function Checkboxes({ content, legend, className, ...props }) {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="gw:opacity-0 gw:group-has-indeterminate:opacity-100"
+                    //
                   />
                 </svg>
               </div>

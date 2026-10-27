@@ -94,7 +94,7 @@ function ClientSideRouting() {
             To get started, we'll need to install the Redux Bundler package and
             a couple additional dependencies:
           </P>
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample
             code={`npm install redux-bundler redux-bundler-hook internal-nav-helper`}
           ></CodeExample>
@@ -190,7 +190,7 @@ function ClientSideRouting() {
             Edit the <Code>./src/app-pages/home/index.jsx</Code> file to match
             the content below:
           </P>
-          <Code className="!gw:font-bold">./src/app-pages/home/index.jsx</Code>
+          <Code className="gw:font-bold">./src/app-pages/home/index.jsx</Code>
           <CodeExample
             code={`import { UsaceBox } from "@usace/groundwork";
 
@@ -231,7 +231,7 @@ export default function Home() {
           <P>
             Edit the <Code>./src/app-pages/location/index.jsx</Code> file:
           </P>
-          <Code className="!gw:font-bold">
+          <Code className="gw:font-bold">
             ./src/app-pages/location/index.jsx
           </Code>
           <CodeExample
@@ -277,7 +277,7 @@ export default function Location() {
             bundle. Open the <Code>./src/app-bundles/routes-bundle.js</Code>{" "}
             file and add the following content:
           </P>
-          <Code className="!gw:font-bold">
+          <Code className="gw:font-bold">
             ./src/app-bundles/routes-bundle.js
           </Code>
           <CodeExample
@@ -318,7 +318,7 @@ export default createRouteBundle({
             Now we can create the store. Edit the{" "}
             <Code>./src/app-bundles/index.js</Code> file:
           </P>
-          <Code className="!gw:font-bold">./src/app-bundles/index.js</Code>
+          <Code className="gw:font-bold">./src/app-bundles/index.js</Code>
           <CodeExample
             code={`import { composeBundles, createUrlBundle } from "redux-bundler";
 import routesBundle from "./routes-bundle";
@@ -350,7 +350,7 @@ export default composeBundles(createUrlBundle(), routesBundle);`}
           <P>
             Edit the <Code>./src/main.jsx</Code> file:
           </P>
-          <Code className="!gw:font-bold">./src/main.jsx</Code>
+          <Code className="gw:font-bold">./src/main.jsx</Code>
           <CodeExample
             code={`import React from "react";
 import ReactDOM from "react-dom/client";
@@ -384,7 +384,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             Finally we need to edit <Code>./src/App.jsx</Code> to get the
             appropriate component from the store based on the current URL:
           </P>
-          <Code className="!gw:font-bold">./src/App.jsx</Code>
+          <Code className="gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { SiteWrapper, Container } from "@usace/groundwork";
@@ -436,7 +436,7 @@ export default App;`}
           <P>
             Edit the <Code>./src/App.jsx</Code> file:
           </P>
-          <Code className="!gw:font-bold">./src/App.jsx</Code>
+          <Code className="gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { getNavHelper } from "internal-nav-helper";
@@ -493,7 +493,7 @@ export default App;`}
             <Code>vite.config.js</Code> file in your project. Add the following
             configuration to set the base path for your application:
           </P>
-          <Code className="!gw:font-bold">vite.config.js</Code>
+          <Code className="gw:font-bold">vite.config.js</Code>
           <CodeExample
             code={`import { defineConfig } from 'vite';
 
@@ -556,7 +556,7 @@ export default function Example() {
             <Code>doUpdateUrlWithBase</Code> function from the{" "}
             <Code>redux-bundler</Code> package.
           </P>
-          <Code className="!gw:font-bold">
+          <Code className="gw:font-bold">
             ./src/app-pages/mypath/tab-example.jsx
           </Code>
           <CodeExample

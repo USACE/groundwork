@@ -87,7 +87,7 @@ function PackageMaintenance() {
 
           <H3 className="gw:my-4">Checking for security vulnerabilities</H3>
 
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample code={`npm audit`}></CodeExample>
 
           <CodeExample
@@ -121,12 +121,12 @@ To address all issues, run:
 
           <H3 className="gw:my-4">Resolving security vulnerabilities</H3>
 
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample code={`npm audit fix`}></CodeExample>
 
           <H3 className="gw:my-4">Finding Outdated Packages</H3>
 
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample code={`npm outdated`}></CodeExample>
 
           <CodeExample
@@ -152,7 +152,7 @@ vitest                               2.1.1    2.1.2    2.1.2  node_modules/vites
 
           <H3 className="gw:my-4">Updating Outdated Packages</H3>
 
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample code={`npm update`}></CodeExample>
         </div>
       </UsaceBox>

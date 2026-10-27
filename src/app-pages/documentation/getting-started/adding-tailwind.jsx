@@ -77,7 +77,7 @@ function AddingTailwind() {
             Install <Code>@tailwindcss</Code> and <Code>@tailwindcss/vite</Code>{" "}
             via npm.
           </P>
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample
             code={`npm install tailwindcss @tailwindcss/vite`}
           ></CodeExample>
@@ -86,7 +86,7 @@ function AddingTailwind() {
             Add the <Code>@tailwindcss/vite</Code> plugin to your Vite
             configuration.
           </P>
-          <Code className="!gw:font-bold">vite.config.js</Code>
+          <Code className="gw:font-bold">vite.config.js</Code>
           <CodeExample
             code={`import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -101,15 +101,15 @@ export default defineConfig({
             Add an <Code>@import</Code> to your CSS file that imports Tailwind
             CSS.
           </P>
-          <Code className="!gw:font-bold">./src/index.css</Code>
+          <Code className="gw:font-bold">./src/index.css</Code>
           <CodeExample code={`@import "tailwindcss"`}></CodeExample>
 
           <P></P>
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeExample code={`npm run dev`}></CodeExample>
 
           <P>Start Using Tailwind in your project</P>
-          <Code className="!gw:font-bold">./src/App.jsx</Code>
+          <Code className="gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
 import "@usace/groundwork/dist/style.css";

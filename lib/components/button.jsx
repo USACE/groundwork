@@ -4,7 +4,7 @@ import React from "react";
 import Link from "./navigation/link";
 
 const base = [
-  "gw:cursor-pointer gw:relative gw:isolate gw:inline-flex gw:items-center gw:justify-center gw:gap-x-2 gw:font-semibold",
+  "gw:hover:cursor-pointer gw:relative gw:isolate gw:inline-flex gw:items-center gw:justify-center gw:gap-x-2 gw:font-semibold",
   // Disabled
   "gw:data-disabled:cursor-not-allowed gw:data-disabled:opacity-50",
 ];
@@ -25,12 +25,14 @@ const sizes = {
 
 // radius can be one of the following:
 // - none
+// - xs (default)
 // - sm
 // - md
 // - lg
 // - xl
 const radii = {
   none: "gw:rounded-none",
+  xs: "gw:rounded-xs",
   sm: "gw:rounded-sm",
   md: "gw:rounded-md",
   lg: "gw:rounded-lg",
@@ -67,7 +69,7 @@ const radii = {
 // - rose
 const colorsFilled = {
   light:
-    "gw:bg-white gw:text-usace-black gw:border gw:border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
+    "gw:bg-white gw:text-usace-black gw:border gw:border-gray-300/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
   dark: "gw:bg-gray-900 gw:text-white gw:border gw:border-gray-900/90 gw:hover:bg-gray-900/90 gw:active:bg-gray-900/80",
   primary:
     "gw:bg-blue-600 gw:text-white gw:border gw:border-blue-700/90 gw:hover:bg-blue-600/90 gw:active:bg-blue-600/80",
@@ -113,7 +115,7 @@ const colorsFilled = {
 
 const colorsOutline = {
   light:
-    "gw:bg-transparent gw:text-usace-black gw:border gw:border-gray/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
+    "gw:bg-transparent gw:text-usace-black gw:border gw:border-gray-300/60 gw:hover:bg-gray-100/80 gw:active:bg-gray-200/70",
   dark: "gw:bg-transparent gw:text-usace-black gw:border gw:border-gray-900/90 gw:hover:bg-gray-900 gw:hover:text-white gw:active:bg-gray-200/70",
   primary:
     "gw:bg-transparent gw:text-blue-600 gw:border gw:border-blue-700/90 gw:border gw:border-blue-700/90 gw:hover:bg-blue-600/90 gw:hover:text-white gw:active:bg-blue-600/80",
@@ -192,7 +194,7 @@ export const Button = React.forwardRef(function Button(
     style = "filled",
     color = "primary",
     size = "md",
-    radius = "sm",
+    radius = "xs",
     outline,
     plain,
     className,
@@ -210,7 +212,6 @@ export const Button = React.forwardRef(function Button(
     style === "plain" ? colorsPlain[color] : "",
     className,
   );
-
   return "href" in props ? (
     <Link {...props} className={classes} ref={ref}>
       <TouchTarget>{children}</TouchTarget>

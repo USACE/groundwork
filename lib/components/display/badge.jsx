@@ -51,7 +51,7 @@ export const BadgeButton = React.forwardRef(function BadgeButton(
 ) {
   const badgeButtonClass = useMemo(() => {
     return gwMerge(
-      "gw:group gw:relative gw:inline-flex gw:rounded-md gw:focus:outline-hidden gw:data-focus:outline gw:data-focus:outline-2 gw:data-focus:outline-offset-2 gw:data-focus:outline-blue-500",
+      "gw:group gw:relative gw:inline-flex gw:rounded-md gw:focus:outline-hidden gw:data-focus:outline gw:data-focus:outline-2 gw:data-focus:outline-offset-2 gw:data-focus:outline-blue-500 gw:hover:cursor-pointer",
       className,
     );
   }, [className]);

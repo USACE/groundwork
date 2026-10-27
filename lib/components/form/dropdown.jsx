@@ -35,7 +35,7 @@ function Dropdown({
           onChange(e);
         }}
         className={gwMerge(
-          "gw:mt-2 gw:block gw:w-full gw:rounded-md gw:border-0 gw:py-1.5 gw:pl-3 gw:pr-10 gw:text-gray-900 gw:ring-1 gw:ring-inset gw:ring-gray-300 gw:focus:ring-2 gw:focus:ring-indigo-600 gw:sm:text-sm gw:sm:leading-6",
+          "gw:mt-2 gw:pr-5 gw:w-full gw:rounded-md gw:border-0 gw:py-1.5 gw:pl-3 gw:border-r-8 gw:border-transparent gw:text-gray-600 gw:ring-1  gw:ring-gray-300 gw:focus:ring-2 gw:focus:ring-indigo-600 gw:sm:text-sm gw:sm:leading-6",
           className,
         )}
         {...props}

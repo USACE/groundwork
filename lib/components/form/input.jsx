@@ -13,7 +13,7 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
         "gw:relative gw:block gw:w-full",
 
         // Background color + shadow applied to inset pseudo element, so shadow blends with border in light mode
-        "gw:before:absolute gw:before:inset-px gw:before:rounded-[calc(var(--gw:radius-lg)-1px)] gw:before:bg-white gw:before:shadow",
+        "gw:before:absolute gw:before:inset-px gw:before:rounded-sm gw:before:bg-white gw:before:shadow-sm",
 
         // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
         "gw:dark:before:hidden",
@@ -70,6 +70,9 @@ export const Input = forwardRef(function Input({ className, ...props }, ref) {
 
           // Disabled state
           "gw:data-disabled:border-zinc-950/20 dark:gw:data-[hover]:data-[disabled]:gw:border-white/15 gw:dark:data-disabled:border-white/15 gw:dark:data-disabled:bg-white/2.5",
+
+          // input type file
+          "gw:file:bg-gray-100 gw:file:text-gray-900 gw:file:px-2 gw:file:rounded-sm gw:file:border-1 gw:file:border-gray-500",
         ])}
         {...props}
       />

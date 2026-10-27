@@ -31,7 +31,10 @@ function renderPopoutMenu({
   }
 
   return (
-    <div key={link?.id} className="gw:py-2 gw:border-b  gw:hover:bg-gray-100">
+    <div
+      key={link?.id}
+      className="gw:py-2 gw:border-b gw:border-b-gray-200 gw:hover:bg-gray-100 "
+    >
       {!link?.children ? (
         <Link
           key={link?.id}
@@ -54,7 +57,7 @@ function renderPopoutMenu({
               href={link?.href}
               target={link?.target}
               rel={link?.rel}
-              className={`gw:sticky gw:top-0 gw:z-20 gw:flex gw:items-center gw:gap-1 gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:bg-gray-100 gw:font-bold ${
+              className={`gw:sticky gw:top-0 gw:flex gw:items-center gw:gap-1 gw:p-2 gw:border-b-[1px] gw:border-b-gray-200 gw:bg-gray-100 gw:font-bold ${
                 isSelected ? "gw:bg-gray-100 gw:rounded" : ""
               }`}
             >

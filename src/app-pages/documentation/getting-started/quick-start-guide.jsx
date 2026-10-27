@@ -83,7 +83,7 @@ function QuickStartGuide() {
 
           <H3 className="gw:mt-6">Test the Setup</H3>
           <P>Follow the prompts from the Vite CLI</P>
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeBlock
             code={`cd <project_name>
 npm install
@@ -95,7 +95,7 @@ npm run dev`}
             console after running{" "}
             <Code className="gw:text-nowrap">npm run dev</Code>:
           </P>
-          <Code className="!gw:font-bold">terminal</Code>
+          <Code className="gw:font-bold">terminal</Code>
           <CodeBlock
             code={`VITE v5.2.6  ready in 248 ms
 
@@ -153,7 +153,7 @@ npm run dev`}
             Open the <Code className="gw:text-nowrap">./src/App.jsx</Code> file.
             We're going to replace the contents with the code block below:
           </P>
-          <Code className="!gw:font-bold">./src/App.jsx</Code>
+          <Code className="gw:font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
 import "@usace/groundwork/dist/style.css";
@@ -188,7 +188,7 @@ export default App;`}
             Groundwork uses under the hood.
           </P>
           <P>
-            <a href="/docs/adding-tailwind" className="gw:underline">
+            <a href="#/docs/adding-tailwind" className="gw:underline">
               <span className="gw:flex gw:items-center gw:gap-2">
                 <span>Keep Reading</span> <TbPlayerTrackNext />
               </span>

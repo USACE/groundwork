@@ -79,10 +79,10 @@ function DropdownDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-400 gw:px-6 gw:py-3 gw:mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3">
           <div className="gw:w-[50%]">
             <Dropdown
-              className={"gw:w-5/6 gw:m-auto"}
+              className={"gw:w-5/6 gw:m-auto gw:pr-3"}
               onChange={(e) => {
                 alert("You selected: " + e.target.value);
               }}
