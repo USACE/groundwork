@@ -74,7 +74,7 @@ const componentProps = [
         Additional props to pass to the accordion components. See{" "}
         <Link
           href="https://headlessui.com/react/disclosure#disclosure-panel"
-          className="gw-underline"
+          className="gw:underline"
         >
           Headless UI Disclosure
         </Link>{" "}

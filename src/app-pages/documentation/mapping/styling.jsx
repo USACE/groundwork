@@ -66,14 +66,14 @@ function StyleDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Styling">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             Add custom styles to each layer. Can also add styles based on
             feature properties.
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3 gw:h-96">
           <MapLayout>
             <Map mapId={"styles"} layers={[vectorLayer, otherVectorLayer]} />
           </MapLayout>

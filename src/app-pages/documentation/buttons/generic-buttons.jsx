@@ -110,11 +110,11 @@ function GenericButtonsDocs() {
             recommended that you implement your own button using the{" "}
             <Code>{"<button>"}</Code> primitive component.
           </Text>
-          <Badge color="info" className="gw-my-2">
+          <Badge color="info" className="gw:my-2">
             NOTE: if you are linking to your own site to{" "}
             <Link
               href={`${BASE_URL}#/docs/client-side-routing`}
-              className="gw-underline"
+              className="gw:underline"
             >
               include the base and hash path
             </Link>

@@ -32,6 +32,11 @@ function Display() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/display/divider`}>
+                Divider - Dividers for standard content.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/display/headings`}>
                 Headings - Section headings for standard content.
               </a>
@@ -39,6 +44,11 @@ function Display() {
             <li>
               <a href={`${BASE_URL}#/docs/display/hero`}>
                 Hero - A large, prominent section of a page.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/display/skeleton`}>
+                Skeleton - Placeholder for loading data.
               </a>
             </li>
             <li>
@@ -52,6 +62,11 @@ function Display() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/display/modal`}>
+                Modal - Overlay window.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/display/accordion`}>
                 Accordion - Stackable / Expandible sections.
               </a>
@@ -59,6 +74,11 @@ function Display() {
             <li>
               <a href={`${BASE_URL}#/docs/display/card`}>
                 Card - Put a box around some content.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/display/progress-bar`}>
+                Progress Bar - Loading bar.
               </a>
             </li>
           </ul>

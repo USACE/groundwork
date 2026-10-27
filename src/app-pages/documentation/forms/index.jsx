@@ -25,6 +25,12 @@ function Forms() {
           </Text>
           <H4>Components</H4>
           <ul>
+            <a className="gw:hover:underline" href="/docs/forms/checkboxes">
+              <li>Checkbox - Standard checkbox component.</li>
+            </a>
+            <a className="gw:hover:underline" href="/docs/forms/dropdown">
+              <li>Dropdown - Dropdown menu.</li>
+            </a>
             <a className="gw:hover:underline" href="/docs/forms/fieldset">
               <li>Fieldset - Organize field components.</li>
             </a>
@@ -46,8 +52,11 @@ function Forms() {
             >
               <li>Date/Time - Different ways to pick temporal data.</li>
             </a>
-            <a className="gw:hover:underline" href="/docs/forms/input">
+            <a className="gw:hover:underline" href="/docs/forms/file-input">
               <li>File Input - When we need to let folks upload something.</li>
+            </a>
+            <a className="gw:hover:underline" href="/docs/forms/radio-group">
+              <li>Radio Group - Standard radio group component.</li>
             </a>
           </ul>
         </div>

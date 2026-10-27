@@ -32,8 +32,18 @@ function Navigation() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/navigation/link-provider`}>
+                Link Provider - Component to extend router capability.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/navigation/tabs`}>
                 Tabs - Display multiple sub-pages on the same page
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/navigation/sidebar`}>
+                Sidebar - Side menu with popout capability.
               </a>
             </li>
           </ul>

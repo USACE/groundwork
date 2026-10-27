@@ -80,11 +80,11 @@ function Docs() {
           Groundwork components.
         </Text>
 
-        <H4 className="gw-mt-6">Contributing</H4>
-        <Text className="gw-mt-3">
+        <H4 className="gw:mt-6">Contributing</H4>
+        <Text className="gw:mt-3">
           If you are planning to contribute to Groundwork, review the{" "}
           <a
-            className="gw-underline"
+            className="gw:underline"
             href="https://github.com/USACE/groundwork/blob/main/CONTRIBUTING.md"
             target="_blank"
             rel="noreferrer"

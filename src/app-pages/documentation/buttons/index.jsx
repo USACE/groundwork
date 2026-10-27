@@ -43,6 +43,16 @@ function Buttons() {
                 delete something.
               </a>
             </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/buttons/login`}>
+                Login - Adds login capability and profile dropdown.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/buttons/popout`}>
+                Popout Menu - Display a menu.
+              </a>
+            </li>
           </ul>
         </div>
       </UsaceBox>

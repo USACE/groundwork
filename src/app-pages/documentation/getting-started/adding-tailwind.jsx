@@ -110,7 +110,7 @@ export default defineConfig({
             after <Code>index.css</Code>. This keeps Tailwind and Groundwork in
             a predictable order.
           </P>
-          <Code className="!gw-font-bold">./src/main.jsx</Code>
+          <Code className="gw:font-bold">./src/main.jsx</Code>
           <CodeExample
             code={`import React from "react";
 import ReactDOM from "react-dom/client";
