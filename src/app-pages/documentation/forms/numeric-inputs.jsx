@@ -86,7 +86,7 @@ function NumericInputDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Numeric Inputs">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>
             When you want a number, not some random text, use the numeric
             inputs. We have a range slider component, but you can (should?) use
@@ -95,9 +95,9 @@ function NumericInputDocs() {
           </Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3">
-          <div className="gw-w-[50%gw-]">
-            <div className="gw-mb-3">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3">
+          <div className="gw:w-[50%]">
+            <div className="gw:mb-3">
               <Field>
                 <Label>Number</Label>
                 <Input
@@ -110,7 +110,7 @@ function NumericInputDocs() {
                 />
               </Field>
             </div>
-            <div className="gw-mb-3">
+            <div className="gw:mb-3">
               <Field>
                 <Label>{`Range - Value = ${rangeValue}`}</Label>
                 <Input
@@ -124,10 +124,10 @@ function NumericInputDocs() {
                 />
               </Field>
             </div>
-            <div className="gw-mb-3">
+            <div className="gw:mb-3">
               <Field>
                 <Label>Browser Range</Label>
-                <div className="gw-mt-1">
+                <div className="gw:mt-1">
                   <input
                     type="range"
                     min="0"
@@ -204,9 +204,9 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
           Component API -{" "}
-          <Code className="gw-p-2">{`<Input type={"number" || "range"} />`}</Code>
+          <Code className="gw:p-2">{`<Input type={"number" || "range"} />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

@@ -19,53 +19,44 @@ function Forms() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Forms">
         <div>
-          <Text className="gw-pb-6">
+          <Text className="gw:pb-6">
             Forms are used to collect user input. They include inputs,
             dropdowns, textareas and other controls.
           </Text>
           <H4>Components</H4>
           <ul>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/fieldset`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/checkboxes">
+              <li>Checkbox - Standard checkbox component.</li>
+            </a>
+            <a className="gw:hover:underline" href="/docs/forms/dropdown">
+              <li>Dropdown - Dropdown menu.</li>
+            </a>
+            <a className="gw:hover:underline" href="/docs/forms/fieldset">
               <li>Fieldset - Organize field components.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/text-inputs`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/text-inputs">
               <li>Input - Add / Edit a text field in your form.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/textarea`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/textarea">
               <li>Textarea - For when you need lots of information.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/numeric-inputs`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/numeric-inputs">
               <li>Numeric - Limit entry to numbers.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/color-input`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/color-input">
               <li>Color - Let a user choose a color.</li>
             </a>
             <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/date-time-inputs`}
+              className="gw:hover:underline"
+              href="/docs/forms/date-time-inputs"
             >
               <li>Date/Time - Different ways to pick temporal data.</li>
             </a>
-            <a
-              className="gw-hover:gw-underline"
-              href={`${BASE_URL}#/docs/forms/input`}
-            >
+            <a className="gw:hover:underline" href="/docs/forms/file-input">
               <li>File Input - When we need to let folks upload something.</li>
+            </a>
+            <a className="gw:hover:underline" href="/docs/forms/radio-group">
+              <li>Radio Group - Standard radio group component.</li>
             </a>
           </ul>
         </div>

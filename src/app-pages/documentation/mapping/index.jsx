@@ -18,40 +18,70 @@ function Mapping() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Mapping">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           Groundwork mapping library using an openlayers map
         </Text>
         <H4>Components</H4>
         <ul>
           <a
-            className="gw-hover:gw-underline"
+            className="gw:hover:underline"
+            href={`${BASE_URL}#/docs/mapping/map-layout`}
+          >
+            <li>
+              Map Layout - Layout component to structure map and other
+              components.
+            </li>
+          </a>
+          <a
+            className="gw:hover:underline"
             href={`${BASE_URL}#/docs/mapping/map`}
           >
             <li>Map - Map component.</li>
           </a>
           <a
-            className="gw-hover:gw-underline"
+            className="gw:hover:underline"
             href={`${BASE_URL}#/docs/mapping/layer`}
           >
             <li>Layer - Generic Layer class types to add to map.</li>
           </a>
           <a
-            className="gw-hover:gw-underline"
+            className="gw:hover:underline"
             href={`${BASE_URL}#/docs/mapping/geojson-layer`}
           >
-            <li>GeoJSON Layer -GeoJSON Layer class types to add to map.</li>
+            <li>GeoJSON Layer - GeoJSON Layer class types to add to map.</li>
           </a>
           <a
-            className="gw-hover:gw-underline"
+            className="gw:hover:underline"
             href={`${BASE_URL}#/docs/mapping/feature-server`}
           >
             <li>Feature Server - ArcGIS compatible GeoJSON layer.</li>
           </a>
           <a
-            className="gw-hover:gw-underline"
+            className="gw:hover:underline"
             href={`${BASE_URL}#/docs/mapping/map-server`}
           >
             <li>Map Server - ArcGIS compatible map service layer.</li>
+          </a>
+          <a
+            className="gw:hover:underline"
+            href={`${BASE_URL}#/docs/mapping/tile-layer`}
+          >
+            <li>
+              XYZ Tile Layer - Tiled layer data with URL templates {"{X}"}{" "}
+              {"{Y}"} {"{Z}"}
+            </li>
+          </a>
+          <a
+            className="gw:hover:underline"
+            href={`${BASE_URL}#/docs/mapping/theme`}
+          >
+            <li>Theme - Apply themes to map.</li>
+          </a>
+          <a
+            className="gw:hover:underline"
+            href={`${BASE_URL}#/docs/mapping/styles`}
+          >
+            <li>Style - Apply styles to the map and layers.</li>
           </a>
         </ul>
       </UsaceBox>

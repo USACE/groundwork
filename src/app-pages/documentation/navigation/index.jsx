@@ -19,7 +19,7 @@ function Navigation() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Navigation">
         <div>
-          <Text className="gw-pb-6">
+          <Text className="gw:pb-6">
             Navigation components are used to help users find their way around
             the site. They include breadcrumbs and other components that help
             users understand where they are in the site and how to get around.
@@ -32,8 +32,18 @@ function Navigation() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/navigation/link-provider`}>
+                Link Provider - Component to extend router capability.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/navigation/tabs`}>
                 Tabs - Display multiple sub-pages on the same page
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/navigation/sidebar`}>
+                Sidebar - Side menu with popout capability.
               </a>
             </li>
           </ul>

@@ -19,7 +19,7 @@ function Display() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Display">
         <div>
-          <Text className="gw-pb-6">
+          <Text className="gw:pb-6">
             Display components are used to render content to the page with
             built-in formatting.
           </Text>
@@ -29,6 +29,11 @@ function Display() {
               <a href={`${BASE_URL}#/docs/display/badge`}>
                 Badge - A small piece of information that can be displayed on a
                 page.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/display/divider`}>
+                Divider - Dividers for standard content.
               </a>
             </li>
             <li>
@@ -42,6 +47,11 @@ function Display() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/display/skeleton`}>
+                Skeleton - Placeholder for loading data.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/display/text`}>
                 Text - Standard text for a page.
               </a>
@@ -52,6 +62,11 @@ function Display() {
               </a>
             </li>
             <li>
+              <a href={`${BASE_URL}#/docs/display/modal`}>
+                Modal - Overlay window.
+              </a>
+            </li>
+            <li>
               <a href={`${BASE_URL}#/docs/display/accordion`}>
                 Accordion - Stackable / Expandible sections.
               </a>
@@ -59,6 +74,11 @@ function Display() {
             <li>
               <a href={`${BASE_URL}#/docs/display/card`}>
                 Card - Put a box around some content.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/display/progress-bar`}>
+                Progress Bar - Loading bar.
               </a>
             </li>
           </ul>

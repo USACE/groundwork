@@ -51,7 +51,7 @@ function MapLayoutDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Map Layout">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           The Map Layout allows users to add panels and toolbars to the map
           component.
         </Text>
@@ -72,8 +72,8 @@ function Component() {
 export default Component;
 `}
         />
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Map />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Map />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

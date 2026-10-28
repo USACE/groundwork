@@ -30,10 +30,10 @@ function ThemeDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Theme">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           Create a custom theme and apply it to the Map Layout component.
         </Text>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96 ">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3 gw:h-96 ">
           <MapLayout
             theme={cobalt}
             topToolbar={<Toolbar tools={[BasemapPicker]} />}

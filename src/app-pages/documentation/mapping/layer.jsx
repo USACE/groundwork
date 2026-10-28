@@ -46,7 +46,7 @@ function LayerDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Layer Class">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>A base layer class that other layer types extend.</Text>
         </div>
         {/* Example code */}
@@ -63,8 +63,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Class API - <Code className="gw-p-2">{`Layer`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Class API - <Code className="gw:p-2">{`Layer`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

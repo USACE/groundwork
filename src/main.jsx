@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { ReduxBundlerProvider } from "redux-bundler-hook";
 import getStore from "./app-bundles";
 import App from "./App.jsx";
-import "./index.css";
+import "../lib/styles.css";
 
 const store = getStore();
 

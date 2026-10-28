@@ -6,7 +6,7 @@ function LoginButton({ onClick }) {
     <Button
       color="white"
       style="plain"
-      className="gw-font-normal"
+      className="gw:font-normal"
       onClick={onClick}
     >
       Login
@@ -16,7 +16,7 @@ function LoginButton({ onClick }) {
 
 function OkCancel({ onOk, onCancel }) {
   return (
-    <div className="gw-flex gw-gap-2">
+    <div className="gw:flex gw:gap-2">
       <Button color="emerald" onClick={onOk}>
         Ok
       </Button>
@@ -53,7 +53,7 @@ function DeleteConfirm({ onDelete, alignConfirm = "right" }) {
   ];
 
   return (
-    <div className="gw-flex gw-gap-2">
+    <div className="gw:flex gw:gap-2">
       {isConfirming ? (
         <>
           {alignConfirm === "right" ? cancelConfirm : cancelConfirm.reverse()}
