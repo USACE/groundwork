@@ -95,43 +95,6 @@ const componentProps_DataGrid = [
   },
 ];
 
-const componentProps_DataGridHeader = [];
-
-const componentProps_DataGridSelector = [];
-
-const componentProps_DataGridRow = [
-  {
-    name: "href",
-    type: "string",
-    default: "undefined",
-    desc: "The href for the row if used as a link",
-  },
-  {
-    name: "target",
-    type: "string",
-    default: "undefined",
-    desc: "The target for the row.",
-  },
-  {
-    name: "title",
-    type: "string",
-    default: "undefined",
-    desc: "The title for the row.",
-  },
-  {
-    name: "className",
-    type: "string",
-    default: "undefined",
-    desc: "Additional classes to add to the row.",
-  },
-  {
-    name: "...props",
-    type: "any",
-    default: "undefined",
-    desc: "Additional props to pass to the row.",
-  },
-];
-
 // Generate the last 24 hours of 1 hour data array
 const now = new Date();
 const last24Hours = new Date(now.getTime() - 24 * 60 * 60 * 1000);
@@ -143,12 +106,6 @@ Array.from({ length: 24 }).forEach((_, i) => {
   ).toISOString();
   last24HoursTimestamps.push(timestamp);
 });
-
-const dummyData = last24HoursTimestamps.map((timestamp, index) => ({
-  id: index,
-  timestamp,
-  value: (Math.random() * 100).toFixed(2),
-}));
 
 function DataGridDocs() {
   return (
