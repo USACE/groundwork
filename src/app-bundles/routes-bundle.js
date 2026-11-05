@@ -62,7 +62,6 @@ import DividerDocs from "../app-pages/documentation/display/divider";
 import ModalDocs from "../app-pages/documentation/display/modal";
 import RadioGroupDocs from "../app-pages/documentation/forms/radio-group";
 import CheckboxesDocs from "../app-pages/documentation/forms/checkboxes";
-import DataGridDocs from "../app-pages/documentation/display/data-grid";
 
 export default createRouteBundle(
   {
@@ -101,7 +100,6 @@ export default createRouteBundle(
     "/docs/display/accordion": AccordionDocs,
     "/docs/display/modal": ModalDocs,
     "/docs/display/progress-bar": ProgressDocs,
-    "/docs/display/data-grid": DataGridDocs,
     "/docs/forms": Forms,
     "/docs/forms/dropdown": DropdownDocs,
     "/docs/forms/fieldset": FieldsetDocs,
