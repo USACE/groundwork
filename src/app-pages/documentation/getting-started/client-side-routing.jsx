@@ -370,6 +370,7 @@ import getStore from "./app-bundles";
 import { ReduxBundlerProvider } from "redux-bundler-hook";
 import App from "./App.jsx";
 import "./index.css";
+import "@usace/groundwork/groundwork.css";
 
 const store = getStore();
 
@@ -400,7 +401,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <CodeExample
             code={`import { useConnect } from "redux-bundler-hook";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
 const { route: Route } = useConnect("selectRoute");
@@ -453,7 +453,6 @@ export default App;`}
             code={`import { useConnect } from "redux-bundler-hook";
 import { getNavHelper } from "internal-nav-helper";
 import { SiteWrapper, Container } from "@usace/groundwork";
-import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   const { route: Route, doUpdateUrl } = useConnect(

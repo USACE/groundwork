@@ -69,13 +69,15 @@ function Docs() {
         </div>
         <div className="gw-flex gw-flex-row gw-justify-start gw-space-between gw-items-center gw-gap-2 gw-mt-3 gw-mb-3">
           <Code className="gw-block gw-p-1 gw-px-2">
-            import "@usace/groundwork/dist/groundwork.css"
+            import "@usace/groundwork/groundwork.css"
           </Code>
-          <CopyButton text={`import "@usace/groundwork/dist/groundwork.css"`} />
+          <CopyButton text={`import "@usace/groundwork/groundwork.css"`} />
         </div>
         <Text>
-          Make sure to import groundwork.css from Groundwork into your top-level
-          component (i.e. App.jsx), then go build stuff with the components
+          Import Groundwork CSS in your application entry point (for example,
+          main.jsx), after your application stylesheet. This keeps stylesheet
+          order predictable and prevents app-wide styles from overriding
+          Groundwork components.
         </Text>
 
         <H4 className="gw-mt-6">Contributing</H4>

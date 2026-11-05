@@ -105,6 +105,26 @@ export default defineConfig({
           <Code className="!gw-font-bold">./src/index.css</Code>
           <CodeExample code={`@import "tailwindcss"`}></CodeExample>
 
+          <P>
+            Import the Groundwork stylesheet from your application entry point,
+            after <Code>index.css</Code>. This keeps Tailwind and Groundwork in
+            a predictable order.
+          </P>
+          <Code className="!gw-font-bold">./src/main.jsx</Code>
+          <CodeExample
+            code={`import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import "@usace/groundwork/groundwork.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);`}
+          ></CodeExample>
+
           <P></P>
           <Code className="!gw-font-bold">terminal</Code>
           <CodeExample code={`npm run dev`}></CodeExample>
@@ -113,7 +133,6 @@ export default defineConfig({
           <Code className="!gw-font-bold">./src/App.jsx</Code>
           <CodeExample
             code={`import { SiteWrapper, Container, UsaceBox } from "@usace/groundwork";
-import "@usace/groundwork/dist/groundwork.css";
 
 function App() {
   return (

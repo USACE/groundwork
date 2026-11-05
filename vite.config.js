@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, esmExternalRequirePlugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "tailwindcss";
 import pkg from "./package.json";
@@ -57,7 +57,13 @@ export default defineConfig(({ mode }) => {
   if (mode === "lib") {
     console.log("Building library");
     return {
-      plugins: [react(), tailwindcss()],
+      plugins: [
+        react(),
+        tailwindcss(),
+        esmExternalRequirePlugin({
+          external: ["react", "react-dom", "react/jsx-runtime"],
+        }),
+      ],
       publicDir: false,
       build: {
         lib: {
@@ -109,7 +115,7 @@ export default defineConfig(({ mode }) => {
           fileName: () => "style.js",
           formats: ["es"],
         },
-        rollupOptions: {
+        rolldownOptions: {
           output: {
             assetFileNames: libraryAssetFileNames,
           },
