@@ -30,7 +30,7 @@ export function Avatar({
     >
       {initials && (
         <svg
-          className="gw-select-none gw-fill-current gw-text-[48px] gw-font-medium gw-uppercase"
+          className="gw:select-none gw:fill-current gw:text-[48px] gw:font-medium gw:uppercase"
           viewBox="0 0 100 100"
           aria-hidden={alt ? undefined : "true"}
         >
@@ -50,7 +50,7 @@ export function Avatar({
       {src && <img aria-label={alt} src={src} alt={alt} />}
       {/* Add an inset border that sits on top of the image */}
       <span
-        className="gw-ring-1 gw-ring-inset gw-ring-black/5 gw-dark:gw-ring-white/5 gw-forced-colors:gw-outline"
+        className="gw:ring-1 gw:ring-inset gw:ring-black/5 gw:dark:gw:ring-white/5 gw:forced-colors:gw:outline"
         aria-hidden="true"
       />
     </span>

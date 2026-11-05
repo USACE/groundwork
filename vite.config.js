@@ -1,6 +1,6 @@
 import { defineConfig, esmExternalRequirePlugin } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "tailwindcss";
+import tailwindcss from "@tailwindcss/vite";
 import pkg from "./package.json";
 import { execFileSync } from "child_process";
 import path from "path";
@@ -64,6 +64,9 @@ export default defineConfig(({ mode }) => {
           external: ["react", "react-dom", "react/jsx-runtime"],
         }),
       ],
+      css: {
+        minify: false,
+      },
       publicDir: false,
       build: {
         lib: {
@@ -73,7 +76,7 @@ export default defineConfig(({ mode }) => {
           entry: "lib/index.jsx",
           formats: ["es", "umd"],
         },
-        rollupOptions: {
+        rolldownOptions: {
           external: isExternalPackage,
           output: [
             {
@@ -131,8 +134,11 @@ export default defineConfig(({ mode }) => {
       : "http://localhost:5173/";
 
   return {
-    plugins: [react(), RoutesToLHCIPlugin()],
+    plugins: [react(), RoutesToLHCIPlugin(), tailwindcss()],
     base,
+    css: {
+      minify: false,
+    },
     build: { outDir: "docs" },
     define: { "import.meta.env.PKG_VERSION": JSON.stringify(pkg.version) },
   };

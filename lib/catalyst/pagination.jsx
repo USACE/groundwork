@@ -18,14 +18,14 @@ export function Pagination({
 
 export function PaginationPrevious({ href = null, children = "Previous" }) {
   return (
-    <span className="gw-grow gw-basis-0">
+    <span className="gw:grow gw:basis-0">
       <Button
         {...(href === null ? { disabled: true } : { href })}
         plain
         aria-label="Previous page"
       >
         <svg
-          className="gw-stroke-current"
+          className="gw:stroke-current"
           data-slot="icon"
           viewBox="0 0 16 16"
           fill="none"
@@ -46,7 +46,7 @@ export function PaginationPrevious({ href = null, children = "Previous" }) {
 
 export function PaginationNext({ href = null, children = "Next" }) {
   return (
-    <span className="gw-flex gw-grow gw-basis-0 gw-justify-end">
+    <span className="gw:flex gw:grow gw:basis-0 gw:justify-end">
       <Button
         {...(href === null ? { disabled: true } : { href })}
         plain
@@ -54,7 +54,7 @@ export function PaginationNext({ href = null, children = "Next" }) {
       >
         {children}
         <svg
-          className="gw-stroke-current"
+          className="gw:stroke-current"
           data-slot="icon"
           viewBox="0 0 16 16"
           fill="none"
@@ -74,7 +74,7 @@ export function PaginationNext({ href = null, children = "Next" }) {
 
 export function PaginationList({ children }) {
   return (
-    <span className="gw-hidden gw-items-baseline gw-gap-x-2 sm:gw-flex">
+    <span className="gw:hidden gw:items-baseline gw:gap-x-2 sm:gw:flex">
       {children}
     </span>
   );
@@ -92,7 +92,7 @@ export function PaginationPage({ href, children, current = false }) {
         current && "before:bg-zinc-950/5 dark:before:bg-white/10",
       )}
     >
-      <span className="gw--mx-0.gw-5">{children}</span>
+      <span className="gw:-mx-0.gw:5">{children}</span>
     </Button>
   );
 }
@@ -101,7 +101,7 @@ export function PaginationGap() {
   return (
     <div
       aria-hidden="true"
-      className="gw-w-[2.gw-25rem] gw-select-none gw-text-center gw-text-sm/6 gw-font-semibold gw-text-zinc-950 gw-dark:gw-text-white"
+      className="gw:w-[2.gw:25rem] gw:select-none gw:text-center gw:text-sm/6 gw:font-semibold gw:text-zinc-950 gw:dark:gw:text-white"
     >
       &hellip;
     </div>

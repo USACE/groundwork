@@ -49,11 +49,11 @@ function MapDocs() {
   return (
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Map">
-        <Text className="gw-pb-6">
+        <Text className="gw:pb-6">
           The Map component is the building block of the library. It must be
           passed as a child to the Map Layout component.
         </Text>
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96 ">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3 gw:h-96 ">
           <MapLayout>
             <Map mapId={"home"} />
           </MapLayout>
@@ -78,8 +78,8 @@ function Component() {
 export default Component;
 `}
         />
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Component API - <Code className="gw-p-2">{`<Map />`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Component API - <Code className="gw:p-2">{`<Map />`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

@@ -35,14 +35,14 @@ function LazyLogo({ loader, ...props }) {
 
 function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
   return (
-    <div className="gw-flex gw-flex-row gw-justify-center gw-align-middle gw-gap-6 gw-mb-4 gw-mt-4">
+    <div className="gw:flex gw:flex-row gw:justify-center gw:align-middle gw:gap-6 gw:mb-4 gw:mt-4">
       {army && (
         <a href="https://www.army.mil" target="_blank" rel="noopener">
           <LazyLogo
             loader={logoLoaders.army}
             aria-label="U.S. Army Logo"
             alt="U.S. Army"
-            className="gw-max-h-[75px]"
+            className="gw:max-h-[75px]"
           />
         </a>
       )}
@@ -52,7 +52,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             loader={logoLoaders.army250}
             aria-label="U.S. Army 250 Year Anniversary Logo"
             alt="U.S. Army"
-            className="gw-max-h-[75px]"
+            className="gw:max-h-[75px]"
           />
         </a>
       )}
@@ -62,7 +62,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             loader={logoLoaders.usace}
             aria-label="U.S. Army Corps of Engineers"
             alt="U.S. Army Corps of Engineers"
-            className="gw-max-h-[75px] gw-h-[75px] gw-w-auto"
+            className="gw:max-h-[75px] gw:h-[75px] gw:w-auto"
           />
         </a>
       )}
@@ -72,7 +72,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             loader={logoLoaders.usace250}
             aria-label="U.S. Army Corps of Engineers"
             alt="U.S. Army Corps of Engineers"
-            className="gw-max-h-[75px] gw-h-[75px] gw-w-auto"
+            className="gw:max-h-[75px] gw:h-[75px] gw:w-auto"
           />
         </a>
       )}
@@ -86,7 +86,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             loader={logoLoaders.rsgis}
             aria-label="Remote Sensing - GIS Center of Expertise Logo"
             alt="Remote Sensing - GIS Center of Expertise"
-            className="gw-max-h-[75px]"
+            className="gw:max-h-[75px]"
           />
         </a>
       )}
@@ -100,7 +100,7 @@ function LogoBanner({ army, army250, usace, usace250, rsgis, cwbi }) {
             loader={logoLoaders.cwbi}
             aria-label="Civil Works Business Intelligence Logo"
             alt="Civil Works Business Intelligence"
-            className="gw-max-h-[75px]"
+            className="gw:max-h-[75px]"
           />
         </a>
       )}

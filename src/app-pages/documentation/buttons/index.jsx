@@ -19,7 +19,7 @@ function Buttons() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Buttons">
         <div>
-          <Text className="gw-pb-6">
+          <Text className="gw:pb-6">
             Buttons components are used to help users find their way around the
             site. They include breadcrumbs and other components that help users
             understand where they are in the site and how to get around.
@@ -41,6 +41,16 @@ function Buttons() {
               <a href={`${BASE_URL}#/docs/buttons/delete-confirm`}>
                 Delete/Confirm - When you need to make sure the user wants to
                 delete something.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/buttons/login`}>
+                Login - Adds login capability and profile dropdown.
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}#/docs/buttons/popout`}>
+                Popout Menu - Display a menu.
               </a>
             </li>
           </ul>

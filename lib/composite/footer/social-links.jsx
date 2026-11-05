@@ -16,7 +16,7 @@ function SocialLinks({
   linkedIn,
 }) {
   return (
-    <ul className="gw-text-2xl gw-flex gw-flex-row gw-flex-wrap gw-gap-2 gw-list-none gw-mb-6">
+    <ul className="gw:text-2xl gw:flex gw:flex-row gw:flex-wrap gw:gap-2 gw:list-none gw:mb-6">
       {facebook && (
         <li>
           <a

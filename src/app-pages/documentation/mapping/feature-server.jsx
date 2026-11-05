@@ -91,11 +91,11 @@ function FeatureServerDocs() {
     <DocsPage breadcrumbs={pageBreadcrumbs}>
       <UsaceBox title="Feature Server Layer">
         {/* Description of the component and what problem it solves */}
-        <div className="gw-pb-6">
+        <div className="gw:pb-6">
           <Text>Use the GeoJSON layer class to load ESRI datasets.</Text>
         </div>
         {/* Example usage - remove if not needed */}
-        <div className="gw-rounded-md gw-border gw-border-dashed gw-px-6 gw-py-3 gw-mb-3 gw-h-96">
+        <div className="gw:rounded-md gw:border gw:border-dashed gw:border-gray-200 gw:px-6 gw:py-3 gw:mb-3 gw:h-96">
           <MapLayout>
             {/* <LayerTree /> */}
             <Map
@@ -141,8 +141,8 @@ export default Component;
 `}
         />
         {/* Component props documentation */}
-        <div className="gw-font-bold gw-text-lg gw-pt-6">
-          Class API - <Code className="gw-p-2">{`GeoJSON Layer`}</Code>
+        <div className="gw:font-bold gw:text-lg gw:pt-6">
+          Class API - <Code className="gw:p-2">{`GeoJSON Layer`}</Code>
         </div>
         <PropsTable propsList={componentProps} />
       </UsaceBox>

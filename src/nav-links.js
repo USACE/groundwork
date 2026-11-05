@@ -181,6 +181,11 @@ export default [
         text: "Progress Bar",
         href: `${BASE_URL}#/docs/display/progress-bar`,
       },
+      // {
+      //   id: "data-grid",
+      //   text: "Data Grid",
+      //   href: "/#/docs/display/data-grid",
+      // },
     ],
   },
   {

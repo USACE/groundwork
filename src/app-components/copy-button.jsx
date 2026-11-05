@@ -10,11 +10,11 @@ function CopyButton({ className, text }) {
       text.replace(/\\`/gi, "`").replace(/\\$/gi, "$"),
     );
   };
-  const btnClass = gwMerge("", className);
+  const btnClass = gwMerge("outlined", className);
   return (
     <Button
       className={btnClass}
-      outline={!copying}
+      style={"outline"}
       color={copying ? "green" : undefined}
       onClick={() => {
         handleCopy();
