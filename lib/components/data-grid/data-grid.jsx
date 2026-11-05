@@ -2,7 +2,6 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import DataGridRow from "./data-grid-row";
 import DataGridHeader from "./data-grid-header";
 import { Loader } from "../display/loader";
-import { twMerge } from "tailwind-merge";
 
 function useElementSize(ref, { box = "content-box" } = {}) {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -66,7 +65,7 @@ function calculateColumnWidths({
   const widthPerFlex = Math.floor(widthLeftOver / flexTotal);
   const remainder = parentWidth - staticWidthTotal - flexTotal * widthPerFlex;
 
-  const widths = columns.map((col, i) => {
+  const widths = columns.map((col) => {
     return col.width || col.flex * widthPerFlex;
   });
 
@@ -78,7 +77,6 @@ function calculateColumnWidths({
 function DataGrid({
   data,
   columns,
-  border = true,
   sortedBy = null,
   sortedDir = null,
   selectByField = "id",
@@ -110,7 +108,7 @@ function DataGrid({
         enableToggle: enableToggle,
       }),
     );
-  }, [width, columns]);
+  }, [width, columns, enableSelect, enableToggle]);
 
   return (
     <div ref={el} className="gw:h-full gw:overflow-auto">

@@ -2,7 +2,7 @@ import { memo } from "react";
 import gwMerge from "../../gw-merge";
 import DataGridSelector from "./data-grid-selector";
 
-const DefaultCell = memo(function ({ val, className, style = {} }) {
+const DefaultCell = memo(function DefaultCell({ val, className, style = {} }) {
   return (
     <div className={gwMerge("gw:truncate", className)} style={style}>
       {val}
@@ -10,7 +10,7 @@ const DefaultCell = memo(function ({ val, className, style = {} }) {
   );
 });
 
-const DataGridRow = memo(function ({
+const DataGridRow = memo(function DataGridRow({
   row,
   columns,
   columnWidths,

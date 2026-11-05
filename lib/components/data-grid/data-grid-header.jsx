@@ -3,7 +3,12 @@ import gwMerge from "../../gw-merge";
 import DataGridSelector from "./data-grid-selector";
 import { BsSortDown, BsSortDownAlt } from "react-icons/bs";
 
-const HeaderCell = memo(function ({ col, sortedBy, sortedDir, ...props }) {
+const HeaderCell = memo(function HeaderCell({
+  col,
+  sortedBy,
+  sortedDir,
+  ...props
+}) {
   return (
     <div
       key={col.field}

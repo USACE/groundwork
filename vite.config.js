@@ -1,7 +1,7 @@
 import { defineConfig, esmExternalRequirePlugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import pkg from "./package.json" with { type: "json" };
+import pkg from "./package.json";
 import { execFileSync } from "child_process";
 import path from "path";
 import fs from "fs";
