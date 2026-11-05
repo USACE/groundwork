@@ -76,7 +76,7 @@ export default defineConfig(({ mode }) => {
           entry: "lib/index.jsx",
           formats: ["es", "umd"],
         },
-        rollupOptions: {
+        rolldownOptions: {
           external: isExternalPackage,
           output: [
             {

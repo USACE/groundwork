@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-const bundlePath = new URL("../dist/groundwork.es.js", import.meta.url);
+const bundlePath = new URL("../dist/es/index.js", import.meta.url);
 
 if (!fs.existsSync(bundlePath)) {
   throw new Error("Library bundle not found. Run `npm run build-lib` first.");
