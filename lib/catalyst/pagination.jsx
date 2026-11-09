@@ -101,7 +101,7 @@ export function PaginationGap() {
   return (
     <div
       aria-hidden="true"
-      className="gw:w-[2.gw:25rem] gw:select-none gw:text-center gw:text-sm/6 gw:font-semibold gw:text-zinc-950 gw:dark:gw:text-white"
+      className="gw:w-[2.25rem] gw:select-none gw:text-center gw:text-sm/6 gw:font-semibold gw:text-zinc-950 gw:dark:gw:text-white"
     >
       &hellip;
     </div>
